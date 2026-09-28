@@ -46,7 +46,8 @@ docs/                SPEC, DESIGN, ROADMAP
 
 ## Commands
 - All development happens in Claude Code on the web; pushing to `main` publishes the app. I don't need a terminal.
-- Local (optional): `cd web && npm install && npm run dev` · `npm run build` · `npm run lint`
+- Local (optional): `cd web && npm install && npm run dev` · `npm run build` · `npm run lint` · `npm test`
+- Tests use Node's built-in runner (`web/tests/*.test.ts`, run with type stripping) — no test framework package.
 
 ## Conventions
 - TypeScript `strict` on.

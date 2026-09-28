@@ -8,7 +8,8 @@ Everything the app shows or says is built from **words I already know in Anki**.
 - Deck: `Mandarin Chinese — Ultimate Read & Speak` (and subdecks). Note type: `Mandarin Ultimate — Word/Phrase`.
   Fields: `Hanzi, Pinyin, English, Example, ExamplePinyin, ExampleEnglish, Notes, Len`. `Pinyin` contains HTML spans — strip tags.
 - Sync (`anki.sync()`, run on the Mac with Anki open): via AnkiConnect `findNotes` / `notesInfo` / `findCards` / `cardsInfo`. Store per word:
-  hanzi, pinyin (plain), english, anki_note_id, max interval of its cards, last_synced.
+  hanzi, pinyin (plain), english, anki_note_id, max interval of its cards, mastery. Sync replaces the whole table, so the
+  sync time is stored once in `meta` (with the mastery counts) rather than per word.
 - Mastery from Anki interval: `new` (not studied) · `learning` (< 1 day) · `young` (1–20 days) · `mature` (≥ 21 days).
 - "Known" for content generation = young + mature. Pinyin hidden in Reader for `mature` words only (threshold configurable).
 - Add card (`anki.add()`): note into subdeck `…::05 From the App`, same note type, pinyin coloured with spans `t1…t5`
@@ -79,6 +80,15 @@ Words known (young+mature), estimated HSK level, minutes spoken/week, tone-pair 
 same fixed passage recorded on the 1st of each month, playable side by side.
 
 ## 11. Data model (Firebase, per signed-in user; recordings in IndexedDB on the device)
+Realtime Database, everything under `/users/{uid}/`: `words/{noteId}`, `meta` (last sync + counts), `ankiQueue/{id}` so far.
+Security rules (Firebase console → Realtime Database → Rules):
+```json
+{ "rules": { "users": { "$uid": {
+  ".read": "auth != null && auth.uid === $uid",
+  ".write": "auth != null && auth.uid === $uid"
+} } } }
+```
+Planned tables:
 `words`, `stories`, `story_reads`, `attempts` (type, ref_text, scores, created_at), `attempt_syllables` (hanzi, spoken_tone, predicted_tone,
 accuracy, status, prev_tone), `missions`, `mission_turns`, `reports`, `xp_events`, `daily_plans`, `settings`, `speaker_profile`, `anki_queue`.
 

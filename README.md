@@ -7,7 +7,7 @@ so the phone works without my Mac being on. Hosted on GitHub Pages.
 
 Project docs: [`CLAUDE.md`](CLAUDE.md), [`docs/SPEC.md`](docs/SPEC.md), [`docs/DESIGN.md`](docs/DESIGN.md), [`docs/ROADMAP.md`](docs/ROADMAP.md).
 
-**Status:** M0 — foundations + microphone proof.
+**Status:** M1 — Anki bridge.
 
 ## Install on the iPhone
 1. Open the app link above in **Safari**.
@@ -24,8 +24,34 @@ GitHub Pages. One-time setup: repo **Settings → Pages → Build and deployment
 The Vite `base` in `web/vite.config.ts` is `/mandarin-learning/` — it must match the repo name. If the repo is renamed,
 change it too (and re-add the app to the home screen, since the link changes).
 
+## One-time setup for sync (M1)
+
+### 1. Firebase (stores words and progress so the phone and Mac share them)
+1. Go to https://console.firebase.google.com → **Add project** → name it `shuo` → turn Google Analytics off → Create.
+2. **Build → Realtime Database → Create database** → location **Belgium (europe-west1)** → **Start in locked mode** → Enable.
+3. In the database's **Rules** tab, replace everything with the rules in [`docs/SPEC.md` §11](docs/SPEC.md) → **Publish**.
+4. **Build → Authentication → Get started → Email/Password** → Enable → Save.
+   Then **Users → Add user** with your email and a password (this is the only account; the app has no sign-up).
+5. Optional but recommended: **Authentication → Settings → User actions** → untick **Enable create (sign-up)**.
+6. **Project settings** (gear icon) → **Your apps** → the web icon `</>` → register an app called `shuo` (no Hosting).
+   Copy `apiKey` and `databaseURL` from the config it shows into `web/src/services/firebase-config.ts`.
+   These are public identifiers, not secrets — the rules above are what protect the data.
+
+### 2. AnkiConnect (lets the app read your Anki deck on the Mac)
+1. In Anki on the Mac: **Tools → Add-ons → Get Add-ons…** → code `2055492159` → OK → restart Anki.
+2. **Tools → Add-ons** → select **AnkiConnect** → **Config**, and add the app's site to `webCorsOriginList`:
+   ```json
+   "webCorsOriginList": ["http://localhost", "https://johnhodgson140-ai.github.io"]
+   ```
+   OK → restart Anki.
+3. Open the app in **Chrome** on the Mac (Safari blocks sites from talking to apps on your own computer)
+   → Settings (gear on Today) → sign in → **Sync from Anki**. If Chrome asks to let the site access apps or devices
+   on this computer, allow it.
+
+The phone uses whatever was last synced; cards added on the phone are queued and sent to Anki on the next sync.
+
 ## API keys
-Azure and Claude keys (from M1 onwards) are typed into the app's Settings on each device and stay on that device.
+Azure and Claude keys are typed into the app's Settings on each device and stay on that device.
 They are never put in this repo or the published site.
 
 ## Local development (optional)
