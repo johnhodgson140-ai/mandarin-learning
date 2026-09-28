@@ -14,6 +14,8 @@ import {
 import { dbDelete, dbGet, dbPush, dbPut } from './firebase.ts'
 import { load, save } from './storage.ts'
 import { saveWords } from './words.ts'
+import { rememberNewCard } from './ankiFile.ts'
+import { isConfigured, currentUser } from './firebase.ts'
 
 const ANKI_URL = 'http://127.0.0.1:8765'
 const CHUNK = 500
@@ -99,11 +101,13 @@ export async function queuedCount(): Promise<number> {
 
 /** Add a note to `…::05 From the App`; if Anki isn't reachable (e.g. on the phone), queue it for the next sync. */
 export async function addCard(card: NewCard): Promise<'added' | 'duplicate' | 'queued'> {
+  // Always kept on this device too, for "Export for Anki" (the phone can't reach Anki directly).
+  rememberNewCard(card.hanzi, card.pinyin.join(' '), card.english)
   try {
     return await addToAnki(card)
   } catch (err) {
     if (!(err instanceof AnkiUnreachable)) throw err
-    await dbPush('ankiQueue', { ...card, queuedAt: Date.now() } satisfies QueuedCard)
+    if (isConfigured && currentUser()) await dbPush('ankiQueue', { ...card, queuedAt: Date.now() } satisfies QueuedCard)
     return 'queued'
   }
 }

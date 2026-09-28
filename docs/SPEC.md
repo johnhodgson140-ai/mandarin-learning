@@ -15,6 +15,10 @@ Everything the app shows or says is built from **words I already know in Anki**.
 - Add card (`anki.add()`): note into subdeck `…::05 From the App`, same note type, pinyin coloured with spans `t1…t5`
   (same CSS classes as the deck). If Anki is unreachable (e.g. on the phone), queue in Firebase and flush on next sync from the Mac.
 - Phone works without Anki: uses the last synced word table in Firebase.
+- **Phone-first (AnkiMobile has no API):** Settings → Anki → *Import Anki export* reads an AnkiMobile .apkg/.colpkg in the browser
+  (fflate + fzstd + sql.js, lazy-loaded) and makes it my word list with mastery from the review history (warns when the export
+  has no scheduling). Words added with + Anki are always kept on the device; *Export for Anki* downloads them as a tab-separated
+  file (Hanzi, Pinyin, English) to import into Anki.
 - AnkiConnect must allow the app's origin: add `https://johnhodgson140-ai.github.io` to `webCorsOriginList` in the add-on config.
 
 ## 3. Chinese text pipeline (web/src/chinese)

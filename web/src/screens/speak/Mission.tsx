@@ -6,7 +6,6 @@ import RubyText from '../../components/RubyText.tsx'
 import { pronunciationSummary, scenarioById, type Session, type Turn } from '../../missions/logic.ts'
 import { addCard } from '../../services/anki.ts'
 import { assess } from '../../services/azure.ts'
-import { currentUser, isConfigured } from '../../services/firebase.ts'
 import { getKeys } from '../../services/keys.ts'
 import { finishSession, sendTurn, startSession } from '../../services/missions.ts'
 import { load, save } from '../../services/storage.ts'
@@ -262,11 +261,11 @@ function ReportView({ session }: { session: Session }) {
 function NewWord({ word, english }: { word: string; english: string }) {
   const [status, setStatus] = useState<string | null>(null)
   const [token] = useMemo(() => buildParagraph([word], getLexicon()), [word])
-  const canAdd = isConfigured && currentUser() !== null
+  const canAdd = true
   async function add() {
     try {
       const r = await addCard({ hanzi: word, pinyin: token.syllables.map((s) => s.pinyin), english })
-      setStatus(r === 'added' ? 'Added' : r === 'duplicate' ? 'Already in Anki' : 'Queued for next sync')
+      setStatus(r === 'added' ? 'Added' : r === 'duplicate' ? 'Already in Anki' : 'Saved for export')
     } catch (err) {
       setStatus(err instanceof Error ? err.message : String(err))
     }
