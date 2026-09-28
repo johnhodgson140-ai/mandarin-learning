@@ -20,7 +20,7 @@ free Apple ID. Apple's free signing lasts **7 days**, so you re-run it from Xcod
 3. **Signing:** in the left sidebar click **App** (blue icon) → under TARGETS click **App** → **Signing &
    Capabilities** → **Team**: choose your name (*Personal Team*).
    If Xcode says the bundle identifier isn't available, change **Bundle Identifier** to something unique,
-   e.g. `io.github.johnhodgson140.shuo.me`.
+   e.g. `io.github.johnhodgson140.shuo.me` (the project already uses this one).
 4. **Connect your iPhone** with a cable, unlock it and tap **Trust** if asked.
    The first time: on the iPhone go to Settings → Privacy & Security → **Developer Mode** → On (it restarts).
 5. At the top of Xcode, choose **your iPhone** as the run destination, then press **▶ Run**.
