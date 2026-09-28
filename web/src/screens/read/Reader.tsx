@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import type { Token } from '../../chinese/tokens.ts'
 import { go } from '../../hash.ts'
 import { load, save } from '../../services/storage.ts'
+import { loadDaily } from '../../services/daily.ts'
 import { getStory, saveStory, storyTokens, type Story } from '../../services/stories.ts'
 import { rateForLevel, speak, unlockAudio } from '../../services/tts.ts'
 import type { ParagraphResult } from '../../grading/readAloud.ts'
@@ -16,11 +17,25 @@ const LONG_PRESS_MS = 500
 
 export default function Reader({ id }: { id: string }) {
   const [story, setStory] = useState<Story | undefined>(() => getStory(id))
+  const [looked, setLooked] = useState(false)
+  // Opened before today's stories were added (e.g. straight from a link): fetch them, then look again.
+  useEffect(() => {
+    if (story) return
+    let cancelled = false
+    void loadDaily().finally(() => {
+      if (cancelled) return
+      setStory(getStory(id))
+      setLooked(true)
+    })
+    return () => {
+      cancelled = true
+    }
+  }, [id, story])
   if (!story)
     return (
       <>
         <a href="#read" className="back-link">‹ Library</a>
-        <p className="muted">This story isn't on this device.</p>
+        <p className="muted">{looked ? "This story isn't on this device." : 'Loading…'}</p>
       </>
     )
   return <StoryView story={story} onChange={setStory} />

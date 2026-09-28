@@ -72,6 +72,9 @@ export default function Cards() {
           if (score !== null) {
             recordCard(session[index].hanzi, score)
             setScores([...scores, score])
+            // Forgotten ("again"): once more at the end of this session.
+            const card = session[index]
+            if (score < 60 && session.filter((c) => c.hanzi === card.hanzi).length === 1) setSession([...session, card])
           }
           setIndex(index + 1)
         }}
@@ -152,7 +155,7 @@ function CardView({ card, mode, onNext }: { card: Card; mode: Mode; onNext: (sco
 /** What FSRS will do with this card at this score (a preview; it's saved on Next). */
 function nextReviewText(hanzi: string, score: number): string {
   const days = daysUntil(nextState(cardStates()[hanzi], score))
-  return days === 0 ? 'Comes back again this session.' : `Next review in ${days} day${days === 1 ? '' : 's'}.`
+  return days === 0 ? 'Comes back at the end of this session.' : `Next review in ${days} day${days === 1 ? '' : 's'}.`
 }
 
 /** Did anything get checked? (Not before my voice is known and with no sound checker: then don't schedule.) */

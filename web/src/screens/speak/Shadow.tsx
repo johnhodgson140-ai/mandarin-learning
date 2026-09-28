@@ -9,7 +9,7 @@ import { scoreAndLog } from '../../scoring/attempt.ts'
 import type { SpeechScore } from '../../scoring/speechScore.ts'
 import { listStories } from '../../services/library.ts'
 import { nativeSeconds, voicedSeconds } from '../../services/tone.ts'
-import { speak } from '../../services/tts.ts'
+import { rateForLevel, speak } from '../../services/tts.ts'
 import { deckWords, getLexicon } from '../../services/words.ts'
 
 const SESSION = 8
@@ -69,7 +69,7 @@ export default function Shadow() {
       <ShadowItem
         key={index}
         sentence={items[index]}
-        rate={slow ? 0.8 : 1}
+        rate={slow ? rateForLevel() * 0.8 : rateForLevel()}
         onNext={(score) => {
           setScores([...scores, score])
           setIndex(index + 1)

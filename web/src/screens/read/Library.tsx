@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { loadDaily } from '../../services/daily.ts'
 import { listStories, syncStories, type Story } from '../../services/stories.ts'
 import { refreshWords } from '../../services/words.ts'
 import './read.css'
@@ -7,7 +8,12 @@ export default function Library() {
   const [stories, setStories] = useState<Story[]>(listStories)
 
   useEffect(() => {
-    syncStories().then(setStories, () => {})
+    // Today's stories first (so they're listed even if the app opened here), then the synced ones.
+    void loadDaily()
+      .catch(() => null)
+      .then(() => setStories(listStories()))
+      .then(() => syncStories())
+      .then((synced) => synced && setStories(synced), () => {})
     refreshWords().catch(() => {})
   }, [])
 

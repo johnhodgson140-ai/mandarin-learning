@@ -5,7 +5,7 @@ import type { Tone } from '../../chinese/tones.ts'
 import HoldToTalk from '../../components/HoldToTalk.tsx'
 import VoicePicker from '../../components/VoicePicker.tsx'
 import { saveProfile, toneLabel } from '../../services/tone.ts'
-import { speak } from '../../services/tts.ts'
+import { rateForLevel, speak } from '../../services/tts.ts'
 import { activeVoice } from '../../services/voices.ts'
 import { predict } from '../../tone/model.ts'
 
@@ -62,7 +62,7 @@ export default function Calibrate() {
           <div className="drill-card tone-colours">
             <p className="drill-hanzi zh">{current.hanzi}</p>
             <p className={`drill-pinyin t${current.tone}`}>{current.pinyin}</p>
-            <button type="button" className="btn btn-secondary" onClick={() => speak(current.hanzi, 0.9)}>▶ Hear it</button>
+            <button type="button" className="btn btn-secondary" onClick={() => speak(current.hanzi, rateForLevel())}>▶ Hear it</button>
           </div>
           <HoldToTalk key={samples.length} onRecorded={(r) => void recorded(r)} onError={setError} />
         </>
