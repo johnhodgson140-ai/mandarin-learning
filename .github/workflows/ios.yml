@@ -18,7 +18,8 @@ concurrency:
 
 jobs:
   ios:
-    runs-on: macos-latest
+    # macOS 15 runner + Xcode 16: the same as my Mac (macOS 15.7, Xcode 16), so a green build here opens there.
+    runs-on: macos-15
     defaults:
       run:
         working-directory: web
@@ -31,9 +32,9 @@ jobs:
           cache-dependency-path: web/package-lock.json
       - run: npm ci
       - run: npm run build:ios
-      - name: Use the newest Xcode on the runner
+      - name: Use Xcode 16 (what my Mac runs)
         run: |
-          latest=$(ls -d /Applications/Xcode_*.app | sort -V | tail -1)
+          latest=$(ls -d /Applications/Xcode_16*.app | sort -V | tail -1)
           sudo xcode-select -s "$latest"
           xcodebuild -version
       - name: Compile for the simulator (no signing), to catch errors before I open it in Xcode

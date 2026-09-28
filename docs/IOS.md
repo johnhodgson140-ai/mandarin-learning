@@ -5,8 +5,10 @@ every push to `main` and publishes a ready-to-open Xcode project. You install it
 free Apple ID. Apple's free signing lasts **7 days**, so you re-run it from Xcode about once a week.
 
 ## One-time setup on the Mac
-1. **Install Xcode** from the Mac App Store (free, large download). Open it once, accept the licence, and let it
-   install the iOS components it offers.
+1. **Install Xcode 16** (my Mac runs macOS 15, and the App Store's newest Xcode needs a newer macOS): download the
+   newest Xcode 16.x from https://developer.apple.com/download/all (sign in with any Apple ID), unpack the `.xip`,
+   drag Xcode into Applications. Open it once, accept the licence, and when it asks which platforms to install,
+   tick **iOS** only.
 2. **Sign in:** Xcode → Settings → Accounts → **+** → Apple ID → sign in with your Apple ID.
 
 ## Install (and update) the app
