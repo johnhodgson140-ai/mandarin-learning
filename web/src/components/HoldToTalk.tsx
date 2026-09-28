@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { MicDead, preloadRecorder, Recorder, reopenMicNextTime, type Recording } from '../audio/recorder.ts'
 import { canRecognise, listen as startListening, setRecogniserBlocked, type Listening } from '../scoring/recognize.ts'
 import { flushLog, log } from '../debug/log.ts'
+import { isNativeApp, nativeRecognise } from '../native/app.ts'
 import './HoldToTalk.css'
 
 type Props = {
@@ -31,8 +32,8 @@ export default function HoldToTalk({ onRecorded, onError, listen = false }: Prop
   const [needsReload, setNeedsReload] = useState(false)
 
   // Latest callbacks, so the max-length / visibility handlers never call a stale closure.
-  const callbacks = useRef({ onRecorded, onError })
-  callbacks.current = { onRecorded, onError }
+  const callbacks = useRef({ onRecorded, onError, listen })
+  callbacks.current = { onRecorded, onError, listen }
 
   async function begin() {
     if (recorder.current) return log('tap ignored: already recording')
@@ -45,7 +46,8 @@ export default function HoldToTalk({ onRecorded, onError, listen = false }: Prop
     })
     recorder.current = rec
     peak.current = 0
-    usedRecogniser.current = listen && canRecognise()
+    // The iOS app checks the finished recording natively instead (see end()).
+    usedRecogniser.current = listen && !isNativeApp() && canRecognise()
     listening.current = usedRecogniser.current ? startListening() : null // must start inside the tap
     log('tap: start', { recogniser: usedRecogniser.current })
     live.current = false
@@ -92,7 +94,7 @@ export default function HoldToTalk({ onRecorded, onError, listen = false }: Prop
     try {
       const result = await rec.stop()
       setLevel(0) // the last batch arrives during stop()
-      const heard = await listening.current?.stop()
+      const heard = callbacks.current.listen && isNativeApp() ? await nativeRecognise(result.wav) : await listening.current?.stop()
       listening.current = null
       log('result', { seconds: Math.round(result.seconds * 10) / 10, peak: Math.round(peak.current * 1000) / 1000, heard: heard?.length ?? null })
       if (result.seconds < MIN_SECONDS) setHint('Too short. Tap, speak, then tap again when finished.')

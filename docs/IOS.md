@@ -14,7 +14,7 @@ free Apple ID. Apple's free signing lasts **7 days**, so you re-run it from Xcod
 ## Install (and update) the app
 1. **Download** the latest build on your Mac:
    https://github.com/johnhodgson140-ai/mandarin-learning/releases/download/ios-latest/Shuo-iOS.zip
-   Double-click it to unzip (you get a folder called `ios`).
+   Double-click it to unzip (you get a folder with `ios` and `node_modules` in it: keep them together).
 2. **Open** `ios/App/App.xcodeproj` (double-click). Wait until the top bar stops showing
    "Resolving package graph" / "Fetching" (the first time takes a minute).
 3. **Signing:** in the left sidebar click **App** (blue icon) → under TARGETS click **App** → **Signing &

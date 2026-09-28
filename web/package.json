@@ -16,6 +16,7 @@
     "@anthropic-ai/sdk": "^0.128.0",
     "@capacitor/core": "^7.6.9",
     "@capacitor/ios": "^7.6.9",
+    "@capacitor/local-notifications": "^7.0.7",
     "fflate": "^0.8.3",
     "fzstd": "^0.1.1",
     "microsoft-cognitiveservices-speech-sdk": "^1.51.0",
