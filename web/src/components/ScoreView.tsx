@@ -1,5 +1,6 @@
 // Per-syllable scores on a green→red scale, an overall score, free tips on tap, optional AI explanation.
-import { useState } from 'react'
+import { useId, useState } from 'react'
+import PlayButton from './PlayButton.tsx'
 import ContourChart from './ContourChart.tsx'
 import type { Syllable } from '../chinese/tokens.ts'
 import { markTone, toneless } from '../chinese/tones.ts'
@@ -21,22 +22,15 @@ export default function ScoreView({ syllables, result, native }: { syllables: Sy
   const [explanation, setExplanation] = useState<string | null>(null)
   const [explaining, setExplaining] = useState(false)
   const [corrected, setCorrected] = useState<Blob | null>(null)
-  const [correcting, setCorrecting] = useState(false)
+  const uid = useId()
   const tonesChecked = result.tones.some((t) => t !== null)
 
   // "Hear yourself say it right": my own recording with each tone re-pitched to what it should be.
   async function playCorrected() {
-    if (corrected) return void playBlob(corrected)
-    setCorrecting(true)
-    try {
-      const blob = await correctedRecording(result.wav, result.tones.map((t) => t?.span ?? null), syllables.map((s) => s.spoken))
-      if (blob) {
-        setCorrected(blob)
-        await playBlob(blob)
-      }
-    } finally {
-      setCorrecting(false)
-    }
+    const blob = corrected ?? (await correctedRecording(result.wav, result.tones.map((t) => t?.span ?? null), syllables.map((s) => s.spoken)))
+    if (!blob) return
+    setCorrected(blob)
+    await playBlob(blob, `${uid}-corrected`)
   }
   const openTips = open === null ? [] : tips(syllables[open].pinyin, syllables[open].spoken, result.syllables[open])
 
@@ -78,13 +72,9 @@ export default function ScoreView({ syllables, result, native }: { syllables: Sy
         })}
       </div>
       <div className="score-listen">
-        <button type="button" className="chip" onClick={() => void playBlob(result.wav)}>▶ You</button>
-        {tonesChecked && (
-          <button type="button" className="chip" onClick={() => void playCorrected()} disabled={correcting}>
-            {correcting ? 'Correcting…' : '▶ You, corrected'}
-          </button>
-        )}
-        <button type="button" className="chip" onClick={() => void speak(syllables.map((s) => s.hanzi).join(''), 0.85)}>▶ Native</button>
+        <PlayButton id={`${uid}-you`} label="You" start={() => playBlob(result.wav, `${uid}-you`)} />
+        {tonesChecked && <PlayButton id={`${uid}-corrected`} label="You, corrected" start={playCorrected} />}
+        <PlayButton id={`${uid}-native`} label="Native" start={() => speak(syllables.map((s) => s.hanzi).join(''), 0.85, `${uid}-native`)} />
       </div>
       {tonesChecked && (
         <ContourChart mine={result.tones.map((t) => t?.contour ?? null)} target={syllables.map((s) => templateContour(s.spoken))} native={native} />
