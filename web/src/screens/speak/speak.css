@@ -70,3 +70,8 @@
 .corrections li { display: flex; flex-direction: column; gap: 2px; }
 .correction-better { font-size: 20px; line-height: 1.9; }
 .new-word { display: flex; align-items: center; justify-content: space-between; gap: var(--space); font-size: 18px; }
+
+.shadow-text { font-size: 26px; line-height: 2; text-align: center; }
+.key-chip { cursor: default; }
+.key-chip.covered { background: var(--ok); border-color: var(--ok); color: var(--surface); }
+.key-chip.missed { border-color: var(--minor); color: var(--minor); }

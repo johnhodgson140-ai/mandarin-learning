@@ -71,6 +71,20 @@ export async function nativeContour(text: string): Promise<number[] | null> {
   return normalise(points, calibrate([samples], TARGET_RATE))
 }
 
+/** Seconds of actual speech in a recording (silence at the start and end ignored). */
+export async function voicedSeconds(wav: Blob): Promise<number> {
+  const span = voicedSpan(await wavSamples(wav))
+  return span ? (span[1] - span[0]) / TARGET_RATE : 0
+}
+
+/** Seconds the Azure voice takes to say `text` at `rate`; null without an Azure key. */
+export async function nativeSeconds(text: string, rate: number): Promise<number | null> {
+  const blob = await nativeAudio(text, rate).catch(() => null)
+  if (!blob) return null
+  const span = voicedSpan(await decodeTo16k(blob))
+  return span ? (span[1] - span[0]) / TARGET_RATE : null
+}
+
 export const toneLabel = (tone: Tone) => (tone === 5 ? 'neutral' : `tone ${tone}`)
 
 function voicedSpan(samples: Float32Array): [number, number] | null {
