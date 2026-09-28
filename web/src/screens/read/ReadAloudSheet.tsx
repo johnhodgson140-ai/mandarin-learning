@@ -56,7 +56,7 @@ export default function ReadAloudSheet({ tokens, storyId, paragraph, level, resu
         {canGrade && !result && !checking && (
           <>
             <p className="muted">Read the paragraph out loud, then tap again.</p>
-            <HoldToTalk mode="toggle" listen={!hasAzure} onRecorded={grade} onError={setError} />
+            <HoldToTalk listen={!hasAzure} onRecorded={grade} onError={setError} />
             {!hasAzure && <p className="muted small">Free check on this phone. An Azure key (Settings) adds finer sound scores and fluency.</p>}
           </>
         )}

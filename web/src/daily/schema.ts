@@ -10,6 +10,8 @@ export type DailyStory = {
   title_en: string
   /** Each paragraph split into words, punctuation as separate items. */
   paragraphs: string[][]
+  /** Natural English for each paragraph, same order. */
+  translations: string[]
   names: string[]
   new_words: string[]
   glossary: { word: string; english: string }[]
@@ -73,6 +75,8 @@ export function validateDaily(v: unknown): string[] {
         else if (!p.some((w) => HAN.test(w))) errors.push(`${at}.paragraphs[${j}] has no Chinese`)
         else if (p.some((w) => /[a-zāáǎàēéěèīíǐìōóǒòūúǔù]/i.test(w))) errors.push(`${at}.paragraphs[${j}] must not contain pinyin or Latin letters`)
       })
+    if (!Array.isArray(s.translations) || !Array.isArray(s.paragraphs) || s.translations.length !== s.paragraphs.length || !s.translations.every(isStr))
+      errors.push(`${at}.translations needs one English line per paragraph`)
     if (!Array.isArray(s.names) || !Array.isArray(s.new_words) || !Array.isArray(s.glossary)) errors.push(`${at} needs names, new_words, glossary arrays`)
     else if (!s.glossary.every((g) => isStr(g?.word) && isStr(g?.english))) errors.push(`${at}.glossary entries need word + english`)
   })

@@ -93,7 +93,7 @@ export default function Retell() {
               ▶ Listen {plays < 2 ? `(${plays + 1} of 2)` : 'again'}
             </button>
           </div>
-          {plays >= 1 && !checking && <HoldToTalk mode="toggle" listen={!getKeys().azure} onRecorded={(r) => void retold(r)} onError={setError} />}
+          {plays >= 1 && !checking && <HoldToTalk listen={!getKeys().azure} onRecorded={(r) => void retold(r)} onError={setError} />}
           {checking && <p className="muted" role="status">Listening back…</p>}
         </>
       )}

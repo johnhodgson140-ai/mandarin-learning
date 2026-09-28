@@ -9,8 +9,8 @@ import ReadAloudSheet from './ReadAloudSheet.tsx'
 import WordSheet from './WordSheet.tsx'
 import './read.css'
 
-type ReaderPrefs = { fontSize: number; toneColours: boolean }
-const DEFAULT_PREFS: ReaderPrefs = { fontSize: 24, toneColours: false }
+type ReaderPrefs = { fontSize: number; toneColours: boolean; english: boolean }
+const DEFAULT_PREFS: ReaderPrefs = { fontSize: 24, toneColours: false, english: true }
 const SENTENCE_END = /^[。！？!?…]+$/u
 const LONG_PRESS_MS = 500
 
@@ -81,6 +81,10 @@ function StoryView({ story, onChange }: { story: Story; onChange: (s: Story) => 
             <input type="checkbox" checked={prefs.toneColours} onChange={(e) => updatePrefs({ toneColours: e.target.checked })} />
             Tone colours on pinyin
           </label>
+          <label className="check">
+            <input type="checkbox" checked={prefs.english} onChange={(e) => updatePrefs({ english: e.target.checked })} />
+            English under each paragraph
+          </label>
         </div>
       )}
 
@@ -119,6 +123,7 @@ function StoryView({ story, onChange }: { story: Story; onChange: (s: Story) => 
                 </span>
               ),
             )}
+            {prefs.english && story.translations?.[p] && <span className="reader-en" lang="en">{story.translations[p]}</span>}
             <button type="button" className="read-aloud-btn" onClick={() => setReadingAloud(p)}>
               {statuses ? 'Read again' : 'Read aloud'}
             </button>

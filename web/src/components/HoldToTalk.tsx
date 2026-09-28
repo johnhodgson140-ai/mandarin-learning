@@ -6,8 +6,6 @@ import './HoldToTalk.css'
 type Props = {
   onRecorded: (rec: Recording) => void
   onError: (message: string) => void
-  /** 'hold' (default): hold to talk. 'toggle': tap to start, tap to stop (for reading a whole paragraph). */
-  mode?: 'hold' | 'toggle'
   /** Also run the browser's speech recogniser, for free pronunciation scoring. */
   listen?: boolean
 }
@@ -16,8 +14,8 @@ type Phase = 'idle' | 'starting' | 'recording'
 
 const MIN_SECONDS = 0.3
 
-/** One large talk button (hold, or tap to start/stop) with a single-bar level meter. */
-export default function HoldToTalk({ onRecorded, onError, mode = 'hold', listen = false }: Props) {
+/** One large talk button (tap to start, tap to stop) with a single-bar level meter. */
+export default function HoldToTalk({ onRecorded, onError, listen = false }: Props) {
   const recorder = useRef<Recorder | null>(null)
   const starting = useRef<Promise<boolean> | null>(null)
   const listening = useRef<Listening | null>(null)
@@ -67,17 +65,17 @@ export default function HoldToTalk({ onRecorded, onError, mode = 'hold', listen 
     setPhase('idle')
     if (!(await starting.current)) return // start failed; begin() already reported it
     if (!wasLive) {
-      // Released before the mic was live (always the case on the first permission prompt).
+      // Stopped before the mic was live (always the case on the first permission prompt).
       await rec.cancel()
       listening.current?.abort()
-      setHint('Microphone ready. Hold the button while you speak.')
+      setHint('Microphone ready. Tap to start speaking.')
       return
     }
     try {
       const result = await rec.stop()
       const heard = await listening.current?.stop()
       listening.current = null
-      if (result.seconds < MIN_SECONDS) setHint('Too short. Hold the button while you speak.')
+      if (result.seconds < MIN_SECONDS) setHint('Too short. Tap, speak, then tap again when finished.')
       else callbacks.current.onRecorded(heard?.length ? { ...result, heard } : result)
     } catch (err) {
       callbacks.current.onError(err instanceof Error ? err.message : String(err))
@@ -101,35 +99,7 @@ export default function HoldToTalk({ onRecorded, onError, mode = 'hold', listen 
     }
   }, [])
 
-  const isHoldKey = (e: React.KeyboardEvent) => e.key === ' ' || e.key === 'Enter'
-
-  const holdHandlers = {
-    onPointerDown: (e: React.PointerEvent<HTMLButtonElement>) => {
-      if (e.button !== 0) return
-      e.currentTarget.setPointerCapture(e.pointerId)
-      void begin()
-    },
-    onPointerUp: () => void end(),
-    onPointerCancel: () => void end(),
-    onKeyDown: (e: React.KeyboardEvent) => {
-      if (!isHoldKey(e)) return
-      e.preventDefault()
-      if (!e.repeat) void begin()
-    },
-    onKeyUp: (e: React.KeyboardEvent) => {
-      if (!isHoldKey(e)) return
-      e.preventDefault()
-      void end()
-    },
-  }
-  const toggleHandlers = { onClick: () => void (phase === 'idle' ? begin() : end()) }
-
-  const label =
-    phase === 'starting'
-      ? 'Starting mic…'
-      : mode === 'toggle'
-        ? phase === 'recording' ? 'Tap when finished' : 'Tap to start reading'
-        : phase === 'recording' ? 'Listening… release to stop' : 'Hold to talk'
+  const label = phase === 'starting' ? 'Starting mic…' : phase === 'recording' ? 'Tap when finished' : 'Tap to speak'
 
   return (
     <div className="hold">
@@ -137,8 +107,8 @@ export default function HoldToTalk({ onRecorded, onError, mode = 'hold', listen 
         type="button"
         className="hold-button"
         data-recording={phase === 'recording' || undefined}
-        {...(mode === 'toggle' ? toggleHandlers : holdHandlers)}
-        onBlur={mode === 'hold' ? () => void end() : undefined}
+        // A tap while the mic is still starting does nothing: it starts recording by itself.
+        onClick={() => void (phase === 'idle' ? begin() : phase === 'recording' ? end() : undefined)}
         onContextMenu={(e) => e.preventDefault()}
       >
         {label}

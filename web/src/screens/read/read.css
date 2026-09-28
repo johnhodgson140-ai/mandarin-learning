@@ -50,6 +50,14 @@
 
 .reader-text { font-size: var(--reader-size); line-height: 1.9; }
 .reader-text p { margin: 0 0 1.2em; }
+.reader-en {
+  display: block;
+  margin-top: 0.4em;
+  font-family: var(--font-ui);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
 .reader-text ruby { ruby-position: over; }
 .reader-text rt {
   font-family: var(--font-ui);

@@ -89,7 +89,7 @@ function Benchmark() {
       <h2 className="card-title">Monthly benchmark</h2>
       <p className="muted small">Read the same passage once a month and hear how far you've come.</p>
       <RubyText tokens={tokens} className="correction-better" />
-      {!thisMonth && !checking && <HoldToTalk mode="toggle" listen onRecorded={(r) => void recorded(r)} onError={setError} />}
+      {!thisMonth && !checking && <HoldToTalk listen onRecorded={(r) => void recorded(r)} onError={setError} />}
       {checking && <p className="muted" role="status">Scoring…</p>}
       {thisMonth && <p className="muted small">This month is recorded. Come back next month.</p>}
       {history.length > 0 && (
