@@ -73,6 +73,9 @@ Native reference contours for the overlay come from TTS audio run through the sa
   Each has a goal and success check. Turn loop: record → Azure STT → Claude (in character, level-limited vocab, max 2 sentences per turn)
   → Azure TTS. Hint button gives the English of what I could say. Toggle "hide text" (listening mode).
 - **Free Talk:** same loop, open topic.
+- Implementation: Claude's replies are structured JSON `{reply_zh, reply_en, hint_en, goal_achieved}` with the conversation sent as
+  history; STT is Azure unscripted pronunciation assessment (transcript + scores in one pass). Typing is offered as a fallback
+  (and is the only input without an Azure key). Sessions (last 30) are saved on the device and in Firebase when signed in.
 - **Retell:** listen to a 60–120 char story twice, retell it; Claude scores content coverage + grammar; Azure unscripted assessment for pronunciation.
 - **Session report** (missions/free talk/retell): goal achieved?, 3 corrections max (my sentence → better sentence, with pinyin), pronunciation summary, new words (+Anki).
 

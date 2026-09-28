@@ -60,3 +60,28 @@
   position: fixed; top: 0; left: 0; right: 0; height: 2px;
   background: var(--accent); transform-origin: left; opacity: 0.6; z-index: 5;
 }
+
+/* ---- Missions: message-style list, no bubbles ---- */
+.mission-bar { display: flex; align-items: center; justify-content: space-between; gap: var(--space); }
+.mission-toggles { display: flex; gap: var(--space); }
+.transcript { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: calc(var(--space) * 2.5); }
+.turn { display: flex; flex-direction: column; gap: 4px; }
+.turn-label { font-size: 13px; color: var(--text-muted); }
+.turn-me .turn-text { color: var(--text-muted); }
+.turn-text { font-size: 22px; line-height: 1.9; }
+.turn-text-btn { padding: 0; border: none; background: none; text-align: left; cursor: pointer; }
+.ruby-text ruby { ruby-position: over; }
+.ruby-text rt { font-family: var(--font-ui); font-size: 0.45em; color: var(--text-muted); padding: 0 0.12em; }
+.ruby-text rt.rt-hidden { opacity: 0; }
+.link-quiet { align-self: flex-start; min-height: 36px; padding: 0; border: none; background: none; color: var(--accent); font-size: 14px; cursor: pointer; }
+.hint { padding: calc(var(--space) * 1.5); border-left: 3px solid var(--accent); background: var(--surface); }
+.mission-input { display: flex; flex-direction: column; gap: var(--space); }
+.type-row { display: flex; gap: var(--space); }
+.type-input {
+  flex: 1; min-height: 48px; padding: 0 calc(var(--space) * 1.5); font-size: 18px;
+  border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); color: var(--text);
+}
+.corrections, .new-words { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: calc(var(--space) * 2); }
+.corrections li { display: flex; flex-direction: column; gap: 2px; }
+.correction-better { font-size: 20px; line-height: 1.9; }
+.new-word { display: flex; align-items: center; justify-content: space-between; gap: var(--space); font-size: 18px; }

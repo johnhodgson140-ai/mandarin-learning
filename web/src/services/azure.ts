@@ -7,9 +7,13 @@ import { getKeys } from './keys.ts'
 
 const TIMEOUT_MS = 30_000
 
-export type Assessment = { words: AzureWord[]; fluency: number }
+/** `text`: what Azure heard, with punctuation (useful when there is no reference text). */
+export type Assessment = { text: string; words: AzureWord[]; fluency: number }
 
-/** Grade a 16 kHz mono WAV against the text I was meant to say. */
+/**
+ * Grade a 16 kHz mono WAV against the text I was meant to say. With an empty reference it's unscripted:
+ * Azure transcribes what I said and still scores the pronunciation (missions, free talk).
+ */
 export async function assess(wav: Blob, referenceText: string): Promise<Assessment> {
   const { azure, azureRegion } = getKeys()
   if (!azure) throw new Error('Add your Azure Speech key in Settings first.')
@@ -29,6 +33,7 @@ export async function assess(wav: Blob, referenceText: string): Promise<Assessme
   ).applyTo(recognizer)
 
   const words: AzureWord[] = []
+  let text = ''
   let fluencyWeighted = 0
   let fluencyDuration = 0
 
@@ -43,7 +48,7 @@ export async function assess(wav: Blob, referenceText: string): Promise<Assessme
         () => recognizer.close(),
       )
       if (error) reject(error)
-      else resolve({ words, fluency: fluencyDuration ? fluencyWeighted / fluencyDuration : 0 })
+      else resolve({ text, words, fluency: fluencyDuration ? fluencyWeighted / fluencyDuration : 0 })
     }
     const timer = setTimeout(() => finish(new Error('Azure took too long to answer. Try again.')), TIMEOUT_MS)
 
@@ -53,6 +58,7 @@ export async function assess(wav: Blob, referenceText: string): Promise<Assessme
       const utterance = parseUtterance(event.result.properties.getProperty(sdk.PropertyId.SpeechServiceResponse_JsonResult))
       if (!utterance) return
       words.push(...utterance.words)
+      text += utterance.text
       const weight = utterance.durationMs || 1
       fluencyWeighted += utterance.fluency * weight
       fluencyDuration += weight

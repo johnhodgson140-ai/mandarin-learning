@@ -11,7 +11,8 @@ type JsonCall<T> = {
   model?: string
   /** Stable text (cached): instructions + word list. */
   system: string
-  prompt: string
+  /** One user message, or a whole conversation (user / assistant turns). */
+  prompt: string | Anthropic.MessageParam[]
   schema: Record<string, unknown>
   guard: (value: unknown) => value is T
   maxTokens?: number
@@ -31,7 +32,7 @@ export async function callJson<T>({ model = MODEL, system, prompt, schema, guard
       model,
       max_tokens: maxTokens,
       system: [{ type: 'text', text: system, cache_control: { type: 'ephemeral' } }],
-      messages: [{ role: 'user', content: prompt }],
+      messages: typeof prompt === 'string' ? [{ role: 'user', content: prompt }] : prompt,
       output_config: { format: { type: 'json_schema', schema } },
     })
     if (response.stop_reason === 'refusal') throw new Error('Claude declined this request. Try a different topic.')
