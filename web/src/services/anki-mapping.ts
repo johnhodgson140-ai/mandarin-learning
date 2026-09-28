@@ -1,5 +1,9 @@
 // Pure Anki → app mapping (no DOM, no network) so it can be unit-tested with node --test.
 
+import { toneOf } from '../chinese/tones.ts'
+
+export { toneOf }
+
 export const DECK = 'Mandarin Chinese — Ultimate Read & Speak'
 export const NOTE_TYPE = 'Mandarin Ultimate — Word/Phrase'
 export const FROM_APP_DECK = `${DECK}::05 From the App`
@@ -87,20 +91,6 @@ export function countMastery(words: Iterable<Pick<Word, 'mastery'>>): MasteryCou
   const counts: MasteryCounts = { new: 0, learning: 0, young: 0, mature: 0 }
   for (const w of words) counts[w.mastery]++
   return counts
-}
-
-const TONE_MARKS: Record<string, number> = {}
-for (const [tone, chars] of [[1, 'āēīōūǖĀĒĪŌŪǕ'], [2, 'áéíóúǘÁÉÍÓÚǗ'], [3, 'ǎěǐǒǔǚǍĚǏǑǓǙ'], [4, 'àèìòùǜÀÈÌÒÙǛ']] as const) {
-  for (const c of chars) TONE_MARKS[c] = tone
-}
-
-/** Tone 1–4 from the tone mark in a pinyin syllable; 5 (neutral) when there is none. */
-export function toneOf(syllable: string): 1 | 2 | 3 | 4 | 5 {
-  for (const c of syllable.normalize('NFC')) {
-    const tone = TONE_MARKS[c]
-    if (tone) return tone as 1 | 2 | 3 | 4
-  }
-  return 5
 }
 
 /** Pinyin for the Anki Pinyin field, coloured with the deck's `t1`…`t5` span classes. */

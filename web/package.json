@@ -11,6 +11,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.128.0",
+    "pinyin-pro": "^3.29.4",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },

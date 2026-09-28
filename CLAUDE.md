@@ -23,7 +23,8 @@ Everything runs in the browser, hosted free on GitHub Pages, so the phone works 
 - **App:** `web/` — Vite + React + TypeScript, `vite-plugin-pwa`. Plain CSS with CSS variables (tokens in `web/src/styles/tokens.css`). No UI kits, no Tailwind, no animation libraries.
 - **Hosting:** GitHub Pages at `https://johnhodgson140-ai.github.io/mandarin-learning/`, deployed by `.github/workflows/deploy.yml` on every push to `main`. Vite `base` must match the repo name.
 - **Data:** Firebase (from M1) so phone and Mac share words/progress, locked to me by Firebase Auth + security rules. Recordings stay on the device (IndexedDB).
-- **Chinese text:** `pinyin-pro` (segmentation + pinyin) + our own `web/src/chinese/sandhi.ts` (tone sandhi). **Never trust LLM-generated pinyin** — always regenerate it in the app.
+- **Chinese text:** words split by Claude when it writes a story, re-merged with my Anki words; pinyin from `pinyin-pro`
+  (overridden by Anki pinyin) + our own `web/src/chinese/sandhi.ts` (tone sandhi). **Never trust LLM-generated pinyin** — always regenerate it in the app.
 - **Speech:** Azure Speech (zh-CN) via Microsoft's browser SDK — Pronunciation Assessment, speech-to-text, neural TTS (`zh-CN-XiaoxiaoNeural` default). Free tier F0.
 - **LLM:** Anthropic API called directly from the browser. `claude-sonnet-5` for stories/missions/reports; `claude-haiku-4-5-20251001` for cheap tasks (word glosses, validation retries).
 - **API keys:** typed into Settings on each device and stored only on that device. **Never in the code** — nothing secret goes in the repo or the build.

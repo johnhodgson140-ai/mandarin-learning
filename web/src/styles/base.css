@@ -56,3 +56,30 @@ button { font: inherit; color: inherit; }
 .btn:disabled { opacity: 0.6; cursor: default; }
 .btn-primary { border: none; background: var(--accent); color: var(--on-accent); }
 .btn-secondary { border: 1px solid var(--line); background: transparent; color: var(--text); }
+
+/* Shared page header + form fields */
+.settings-header { display: flex; flex-direction: column; gap: calc(var(--space) / 2); }
+
+.back-link {
+  align-self: flex-start;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.field { display: flex; flex-direction: column; gap: calc(var(--space) / 2); font-size: 15px; }
+
+.field input {
+  font: inherit;
+  font-size: 16px; /* 16px stops iOS zooming into the field */
+  min-height: 44px;
+  padding: 0 calc(var(--space) * 1.5);
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) - 4px);
+  background: var(--bg);
+  color: var(--text);
+}
+
+.small { font-size: 14px; }
