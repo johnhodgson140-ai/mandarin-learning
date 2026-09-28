@@ -1,6 +1,6 @@
 // Who is practising: pick a named voice (each has its own calibration), add one, and in Settings rename/delete.
 import { useState } from 'react'
-import { activeVoice, addVoice, deleteVoice, listVoices, renameVoice, setActiveVoice, voiceStatus } from '../services/voices.ts'
+import { activeVoice, addVoice, deleteVoice, listVoices, renameVoice, resetVoice, setActiveVoice, voiceStatus } from '../services/voices.ts'
 
 export default function VoicePicker({ manage = false, onChange }: { manage?: boolean; onChange?: () => void }) {
   const [voices, setVoices] = useState(listVoices)
@@ -61,7 +61,21 @@ export default function VoicePicker({ manage = false, onChange }: { manage?: boo
             </form>
           ) : (
             <div className="chips">
-              <a href="#speak/calibrate" className="chip">Calibrate {current.name}</a>
+              <a href="#speak/calibrate" className="chip">{current.profile ? 'Recalibrate' : 'Calibrate'} {current.name}</a>
+              {(current.profile || current.pitches.length > 0) && (
+                <button
+                  type="button"
+                  className="chip"
+                  onClick={() => {
+                    if (confirm(`Reset ${current.name}'s voice? The calibration and everything learned from recordings is forgotten.`)) {
+                      resetVoice(current.id)
+                      refresh()
+                    }
+                  }}
+                >
+                  Reset
+                </button>
+              )}
               <button type="button" className="chip" onClick={() => { setName(current.name); setRenaming(current.id) }}>Rename</button>
               {voices.length > 1 && (
                 <button

@@ -21,6 +21,7 @@ export default function Calibrate() {
   const [heard, setHeard] = useState<Tone[] | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [voiceName, setVoiceName] = useState(() => activeVoice().name)
+  const [wasCalibrated, setWasCalibrated] = useState(() => activeVoice().profile !== null)
   const current = SYLLABLES[samples.length]
 
   async function recorded(rec: Recording) {
@@ -44,12 +45,13 @@ export default function Calibrate() {
     <>
       <header className="settings-header">
         <a href="#speak" className="back-link">‹ Speak</a>
-        <h1>Calibrate a voice</h1>
+        <h1>{wasCalibrated ? `Recalibrate ${voiceName}` : `Calibrate ${voiceName}`}</h1>
       </header>
       {samples.length === 0 && !heard && (
         <>
           <p className="muted small">Whose voice?</p>
-          <VoicePicker onChange={() => setVoiceName(activeVoice().name)} />
+          <VoicePicker onChange={() => { setVoiceName(activeVoice().name); setWasCalibrated(activeVoice().profile !== null) }} />
+          {wasCalibrated && <p className="muted small">The current calibration stays until all four are recorded.</p>}
         </>
       )}
       {!heard && current && (

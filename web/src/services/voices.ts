@@ -62,6 +62,9 @@ export function addVoice(name: string): Voice {
   return voice
 }
 
+/** Forget a voice's calibration and learned range, to start again from scratch. */
+export const resetVoice = (id: string) => updateVoice(id, { profile: null, pitches: [] })
+
 export const renameVoice = (id: string, name: string) => updateVoice(id, { name: name.trim() || 'Voice' })
 
 /** Delete a voice (never the last one); if it was active, switch to the first remaining. */
