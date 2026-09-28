@@ -24,6 +24,8 @@ export type GuidedStep = {
   prompt_en: string
   /** 2–3 natural answers; I'm scored against the closest one. */
   answers_zh: string[]
+  /** English for each answer, same order. */
+  answers_en: string[]
 }
 
 export type GuidedMission = {
@@ -91,6 +93,8 @@ export function validateDaily(v: unknown): string[] {
         if (![st.partner_zh, st.partner_en, st.prompt_en].every(isStr)) errors.push(`${at}.steps[${j}] needs partner_zh, partner_en, prompt_en`)
         if (!Array.isArray(st.answers_zh) || st.answers_zh.length < 1 || !st.answers_zh.every((a) => isStr(a) && HAN.test(a)))
           errors.push(`${at}.steps[${j}].answers_zh needs 1–3 Chinese answers`)
+        else if (!Array.isArray(st.answers_en) || st.answers_en.length !== st.answers_zh.length || !st.answers_en.every(isStr))
+          errors.push(`${at}.steps[${j}].answers_en needs one English line per answer`)
       })
   })
   for (const item of d.plan?.items ?? []) {

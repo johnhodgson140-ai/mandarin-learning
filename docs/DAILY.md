@@ -25,7 +25,7 @@ the optional Claude API key.
    - `missions` (`missions_per_day`, default 2): ids `YYYY-MM-DD-m1`…, a realistic scene (restaurant, taxi, hotel,
      shopping, bargaining, directions, Xianyu seller, football chat, travel, work…), `role` in Chinese (e.g. 服务员),
      an English `goal`, 3–6 `steps` each with `partner_zh`, `partner_en`, `prompt_en` (what the learner should say,
-     in English) and 2–3 short, natural `answers_zh`, then `closing_zh` / `closing_en`.
+     in English), 2–3 short, natural `answers_zh` and their English in `answers_en` (same order), then `closing_zh` / `closing_en`.
 5. Rules for all Chinese text:
    - Natural, idiomatic Mandarin a native speaker would say. Simplified characters, full-width punctuation.
    - **Never write pinyin** (the app generates it). No Latin letters inside paragraphs.

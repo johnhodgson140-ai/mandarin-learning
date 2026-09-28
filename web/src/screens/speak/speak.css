@@ -75,3 +75,4 @@
 .key-chip { cursor: default; }
 .key-chip.covered { background: var(--ok); border-color: var(--ok); color: var(--surface); }
 .key-chip.missed { border-color: var(--minor); color: var(--minor); }
+.answer-en { display: block; }

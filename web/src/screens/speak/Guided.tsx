@@ -52,7 +52,7 @@ export default function Guided({ id }: { id: string }) {
 }
 
 function PartnerLine({ zh, en, role, hideText, level }: { zh: string; en: string; role: string; hideText: boolean; level: number }) {
-  const [english, setEnglish] = useState(false)
+  const [english, setEnglish] = useState(true)
   const tokens = useMemo(() => tokensOf(zh), [zh])
   useEffect(() => void speak(zh, rateForLevel(level)), [zh, level])
   return (
@@ -72,9 +72,12 @@ function PartnerLine({ zh, en, role, hideText, level }: { zh: string; en: string
 function StepView({ mission, step, hideText, onNext }: { mission: GuidedMission; step: GuidedStep; hideText: boolean; onNext: (score: number) => void }) {
   const [showAnswers, setShowAnswers] = useState(false)
   const [checking, setChecking] = useState(false)
-  const [result, setResult] = useState<{ answer: string; syllables: Syllable[]; score: SpeechScore } | null>(null)
+  const [result, setResult] = useState<{ answer: string; english: string; syllables: Syllable[]; score: SpeechScore } | null>(null)
   const [error, setError] = useState<string | null>(null)
-  const answers = useMemo(() => step.answers_zh.map((a) => ({ answer: a, syllables: tokensOf(a).flatMap((t) => t.syllables) })), [step])
+  const answers = useMemo(
+    () => step.answers_zh.map((a, i) => ({ answer: a, english: step.answers_en?.[i] ?? '', syllables: tokensOf(a).flatMap((t) => t.syllables) })),
+    [step],
+  )
 
   async function grade(rec: Recording) {
     setChecking(true)
@@ -114,13 +117,16 @@ function StepView({ mission, step, hideText, onNext }: { mission: GuidedMission;
         {showAnswers && !result && (
           <ul className="corrections">
             {answers.map((a) => (
-              <li key={a.answer}><RubyText tokens={tokensOf(a.answer)} className="correction-better" /></li>
+              <li key={a.answer}>
+                <RubyText tokens={tokensOf(a.answer)} className="correction-better" />
+                {a.english && <span className="muted small answer-en">{a.english}</span>}
+              </li>
             ))}
           </ul>
         )}
         {result && (
           <>
-            <p className="muted small">Closest answer:</p>
+            <p className="muted small">Closest answer{result.english ? `: “${result.english}”` : ':'}</p>
             <ScoreView syllables={result.syllables} result={result.score} />
             <div className="sheet-actions">
               <button type="button" className="btn btn-secondary" onClick={() => setResult(null)}>Again</button>
