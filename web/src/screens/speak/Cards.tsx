@@ -1,7 +1,8 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import type { Recording } from '../../audio/recorder.ts'
 import { pickSession, type Card } from '../../cards/srs.ts'
 import { buildParagraph } from '../../chinese/tokens.ts'
+import { hskLabel, loadHsk, type HskInfo } from '../../services/hsk.ts'
 import HoldToTalk from '../../components/HoldToTalk.tsx'
 import ScoreView from '../../components/ScoreView.tsx'
 import { canRecognise } from '../../scoring/recognize.ts'
@@ -80,6 +81,14 @@ export default function Cards() {
 
 function CardView({ card, mode, onNext }: { card: Card; mode: Mode; onNext: (score: number | null) => void }) {
   const [token] = useMemo(() => buildParagraph([card.hanzi], getLexicon()), [card.hanzi])
+  const [hsk, setHsk] = useState<HskInfo | null>(null)
+  useEffect(() => {
+    let cancelled = false
+    void loadHsk().then((d) => !cancelled && setHsk(d.get(card.hanzi) ?? null))
+    return () => {
+      cancelled = true
+    }
+  }, [card.hanzi])
   const [checking, setChecking] = useState(false)
   const [result, setResult] = useState<SpeechScore | null>(null)
   const [error, setError] = useState<string | null>(null)
@@ -110,7 +119,10 @@ function CardView({ card, mode, onNext }: { card: Card; mode: Mode; onNext: (sco
           </p>
         )}
         {revealed && card.english && <p className="muted">{card.english}</p>}
-        <span className="muted small">{card.source === 'anki' ? 'Anki' : card.source === 'app' ? 'Starter words' : card.source === 'story' ? 'From a story' : 'From a mission'}</span>
+        <span className="muted small">
+          {card.source === 'anki' ? 'Anki' : card.source === 'app' ? 'Starter words' : card.source === 'story' ? 'From a story' : 'From a mission'}
+          {hsk && ` · ${hskLabel(hsk.level)}`}
+        </span>
         {(mode === 'read' || result) && (
           <button type="button" className="btn btn-secondary" onClick={() => speak(card.hanzi, rate)}>▶ Hear it</button>
         )}

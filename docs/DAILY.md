@@ -20,7 +20,9 @@ the optional Claude API key.
      Level from `config.level`: level 1 ≈ 80–120 characters, sentences under 10 characters, at most 3 new words.
      At least 90% of words must come from `known`; if `known` is empty (deck not studied yet), from `deck` instead.
      `translations`: natural English for each paragraph (one string per paragraph, same order).
-     Use a few `learning` words on purpose. Missions' answers should use deck words and phrases too
+     Use a few `learning` words on purpose. New words: prefer the most common (lowest frequency rank) words at HSK level
+     `config.level` in `web/public/hsk.json` (`words[w] = [hsk level, frequency rank, meaning]`) that aren't in
+     `known`/`deck`. Missions' answers should use deck words and phrases too
      (e.g. 买单, 打包, 太贵了, 我要这个 are in the deck).
    - `missions` (`missions_per_day`, default 2): ids `YYYY-MM-DD-m1`…, a realistic scene (restaurant, taxi, hotel,
      shopping, bargaining, directions, Xianyu seller, football chat, travel, work…), `role` in Chinese (e.g. 服务员),

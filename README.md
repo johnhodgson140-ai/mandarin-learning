@@ -89,3 +89,8 @@ ml/                  offline tone-model training, only if M4 needs it
 docs/                SPEC, DESIGN, ROADMAP
 .github/workflows/   build + deploy to GitHub Pages
 ```
+
+## Credits
+- HSK word levels and frequency: [complete-hsk-vocabulary](https://github.com/drkameleon/complete-hsk-vocabulary) (MIT).
+  Dictionary meanings: [CC-CEDICT](https://www.mdbg.net/chinese/dictionary?page=cc-cedict) (CC BY-SA 4.0).
+  Rebuilt into `web/public/hsk.json` by `scripts/build_hsk.py`.
