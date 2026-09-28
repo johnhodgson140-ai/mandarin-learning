@@ -7,7 +7,7 @@ import { getLexicon } from '../../services/words.ts'
 import './read.css'
 
 export default function NewStory() {
-  const [level, setLevel] = useState(() => load('level', 1))
+  const [level, setLevel] = useState(() => load('storyLevel', load('level', 1)))
   const [topic, setTopic] = useState<Topic>(() => load<Topic>('topic', 'football'))
   const [length, setLength] = useState<StoryLength>('short')
   const [busy, setBusy] = useState(false)
@@ -18,7 +18,7 @@ export default function NewStory() {
   async function write() {
     setBusy(true)
     setError(null)
-    save('level', level)
+    save('storyLevel', level)
     save('topic', topic)
     try {
       const story = await generateStory(level, topic, length)

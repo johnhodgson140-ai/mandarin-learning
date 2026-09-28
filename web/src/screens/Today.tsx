@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import type { DailyContent, PlanItem } from '../daily/schema.ts'
 import { cachedDaily, loadDaily } from '../services/daily.ts'
+import { summary } from '../services/progress.ts'
 import './Today.css'
 
 const LINKS: Record<PlanItem['kind'], (ref?: string) => string> = {
@@ -13,9 +14,11 @@ const LINKS: Record<PlanItem['kind'], (ref?: string) => string> = {
 
 export default function Today() {
   const [daily, setDaily] = useState<DailyContent | null>(cachedDaily)
+  const [stats, setStats] = useState<Awaited<ReturnType<typeof summary>> | null>(null)
 
   useEffect(() => {
     loadDaily().then(setDaily, () => {})
+    summary().then(setStats, () => {})
   }, [])
 
   return (
@@ -30,6 +33,11 @@ export default function Today() {
           </svg>
         </a>
       </header>
+      {stats && (
+        <p className="today-stats">
+          Level {stats.level} · {stats.xp} XP · {stats.streak}-day streak
+        </p>
+      )}
       {!daily && <p className="muted">Loading today's plan…</p>}
       {daily && (
         <>

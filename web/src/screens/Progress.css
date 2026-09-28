@@ -1,0 +1,22 @@
+.stat-tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space); margin: 0; }
+.stat-tiles > div {
+  display: flex; flex-direction: column; gap: 2px; padding: calc(var(--space) * 2);
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+}
+.stat-tiles dt { font-size: 13px; color: var(--text-muted); }
+.stat-tiles dd { margin: 0; font-size: 28px; font-weight: 600; font-variant-numeric: tabular-nums; }
+
+.heatmap { margin: 0; display: flex; flex-direction: column; gap: var(--space); }
+.heatmap-grid { display: flex; flex-direction: column; gap: 2px; }
+.heatmap-row { display: grid; grid-template-columns: 64px repeat(5, 1fr); gap: 2px; }
+.heatmap-corner { font-size: 11px; color: var(--text-muted); align-self: end; }
+.heatmap-head { display: flex; align-items: center; justify-content: center; font-size: 14px; color: var(--text-muted); }
+.heatmap-cell {
+  min-height: 44px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg);
+  color: var(--text-muted); font-size: 14px; font-variant-numeric: tabular-nums; cursor: pointer;
+}
+.heatmap-cell[aria-pressed='true'] { outline: 2px solid var(--text); outline-offset: 1px; }
+
+.bench-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+.bench-list li { display: flex; align-items: center; justify-content: space-between; gap: var(--space); }
+.bench-score { font-variant-numeric: tabular-nums; font-weight: 600; }

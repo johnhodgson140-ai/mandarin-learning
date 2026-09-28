@@ -9,7 +9,8 @@ import { assess } from '../../services/azure.ts'
 import { currentUser, isConfigured } from '../../services/firebase.ts'
 import { getKeys } from '../../services/keys.ts'
 import { finishSession, sendTurn, startSession } from '../../services/missions.ts'
-import { load } from '../../services/storage.ts'
+import { load, save } from '../../services/storage.ts'
+import { passesBoss } from '../../progress/logic.ts'
 import { rateForLevel, speak } from '../../services/tts.ts'
 import { getLexicon } from '../../services/words.ts'
 
@@ -24,7 +25,7 @@ export default function Mission({ scenarioId }: { scenarioId: string }) {
   const [showHint, setShowHint] = useState(false)
   const [typing, setTyping] = useState(false)
   const [draft, setDraft] = useState('')
-  const [level] = useState(() => load('level', 1))
+  const [level] = useState(() => load('missionLevel', load('level', 1)))
   const bottom = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -199,10 +200,22 @@ function ReportView({ session }: { session: Session }) {
   const report = session.report!
   const pron = pronunciationSummary(session.turns)
   const lexicon = getLexicon()
+  const [levelUp] = useState(() => {
+    const mine = load('level', 1)
+    if (!passesBoss(session.level, mine, report.goal_achieved, pron?.accuracy ?? null)) return null
+    save('level', session.level)
+    return session.level
+  })
   return (
     <>
       <a href={scenario.id === 'free' ? '#speak' : '#speak/missions'} className="back-link">‹ {scenario.id === 'free' ? 'Speak' : 'Missions'}</a>
       <h1>{scenario.title}: report</h1>
+      {levelUp && (
+        <section className="card level-up">
+          <h2 className="card-title">Level {levelUp}</h2>
+          <p>You passed a mission at the next level with clear pronunciation. You're now level {levelUp}.</p>
+        </section>
+      )}
       <section className="card">
         {scenario.goal && <p>{report.goal_achieved ? 'Goal achieved.' : 'Goal not reached this time.'}</p>}
         <p className="muted">{report.summary_en}</p>

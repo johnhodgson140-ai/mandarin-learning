@@ -16,6 +16,8 @@ export type Attempt = {
   paragraph?: number
   scores: Scores
   syllables: AttemptSyllable[]
+  /** Seconds I spoke (for minutes spoken and XP). */
+  seconds?: number
   createdAt: number
 }
 
@@ -40,5 +42,6 @@ export async function recordingFor(id: string): Promise<Blob | null> {
 /** Delete recordings older than 30 days (docs: recordings are kept for 30 days). */
 export async function pruneRecordings(): Promise<void> {
   const cutoff = Date.now() - KEEP_RECORDINGS_MS
-  for (const r of await idbAll<Recording>('recordings')) if (r.createdAt < cutoff) await idbDelete('recordings', r.id)
+  // Monthly benchmark recordings are kept for good (they're compared side by side).
+  for (const r of await idbAll<Recording>('recordings')) if (r.createdAt < cutoff && !r.id.startsWith('bench-')) await idbDelete('recordings', r.id)
 }
