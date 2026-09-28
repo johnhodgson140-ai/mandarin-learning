@@ -1,0 +1,36 @@
+.settings-header { display: flex; flex-direction: column; gap: calc(var(--space) / 2); }
+
+.back-link {
+  align-self: flex-start;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.field { display: flex; flex-direction: column; gap: calc(var(--space) / 2); font-size: 15px; }
+
+.field input {
+  font: inherit;
+  font-size: 16px; /* 16px stops iOS zooming into the field */
+  min-height: 44px;
+  padding: 0 calc(var(--space) * 1.5);
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) - 4px);
+  background: var(--bg);
+  color: var(--text);
+}
+
+.counts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space);
+  margin: 0;
+}
+
+.counts div { display: flex; flex-direction: column; }
+.counts dt { font-size: 13px; color: var(--text-muted); }
+.counts dd { margin: 0; font-size: 1.375rem; font-variant-numeric: tabular-nums; }
+
+.small { font-size: 14px; }
