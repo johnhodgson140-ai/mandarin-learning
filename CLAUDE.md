@@ -26,7 +26,10 @@ Everything runs in the browser, hosted free on GitHub Pages, so the phone works 
 - **Chinese text:** words split by Claude when it writes a story, re-merged with my Anki words; pinyin from `pinyin-pro`
   (overridden by Anki pinyin) + our own `web/src/chinese/sandhi.ts` (tone sandhi). **Never trust LLM-generated pinyin** — always regenerate it in the app.
 - **Speech:** Azure Speech (zh-CN) via Microsoft's browser SDK — Pronunciation Assessment, speech-to-text, neural TTS (`zh-CN-XiaoxiaoNeural` default). Free tier F0.
-- **LLM:** Anthropic API called directly from the browser. `claude-sonnet-5` for stories/missions/reports; `claude-haiku-4-5-20251001` for cheap tasks (word glosses, validation retries).
+- **Daily content (no key):** a scheduled Claude Code session writes `web/public/daily/latest.json` every morning
+  (plan, stories, guided missions): see `docs/DAILY.md`. The app works without any API key.
+- **LLM (optional, live features):** Anthropic API called directly from the browser, for live missions, new stories on demand
+  and detailed explanations. `claude-sonnet-5` for stories/missions/reports; `claude-haiku-4-5-20251001` for cheap tasks (word glosses, validation retries).
 - **API keys:** typed into Settings on each device and stored only on that device. **Never in the code** — nothing secret goes in the repo or the build.
 - **Anki:** AnkiConnect add-on on desktop Anki, `http://localhost:8765`. Sync runs from the app in a browser on my Mac while Anki is open; the phone uses the last synced words.
 

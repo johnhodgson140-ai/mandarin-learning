@@ -4,7 +4,7 @@ import { STARTER_CARDS } from '../cards/starter.ts'
 import type { Session } from '../missions/logic.ts'
 import { currentUser, dbPut, isConfigured } from './firebase.ts'
 import { load, save } from './storage.ts'
-import { listStories } from './stories.ts'
+import { listStories } from './library.ts'
 import { getLexicon } from './words.ts'
 
 export function allCards(): Card[] {

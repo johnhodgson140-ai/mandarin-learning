@@ -3,13 +3,9 @@
 import storyPrompt from '../prompts/story.md?raw'
 import { buildParagraph, knownRatio, type Lexicon, type Token } from '../chinese/tokens.ts'
 import { callJson } from './claude.ts'
-import { currentUser, dbGet, dbPut, isConfigured } from './firebase.ts'
-import { load, save } from './storage.ts'
+import { saveStory, type Story, type StoryLength, type Topic } from './library.ts'
 import { getLexicon, knownWords, targetWords } from './words.ts'
 
-export const TOPICS = ['football', 'archive fashion', 'anime', 'travel', 'daily life', 'business & finance'] as const
-export type Topic = (typeof TOPICS)[number]
-export type StoryLength = 'short' | 'medium' | 'long'
 export const LENGTHS: Record<StoryLength, { label: string; chars: string }> = {
   short: { label: 'Short', chars: '80–120' },
   medium: { label: 'Medium', chars: '200–300' },
@@ -23,25 +19,6 @@ export const LEVEL_RULES: Record<number, string> = {
   4: 'HSK 4 grammar, sentences under 22 characters, at most 6 new words.',
   5: 'HSK 5 grammar, sentences under 28 characters, at most 7 new words.',
   6: 'HSK 6 grammar, natural sentence length, at most 8 new words.',
-}
-
-export type Story = {
-  id: string
-  createdAt: number
-  level: number
-  topic: Topic
-  length: StoryLength
-  titleZh: string
-  titleEn: string
-  /** Each paragraph as Claude's word split. Pinyin is never stored: it's rebuilt from the text. */
-  paragraphs: string[][]
-  names: string[]
-  newWords: string[]
-  glossary: Record<string, string>
-  /** Known-word share when generated; null if Anki wasn't synced yet. */
-  knownRatio: number | null
-  readAt: number | null
-  readSeconds: number
 }
 
 type StoryJson = {
@@ -171,45 +148,6 @@ function unknownWords(json: StoryJson, lexicon: Lexicon): string[] {
   return [...new Set(words.map((t) => t.text))].slice(0, 20)
 }
 
-// ---- Library ----
 
-export function listStories(): Story[] {
-  return load<Story[]>('stories', []).sort((a, b) => b.createdAt - a.createdAt)
-}
-
-export function getStory(id: string): Story | undefined {
-  return listStories().find((s) => s.id === id)
-}
-
-export async function saveStory(story: Story): Promise<void> {
-  save('stories', [story, ...listStories().filter((s) => s.id !== story.id)])
-  if (isConfigured && currentUser()) await dbPut(`stories/${story.id}`, story).catch(() => {})
-}
-
-/** Pull stories saved on my other device (Firebase), keeping the newer read progress of each. */
-export async function syncStories(): Promise<Story[]> {
-  if (!isConfigured || !currentUser()) return listStories()
-  const remote = (await dbGet<Record<string, Story>>('stories').catch(() => null)) ?? {}
-  const merged = new Map(listStories().map((s) => [s.id, s]))
-  for (const raw of Object.values(remote)) {
-    const s = normalize(raw)
-    const local = merged.get(s.id)
-    if (!local || s.readSeconds > local.readSeconds || (s.readAt && !local.readAt)) merged.set(s.id, s)
-  }
-  save('stories', [...merged.values()])
-  return listStories()
-}
-
-/** Firebase drops empty arrays and objects: put them back so a synced story is always complete. */
-function normalize(s: Story): Story {
-  return {
-    ...s,
-    paragraphs: s.paragraphs ?? [],
-    names: s.names ?? [],
-    newWords: s.newWords ?? [],
-    glossary: s.glossary ?? {},
-    knownRatio: s.knownRatio ?? null,
-    readAt: s.readAt ?? null,
-    readSeconds: s.readSeconds ?? 0,
-  }
-}
+export { TOPICS, getStory, listStories, saveStory, syncStories } from './library.ts'
+export type { Story, StoryLength, Topic } from './library.ts'

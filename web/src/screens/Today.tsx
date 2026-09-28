@@ -1,6 +1,23 @@
+import { useEffect, useState } from 'react'
+import type { DailyContent, PlanItem } from '../daily/schema.ts'
+import { cachedDaily, loadDaily } from '../services/daily.ts'
 import './Today.css'
 
+const LINKS: Record<PlanItem['kind'], (ref?: string) => string> = {
+  cards: () => '#speak/cards',
+  dojo: () => '#speak/dojo',
+  story: (ref) => `#read/${ref}`,
+  mission: (ref) => `#speak/guided/${ref}`,
+  free: () => '#speak/free',
+}
+
 export default function Today() {
+  const [daily, setDaily] = useState<DailyContent | null>(cachedDaily)
+
+  useEffect(() => {
+    loadDaily().then(setDaily, () => {})
+  }, [])
+
   return (
     <>
       <header className="today-header">
@@ -13,7 +30,23 @@ export default function Today() {
           </svg>
         </a>
       </header>
-      <p className="muted">Your daily plan will appear here once Anki sync is set up.</p>
+      {!daily && <p className="muted">Loading today's plan…</p>}
+      {daily && (
+        <>
+          <p className="muted">{daily.plan.focus_en}</p>
+          <ol className="plan">
+            {daily.plan.items.map((item, i) => (
+              <li key={i}>
+                <a href={LINKS[item.kind](item.ref)} className="hub-row plan-row">
+                  <span className="plan-step">{i + 1}</span>
+                  <span className="hub-title">{item.title_en}</span>
+                </a>
+              </li>
+            ))}
+          </ol>
+          <a href={LINKS[daily.plan.items[0].kind](daily.plan.items[0].ref)} className="btn btn-primary link-btn start-btn">Start</a>
+        </>
+      )}
     </>
   )
 }
