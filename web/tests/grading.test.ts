@@ -21,6 +21,7 @@ test('statusFor: tone model merge', () => {
   assert.equal(statusFor(95, 3, { tone: 2, confidence: 0.4 }), 'minor') // unsure wrong tone
   assert.equal(statusFor(95, 3, { tone: 3, confidence: 0.4 }), 'minor') // unsure right tone
   assert.equal(statusFor(50, 3, { tone: 3, confidence: 0.9 }), 'wrong') // accuracy still rules
+  assert.equal(statusFor(95, 5, { tone: 2, confidence: 0.9 }), 'ok') // neutral tones: accuracy only
 })
 
 test('alignToReference maps words to characters, per syllable when available', () => {

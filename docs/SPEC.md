@@ -51,6 +51,11 @@ Everything the app shows or says is built from **words I already know in Anki**.
 5. Log every syllable result to `attempt_syllables` (feeds tone-pair heatmap + weak-spot selection).
 
 ## 6. Tone model interface (built in M4, runs in the browser)
+Implementation (`web/src/tone`): YIN pitch tracking (10 ms hops, 70–500 Hz) → semitones → contour scaled to my calibrated range
+(5th–95th percentile of my voiced pitch, never narrower than 6 semitones) → compared with textbook tone shapes (Chao: 55, 35,
+214 and half-third 211, 51, short mid for neutral) → probabilities. Neutral-tone syllables are judged on Azure accuracy only.
+Calibration: 妈 麻 马 骂. Native contours come from the Azure voice (none without an Azure key); a dashed target shape is
+always shown. Tone Dojo works without Azure (tone model only, voiced part split evenly between syllables).
 ```ts
 // web/src/services/tone.ts
 type SpeakerProfile = { minSemitone: number; maxSemitone: number }          // my pitch range

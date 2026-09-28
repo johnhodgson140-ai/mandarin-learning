@@ -1,19 +1,12 @@
 // Every graded attempt, syllable by syllable (feeds the tone-pair heatmap and weak-spot drills later).
 // Stored on the device (IndexedDB) and in Firebase when signed in; recordings stay on the device for 30 days.
 
-import type { Tone } from '../chinese/tones.ts'
-import type { Scores, Status } from '../grading/grade.ts'
+import type { AttemptSyllable, Scores } from '../grading/grade.ts'
 import { currentUser, dbPut, isConfigured } from './firebase.ts'
 import { idbAll, idbDelete, idbGet, idbPut } from './idb.ts'
 
-export type AttemptSyllable = {
-  hanzi: string
-  spokenTone: Tone
-  prevTone: Tone | null
-  predictedTone: Tone | null
-  accuracy: number | null
-  status: Status
-}
+export type { AttemptSyllable }
+
 
 export type Attempt = {
   id: string
