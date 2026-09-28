@@ -4,6 +4,7 @@ import { MASTERIES } from '../services/anki-mapping.ts'
 import { currentUser, isConfigured, signIn, signOut } from '../services/firebase.ts'
 import { getKeys, setKeys, type Keys } from '../services/keys.ts'
 import { load, save } from '../services/storage.ts'
+import { getTheme, setTheme, type Theme } from '../services/theme.ts'
 import './Settings.css'
 
 export default function Settings() {
@@ -18,6 +19,7 @@ export default function Settings() {
       <Account user={user} onChange={() => setUser(currentUser())} />
       {user && <Anki />}
       <MyLevel />
+      <Appearance />
       <ApiKeys />
     </>
   )
@@ -213,6 +215,21 @@ function MyLevel() {
       <div className="chips">
         {[1, 2, 3, 4, 5, 6].map((n) => (
           <button key={n} type="button" className="chip" aria-pressed={level === n} onClick={() => { setLevel(n); save('level', n) }}>{n}</button>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+function Appearance() {
+  const [theme, set] = useState<Theme>(getTheme)
+  const options: [Theme, string][] = [['auto', 'Auto'], ['light', 'Light'], ['dark', 'Dark']]
+  return (
+    <section className="card">
+      <h2 className="card-title">Appearance</h2>
+      <div className="chips">
+        {options.map(([value, label]) => (
+          <button key={value} type="button" className="chip" aria-pressed={theme === value} onClick={() => { set(value); setTheme(value) }}>{label}</button>
         ))}
       </div>
     </section>

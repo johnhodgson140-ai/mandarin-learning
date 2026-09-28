@@ -23,3 +23,8 @@
 }
 
 .screen-reading { padding-bottom: calc(var(--space) * 6 + env(safe-area-inset-bottom)); }
+
+@media (min-width: 900px) {
+  /* Keep the text clear of the word sidebar while it's open. */
+  .app:has(.word-sheet) .screen { padding-right: 336px; max-width: calc(34rem + 336px); }
+}
