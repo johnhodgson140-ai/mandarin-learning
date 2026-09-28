@@ -11,7 +11,7 @@ import { log } from '../debug/log.ts'
 import { bestAlternative, combine, soundScore, type SyllableScore } from './score.ts'
 
 /** `soundsChecked`: false when neither Azure nor the browser recogniser could check the sounds (tone only). */
-export type SpeechScore = { syllables: SyllableScore[]; overall: number; tones: (SyllableTone | null)[]; soundsChecked: boolean }
+export type SpeechScore = { syllables: SyllableScore[]; overall: number; tones: (SyllableTone | null)[]; soundsChecked: boolean; wav: Blob }
 
 /** Tone-less pinyin of each character the recogniser wrote. */
 function heardSyllables(text: string): string[] {
@@ -35,5 +35,5 @@ export async function scoreSpeech(syllables: Syllable[], rec: Recording, azure: 
   const counted = scored.filter((s) => s.checked)
   const overall = counted.length ? Math.round(counted.reduce((sum, s) => sum + s.score, 0) / counted.length) : 0
   log('scored', { syllables: syllables.length, overall, tones: tones ? tones.filter(Boolean).length : 0, sounds: azure ? 'azure' : heard ? 'recogniser' : 'none' })
-  return { syllables: scored, overall, tones: tones ?? syllables.map(() => null), soundsChecked: azure !== null || heard !== null }
+  return { syllables: scored, overall, tones: tones ?? syllables.map(() => null), soundsChecked: azure !== null || heard !== null, wav: rec.wav }
 }

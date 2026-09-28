@@ -1,11 +1,13 @@
 // Tone model adapter (docs/SPEC.md §6): my speaker profile + tone guesses per syllable.
 // Until I've calibrated, the voice range is learned from my recordings (after about 5 of them).
 
-import { decodeTo16k, TARGET_RATE, wavSamples } from '../audio/wav.ts'
+import { decodeTo16k, encodeWav, TARGET_RATE, wavSamples } from '../audio/wav.ts'
 import type { Tone } from '../chinese/tones.ts'
 import type { CharResult, ToneGuess } from '../grading/grade.ts'
-import { adaptProfile, calibrate, contour, normalise, predict, profileFromPitches, voicedSemitones, type SpeakerProfile } from '../tone/model.ts'
-import { segmentSyllables } from '../tone/segment.ts'
+import { adaptProfile, calibrate, contour, normalise, predict, targetPitch, profileFromPitches, voicedSemitones, type SpeakerProfile } from '../tone/model.ts'
+import { retune } from '../tone/resynth.ts'
+import { segmentSyllables, type Span } from '../tone/segment.ts'
+import { HOP_MS, pitchTrack } from '../tone/pitch.ts'
 import { currentUser, dbGet, dbPut, isConfigured } from './firebase.ts'
 import { activeVoice, listVoices, MIN_POINTS, OWNER_ID, updateVoice } from './voices.ts'
 import { nativeAudio } from './tts.ts'
@@ -56,7 +58,8 @@ export async function syncProfile(): Promise<void> {
   if (remote) updateVoice(OWNER_ID, { profile: remote })
 }
 
-export type SyllableTone = { guess: ToneGuess; probs: number[]; contour: number[] }
+/** `span`: where the syllable is in the recording (samples at 16 kHz). */
+export type SyllableTone = { guess: ToneGuess; probs: number[]; contour: number[]; span: Span }
 
 /** Cut each syllable out of the recording (Azure's timings) and ask the tone model what I said. */
 export async function syllableTones(wav: Blob, chars: Pick<CharResult, 'offset' | 'duration'>[]): Promise<(SyllableTone | null)[] | null> {
@@ -70,7 +73,7 @@ export async function syllableTones(wav: Blob, chars: Pick<CharResult, 'offset' 
     const to = Math.min(samples.length, Math.round(((c.offset + c.duration + 20) / 1000) * TARGET_RATE))
     const clip = samples.subarray(from, to)
     const p = predict(clip, TARGET_RATE, adapted, { neutralByLength: chars.length === 1 })
-    return { guess: { tone: p.tone, confidence: p.confidence }, probs: p.probs, contour: normalise(contour(clip, TARGET_RATE), adapted) }
+    return { guess: { tone: p.tone, confidence: p.confidence }, probs: p.probs, contour: normalise(contour(clip, TARGET_RATE), adapted), span: { start: from, end: to } }
   })
 }
 
@@ -87,8 +90,39 @@ export async function segmentTones(wav: Blob, syllables: number): Promise<(Sylla
     const clip = samples.subarray(span.start, span.end)
     if (clip.length === 0) return null
     const p = predict(clip, TARGET_RATE, adapted, { neutralByLength: syllables === 1 })
-    return { guess: { tone: p.tone, confidence: p.confidence }, probs: p.probs, contour: normalise(contour(clip, TARGET_RATE), adapted) }
+    return { guess: { tone: p.tone, confidence: p.confidence }, probs: p.probs, contour: normalise(contour(clip, TARGET_RATE), adapted), span }
   })
+}
+
+/**
+ * My recording with each syllable re-pitched to the tone it should have (neutral tones left as they are), in my
+ * own voice range. Null until my voice is known (calibrated or learned).
+ */
+export async function correctedRecording(wav: Blob, spans: (Span | null)[], spoken: Tone[]): Promise<Blob | null> {
+  const profile = getProfile()
+  if (!profile) return null
+  const samples = await wavSamples(wav)
+  const adapted = adaptProfile(profile, samples, TARGET_RATE, spoken.length)
+  const hop = Math.round((HOP_MS / 1000) * TARGET_RATE)
+  const track = pitchTrack(samples, TARGET_RATE)
+  const target: (number | null)[] = track.map(() => null)
+  spans.forEach((span, i) => {
+    const tone = spoken[i]
+    if (!span || tone === 5) return
+    // The vowel: first to last voiced frame of the syllable.
+    let first = -1
+    let last = -1
+    for (let f = Math.floor(span.start / hop); f < Math.min(track.length, Math.ceil(span.end / hop)); f++)
+      if (track[f] !== null) {
+        if (first < 0) first = f
+        last = f
+      }
+    if (first < 0 || last <= first) return
+    // Mid-sentence, a third tone before another tone is the low "half third".
+    const half = tone === 3 && i < spoken.length - 1
+    for (let f = first; f <= last; f++) target[f] = targetPitch(tone, (f - first) / (last - first), adapted, { half })
+  })
+  return encodeWav(retune(samples, TARGET_RATE, target))
 }
 
 /** Native speaker's contour for a word (Azure voice), scaled to its own range; null without an Azure key. */

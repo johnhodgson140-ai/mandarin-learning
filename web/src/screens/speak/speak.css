@@ -30,13 +30,6 @@
 .syllable-results, .calibration-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
 .syllable-results .zh, .calibration-list .zh { font-size: 22px; }
 
-.contour { margin: 0; }
-.contour svg { width: 100%; height: auto; display: block; }
-.contour-divider { stroke: var(--line); stroke-width: 1; }
-.contour-target { fill: none; stroke: var(--text-muted); stroke-width: 1.5; stroke-dasharray: 4 4; }
-.contour-native { fill: none; stroke: var(--t4); stroke-width: 1.5; opacity: 0.7; }
-.contour-mine { fill: none; stroke: var(--accent); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
-.contour-legend { display: flex; gap: calc(var(--space) * 2); font-size: 13px; color: var(--text-muted); }
 .key::before { content: ''; display: inline-block; width: 16px; height: 0; margin-right: 6px; vertical-align: middle; border-top: 3px solid var(--accent); }
 .key-target::before { border-top: 1.5px dashed var(--text-muted); }
 .key-native::before { border-top: 1.5px solid var(--t4); }

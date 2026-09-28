@@ -23,6 +23,14 @@ export function unlockAudio(): void {
   audio.play().catch(() => {})
 }
 
+/** Play a recording (e.g. my own, or my voice with corrected tones) on the shared, iOS-unlocked audio element. */
+export async function playBlob(blob: Blob): Promise<void> {
+  unlockAudio()
+  if (!audio) return
+  audio.src = URL.createObjectURL(blob)
+  await audio.play().catch(() => {})
+}
+
 /** Speak Chinese text. `rate` 0.8 = slower, 1 = normal. */
 export async function speak(text: string, rate = 1): Promise<void> {
   unlockAudio()

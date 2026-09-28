@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import type { Recording } from '../../audio/recorder.ts'
-import ContourChart from '../../components/ContourChart.tsx'
 import HoldToTalk from '../../components/HoldToTalk.tsx'
 import ScoreView from '../../components/ScoreView.tsx'
 import { scoreAndLog } from '../../scoring/attempt.ts'
@@ -12,7 +11,6 @@ import { load } from '../../services/storage.ts'
 import { getProfile, nativeContour, toneLabel } from '../../services/tone.ts'
 import { rateForLevel, speak } from '../../services/tts.ts'
 import { getLexicon } from '../../services/words.ts'
-import { templateContour } from '../../tone/model.ts'
 
 type Done = { item: DojoItem; clean: boolean }
 
@@ -142,12 +140,7 @@ function DojoCard({ item, onNext }: { item: DojoItem; onNext: (clean: boolean) =
 
       {result && (
         <section className="card fade-in">
-          <ScoreView syllables={syllables} result={result} />
-          <ContourChart
-            mine={result.tones.map((t) => t?.contour ?? null)}
-            target={syllables.map((s) => templateContour(s.spoken))}
-            native={native}
-          />
+          <ScoreView syllables={syllables} result={result} native={native} />
           <div className="sheet-actions">
             <button type="button" className="btn btn-secondary" onClick={() => setResult(null)}>Again</button>
             <button type="button" className="btn btn-primary" onClick={() => onNext(result.overall >= 80)}>Next</button>
