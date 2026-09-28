@@ -37,9 +37,8 @@ export async function gradeParagraph(tokens: Token[], rec: Recording, storyId: s
   return { attemptId, statuses, scores, wav }
 }
 
-/** No Azure key: the browser recogniser checks the sounds (tones need Azure's timings for a whole paragraph). */
+/** No Azure key: tones found on the device; sounds checked by the browser recogniser when it's available. */
 async function gradeLocally(tokens: Token[], rec: Recording, storyId: string, paragraph: number): Promise<ParagraphResult> {
-  if (!rec.heard?.length) throw new Error("Couldn't hear the reading. This browser may not support speech recognition: add an Azure key in Settings for full checks.")
   const refText = tokens.map((t) => t.text).join('')
   const syllables = tokens.flatMap((t) => t.syllables)
   const result = await scoreSpeech(syllables, rec)
@@ -50,7 +49,7 @@ async function gradeLocally(tokens: Token[], rec: Recording, storyId: string, pa
     hanzi: s.hanzi,
     spokenTone: s.spoken,
     prevTone: i > 0 ? syllables[i - 1].spoken : null,
-    predictedTone: null,
+    predictedTone: result.syllables[i].heardTone,
     accuracy: result.syllables[i].score,
     status: statuses[i],
   }))

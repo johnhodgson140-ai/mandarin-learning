@@ -5,6 +5,7 @@ import { decodeTo16k, TARGET_RATE, wavSamples } from '../audio/wav.ts'
 import type { Tone } from '../chinese/tones.ts'
 import type { CharResult, ToneGuess } from '../grading/grade.ts'
 import { calibrate, contour, normalise, predict, type SpeakerProfile } from '../tone/model.ts'
+import { segmentSyllables } from '../tone/segment.ts'
 import { currentUser, dbGet, dbPut, isConfigured } from './firebase.ts'
 import { load, save } from './storage.ts'
 import { nativeAudio } from './tts.ts'
@@ -46,17 +47,18 @@ export async function syllableTones(wav: Blob, chars: Pick<CharResult, 'offset' 
   })
 }
 
-/** Tone guesses for a recording without Azure timings: split the voiced part evenly between syllables. */
-export async function evenSplitTones(wav: Blob, syllables: number): Promise<(SyllableTone | null)[] | null> {
+/**
+ * Tone guesses without Azure timings: find the syllables in the recording on the device (loudness dips and
+ * unvoiced consonants, knowing how many there should be), then run the tone model on each.
+ */
+export async function segmentTones(wav: Blob, syllables: number): Promise<(SyllableTone | null)[] | null> {
   const profile = getProfile()
   if (!profile) return null
   const samples = await wavSamples(wav)
-  const span = voicedSpan(samples)
-  if (!span) return Array(syllables).fill(null)
-  const size = (span[1] - span[0]) / syllables
-  return Array.from({ length: syllables }, (_, i) => {
-    const clip = samples.subarray(Math.round(span[0] + i * size), Math.round(span[0] + (i + 1) * size))
-    const p = predict(clip, TARGET_RATE, profile)
+  return segmentSyllables(samples, TARGET_RATE, syllables).map((span) => {
+    const clip = samples.subarray(span.start, span.end)
+    if (clip.length === 0) return null
+    const p = predict(clip, TARGET_RATE, profile, { neutralByLength: syllables === 1 })
     return { guess: { tone: p.tone, confidence: p.confidence }, probs: p.probs, contour: normalise(contour(clip, TARGET_RATE), profile) }
   })
 }

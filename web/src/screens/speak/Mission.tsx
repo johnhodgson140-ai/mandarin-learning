@@ -6,6 +6,8 @@ import RubyText from '../../components/RubyText.tsx'
 import { pronunciationSummary, scenarioById, type Session, type Turn } from '../../missions/logic.ts'
 import { addCard } from '../../services/anki.ts'
 import { assess } from '../../services/azure.ts'
+import { canRecognise } from '../../scoring/recognize.ts'
+import { scoreSpeech } from '../../scoring/speechScore.ts'
 import { getKeys } from '../../services/keys.ts'
 import { finishSession, sendTurn, startSession } from '../../services/missions.ts'
 import { load, save } from '../../services/storage.ts'
@@ -17,6 +19,8 @@ export default function Mission({ scenarioId }: { scenarioId: string }) {
   const scenario = scenarioById(scenarioId)
   const hasClaude = Boolean(getKeys().claude)
   const hasAzure = Boolean(getKeys().azure)
+  // Without Azure, the phone's own recogniser writes down what I said and my tone model scores it.
+  const canSpeak = hasAzure || canRecognise()
   const [session, setSession] = useState<Session | null>(null)
   const [busy, setBusy] = useState<string | null>(() => (scenario && hasClaude ? 'Starting…' : null))
   const [error, setError] = useState<string | null>(null)
@@ -72,6 +76,16 @@ export default function Mission({ scenarioId }: { scenarioId: string }) {
     setBusy('Listening…')
     setError(null)
     try {
+      if (!hasAzure) {
+        const text = rec.heard?.[0]?.trim() ?? ''
+        if (!text) {
+          setBusy(null)
+          setError("Didn't catch that. Try again, a little louder, or type instead.")
+          return
+        }
+        await reply({ role: 'me', zh: text, pron: await phonePron(text, rec) })
+        return
+      }
       const heard = await assess(rec.wav, '')
       if (!heard.text.trim()) {
         setBusy(null)
@@ -135,8 +149,8 @@ export default function Mission({ scenarioId }: { scenarioId: string }) {
 
       {session && !busy && (
         <div className="mission-input">
-          {hasAzure && !typing && <HoldToTalk onRecorded={(r) => void spoken(r)} onError={setError} />}
-          {(typing || !hasAzure) && (
+          {canSpeak && !typing && <HoldToTalk listen={!hasAzure} onRecorded={(r) => void spoken(r)} onError={setError} />}
+          {(typing || !canSpeak) && (
             <form
               className="type-row"
               onSubmit={(e) => {
@@ -150,7 +164,7 @@ export default function Mission({ scenarioId }: { scenarioId: string }) {
             </form>
           )}
           <div className="sheet-actions">
-            {hasAzure && (
+            {canSpeak && (
               <button type="button" className="btn btn-secondary" onClick={() => setTyping(!typing)}>{typing ? 'Speak instead' : 'Type instead'}</button>
             )}
             <button type="button" className="btn btn-secondary" onClick={() => void finish()} disabled={myTurns === 0}>Finish</button>
@@ -189,6 +203,24 @@ function TurnLine({ turn, role, hideText, level }: { turn: Turn; role: string; h
 }
 
 /** Claude's replies come as plain text: split them the way the browser segments Chinese, then merge Anki words. */
+/**
+ * No Azure: score the tones of what the phone heard me say (per word, 1–100). Sounds can't be checked here,
+ * since the recogniser's own transcript is the reference. Null until my voice is calibrated.
+ */
+async function phonePron(text: string, rec: Recording): Promise<Extract<Turn, { role: 'me' }>['pron']> {
+  const tokens = buildParagraph(splitForRuby(text), getLexicon()).filter((t) => t.syllables.length > 0)
+  const syllables = tokens.flatMap((t) => t.syllables)
+  if (syllables.length === 0) return null
+  const result = await scoreSpeech(syllables, { wav: rec.wav, seconds: rec.seconds })
+  if (result.tones.every((t) => t === null)) return null
+  let i = 0
+  const words = tokens.map((t) => {
+    const scores = result.syllables.slice(i, (i += t.syllables.length)).map((s) => s.score)
+    return { word: t.text, accuracy: Math.round(scores.reduce((a, b) => a + b, 0) / scores.length) }
+  })
+  return { accuracy: result.overall, fluency: null, words }
+}
+
 function splitForRuby(text: string): string[] {
   const segmenter = new Intl.Segmenter('zh', { granularity: 'word' })
   return [...segmenter.segment(text)].map((s) => s.segment)
@@ -240,7 +272,7 @@ function ReportView({ session }: { session: Session }) {
           <h2 className="card-title">Pronunciation</h2>
           <dl className="counts counts-3">
             <div><dt>Accuracy</dt><dd>{pron.accuracy}</dd></div>
-            <div><dt>Fluency</dt><dd>{pron.fluency}</dd></div>
+            <div><dt>Fluency</dt><dd>{pron.fluency ?? '–'}</dd></div>
           </dl>
           {pron.practise.length > 0 && <p className="muted">Words to practise: <span className="zh">{pron.practise.join('、')}</span></p>}
         </section>

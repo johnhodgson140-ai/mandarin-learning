@@ -44,6 +44,9 @@ export default function ScoreView({ syllables, result }: { syllables: Syllable[]
           )
         })}
       </div>
+      {!result.soundsChecked && (
+        <p className="muted small">Tone only: this phone's speech recogniser isn't available here, so sounds weren't checked. A free Azure key (Settings) adds them.</p>
+      )}
       {open !== null && (
         <div className="score-tips fade-in">
           {openTips.length > 0 ? openTips.map((t, i) => <p key={i}>{t}</p>) : <p className="muted">That one sounded right.</p>}

@@ -4,6 +4,7 @@ import type { Recording } from '../../audio/recorder.ts'
 import HoldToTalk from '../../components/HoldToTalk.tsx'
 import { gradeParagraph, type ParagraphResult } from '../../grading/readAloud.ts'
 import { canRecognise } from '../../scoring/recognize.ts'
+import { getProfile } from '../../services/tone.ts'
 import { getKeys } from '../../services/keys.ts'
 import { rateForLevel, speak } from '../../services/tts.ts'
 
@@ -22,7 +23,8 @@ export default function ReadAloudSheet({ tokens, storyId, paragraph, level, resu
   const [checking, setChecking] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const hasAzure = Boolean(getKeys().azure)
-  const canGrade = hasAzure || canRecognise()
+  // Tones are always checked on the device once my voice is calibrated; sounds need Azure or the recogniser.
+  const canGrade = hasAzure || canRecognise() || getProfile() !== null
   const text = tokens.map((t) => t.text).join('')
 
   async function grade(rec: Recording) {
@@ -47,7 +49,7 @@ export default function ReadAloudSheet({ tokens, storyId, paragraph, level, resu
 
         {!canGrade && (
           <p className="muted">
-            This browser can't check speech by itself: add your Azure Speech key in <a href="#settings">Settings</a>.
+            To have your reading checked, <a href="#speak/calibrate">calibrate your voice</a> (tones) or add an Azure key in <a href="#settings">Settings</a>.
           </p>
         )}
 
@@ -55,7 +57,7 @@ export default function ReadAloudSheet({ tokens, storyId, paragraph, level, resu
           <>
             <p className="muted">Read the paragraph out loud, then tap again.</p>
             <HoldToTalk mode="toggle" listen={!hasAzure} onRecorded={grade} onError={setError} />
-            {!hasAzure && <p className="muted small">Free check of your sounds. An Azure key (Settings) adds tones and fluency.</p>}
+            {!hasAzure && <p className="muted small">Free check on this phone. An Azure key (Settings) adds finer sound scores and fluency.</p>}
           </>
         )}
 

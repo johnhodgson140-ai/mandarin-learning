@@ -52,7 +52,11 @@ export function normalise(points: number[], profile: SpeakerProfile): number[] {
   return points.map((p) => (p - profile.minSemitone) / range)
 }
 
-export function predict(audio: Float32Array, sampleRate: number, profile: SpeakerProfile): TonePrediction {
+/**
+ * `neutralByLength`: treat a very short syllable as probably neutral. Right for single words; off in sentences,
+ * where syllables are short anyway and the expected neutral tones are known from the text.
+ */
+export function predict(audio: Float32Array, sampleRate: number, profile: SpeakerProfile, { neutralByLength = true } = {}): TonePrediction {
   const voiced = voicedSemitones(audio, sampleRate)
   const voicedMs = voiced.length * HOP_MS
   if (voiced.length < 4) return { tone: 5, probs: [0.1, 0.1, 0.1, 0.1, 0.6], confidence: 0.3 }
@@ -65,7 +69,7 @@ export function predict(audio: Float32Array, sampleRate: number, profile: Speake
     best[t.tone - 1] = Math.min(best[t.tone - 1], rms)
   }
   // Neutral tones are short; full tones rarely are.
-  if (voicedMs <= NEUTRAL_MAX_MS) best[4] *= 0.5
+  if (neutralByLength && voicedMs <= NEUTRAL_MAX_MS) best[4] *= 0.5
   else best[4] *= 1.6
 
   const weights = best.map((d) => Math.exp(-((d / SHARPNESS) ** 2)))
