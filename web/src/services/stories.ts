@@ -3,6 +3,7 @@
 import storyPrompt from '../prompts/story.md?raw'
 import { buildParagraph, knownRatio, type Lexicon, type Token } from '../chinese/tokens.ts'
 import { callJson } from './claude.ts'
+import { loadHsk, newWordsFor } from './hsk.ts'
 import { saveStory, type Story, type StoryLength, type Topic } from './library.ts'
 import { getLexicon, knownWords, studyWords, targetWords } from './words.ts'
 
@@ -86,6 +87,9 @@ export async function generateStory(level: number, topic: Topic, length: StoryLe
   // Before Anki says which words I know, write from the words I'm studying (my deck).
   const known = knownWords(lexicon).length > 0 ? knownWords(lexicon) : studyWords(lexicon)
   const targets = targetWords(lexicon)
+  // New words: the most common HSK words at my level that I don't have yet.
+  await loadHsk()
+  const hskNew = newWordsFor(Math.min(level, 6), new Set(lexicon.keys()), 40)
   const hasWords = known.length > 0
   const measureRatio = knownWords(lexicon).length > 0
 
@@ -100,8 +104,9 @@ export async function generateStory(level: number, topic: Topic, length: StoryLe
     // Replacer functions, so nothing in the word list is read as a `$` replacement pattern.
     .replace('{{WORD_LIST}}', () =>
       hasWords
-        ? `Learner's word list (words they know or are studying):\n${known.join(' ')}\n\nTarget words to practise (use up to 8, naturally):\n${targets.join(' ') || '(none)'}`
-        : '',
+        ? `Learner's word list (words they know or are studying):\n${known.join(' ')}\n\nTarget words to practise (use up to 8, naturally):\n${targets.join(' ') || '(none)'}` +
+          (hskNew.length ? `\n\nWhen you need a new word, prefer one of these common HSK ${level} words:\n${hskNew.join(' ')}` : '')
+        : hskNew.length ? `Prefer new words from these common HSK ${level} words:\n${hskNew.join(' ')}` : '',
     )
   const ask = (extra = '') =>
     callJson({

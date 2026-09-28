@@ -3,6 +3,7 @@ import type { Token } from '../../chinese/tokens.ts'
 import { addCard } from '../../services/anki.ts'
 import { getKeys } from '../../services/keys.ts'
 import { glossFor } from '../../services/gloss.ts'
+import { hskLabel, loadHsk, type HskInfo } from '../../services/hsk.ts'
 import { rateForLevel, speak } from '../../services/tts.ts'
 
 type Props = {
@@ -19,6 +20,7 @@ const MASTERY_TEXT = { new: 'new', learning: 'learning', young: 'young', mature:
 export default function WordSheet({ token, sentence, level, onGloss, onClose }: Props) {
   const [gloss, setGloss] = useState(token.gloss)
   const [glossError, setGlossError] = useState<string | null>(null)
+  const [hsk, setHsk] = useState<HskInfo | null>(null)
   const [ankiStatus, setAnkiStatus] = useState<string | null>(null)
   const [busy, setBusy] = useState(false)
   const inAnki = token.mastery !== null && token.mastery !== 'unknown'
@@ -28,6 +30,15 @@ export default function WordSheet({ token, sentence, level, onGloss, onClose }: 
   useEffect(() => {
     onGlossRef.current = onGloss
   })
+
+  // Dictionary meaning and HSK level, offline.
+  useEffect(() => {
+    let cancelled = false
+    void loadHsk().then((d) => !cancelled && setHsk(d.get(token.text) ?? null))
+    return () => {
+      cancelled = true
+    }
+  }, [token.text])
 
   useEffect(() => {
     if (token.gloss || !getKeys().claude) return
@@ -54,7 +65,7 @@ export default function WordSheet({ token, sentence, level, onGloss, onClose }: 
   async function addToAnki() {
     setBusy(true)
     try {
-      const result = await addCard({ hanzi: token.text, pinyin: token.syllables.map((s) => s.pinyin), english: gloss })
+      const result = await addCard({ hanzi: token.text, pinyin: token.syllables.map((s) => s.pinyin), english: english })
       setAnkiStatus(
         result === 'added' ? 'Added to Anki.' : result === 'duplicate' ? 'Already in Anki.' : 'Saved. Send it to Anki with Settings → Export for Anki.',
       )
@@ -66,6 +77,8 @@ export default function WordSheet({ token, sentence, level, onGloss, onClose }: 
   }
 
   const canAdd = true
+  // Claude's meaning for this sentence when there is one, else the dictionary's.
+  const english = gloss || hsk?.meaning || ''
 
   return (
     <>
@@ -79,15 +92,18 @@ export default function WordSheet({ token, sentence, level, onGloss, onClose }: 
           ))}
         </p>
         <p className="sheet-gloss">
-          {gloss || glossError || (getKeys().claude ? 'Looking up…' : 'Add a Claude key in Settings to look up new words.')}
+          {english || glossError || (getKeys().claude ? 'Looking up…' : 'Not in the dictionary. Add a Claude key in Settings to look up any word.')}
         </p>
-        {inAnki && <p className="muted small">In Anki · {MASTERY_TEXT[token.mastery as keyof typeof MASTERY_TEXT]}</p>}
+        {gloss && hsk && gloss !== hsk.meaning && <p className="muted small">Dictionary: {hsk.meaning}</p>}
+        <p className="muted small">
+          {[hsk && hskLabel(hsk.level), inAnki && `In Anki · ${MASTERY_TEXT[token.mastery as keyof typeof MASTERY_TEXT]}`].filter(Boolean).join(' · ')}
+        </p>
         <div className="sheet-actions">
           <button type="button" className="btn btn-secondary" onClick={() => speak(token.text, rateForLevel(level))}>
             ▶ Play
           </button>
           {!inAnki && token.kind === 'word' && (
-            <button type="button" className="btn btn-primary" onClick={addToAnki} disabled={busy || !gloss || !canAdd}>
+            <button type="button" className="btn btn-primary" onClick={addToAnki} disabled={busy || !english || !canAdd}>
               + Anki
             </button>
           )}

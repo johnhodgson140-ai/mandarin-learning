@@ -33,6 +33,12 @@ export default defineConfig({
         // Keep the reader font available offline once it has been seen.
         runtimeCaching: [
           {
+            // HSK word list: fetched on first use, then available offline (refreshed in the background).
+            urlPattern: ({ url }) => url.pathname.endsWith('/hsk.json'),
+            handler: 'StaleWhileRevalidate',
+            options: { cacheName: 'hsk' },
+          },
+          {
             urlPattern: ({ url }) => url.origin === 'https://fonts.googleapis.com' || url.origin === 'https://fonts.gstatic.com',
             handler: 'CacheFirst',
             options: { cacheName: 'fonts', expiration: { maxEntries: 200, maxAgeSeconds: 60 * 60 * 24 * 365 } },
