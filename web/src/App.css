@@ -1,0 +1,23 @@
+.app {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.screen {
+  flex: 1;
+  width: 100%;
+  max-width: 34rem;
+  margin: 0 auto;
+  padding: calc(var(--space) * 3) calc(var(--space) * 2.5);
+  padding-top: calc(env(safe-area-inset-top) + var(--space) * 3);
+  /* room for the fixed bottom tab bar */
+  padding-bottom: calc(72px + env(safe-area-inset-bottom));
+}
+
+.screen > * + * { margin-top: calc(var(--space) * 2); }
+
+@media (min-width: 900px) {
+  .app { flex-direction: row; }
+  .screen { padding-bottom: calc(var(--space) * 4); padding-top: calc(var(--space) * 5); }
+}
