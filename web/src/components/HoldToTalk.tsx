@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
-import { preloadRecorder, Recorder, reopenMicNextTime, type Recording } from '../audio/recorder.ts'
+import { MicDead, preloadRecorder, Recorder, reopenMicNextTime, type Recording } from '../audio/recorder.ts'
 import { canRecognise, listen as startListening, setRecogniserBlocked, type Listening } from '../scoring/recognize.ts'
-import { log } from '../debug/log.ts'
+import { flushLog, log } from '../debug/log.ts'
 import './HoldToTalk.css'
 
 type Props = {
@@ -15,6 +15,7 @@ type Phase = 'idle' | 'starting' | 'recording'
 
 const MIN_SECONDS = 0.3
 const SILENT_PEAK = 0.01 // loudest moment below this: nothing reached the app
+let silentInARow = 0 // across screens: two silent recordings in a row means the iPhone's mic needs a reload
 
 /** One large talk button (tap to start, tap to stop) with a single-bar level meter. */
 export default function HoldToTalk({ onRecorded, onError, listen = false }: Props) {
@@ -27,6 +28,7 @@ export default function HoldToTalk({ onRecorded, onError, listen = false }: Prop
   const peak = useRef(0)
   const usedRecogniser = useRef(false)
   const [hint, setHint] = useState<string | null>(null)
+  const [needsReload, setNeedsReload] = useState(false)
 
   // Latest callbacks, so the max-length / visibility handlers never call a stale closure.
   const callbacks = useRef({ onRecorded, onError })
@@ -59,6 +61,7 @@ export default function HoldToTalk({ onRecorded, onError, listen = false }: Prop
       },
       (err: unknown) => {
         log('start failed', { error: String(err) })
+        if (err instanceof MicDead) setNeedsReload(true)
         if (recorder.current === rec) {
           recorder.current = null
           setPhase('idle')
@@ -95,13 +98,18 @@ export default function HoldToTalk({ onRecorded, onError, listen = false }: Prop
       if (result.seconds < MIN_SECONDS) setHint('Too short. Tap, speak, then tap again when finished.')
       else if (peak.current < SILENT_PEAK) {
         reopenMicNextTime() // get a fresh microphone on the next tap
+        silentInARow++
+        if (silentInARow >= 2) setNeedsReload(true)
         if (usedRecogniser.current) {
           // On some iPhones the recogniser takes the microphone: stop using it (Settings can turn it back on).
           setRecogniserBlocked(true)
           setHint("No sound reached the app: the iPhone's speech recogniser was using the mic. Fixed, tap to try again.")
         } else setHint('No sound was recorded. Tap to try again. If it keeps happening, check the microphone is allowed (iPhone Settings → Safari → Microphone).')
       }
-      else callbacks.current.onRecorded(heard?.length ? { ...result, heard } : result)
+      else {
+        silentInARow = 0
+        callbacks.current.onRecorded(heard?.length ? { ...result, heard } : result)
+      }
     } catch (err) {
       log('stop failed', { error: String(err) })
       callbacks.current.onError(err instanceof Error ? err.message : String(err))
@@ -143,6 +151,22 @@ export default function HoldToTalk({ onRecorded, onError, listen = false }: Prop
         <div className="level-fill" style={{ transform: `scaleX(${level})` }} />
       </div>
       {hint && <p className="muted hold-hint">{hint}</p>}
+      {needsReload && (
+        <div className="hold-hint">
+          <p className="muted">The iPhone has stopped giving the app microphone audio (this happens after leaving the app). A reload fixes it.</p>
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={() => {
+              log('fix microphone: reload')
+              flushLog()
+              location.reload()
+            }}
+          >
+            Fix microphone
+          </button>
+        </div>
+      )}
     </div>
   )
 }
@@ -153,5 +177,6 @@ function micErrorMessage(err: unknown): string {
   if (err instanceof DOMException && err.name === 'NotAllowedError')
     return 'Microphone permission was denied. Allow it in your browser settings and try again.'
   if (err instanceof DOMException && err.name === 'NotFoundError') return 'No microphone found.'
+  if (err instanceof MicDead) return err.message
   return err instanceof Error ? err.message : String(err)
 }
