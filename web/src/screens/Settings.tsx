@@ -25,6 +25,7 @@ export default function Settings() {
       <Voice />
       <Appearance />
       <ApiKeys />
+      <p className="muted small">Version {new Date(__BUILD_TIME__).toLocaleString('en-GB', { dateStyle: 'medium', timeStyle: 'short' })}</p>
     </>
   )
 }

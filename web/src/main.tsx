@@ -2,12 +2,25 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './styles/tokens.css'
 import './styles/base.css'
+import { registerSW } from 'virtual:pwa-register'
 import App from './App.tsx'
 import { pruneRecordings } from './services/attempts.ts'
 import { loadDeck } from './services/words.ts'
 import { applyTheme } from './services/theme.ts'
 
 applyTheme()
+
+// Updates: check for a new version whenever the app is opened; when one is found it installs and the page
+// reloads onto it straight away (so the home-screen app never keeps running an old copy).
+registerSW({
+  immediate: true,
+  onRegisteredSW(_url, registration) {
+    if (!registration) return
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') void registration.update().catch(() => {})
+    })
+  },
+})
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
