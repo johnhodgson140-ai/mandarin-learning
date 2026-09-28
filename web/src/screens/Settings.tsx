@@ -6,6 +6,7 @@ import { currentUser, isConfigured, signIn, signOut } from '../services/firebase
 import { getKeys, setKeys, type Keys } from '../services/keys.ts'
 import { load, save } from '../services/storage.ts'
 import { getTheme, setTheme, type Theme } from '../services/theme.ts'
+import { hasRecogniser, recogniserBlocked, setRecogniserBlocked } from '../scoring/recognize.ts'
 import { getVoice, setVoice, speak, type VoiceChoice } from '../services/tts.ts'
 import './Settings.css'
 
@@ -22,6 +23,7 @@ export default function Settings() {
       <Account user={user} onChange={() => setUser(currentUser())} />
       {user && <Anki />}
       <MyLevel />
+      <SpeechCheck />
       <Voice />
       <Appearance />
       <ApiKeys />
@@ -222,6 +224,24 @@ function MyLevel() {
           <button key={n} type="button" className="chip" aria-pressed={level === n} onClick={() => { setLevel(n); save('level', n) }}>{n}</button>
         ))}
       </div>
+    </section>
+  )
+}
+
+function SpeechCheck() {
+  const [blocked, setBlocked] = useState(recogniserBlocked)
+  if (!hasRecogniser()) return null
+  return (
+    <section className="card">
+      <h2 className="card-title">Sound check</h2>
+      {blocked ? (
+        <>
+          <p className="muted small">The iPhone's speech recogniser is off: a recording came out silent while it was on. Tones are still checked.</p>
+          <button type="button" className="btn btn-secondary" onClick={() => { setRecogniserBlocked(false); setBlocked(false) }}>Turn it back on</button>
+        </>
+      ) : (
+        <p className="muted small">On: the iPhone's speech recogniser checks your sounds (free). An Azure key checks them more precisely.</p>
+      )}
     </section>
   )
 }

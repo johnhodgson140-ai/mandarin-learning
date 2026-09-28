@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { preloadRecorder, Recorder, type Recording } from '../audio/recorder.ts'
-import { listen as startListening, type Listening } from '../scoring/recognize.ts'
-import { load, save } from '../services/storage.ts'
+import { canRecognise, listen as startListening, setRecogniserBlocked, type Listening } from '../scoring/recognize.ts'
 import './HoldToTalk.css'
 
 type Props = {
@@ -15,9 +14,6 @@ type Phase = 'idle' | 'starting' | 'recording'
 
 const MIN_SECONDS = 0.3
 const SILENT_PEAK = 0.01 // loudest moment below this: nothing reached the app
-
-/** On some iPhones the speech recogniser takes the microphone and the recording is silent: then stop using it. */
-const RECOGNISER_OFF = 'recogniserBlocksMic'
 
 /** One large talk button (tap to start, tap to stop) with a single-bar level meter. */
 export default function HoldToTalk({ onRecorded, onError, listen = false }: Props) {
@@ -46,7 +42,7 @@ export default function HoldToTalk({ onRecorded, onError, listen = false }: Prop
     })
     recorder.current = rec
     peak.current = 0
-    usedRecogniser.current = listen && !load(RECOGNISER_OFF, false)
+    usedRecogniser.current = listen && canRecognise()
     listening.current = usedRecogniser.current ? startListening() : null // must start inside the tap
     live.current = false
     setHint(null)
@@ -93,7 +89,8 @@ export default function HoldToTalk({ onRecorded, onError, listen = false }: Prop
       if (result.seconds < MIN_SECONDS) setHint('Too short. Tap, speak, then tap again when finished.')
       else if (peak.current < SILENT_PEAK) {
         if (usedRecogniser.current) {
-          save(RECOGNISER_OFF, true)
+          // On some iPhones the recogniser takes the microphone: stop using it (Settings can turn it back on).
+          setRecogniserBlocked(true)
           setHint("No sound reached the app: the iPhone's speech recogniser was using the mic. Fixed, tap to try again.")
         } else setHint('No sound was recorded. Check the microphone is allowed (iPhone Settings → Safari → Microphone) and not in use by a call or Siri.')
       }

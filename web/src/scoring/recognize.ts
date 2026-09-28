@@ -1,6 +1,8 @@
 // The browser's own speech recognition (free, no key): used to check which sounds I made.
 // Safari (iPhone) and Chrome support it for zh-CN; elsewhere scoring uses the tone model alone.
 
+import { load, save } from '../services/storage.ts'
+
 type Alternative = { transcript: string }
 type ResultList = ArrayLike<ArrayLike<Alternative> & { isFinal: boolean }>
 type BrowserRecognition = {
@@ -21,7 +23,14 @@ function recognitionClass(): (new () => BrowserRecognition) | null {
   return w.SpeechRecognition ?? w.webkitSpeechRecognition ?? null
 }
 
-export const canRecognise = () => typeof window !== 'undefined' && recognitionClass() !== null
+/** Switched off when it took the microphone and a recording came out silent (some iPhones); Settings can undo it. */
+const BLOCKED_KEY = 'recogniserBlocksMic'
+export const recogniserBlocked = () => load(BLOCKED_KEY, false)
+export const setRecogniserBlocked = (blocked: boolean) => save(BLOCKED_KEY, blocked || null)
+
+/** The phone's recogniser exists and hasn't been switched off. */
+export const hasRecogniser = () => typeof window !== 'undefined' && recognitionClass() !== null
+export const canRecognise = () => hasRecogniser() && !recogniserBlocked()
 
 export type Listening = { stop(): Promise<string[]>; abort(): void }
 
