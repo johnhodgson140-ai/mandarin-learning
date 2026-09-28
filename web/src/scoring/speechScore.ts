@@ -6,10 +6,11 @@ import type { Recording } from '../audio/recorder.ts'
 import type { Syllable } from '../chinese/tokens.ts'
 import { isHan } from '../chinese/tones.ts'
 import type { CharResult } from '../grading/grade.ts'
-import { evenSplitTones, syllableTones, type SyllableTone } from '../services/tone.ts'
+import { segmentTones, syllableTones, type SyllableTone } from '../services/tone.ts'
 import { bestAlternative, combine, soundScore, type SyllableScore } from './score.ts'
 
-export type SpeechScore = { syllables: SyllableScore[]; overall: number; tones: (SyllableTone | null)[] }
+/** `soundsChecked`: false when neither Azure nor the browser recogniser could check the sounds (tone only). */
+export type SpeechScore = { syllables: SyllableScore[]; overall: number; tones: (SyllableTone | null)[]; soundsChecked: boolean }
 
 /** Tone-less pinyin of each character the recogniser wrote. */
 function heardSyllables(text: string): string[] {
@@ -18,10 +19,8 @@ function heardSyllables(text: string): string[] {
 }
 
 export async function scoreSpeech(syllables: Syllable[], rec: Recording, azure: CharResult[] | null = null): Promise<SpeechScore> {
-  // Tones: cut out with Azure's timings when we have them; for short words, split the voiced part evenly.
-  let tones: (SyllableTone | null)[] | null = null
-  if (azure) tones = await syllableTones(rec.wav, azure)
-  else if (syllables.length <= 4) tones = await evenSplitTones(rec.wav, syllables.length)
+  // Tones: cut out with Azure's timings when we have them, else find the syllables on the device.
+  const tones: (SyllableTone | null)[] | null = azure ? await syllableTones(rec.wav, azure) : await segmentTones(rec.wav, syllables.length)
 
   // Sounds: Azure's accuracy, else how well the recogniser's best guess matches, else no sound check.
   let heard: (string | null)[] | null = null
@@ -32,5 +31,5 @@ export async function scoreSpeech(syllables: Syllable[], rec: Recording, azure: 
     return combine(sound, tones?.[i]?.probs ?? null, s.spoken, heard?.[i] ?? null)
   })
   const overall = scored.length ? Math.round(scored.reduce((sum, s) => sum + s.score, 0) / scored.length) : 0
-  return { syllables: scored, overall, tones: tones ?? syllables.map(() => null) }
+  return { syllables: scored, overall, tones: tones ?? syllables.map(() => null), soundsChecked: azure !== null || heard !== null }
 }

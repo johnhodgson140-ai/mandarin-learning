@@ -39,6 +39,9 @@ test('pronunciation summary: character-weighted accuracy, mean fluency, weakest 
   // chars: 一位 2×90, 我 95, 要 50, 饺子 2×65, 和 90, 可乐 2×40 → 745 / 9
   assert.deepEqual(pronunciationSummary(session.turns), { accuracy: 69, fluency: 70, practise: ['可乐', '要', '饺子'] })
   assert.equal(pronunciationSummary([{ role: 'me', zh: 'x', pron: null }]), null)
+  // Turns scored on the phone alone (no Azure) have no fluency: it's left out of the average.
+  const phoneOnly = pronunciationSummary([{ role: 'me', zh: '你好', pron: { accuracy: 80, fluency: null, words: [{ word: '你好', accuracy: 80 }] } }])
+  assert.deepEqual(phoneOnly, { accuracy: 80, fluency: null, practise: [] })
 })
 
 test('correction style changes at level 3', () => {

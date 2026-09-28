@@ -15,6 +15,9 @@ createRoot(document.getElementById('root')!).render(
   </StrictMode>,
 )
 
+// Ask iOS not to clear the app's data (calibration, recordings, progress) when storage runs low.
+void navigator.storage?.persist?.().catch(() => false)
+
 // Recordings are kept on the device for 30 days.
 pruneRecordings().catch(() => {})
 // My exported Anki deck ships with the app (web/public/deck.json).

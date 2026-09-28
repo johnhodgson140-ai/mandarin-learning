@@ -44,7 +44,7 @@ export type Report = {
 
 export type Turn =
   | { role: 'partner'; zh: string; en: string; hint: string }
-  | { role: 'me'; zh: string; pron: { accuracy: number; fluency: number; words: { word: string; accuracy: number }[] } | null }
+  | { role: 'me'; zh: string; pron: { accuracy: number; fluency: number | null; words: { word: string; accuracy: number }[] } | null }
 
 export type Session = {
   id: string
@@ -83,7 +83,9 @@ export function transcriptText(session: Session, role: string): string {
 }
 
 /** Pronunciation over all my turns: character-weighted accuracy, mean fluency, and the weakest words. */
-export function pronunciationSummary(turns: Turn[]): { accuracy: number; fluency: number; practise: string[] } | null {
+const average = (xs: number[]) => (xs.length ? Math.round(xs.reduce((a, b) => a + b, 0) / xs.length) : null)
+
+export function pronunciationSummary(turns: Turn[]): { accuracy: number; fluency: number | null; practise: string[] } | null {
   const mine = turns.flatMap((t) => (t.role === 'me' && t.pron ? [t.pron] : []))
   if (mine.length === 0) return null
   let chars = 0
@@ -105,7 +107,8 @@ export function pronunciationSummary(turns: Turn[]): { accuracy: number; fluency
   ].slice(0, 5)
   return {
     accuracy: chars ? Math.round(weighted / chars) : 0,
-    fluency: Math.round(mine.reduce((sum, p) => sum + p.fluency, 0) / mine.length),
+    // Fluency needs Azure; turns scored on the phone alone have none.
+    fluency: average(mine.flatMap((p) => (p.fluency === null ? [] : [p.fluency]))),
     practise,
   }
 }
