@@ -73,25 +73,29 @@
           "partner_zh": "您好！请问几位？",
           "partner_en": "Hello! How many people?",
           "prompt_en": "Say it's just you.",
-          "answers_zh": ["一位。", "一个人。", "就我一个人。"]
+          "answers_zh": ["一位。", "一个人。", "就我一个人。"],
+          "answers_en": ["Just one.", "One person.", "Just me."]
         },
         {
           "partner_zh": "好的，请坐。您想吃什么？",
           "partner_en": "OK, please sit down. What would you like to eat?",
           "prompt_en": "Order dumplings.",
-          "answers_zh": ["我要饺子。", "我想吃饺子。", "请给我饺子。"]
+          "answers_zh": ["我要饺子。", "我想吃饺子。", "请给我饺子。"],
+          "answers_en": ["I want dumplings.", "I'd like to eat dumplings.", "Dumplings for me, please."]
         },
         {
           "partner_zh": "好的。喝点什么？",
           "partner_en": "Sure. Anything to drink?",
           "prompt_en": "Ask for a bottle of cola.",
-          "answers_zh": ["我要一瓶可乐。", "来一瓶可乐。", "一瓶可乐，谢谢。"]
+          "answers_zh": ["我要一瓶可乐。", "来一瓶可乐。", "一瓶可乐，谢谢。"],
+          "answers_en": ["I want a bottle of cola.", "A bottle of cola, please.", "A bottle of cola, thanks."]
         },
         {
           "partner_zh": "好的，请稍等。",
           "partner_en": "OK, one moment please.",
           "prompt_en": "(After eating) Ask for the bill.",
-          "answers_zh": ["服务员，买单！", "我要买单。", "请买单。"]
+          "answers_zh": ["服务员，买单！", "我要买单。", "请买单。"],
+          "answers_en": ["Waiter, the bill please!", "I'd like to pay.", "The bill, please."]
         }
       ],
       "closing_zh": "一共四十五块。谢谢光临！",
@@ -108,25 +112,29 @@
           "partner_zh": "你好，这件外套还在。",
           "partner_en": "Hi, this jacket is still available.",
           "prompt_en": "Ask what size it is.",
-          "answers_zh": ["这件外套多大？", "是多大号的？", "什么尺码？"]
+          "answers_zh": ["这件外套多大？", "是多大号的？", "什么尺码？"],
+          "answers_en": ["What size is this jacket?", "What size is it?", "What size?"]
         },
         {
           "partner_zh": "四十六码，九成新。",
           "partner_en": "Size 46, 90% new.",
           "prompt_en": "Ask how much it is.",
-          "answers_zh": ["多少钱？", "这件多少钱？", "你要多少钱？"]
+          "answers_zh": ["多少钱？", "这件多少钱？", "你要多少钱？"],
+          "answers_en": ["How much?", "How much is this one?", "How much do you want for it?"]
         },
         {
           "partner_zh": "一千八。",
           "partner_en": "1800 yuan.",
           "prompt_en": "Say it's too expensive and offer 1500.",
-          "answers_zh": ["太贵了，一千五可以吗？", "有点贵，一千五行吗？", "一千五卖吗？"]
+          "answers_zh": ["太贵了，一千五可以吗？", "有点贵，一千五行吗？", "一千五卖吗？"],
+          "answers_en": ["Too expensive. Is 1500 OK?", "It's a bit pricey. Would 1500 work?", "Will you sell it for 1500?"]
         },
         {
           "partner_zh": "一千六吧，包邮。",
           "partner_en": "1600 then, with free shipping.",
           "prompt_en": "Agree and say you'll take it.",
-          "answers_zh": ["好的，我买了。", "好，我要了。", "行，就这么定了。"]
+          "answers_zh": ["好的，我买了。", "好，我要了。", "行，就这么定了。"],
+          "answers_en": ["OK, I'll buy it.", "OK, I'll take it.", "Fine, it's a deal."]
         }
       ],
       "closing_zh": "好的，我现在给你发货。",

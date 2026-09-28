@@ -177,7 +177,7 @@ export default function Mission({ scenarioId }: { scenarioId: string }) {
 }
 
 function TurnLine({ turn, role, hideText, level }: { turn: Turn; role: string; hideText: boolean; level: number }) {
-  const [english, setEnglish] = useState(false)
+  const [english, setEnglish] = useState(true)
   const tokens = useMemo(() => buildParagraph(splitForRuby(turn.zh), getLexicon()), [turn.zh])
   if (turn.role === 'me')
     return (
