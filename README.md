@@ -7,7 +7,7 @@ so the phone works without my Mac being on. Hosted on GitHub Pages.
 
 Project docs: [`CLAUDE.md`](CLAUDE.md), [`docs/SPEC.md`](docs/SPEC.md), [`docs/DESIGN.md`](docs/DESIGN.md), [`docs/ROADMAP.md`](docs/ROADMAP.md).
 
-**Status:** M2 — Reader. (M1's Anki sync is built; its one-time setup below is still to do.)
+**Status:** M3 — read-aloud grading. (M1's Anki sync is built; its one-time setup below is still to do.)
 
 ## Install on the iPhone
 1. Open the app link above in **Safari**.
@@ -49,6 +49,13 @@ change it too (and re-add the app to the home screen, since the link changes).
    on this computer, allow it.
 
 The phone uses whatever was last synced; cards added on the phone are queued and sent to Anki on the next sync.
+
+### 3. Azure Speech (pronunciation grading, from M3)
+1. Go to https://portal.azure.com (your student account gets free credit; the Speech free tier costs nothing anyway).
+2. **Create a resource** → search **Speech** → **Speech service** → Create.
+3. Resource group: new, `shuo` · Region: **UK South** · Name: e.g. `shuo-speech` · Pricing tier: **Free F0** → Review + create → Create.
+4. **Go to resource → Keys and Endpoint**: copy **KEY 1** and the **Location/Region** (`uksouth`).
+5. In the app: Settings → paste the key into **Azure Speech key**, check the region says `uksouth`. Do this on each device.
 
 ## API keys
 Azure and Claude keys are typed into the app's Settings on each device and stay on that device.
