@@ -3,7 +3,7 @@ import { go } from '../../hash.ts'
 import { getKeys } from '../../services/keys.ts'
 import { load, save } from '../../services/storage.ts'
 import { generateStory, LENGTHS, TOPICS, type StoryLength, type Topic } from '../../services/stories.ts'
-import { getLexicon, knownWords } from '../../services/words.ts'
+import { getLexicon } from '../../services/words.ts'
 import './read.css'
 
 export default function NewStory() {
@@ -13,7 +13,7 @@ export default function NewStory() {
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const hasKey = Boolean(getKeys().claude)
-  const hasWords = knownWords(getLexicon()).length > 0
+  const hasWords = getLexicon().size > 0
 
   async function write() {
     setBusy(true)
@@ -71,7 +71,7 @@ export default function NewStory() {
 
       {!hasWords && (
         <p className="muted small">
-          Your Anki words aren't synced yet, so this story uses standard HSK vocabulary for the level.
+          Your word list hasn't loaded yet, so this story uses standard HSK vocabulary for the level.
         </p>
       )}
       {!hasKey && (

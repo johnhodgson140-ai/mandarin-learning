@@ -4,7 +4,7 @@ import storyPrompt from '../prompts/story.md?raw'
 import { buildParagraph, knownRatio, type Lexicon, type Token } from '../chinese/tokens.ts'
 import { callJson } from './claude.ts'
 import { saveStory, type Story, type StoryLength, type Topic } from './library.ts'
-import { getLexicon, knownWords, targetWords } from './words.ts'
+import { getLexicon, knownWords, studyWords, targetWords } from './words.ts'
 
 export const LENGTHS: Record<StoryLength, { label: string; chars: string }> = {
   short: { label: 'Short', chars: '80–120' },
@@ -79,22 +79,24 @@ export function storyTokens(story: Story, lexicon: Lexicon = getLexicon()): Toke
 
 export async function generateStory(level: number, topic: Topic, length: StoryLength): Promise<Story> {
   const lexicon = getLexicon()
-  const known = knownWords(lexicon)
+  // Before Anki says which words I know, write from the words I'm studying (my deck).
+  const known = knownWords(lexicon).length > 0 ? knownWords(lexicon) : studyWords(lexicon)
   const targets = targetWords(lexicon)
   const hasWords = known.length > 0
+  const measureRatio = knownWords(lexicon).length > 0
 
   const system = storyPrompt
     .replace('{{LEVEL}}', () => String(level))
     .replace('{{LEVEL_RULE}}', () => LEVEL_RULES[level])
     .replace('{{VOCAB_RULE}}', () =>
       hasWords
-        ? 'At least 95% of the words must come from the learner\'s word list below (names and numbers don\'t count). Only step outside it for the target words or when there is truly no alternative.'
+        ? 'At least 90% of the words must come from the learner\'s word list below (names and numbers don\'t count). Only step outside it for the target words or when there is truly no alternative.'
         : 'The learner\'s word list isn\'t available yet: stay within HSK vocabulary for this level.',
     )
     // Replacer functions, so nothing in the word list is read as a `$` replacement pattern.
     .replace('{{WORD_LIST}}', () =>
       hasWords
-        ? `Learner's word list (words they know):\n${known.join(' ')}\n\nTarget words to practise (use up to 8, naturally):\n${targets.join(' ') || '(none)'}`
+        ? `Learner's word list (words they know or are studying):\n${known.join(' ')}\n\nTarget words to practise (use up to 8, naturally):\n${targets.join(' ') || '(none)'}`
         : '',
     )
   const ask = (extra = '') =>
@@ -106,7 +108,7 @@ export async function generateStory(level: number, topic: Topic, length: StoryLe
     })
 
   let json = await ask()
-  let ratio = hasWords ? knownRatio(tokensOf(json, lexicon)).ratio : null
+  let ratio = measureRatio ? knownRatio(tokensOf(json, lexicon)).ratio : null
   if (ratio !== null && ratio < 0.9) {
     // Regenerate once, telling Claude which words were outside the list; keep whichever is better.
     const unknown = unknownWords(json, lexicon)

@@ -8,8 +8,9 @@ the optional Claude API key.
 ## What to do (the session follows these steps exactly)
 
 1. Work in the repo `johnhodgson140-ai/mandarin-learning` on `main`. Pull the latest `main` first.
-2. Read `content/config.json` (level, topics, how many stories/missions) and, if it exists, `content/words.json`
-   (the learner's known words: `{ "known": ["你好", ...], "learning": ["比赛", ...] }`).
+2. Read `content/config.json` (level, topics, how many stories/missions) and `content/words.json`
+   (`{ "known": [...], "learning": [...], "deck": [...] }`: words the learner knows, is learning, and everything in
+   their Anki deck; made by `scripts/import_deck.py`).
 3. Read the current `web/public/daily/latest.json` so today's topics and scenarios differ from yesterday's.
 4. Write a new `web/public/daily/latest.json` for today's date (Europe/London), following the types in
    `web/src/daily/schema.ts` and the example already in that file:
@@ -17,8 +18,9 @@ the optional Claude API key.
      `cards` ("Say your cards"), `dojo` ("Tone Dojo (5 minutes)"), one `story` and one `mission` (with `ref` = their ids).
    - `stories` (`stories_per_day`, default 2): ids `YYYY-MM-DD-s1`, `-s2`… Different topics from `config.topics`.
      Level from `config.level`: level 1 ≈ 80–120 characters, sentences under 10 characters, at most 3 new words.
-     If `words.json` exists, at least 90% of words must come from `known`; use a few `learning` words on purpose.
-     Otherwise stay within HSK vocabulary for the level.
+     At least 90% of words must come from `known`; if `known` is empty (deck not studied yet), from `deck` instead.
+     Use a few `learning` words on purpose. Missions' answers should use deck words and phrases too
+     (e.g. 买单, 打包, 太贵了, 我要这个 are in the deck).
    - `missions` (`missions_per_day`, default 2): ids `YYYY-MM-DD-m1`…, a realistic scene (restaurant, taxi, hotel,
      shopping, bargaining, directions, Xianyu seller, football chat, travel, work…), `role` in Chinese (e.g. 服务员),
      an English `goal`, 3–6 `steps` each with `partner_zh`, `partner_en`, `prompt_en` (what the learner should say,

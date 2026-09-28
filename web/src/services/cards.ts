@@ -5,10 +5,14 @@ import type { Session } from '../missions/logic.ts'
 import { currentUser, dbPut, isConfigured } from './firebase.ts'
 import { load, save } from './storage.ts'
 import { listStories } from './library.ts'
-import { getLexicon } from './words.ts'
+import { deckWords, getLexicon } from './words.ts'
 
 export function allCards(): Card[] {
-  const anki: Card[] = [...getLexicon()].map(([hanzi, e]) => ({ hanzi, english: e.english, source: 'anki' }))
+  // Words from Anki / my deck, plus the deck's whole sentences (great for speaking practice).
+  const anki: Card[] = [
+    ...[...getLexicon()].map(([hanzi, e]) => ({ hanzi, english: e.english, source: 'anki' as const })),
+    ...deckWords().map((w) => ({ hanzi: w.hanzi, english: w.english, source: 'anki' as const })),
+  ]
   const stories: Card[] = listStories().flatMap((s) => s.newWords.map((w) => ({ hanzi: w, english: s.glossary[w] ?? '', source: 'story' as const })))
   const missions: Card[] = load<Session[]>('sessions', []).flatMap((s) => (s.report?.new_words ?? []).map((w) => ({ hanzi: w.word, english: w.english, source: 'mission' as const })))
   return mergeCards(anki, stories, missions, STARTER_CARDS)
