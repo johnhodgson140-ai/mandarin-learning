@@ -7,9 +7,44 @@ import { load, save } from './storage.ts'
 
 let lexicon: Map<string, LexiconEntry> | null = null
 
+/** A note from my exported deck (web/public/deck.json, made by scripts/import_deck.py). */
+export type DeckWord = Word & { example: string; section: string }
+
+const isSentence = (hanzi: string) => /[，。？！,.?!…]/.test(hanzi)
+
+/**
+ * My words: the last Anki sync first, then my exported deck for anything the sync doesn't have
+ * (so the app knows my deck before Anki sync is set up). Whole sentences stay out of the word list.
+ */
 export function getLexicon(): Lexicon {
-  lexicon ??= new Map(load<Word[]>('words', []).map((w) => [w.hanzi, { pinyin: w.pinyin, english: w.english, mastery: w.mastery }]))
+  if (!lexicon) {
+    lexicon = new Map()
+    for (const w of [...load<Word[]>('words', []), ...deckWords()]) {
+      if (!isSentence(w.hanzi) && !lexicon.has(w.hanzi)) lexicon.set(w.hanzi, { pinyin: w.pinyin, english: w.english, mastery: w.mastery })
+    }
+  }
   return lexicon
+}
+
+export const deckWords = () => load<DeckWord[]>('deck', [])
+
+/** Words I'm studying (my deck), for writing stories before Anki tells us which ones I know. */
+export function studyWords(lexicon: Lexicon): string[] {
+  return [...lexicon.keys()]
+}
+
+/** Fetch the exported deck that ships with the app (refreshes when I send a new export). */
+export async function loadDeck(): Promise<void> {
+  try {
+    const res = await fetch(`${import.meta.env.BASE_URL}deck.json`, { cache: 'no-cache' })
+    const json = (await res.json()) as { words?: DeckWord[] }
+    if (Array.isArray(json.words)) {
+      save('deck', json.words)
+      lexicon = null
+    }
+  } catch {
+    // offline: keep the copy we have
+  }
 }
 
 export function saveWords(words: Word[]): void {

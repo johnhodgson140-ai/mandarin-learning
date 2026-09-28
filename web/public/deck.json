@@ -1,0 +1,4474 @@
+{
+ "words": [
+  {
+   "noteId": 1790479127000,
+   "hanzi": "飞机",
+   "pinyin": "fēijī",
+   "english": "airplane",
+   "example": "我坐飞机去。",
+   "section": "00 Starter Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127003,
+   "hanzi": "中国",
+   "pinyin": "Zhōngguó",
+   "english": "China",
+   "example": "中国很大。",
+   "section": "00 Starter Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127006,
+   "hanzi": "铅笔",
+   "pinyin": "qiānbǐ",
+   "english": "pencil",
+   "example": "这是我的铅笔。",
+   "section": "00 Starter Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127009,
+   "hanzi": "高兴",
+   "pinyin": "gāoxìng",
+   "english": "happy; glad",
+   "example": "我很高兴。",
+   "section": "00 Starter Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127012,
+   "hanzi": "桌子",
+   "pinyin": "zhuōzi",
+   "english": "table",
+   "example": "这张桌子很大。",
+   "section": "00 Starter Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127015,
+   "hanzi": "明天",
+   "pinyin": "míngtiān",
+   "english": "tomorrow",
+   "example": "明天见！",
+   "section": "00 Starter Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127018,
+   "hanzi": "学习",
+   "pinyin": "xuéxí",
+   "english": "to study",
+   "example": "我在学习。",
+   "section": "00 Starter Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127021,
+   "hanzi": "苹果",
+   "pinyin": "píngguǒ",
+   "english": "apple",
+   "example": "我要两个苹果。",
+   "section": "00 Starter Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127024,
+   "hanzi": "学校",
+   "pinyin": "xuéxiào",
+   "english": "school",
+   "example": "我们学校很大。",
+   "section": "00 Starter Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127027,
+   "hanzi": "朋友",
+   "pinyin": "péngyou",
+   "english": "friend",
+   "example": "他是我的好朋友。",
+   "section": "00 Starter Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127030,
+   "hanzi": "老师",
+   "pinyin": "lǎoshī",
+   "english": "teacher",
+   "example": "王老师好！",
+   "section": "00 Starter Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127033,
+   "hanzi": "美国",
+   "pinyin": "Měiguó",
+   "english": "USA",
+   "example": "他是美国人。",
+   "section": "00 Starter Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127036,
+   "hanzi": "你好",
+   "pinyin": "nǐ hǎo",
+   "english": "hello",
+   "example": "老师，你好！",
+   "section": "00 Starter Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127039,
+   "hanzi": "考试",
+   "pinyin": "kǎoshì",
+   "english": "exam",
+   "example": "明天有考试。",
+   "section": "00 Starter Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127042,
+   "hanzi": "姐姐",
+   "pinyin": "jiějie",
+   "english": "older sister",
+   "example": "我姐姐很忙。",
+   "section": "00 Starter Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127045,
+   "hanzi": "大家",
+   "pinyin": "dàjiā",
+   "english": "everyone",
+   "example": "大家好！",
+   "section": "00 Starter Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127048,
+   "hanzi": "大学",
+   "pinyin": "dàxué",
+   "english": "university",
+   "example": "他在上大学。",
+   "section": "00 Starter Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127051,
+   "hanzi": "电脑",
+   "pinyin": "diànnǎo",
+   "english": "computer",
+   "example": "我在用电脑。",
+   "section": "00 Starter Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127054,
+   "hanzi": "再见",
+   "pinyin": "zàijiàn",
+   "english": "goodbye",
+   "example": "老师再见！",
+   "section": "00 Starter Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127057,
+   "hanzi": "爸爸",
+   "pinyin": "bàba",
+   "english": "dad",
+   "example": "我爸爸是医生。",
+   "section": "00 Starter Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127060,
+   "hanzi": "我",
+   "pinyin": "wǒ",
+   "english": "I; me",
+   "example": "我是学生。",
+   "section": "01 People & Pronouns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127063,
+   "hanzi": "你",
+   "pinyin": "nǐ",
+   "english": "you",
+   "example": "你好！",
+   "section": "01 People & Pronouns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127066,
+   "hanzi": "您",
+   "pinyin": "nín",
+   "english": "you (polite)",
+   "example": "您贵姓？",
+   "section": "01 People & Pronouns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127069,
+   "hanzi": "他",
+   "pinyin": "tā",
+   "english": "he; him",
+   "example": "他是我哥哥。",
+   "section": "01 People & Pronouns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127072,
+   "hanzi": "她",
+   "pinyin": "tā",
+   "english": "she; her",
+   "example": "她很漂亮。",
+   "section": "01 People & Pronouns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127075,
+   "hanzi": "它",
+   "pinyin": "tā",
+   "english": "it",
+   "example": "它很小。",
+   "section": "01 People & Pronouns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127078,
+   "hanzi": "我们",
+   "pinyin": "wǒmen",
+   "english": "we; us",
+   "example": "我们走吧。",
+   "section": "01 People & Pronouns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127081,
+   "hanzi": "你们",
+   "pinyin": "nǐmen",
+   "english": "you (plural)",
+   "example": "你们好！",
+   "section": "01 People & Pronouns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127084,
+   "hanzi": "他们",
+   "pinyin": "tāmen",
+   "english": "they; them",
+   "example": "他们是学生。",
+   "section": "01 People & Pronouns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127087,
+   "hanzi": "人",
+   "pinyin": "rén",
+   "english": "person",
+   "example": "这里人很多。",
+   "section": "01 People & Pronouns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127090,
+   "hanzi": "男人",
+   "pinyin": "nánrén",
+   "english": "man",
+   "example": "那个男人是医生。",
+   "section": "01 People & Pronouns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127093,
+   "hanzi": "女人",
+   "pinyin": "nǚrén",
+   "english": "woman",
+   "example": "那个女人是老师。",
+   "section": "01 People & Pronouns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127096,
+   "hanzi": "孩子",
+   "pinyin": "háizi",
+   "english": "child",
+   "example": "你有孩子吗？",
+   "section": "01 People & Pronouns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127099,
+   "hanzi": "妈妈",
+   "pinyin": "māma",
+   "english": "mum",
+   "example": "我妈妈很忙。",
+   "section": "01 People & Pronouns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127102,
+   "hanzi": "哥哥",
+   "pinyin": "gēge",
+   "english": "older brother",
+   "example": "我哥哥二十五岁。",
+   "section": "01 People & Pronouns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127105,
+   "hanzi": "弟弟",
+   "pinyin": "dìdi",
+   "english": "younger brother",
+   "example": "我弟弟很高。",
+   "section": "01 People & Pronouns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127108,
+   "hanzi": "妹妹",
+   "pinyin": "mèimei",
+   "english": "younger sister",
+   "example": "我妹妹喜欢猫。",
+   "section": "01 People & Pronouns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127111,
+   "hanzi": "儿子",
+   "pinyin": "érzi",
+   "english": "son",
+   "example": "他儿子三岁。",
+   "section": "01 People & Pronouns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127114,
+   "hanzi": "女儿",
+   "pinyin": "nǚ'ér",
+   "english": "daughter",
+   "example": "她有两个女儿。",
+   "section": "01 People & Pronouns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127117,
+   "hanzi": "丈夫",
+   "pinyin": "zhàngfu",
+   "english": "husband",
+   "example": "她丈夫是英国人。",
+   "section": "01 People & Pronouns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127120,
+   "hanzi": "妻子",
+   "pinyin": "qīzi",
+   "english": "wife",
+   "example": "他妻子是中国人。",
+   "section": "01 People & Pronouns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127123,
+   "hanzi": "家人",
+   "pinyin": "jiārén",
+   "english": "family members",
+   "example": "我很想家人。",
+   "section": "01 People & Pronouns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127126,
+   "hanzi": "学生",
+   "pinyin": "xuésheng",
+   "english": "student",
+   "example": "他是大学生。",
+   "section": "01 People & Pronouns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127129,
+   "hanzi": "同学",
+   "pinyin": "tóngxué",
+   "english": "classmate",
+   "example": "他是我的同学。",
+   "section": "01 People & Pronouns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127132,
+   "hanzi": "医生",
+   "pinyin": "yīshēng",
+   "english": "doctor",
+   "example": "我要看医生。",
+   "section": "01 People & Pronouns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127135,
+   "hanzi": "先生",
+   "pinyin": "xiānsheng",
+   "english": "Mr.; sir",
+   "example": "王先生，您好！",
+   "section": "01 People & Pronouns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127138,
+   "hanzi": "小姐",
+   "pinyin": "xiǎojiě",
+   "english": "Miss; young lady",
+   "example": "李小姐在吗？",
+   "section": "01 People & Pronouns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127141,
+   "hanzi": "名字",
+   "pinyin": "míngzi",
+   "english": "name",
+   "example": "你的名字很好听。",
+   "section": "01 People & Pronouns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127144,
+   "hanzi": "自己",
+   "pinyin": "zìjǐ",
+   "english": "oneself",
+   "example": "我自己去。",
+   "section": "01 People & Pronouns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127147,
+   "hanzi": "零",
+   "pinyin": "líng",
+   "english": "zero",
+   "example": "二零二六年",
+   "section": "02 Numbers & Time",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127150,
+   "hanzi": "一",
+   "pinyin": "yī",
+   "english": "one",
+   "example": "我一个人去。",
+   "section": "02 Numbers & Time",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127153,
+   "hanzi": "二",
+   "pinyin": "èr",
+   "english": "two",
+   "example": "二月",
+   "section": "02 Numbers & Time",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127156,
+   "hanzi": "两",
+   "pinyin": "liǎng",
+   "english": "two (of something)",
+   "example": "两杯咖啡",
+   "section": "02 Numbers & Time",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127159,
+   "hanzi": "三",
+   "pinyin": "sān",
+   "english": "three",
+   "example": "三个人",
+   "section": "02 Numbers & Time",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127162,
+   "hanzi": "四",
+   "pinyin": "sì",
+   "english": "four",
+   "example": "四块钱",
+   "section": "02 Numbers & Time",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127165,
+   "hanzi": "五",
+   "pinyin": "wǔ",
+   "english": "five",
+   "example": "五点",
+   "section": "02 Numbers & Time",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127168,
+   "hanzi": "六",
+   "pinyin": "liù",
+   "english": "six",
+   "example": "六月",
+   "section": "02 Numbers & Time",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127171,
+   "hanzi": "七",
+   "pinyin": "qī",
+   "english": "seven",
+   "example": "七天",
+   "section": "02 Numbers & Time",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127174,
+   "hanzi": "八",
+   "pinyin": "bā",
+   "english": "eight",
+   "example": "八点半",
+   "section": "02 Numbers & Time",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127177,
+   "hanzi": "九",
+   "pinyin": "jiǔ",
+   "english": "nine",
+   "example": "九十",
+   "section": "02 Numbers & Time",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127180,
+   "hanzi": "十",
+   "pinyin": "shí",
+   "english": "ten",
+   "example": "十分钟",
+   "section": "02 Numbers & Time",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127183,
+   "hanzi": "百",
+   "pinyin": "bǎi",
+   "english": "hundred",
+   "example": "一百块",
+   "section": "02 Numbers & Time",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127186,
+   "hanzi": "千",
+   "pinyin": "qiān",
+   "english": "thousand",
+   "example": "三千人",
+   "section": "02 Numbers & Time",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127189,
+   "hanzi": "万",
+   "pinyin": "wàn",
+   "english": "ten thousand",
+   "example": "一万块",
+   "section": "02 Numbers & Time",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127192,
+   "hanzi": "今天",
+   "pinyin": "jīntiān",
+   "english": "today",
+   "example": "今天很热。",
+   "section": "02 Numbers & Time",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127195,
+   "hanzi": "昨天",
+   "pinyin": "zuótiān",
+   "english": "yesterday",
+   "example": "昨天我很忙。",
+   "section": "02 Numbers & Time",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127198,
+   "hanzi": "现在",
+   "pinyin": "xiànzài",
+   "english": "now",
+   "example": "现在几点？",
+   "section": "02 Numbers & Time",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127201,
+   "hanzi": "时候",
+   "pinyin": "shíhou",
+   "english": "time; moment",
+   "example": "你什么时候来？",
+   "section": "02 Numbers & Time",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127204,
+   "hanzi": "时间",
+   "pinyin": "shíjiān",
+   "english": "time",
+   "example": "我没有时间。",
+   "section": "02 Numbers & Time",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127207,
+   "hanzi": "年",
+   "pinyin": "nián",
+   "english": "year",
+   "example": "我学了一年中文。",
+   "section": "02 Numbers & Time",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127210,
+   "hanzi": "月",
+   "pinyin": "yuè",
+   "english": "month; moon",
+   "example": "下个月",
+   "section": "02 Numbers & Time",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127213,
+   "hanzi": "号",
+   "pinyin": "hào",
+   "english": "day of the month; number",
+   "example": "今天几号？",
+   "section": "02 Numbers & Time",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127216,
+   "hanzi": "星期",
+   "pinyin": "xīngqī",
+   "english": "week",
+   "example": "下个星期",
+   "section": "02 Numbers & Time",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127219,
+   "hanzi": "星期一",
+   "pinyin": "xīngqīyī",
+   "english": "Monday",
+   "example": "星期一我很忙。",
+   "section": "02 Numbers & Time",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127222,
+   "hanzi": "星期天",
+   "pinyin": "xīngqītiān",
+   "english": "Sunday",
+   "example": "星期天我休息。",
+   "section": "02 Numbers & Time",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127225,
+   "hanzi": "天",
+   "pinyin": "tiān",
+   "english": "day; sky",
+   "example": "三天",
+   "section": "02 Numbers & Time",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127228,
+   "hanzi": "点",
+   "pinyin": "diǎn",
+   "english": "o'clock; point",
+   "example": "我八点起床。",
+   "section": "02 Numbers & Time",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127231,
+   "hanzi": "分钟",
+   "pinyin": "fēnzhōng",
+   "english": "minute",
+   "example": "等我五分钟。",
+   "section": "02 Numbers & Time",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127234,
+   "hanzi": "小时",
+   "pinyin": "xiǎoshí",
+   "english": "hour",
+   "example": "两个小时",
+   "section": "02 Numbers & Time",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127237,
+   "hanzi": "早上",
+   "pinyin": "zǎoshang",
+   "english": "early morning",
+   "example": "我早上喝咖啡。",
+   "section": "02 Numbers & Time",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127240,
+   "hanzi": "上午",
+   "pinyin": "shàngwǔ",
+   "english": "morning (before noon)",
+   "example": "上午十点",
+   "section": "02 Numbers & Time",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127243,
+   "hanzi": "中午",
+   "pinyin": "zhōngwǔ",
+   "english": "noon",
+   "example": "中午吃什么？",
+   "section": "02 Numbers & Time",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127246,
+   "hanzi": "下午",
+   "pinyin": "xiàwǔ",
+   "english": "afternoon",
+   "example": "下午见！",
+   "section": "02 Numbers & Time",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127249,
+   "hanzi": "晚上",
+   "pinyin": "wǎnshang",
+   "english": "evening",
+   "example": "晚上你有时间吗？",
+   "section": "02 Numbers & Time",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127252,
+   "hanzi": "今年",
+   "pinyin": "jīnnián",
+   "english": "this year",
+   "example": "今年我去中国。",
+   "section": "02 Numbers & Time",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127255,
+   "hanzi": "岁",
+   "pinyin": "suì",
+   "english": "years old",
+   "example": "你几岁？",
+   "section": "02 Numbers & Time",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127258,
+   "hanzi": "以前",
+   "pinyin": "yǐqián",
+   "english": "before; in the past",
+   "example": "我以前不喜欢茶。",
+   "section": "02 Numbers & Time",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127261,
+   "hanzi": "以后",
+   "pinyin": "yǐhòu",
+   "english": "after; in the future",
+   "example": "以后再说吧。",
+   "section": "02 Numbers & Time",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127264,
+   "hanzi": "是",
+   "pinyin": "shì",
+   "english": "to be (A is B)",
+   "example": "这是我的书。",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127267,
+   "hanzi": "有",
+   "pinyin": "yǒu",
+   "english": "to have; there is",
+   "example": "这里有厕所吗？",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127270,
+   "hanzi": "没有",
+   "pinyin": "méiyǒu",
+   "english": "not have; there isn't",
+   "example": "我没有哥哥。",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127273,
+   "hanzi": "在",
+   "pinyin": "zài",
+   "english": "to be at; (doing) now",
+   "example": "我在学校。",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127276,
+   "hanzi": "去",
+   "pinyin": "qù",
+   "english": "to go",
+   "example": "你去哪儿？",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127279,
+   "hanzi": "来",
+   "pinyin": "lái",
+   "english": "to come",
+   "example": "你来吧！",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127282,
+   "hanzi": "回",
+   "pinyin": "huí",
+   "english": "to return",
+   "example": "我要回家。",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127285,
+   "hanzi": "到",
+   "pinyin": "dào",
+   "english": "to arrive; to (a place)",
+   "example": "我到了。",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127288,
+   "hanzi": "走",
+   "pinyin": "zǒu",
+   "english": "to walk; to leave",
+   "example": "他走了。",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127291,
+   "hanzi": "吃",
+   "pinyin": "chī",
+   "english": "to eat",
+   "example": "你想吃什么？",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127294,
+   "hanzi": "喝",
+   "pinyin": "hē",
+   "english": "to drink",
+   "example": "你喝什么？",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127297,
+   "hanzi": "看",
+   "pinyin": "kàn",
+   "english": "to look; watch; read",
+   "example": "我在看电视。",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127300,
+   "hanzi": "听",
+   "pinyin": "tīng",
+   "english": "to listen",
+   "example": "我喜欢听音乐。",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127303,
+   "hanzi": "说",
+   "pinyin": "shuō",
+   "english": "to speak; say",
+   "example": "你说什么？",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127306,
+   "hanzi": "读",
+   "pinyin": "dú",
+   "english": "to read (aloud); to study",
+   "example": "请读一下。",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127309,
+   "hanzi": "写",
+   "pinyin": "xiě",
+   "english": "to write",
+   "example": "我不会写汉字。",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127312,
+   "hanzi": "学",
+   "pinyin": "xué",
+   "english": "to learn",
+   "example": "我在学中文。",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127315,
+   "hanzi": "工作",
+   "pinyin": "gōngzuò",
+   "english": "to work; job",
+   "example": "你在哪儿工作？",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127318,
+   "hanzi": "想",
+   "pinyin": "xiǎng",
+   "english": "to want to; think; miss",
+   "example": "我想你。",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127321,
+   "hanzi": "要",
+   "pinyin": "yào",
+   "english": "to want; need; will",
+   "example": "我要一杯茶。",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127324,
+   "hanzi": "喜欢",
+   "pinyin": "xǐhuan",
+   "english": "to like",
+   "example": "我喜欢你。",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127327,
+   "hanzi": "爱",
+   "pinyin": "ài",
+   "english": "to love",
+   "example": "我爱我的家。",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127330,
+   "hanzi": "知道",
+   "pinyin": "zhīdào",
+   "english": "to know (a fact)",
+   "example": "我知道了。",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127333,
+   "hanzi": "认识",
+   "pinyin": "rènshi",
+   "english": "to know (a person); recognise",
+   "example": "你认识他吗？",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127336,
+   "hanzi": "觉得",
+   "pinyin": "juéde",
+   "english": "to feel; think",
+   "example": "你觉得怎么样？",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127339,
+   "hanzi": "会",
+   "pinyin": "huì",
+   "english": "can (learned skill); will",
+   "example": "我会做饭。",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127342,
+   "hanzi": "能",
+   "pinyin": "néng",
+   "english": "can (be able to)",
+   "example": "我能进来吗？",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127345,
+   "hanzi": "可以",
+   "pinyin": "kěyǐ",
+   "english": "may; can (allowed)",
+   "example": "这里可以坐吗？",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127348,
+   "hanzi": "做",
+   "pinyin": "zuò",
+   "english": "to do; make",
+   "example": "你在做什么？",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127351,
+   "hanzi": "买",
+   "pinyin": "mǎi",
+   "english": "to buy",
+   "example": "我想买这个。",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127354,
+   "hanzi": "卖",
+   "pinyin": "mài",
+   "english": "to sell",
+   "example": "这里卖咖啡吗？",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127357,
+   "hanzi": "开",
+   "pinyin": "kāi",
+   "english": "to open; drive",
+   "example": "请开门。",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127360,
+   "hanzi": "坐",
+   "pinyin": "zuò",
+   "english": "to sit; take (transport)",
+   "example": "请坐。",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127363,
+   "hanzi": "住",
+   "pinyin": "zhù",
+   "english": "to live (reside)",
+   "example": "我住在这里。",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127366,
+   "hanzi": "睡觉",
+   "pinyin": "shuìjiào",
+   "english": "to sleep",
+   "example": "我要睡觉了。",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127369,
+   "hanzi": "起床",
+   "pinyin": "qǐchuáng",
+   "english": "to get up",
+   "example": "你几点起床？",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127372,
+   "hanzi": "叫",
+   "pinyin": "jiào",
+   "english": "to be called; to call",
+   "example": "他叫什么？",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127375,
+   "hanzi": "给",
+   "pinyin": "gěi",
+   "english": "to give; for",
+   "example": "给你。",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127378,
+   "hanzi": "打电话",
+   "pinyin": "dǎ diànhuà",
+   "english": "to make a phone call",
+   "example": "我给你打电话。",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127381,
+   "hanzi": "等",
+   "pinyin": "děng",
+   "english": "to wait",
+   "example": "等我一下。",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127384,
+   "hanzi": "找",
+   "pinyin": "zhǎo",
+   "english": "to look for",
+   "example": "你找谁？",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127387,
+   "hanzi": "帮助",
+   "pinyin": "bāngzhù",
+   "english": "to help",
+   "example": "谢谢你的帮助。",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127390,
+   "hanzi": "问",
+   "pinyin": "wèn",
+   "english": "to ask",
+   "example": "我问一下。",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127393,
+   "hanzi": "回答",
+   "pinyin": "huídá",
+   "english": "to answer",
+   "example": "请回答。",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127396,
+   "hanzi": "开始",
+   "pinyin": "kāishǐ",
+   "english": "to start",
+   "example": "我们开始吧。",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127399,
+   "hanzi": "玩",
+   "pinyin": "wán",
+   "english": "to play; have fun",
+   "example": "周末去哪儿玩？",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127402,
+   "hanzi": "休息",
+   "pinyin": "xiūxi",
+   "english": "to rest",
+   "example": "你休息一下吧。",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127405,
+   "hanzi": "洗",
+   "pinyin": "xǐ",
+   "english": "to wash",
+   "example": "我去洗手。",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127408,
+   "hanzi": "穿",
+   "pinyin": "chuān",
+   "english": "to wear",
+   "example": "今天穿什么？",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127411,
+   "hanzi": "用",
+   "pinyin": "yòng",
+   "english": "to use",
+   "example": "我可以用一下吗？",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127414,
+   "hanzi": "懂",
+   "pinyin": "dǒng",
+   "english": "to understand",
+   "example": "你懂吗？",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127417,
+   "hanzi": "告诉",
+   "pinyin": "gàosu",
+   "english": "to tell",
+   "example": "请告诉我。",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127420,
+   "hanzi": "准备",
+   "pinyin": "zhǔnbèi",
+   "english": "to prepare",
+   "example": "我准备好了。",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127423,
+   "hanzi": "旅游",
+   "pinyin": "lǚyóu",
+   "english": "to travel",
+   "example": "我想去中国旅游。",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127426,
+   "hanzi": "跑步",
+   "pinyin": "pǎobù",
+   "english": "to run; jog",
+   "example": "我每天跑步。",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127429,
+   "hanzi": "唱歌",
+   "pinyin": "chànggē",
+   "english": "to sing",
+   "example": "她唱歌很好听。",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127432,
+   "hanzi": "跳舞",
+   "pinyin": "tiàowǔ",
+   "english": "to dance",
+   "example": "我不会跳舞。",
+   "section": "03 Verbs",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127435,
+   "hanzi": "好",
+   "pinyin": "hǎo",
+   "english": "good",
+   "example": "很好！",
+   "section": "04 Adjectives & Colours",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127438,
+   "hanzi": "大",
+   "pinyin": "dà",
+   "english": "big",
+   "example": "这个太大了。",
+   "section": "04 Adjectives & Colours",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127441,
+   "hanzi": "小",
+   "pinyin": "xiǎo",
+   "english": "small",
+   "example": "我的房间很小。",
+   "section": "04 Adjectives & Colours",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127444,
+   "hanzi": "多",
+   "pinyin": "duō",
+   "english": "many; much",
+   "example": "人太多了。",
+   "section": "04 Adjectives & Colours",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127447,
+   "hanzi": "少",
+   "pinyin": "shǎo",
+   "english": "few; little",
+   "example": "钱太少了。",
+   "section": "04 Adjectives & Colours",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127450,
+   "hanzi": "高",
+   "pinyin": "gāo",
+   "english": "tall; high",
+   "example": "他很高。",
+   "section": "04 Adjectives & Colours",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127453,
+   "hanzi": "热",
+   "pinyin": "rè",
+   "english": "hot",
+   "example": "我很热。",
+   "section": "04 Adjectives & Colours",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127456,
+   "hanzi": "冷",
+   "pinyin": "lěng",
+   "english": "cold",
+   "example": "外面很冷。",
+   "section": "04 Adjectives & Colours",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127459,
+   "hanzi": "新",
+   "pinyin": "xīn",
+   "english": "new",
+   "example": "这是新手机。",
+   "section": "04 Adjectives & Colours",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127462,
+   "hanzi": "旧",
+   "pinyin": "jiù",
+   "english": "old (things)",
+   "example": "我的电脑很旧。",
+   "section": "04 Adjectives & Colours",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127465,
+   "hanzi": "老",
+   "pinyin": "lǎo",
+   "english": "old (people)",
+   "example": "他老了。",
+   "section": "04 Adjectives & Colours",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127468,
+   "hanzi": "贵",
+   "pinyin": "guì",
+   "english": "expensive",
+   "example": "太贵了！",
+   "section": "04 Adjectives & Colours",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127471,
+   "hanzi": "便宜",
+   "pinyin": "piányi",
+   "english": "cheap",
+   "example": "这个很便宜。",
+   "section": "04 Adjectives & Colours",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127474,
+   "hanzi": "快",
+   "pinyin": "kuài",
+   "english": "fast",
+   "example": "快点儿！",
+   "section": "04 Adjectives & Colours",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127477,
+   "hanzi": "慢",
+   "pinyin": "màn",
+   "english": "slow",
+   "example": "慢一点儿。",
+   "section": "04 Adjectives & Colours",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127480,
+   "hanzi": "忙",
+   "pinyin": "máng",
+   "english": "busy",
+   "example": "你忙吗？",
+   "section": "04 Adjectives & Colours",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127483,
+   "hanzi": "累",
+   "pinyin": "lèi",
+   "english": "tired",
+   "example": "我今天很累。",
+   "section": "04 Adjectives & Colours",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127486,
+   "hanzi": "漂亮",
+   "pinyin": "piàoliang",
+   "english": "pretty; beautiful",
+   "example": "这件衣服很漂亮。",
+   "section": "04 Adjectives & Colours",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127489,
+   "hanzi": "好吃",
+   "pinyin": "hǎochī",
+   "english": "tasty",
+   "example": "这个菜很好吃。",
+   "section": "04 Adjectives & Colours",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127492,
+   "hanzi": "好看",
+   "pinyin": "hǎokàn",
+   "english": "good-looking",
+   "example": "这部电影很好看。",
+   "section": "04 Adjectives & Colours",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127495,
+   "hanzi": "难",
+   "pinyin": "nán",
+   "english": "difficult",
+   "example": "中文难吗？",
+   "section": "04 Adjectives & Colours",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127498,
+   "hanzi": "容易",
+   "pinyin": "róngyì",
+   "english": "easy",
+   "example": "这个很容易。",
+   "section": "04 Adjectives & Colours",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127501,
+   "hanzi": "远",
+   "pinyin": "yuǎn",
+   "english": "far",
+   "example": "远吗？",
+   "section": "04 Adjectives & Colours",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127504,
+   "hanzi": "近",
+   "pinyin": "jìn",
+   "english": "near",
+   "example": "我家很近。",
+   "section": "04 Adjectives & Colours",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127507,
+   "hanzi": "长",
+   "pinyin": "cháng",
+   "english": "long",
+   "example": "这条路很长。",
+   "section": "04 Adjectives & Colours",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127510,
+   "hanzi": "短",
+   "pinyin": "duǎn",
+   "english": "short",
+   "example": "时间太短了。",
+   "section": "04 Adjectives & Colours",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127513,
+   "hanzi": "对",
+   "pinyin": "duì",
+   "english": "correct; right",
+   "example": "你说得对。",
+   "section": "04 Adjectives & Colours",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127516,
+   "hanzi": "错",
+   "pinyin": "cuò",
+   "english": "wrong",
+   "example": "我错了。",
+   "section": "04 Adjectives & Colours",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127519,
+   "hanzi": "饿",
+   "pinyin": "è",
+   "english": "hungry",
+   "example": "我饿了。",
+   "section": "04 Adjectives & Colours",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127522,
+   "hanzi": "渴",
+   "pinyin": "kě",
+   "english": "thirsty",
+   "example": "我渴了。",
+   "section": "04 Adjectives & Colours",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127525,
+   "hanzi": "开心",
+   "pinyin": "kāixīn",
+   "english": "happy",
+   "example": "今天很开心！",
+   "section": "04 Adjectives & Colours",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127528,
+   "hanzi": "一样",
+   "pinyin": "yíyàng",
+   "english": "the same",
+   "example": "我们一样。",
+   "section": "04 Adjectives & Colours",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127531,
+   "hanzi": "重要",
+   "pinyin": "zhòngyào",
+   "english": "important",
+   "example": "这个很重要。",
+   "section": "04 Adjectives & Colours",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127534,
+   "hanzi": "舒服",
+   "pinyin": "shūfu",
+   "english": "comfortable; feeling well",
+   "example": "这把椅子很舒服。",
+   "section": "04 Adjectives & Colours",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127537,
+   "hanzi": "干净",
+   "pinyin": "gānjìng",
+   "english": "clean",
+   "example": "房间很干净。",
+   "section": "04 Adjectives & Colours",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127540,
+   "hanzi": "有意思",
+   "pinyin": "yǒu yìsi",
+   "english": "interesting",
+   "example": "中文很有意思。",
+   "section": "04 Adjectives & Colours",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127543,
+   "hanzi": "红色",
+   "pinyin": "hóngsè",
+   "english": "red",
+   "example": "我喜欢红色。",
+   "section": "04 Adjectives & Colours",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127546,
+   "hanzi": "白色",
+   "pinyin": "báisè",
+   "english": "white",
+   "example": "白色的鞋",
+   "section": "04 Adjectives & Colours",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127549,
+   "hanzi": "黑色",
+   "pinyin": "hēisè",
+   "english": "black",
+   "example": "黑色的猫",
+   "section": "04 Adjectives & Colours",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127552,
+   "hanzi": "蓝色",
+   "pinyin": "lánsè",
+   "english": "blue",
+   "example": "天是蓝色的。",
+   "section": "04 Adjectives & Colours",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127555,
+   "hanzi": "绿色",
+   "pinyin": "lǜsè",
+   "english": "green",
+   "example": "绿色的衣服",
+   "section": "04 Adjectives & Colours",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127558,
+   "hanzi": "黄色",
+   "pinyin": "huángsè",
+   "english": "yellow",
+   "example": "黄色的香蕉",
+   "section": "04 Adjectives & Colours",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127561,
+   "hanzi": "饭",
+   "pinyin": "fàn",
+   "english": "meal; cooked rice",
+   "example": "吃饭了吗？",
+   "section": "05 Food & Drink",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127564,
+   "hanzi": "米饭",
+   "pinyin": "mǐfàn",
+   "english": "cooked rice",
+   "example": "我要一碗米饭。",
+   "section": "05 Food & Drink",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127567,
+   "hanzi": "面条",
+   "pinyin": "miàntiáo",
+   "english": "noodles",
+   "example": "我想吃面条。",
+   "section": "05 Food & Drink",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127570,
+   "hanzi": "饺子",
+   "pinyin": "jiǎozi",
+   "english": "dumplings",
+   "example": "我很喜欢吃饺子。",
+   "section": "05 Food & Drink",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127573,
+   "hanzi": "包子",
+   "pinyin": "bāozi",
+   "english": "steamed bun",
+   "example": "两个包子",
+   "section": "05 Food & Drink",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127576,
+   "hanzi": "菜",
+   "pinyin": "cài",
+   "english": "dish; vegetable",
+   "example": "这个菜很辣。",
+   "section": "05 Food & Drink",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127579,
+   "hanzi": "肉",
+   "pinyin": "ròu",
+   "english": "meat",
+   "example": "肉太多了。",
+   "section": "05 Food & Drink",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127582,
+   "hanzi": "鸡肉",
+   "pinyin": "jīròu",
+   "english": "chicken (meat)",
+   "example": "我要鸡肉。",
+   "section": "05 Food & Drink",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127585,
+   "hanzi": "牛肉",
+   "pinyin": "niúròu",
+   "english": "beef",
+   "example": "牛肉面",
+   "section": "05 Food & Drink",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127588,
+   "hanzi": "猪肉",
+   "pinyin": "zhūròu",
+   "english": "pork",
+   "example": "猪肉饺子",
+   "section": "05 Food & Drink",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127591,
+   "hanzi": "鱼",
+   "pinyin": "yú",
+   "english": "fish",
+   "example": "我喜欢吃鱼。",
+   "section": "05 Food & Drink",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127594,
+   "hanzi": "鸡蛋",
+   "pinyin": "jīdàn",
+   "english": "egg",
+   "example": "两个鸡蛋",
+   "section": "05 Food & Drink",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127597,
+   "hanzi": "水果",
+   "pinyin": "shuǐguǒ",
+   "english": "fruit",
+   "example": "我每天吃水果。",
+   "section": "05 Food & Drink",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127600,
+   "hanzi": "香蕉",
+   "pinyin": "xiāngjiāo",
+   "english": "banana",
+   "example": "香蕉很便宜。",
+   "section": "05 Food & Drink",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127603,
+   "hanzi": "水",
+   "pinyin": "shuǐ",
+   "english": "water",
+   "example": "我要一瓶水。",
+   "section": "05 Food & Drink",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127606,
+   "hanzi": "茶",
+   "pinyin": "chá",
+   "english": "tea",
+   "example": "喝茶吗？",
+   "section": "05 Food & Drink",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127609,
+   "hanzi": "咖啡",
+   "pinyin": "kāfēi",
+   "english": "coffee",
+   "example": "我要一杯咖啡。",
+   "section": "05 Food & Drink",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127612,
+   "hanzi": "牛奶",
+   "pinyin": "niúnǎi",
+   "english": "milk",
+   "example": "我不喝牛奶。",
+   "section": "05 Food & Drink",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127615,
+   "hanzi": "啤酒",
+   "pinyin": "píjiǔ",
+   "english": "beer",
+   "example": "来两瓶啤酒！",
+   "section": "05 Food & Drink",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127618,
+   "hanzi": "早饭",
+   "pinyin": "zǎofàn",
+   "english": "breakfast",
+   "example": "你吃早饭了吗？",
+   "section": "05 Food & Drink",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127621,
+   "hanzi": "午饭",
+   "pinyin": "wǔfàn",
+   "english": "lunch",
+   "example": "一起吃午饭吧。",
+   "section": "05 Food & Drink",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127624,
+   "hanzi": "晚饭",
+   "pinyin": "wǎnfàn",
+   "english": "dinner",
+   "example": "晚饭吃什么？",
+   "section": "05 Food & Drink",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127627,
+   "hanzi": "筷子",
+   "pinyin": "kuàizi",
+   "english": "chopsticks",
+   "example": "我会用筷子。",
+   "section": "05 Food & Drink",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127630,
+   "hanzi": "杯子",
+   "pinyin": "bēizi",
+   "english": "cup; glass",
+   "example": "这是我的杯子。",
+   "section": "05 Food & Drink",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127633,
+   "hanzi": "辣",
+   "pinyin": "là",
+   "english": "spicy",
+   "example": "太辣了！",
+   "section": "05 Food & Drink",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127636,
+   "hanzi": "甜",
+   "pinyin": "tián",
+   "english": "sweet",
+   "example": "这个太甜了。",
+   "section": "05 Food & Drink",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127639,
+   "hanzi": "菜单",
+   "pinyin": "càidān",
+   "english": "menu",
+   "example": "请给我菜单。",
+   "section": "05 Food & Drink",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127642,
+   "hanzi": "家",
+   "pinyin": "jiā",
+   "english": "home; family",
+   "example": "我回家了。",
+   "section": "06 Places & Directions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127645,
+   "hanzi": "北京",
+   "pinyin": "Běijīng",
+   "english": "Beijing",
+   "example": "我想去北京。",
+   "section": "06 Places & Directions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127648,
+   "hanzi": "上海",
+   "pinyin": "Shànghǎi",
+   "english": "Shanghai",
+   "example": "上海很大。",
+   "section": "06 Places & Directions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127651,
+   "hanzi": "英国",
+   "pinyin": "Yīngguó",
+   "english": "UK; Britain",
+   "example": "英国很冷。",
+   "section": "06 Places & Directions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127654,
+   "hanzi": "日本",
+   "pinyin": "Rìběn",
+   "english": "Japan",
+   "example": "我想去日本。",
+   "section": "06 Places & Directions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127657,
+   "hanzi": "商店",
+   "pinyin": "shāngdiàn",
+   "english": "shop",
+   "example": "商店几点开门？",
+   "section": "06 Places & Directions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127660,
+   "hanzi": "饭馆",
+   "pinyin": "fànguǎn",
+   "english": "restaurant",
+   "example": "这个饭馆很好吃。",
+   "section": "06 Places & Directions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127663,
+   "hanzi": "医院",
+   "pinyin": "yīyuàn",
+   "english": "hospital",
+   "example": "医院在哪儿？",
+   "section": "06 Places & Directions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127666,
+   "hanzi": "银行",
+   "pinyin": "yínháng",
+   "english": "bank",
+   "example": "银行关门了。",
+   "section": "06 Places & Directions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127669,
+   "hanzi": "厕所",
+   "pinyin": "cèsuǒ",
+   "english": "toilet",
+   "example": "厕所在哪儿？",
+   "section": "06 Places & Directions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127672,
+   "hanzi": "洗手间",
+   "pinyin": "xǐshǒujiān",
+   "english": "restroom (polite)",
+   "example": "洗手间在那边。",
+   "section": "06 Places & Directions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127675,
+   "hanzi": "酒店",
+   "pinyin": "jiǔdiàn",
+   "english": "hotel",
+   "example": "我住在酒店。",
+   "section": "06 Places & Directions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127678,
+   "hanzi": "机场",
+   "pinyin": "jīchǎng",
+   "english": "airport",
+   "example": "去机场多远？",
+   "section": "06 Places & Directions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127681,
+   "hanzi": "火车站",
+   "pinyin": "huǒchēzhàn",
+   "english": "train station",
+   "example": "火车站在哪儿？",
+   "section": "06 Places & Directions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127684,
+   "hanzi": "地铁",
+   "pinyin": "dìtiě",
+   "english": "subway; metro",
+   "example": "坐地铁很方便。",
+   "section": "06 Places & Directions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127687,
+   "hanzi": "出租车",
+   "pinyin": "chūzūchē",
+   "english": "taxi",
+   "example": "我们坐出租车吧。",
+   "section": "06 Places & Directions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127690,
+   "hanzi": "公共汽车",
+   "pinyin": "gōnggòng qìchē",
+   "english": "bus",
+   "example": "我坐公共汽车去。",
+   "section": "06 Places & Directions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127693,
+   "hanzi": "车",
+   "pinyin": "chē",
+   "english": "vehicle; car",
+   "example": "我没有车。",
+   "section": "06 Places & Directions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127696,
+   "hanzi": "路",
+   "pinyin": "lù",
+   "english": "road",
+   "example": "我不认识路。",
+   "section": "06 Places & Directions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127699,
+   "hanzi": "这里",
+   "pinyin": "zhèlǐ",
+   "english": "here",
+   "example": "这里很漂亮。",
+   "section": "06 Places & Directions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127702,
+   "hanzi": "那里",
+   "pinyin": "nàlǐ",
+   "english": "there",
+   "example": "那里人很多。",
+   "section": "06 Places & Directions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127705,
+   "hanzi": "上",
+   "pinyin": "shàng",
+   "english": "up; on; above",
+   "example": "书在桌子上。",
+   "section": "06 Places & Directions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127708,
+   "hanzi": "下",
+   "pinyin": "xià",
+   "english": "down; below",
+   "example": "猫在床下。",
+   "section": "06 Places & Directions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127711,
+   "hanzi": "前面",
+   "pinyin": "qiánmiàn",
+   "english": "in front",
+   "example": "前面就是。",
+   "section": "06 Places & Directions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127714,
+   "hanzi": "后面",
+   "pinyin": "hòumiàn",
+   "english": "behind",
+   "example": "在我后面",
+   "section": "06 Places & Directions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127717,
+   "hanzi": "左边",
+   "pinyin": "zuǒbian",
+   "english": "left side",
+   "example": "在左边。",
+   "section": "06 Places & Directions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127720,
+   "hanzi": "右边",
+   "pinyin": "yòubian",
+   "english": "right side",
+   "example": "往右边走。",
+   "section": "06 Places & Directions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127723,
+   "hanzi": "里",
+   "pinyin": "lǐ",
+   "english": "inside",
+   "example": "他在房间里。",
+   "section": "06 Places & Directions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127726,
+   "hanzi": "外面",
+   "pinyin": "wàimiàn",
+   "english": "outside",
+   "example": "外面下雨了。",
+   "section": "06 Places & Directions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127729,
+   "hanzi": "旁边",
+   "pinyin": "pángbiān",
+   "english": "beside; next to",
+   "example": "银行旁边",
+   "section": "06 Places & Directions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127732,
+   "hanzi": "东",
+   "pinyin": "dōng",
+   "english": "east",
+   "example": "往东走。",
+   "section": "06 Places & Directions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127735,
+   "hanzi": "西",
+   "pinyin": "xī",
+   "english": "west",
+   "example": "往西走。",
+   "section": "06 Places & Directions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127738,
+   "hanzi": "南",
+   "pinyin": "nán",
+   "english": "south",
+   "example": "他是南方人。",
+   "section": "06 Places & Directions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127741,
+   "hanzi": "北",
+   "pinyin": "běi",
+   "english": "north",
+   "example": "北方很冷。",
+   "section": "06 Places & Directions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127744,
+   "hanzi": "东西",
+   "pinyin": "dōngxi",
+   "english": "thing; stuff",
+   "example": "我去买东西。",
+   "section": "07 Everyday Things",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127747,
+   "hanzi": "钱",
+   "pinyin": "qián",
+   "english": "money",
+   "example": "我没带钱。",
+   "section": "07 Everyday Things",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127750,
+   "hanzi": "手机",
+   "pinyin": "shǒujī",
+   "english": "mobile phone",
+   "example": "我的手机没电了。",
+   "section": "07 Everyday Things",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127753,
+   "hanzi": "电视",
+   "pinyin": "diànshì",
+   "english": "TV",
+   "example": "我不看电视。",
+   "section": "07 Everyday Things",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127756,
+   "hanzi": "书",
+   "pinyin": "shū",
+   "english": "book",
+   "example": "这本书很好看。",
+   "section": "07 Everyday Things",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127759,
+   "hanzi": "字",
+   "pinyin": "zì",
+   "english": "character; word",
+   "example": "这个字怎么读？",
+   "section": "07 Everyday Things",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127762,
+   "hanzi": "汉字",
+   "pinyin": "Hànzì",
+   "english": "Chinese characters",
+   "example": "汉字很难。",
+   "section": "07 Everyday Things",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127765,
+   "hanzi": "中文",
+   "pinyin": "Zhōngwén",
+   "english": "Chinese (language)",
+   "example": "我的中文不好。",
+   "section": "07 Everyday Things",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127768,
+   "hanzi": "汉语",
+   "pinyin": "Hànyǔ",
+   "english": "Mandarin Chinese",
+   "example": "你会说汉语吗？",
+   "section": "07 Everyday Things",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127771,
+   "hanzi": "英语",
+   "pinyin": "Yīngyǔ",
+   "english": "English (language)",
+   "example": "他的英语很好。",
+   "section": "07 Everyday Things",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127774,
+   "hanzi": "衣服",
+   "pinyin": "yīfu",
+   "english": "clothes",
+   "example": "我要买衣服。",
+   "section": "07 Everyday Things",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127777,
+   "hanzi": "鞋",
+   "pinyin": "xié",
+   "english": "shoes",
+   "example": "这双鞋多少钱？",
+   "section": "07 Everyday Things",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127780,
+   "hanzi": "椅子",
+   "pinyin": "yǐzi",
+   "english": "chair",
+   "example": "这把椅子很舒服。",
+   "section": "07 Everyday Things",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127783,
+   "hanzi": "门",
+   "pinyin": "mén",
+   "english": "door",
+   "example": "请关门。",
+   "section": "07 Everyday Things",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127786,
+   "hanzi": "房间",
+   "pinyin": "fángjiān",
+   "english": "room",
+   "example": "这是你的房间。",
+   "section": "07 Everyday Things",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127789,
+   "hanzi": "床",
+   "pinyin": "chuáng",
+   "english": "bed",
+   "example": "床很舒服。",
+   "section": "07 Everyday Things",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127792,
+   "hanzi": "票",
+   "pinyin": "piào",
+   "english": "ticket",
+   "example": "我买了两张票。",
+   "section": "07 Everyday Things",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127795,
+   "hanzi": "狗",
+   "pinyin": "gǒu",
+   "english": "dog",
+   "example": "我有一只狗。",
+   "section": "07 Everyday Things",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127798,
+   "hanzi": "猫",
+   "pinyin": "māo",
+   "english": "cat",
+   "example": "你喜欢猫吗？",
+   "section": "07 Everyday Things",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127801,
+   "hanzi": "天气",
+   "pinyin": "tiānqì",
+   "english": "weather",
+   "example": "今天天气很好。",
+   "section": "07 Everyday Things",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127804,
+   "hanzi": "下雨",
+   "pinyin": "xià yǔ",
+   "english": "to rain",
+   "example": "要下雨了。",
+   "section": "07 Everyday Things",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127807,
+   "hanzi": "钥匙",
+   "pinyin": "yàoshi",
+   "english": "key",
+   "example": "我找不到钥匙。",
+   "section": "07 Everyday Things",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127810,
+   "hanzi": "问题",
+   "pinyin": "wèntí",
+   "english": "question; problem",
+   "example": "我有一个问题。",
+   "section": "07 Everyday Things",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127813,
+   "hanzi": "事",
+   "pinyin": "shì",
+   "english": "matter; thing to do",
+   "example": "你有什么事？",
+   "section": "07 Everyday Things",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127816,
+   "hanzi": "身体",
+   "pinyin": "shēntǐ",
+   "english": "body; health",
+   "example": "你身体好吗？",
+   "section": "07 Everyday Things",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127819,
+   "hanzi": "什么",
+   "pinyin": "shénme",
+   "english": "what",
+   "example": "这是什么？",
+   "section": "08 Question & Function Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127822,
+   "hanzi": "谁",
+   "pinyin": "shéi",
+   "english": "who",
+   "example": "他是谁？",
+   "section": "08 Question & Function Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127825,
+   "hanzi": "哪",
+   "pinyin": "nǎ",
+   "english": "which",
+   "example": "你要哪个？",
+   "section": "08 Question & Function Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127828,
+   "hanzi": "哪里",
+   "pinyin": "nǎlǐ",
+   "english": "where",
+   "example": "你在哪里？",
+   "section": "08 Question & Function Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127831,
+   "hanzi": "哪儿",
+   "pinyin": "nǎr",
+   "english": "where (Beijing style)",
+   "example": "去哪儿？",
+   "section": "08 Question & Function Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127834,
+   "hanzi": "为什么",
+   "pinyin": "wèishénme",
+   "english": "why",
+   "example": "你为什么学中文？",
+   "section": "08 Question & Function Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127837,
+   "hanzi": "怎么",
+   "pinyin": "zěnme",
+   "english": "how",
+   "example": "怎么走？",
+   "section": "08 Question & Function Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127840,
+   "hanzi": "怎么样",
+   "pinyin": "zěnmeyàng",
+   "english": "how is it? how about?",
+   "example": "这个怎么样？",
+   "section": "08 Question & Function Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127843,
+   "hanzi": "多少",
+   "pinyin": "duōshao",
+   "english": "how many; how much",
+   "example": "多少钱？",
+   "section": "08 Question & Function Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127846,
+   "hanzi": "几",
+   "pinyin": "jǐ",
+   "english": "how many (small numbers)",
+   "example": "你有几个孩子？",
+   "section": "08 Question & Function Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127849,
+   "hanzi": "吗",
+   "pinyin": "ma",
+   "english": "yes/no question particle",
+   "example": "你好吗？",
+   "section": "08 Question & Function Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127852,
+   "hanzi": "呢",
+   "pinyin": "ne",
+   "english": "“and…?”; ongoing",
+   "example": "我很好，你呢？",
+   "section": "08 Question & Function Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127855,
+   "hanzi": "吧",
+   "pinyin": "ba",
+   "english": "suggestion particle; “let's”",
+   "example": "走吧！",
+   "section": "08 Question & Function Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127858,
+   "hanzi": "了",
+   "pinyin": "le",
+   "english": "completed action; change",
+   "example": "我明白了。",
+   "section": "08 Question & Function Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127861,
+   "hanzi": "的",
+   "pinyin": "de",
+   "english": "possessive (’s); describing",
+   "example": "这是我的。",
+   "section": "08 Question & Function Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127864,
+   "hanzi": "不",
+   "pinyin": "bù",
+   "english": "not",
+   "example": "我不去。",
+   "section": "08 Question & Function Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127867,
+   "hanzi": "没",
+   "pinyin": "méi",
+   "english": "not (for 有 / past actions)",
+   "example": "我没去。",
+   "section": "08 Question & Function Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127870,
+   "hanzi": "很",
+   "pinyin": "hěn",
+   "english": "very (often just links adjective)",
+   "example": "很好。",
+   "section": "08 Question & Function Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127873,
+   "hanzi": "太",
+   "pinyin": "tài",
+   "english": "too; extremely",
+   "example": "太好了！",
+   "section": "08 Question & Function Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127876,
+   "hanzi": "都",
+   "pinyin": "dōu",
+   "english": "all; both",
+   "example": "我们都是学生。",
+   "section": "08 Question & Function Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127879,
+   "hanzi": "也",
+   "pinyin": "yě",
+   "english": "also; too",
+   "example": "我也去。",
+   "section": "08 Question & Function Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127882,
+   "hanzi": "还",
+   "pinyin": "hái",
+   "english": "still; also",
+   "example": "他还没来。",
+   "section": "08 Question & Function Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127885,
+   "hanzi": "和",
+   "pinyin": "hé",
+   "english": "and (between nouns)",
+   "example": "我和你",
+   "section": "08 Question & Function Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127888,
+   "hanzi": "但是",
+   "pinyin": "dànshì",
+   "english": "but",
+   "example": "很好吃，但是很贵。",
+   "section": "08 Question & Function Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127891,
+   "hanzi": "因为",
+   "pinyin": "yīnwèi",
+   "english": "because",
+   "example": "因为我很忙。",
+   "section": "08 Question & Function Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127894,
+   "hanzi": "所以",
+   "pinyin": "suǒyǐ",
+   "english": "so; therefore",
+   "example": "所以我不去。",
+   "section": "08 Question & Function Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127897,
+   "hanzi": "如果",
+   "pinyin": "rúguǒ",
+   "english": "if",
+   "example": "如果下雨，我就不去。",
+   "section": "08 Question & Function Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127900,
+   "hanzi": "这",
+   "pinyin": "zhè",
+   "english": "this",
+   "example": "这是我妈妈。",
+   "section": "08 Question & Function Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127903,
+   "hanzi": "那",
+   "pinyin": "nà",
+   "english": "that",
+   "example": "那是什么？",
+   "section": "08 Question & Function Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127906,
+   "hanzi": "就",
+   "pinyin": "jiù",
+   "english": "then; just; exactly",
+   "example": "我马上就来。",
+   "section": "08 Question & Function Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127909,
+   "hanzi": "再",
+   "pinyin": "zài",
+   "english": "again",
+   "example": "再来一个！",
+   "section": "08 Question & Function Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127912,
+   "hanzi": "已经",
+   "pinyin": "yǐjīng",
+   "english": "already",
+   "example": "我已经吃了。",
+   "section": "08 Question & Function Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127915,
+   "hanzi": "一起",
+   "pinyin": "yìqǐ",
+   "english": "together",
+   "example": "我们一起去吧。",
+   "section": "08 Question & Function Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127918,
+   "hanzi": "一点儿",
+   "pinyin": "yìdiǎnr",
+   "english": "a little",
+   "example": "多吃一点儿！",
+   "section": "08 Question & Function Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127921,
+   "hanzi": "非常",
+   "pinyin": "fēicháng",
+   "english": "extremely",
+   "example": "非常好！",
+   "section": "08 Question & Function Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127924,
+   "hanzi": "最",
+   "pinyin": "zuì",
+   "english": "most",
+   "example": "我最喜欢你。",
+   "section": "08 Question & Function Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127927,
+   "hanzi": "比",
+   "pinyin": "bǐ",
+   "english": "compared to",
+   "example": "今天比昨天冷。",
+   "section": "08 Question & Function Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127930,
+   "hanzi": "可能",
+   "pinyin": "kěnéng",
+   "english": "maybe; possible",
+   "example": "他可能不来。",
+   "section": "08 Question & Function Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127933,
+   "hanzi": "正在",
+   "pinyin": "zhèngzài",
+   "english": "in the middle of (doing)",
+   "example": "我正在吃饭。",
+   "section": "08 Question & Function Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127936,
+   "hanzi": "跟",
+   "pinyin": "gēn",
+   "english": "with",
+   "example": "我跟你去。",
+   "section": "08 Question & Function Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127939,
+   "hanzi": "从",
+   "pinyin": "cóng",
+   "english": "from",
+   "example": "你从哪儿来？",
+   "section": "08 Question & Function Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127942,
+   "hanzi": "个",
+   "pinyin": "gè",
+   "english": "general measure word",
+   "example": "一个人",
+   "section": "09 Measure Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127945,
+   "hanzi": "本",
+   "pinyin": "běn",
+   "english": "for books",
+   "example": "一本书",
+   "section": "09 Measure Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127948,
+   "hanzi": "杯",
+   "pinyin": "bēi",
+   "english": "a cup/glass of",
+   "example": "一杯茶",
+   "section": "09 Measure Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127951,
+   "hanzi": "张",
+   "pinyin": "zhāng",
+   "english": "flat things (paper, tickets, tables)",
+   "example": "一张票",
+   "section": "09 Measure Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127954,
+   "hanzi": "只",
+   "pinyin": "zhī",
+   "english": "for many animals",
+   "example": "一只猫",
+   "section": "09 Measure Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127957,
+   "hanzi": "件",
+   "pinyin": "jiàn",
+   "english": "for clothes (tops) and matters",
+   "example": "一件衣服",
+   "section": "09 Measure Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127960,
+   "hanzi": "条",
+   "pinyin": "tiáo",
+   "english": "long thin things (roads, fish, trousers)",
+   "example": "一条鱼",
+   "section": "09 Measure Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127963,
+   "hanzi": "位",
+   "pinyin": "wèi",
+   "english": "for people (polite)",
+   "example": "几位？",
+   "section": "09 Measure Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127966,
+   "hanzi": "口",
+   "pinyin": "kǒu",
+   "english": "family members",
+   "example": "我家有四口人。",
+   "section": "09 Measure Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127969,
+   "hanzi": "双",
+   "pinyin": "shuāng",
+   "english": "a pair of",
+   "example": "一双鞋",
+   "section": "09 Measure Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127972,
+   "hanzi": "次",
+   "pinyin": "cì",
+   "english": "times; occurrences",
+   "example": "我去过两次。",
+   "section": "09 Measure Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127975,
+   "hanzi": "辆",
+   "pinyin": "liàng",
+   "english": "for vehicles",
+   "example": "一辆车",
+   "section": "09 Measure Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127978,
+   "hanzi": "瓶",
+   "pinyin": "píng",
+   "english": "a bottle of",
+   "example": "一瓶水",
+   "section": "09 Measure Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127981,
+   "hanzi": "碗",
+   "pinyin": "wǎn",
+   "english": "a bowl of",
+   "example": "一碗饭",
+   "section": "09 Measure Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127984,
+   "hanzi": "块",
+   "pinyin": "kuài",
+   "english": "piece; yuan (spoken money)",
+   "example": "十块钱",
+   "section": "09 Measure Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127987,
+   "hanzi": "元",
+   "pinyin": "yuán",
+   "english": "yuan (written money)",
+   "example": "一百元",
+   "section": "09 Measure Words",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127990,
+   "hanzi": "您好",
+   "pinyin": "nín hǎo",
+   "english": "hello (polite)",
+   "example": "",
+   "section": "01 Greetings & Politeness",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127993,
+   "hanzi": "早上好",
+   "pinyin": "zǎoshang hǎo",
+   "english": "good morning",
+   "example": "",
+   "section": "01 Greetings & Politeness",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127996,
+   "hanzi": "晚上好",
+   "pinyin": "wǎnshang hǎo",
+   "english": "good evening",
+   "example": "",
+   "section": "01 Greetings & Politeness",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479127999,
+   "hanzi": "晚安",
+   "pinyin": "wǎn'ān",
+   "english": "good night",
+   "example": "",
+   "section": "01 Greetings & Politeness",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128002,
+   "hanzi": "明天见",
+   "pinyin": "míngtiān jiàn",
+   "english": "see you tomorrow",
+   "example": "",
+   "section": "01 Greetings & Politeness",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128005,
+   "hanzi": "谢谢",
+   "pinyin": "xièxie",
+   "english": "thank you",
+   "example": "",
+   "section": "01 Greetings & Politeness",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128008,
+   "hanzi": "不客气",
+   "pinyin": "bú kèqi",
+   "english": "you're welcome",
+   "example": "",
+   "section": "01 Greetings & Politeness",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128011,
+   "hanzi": "对不起",
+   "pinyin": "duìbuqǐ",
+   "english": "sorry",
+   "example": "",
+   "section": "01 Greetings & Politeness",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128014,
+   "hanzi": "没关系",
+   "pinyin": "méi guānxi",
+   "english": "it's OK; never mind",
+   "example": "",
+   "section": "01 Greetings & Politeness",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128017,
+   "hanzi": "不好意思",
+   "pinyin": "bù hǎoyìsi",
+   "english": "excuse me; sorry (light)",
+   "example": "",
+   "section": "01 Greetings & Politeness",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128020,
+   "hanzi": "请",
+   "pinyin": "qǐng",
+   "english": "please",
+   "example": "",
+   "section": "01 Greetings & Politeness",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128023,
+   "hanzi": "请问",
+   "pinyin": "qǐngwèn",
+   "english": "excuse me, may I ask…",
+   "example": "",
+   "section": "01 Greetings & Politeness",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128026,
+   "hanzi": "没事",
+   "pinyin": "méi shì",
+   "english": "no worries; it's nothing",
+   "example": "",
+   "section": "01 Greetings & Politeness",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128029,
+   "hanzi": "好久不见",
+   "pinyin": "hǎojiǔ bú jiàn",
+   "english": "long time no see",
+   "example": "",
+   "section": "01 Greetings & Politeness",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128032,
+   "hanzi": "你好吗？",
+   "pinyin": "nǐ hǎo ma?",
+   "english": "how are you?",
+   "example": "",
+   "section": "01 Greetings & Politeness",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128035,
+   "hanzi": "我很好",
+   "pinyin": "wǒ hěn hǎo",
+   "english": "I'm fine",
+   "example": "",
+   "section": "01 Greetings & Politeness",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128038,
+   "hanzi": "辛苦了",
+   "pinyin": "xīnkǔ le",
+   "english": "thanks for your hard work",
+   "example": "",
+   "section": "01 Greetings & Politeness",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128041,
+   "hanzi": "慢走",
+   "pinyin": "màn zǒu",
+   "english": "take care (seeing someone off)",
+   "example": "",
+   "section": "01 Greetings & Politeness",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128044,
+   "hanzi": "欢迎",
+   "pinyin": "huānyíng",
+   "english": "welcome",
+   "example": "",
+   "section": "01 Greetings & Politeness",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128047,
+   "hanzi": "你叫什么名字？",
+   "pinyin": "nǐ jiào shénme míngzi?",
+   "english": "what's your name?",
+   "example": "",
+   "section": "02 Introductions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128050,
+   "hanzi": "我叫……",
+   "pinyin": "wǒ jiào ...",
+   "english": "my name is…",
+   "example": "",
+   "section": "02 Introductions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128053,
+   "hanzi": "你是哪国人？",
+   "pinyin": "nǐ shì nǎ guó rén?",
+   "english": "which country are you from?",
+   "example": "",
+   "section": "02 Introductions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128056,
+   "hanzi": "我是英国人",
+   "pinyin": "wǒ shì Yīngguó rén",
+   "english": "I'm British",
+   "example": "",
+   "section": "02 Introductions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128059,
+   "hanzi": "你住在哪里？",
+   "pinyin": "nǐ zhù zài nǎlǐ?",
+   "english": "where do you live?",
+   "example": "",
+   "section": "02 Introductions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128062,
+   "hanzi": "我住在伦敦",
+   "pinyin": "wǒ zhù zài Lúndūn",
+   "english": "I live in London",
+   "example": "",
+   "section": "02 Introductions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128065,
+   "hanzi": "我是学生",
+   "pinyin": "wǒ shì xuésheng",
+   "english": "I'm a student",
+   "example": "",
+   "section": "02 Introductions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128068,
+   "hanzi": "我在大学学习",
+   "pinyin": "wǒ zài dàxué xuéxí",
+   "english": "I study at university",
+   "example": "",
+   "section": "02 Introductions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128071,
+   "hanzi": "认识你很高兴",
+   "pinyin": "rènshi nǐ hěn gāoxìng",
+   "english": "nice to meet you",
+   "example": "",
+   "section": "02 Introductions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128074,
+   "hanzi": "你多大？",
+   "pinyin": "nǐ duō dà?",
+   "english": "how old are you?",
+   "example": "",
+   "section": "02 Introductions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128077,
+   "hanzi": "你做什么工作？",
+   "pinyin": "nǐ zuò shénme gōngzuò?",
+   "english": "what do you do for work?",
+   "example": "",
+   "section": "02 Introductions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128080,
+   "hanzi": "我会说一点儿中文",
+   "pinyin": "wǒ huì shuō yìdiǎnr Zhōngwén",
+   "english": "I can speak a little Chinese",
+   "example": "",
+   "section": "02 Introductions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128083,
+   "hanzi": "你会说英语吗？",
+   "pinyin": "nǐ huì shuō Yīngyǔ ma?",
+   "english": "can you speak English?",
+   "example": "",
+   "section": "02 Introductions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128086,
+   "hanzi": "我正在学中文",
+   "pinyin": "wǒ zhèngzài xué Zhōngwén",
+   "english": "I'm learning Chinese",
+   "example": "",
+   "section": "02 Introductions",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128089,
+   "hanzi": "我听不懂",
+   "pinyin": "wǒ tīng bu dǒng",
+   "english": "I don't understand (what I hear)",
+   "example": "",
+   "section": "03 Survival & Travel",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128092,
+   "hanzi": "我不知道",
+   "pinyin": "wǒ bù zhīdào",
+   "english": "I don't know",
+   "example": "",
+   "section": "03 Survival & Travel",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128095,
+   "hanzi": "请再说一遍",
+   "pinyin": "qǐng zài shuō yí biàn",
+   "english": "please say that again",
+   "example": "",
+   "section": "03 Survival & Travel",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128098,
+   "hanzi": "请说慢一点儿",
+   "pinyin": "qǐng shuō màn yìdiǎnr",
+   "english": "please speak a bit slower",
+   "example": "",
+   "section": "03 Survival & Travel",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128101,
+   "hanzi": "这个用中文怎么说？",
+   "pinyin": "zhège yòng Zhōngwén zěnme shuō?",
+   "english": "how do you say this in Chinese?",
+   "example": "",
+   "section": "03 Survival & Travel",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128104,
+   "hanzi": "……是什么意思？",
+   "pinyin": "... shì shénme yìsi?",
+   "english": "what does … mean?",
+   "example": "",
+   "section": "03 Survival & Travel",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128107,
+   "hanzi": "洗手间在哪里？",
+   "pinyin": "xǐshǒujiān zài nǎlǐ?",
+   "english": "where is the restroom?",
+   "example": "",
+   "section": "03 Survival & Travel",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128110,
+   "hanzi": "我迷路了",
+   "pinyin": "wǒ mílù le",
+   "english": "I'm lost",
+   "example": "",
+   "section": "03 Survival & Travel",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128113,
+   "hanzi": "请帮我一下",
+   "pinyin": "qǐng bāng wǒ yíxià",
+   "english": "please help me",
+   "example": "",
+   "section": "03 Survival & Travel",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128116,
+   "hanzi": "我要去机场",
+   "pinyin": "wǒ yào qù jīchǎng",
+   "english": "I want to go to the airport",
+   "example": "",
+   "section": "03 Survival & Travel",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128119,
+   "hanzi": "这个多少钱？",
+   "pinyin": "zhège duōshao qián?",
+   "english": "how much is this?",
+   "example": "",
+   "section": "03 Survival & Travel",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128122,
+   "hanzi": "太贵了",
+   "pinyin": "tài guì le",
+   "english": "too expensive!",
+   "example": "",
+   "section": "03 Survival & Travel",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128125,
+   "hanzi": "可以便宜一点儿吗？",
+   "pinyin": "kěyǐ piányi yìdiǎnr ma?",
+   "english": "can you make it a bit cheaper?",
+   "example": "",
+   "section": "03 Survival & Travel",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128128,
+   "hanzi": "我要这个",
+   "pinyin": "wǒ yào zhège",
+   "english": "I want this one",
+   "example": "",
+   "section": "03 Survival & Travel",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128131,
+   "hanzi": "可以刷卡吗？",
+   "pinyin": "kěyǐ shuā kǎ ma?",
+   "english": "can I pay by card?",
+   "example": "",
+   "section": "03 Survival & Travel",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128134,
+   "hanzi": "可以用微信支付吗？",
+   "pinyin": "kěyǐ yòng Wēixìn zhīfù ma?",
+   "english": "can I pay with WeChat Pay?",
+   "example": "",
+   "section": "03 Survival & Travel",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128137,
+   "hanzi": "有没有……？",
+   "pinyin": "yǒu méiyǒu ...?",
+   "english": "do you have…?",
+   "example": "",
+   "section": "03 Survival & Travel",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128140,
+   "hanzi": "地铁站在哪儿？",
+   "pinyin": "dìtiězhàn zài nǎr?",
+   "english": "where's the subway station?",
+   "example": "",
+   "section": "03 Survival & Travel",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128143,
+   "hanzi": "我不舒服",
+   "pinyin": "wǒ bù shūfu",
+   "english": "I don't feel well",
+   "example": "",
+   "section": "03 Survival & Travel",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128146,
+   "hanzi": "救命！",
+   "pinyin": "jiùmìng!",
+   "english": "help! (emergency)",
+   "example": "",
+   "section": "03 Survival & Travel",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128149,
+   "hanzi": "服务员！",
+   "pinyin": "fúwùyuán!",
+   "english": "waiter! / excuse me! (in a restaurant)",
+   "example": "",
+   "section": "04 Eating Out",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128152,
+   "hanzi": "几位？",
+   "pinyin": "jǐ wèi?",
+   "english": "how many people? (host asks)",
+   "example": "",
+   "section": "04 Eating Out",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128155,
+   "hanzi": "两个人",
+   "pinyin": "liǎng ge rén",
+   "english": "two people",
+   "example": "",
+   "section": "04 Eating Out",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128158,
+   "hanzi": "有英文菜单吗？",
+   "pinyin": "yǒu Yīngwén càidān ma?",
+   "english": "is there an English menu?",
+   "example": "",
+   "section": "04 Eating Out",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128161,
+   "hanzi": "我要一杯水",
+   "pinyin": "wǒ yào yì bēi shuǐ",
+   "english": "I'd like a glass of water",
+   "example": "",
+   "section": "04 Eating Out",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128164,
+   "hanzi": "我不吃肉",
+   "pinyin": "wǒ bù chī ròu",
+   "english": "I don't eat meat",
+   "example": "",
+   "section": "04 Eating Out",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128167,
+   "hanzi": "不要太辣",
+   "pinyin": "bú yào tài là",
+   "english": "not too spicy",
+   "example": "",
+   "section": "04 Eating Out",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128170,
+   "hanzi": "买单",
+   "pinyin": "mǎidān",
+   "english": "the bill, please",
+   "example": "",
+   "section": "04 Eating Out",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128173,
+   "hanzi": "打包",
+   "pinyin": "dǎbāo",
+   "english": "to take away / box it up",
+   "example": "",
+   "section": "04 Eating Out",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128176,
+   "hanzi": "我吃饱了",
+   "pinyin": "wǒ chī bǎo le",
+   "english": "I'm full",
+   "example": "",
+   "section": "04 Eating Out",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128179,
+   "hanzi": "干杯！",
+   "pinyin": "gānbēi!",
+   "english": "cheers!",
+   "example": "",
+   "section": "04 Eating Out",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128182,
+   "hanzi": "对啊",
+   "pinyin": "duì a",
+   "english": "yes, right",
+   "example": "",
+   "section": "05 Conversation Glue",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128185,
+   "hanzi": "是的",
+   "pinyin": "shì de",
+   "english": "yes (it is)",
+   "example": "",
+   "section": "05 Conversation Glue",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128188,
+   "hanzi": "不是",
+   "pinyin": "bú shì",
+   "english": "no (it isn't)",
+   "example": "",
+   "section": "05 Conversation Glue",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128191,
+   "hanzi": "好的",
+   "pinyin": "hǎo de",
+   "english": "OK; sure",
+   "example": "",
+   "section": "05 Conversation Glue",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128194,
+   "hanzi": "行",
+   "pinyin": "xíng",
+   "english": "OK; that works",
+   "example": "",
+   "section": "05 Conversation Glue",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128197,
+   "hanzi": "没问题",
+   "pinyin": "méi wèntí",
+   "english": "no problem",
+   "example": "",
+   "section": "05 Conversation Glue",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128200,
+   "hanzi": "真的吗？",
+   "pinyin": "zhēn de ma?",
+   "english": "really?",
+   "example": "",
+   "section": "05 Conversation Glue",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128203,
+   "hanzi": "我觉得……",
+   "pinyin": "wǒ juéde ...",
+   "english": "I think…",
+   "example": "",
+   "section": "05 Conversation Glue",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128206,
+   "hanzi": "等一下",
+   "pinyin": "děng yíxià",
+   "english": "wait a moment",
+   "example": "",
+   "section": "05 Conversation Glue",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128209,
+   "hanzi": "那个……",
+   "pinyin": "nèige ...",
+   "english": "um… (filler)",
+   "example": "",
+   "section": "05 Conversation Glue",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128212,
+   "hanzi": "就是说",
+   "pinyin": "jiù shì shuō",
+   "english": "that is to say; I mean",
+   "example": "",
+   "section": "05 Conversation Glue",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128215,
+   "hanzi": "然后呢？",
+   "pinyin": "ránhòu ne?",
+   "english": "and then?",
+   "example": "",
+   "section": "05 Conversation Glue",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128218,
+   "hanzi": "当然",
+   "pinyin": "dāngrán",
+   "english": "of course",
+   "example": "",
+   "section": "05 Conversation Glue",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128221,
+   "hanzi": "算了",
+   "pinyin": "suàn le",
+   "english": "forget it",
+   "example": "",
+   "section": "05 Conversation Glue",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128224,
+   "hanzi": "加油！",
+   "pinyin": "jiāyóu!",
+   "english": "you can do it! / come on!",
+   "example": "",
+   "section": "05 Conversation Glue",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128227,
+   "hanzi": "太好了",
+   "pinyin": "tài hǎo le",
+   "english": "great!",
+   "example": "",
+   "section": "05 Conversation Glue",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128230,
+   "hanzi": "我也是",
+   "pinyin": "wǒ yě shì",
+   "english": "me too",
+   "example": "",
+   "section": "05 Conversation Glue",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128233,
+   "hanzi": "随便",
+   "pinyin": "suíbiàn",
+   "english": "whatever; up to you",
+   "example": "",
+   "section": "05 Conversation Glue",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128236,
+   "hanzi": "怎么了？",
+   "pinyin": "zěnme le?",
+   "english": "what's wrong?",
+   "example": "",
+   "section": "05 Conversation Glue",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128239,
+   "hanzi": "没什么",
+   "pinyin": "méi shénme",
+   "english": "it's nothing",
+   "example": "",
+   "section": "05 Conversation Glue",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128242,
+   "hanzi": "我是学生。",
+   "pinyin": "wǒ shì xuésheng.",
+   "english": "I am a student.",
+   "example": "",
+   "section": "04 Sentence Patterns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128245,
+   "hanzi": "我不是老师。",
+   "pinyin": "wǒ bú shì lǎoshī.",
+   "english": "I'm not a teacher.",
+   "example": "",
+   "section": "04 Sentence Patterns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128248,
+   "hanzi": "你是学生吗？",
+   "pinyin": "nǐ shì xuésheng ma?",
+   "english": "Are you a student?",
+   "example": "",
+   "section": "04 Sentence Patterns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128251,
+   "hanzi": "你去不去？",
+   "pinyin": "nǐ qù bu qù?",
+   "english": "Are you going (or not)?",
+   "example": "",
+   "section": "04 Sentence Patterns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128254,
+   "hanzi": "我很累。",
+   "pinyin": "wǒ hěn lèi.",
+   "english": "I'm tired.",
+   "example": "",
+   "section": "04 Sentence Patterns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128257,
+   "hanzi": "我有一个哥哥。",
+   "pinyin": "wǒ yǒu yí ge gēge.",
+   "english": "I have an older brother.",
+   "example": "",
+   "section": "04 Sentence Patterns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128260,
+   "hanzi": "我没有钱。",
+   "pinyin": "wǒ méiyǒu qián.",
+   "english": "I don't have money.",
+   "example": "",
+   "section": "04 Sentence Patterns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128263,
+   "hanzi": "我在家。",
+   "pinyin": "wǒ zài jiā.",
+   "english": "I'm at home.",
+   "example": "",
+   "section": "04 Sentence Patterns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128266,
+   "hanzi": "我在看书。",
+   "pinyin": "wǒ zài kàn shū.",
+   "english": "I'm reading.",
+   "example": "",
+   "section": "04 Sentence Patterns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128269,
+   "hanzi": "我吃饭了。",
+   "pinyin": "wǒ chī fàn le.",
+   "english": "I've eaten.",
+   "example": "",
+   "section": "04 Sentence Patterns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128272,
+   "hanzi": "你吃饭了吗？",
+   "pinyin": "nǐ chī fàn le ma?",
+   "english": "Have you eaten?",
+   "example": "",
+   "section": "04 Sentence Patterns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128275,
+   "hanzi": "我去过北京。",
+   "pinyin": "wǒ qù guo Běijīng.",
+   "english": "I've been to Beijing.",
+   "example": "",
+   "section": "04 Sentence Patterns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128278,
+   "hanzi": "我想去中国。",
+   "pinyin": "wǒ xiǎng qù Zhōngguó.",
+   "english": "I want to go to China.",
+   "example": "",
+   "section": "04 Sentence Patterns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128281,
+   "hanzi": "我要喝咖啡。",
+   "pinyin": "wǒ yào hē kāfēi.",
+   "english": "I want to drink coffee.",
+   "example": "",
+   "section": "04 Sentence Patterns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128284,
+   "hanzi": "我会说中文。",
+   "pinyin": "wǒ huì shuō Zhōngwén.",
+   "english": "I can speak Chinese.",
+   "example": "",
+   "section": "04 Sentence Patterns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128287,
+   "hanzi": "你能帮我吗？",
+   "pinyin": "nǐ néng bāng wǒ ma?",
+   "english": "Can you help me?",
+   "example": "",
+   "section": "04 Sentence Patterns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128290,
+   "hanzi": "我可以进来吗？",
+   "pinyin": "wǒ kěyǐ jìnlai ma?",
+   "english": "May I come in?",
+   "example": "",
+   "section": "04 Sentence Patterns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128293,
+   "hanzi": "他比我高。",
+   "pinyin": "tā bǐ wǒ gāo.",
+   "english": "He is taller than me.",
+   "example": "",
+   "section": "04 Sentence Patterns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128296,
+   "hanzi": "这个最好。",
+   "pinyin": "zhège zuì hǎo.",
+   "english": "This one is the best.",
+   "example": "",
+   "section": "04 Sentence Patterns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128299,
+   "hanzi": "我喜欢喝茶。",
+   "pinyin": "wǒ xǐhuan hē chá.",
+   "english": "I like drinking tea.",
+   "example": "",
+   "section": "04 Sentence Patterns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128302,
+   "hanzi": "你呢？",
+   "pinyin": "nǐ ne?",
+   "english": "And you?",
+   "example": "",
+   "section": "04 Sentence Patterns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128305,
+   "hanzi": "我们走吧。",
+   "pinyin": "wǒmen zǒu ba.",
+   "english": "Let's go.",
+   "example": "",
+   "section": "04 Sentence Patterns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128308,
+   "hanzi": "我明天去上海。",
+   "pinyin": "wǒ míngtiān qù Shànghǎi.",
+   "english": "I'm going to Shanghai tomorrow.",
+   "example": "",
+   "section": "04 Sentence Patterns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128311,
+   "hanzi": "我坐地铁去学校。",
+   "pinyin": "wǒ zuò dìtiě qù xuéxiào.",
+   "english": "I take the subway to school.",
+   "example": "",
+   "section": "04 Sentence Patterns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128314,
+   "hanzi": "我从伦敦来。",
+   "pinyin": "wǒ cóng Lúndūn lái.",
+   "english": "I come from London.",
+   "example": "",
+   "section": "04 Sentence Patterns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128317,
+   "hanzi": "他的中文很好。",
+   "pinyin": "tā de Zhōngwén hěn hǎo.",
+   "english": "His Chinese is very good.",
+   "example": "",
+   "section": "04 Sentence Patterns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128320,
+   "hanzi": "我的中文不太好。",
+   "pinyin": "wǒ de Zhōngwén bú tài hǎo.",
+   "english": "My Chinese isn't very good.",
+   "example": "",
+   "section": "04 Sentence Patterns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128323,
+   "hanzi": "他跑得很快。",
+   "pinyin": "tā pǎo de hěn kuài.",
+   "english": "He runs fast.",
+   "example": "",
+   "section": "04 Sentence Patterns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128326,
+   "hanzi": "我快到了。",
+   "pinyin": "wǒ kuài dào le.",
+   "english": "I'm almost there.",
+   "example": "",
+   "section": "04 Sentence Patterns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128329,
+   "hanzi": "因为下雨，所以我不去。",
+   "pinyin": "yīnwèi xià yǔ, suǒyǐ wǒ bú qù.",
+   "english": "Because it's raining, I'm not going.",
+   "example": "",
+   "section": "04 Sentence Patterns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128332,
+   "hanzi": "如果你有时间，我们一起去吧。",
+   "pinyin": "rúguǒ nǐ yǒu shíjiān, wǒmen yìqǐ qù ba.",
+   "english": "If you have time, let's go together.",
+   "example": "",
+   "section": "04 Sentence Patterns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128335,
+   "hanzi": "我一边听音乐一边学习。",
+   "pinyin": "wǒ yìbiān tīng yīnyuè yìbiān xuéxí.",
+   "english": "I study while listening to music.",
+   "example": "",
+   "section": "04 Sentence Patterns",
+   "interval": 0,
+   "mastery": "new"
+  },
+  {
+   "noteId": 1790479128338,
+   "hanzi": "我对中国文化很感兴趣。",
+   "pinyin": "wǒ duì Zhōngguó wénhuà hěn gǎn xìngqù.",
+   "english": "I'm very interested in Chinese culture.",
+   "example": "",
+   "section": "04 Sentence Patterns",
+   "interval": 0,
+   "mastery": "new"
+  }
+ ]
+}

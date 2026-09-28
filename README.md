@@ -57,6 +57,11 @@ The phone uses whatever was last synced; cards added on the phone are queued and
 4. **Go to resource → Keys and Endpoint**: copy **KEY 1** and the **Location/Region** (`uksouth`).
 5. In the app: Settings → paste the key into **Azure Speech key**, check the region says `uksouth`. Do this on each device.
 
+## My Anki deck
+`web/public/deck.json` and `content/words.json` come from my deck export:
+`python3 scripts/import_deck.py path/to/deck.apkg` (or send the .apkg to Claude). The app uses the deck for
+Say your cards and pinyin, and the daily stories are written from its words. Both files are public.
+
 ## API keys
 Azure and Claude keys are typed into the app's Settings on each device and stay on that device.
 They are never put in this repo or the published site.

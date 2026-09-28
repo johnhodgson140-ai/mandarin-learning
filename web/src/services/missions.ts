@@ -8,7 +8,7 @@ import { callJson } from './claude.ts'
 import { currentUser, dbPut, isConfigured } from './firebase.ts'
 import { load, save } from './storage.ts'
 import { LEVEL_RULES } from './stories.ts'
-import { getLexicon, knownWords } from './words.ts'
+import { getLexicon, knownWords, studyWords } from './words.ts'
 
 const REPLY_SCHEMA = {
   type: 'object',
@@ -46,11 +46,12 @@ const REPORT_SCHEMA = {
 }
 
 function wordList(): { rule: string; list: string } {
-  const known = knownWords(getLexicon())
+  const lexicon = getLexicon()
+  const known = knownWords(lexicon).length > 0 ? knownWords(lexicon) : studyWords(lexicon)
   return known.length > 0
     ? {
         rule: "Use words from the learner's word list below wherever you can; keep anything else simple and guessable.",
-        list: `Learner's word list (words they know):\n${known.join(' ')}`,
+        list: `Learner's word list (words they know or are studying):\n${known.join(' ')}`,
       }
     : { rule: 'Stay within HSK vocabulary for this level.', list: '' }
 }
