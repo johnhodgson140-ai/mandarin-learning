@@ -2,14 +2,19 @@ import { useEffect, useRef, useState } from 'react'
 import { preloadRecorder, Recorder, type Recording } from '../audio/recorder.ts'
 import './HoldToTalk.css'
 
-type Props = { onRecorded: (rec: Recording) => void; onError: (message: string) => void }
+type Props = {
+  onRecorded: (rec: Recording) => void
+  onError: (message: string) => void
+  /** 'hold' (default): hold to talk. 'toggle': tap to start, tap to stop (for reading a whole paragraph). */
+  mode?: 'hold' | 'toggle'
+}
 
 type Phase = 'idle' | 'starting' | 'recording'
 
 const MIN_SECONDS = 0.3
 
-/** One large hold-to-talk button (pointer, or Space/Enter on desktop) with a single-bar level meter. */
-export default function HoldToTalk({ onRecorded, onError }: Props) {
+/** One large talk button (hold, or tap to start/stop) with a single-bar level meter. */
+export default function HoldToTalk({ onRecorded, onError, mode = 'hold' }: Props) {
   const recorder = useRef<Recorder | null>(null)
   const starting = useRef<Promise<boolean> | null>(null)
   const live = useRef(false) // mic is actually capturing (a ref, so timers never read stale state)
@@ -89,33 +94,45 @@ export default function HoldToTalk({ onRecorded, onError }: Props) {
 
   const isHoldKey = (e: React.KeyboardEvent) => e.key === ' ' || e.key === 'Enter'
 
+  const holdHandlers = {
+    onPointerDown: (e: React.PointerEvent<HTMLButtonElement>) => {
+      if (e.button !== 0) return
+      e.currentTarget.setPointerCapture(e.pointerId)
+      void begin()
+    },
+    onPointerUp: () => void end(),
+    onPointerCancel: () => void end(),
+    onKeyDown: (e: React.KeyboardEvent) => {
+      if (!isHoldKey(e)) return
+      e.preventDefault()
+      if (!e.repeat) void begin()
+    },
+    onKeyUp: (e: React.KeyboardEvent) => {
+      if (!isHoldKey(e)) return
+      e.preventDefault()
+      void end()
+    },
+  }
+  const toggleHandlers = { onClick: () => void (phase === 'idle' ? begin() : end()) }
+
+  const label =
+    phase === 'starting'
+      ? 'Starting mic…'
+      : mode === 'toggle'
+        ? phase === 'recording' ? 'Tap when finished' : 'Tap to start reading'
+        : phase === 'recording' ? 'Listening… release to stop' : 'Hold to talk'
+
   return (
     <div className="hold">
       <button
         type="button"
         className="hold-button"
         data-recording={phase === 'recording' || undefined}
-        onPointerDown={(e) => {
-          if (e.button !== 0) return
-          e.currentTarget.setPointerCapture(e.pointerId)
-          void begin()
-        }}
-        onPointerUp={() => void end()}
-        onPointerCancel={() => void end()}
-        onKeyDown={(e) => {
-          if (!isHoldKey(e)) return
-          e.preventDefault()
-          if (!e.repeat) void begin()
-        }}
-        onKeyUp={(e) => {
-          if (!isHoldKey(e)) return
-          e.preventDefault()
-          void end()
-        }}
-        onBlur={() => void end()}
+        {...(mode === 'toggle' ? toggleHandlers : holdHandlers)}
+        onBlur={mode === 'hold' ? () => void end() : undefined}
         onContextMenu={(e) => e.preventDefault()}
       >
-        {phase === 'idle' ? 'Hold to talk' : phase === 'starting' ? 'Starting mic…' : 'Listening… release to stop'}
+        {label}
       </button>
       <div className="level" aria-hidden="true">
         <div className="level-fill" style={{ transform: `scaleX(${level})` }} />

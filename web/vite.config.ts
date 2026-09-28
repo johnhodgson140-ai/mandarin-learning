@@ -40,5 +40,7 @@ export default defineConfig({
       },
     }),
   ],
+  // The Read chunk is ~500 kB, almost all pinyin-pro's dictionary; it's lazy-loaded and precached, so that's fine.
+  build: { chunkSizeWarningLimit: 700 },
   server: { port: 5173, strictPort: true },
 })

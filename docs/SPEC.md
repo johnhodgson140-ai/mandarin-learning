@@ -42,7 +42,9 @@ Everything the app shows or says is built from **words I already know in Anki**.
 
 ## 5. Speaking grading (shared by Reader read-aloud, Shadowing, Tone Dojo)
 1. Frontend records 16 kHz mono WAV (AudioWorklet). Max 30 s per clip.
-2. `azure.assess(audio, referenceText)` → Azure Pronunciation Assessment via the browser SDK (zh-CN, scripted, granularity=Phoneme).
+2. `azure.assess(audio, referenceText)` → Azure Pronunciation Assessment via the browser SDK (zh-CN, scripted, granularity=Phoneme),
+   continuous recognition (Azure splits a paragraph at pauses). The app aligns all recognised words to the reference characters
+   (longest common subsequence): unheard characters are omissions, extra words are ignored.
    Keep per syllable: accuracy score, error type, offset, duration. Keep totals: accuracy, fluency, completeness.
 3. If the tone model is available: cut each syllable using Azure offsets, call tone adapter, compare predicted tone with `spoken_tone`.
 4. Merge → per syllable status: `ok` · `minor` (accuracy 60–79 or low-confidence tone) · `wrong` (accuracy < 60 or wrong tone, confident).

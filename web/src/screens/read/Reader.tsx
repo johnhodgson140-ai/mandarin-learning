@@ -4,6 +4,8 @@ import { go } from '../../hash.ts'
 import { load, save } from '../../services/storage.ts'
 import { getStory, saveStory, storyTokens, type Story } from '../../services/stories.ts'
 import { rateForLevel, speak, unlockAudio } from '../../services/tts.ts'
+import type { ParagraphResult } from '../../grading/readAloud.ts'
+import ReadAloudSheet from './ReadAloudSheet.tsx'
 import WordSheet from './WordSheet.tsx'
 import './read.css'
 
@@ -29,6 +31,8 @@ function StoryView({ story, onChange }: { story: Story; onChange: (s: Story) => 
   const [prefs, setPrefs] = useState<ReaderPrefs>(() => ({ ...DEFAULT_PREFS, ...load<Partial<ReaderPrefs>>('reader', {}) }))
   const [showPrefs, setShowPrefs] = useState(false)
   const [selected, setSelected] = useState<{ p: number; t: number } | null>(null)
+  const [readingAloud, setReadingAloud] = useState<number | null>(null)
+  const [results, setResults] = useState<Record<number, ParagraphResult | undefined>>({})
   const progress = useScrollProgress()
   useReadTime(story)
 
@@ -84,7 +88,10 @@ function StoryView({ story, onChange }: { story: Story; onChange: (s: Story) => 
       <p className="muted">{story.titleEn}</p>
 
       <div className={`reader-text zh${prefs.toneColours ? ' tone-colours' : ''}`} onPointerDown={unlockAudio}>
-        {paragraphs.map((tokens, p) => (
+        {paragraphs.map((tokens, p) => {
+          const statuses = results[p]?.statuses
+          let syllableIndex = 0
+          return (
           <p key={p}>
             {tokens.map((tok, t) =>
               tok.syllables.length === 0 ? (
@@ -100,22 +107,41 @@ function StoryView({ story, onChange }: { story: Story; onChange: (s: Story) => 
                   onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && (e.preventDefault(), setSelected({ p, t }))}
                   {...longPress.handlers(p, t)}
                 >
-                  {tok.syllables.map((s, i) => (
-                    <ruby key={i}>
-                      {s.hanzi}
-                      <rt className={`t${s.written}${hidePinyin(tok) ? ' rt-hidden' : ''}`}>{s.pinyin}</rt>
-                    </ruby>
-                  ))}
+                  {tok.syllables.map((s, i) => {
+                    const status = statuses?.[syllableIndex++]
+                    return (
+                      <ruby key={i}>
+                        <span className={status && status !== 'ok' ? `st-${status}` : undefined}>{s.hanzi}</span>
+                        <rt className={`t${s.written}${hidePinyin(tok) ? ' rt-hidden' : ''}`}>{s.pinyin}</rt>
+                      </ruby>
+                    )
+                  })}
                 </span>
               ),
             )}
+            <button type="button" className="read-aloud-btn" onClick={() => setReadingAloud(p)}>
+              {statuses ? 'Read again' : 'Read aloud'}
+            </button>
           </p>
-        ))}
+          )
+        })}
       </div>
 
       <button type="button" className="btn btn-primary reader-finish" onClick={finish}>
         {story.readAt ? 'Back to library' : 'Finished'}
       </button>
+
+      {readingAloud !== null && (
+        <ReadAloudSheet
+          tokens={paragraphs[readingAloud]}
+          storyId={story.id}
+          paragraph={readingAloud}
+          level={story.level}
+          result={results[readingAloud]}
+          onResult={(r) => setResults((prev) => ({ ...prev, [readingAloud]: r }))}
+          onClose={() => setReadingAloud(null)}
+        />
+      )}
 
       {token && selected && (
         <WordSheet
