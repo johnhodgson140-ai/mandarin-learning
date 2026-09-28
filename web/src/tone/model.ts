@@ -53,6 +53,21 @@ export function templateContour(tone: Tone): number[] {
   return resample(TEMPLATES.find((t) => t.tone === tone)!.points, POINTS)
 }
 
+/**
+ * The pitch (Hz) a tone should have at `position` (0 = start of the vowel, 1 = end) in this voice range.
+ * `half`: the low "half third" used mid-sentence, instead of the full dip-and-rise.
+ */
+export function targetPitch(tone: Tone, position: number, profile: SpeakerProfile, { half = false } = {}): number {
+  const forms = TEMPLATES.filter((t) => t.tone === tone)
+  const points = (half && forms[1] ? forms[1] : forms[0]).points
+  const x = Math.min(1, Math.max(0, position)) * (points.length - 1)
+  const lo = Math.floor(x)
+  const hi = Math.min(lo + 1, points.length - 1)
+  const v = points[lo] + (points[hi] - points[lo]) * (x - lo)
+  const semitone = profile.minSemitone + v * (profile.maxSemitone - profile.minSemitone)
+  return 100 * 2 ** (semitone / 12) // semitones are relative to 100 Hz (pitch.ts)
+}
+
 /** Voice range from a few calibration recordings: 5th–95th percentile of all voiced pitch. */
 export function calibrate(samples: Float32Array[], sampleRate: number): SpeakerProfile {
   return profileFromPitches(samples.flatMap((s) => voicedSemitones(s, sampleRate)))

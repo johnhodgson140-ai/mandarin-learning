@@ -140,3 +140,13 @@ a.chip { text-decoration: none; display: inline-flex; align-items: center; }
   border-radius: var(--radius); color: var(--text); text-decoration: none;
 }
 .hub-title { font-weight: 600; }
+
+/* Pitch contour chart (ScoreView, Dojo) */
+.contour { margin: 0; }
+.contour svg { width: 100%; height: auto; display: block; }
+.contour-divider { stroke: var(--line); stroke-width: 1; }
+.contour-target { fill: none; stroke: var(--text-muted); stroke-width: 1.5; stroke-dasharray: 4 4; }
+.contour-native { fill: none; stroke: var(--t4); stroke-width: 1.5; opacity: 0.7; }
+.contour-mine { fill: none; stroke: var(--accent); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.contour-legend { display: flex; gap: calc(var(--space) * 2); font-size: 13px; color: var(--text-muted); }
+.score-listen { display: flex; flex-wrap: wrap; gap: var(--space); }

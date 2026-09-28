@@ -1,13 +1,18 @@
 // Per-syllable scores on a green→red scale, an overall score, free tips on tap, optional AI explanation.
 import { useState } from 'react'
+import ContourChart from './ContourChart.tsx'
 import type { Syllable } from '../chinese/tokens.ts'
 import { markTone, toneless } from '../chinese/tones.ts'
 import { scoreColour, tips } from '../scoring/score.ts'
 import type { SpeechScore } from '../scoring/speechScore.ts'
 import { explainAttempt } from '../services/explain.ts'
 import { getKeys } from '../services/keys.ts'
+import { correctedRecording } from '../services/tone.ts'
+import { playBlob, speak } from '../services/tts.ts'
+import { templateContour } from '../tone/model.ts'
 
-export default function ScoreView({ syllables, result }: { syllables: Syllable[]; result: SpeechScore }) {
+/** `native`: the native voice's pitch across the word, drawn on the chart when known (Tone Dojo). */
+export default function ScoreView({ syllables, result, native }: { syllables: Syllable[]; result: SpeechScore; native?: number[] | null }) {
   const [open, setOpen] = useState<number | null>(() => {
     const checked = result.syllables.map((s, i) => [s, i] as const).filter(([s]) => s.checked)
     const worst = checked.reduce<number | null>((w, [s, i]) => (w === null || s.score < result.syllables[w].score ? i : w), null)
@@ -15,6 +20,24 @@ export default function ScoreView({ syllables, result }: { syllables: Syllable[]
   })
   const [explanation, setExplanation] = useState<string | null>(null)
   const [explaining, setExplaining] = useState(false)
+  const [corrected, setCorrected] = useState<Blob | null>(null)
+  const [correcting, setCorrecting] = useState(false)
+  const tonesChecked = result.tones.some((t) => t !== null)
+
+  // "Hear yourself say it right": my own recording with each tone re-pitched to what it should be.
+  async function playCorrected() {
+    if (corrected) return void playBlob(corrected)
+    setCorrecting(true)
+    try {
+      const blob = await correctedRecording(result.wav, result.tones.map((t) => t?.span ?? null), syllables.map((s) => s.spoken))
+      if (blob) {
+        setCorrected(blob)
+        await playBlob(blob)
+      }
+    } finally {
+      setCorrecting(false)
+    }
+  }
   const openTips = open === null ? [] : tips(syllables[open].pinyin, syllables[open].spoken, result.syllables[open])
 
   async function explain() {
@@ -54,6 +77,18 @@ export default function ScoreView({ syllables, result }: { syllables: Syllable[]
           )
         })}
       </div>
+      <div className="score-listen">
+        <button type="button" className="chip" onClick={() => void playBlob(result.wav)}>▶ You</button>
+        {tonesChecked && (
+          <button type="button" className="chip" onClick={() => void playCorrected()} disabled={correcting}>
+            {correcting ? 'Correcting…' : '▶ You, corrected'}
+          </button>
+        )}
+        <button type="button" className="chip" onClick={() => void speak(syllables.map((s) => s.hanzi).join(''), 0.85)}>▶ Native</button>
+      </div>
+      {tonesChecked && (
+        <ContourChart mine={result.tones.map((t) => t?.contour ?? null)} target={syllables.map((s) => templateContour(s.spoken))} native={native} />
+      )}
       {result.tones.every((t) => t === null) && (
         <p className="muted small">
           Tones weren't checked yet: the app is still learning your voice (about 5 recordings), or <a href="#speak/calibrate">calibrate now</a> (30 s).
