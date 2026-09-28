@@ -9,6 +9,7 @@ import { getTheme, setTheme, type Theme } from '../services/theme.ts'
 import HoldToTalk from '../components/HoldToTalk.tsx'
 import VoicePicker from '../components/VoicePicker.tsx'
 import { clearLog, logCount, logText } from '../debug/log.ts'
+import { getReminder, isNativeApp, nativeRecogniserInfo, setReminder, type Reminder as ReminderType } from '../native/app.ts'
 import { hasRecogniser, recogniserBlocked, setRecogniserBlocked } from '../scoring/recognize.ts'
 import { getVoice, setVoice, speak, type VoiceChoice } from '../services/tts.ts'
 import './Settings.css'
@@ -27,6 +28,7 @@ export default function Settings() {
       {user && <Anki />}
       <MyLevel />
       <Voices />
+      <Reminder />
       <MicTest />
       <SpeechCheck />
       <Voice />
@@ -305,6 +307,19 @@ function MicTest() {
 
 function SpeechCheck() {
   const [blocked, setBlocked] = useState(recogniserBlocked)
+  const [native, setNative] = useState<{ available: boolean; onDevice: boolean } | null>(null)
+  useEffect(() => void nativeRecogniserInfo().then(setNative), [])
+  if (isNativeApp())
+    return (
+      <section className="card">
+        <h2 className="card-title">Sound check</h2>
+        <p className="muted small">
+          {native?.available === false
+            ? "Apple's Mandarin speech recognition isn't available on this iPhone right now, so only tones are checked."
+            : `On: Apple's Mandarin speech recogniser checks your sounds after each recording${native?.onDevice ? ', on your iPhone (works offline)' : ''}. An Azure key checks them more precisely.`}
+        </p>
+      </section>
+    )
   if (!hasRecogniser()) return null
   return (
     <section className="card">
@@ -323,6 +338,29 @@ function SpeechCheck() {
           <button type="button" className="btn btn-secondary" onClick={() => { setRecogniserBlocked(true); setBlocked(true) }}>Turn off</button>
         </>
       )}
+    </section>
+  )
+}
+
+function Reminder() {
+  const [reminder, set] = useState<ReminderType>(getReminder)
+  const [message, setMessage] = useState<string | null>(null)
+  if (!isNativeApp()) return null
+  async function update(next: ReminderType) {
+    set(next)
+    const problem = await setReminder(next)
+    setMessage(problem)
+    if (problem) set({ ...next, on: false })
+  }
+  return (
+    <section className="card">
+      <h2 className="card-title">Daily reminder</h2>
+      <label className="check">
+        <input type="checkbox" checked={reminder.on} onChange={(e) => void update({ ...reminder, on: e.target.checked })} />
+        Remind me to practise every day at
+      </label>
+      <input type="time" className="type-input" value={reminder.time} onChange={(e) => void update({ ...reminder, time: e.target.value })} aria-label="Reminder time" />
+      {message && <p className="error">{message}</p>}
     </section>
   )
 }

@@ -3,6 +3,7 @@
 
 import { load, save } from '../services/storage.ts'
 import { log } from '../debug/log.ts'
+import { isNativeApp } from '../native/app.ts'
 
 type Alternative = { transcript: string }
 type ResultList = ArrayLike<ArrayLike<Alternative> & { isFinal: boolean }>
@@ -36,7 +37,8 @@ export const setRecogniserBlocked = (blocked: boolean) => save(BLOCKED_KEY, bloc
 
 /** The phone's recogniser exists and hasn't been switched off. */
 export const hasRecogniser = () => typeof window !== 'undefined' && recognitionClass() !== null
-export const canRecognise = () => hasRecogniser() && !recogniserBlocked()
+/** In the iOS app, Apple's recogniser checks the finished recording (native/app.ts), so it never blocks the mic. */
+export const canRecognise = () => isNativeApp() || (hasRecogniser() && !recogniserBlocked())
 
 export type Listening = { stop(): Promise<string[]>; abort(): void }
 
