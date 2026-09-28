@@ -71,3 +71,23 @@ test('predict on silence falls back to an unsure neutral', () => {
   assert.equal(p.tone, 5)
   assert.ok(p.confidence < 0.7)
 })
+
+test('a creaky tone 3 (loud, but almost no clear pitch) is still tone 3, not neutral', () => {
+  let s = 3
+  const rnd = () => ((s = (s * 16807) % 2147483647) / 2147483647) * 2 - 1
+  const onset = voice([130, 110], 90) // a little clear pitch as the vowel starts…
+  const creak = Float32Array.from({ length: SR * 0.25 }, () => rnd() * 0.3) // …then creak: loud, aperiodic
+  const audio = new Float32Array(onset.length + creak.length)
+  audio.set(onset)
+  audio.set(creak, onset.length)
+  assert.equal(predict(audio, SR, profile).tone, 3)
+})
+
+test('tones survive speaking higher or lower than when calibrated', () => {
+  const shift = (hz: number[], st: number) => hz.map((f) => f * 2 ** (st / 12))
+  for (const st of [-2.5, 2.5]) {
+    assert.equal(predict(voice(shift([188, 190, 189], st), 320), SR, profile).tone, 1, `tone 1 at ${st} st`)
+    assert.equal(predict(voice(shift([140, 146, 195], st), 320), SR, profile).tone, 2, `tone 2 at ${st} st`)
+    assert.equal(predict(voice(shift([196, 108], st), 280), SR, profile).tone, 4, `tone 4 at ${st} st`)
+  }
+})

@@ -183,12 +183,12 @@ function TurnLine({ turn, role, hideText, level }: { turn: Turn; role: string; h
     return (
       <li className="turn turn-me">
         <span className="turn-label">You</span>
-        <span className="zh turn-text">{turn.zh}</span>
+        <RubyText tokens={tokens} className="turn-text" />
       </li>
     )
   return (
     <li className="turn">
-      <span className="turn-label zh">{role}</span>
+      <RubyText tokens={buildParagraph(splitForRuby(role), getLexicon())} className="turn-label" />
       {hideText ? (
         <span className="muted">Text hidden: listen.</span>
       ) : (

@@ -4,7 +4,7 @@
 import { decodeTo16k, TARGET_RATE, wavSamples } from '../audio/wav.ts'
 import type { Tone } from '../chinese/tones.ts'
 import type { CharResult, ToneGuess } from '../grading/grade.ts'
-import { calibrate, contour, normalise, predict, profileFromPitches, voicedSemitones, type SpeakerProfile } from '../tone/model.ts'
+import { adaptProfile, calibrate, contour, normalise, predict, profileFromPitches, voicedSemitones, type SpeakerProfile } from '../tone/model.ts'
 import { segmentSyllables } from '../tone/segment.ts'
 import { currentUser, dbGet, dbPut, isConfigured } from './firebase.ts'
 import { activeVoice, listVoices, MIN_POINTS, OWNER_ID, updateVoice } from './voices.ts'
@@ -63,13 +63,14 @@ export async function syllableTones(wav: Blob, chars: Pick<CharResult, 'offset' 
   const profile = getProfile()
   if (!profile) return null
   const samples = await wavSamples(wav)
+  const adapted = adaptProfile(profile, samples, TARGET_RATE, chars.length)
   return chars.map((c) => {
     if (c.offset === null || c.duration === null) return null
     const from = Math.max(0, Math.round(((c.offset - 20) / 1000) * TARGET_RATE))
     const to = Math.min(samples.length, Math.round(((c.offset + c.duration + 20) / 1000) * TARGET_RATE))
     const clip = samples.subarray(from, to)
-    const p = predict(clip, TARGET_RATE, profile)
-    return { guess: { tone: p.tone, confidence: p.confidence }, probs: p.probs, contour: normalise(contour(clip, TARGET_RATE), profile) }
+    const p = predict(clip, TARGET_RATE, adapted, { neutralByLength: chars.length === 1 })
+    return { guess: { tone: p.tone, confidence: p.confidence }, probs: p.probs, contour: normalise(contour(clip, TARGET_RATE), adapted) }
   })
 }
 
@@ -81,11 +82,12 @@ export async function segmentTones(wav: Blob, syllables: number): Promise<(Sylla
   const profile = getProfile()
   if (!profile) return null
   const samples = await wavSamples(wav)
+  const adapted = adaptProfile(profile, samples, TARGET_RATE, syllables)
   return segmentSyllables(samples, TARGET_RATE, syllables).map((span) => {
     const clip = samples.subarray(span.start, span.end)
     if (clip.length === 0) return null
-    const p = predict(clip, TARGET_RATE, profile, { neutralByLength: syllables === 1 })
-    return { guess: { tone: p.tone, confidence: p.confidence }, probs: p.probs, contour: normalise(contour(clip, TARGET_RATE), profile) }
+    const p = predict(clip, TARGET_RATE, adapted, { neutralByLength: syllables === 1 })
+    return { guess: { tone: p.tone, confidence: p.confidence }, probs: p.probs, contour: normalise(contour(clip, TARGET_RATE), adapted) }
   })
 }
 
