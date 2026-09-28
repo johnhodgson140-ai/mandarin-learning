@@ -8,6 +8,8 @@ const Calibrate = lazy(() => import('./speak/Calibrate.tsx'))
 const Missions = lazy(() => import('./speak/Missions.tsx'))
 const Cards = lazy(() => import('./speak/Cards.tsx'))
 const Guided = lazy(() => import('./speak/Guided.tsx'))
+const Shadow = lazy(() => import('./speak/Shadow.tsx'))
+const Retell = lazy(() => import('./speak/Retell.tsx'))
 const Mission = lazy(() => import('./speak/Mission.tsx'))
 
 export default function Speak() {
@@ -17,6 +19,8 @@ export default function Speak() {
   if (sub === 'missions') return <Missions />
   if (sub === 'cards') return <Cards />
   if (sub === 'guided' && arg) return <Guided id={arg} />
+  if (sub === 'shadow') return <Shadow />
+  if (sub === 'retell') return <Retell />
   if (sub === 'mission' && arg) return <Mission scenarioId={arg} />
   if (sub === 'free') return <Mission scenarioId="free" />
   return <Hub />
@@ -36,6 +40,10 @@ function Hub() {
           <span className="hub-title">Tone Dojo</span>
           <span className="muted">A short drill on the tone pairs you miss most.</span>
         </a>
+        <a href="#speak/shadow" className="hub-row">
+          <span className="hub-title">Shadowing</span>
+          <span className="muted">Hear a sentence, say it straight back. Scored, with your pace.</span>
+        </a>
         <a href="#speak/missions" className="hub-row">
           <span className="hub-title">Missions</span>
           <span className="muted">Role-play real situations: order food, bargain, message a seller.</span>
@@ -43,6 +51,10 @@ function Hub() {
         <a href="#speak/free" className="hub-row">
           <span className="hub-title">Free Talk</span>
           <span className="muted">An open chat with a friendly partner at your level.</span>
+        </a>
+        <a href="#speak/retell" className="hub-row">
+          <span className="hub-title">Retell</span>
+          <span className="muted">Listen to a short story twice, then tell it back.</span>
         </a>
         <a href="#speak/calibrate" className="hub-row">
           <span className="hub-title">Calibrate your voice</span>

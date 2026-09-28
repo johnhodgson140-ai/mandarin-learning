@@ -89,6 +89,10 @@ Native reference contours for the overlay come from TTS audio run through the sa
   history; STT is Azure unscripted pronunciation assessment (transcript + scores in one pass). Typing is offered as a fallback
   (and is the only input without an Azure key). Sessions (last 30) are saved on the device and in Firebase when signed in.
 - **Retell:** listen to a 60–120 char story twice, retell it; Claude scores content coverage + grammar; Azure unscripted assessment for pronunciation.
+- Implementation (M6): Shadowing picks 8 sentences from my deck (sentence notes + examples) and stories; pace = native
+  speech time (Azure voice, else 4.5 syllables/s) ÷ my voiced speech time. Retell uses today's daily story (60–140
+  characters); the free check counts which content words I mentioned (by sound, so homophones count); Claude gives
+  content/grammar feedback and Azure pronunciation when keys are set.
 - **Session report** (missions/free talk/retell): goal achieved?, 3 corrections max (my sentence → better sentence, with pinyin), pronunciation summary, new words (+Anki).
 
 ## 8. Levels & difficulty
