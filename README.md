@@ -12,8 +12,8 @@ Project docs: [`CLAUDE.md`](CLAUDE.md), [`docs/SPEC.md`](docs/SPEC.md), [`docs/D
 ## Install on the iPhone
 1. Open the app link above in **Safari**.
 2. Share button → **Add to Home Screen** → Add.
-3. Open **Shuō** from the home screen → **Speak** → hold the button → allow the microphone.
-4. Hold again, say something, release: you should hear your recording.
+3. Open **Shuō** from the home screen → **Speak** → tap the button → allow the microphone.
+4. Tap again, say something, tap to stop.
 
 Updates publish automatically. If the home-screen app shows an old version, close it fully and reopen it.
 

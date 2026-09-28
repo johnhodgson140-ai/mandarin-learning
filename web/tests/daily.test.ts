@@ -21,6 +21,7 @@ test('validateDaily catches the usual mistakes', () => {
     'date must be YYYY-MM-DD',
     'level must be 1–6',
     'stories[0].paragraphs[0] words must not contain spaces',
+    'stories[0].translations needs one English line per paragraph',
     'missions[0].id missing or duplicate',
     'missions[0] needs 3–8 steps',
     'plan item "Read" refers to unknown id missing',

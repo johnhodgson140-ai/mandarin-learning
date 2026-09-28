@@ -19,6 +19,7 @@ the optional Claude API key.
    - `stories` (`stories_per_day`, default 2): ids `YYYY-MM-DD-s1`, `-s2`… Different topics from `config.topics`.
      Level from `config.level`: level 1 ≈ 80–120 characters, sentences under 10 characters, at most 3 new words.
      At least 90% of words must come from `known`; if `known` is empty (deck not studied yet), from `deck` instead.
+     `translations`: natural English for each paragraph (one string per paragraph, same order).
      Use a few `learning` words on purpose. Missions' answers should use deck words and phrases too
      (e.g. 买单, 打包, 太贵了, 我要这个 are in the deck).
    - `missions` (`missions_per_day`, default 2): ids `YYYY-MM-DD-m1`…, a realistic scene (restaurant, taxi, hotel,

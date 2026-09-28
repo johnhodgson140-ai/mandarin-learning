@@ -25,6 +25,7 @@ type StoryJson = {
   title_zh: string
   title_en: string
   paragraphs: string[][]
+  translations: string[]
   new_words: string[]
   names: string[]
   glossary: { word: string; english: string }[]
@@ -33,11 +34,12 @@ type StoryJson = {
 const SCHEMA = {
   type: 'object',
   additionalProperties: false,
-  required: ['title_zh', 'title_en', 'paragraphs', 'new_words', 'names', 'glossary'],
+  required: ['title_zh', 'title_en', 'paragraphs', 'translations', 'new_words', 'names', 'glossary'],
   properties: {
     title_zh: { type: 'string' },
     title_en: { type: 'string' },
     paragraphs: { type: 'array', items: { type: 'array', items: { type: 'string' } } },
+    translations: { type: 'array', items: { type: 'string' } },
     new_words: { type: 'array', items: { type: 'string' } },
     names: { type: 'array', items: { type: 'string' } },
     glossary: {
@@ -63,6 +65,8 @@ function isStoryJson(v: unknown): v is StoryJson {
     Array.isArray(s.paragraphs) &&
     s.paragraphs.length > 0 &&
     s.paragraphs.every((p) => isStrings(p) && p.length > 0) &&
+    isStrings(s.translations) &&
+    s.translations.length === s.paragraphs.length &&
     isStrings(s.new_words) &&
     isStrings(s.names) &&
     Array.isArray(s.glossary) &&
@@ -129,6 +133,7 @@ export async function generateStory(level: number, topic: Topic, length: StoryLe
     titleZh: json.title_zh,
     titleEn: json.title_en,
     paragraphs: json.paragraphs,
+    translations: json.translations,
     names: json.names,
     newWords: json.new_words,
     glossary: Object.fromEntries(json.glossary.map((g) => [g.word, g.english])),

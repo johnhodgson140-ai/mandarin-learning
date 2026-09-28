@@ -22,6 +22,11 @@
         ["比赛", "很", "好看", "。", "曼联", "进", "了", "两", "个", "球", "！", "我们", "都", "很", "高兴", "。"],
         ["比赛", "以后", "，", "我们", "去", "饭馆", "吃饭", "。", "朋友", "说", "：", "“", "下", "个", "周末", "我们", "再", "来", "吧", "！", "”"]
       ],
+      "translations": [
+        "At the weekend my friends and I went to watch a football match. We all really like Manchester United.",
+        "The match was great. Man United scored two goals! We were all really happy.",
+        "After the match, we went to a restaurant to eat. My friend said: “Let’s come again next weekend!”"
+      ],
       "names": ["曼联"],
       "new_words": ["进", "饭馆"],
       "glossary": [
@@ -40,6 +45,11 @@
         ["我", "在", "闲鱼", "上", "看到", "一", "件", "外套", "。", "这", "件", "外套", "是", "黑色", "的", "，", "很", "好看", "。"],
         ["卖家", "说", "：", "“", "八百", "块", "。", "”", "我", "说", "：", "“", "太", "贵", "了", "！", "六百", "块", "可以", "吗", "？", "”"],
         ["卖家", "想", "了", "想", "，", "说", "：", "“", "好", "吧", "。", "”", "我", "很", "高兴", "！"]
+      ],
+      "translations": [
+        "I saw a jacket on Xianyu. The jacket is black and looks really good.",
+        "The seller said: “800 yuan.” I said: “Too expensive! Is 600 OK?”",
+        "The seller thought for a moment and said: “Alright.” I was really happy!"
       ],
       "names": ["闲鱼"],
       "new_words": ["外套", "黑色", "卖家"],

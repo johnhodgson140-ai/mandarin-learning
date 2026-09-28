@@ -35,7 +35,7 @@ Never pure black or pure white. One accent colour only. Manual theme override in
 - **Today:** greeting line with level + XP (one line), today's checklist, big Start button. Nothing else.
 - **Reader:** full screen, thin progress line at top, no timers, no scores while reading. Read-aloud button at paragraph end.
 - **Speak hub:** five plain rows (Tone Dojo, Shadowing, Missions, Free Talk, Retell) with a one-line description each.
-- **Recording:** one large hold-to-talk button; subtle live level meter (a single bar, no waveform animation).
+- **Recording:** one large tap-to-talk button (tap to start, tap to stop); subtle live level meter (a single bar, no waveform animation).
 - **Results:** my sentence with syllables underlined `--minor` / `--wrong`; tap a syllable → pitch contour overlay (mine vs native) + replay both.
 - **Mission:** message-style list, no bubbles — speaker label + text, generous spacing. "Hide text" and "Hint" in the header.
 - **Progress:** 4 numbers at top, tone-pair heatmap, monthly benchmark recordings.

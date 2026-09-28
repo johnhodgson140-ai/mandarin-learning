@@ -24,9 +24,14 @@ export async function loadDaily(): Promise<DailyContent | null> {
 }
 
 async function importStories(daily: DailyContent): Promise<void> {
-  const have = new Set(listStories().map((s) => s.id))
+  const have = new Map(listStories().map((s) => [s.id, s]))
   for (const [i, s] of daily.stories.entries()) {
-    if (have.has(s.id)) continue
+    const saved = have.get(s.id)
+    if (saved) {
+      // Saved before translations existed: add them, keep my reading progress.
+      if (!saved.translations) await saveStory({ ...saved, translations: s.translations })
+      continue
+    }
     const story: Story = {
       id: s.id,
       createdAt: Date.parse(daily.date) + i,
@@ -36,6 +41,7 @@ async function importStories(daily: DailyContent): Promise<void> {
       titleZh: s.title_zh,
       titleEn: s.title_en,
       paragraphs: s.paragraphs,
+      translations: s.translations,
       names: s.names,
       newWords: s.new_words,
       glossary: Object.fromEntries(s.glossary.map((g) => [g.word, g.english])),

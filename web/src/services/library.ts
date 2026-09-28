@@ -17,6 +17,8 @@ export type Story = {
   titleEn: string
   /** Each paragraph as Claude's word split. Pinyin is never stored: it's rebuilt from the text. */
   paragraphs: string[][]
+  /** English for each paragraph (older stories may not have it). */
+  translations?: string[]
   names: string[]
   newWords: string[]
   glossary: Record<string, string>
