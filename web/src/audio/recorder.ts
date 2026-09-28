@@ -41,64 +41,121 @@ class Mic {
     }
   }
 
-  private healthy(): boolean {
+  /** Audio is actually arriving from the microphone (not just "open": iOS can hand back a dead one). */
+  private flowing(): boolean {
     const track = this.stream?.getAudioTracks()[0]
-    return Boolean(this.ctx && this.ctx.state !== 'closed' && this.node && track && track.readyState === 'live' && !track.muted)
+    return Boolean(
+      this.ctx?.state === 'running' &&
+        this.node &&
+        track?.readyState === 'live' &&
+        !track.muted &&
+        performance.now() - this.lastChunkAt < 1000,
+    )
   }
+
+  private lastChunkAt = -Infinity
 
   /**
    * Make sure audio is flowing. Call straight from a tap: iOS only lets audio start inside one.
-   * Anything but a running, healthy mic is replaced with a fresh one (resuming a context iOS has suspended or
-   * "interrupted" can hang forever). Every step has a time limit, so a tap never gets stuck.
+   * Reuses the open mic only if audio is really arriving; otherwise builds a fresh one, checks audio arrives
+   * within a second, and rebuilds once more if not (after leaving the site, iPhones can return a dead mic).
+   * Every step has a time limit, so a tap never gets stuck.
    */
   open(): Promise<void> {
     if (this.opening) {
       log('mic open: already opening')
       return this.opening
     }
-    if (this.healthy() && this.ctx!.state === 'running') {
+    if (this.flowing()) {
       log('mic open: reuse', this.state())
       return Promise.resolve()
     }
     log('mic open: fresh', this.state())
     this.release('replacing')
-    const ctx = new AudioContext() // created synchronously inside the tap
-    this.ctx = ctx
-    ctx.onstatechange = () => log('audio context ' + ctx.state)
-    const resumed = ctx.resume()
+    const ctx = this.newContext() // created synchronously inside the tap, which is what unlocks audio on iOS
+    const resumed = ctx.resume().catch(() => {})
     this.opening = (async () => {
       try {
-        const stream = await timeLimit(
-          navigator.mediaDevices.getUserMedia({
-            audio: { channelCount: 1, echoCancellation: true, noiseSuppression: true, autoGainControl: true },
-          }),
-          30_000, // includes the permission prompt
-        )
-        this.stream = stream
-        const track = stream.getAudioTracks()[0]
-        const { sampleRate, echoCancellation, noiseSuppression, autoGainControl } = track?.getSettings() ?? {}
-        log('mic granted', { label: track?.label, sampleRate, echoCancellation, noiseSuppression, autoGainControl })
-        if (track) {
-          track.onmute = () => log('mic track muted')
-          track.onunmute = () => log('mic track unmuted')
-          track.onended = () => log('mic track ended')
-        }
-        await timeLimit(resumed, 3000)
-        await timeLimit(ctx.audioWorklet.addModule(workletUrl), 5000)
-        const node = new AudioWorkletNode(ctx, 'recorder')
-        node.port.onmessage = (e: MessageEvent<Float32Array>) => this.sink?.(e.data)
-        ctx.createMediaStreamSource(stream).connect(node)
-        this.node = node
-        log('mic open: ready', this.state())
+        await this.build(ctx, resumed)
+        if (await this.audioArrives()) return
+        log('mic open: no audio, rebuilding', this.state())
+        this.release('no audio')
+        const retry = this.newContext() // allowed without a tap now: the microphone permission is active
+        await this.build(retry, retry.resume().catch(() => {}))
+        if (await this.audioArrives()) return
+        log('mic open: still no audio', this.state())
+        this.release('dead mic')
+        throw new MicDead()
       } catch (err) {
-        log('mic open failed', { error: String(err), ...this.state() })
-        this.release('open failed')
+        if (!(err instanceof MicDead)) {
+          log('mic open failed', { error: String(err), ...this.state() })
+          this.release('open failed')
+        }
         throw err
       } finally {
         this.opening = null
       }
     })()
     return this.opening
+  }
+
+  private newContext(): AudioContext {
+    const ctx = new AudioContext()
+    ctx.onstatechange = () => log('audio context ' + ctx.state)
+    this.ctx = ctx
+    return ctx
+  }
+
+  private async build(first: AudioContext, resumed: Promise<void>): Promise<void> {
+    let ctx = first
+    const stream = await timeLimit(
+      navigator.mediaDevices.getUserMedia({
+        audio: { channelCount: 1, echoCancellation: true, noiseSuppression: true, autoGainControl: true },
+      }),
+      30_000, // includes the permission prompt
+    )
+    this.stream = stream
+    const track = stream.getAudioTracks()[0]
+    const { sampleRate, echoCancellation, noiseSuppression, autoGainControl } = track?.getSettings() ?? {}
+    log('mic granted', { label: track?.label, muted: track?.muted, sampleRate, echoCancellation, noiseSuppression, autoGainControl })
+    if (track) {
+      track.onmute = () => log('mic track muted')
+      track.onunmute = () => log('mic track unmuted')
+      track.onended = () => log('mic track ended')
+    }
+    // Starting the mic switches the iPhone's audio mode and can interrupt a context started just before it.
+    await Promise.race([resumed, sleep(1000)])
+    if (ctx.state !== 'running') await timeLimit(ctx.resume(), 1000).catch(() => {})
+    if (ctx.state !== 'running') {
+      log('audio context stuck: replacing', { state: ctx.state })
+      void ctx.close().catch(() => {})
+      ctx = this.newContext()
+      await timeLimit(ctx.resume(), 1000).catch(() => {})
+    }
+    await timeLimit(ctx.audioWorklet.addModule(workletUrl), 5000)
+    const node = new AudioWorkletNode(ctx, 'recorder')
+    node.port.onmessage = (e: MessageEvent<Float32Array>) => this.receive(e.data)
+    ctx.createMediaStreamSource(stream).connect(node)
+    this.node = node
+    this.lastChunkAt = -Infinity
+    log('mic open: built', this.state())
+  }
+
+  private receive(chunk: Float32Array) {
+    this.lastChunkAt = performance.now()
+    this.sink?.(chunk)
+  }
+
+  /** Wait up to ~1 s for the first audio from the worklet. */
+  private async audioArrives(): Promise<boolean> {
+    for (let waited = 0; waited < 1000; waited += 50) {
+      if (this.flowing()) {
+        log('mic open: audio flowing', { afterMs: waited, ...this.state() })
+        return true
+      }
+      await sleep(50)
+    }
+    return false
   }
 
   /** Drop anything the worklet collected before this moment. */
@@ -112,8 +169,8 @@ class Mic {
     if (!node) return Promise.resolve()
     return new Promise<void>((resolve) => {
       const onFlushed = (e: MessageEvent<Float32Array>) => {
-        this.sink?.(e.data)
-        node.port.onmessage = (ev: MessageEvent<Float32Array>) => this.sink?.(ev.data)
+        this.receive(e.data)
+        node.port.onmessage = (ev: MessageEvent<Float32Array>) => this.receive(ev.data)
         resolve()
       }
       node.port.onmessage = onFlushed
@@ -136,6 +193,15 @@ class Mic {
 }
 
 const mic = new Mic()
+
+/** The iPhone gives the page no microphone audio at all; only reloading the page brings it back. */
+export class MicDead extends Error {
+  constructor() {
+    super("The iPhone isn't giving the app any microphone audio.")
+  }
+}
+
+const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms))
 
 export class MicTimeout extends Error {
   constructor() {
@@ -163,6 +229,7 @@ if (typeof document !== 'undefined')
   document.addEventListener('visibilitychange', () => {
     if (document.visibilityState === 'hidden') mic.release('app hidden')
   })
+if (typeof window !== 'undefined') window.addEventListener('pagehide', () => mic.release('left the page'))
 
 /**
  * One recording from the shared microphone → 16 kHz mono WAV.
