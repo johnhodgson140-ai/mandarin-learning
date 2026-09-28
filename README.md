@@ -17,6 +17,9 @@ Project docs: [`CLAUDE.md`](CLAUDE.md), [`docs/SPEC.md`](docs/SPEC.md), [`docs/D
 
 Updates publish automatically. If the home-screen app shows an old version, close it fully and reopen it.
 
+## iPhone app (optional)
+A native iOS build of the same app, installed from Xcode with a free Apple ID: see [`docs/IOS.md`](docs/IOS.md).
+
 ## How publishing works
 Every push runs `.github/workflows/deploy.yml`: lint + type-check + build. Pushes to `main` are also published to
 GitHub Pages. One-time setup: repo **Settings → Pages → Build and deployment → Source: GitHub Actions**.

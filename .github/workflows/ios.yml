@@ -1,0 +1,54 @@
+# Build the iOS app (personal use, installed from Xcode with a free Apple ID).
+# Every push compiles it with Xcode on a Mac runner; pushes to main also publish Shuo-iOS.zip at
+# https://github.com/johnhodgson140-ai/mandarin-learning/releases/download/ios-latest/Shuo-iOS.zip
+# (unzip, open ios/App/App.xcodeproj in Xcode, pick your Apple ID team, Run on the iPhone).
+name: iOS app
+
+on:
+  push:
+    paths: ['web/**', '.github/workflows/ios.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ios-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ios:
+    runs-on: macos-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: npm ci
+      - run: npm run build:ios
+      - name: Use the newest Xcode on the runner
+        run: |
+          latest=$(ls -d /Applications/Xcode_*.app | sort -V | tail -1)
+          sudo xcode-select -s "$latest"
+          xcodebuild -version
+      - name: Compile for the simulator (no signing), to catch errors before I open it in Xcode
+        run: |
+          xcodebuild -project ios/App/App.xcodeproj -scheme App -configuration Debug \
+            -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' \
+            -derivedDataPath "$RUNNER_TEMP/dd" CODE_SIGNING_ALLOWED=NO build | tail -20
+      - name: Zip the Xcode project
+        run: ditto -c -k --keepParent ios "$RUNNER_TEMP/Shuo-iOS.zip"
+      - name: Publish Shuo-iOS.zip
+        if: github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          notes="Built from ${GITHUB_SHA::7} on $(date -u '+%d %b %Y %H:%M') UTC. Unzip, open ios/App/App.xcodeproj in Xcode, choose your team under Signing & Capabilities, and Run on your iPhone."
+          gh release view ios-latest >/dev/null 2>&1 || gh release create ios-latest --title "Shuō iOS app (latest)" --notes "$notes" --latest=false
+          gh release upload ios-latest "$RUNNER_TEMP/Shuo-iOS.zip" --clobber
+          gh release edit ios-latest --notes "$notes"
