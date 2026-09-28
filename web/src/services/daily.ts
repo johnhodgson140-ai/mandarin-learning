@@ -7,18 +7,28 @@ export function cachedDaily(): DailyContent | null {
   return load<DailyContent | null>('daily', null)
 }
 
+/** Where today's content comes from: the website first; the iOS app also has the copy it was built with. */
+const SOURCES =
+  import.meta.env.MODE === 'native'
+    ? ['https://johnhodgson140-ai.github.io/mandarin-learning/daily/latest.json', '/daily/latest.json']
+    : [`${import.meta.env.BASE_URL}daily/latest.json`]
+
 /** Fetch the latest file (falls back to the cached copy offline) and add its stories to my library. */
 export async function loadDaily(): Promise<DailyContent | null> {
-  try {
-    const res = await fetch(`${import.meta.env.BASE_URL}daily/latest.json`, { cache: 'no-cache' })
-    const json: unknown = await res.json()
-    if (isDaily(json)) {
+  for (const url of SOURCES) {
+    try {
+      const res = await fetch(url, { cache: 'no-cache' })
+      const json: unknown = await res.json()
+      if (!isDaily(json)) continue
+      // Never replace newer cached content with the older bundled copy.
+      const cached = cachedDaily()
+      if (cached && cached.date > json.date) break
       save('daily', json)
       await importStories(json)
       return json
+    } catch {
+      // offline or not there: try the next source
     }
-  } catch {
-    // offline: use what we had
   }
   return cachedDaily()
 }

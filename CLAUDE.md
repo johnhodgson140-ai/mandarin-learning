@@ -67,4 +67,6 @@ docs/                SPEC, DESIGN, ROADMAP
 - Four tabs only: Today · Read · Speak · Progress.
 
 ## Out of scope (do not build unless I ask)
-Handwriting, social/leaderboards, grammar lesson modules, real-time streaming voice calls, native app-store builds, user accounts/multi-user.
+Handwriting, social/leaderboards, grammar lesson modules, real-time streaming voice calls, App Store releases, user accounts/multi-user.
+(A personal iOS build is in scope: Capacitor shell in `web/ios`, built by `.github/workflows/ios.yml`, installed from
+Xcode with a free Apple ID — see `docs/IOS.md`.)

@@ -3,14 +3,14 @@ import { defineConfig } from 'vite'
 import { VitePWA } from 'vite-plugin-pwa'
 
 // Served from GitHub Pages at https://johnhodgson140-ai.github.io/mandarin-learning/ — must match the repo name.
-const base = '/mandarin-learning/'
-
-export default defineConfig({
-  base,
+// `--mode native` builds the iOS app (Capacitor serves it from the root, and it needs no service worker).
+export default defineConfig(({ mode }) => ({
+  base: mode === 'native' ? '/' : '/mandarin-learning/',
   define: { __BUILD_TIME__: JSON.stringify(new Date().toISOString()) },
   plugins: [
     react(),
     VitePWA({
+      disable: mode === 'native',
       registerType: 'autoUpdate',
       includeAssets: ['apple-touch-icon.png'],
       manifest: {
@@ -19,8 +19,8 @@ export default defineConfig({
         description: 'Speak and read Mandarin with the words you already know.',
         lang: 'en',
         display: 'standalone',
-        start_url: base,
-        scope: base,
+        start_url: '/mandarin-learning/',
+        scope: '/mandarin-learning/',
         background_color: '#F7F4EE',
         theme_color: '#F7F4EE',
         icons: [
@@ -50,4 +50,4 @@ export default defineConfig({
   // The Read chunk is ~500 kB, almost all pinyin-pro's dictionary; it's lazy-loaded and precached, so that's fine.
   build: { chunkSizeWarningLimit: 700 },
   server: { port: 5173, strictPort: true },
-})
+}))

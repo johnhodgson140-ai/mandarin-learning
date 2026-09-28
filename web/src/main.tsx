@@ -14,7 +14,7 @@ startLogging()
 
 // Updates: check for a new version whenever the app is opened; when one is found it installs and the page
 // reloads onto it straight away (so the home-screen app never keeps running an old copy).
-registerSW({
+if (import.meta.env.MODE !== 'native') registerSW({
   immediate: true,
   onRegisteredSW(_url, registration) {
     if (!registration) return
