@@ -18,7 +18,8 @@ Everything the app shows or says is built from **words I already know in Anki**.
 - AnkiConnect must allow the app's origin: add `https://johnhodgson140-ai.github.io` to `webCorsOriginList` in the add-on config.
 
 ## 3. Chinese text pipeline (web/src/chinese)
-- `segment(text)` → words via `pinyin-pro`'s segmenter, with the Anki word list added as custom words.
+- Segmentation: Claude returns each paragraph already split into words (it segments far better than `pinyin-pro` or
+  `Intl.Segmenter`, which split 卖家/体育场/曼联 into characters); adjacent pieces that form an Anki word are merged.
 - `pinyin(words)` → `pinyin-pro` tone marks, overridden by Anki pinyin when the word exists there.
 - `sandhi(syllables)` → spoken tones: 3+3 → 2+3, 不 → bú before 4th, 一 → yí before 4th / yì before 1–3 (yī when counting/final), neutral tones kept.
   Returns both `written_tone` and `spoken_tone` per syllable. Grading always uses `spoken_tone`.
@@ -27,13 +28,17 @@ Everything the app shows or says is built from **words I already know in Anki**.
 ## 4. Reader
 - Story generation (`stories.generate()`): inputs level (1–6), topic, length (short 80–120 chars / medium 200–300 / long 400–600).
   Claude receives the known-word list (+ up to 8 target new words from Anki `learning` or recently added) and must return JSON
-  `{title_zh, title_en, paragraphs: [string], new_words: [hanzi]}`. The app segments, computes known ratio; regenerate once if < 90%.
+  `{title_zh, title_en, paragraphs: [[word]], new_words: [hanzi], names: [string], glossary: [{word, english}]}` via structured
+  outputs. The app builds tokens, computes known ratio; regenerate once if < 90% (naming the out-of-list words), keep the better draft.
+  Without a synced word list, stories use HSK vocabulary for the level and the ratio is not shown.
 - Topics (my interests): football, archive fashion (Taobao/Xianyu listings, messaging sellers), anime, travel in China/Japan,
   daily life, business & finance. Level controls sentence length and grammar.
 - Reader rendering: token list `{hanzi, pinyin, spoken_tones, mastery, gloss}`; `<ruby>` pinyin shown unless mature.
-- Tap word → bottom sheet (desktop: right sidebar): hanzi, pinyin, meaning, TTS play, `+ Anki`.
+- Tap word → bottom sheet (desktop: right sidebar): hanzi, pinyin, meaning, TTS play, `+ Anki`. Meaning: Anki English, else the
+  story glossary, else a one-off Haiku lookup saved into the story.
+- TTS: Azure neural voice when an Azure key is set, otherwise the device's own zh-CN voice. Speed by level (0.8× → 1.1×).
 - Long-press sentence → TTS. "Read aloud" button per paragraph → grading (section 5).
-- Save stories; mark as read; track read time.
+- Save stories (on the device, and in Firebase when signed in); mark as read; track read time (never shown while reading).
 
 ## 5. Speaking grading (shared by Reader read-aloud, Shadowing, Tone Dojo)
 1. Frontend records 16 kHz mono WAV (AudioWorklet). Max 30 s per clip.

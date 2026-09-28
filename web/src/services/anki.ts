@@ -13,6 +13,7 @@ import {
 } from './anki-mapping.ts'
 import { dbDelete, dbGet, dbPush, dbPut } from './firebase.ts'
 import { load, save } from './storage.ts'
+import { saveWords } from './words.ts'
 
 const ANKI_URL = 'http://127.0.0.1:8765'
 const CHUNK = 500
@@ -76,7 +77,7 @@ export async function sync(onProgress: (message: string) => void = () => {}): Pr
   onProgress(`Saving ${words.length} words…`)
   await dbPut('words', Object.fromEntries(words.map((w) => [String(w.noteId), w])))
   await dbPut('meta', meta)
-  save('words', words)
+  saveWords(words)
   save('meta', meta)
   return { meta, sent }
 }
