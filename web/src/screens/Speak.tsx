@@ -6,6 +6,7 @@ import { activeVoice } from '../services/voices.ts'
 import './speak/speak.css'
 
 const Dojo = lazy(() => import('./speak/Dojo.tsx'))
+const Ears = lazy(() => import('./speak/Ears.tsx'))
 const Calibrate = lazy(() => import('./speak/Calibrate.tsx'))
 const Missions = lazy(() => import('./speak/Missions.tsx'))
 const Cards = lazy(() => import('./speak/Cards.tsx'))
@@ -17,6 +18,7 @@ const Mission = lazy(() => import('./speak/Mission.tsx'))
 export default function Speak() {
   const [, sub, arg] = useHash().split('/')
   if (sub === 'dojo') return <Dojo />
+  if (sub === 'ears') return <Ears />
   if (sub === 'calibrate') return <Calibrate />
   if (sub === 'missions') return <Missions />
   if (sub === 'cards') return <Cards />
@@ -41,6 +43,10 @@ function Hub() {
         <a href="#speak/cards" className="hub-row">
           <span className="hub-title">Say your cards</span>
           <span className="muted">Flashcards you answer out loud, scored 1–100.</span>
+        </a>
+        <a href="#speak/ears" className="hub-row">
+          <span className="hub-title">Tone ears</span>
+          <span className="muted">Hear a word in different voices, pick its tones. Trains the ear, which helps the mouth.</span>
         </a>
         <a href="#speak/dojo" className="hub-row">
           <span className="hub-title">Tone Dojo</span>

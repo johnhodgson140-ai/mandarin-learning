@@ -70,3 +70,10 @@
 .key-chip.missed { border-color: var(--minor); color: var(--minor); }
 .answer-en { display: block; }
 .ruby-text.turn-label { font-size: 17px; }
+
+/* Tone ears */
+.ear-row { display: flex; flex-direction: column; gap: 4px; margin-top: var(--space); }
+.ear-tone { min-width: 64px; font-size: 18px; }
+.ear-word { font-size: 28px; }
+.ear-right { color: var(--ok); font-weight: 600; }
+.ear-wrong { color: var(--wrong); font-weight: 600; }

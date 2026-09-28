@@ -100,5 +100,50 @@ function bestDeviceVoice(): SpeechSynthesisVoice | undefined {
   return zh.sort((a, b) => rank(b) - rank(a))[0]
 }
 
+/** Several different speakers, for ear training (many voices train the ear better than one). */
+const VARIETY_AZURE = ['zh-CN-XiaoxiaoNeural', 'zh-CN-YunxiNeural', 'zh-CN-XiaoyiNeural', 'zh-CN-YunjianNeural', 'zh-CN-XiaochenNeural', 'zh-CN-YunyangNeural']
+
+/** How many different voices ear training can use on this device. */
+export function varietyCount(): number {
+  if (getKeys().azure) return VARIETY_AZURE.length
+  return Math.max(1, deviceVoices().length)
+}
+
+/** Say `text` in voice number `index` (of varietyCount()), at a slightly varied speed. */
+export async function speakVariety(text: string, index: number, rate = 0.9): Promise<void> {
+  unlockAudio()
+  const { azure, azureRegion } = getKeys()
+  if (azure && audio) {
+    const voice = VARIETY_AZURE[index % VARIETY_AZURE.length]
+    const key = `${voice}|${rate}|${text}`
+    try {
+      let blob = cache.get(key)
+      if (!blob) {
+        blob = await azureTts(text, rate, voice, azure, azureRegion)
+        cache.set(key, blob)
+      }
+      audio.src = URL.createObjectURL(blob)
+      await audio.play()
+      return
+    } catch (err) {
+      log('voice: azure failed', { error: String(err) })
+    }
+  }
+  if (typeof speechSynthesis === 'undefined') return
+  speechSynthesis.cancel()
+  const voices = deviceVoices()
+  const utterance = new SpeechSynthesisUtterance(text)
+  utterance.lang = 'zh-CN'
+  utterance.rate = rate
+  if (voices.length) utterance.voice = voices[index % voices.length]
+  speechSynthesis.speak(utterance)
+}
+
+/** Mandarin voices on the device (mainland and Taiwan; not Cantonese). */
+function deviceVoices(): SpeechSynthesisVoice[] {
+  if (typeof speechSynthesis === 'undefined') return []
+  return speechSynthesis.getVoices().filter((v) => /^zh[-_](CN|TW)/i.test(v.lang))
+}
+
 /** TTS speed by level: 0.8× at level 1 up to 1.1× at level 6 (docs/SPEC.md §8). */
 export const rateForLevel = (level: number) => Math.round((0.8 + (level - 1) * 0.06) * 100) / 100
