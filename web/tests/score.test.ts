@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
+import { markTone } from '../src/chinese/tones.ts'
 import { combine, scoreColour, soundScore, splitSyllable, statusOf, tips } from '../src/scoring/score.ts'
 
 test('splitSyllable', () => {
@@ -17,18 +18,23 @@ test('soundScore: half initial, half final', () => {
   assert.equal(soundScore('mā', null), 0)
 })
 
-test('combine: tone counts 60%, a wrong tone is capped; neutral tone is sound only', () => {
+test('combine: tone (relative to the best match) counts 60%, a wrong tone is capped; neutral tone is sound only', () => {
   const both = combine(100, [0.05, 0.8, 0.05, 0.05, 0.05], 2)
-  assert.equal(both.score, 88)
+  assert.equal(both.score, 100)
   assert.equal(both.heardTone, 2)
-  assert.equal(combine(50, [0.7, 0.1, 0.1, 0.05, 0.05], 3).score, 26)
+  assert.equal(combine(50, [0.7, 0.1, 0.1, 0.05, 0.05], 3).score, 29)
   // Right word (recogniser happy) but tone 2 instead of 4: red, not amber.
   const wrongTone = combine(100, [0.1, 0.6, 0.1, 0.15, 0.05], 4)
-  assert.equal(wrongTone.score, 49)
+  assert.equal(wrongTone.score, 50)
   assert.equal(wrongTone.status, 'wrong')
+  // Close second: amber-ish, not capped.
+  assert.equal(combine(null, [0.1, 0.35, 0.1, 0.4, 0.05], 2).score, 87)
   assert.equal(combine(100, [0.9, 0.025, 0.025, 0.025, 0.025], 5).score, 100)
-  assert.equal(combine(null, [0.1, 0.1, 0.65, 0.1, 0.05], 3).score, 65)
-  assert.equal(combine(null, null, 1).score, 1)
+  assert.equal(combine(null, [0.1, 0.1, 0.65, 0.1, 0.05], 3).score, 100)
+  // Nothing to judge: not checked, left out of the overall.
+  const neither = combine(null, [0.1, 0.1, 0.1, 0.1, 0.6], 5)
+  assert.equal(neither.checked, false)
+  assert.equal(combine(null, null, 1).checked, false)
 })
 
 test('status and colour scale', () => {
@@ -59,4 +65,11 @@ test('alignSyllables: matches by sound, pairs substitutions, marks missing', () 
 
 test('bestAlternative picks the closest recogniser guess', () => {
   assert.deepEqual(bestAlternative(['shēng', 'rì'], [['sheng', 'li'], ['sheng', 'ri']]), ['sheng', 'ri'])
+})
+
+test('markTone puts the mark on the right vowel', () => {
+  assert.deepEqual(
+    [markTone('hao', 3), markTone('gou', 3), markTone('dui', 4), markTone('liu', 2), markTone('lv', 4), markTone('ma', 5), markTone('er', 2), markTone('xiong', 2)],
+    ['hǎo', 'gǒu', 'duì', 'liú', 'lǜ', 'ma', 'ér', 'xióng'],
+  )
 })

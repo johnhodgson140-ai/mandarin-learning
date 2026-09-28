@@ -27,5 +27,18 @@ export function toneless(pinyin: string): string {
     .replace(/[^a-zü]/g, '')
 }
 
+const MARKED: Record<string, string> = { a: 'āáǎà', e: 'ēéěè', i: 'īíǐì', o: 'ōóǒò', u: 'ūúǔù', ü: 'ǖǘǚǜ' }
+
+/** Put a tone mark on tone-less pinyin letters ("hao", 3 → "hǎo"): a/e first, then the o of "ou", else the last vowel. */
+export function markTone(letters: string, tone: Tone): string {
+  const s = letters.replace(/v/g, 'ü')
+  if (tone === 5) return s
+  let at = s.search(/[ae]/)
+  if (at < 0) at = s.indexOf('ou')
+  if (at < 0) for (let i = s.length - 1; i >= 0; i--) if ('iouü'.includes(s[i])) { at = i; break }
+  if (at < 0) return s
+  return s.slice(0, at) + MARKED[s[at]][tone - 1] + s.slice(at + 1)
+}
+
 const HAN = /\p{Script=Han}/u
 export const isHan = (char: string) => HAN.test(char)

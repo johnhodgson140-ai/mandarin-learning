@@ -7,6 +7,7 @@ import { getKeys, setKeys, type Keys } from '../services/keys.ts'
 import { load, save } from '../services/storage.ts'
 import { getTheme, setTheme, type Theme } from '../services/theme.ts'
 import HoldToTalk from '../components/HoldToTalk.tsx'
+import VoicePicker from '../components/VoicePicker.tsx'
 import { clearLog, logCount, logText } from '../debug/log.ts'
 import { hasRecogniser, recogniserBlocked, setRecogniserBlocked } from '../scoring/recognize.ts'
 import { getVoice, setVoice, speak, type VoiceChoice } from '../services/tts.ts'
@@ -25,6 +26,7 @@ export default function Settings() {
       <Account user={user} onChange={() => setUser(currentUser())} />
       {user && <Anki />}
       <MyLevel />
+      <Voices />
       <MicTest />
       <SpeechCheck />
       <Voice />
@@ -227,6 +229,19 @@ function MyLevel() {
           <button key={n} type="button" className="chip" aria-pressed={level === n} onClick={() => { setLevel(n); save('level', n) }}>{n}</button>
         ))}
       </div>
+    </section>
+  )
+}
+
+function Voices() {
+  return (
+    <section className="card">
+      <h2 className="card-title">Voices</h2>
+      <p className="muted small">
+        Everyone who practises on this phone gets their own voice, so tone checks fit whoever is speaking. Pick who's
+        speaking before practising. Progress and cards are shared.
+      </p>
+      <VoicePicker manage />
     </section>
   )
 }
