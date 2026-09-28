@@ -9,7 +9,7 @@ import type { SpeechScore } from '../scoring/speechScore.ts'
 import { explainAttempt } from '../services/explain.ts'
 import { getKeys } from '../services/keys.ts'
 import { correctedRecording } from '../services/tone.ts'
-import { playBlob, speak } from '../services/tts.ts'
+import { playBlob, rateForLevel, speak } from '../services/tts.ts'
 import { templateContour } from '../tone/model.ts'
 
 /** `native`: the native voice's pitch across the word, drawn on the chart when known (Tone Dojo). */
@@ -74,7 +74,7 @@ export default function ScoreView({ syllables, result, native }: { syllables: Sy
       <div className="score-listen">
         <PlayButton id={`${uid}-you`} label="You" start={() => playBlob(result.wav, `${uid}-you`)} />
         {tonesChecked && <PlayButton id={`${uid}-corrected`} label="You, corrected" start={playCorrected} />}
-        <PlayButton id={`${uid}-native`} label="Native" start={() => speak(syllables.map((s) => s.hanzi).join(''), 0.85, `${uid}-native`)} />
+        <PlayButton id={`${uid}-native`} label="Native" start={() => speak(syllables.map((s) => s.hanzi).join(''), rateForLevel(), `${uid}-native`)} />
       </div>
       {tonesChecked && (
         <ContourChart mine={result.tones.map((t) => t?.contour ?? null)} target={syllables.map((s) => templateContour(s.spoken))} native={native} />

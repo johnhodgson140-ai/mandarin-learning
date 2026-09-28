@@ -3,6 +3,7 @@ import { MicDead, preloadRecorder, Recorder, reopenMicNextTime, type Recording }
 import { canRecognise, listen as startListening, setRecogniserBlocked, type Listening } from '../scoring/recognize.ts'
 import { flushLog, log } from '../debug/log.ts'
 import { isNativeApp, nativeRecognise } from '../native/app.ts'
+import { stopPlayback } from '../services/tts.ts'
 import './HoldToTalk.css'
 
 type Props = {
@@ -37,6 +38,7 @@ export default function HoldToTalk({ onRecorded, onError, listen = false }: Prop
 
   async function begin() {
     if (recorder.current) return log('tap ignored: already recording')
+    stopPlayback() // never record the app's own voice or a playback
     const rec = new Recorder({
       onLevel: (l) => {
         peak.current = Math.max(peak.current, l)

@@ -30,9 +30,12 @@ export function getProfile(): SpeakerProfile | null {
 export const isCalibrated = () => activeVoice().profile !== null
 
 /** Remember some pitch points from this recording (evenly spaced) to learn the active voice's range. */
+const learnedFrom = new WeakSet<Blob>() // each recording counts once, even when it's scored several times
+
 export async function learnVoice(wav: Blob): Promise<void> {
   const voice = activeVoice()
-  if (voice.profile) return
+  if (voice.profile || learnedFrom.has(wav)) return
+  learnedFrom.add(wav)
   const voiced = voicedSemitones(await wavSamples(wav), TARGET_RATE)
   if (voiced.length < 10) return
   const step = Math.max(1, voiced.length / POINTS_PER_RECORDING)

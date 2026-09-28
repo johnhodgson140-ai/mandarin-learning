@@ -47,6 +47,7 @@
 .reader-prefs { gap: var(--space); }
 .reader-prefs input[type='range'] { accent-color: var(--accent); }
 .reader-title { font-size: calc(var(--reader-size) * 1.15); font-weight: 600; margin-top: var(--space); }
+.reader-title + .muted { margin-bottom: calc(var(--space) * 2.5); }
 
 .reader-text { font-size: var(--reader-size); line-height: 1.9; }
 .reader-text p { margin: 0 0 1.2em; }

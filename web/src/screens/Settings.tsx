@@ -11,7 +11,7 @@ import VoicePicker from '../components/VoicePicker.tsx'
 import { clearLog, logCount, logText } from '../debug/log.ts'
 import { getReminder, isNativeApp, nativeRecogniserInfo, setReminder, type Reminder as ReminderType } from '../native/app.ts'
 import { hasRecogniser, recogniserBlocked, setRecogniserBlocked } from '../scoring/recognize.ts'
-import { AZURE_VOICES, deviceVoices, getDeviceVoice, getSpeed, getVoice, playBlob, setDeviceVoice, setSpeed, setVoice, speak, SPEEDS, type Speed } from '../services/tts.ts'
+import { AZURE_VOICES, deviceVoices, getDeviceVoice, getSpeed, getVoice, playBlob, rateForLevel, setDeviceVoice, setSpeed, setVoice, speak, SPEEDS, type Speed } from '../services/tts.ts'
 import PlayButton from '../components/PlayButton.tsx'
 import './Settings.css'
 
@@ -24,17 +24,18 @@ export default function Settings() {
         <a href="#today" className="back-link">‹ Today</a>
         <h1>Settings</h1>
       </header>
-      <AnkiPhone />
-      <Account user={user} onChange={() => setUser(currentUser())} />
-      {user && <Anki />}
-      <MyLevel />
+      {/* Everyday settings first; setup and troubleshooting further down. */}
+      <Voice />
       <Voices />
       <Reminder />
-      <MicTest />
-      <SpeechCheck />
-      <Voice />
+      <MyLevel />
       <Appearance />
+      <AnkiPhone />
       <ApiKeys />
+      <Account user={user} onChange={() => setUser(currentUser())} />
+      {user && <Anki />}
+      <SpeechCheck />
+      <MicTest />
       <p className="muted small">Version {new Date(__BUILD_TIME__).toLocaleString('en-GB', { dateStyle: 'medium', timeStyle: 'short' })}</p>
     </>
   )
@@ -379,7 +380,7 @@ function Voice() {
     speechSynthesis.addEventListener('voiceschanged', update)
     return () => speechSynthesis.removeEventListener('voiceschanged', update)
   }, [])
-  const test = () => speak('你好，我们一起练习说中文吧。', 0.9, 'voice-test')
+  const test = () => speak('你好，我们一起练习说中文吧。', rateForLevel(), 'voice-test')
   return (
     <section className="card">
       <h2 className="card-title">Voice</h2>

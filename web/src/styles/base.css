@@ -150,3 +150,26 @@ a.chip { text-decoration: none; display: inline-flex; align-items: center; }
 .contour-mine { fill: none; stroke: var(--accent); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
 .contour-legend { display: flex; gap: calc(var(--space) * 2); font-size: 13px; color: var(--text-muted); }
 .score-listen { display: flex; flex-wrap: wrap; gap: var(--space); }
+
+/* Text inputs used across screens (Speak, Settings) */
+.type-row { display: flex; gap: var(--space); }
+.type-input {
+  flex: 1; min-height: 48px; padding: 0 calc(var(--space) * 1.5); font-size: 18px;
+  border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); color: var(--text);
+}
+
+/* Links in text use the accent colour (also after visiting them) */
+a { color: var(--accent); }
+
+/* Dropdowns match the text fields; 16px+ so iOS doesn't zoom in */
+.field select, select {
+  font: inherit;
+  font-size: 16px;
+  min-height: 44px;
+  padding: 0 calc(var(--space) * 1.5);
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) - 4px);
+  background: var(--bg);
+  color: var(--text);
+}
+input, textarea { font-size: max(16px, 1em); }

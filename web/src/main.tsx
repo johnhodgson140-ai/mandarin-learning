@@ -6,6 +6,7 @@ import { registerSW } from 'virtual:pwa-register'
 import App from './App.tsx'
 import { startLogging } from './debug/log.ts'
 import { pruneRecordings } from './services/attempts.ts'
+import { loadDaily } from './services/daily.ts'
 import { loadDeck } from './services/words.ts'
 import { applyTheme } from './services/theme.ts'
 
@@ -35,5 +36,7 @@ void navigator.storage?.persist?.().catch(() => false)
 
 // Recordings are kept on the device for 30 days.
 pruneRecordings().catch(() => {})
+// Today's stories and missions, whichever screen the app opens on.
+void loadDaily()
 // My exported Anki deck ships with the app (web/public/deck.json).
 void loadDeck()

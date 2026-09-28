@@ -25,18 +25,19 @@ export const setVoice = (id: string) => save('voice', id)
 export const getDeviceVoice = () => load<string | null>('deviceVoice', null)
 export const setDeviceVoice = (uri: string | null) => save('deviceVoice', uri)
 
-/** Speaking speed: 'auto' follows my level (0.8× at level 1 … 1.1× at level 6), or a fixed speed like 0.8. */
+/**
+ * Speaking speed: 'auto' follows my level (0.8× at level 1 … 1.1× at level 6), or a fixed speed like 0.8 that
+ * replaces the level default everywhere. Screens that slow down further (Shadowing's 0.8×) scale from it.
+ */
 export type Speed = 'auto' | number
 export const SPEEDS: Speed[] = ['auto', 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2]
 export const getSpeed = () => load<Speed>('speechSpeed', 'auto')
 export const setSpeed = (s: Speed) => save('speechSpeed', s)
-const effectiveRate = (rate: number) => {
+/** My speaking speed: the fixed speed from Settings, else by level (0.8× at level 1 up to 1.1× at 6, SPEC §8). */
+export function rateForLevel(level = load('level', 1)): number {
   const s = getSpeed()
-  return s === 'auto' ? rate : s
+  return s === 'auto' ? Math.round((0.8 + (level - 1) * 0.06) * 100) / 100 : s
 }
-
-/** TTS speed by level: 0.8× at level 1 up to 1.1× at level 6 (docs/SPEC.md §8). */
-export const rateForLevel = (level: number) => Math.round((0.8 + (level - 1) * 0.06) * 100) / 100
 
 // ---- The one player ----
 
@@ -107,10 +108,13 @@ export function togglePlayback(id: string, start: () => Promise<void>): void {
   void start()
 }
 
+let objectUrl: string | null = null
 async function playAudio(blob: Blob, id: string, mine: number): Promise<void> {
   if (!audio || mine !== token) return
   usingDevice = false
-  audio.src = URL.createObjectURL(blob)
+  if (objectUrl) URL.revokeObjectURL(objectUrl)
+  objectUrl = URL.createObjectURL(blob)
+  audio.src = objectUrl
   set({ id, status: 'playing' })
   await audio.play().catch(() => set({ id: null, status: 'idle' }))
 }
@@ -141,7 +145,7 @@ export async function speak(text: string, rate = 1, id = `say:${text}`): Promise
   unlockAudio()
   stopPlayback()
   const mine = token
-  const r = effectiveRate(rate)
+  const r = rate
   if (getKeys().azure) {
     set({ id, status: 'loading' })
     try {
@@ -195,6 +199,9 @@ async function azureTts(text: string, rate: number, voice: string, key: string, 
 
 // ---- Device voices ----
 
+// Safari only fills in the voice list after it has been asked once.
+if (typeof speechSynthesis !== 'undefined') speechSynthesis.getVoices()
+
 /** Mandarin voices on the device (mainland and Taiwan; not Cantonese), clearest first. */
 export function deviceVoices(): SpeechSynthesisVoice[] {
   if (typeof speechSynthesis === 'undefined') return []
@@ -231,7 +238,7 @@ export async function speakVariety(text: string, index: number, rate = 0.9): Pro
   const mine = token
   const id = `ear:${text}:${index}`
   const s = getSpeed()
-  const r = s === 'auto' ? rate : Math.round(s * (0.95 + Math.random() * 0.1) * 100) / 100
+  const r = s === 'auto' ? rate : Math.round(s * (0.95 + Math.random() * 0.1) * 100) / 100 // vary a little around my speed
   const { azure, azureRegion } = getKeys()
   if (azure && audio) {
     const voice = VARIETY_AZURE[index % VARIETY_AZURE.length]
