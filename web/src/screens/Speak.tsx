@@ -1,6 +1,8 @@
-import { lazy } from 'react'
+import { lazy, useState } from 'react'
+import VoicePicker from '../components/VoicePicker.tsx'
 import { useHash } from '../hash.ts'
-import { getProfile } from '../services/tone.ts'
+import { isCalibrated } from '../services/tone.ts'
+import { activeVoice } from '../services/voices.ts'
 import './speak/speak.css'
 
 const Dojo = lazy(() => import('./speak/Dojo.tsx'))
@@ -27,10 +29,14 @@ export default function Speak() {
 }
 
 function Hub() {
-  const calibrated = getProfile() !== null
+  const [, redraw] = useState(0)
+  const voice = activeVoice()
+  const calibrated = isCalibrated()
   return (
     <>
       <h1>Speak</h1>
+      <p className="muted small">Who's speaking?</p>
+      <VoicePicker onChange={() => redraw((n) => n + 1)} />
       <nav className="hub">
         <a href="#speak/cards" className="hub-row">
           <span className="hub-title">Say your cards</span>
@@ -57,8 +63,8 @@ function Hub() {
           <span className="muted">Listen to a short story twice, then tell it back.</span>
         </a>
         <a href="#speak/calibrate" className="hub-row">
-          <span className="hub-title">Calibrate your voice</span>
-          <span className="muted">{calibrated ? 'Done. Redo it if tone checks feel off.' : 'Four syllables, so tone checks fit your voice.'}</span>
+          <span className="hub-title">Calibrate {voice.name === 'Me' ? 'your' : `${voice.name}'s`} voice</span>
+          <span className="muted">{calibrated ? 'Done. Redo it if tone checks feel off.' : 'Four syllables, so tone checks fit this voice.'}</span>
         </a>
       </nav>
     </>

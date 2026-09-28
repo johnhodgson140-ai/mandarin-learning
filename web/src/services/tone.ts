@@ -7,50 +7,53 @@ import type { CharResult, ToneGuess } from '../grading/grade.ts'
 import { calibrate, contour, normalise, predict, profileFromPitches, voicedSemitones, type SpeakerProfile } from '../tone/model.ts'
 import { segmentSyllables } from '../tone/segment.ts'
 import { currentUser, dbGet, dbPut, isConfigured } from './firebase.ts'
-import { load, save } from './storage.ts'
+import { activeVoice, listVoices, MIN_POINTS, OWNER_ID, updateVoice } from './voices.ts'
 import { nativeAudio } from './tts.ts'
 
 export type { SpeakerProfile }
 
-/** Pitch points kept from my recent recordings, so the app learns my voice range without calibrating. */
-const LEARNED_KEY = 'voicePitches'
 const POINTS_PER_RECORDING = 40
-const MAX_POINTS = 1200 // about my last 30 recordings
-const MIN_POINTS = 200 // about 5 recordings before tones are checked this way
+const MAX_POINTS = 1200 // about the last 30 recordings
 
-/** Calibrated profile if I did the 30-second calibration, else one learned from my recordings (or null). */
+/**
+ * The active voice's calibrated profile, else one learned from its recordings (or null). Each person who
+ * practises on this phone has their own voice (services/voices.ts).
+ */
 export function getProfile(): SpeakerProfile | null {
-  const calibrated = load<SpeakerProfile | null>('speakerProfile', null)
-  if (calibrated) return calibrated
-  const learned = load<number[]>(LEARNED_KEY, [])
-  return learned.length >= MIN_POINTS ? profileFromPitches(learned) : null
+  const voice = activeVoice()
+  if (voice.profile) return voice.profile
+  return voice.pitches.length >= MIN_POINTS ? profileFromPitches(voice.pitches) : null
 }
 
-export const isCalibrated = () => load<SpeakerProfile | null>('speakerProfile', null) !== null
+export const isCalibrated = () => activeVoice().profile !== null
 
-/** Remember some pitch points from this recording (evenly spaced) to learn my voice range. */
+/** Remember some pitch points from this recording (evenly spaced) to learn the active voice's range. */
 export async function learnVoice(wav: Blob): Promise<void> {
-  if (isCalibrated()) return
+  const voice = activeVoice()
+  if (voice.profile) return
   const voiced = voicedSemitones(await wavSamples(wav), TARGET_RATE)
   if (voiced.length < 10) return
   const step = Math.max(1, voiced.length / POINTS_PER_RECORDING)
   const picked: number[] = []
   for (let i = 0; i < voiced.length; i += step) picked.push(Math.round(voiced[Math.floor(i)] * 10) / 10)
-  save(LEARNED_KEY, [...load<number[]>(LEARNED_KEY, []), ...picked].slice(-MAX_POINTS))
+  updateVoice(voice.id, { pitches: [...voice.pitches, ...picked].slice(-MAX_POINTS) })
 }
 
+/** Calibrate the active voice. My own voice is also saved to Firebase (when signed in) for my other device. */
 export async function saveProfile(samples: Float32Array[]): Promise<SpeakerProfile> {
   const profile = calibrate(samples, TARGET_RATE)
-  save('speakerProfile', profile)
-  if (isConfigured && currentUser()) await dbPut('speakerProfile', profile).catch(() => {})
+  const voice = activeVoice()
+  updateVoice(voice.id, { profile })
+  if (voice.id === OWNER_ID && isConfigured && currentUser()) await dbPut('speakerProfile', profile).catch(() => {})
   return profile
 }
 
-/** Use the profile calibrated on my other device if this one has none. */
+/** Use the profile calibrated on my other device if my voice here has none. */
 export async function syncProfile(): Promise<void> {
-  if (getProfile() || !isConfigured || !currentUser()) return
+  const me = listVoices().find((v) => v.id === OWNER_ID)
+  if (!me || me.profile || !isConfigured || !currentUser()) return
   const remote = await dbGet<SpeakerProfile>('speakerProfile').catch(() => null)
-  if (remote) save('speakerProfile', remote)
+  if (remote) updateVoice(OWNER_ID, { profile: remote })
 }
 
 export type SyllableTone = { guess: ToneGuess; probs: number[]; contour: number[] }

@@ -3,8 +3,10 @@ import type { Recording } from '../../audio/recorder.ts'
 import { TARGET_RATE, wavSamples } from '../../audio/wav.ts'
 import type { Tone } from '../../chinese/tones.ts'
 import HoldToTalk from '../../components/HoldToTalk.tsx'
+import VoicePicker from '../../components/VoicePicker.tsx'
 import { saveProfile, toneLabel } from '../../services/tone.ts'
 import { speak } from '../../services/tts.ts'
+import { activeVoice } from '../../services/voices.ts'
 import { predict } from '../../tone/model.ts'
 
 const SYLLABLES: { hanzi: string; pinyin: string; tone: Tone }[] = [
@@ -18,6 +20,7 @@ export default function Calibrate() {
   const [samples, setSamples] = useState<Float32Array[]>([])
   const [heard, setHeard] = useState<Tone[] | null>(null)
   const [error, setError] = useState<string | null>(null)
+  const [voiceName, setVoiceName] = useState(() => activeVoice().name)
   const current = SYLLABLES[samples.length]
 
   async function recorded(rec: Recording) {
@@ -41,12 +44,18 @@ export default function Calibrate() {
     <>
       <header className="settings-header">
         <a href="#speak" className="back-link">‹ Speak</a>
-        <h1>Calibrate your voice</h1>
+        <h1>Calibrate a voice</h1>
       </header>
+      {samples.length === 0 && !heard && (
+        <>
+          <p className="muted small">Whose voice?</p>
+          <VoicePicker onChange={() => setVoiceName(activeVoice().name)} />
+        </>
+      )}
       {!heard && current && (
         <>
           <p className="muted">
-            Say each syllable clearly in your normal voice. This teaches the app your pitch range. ({samples.length + 1} of 4)
+            {voiceName}: say each syllable clearly in a normal voice. This teaches the app this voice's pitch range. ({samples.length + 1} of 4)
           </p>
           <div className="drill-card tone-colours">
             <p className="drill-hanzi zh">{current.hanzi}</p>
@@ -58,7 +67,7 @@ export default function Calibrate() {
       )}
       {heard && (
         <section className="card">
-          <h2 className="card-title">Saved</h2>
+          <h2 className="card-title">Saved for {voiceName}</h2>
           <ul className="calibration-list tone-colours">
             {SYLLABLES.map((s, i) => (
               <li key={s.hanzi}>

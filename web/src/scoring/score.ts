@@ -26,17 +26,19 @@ export type SyllableScore = {
   score: number
   status: Status
   sound: number | null
-  /** Probability my tone model gives to the right tone, 0–1 (null: no tone check). */
+  /** How well the right tone matched, 0–1, relative to the best-matching tone (1 = it was the best match; null: no tone check). */
   tone: number | null
+  /** False when neither sound nor tone could be checked (e.g. a neutral tone with no sound check): left out of the overall. */
+  checked: boolean
   heardPinyin: string | null
   heardTone: Tone | null
 }
 
 /**
- * Combine the parts. Neutral-tone syllables are judged on sound only. With both parts, sound and tone
- * count equally; with one part, that part is the score.
+ * Combine the parts. Neutral-tone syllables are judged on sound only. With both parts, tone counts 60% and
+ * sound 40%; with one part, that part is the score; with neither, the syllable isn't checked.
  */
-const WRONG_TONE = 0.35
+const WRONG_TONE = 0.5
 const WRONG_TONE_CAP = 50
 
 export function combine(
@@ -45,15 +47,16 @@ export function combine(
   spokenTone: Tone,
   heardPinyin: string | null = null,
 ): SyllableScore {
-  const tone = toneProbs && spokenTone !== 5 ? toneProbs[spokenTone - 1] : null
-  const heardTone = toneProbs ? ((toneProbs.indexOf(Math.max(...toneProbs)) + 1) as Tone) : null
+  const best = toneProbs ? Math.max(...toneProbs) : 0
+  const tone = toneProbs && spokenTone !== 5 && best > 0 ? toneProbs[spokenTone - 1] / best : null
+  const heardTone = toneProbs ? ((toneProbs.indexOf(best) + 1) as Tone) : null
+  const checked = sound !== null || tone !== null
   // The recogniser guesses words from context, so it "hears" the right word even with the wrong tone: when the
   // tone is checked it counts for more, and a clearly wrong tone can't score above amber-red.
-  let raw = sound ?? (tone === null ? 1 : tone * 100)
-  if (sound !== null && tone !== null) raw = 0.4 * sound + 0.6 * tone * 100
+  let raw = sound !== null && tone !== null ? 0.4 * sound + 0.6 * tone * 100 : (sound ?? (tone ?? 0) * 100)
   if (tone !== null && heardTone !== spokenTone && tone < WRONG_TONE) raw = Math.min(raw, WRONG_TONE_CAP)
-  const score = Math.max(1, Math.round(raw))
-  return { score, status: statusOf(score), sound, tone, heardPinyin, heardTone }
+  const score = checked ? Math.max(1, Math.round(raw)) : 0
+  return { score, status: statusOf(score), sound, tone, heardPinyin, heardTone, checked }
 }
 
 export const statusOf = (score: number): Status => (score >= 80 ? 'ok' : score >= 60 ? 'minor' : 'wrong')

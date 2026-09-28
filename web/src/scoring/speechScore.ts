@@ -32,7 +32,8 @@ export async function scoreSpeech(syllables: Syllable[], rec: Recording, azure: 
     const sound = azure ? (azure[i]?.accuracy ?? 0) : heard ? soundScore(s.pinyin, heard[i]) : null
     return combine(sound, tones?.[i]?.probs ?? null, s.spoken, heard?.[i] ?? null)
   })
-  const overall = scored.length ? Math.round(scored.reduce((sum, s) => sum + s.score, 0) / scored.length) : 0
+  const counted = scored.filter((s) => s.checked)
+  const overall = counted.length ? Math.round(counted.reduce((sum, s) => sum + s.score, 0) / counted.length) : 0
   log('scored', { syllables: syllables.length, overall, tones: tones ? tones.filter(Boolean).length : 0, sounds: azure ? 'azure' : heard ? 'recogniser' : 'none' })
   return { syllables: scored, overall, tones: tones ?? syllables.map(() => null), soundsChecked: azure !== null || heard !== null }
 }
