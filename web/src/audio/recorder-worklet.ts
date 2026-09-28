@@ -20,6 +20,7 @@ class RecorderProcessor extends AudioWorkletProcessor {
         this.port.postMessage(this.buffer.slice(0, this.filled))
         this.filled = 0
       }
+      if (e.data === 'reset') this.filled = 0
     }
   }
 

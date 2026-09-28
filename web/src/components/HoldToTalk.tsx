@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { preloadRecorder, Recorder, type Recording } from '../audio/recorder.ts'
+import { preloadRecorder, Recorder, reopenMicNextTime, type Recording } from '../audio/recorder.ts'
 import { canRecognise, listen as startListening, setRecogniserBlocked, type Listening } from '../scoring/recognize.ts'
 import './HoldToTalk.css'
 
@@ -88,11 +88,12 @@ export default function HoldToTalk({ onRecorded, onError, listen = false }: Prop
       listening.current = null
       if (result.seconds < MIN_SECONDS) setHint('Too short. Tap, speak, then tap again when finished.')
       else if (peak.current < SILENT_PEAK) {
+        reopenMicNextTime() // get a fresh microphone on the next tap
         if (usedRecogniser.current) {
           // On some iPhones the recogniser takes the microphone: stop using it (Settings can turn it back on).
           setRecogniserBlocked(true)
           setHint("No sound reached the app: the iPhone's speech recogniser was using the mic. Fixed, tap to try again.")
-        } else setHint('No sound was recorded. Check the microphone is allowed (iPhone Settings → Safari → Microphone) and not in use by a call or Siri.')
+        } else setHint('No sound was recorded. Tap to try again. If it keeps happening, check the microphone is allowed (iPhone Settings → Safari → Microphone).')
       }
       else callbacks.current.onRecorded(heard?.length ? { ...result, heard } : result)
     } catch (err) {
