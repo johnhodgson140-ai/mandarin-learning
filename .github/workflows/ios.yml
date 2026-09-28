@@ -39,6 +39,7 @@ jobs:
           xcodebuild -version
       - name: Compile for the simulator (no signing), to catch errors before I open it in Xcode
         run: |
+          set -o pipefail  # keep xcodebuild's exit code through `tail`
           xcodebuild -project ios/App/App.xcodeproj -scheme App -configuration Debug \
             -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' \
             -derivedDataPath "$RUNNER_TEMP/dd" CODE_SIGNING_ALLOWED=NO build | tail -20
