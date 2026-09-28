@@ -34,26 +34,29 @@ class Mic {
     return Boolean(this.ctx && this.ctx.state !== 'closed' && this.node && track && track.readyState === 'live' && !track.muted)
   }
 
-  /** Make sure audio is flowing. Call straight from a tap: iOS only lets audio start inside one. */
+  /**
+   * Make sure audio is flowing. Call straight from a tap: iOS only lets audio start inside one.
+   * Anything but a running, healthy mic is replaced with a fresh one (resuming a context iOS has suspended or
+   * "interrupted" can hang forever). Every step has a time limit, so a tap never gets stuck.
+   */
   open(): Promise<void> {
     if (this.opening) return this.opening
-    if (this.healthy()) {
-      // Resume synchronously inside the tap (iOS suspends or "interrupts" contexts, e.g. after a call).
-      const resumed = this.ctx!.state === 'running' ? Promise.resolve() : this.ctx!.resume()
-      return resumed
-    }
+    if (this.healthy() && this.ctx!.state === 'running') return Promise.resolve()
     this.release()
     const ctx = new AudioContext() // created synchronously inside the tap
     this.ctx = ctx
     const resumed = ctx.resume()
     this.opening = (async () => {
       try {
-        const stream = await navigator.mediaDevices.getUserMedia({
-          audio: { channelCount: 1, echoCancellation: true, noiseSuppression: true, autoGainControl: true },
-        })
+        const stream = await timeLimit(
+          navigator.mediaDevices.getUserMedia({
+            audio: { channelCount: 1, echoCancellation: true, noiseSuppression: true, autoGainControl: true },
+          }),
+          30_000, // includes the permission prompt
+        )
         this.stream = stream
-        await resumed
-        await ctx.audioWorklet.addModule(workletUrl)
+        await timeLimit(resumed, 3000)
+        await timeLimit(ctx.audioWorklet.addModule(workletUrl), 5000)
         const node = new AudioWorkletNode(ctx, 'recorder')
         node.port.onmessage = (e: MessageEvent<Float32Array>) => this.sink?.(e.data)
         ctx.createMediaStreamSource(stream).connect(node)
@@ -102,6 +105,28 @@ class Mic {
 }
 
 const mic = new Mic()
+
+export class MicTimeout extends Error {
+  constructor() {
+    super("The microphone didn't start. Tap to try again.")
+  }
+}
+
+function timeLimit<T>(promise: Promise<T>, ms: number): Promise<T> {
+  return new Promise<T>((resolve, reject) => {
+    const timer = setTimeout(() => reject(new MicTimeout()), ms)
+    promise.then(
+      (v) => {
+        clearTimeout(timer)
+        resolve(v)
+      },
+      (err: unknown) => {
+        clearTimeout(timer)
+        reject(err)
+      },
+    )
+  })
+}
 
 if (typeof document !== 'undefined')
   document.addEventListener('visibilitychange', () => {
