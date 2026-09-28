@@ -59,5 +59,21 @@ export function pitchTrack(audio: Float32Array, sampleRate: number): (number | n
   return out
 }
 
+/** Per pitchTrack frame: is there sound (voiced or not) rather than silence? Same framing as pitchTrack. */
+export function frameLoudness(audio: Float32Array, sampleRate: number): boolean[] {
+  const frame = Math.round((FRAME_MS / 1000) * sampleRate)
+  const hop = Math.round((HOP_MS / 1000) * sampleRate)
+  const maxLag = Math.floor(sampleRate / MIN_HZ)
+  const window = Math.min(frame, audio.length) - maxLag
+  const out: boolean[] = []
+  if (window <= 0) return out
+  for (let start = 0; start + window + maxLag <= audio.length; start += hop) {
+    let energy = 0
+    for (let i = 0; i < window; i++) energy += audio[start + i] ** 2
+    out.push(Math.sqrt(energy / window) >= SILENCE_RMS)
+  }
+  return out
+}
+
 /** Semitones relative to 100 Hz: equal steps sound equal, whatever the voice. */
 export const semitones = (hz: number) => 12 * Math.log2(hz / 100)

@@ -28,8 +28,12 @@ function energy(audio: Float32Array, sampleRate: number): number[] {
     return s / n
   })
   const max = Math.max(...smooth)
-  const floor = max - 40 // 40 dB of range is plenty for speech
-  return smooth.map((v) => Math.min(1, Math.max(0, (v - floor) / 40)))
+  // Silence is the quietest 10% of the recording (the background noise), or 40 dB below the loudest if that's
+  // quieter: in a noisy room the gaps between syllables are only a little quieter than the speech.
+  const noise = [...smooth].sort((a, b) => a - b)[Math.floor(smooth.length * 0.1)] + 3
+  const floor = Math.max(max - 40, Math.min(noise, max - 10))
+  const range = max - floor
+  return smooth.map((v) => Math.min(1, Math.max(0, (v - floor) / range)))
 }
 
 /** Split the speech in `audio` into `count` syllable spans (sample offsets). */

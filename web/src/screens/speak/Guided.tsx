@@ -57,7 +57,7 @@ function PartnerLine({ zh, en, role, hideText, level }: { zh: string; en: string
   useEffect(() => void speak(zh, rateForLevel(level)), [zh, level])
   return (
     <div className="turn">
-      <span className="turn-label zh">{role}</span>
+      <RubyText tokens={tokensOf(role)} className="turn-label" />
       {hideText ? <span className="muted">Text hidden: listen.</span> : (
         <button type="button" className="turn-text-btn" onClick={() => setEnglish(!english)} aria-expanded={english}>
           <RubyText tokens={tokens} className="turn-text" />
