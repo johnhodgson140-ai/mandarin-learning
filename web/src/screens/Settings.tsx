@@ -6,6 +6,8 @@ import { currentUser, isConfigured, signIn, signOut } from '../services/firebase
 import { getKeys, setKeys, type Keys } from '../services/keys.ts'
 import { load, save } from '../services/storage.ts'
 import { getTheme, setTheme, type Theme } from '../services/theme.ts'
+import HoldToTalk from '../components/HoldToTalk.tsx'
+import { clearLog, logCount, logText } from '../debug/log.ts'
 import { hasRecogniser, recogniserBlocked, setRecogniserBlocked } from '../scoring/recognize.ts'
 import { getVoice, setVoice, speak, type VoiceChoice } from '../services/tts.ts'
 import './Settings.css'
@@ -23,6 +25,7 @@ export default function Settings() {
       <Account user={user} onChange={() => setUser(currentUser())} />
       {user && <Anki />}
       <MyLevel />
+      <MicTest />
       <SpeechCheck />
       <Voice />
       <Appearance />
@@ -224,6 +227,63 @@ function MyLevel() {
           <button key={n} type="button" className="chip" aria-pressed={level === n} onClick={() => { setLevel(n); save('level', n) }}>{n}</button>
         ))}
       </div>
+    </section>
+  )
+}
+
+function MicTest() {
+  const [clip, setClip] = useState<{ url: string; seconds: number } | null>(null)
+  const [error, setError] = useState<string | null>(null)
+  const [status, setStatus] = useState<string | null>(null)
+  const [count, setCount] = useState(logCount)
+
+  async function copy() {
+    try {
+      await navigator.clipboard.writeText(logText())
+      setStatus('Copied. Paste it into the chat with Claude.')
+    } catch {
+      setStatus("Couldn't copy: use Share instead.")
+    }
+  }
+
+  async function share() {
+    try {
+      await navigator.share({ title: 'Shuō mic log', text: logText() })
+    } catch {
+      // cancelled
+    }
+  }
+
+  return (
+    <section className="card">
+      <h2 className="card-title">Microphone test</h2>
+      <p className="muted small">Record a few times in a row, then play each one back. Every step is written to the log below.</p>
+      <HoldToTalk
+        onRecorded={(r) => {
+          if (clip) URL.revokeObjectURL(clip.url)
+          setClip({ url: URL.createObjectURL(r.wav), seconds: Math.round(r.seconds * 10) / 10 })
+          setError(null)
+          setCount(logCount())
+        }}
+        onError={(m) => {
+          setError(m)
+          setCount(logCount())
+        }}
+      />
+      {error && <p className="error" role="alert">{error}</p>}
+      {clip && (
+        <div>
+          <p className="muted small">Recorded {clip.seconds} s. Play it back:</p>
+          <audio controls src={clip.url} />
+        </div>
+      )}
+      <p><strong>Microphone log</strong> <span className="muted small">({count} lines)</span></p>
+      <div className="chips">
+        <button type="button" className="chip" onClick={() => void copy()}>Copy log</button>
+        {'share' in navigator && <button type="button" className="chip" onClick={() => void share()}>Share log</button>}
+        <button type="button" className="chip" onClick={() => { clearLog(); setCount(0); setStatus('Log cleared.') }}>Clear</button>
+      </div>
+      {status && <p className="muted small">{status}</p>}
     </section>
   )
 }

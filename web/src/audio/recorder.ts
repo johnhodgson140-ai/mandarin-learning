@@ -1,5 +1,6 @@
 import workletUrl from './recorder-worklet.ts?worker&url'
 import { downsample, encodeWav, TARGET_RATE } from './wav.ts'
+import { log } from '../debug/log.ts'
 
 export const MAX_SECONDS = 30
 
@@ -29,6 +30,17 @@ class Mic {
     return this.ctx?.sampleRate ?? 48000
   }
 
+  /** What the mic looks like right now (for the log). */
+  state(): Record<string, unknown> {
+    const track = this.stream?.getAudioTracks()[0]
+    return {
+      ctx: this.ctx?.state ?? 'none',
+      rate: this.ctx?.sampleRate,
+      track: track ? `${track.readyState}${track.muted ? ' muted' : ''}${track.enabled ? '' : ' disabled'}` : 'none',
+      worklet: Boolean(this.node),
+    }
+  }
+
   private healthy(): boolean {
     const track = this.stream?.getAudioTracks()[0]
     return Boolean(this.ctx && this.ctx.state !== 'closed' && this.node && track && track.readyState === 'live' && !track.muted)
@@ -40,11 +52,19 @@ class Mic {
    * "interrupted" can hang forever). Every step has a time limit, so a tap never gets stuck.
    */
   open(): Promise<void> {
-    if (this.opening) return this.opening
-    if (this.healthy() && this.ctx!.state === 'running') return Promise.resolve()
-    this.release()
+    if (this.opening) {
+      log('mic open: already opening')
+      return this.opening
+    }
+    if (this.healthy() && this.ctx!.state === 'running') {
+      log('mic open: reuse', this.state())
+      return Promise.resolve()
+    }
+    log('mic open: fresh', this.state())
+    this.release('replacing')
     const ctx = new AudioContext() // created synchronously inside the tap
     this.ctx = ctx
+    ctx.onstatechange = () => log('audio context ' + ctx.state)
     const resumed = ctx.resume()
     this.opening = (async () => {
       try {
@@ -55,14 +75,24 @@ class Mic {
           30_000, // includes the permission prompt
         )
         this.stream = stream
+        const track = stream.getAudioTracks()[0]
+        const { sampleRate, echoCancellation, noiseSuppression, autoGainControl } = track?.getSettings() ?? {}
+        log('mic granted', { label: track?.label, sampleRate, echoCancellation, noiseSuppression, autoGainControl })
+        if (track) {
+          track.onmute = () => log('mic track muted')
+          track.onunmute = () => log('mic track unmuted')
+          track.onended = () => log('mic track ended')
+        }
         await timeLimit(resumed, 3000)
         await timeLimit(ctx.audioWorklet.addModule(workletUrl), 5000)
         const node = new AudioWorkletNode(ctx, 'recorder')
         node.port.onmessage = (e: MessageEvent<Float32Array>) => this.sink?.(e.data)
         ctx.createMediaStreamSource(stream).connect(node)
         this.node = node
+        log('mic open: ready', this.state())
       } catch (err) {
-        this.release()
+        log('mic open failed', { error: String(err), ...this.state() })
+        this.release('open failed')
         throw err
       } finally {
         this.opening = null
@@ -92,7 +122,8 @@ class Mic {
     })
   }
 
-  release(): void {
+  release(reason = ''): void {
+    if (this.ctx || this.stream) log('mic release', { reason })
     this.sink = null
     this.node?.port.close()
     this.node?.disconnect()
@@ -130,7 +161,7 @@ function timeLimit<T>(promise: Promise<T>, ms: number): Promise<T> {
 
 if (typeof document !== 'undefined')
   document.addEventListener('visibilitychange', () => {
-    if (document.visibilityState === 'hidden') mic.release()
+    if (document.visibilityState === 'hidden') mic.release('app hidden')
   })
 
 /**
@@ -155,6 +186,7 @@ export class Recorder {
     this.length = 0
     await mic.open()
     mic.reset()
+    log('recording start', mic.state())
     this.capturing = true
     mic.sink = this.sink
   }
@@ -174,6 +206,7 @@ export class Recorder {
     if (!this.capturing) throw new Error('recorder is not running')
     await mic.flush()
     this.detach()
+    log('recording stop', { chunks: this.chunks.length, seconds: Math.round((this.length / mic.sampleRate) * 10) / 10, ...mic.state() })
     const inRate = mic.sampleRate
     const joined = new Float32Array(Math.min(this.length, MAX_SECONDS * inRate))
     let offset = 0
@@ -189,6 +222,7 @@ export class Recorder {
 
   /** Stop without producing a recording (e.g. the screen is closing). The microphone stays open. */
   async cancel(): Promise<void> {
+    if (this.capturing) log('recording cancelled')
     this.detach()
     this.chunks = []
     this.length = 0
@@ -201,4 +235,4 @@ export class Recorder {
 }
 
 /** Close the microphone now (e.g. a recording came out silent, so the next tap gets a fresh one). */
-export const reopenMicNextTime = () => mic.release()
+export const reopenMicNextTime = () => mic.release('silent recording')

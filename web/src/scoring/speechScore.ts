@@ -7,6 +7,7 @@ import type { Syllable } from '../chinese/tokens.ts'
 import { isHan } from '../chinese/tones.ts'
 import type { CharResult } from '../grading/grade.ts'
 import { learnVoice, segmentTones, syllableTones, type SyllableTone } from '../services/tone.ts'
+import { log } from '../debug/log.ts'
 import { bestAlternative, combine, soundScore, type SyllableScore } from './score.ts'
 
 /** `soundsChecked`: false when neither Azure nor the browser recogniser could check the sounds (tone only). */
@@ -32,5 +33,6 @@ export async function scoreSpeech(syllables: Syllable[], rec: Recording, azure: 
     return combine(sound, tones?.[i]?.probs ?? null, s.spoken, heard?.[i] ?? null)
   })
   const overall = scored.length ? Math.round(scored.reduce((sum, s) => sum + s.score, 0) / scored.length) : 0
+  log('scored', { syllables: syllables.length, overall, tones: tones ? tones.filter(Boolean).length : 0, sounds: azure ? 'azure' : heard ? 'recogniser' : 'none' })
   return { syllables: scored, overall, tones: tones ?? syllables.map(() => null), soundsChecked: azure !== null || heard !== null }
 }
