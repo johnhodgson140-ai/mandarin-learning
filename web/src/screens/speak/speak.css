@@ -1,0 +1,62 @@
+.hub { display: flex; flex-direction: column; gap: var(--space); }
+.hub-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-height: 64px;
+  justify-content: center;
+  padding: calc(var(--space) * 2);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--text);
+  text-decoration: none;
+}
+.hub-title { font-weight: 600; }
+
+.zh { font-family: var(--font-zh); }
+.center { justify-content: center; flex: 1; }
+
+/* Speak screens show tone colours (docs/DESIGN.md) */
+.tone-colours .t1 { color: var(--t1); }
+.tone-colours .t2 { color: var(--t2); }
+.tone-colours .t3 { color: var(--t3); }
+.tone-colours .t4 { color: var(--t4); }
+.tone-colours .t5 { color: var(--t5); }
+
+.drill-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space);
+  padding: calc(var(--space) * 3) calc(var(--space) * 2);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  text-align: center;
+}
+.drill-hanzi { font-size: 56px; line-height: 1.2; }
+.drill-pinyin { font-size: 22px; display: flex; gap: 0.3em; }
+
+.st-minor, .st-wrong { text-decoration-line: underline; text-decoration-thickness: 3px; text-underline-offset: 0.2em; }
+.st-minor { text-decoration-color: var(--minor); }
+.st-wrong { text-decoration-color: var(--wrong); }
+
+.syllable-results, .calibration-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+.syllable-results .zh, .calibration-list .zh { font-size: 22px; }
+
+.contour { margin: 0; }
+.contour svg { width: 100%; height: auto; display: block; }
+.contour-divider { stroke: var(--line); stroke-width: 1; }
+.contour-target { fill: none; stroke: var(--text-muted); stroke-width: 1.5; stroke-dasharray: 4 4; }
+.contour-native { fill: none; stroke: var(--t4); stroke-width: 1.5; opacity: 0.7; }
+.contour-mine { fill: none; stroke: var(--accent); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.contour-legend { display: flex; gap: calc(var(--space) * 2); font-size: 13px; color: var(--text-muted); }
+.key::before { content: ''; display: inline-block; width: 16px; height: 0; margin-right: 6px; vertical-align: middle; border-top: 3px solid var(--accent); }
+.key-target::before { border-top: 1.5px dashed var(--text-muted); }
+.key-native::before { border-top: 1.5px solid var(--t4); }
+
+.reading-progress {
+  position: fixed; top: 0; left: 0; right: 0; height: 2px;
+  background: var(--accent); transform-origin: left; opacity: 0.6; z-index: 5;
+}

@@ -1,7 +1,6 @@
 .zh { font-family: var(--font-zh); }
 
 .read-header { display: flex; align-items: center; justify-content: space-between; gap: var(--space); }
-.link-btn { display: inline-flex; align-items: center; text-decoration: none; }
 
 .story-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space); }
 .story-row {
@@ -120,8 +119,6 @@
 .sheet-hanzi { font-size: 40px; line-height: 1.2; }
 .sheet-pinyin { font-size: 20px; }
 .sheet-gloss { font-size: 17px; }
-.sheet-actions { display: flex; gap: var(--space); }
-.sheet-actions .btn { flex: 1; }
 
 @media (min-width: 900px) {
   .word-sheet {

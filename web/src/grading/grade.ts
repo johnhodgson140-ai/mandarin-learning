@@ -35,9 +35,12 @@ export const CONFIDENT = 0.7
 /**
  * Merge Azure accuracy and (optionally) the tone model into ok · minor · wrong:
  * wrong = accuracy < 60, omitted, or a confidently wrong tone; minor = accuracy 60–79 or an unsure tone.
+ * Neutral-tone syllables are judged on accuracy only.
  */
 export function statusFor(accuracy: number | null, spokenTone?: Tone, guess?: ToneGuess | null): Status {
   if (accuracy === null || accuracy < WRONG_BELOW) return 'wrong'
+  // Neutral tones are short and vary by speaker: the tone model doesn't judge them.
+  if (spokenTone === 5) guess = null
   if (guess && spokenTone && guess.tone !== spokenTone) return guess.confidence >= CONFIDENT ? 'wrong' : 'minor'
   if (accuracy < MINOR_BELOW) return 'minor'
   if (guess && guess.confidence < CONFIDENT) return 'minor'
@@ -84,6 +87,16 @@ export function alignToReference(reference: string, words: AzureWord[]): CharRes
     else out.push({ hanzi: ref[i], accuracy: null, errorType: 'Omission', offset: null, duration: null })
   }
   return out
+}
+
+/** One graded syllable as logged (feeds the tone-pair heatmap and weak-spot drills). */
+export type AttemptSyllable = {
+  hanzi: string
+  spokenTone: Tone
+  prevTone: Tone | null
+  predictedTone: Tone | null
+  accuracy: number | null
+  status: Status
 }
 
 export type Scores = { accuracy: number; fluency: number; completeness: number }

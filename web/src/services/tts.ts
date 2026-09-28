@@ -4,7 +4,7 @@ import { getKeys } from './keys.ts'
 
 const VOICE = 'zh-CN-XiaoxiaoNeural'
 const audio = typeof Audio === 'undefined' ? null : new Audio()
-const cache = new Map<string, string>() // "rate|text" → object URL
+const cache = new Map<string, Blob>() // "rate|text" → Azure audio
 let unlocked = false
 
 /**
@@ -21,23 +21,32 @@ export function unlockAudio(): void {
 /** Speak Chinese text. `rate` 0.8 = slower, 1 = normal. */
 export async function speak(text: string, rate = 1): Promise<void> {
   unlockAudio()
-  const { azure, azureRegion } = getKeys()
-  if (azure && audio) {
+  if (audio) {
     try {
-      const key = `${rate}|${text}`
-      let url = cache.get(key)
-      if (!url) {
-        url = URL.createObjectURL(await azureTts(text, rate, azure, azureRegion))
-        cache.set(key, url)
+      const blob = await nativeAudio(text, rate)
+      if (blob) {
+        audio.src = URL.createObjectURL(blob)
+        await audio.play()
+        return
       }
-      audio.src = url
-      await audio.play()
-      return
     } catch {
       // Fall through to the device voice.
     }
   }
   speakWithDevice(text, rate)
+}
+
+/** The Azure voice saying `text` (cached), or null without an Azure key. Also used for native pitch contours. */
+export async function nativeAudio(text: string, rate = 1): Promise<Blob | null> {
+  const { azure, azureRegion } = getKeys()
+  if (!azure) return null
+  const key = `${rate}|${text}`
+  let blob = cache.get(key)
+  if (!blob) {
+    blob = await azureTts(text, rate, azure, azureRegion)
+    cache.set(key, blob)
+  }
+  return blob
 }
 
 async function azureTts(text: string, rate: number, key: string, region: string): Promise<Blob> {

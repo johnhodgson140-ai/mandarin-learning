@@ -42,3 +42,19 @@ export function encodeWav(samples: Float32Array, rate = TARGET_RATE): Blob {
   }
   return new Blob([buffer], { type: 'audio/wav' })
 }
+
+/** 16-bit PCM WAV (as the recorder makes it) → Float32 samples. */
+export async function wavSamples(wav: Blob): Promise<Float32Array> {
+  const view = new DataView(await wav.arrayBuffer())
+  const count = Math.max(0, (view.byteLength - 44) >> 1)
+  const out = new Float32Array(count)
+  for (let i = 0; i < count; i++) out[i] = view.getInt16(44 + i * 2, true) / 0x8000
+  return out
+}
+
+/** Any audio the browser can play (e.g. Azure's MP3) → 16 kHz mono samples. */
+export async function decodeTo16k(blob: Blob): Promise<Float32Array> {
+  const ctx = new OfflineAudioContext(1, TARGET_RATE, TARGET_RATE)
+  const buffer = await ctx.decodeAudioData(await blob.arrayBuffer())
+  return buffer.getChannelData(0)
+}

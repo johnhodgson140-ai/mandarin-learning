@@ -1,32 +1,33 @@
-import { useEffect, useState } from 'react'
-import HoldToTalk from '../components/HoldToTalk.tsx'
-import type { Recording } from '../audio/recorder.ts'
-import { TARGET_RATE } from '../audio/wav.ts'
+import { lazy } from 'react'
+import { useHash } from '../hash.ts'
+import { getProfile } from '../services/tone.ts'
+import './speak/speak.css'
 
-/** M0: microphone proof. The five Speak rows replace this from M4 onwards. */
+const Dojo = lazy(() => import('./speak/Dojo.tsx'))
+const Calibrate = lazy(() => import('./speak/Calibrate.tsx'))
+
 export default function Speak() {
-  const [audioUrl, setAudioUrl] = useState<string | null>(null)
-  const [status, setStatus] = useState<string>('Hold the button, say something, release.')
-  const [error, setError] = useState<string | null>(null)
+  const [, sub] = useHash().split('/')
+  if (sub === 'dojo') return <Dojo />
+  if (sub === 'calibrate') return <Calibrate />
+  return <Hub />
+}
 
-  useEffect(() => () => { if (audioUrl) URL.revokeObjectURL(audioUrl) }, [audioUrl])
-
-  function handleRecorded(rec: Recording) {
-    setError(null)
-    setAudioUrl(URL.createObjectURL(rec.wav))
-    setStatus(`Recorded ${rec.seconds.toFixed(1)} s at ${TARGET_RATE / 1000} kHz mono. Playing it back…`)
-  }
-
+function Hub() {
+  const calibrated = getProfile() !== null
   return (
     <>
       <h1>Speak</h1>
-      <section className="card">
-        <h2 className="card-title">Microphone check</h2>
-        <p className="muted">{status}</p>
-        <HoldToTalk onRecorded={handleRecorded} onError={setError} />
-        {error && <p className="error" role="alert">{error}</p>}
-        {audioUrl && <audio className="playback" src={audioUrl} controls autoPlay />}
-      </section>
+      <nav className="hub">
+        <a href="#speak/dojo" className="hub-row">
+          <span className="hub-title">Tone Dojo</span>
+          <span className="muted">A short drill on the tone pairs you miss most.</span>
+        </a>
+        <a href="#speak/calibrate" className="hub-row">
+          <span className="hub-title">Calibrate your voice</span>
+          <span className="muted">{calibrated ? 'Done. Redo it if tone checks feel off.' : 'Four syllables, so tone checks fit your voice.'}</span>
+        </a>
+      </nav>
     </>
   )
 }
