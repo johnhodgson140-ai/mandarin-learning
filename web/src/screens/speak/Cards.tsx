@@ -4,6 +4,7 @@ import { daysUntil, nextState, pickSession, type Card } from '../../cards/srs.ts
 import { buildParagraph } from '../../chinese/tokens.ts'
 import { hskLabel, loadHsk, type HskInfo } from '../../services/hsk.ts'
 import HoldToTalk from '../../components/HoldToTalk.tsx'
+import PlayButton from '../../components/PlayButton.tsx'
 import ScoreView from '../../components/ScoreView.tsx'
 import { canRecognise } from '../../scoring/recognize.ts'
 import { scoreAndLog } from '../../scoring/attempt.ts'
@@ -124,7 +125,7 @@ function CardView({ card, mode, onNext }: { card: Card; mode: Mode; onNext: (sco
           {hsk && ` · ${hskLabel(hsk.level)}`}
         </span>
         {(mode === 'read' || result) && (
-          <button type="button" className="btn btn-secondary" onClick={() => speak(card.hanzi, rate)}>▶ Hear it</button>
+          <PlayButton id={`card-${card.hanzi}`} label="Hear it" className="btn btn-secondary" start={() => speak(card.hanzi, rate, `card-${card.hanzi}`)} />
         )}
       </div>
 

@@ -11,7 +11,8 @@ import VoicePicker from '../components/VoicePicker.tsx'
 import { clearLog, logCount, logText } from '../debug/log.ts'
 import { getReminder, isNativeApp, nativeRecogniserInfo, setReminder, type Reminder as ReminderType } from '../native/app.ts'
 import { hasRecogniser, recogniserBlocked, setRecogniserBlocked } from '../scoring/recognize.ts'
-import { getVoice, setVoice, speak, type VoiceChoice } from '../services/tts.ts'
+import { AZURE_VOICES, deviceVoices, getDeviceVoice, getSpeed, getVoice, playBlob, setDeviceVoice, setSpeed, setVoice, speak, SPEEDS, type Speed } from '../services/tts.ts'
+import PlayButton from '../components/PlayButton.tsx'
 import './Settings.css'
 
 export default function Settings() {
@@ -249,7 +250,7 @@ function Voices() {
 }
 
 function MicTest() {
-  const [clip, setClip] = useState<{ url: string; seconds: number } | null>(null)
+  const [clip, setClip] = useState<{ url: string; blob: Blob; seconds: number } | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [status, setStatus] = useState<string | null>(null)
   const [count, setCount] = useState(logCount)
@@ -278,7 +279,7 @@ function MicTest() {
       <HoldToTalk
         onRecorded={(r) => {
           if (clip) URL.revokeObjectURL(clip.url)
-          setClip({ url: URL.createObjectURL(r.wav), seconds: Math.round(r.seconds * 10) / 10 })
+          setClip({ url: URL.createObjectURL(r.wav), blob: r.wav, seconds: Math.round(r.seconds * 10) / 10 })
           setError(null)
           setCount(logCount())
         }}
@@ -290,8 +291,8 @@ function MicTest() {
       {error && <p className="error" role="alert">{error}</p>}
       {clip && (
         <div>
-          <p className="muted small">Recorded {clip.seconds} s. Play it back:</p>
-          <audio controls src={clip.url} />
+          <p className="muted small">Recorded {clip.seconds} s.</p>
+          <PlayButton id={`mic-test-${clip.url}`} label="Play it back" start={() => playBlob(clip.blob, `mic-test-${clip.url}`)} />
         </div>
       )}
       <p><strong>Microphone log</strong> <span className="muted small">({count} lines)</span></p>
@@ -366,25 +367,52 @@ function Reminder() {
 }
 
 function Voice() {
-  const [voice, set] = useState<VoiceChoice>(getVoice)
+  const [voice, set] = useState(getVoice)
+  const [device, setDevice] = useState(getDeviceVoice)
+  const [speed, setSpeedState] = useState<Speed>(getSpeed)
+  const [voices, setVoices] = useState(deviceVoices)
   const hasAzure = Boolean(getKeys().azure)
+  // Device voices can load after the page does.
+  useEffect(() => {
+    if (typeof speechSynthesis === 'undefined') return
+    const update = () => setVoices(deviceVoices())
+    speechSynthesis.addEventListener('voiceschanged', update)
+    return () => speechSynthesis.removeEventListener('voiceschanged', update)
+  }, [])
+  const test = () => speak('你好，我们一起练习说中文吧。', 0.9, 'voice-test')
   return (
     <section className="card">
       <h2 className="card-title">Voice</h2>
+      {hasAzure ? (
+        <label className="field">
+          <span>Azure voice</span>
+          <select value={voice} onChange={(e) => { set(e.target.value); setVoice(e.target.value) }}>
+            {AZURE_VOICES.map((v) => <option key={v.id} value={v.id}>{v.label}</option>)}
+          </select>
+        </label>
+      ) : (
+        <label className="field">
+          <span>iPhone voice</span>
+          <select value={device ?? ''} onChange={(e) => { const uri = e.target.value || null; setDevice(uri); setDeviceVoice(uri) }}>
+            <option value="">Clearest installed</option>
+            {voices.map((v) => <option key={v.voiceURI} value={v.voiceURI}>{v.name} ({v.lang.replace('_', '-')})</option>)}
+          </select>
+        </label>
+      )}
+      <p className="muted small">Speed</p>
       <div className="chips">
-        {(['female', 'male'] as const).map((v) => (
-          <button key={v} type="button" className="chip" aria-pressed={voice === v} onClick={() => { set(v); setVoice(v) }}>
-            {v === 'female' ? 'Female' : 'Male'}
+        {SPEEDS.map((s) => (
+          <button key={String(s)} type="button" className="chip" aria-pressed={speed === s} onClick={() => { setSpeedState(s); setSpeed(s) }}>
+            {s === 'auto' ? 'Auto (by level)' : `${s}×`}
           </button>
         ))}
-        <button type="button" className="chip" onClick={() => void speak('你好，我们一起练习说中文吧。', 0.9)}>▶ Test</button>
       </div>
-      {hasAzure ? (
-        <p className="muted small">Natural Azure voice ({voice === 'female' ? 'Xiaoxiao' : 'Yunxi'}).</p>
-      ) : (
+      <PlayButton id="voice-test" label="Test" start={test} />
+      {!hasAzure && (
         <p className="muted small">
-          Using the iPhone's own voice. For a clearer one: iPhone Settings → Accessibility → Spoken Content → Voices →
-          Chinese (China mainland) → download a voice marked Enhanced or Premium. An Azure key switches to a natural voice.
+          For a much clearer iPhone voice: iPhone Settings → Accessibility → Spoken Content → Voices → Chinese (China
+          mainland) → download one marked <strong>Enhanced</strong> or <strong>Premium</strong>, then pick it above.
+          An Azure key switches to natural neural voices.
         </p>
       )}
     </section>
