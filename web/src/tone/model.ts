@@ -28,7 +28,12 @@ export function templateContour(tone: Tone): number[] {
 
 /** Voice range from a few calibration recordings: 5th–95th percentile of all voiced pitch. */
 export function calibrate(samples: Float32Array[], sampleRate: number): SpeakerProfile {
-  const all = samples.flatMap((s) => voicedSemitones(s, sampleRate)).sort((a, b) => a - b)
+  return profileFromPitches(samples.flatMap((s) => voicedSemitones(s, sampleRate)))
+}
+
+/** My voice range from pitch points (semitones): 5th–95th percentile, at least MIN_RANGE wide. */
+export function profileFromPitches(pitches: number[]): SpeakerProfile {
+  const all = [...pitches].sort((a, b) => a - b)
   if (all.length === 0) return { minSemitone: 0, maxSemitone: 12 }
   let min = all[Math.floor(all.length * 0.05)]
   let max = all[Math.floor(all.length * 0.95)]
@@ -79,7 +84,7 @@ export function predict(audio: Float32Array, sampleRate: number, profile: Speake
   return { tone: (top + 1) as Tone, probs, confidence: probs[top] }
 }
 
-function voicedSemitones(audio: Float32Array, sampleRate: number): number[] {
+export function voicedSemitones(audio: Float32Array, sampleRate: number): number[] {
   const track = pitchTrack(audio, sampleRate)
   // Drop octave jumps: keep frames within an octave of the median.
   const hz = track.filter((f): f is number => f !== null)

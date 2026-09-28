@@ -1,8 +1,12 @@
 // Text-to-speech: Azure neural voice when an Azure key is set (Settings), else the device's own Chinese voice.
 
 import { getKeys } from './keys.ts'
+import { load, save } from './storage.ts'
 
-const VOICE = 'zh-CN-XiaoxiaoNeural'
+export type VoiceChoice = 'female' | 'male'
+const AZURE_VOICES: Record<VoiceChoice, string> = { female: 'zh-CN-XiaoxiaoNeural', male: 'zh-CN-YunxiNeural' }
+export const getVoice = (): VoiceChoice => load<VoiceChoice>('voice', 'female')
+export const setVoice = (v: VoiceChoice) => save('voice', v)
 const audio = typeof Audio === 'undefined' ? null : new Audio()
 const cache = new Map<string, Blob>() // "rate|text" → Azure audio
 let unlocked = false
@@ -40,16 +44,17 @@ export async function speak(text: string, rate = 1): Promise<void> {
 export async function nativeAudio(text: string, rate = 1): Promise<Blob | null> {
   const { azure, azureRegion } = getKeys()
   if (!azure) return null
-  const key = `${rate}|${text}`
+  const voice = AZURE_VOICES[getVoice()]
+  const key = `${voice}|${rate}|${text}`
   let blob = cache.get(key)
   if (!blob) {
-    blob = await azureTts(text, rate, azure, azureRegion)
+    blob = await azureTts(text, rate, voice, azure, azureRegion)
     cache.set(key, blob)
   }
   return blob
 }
 
-async function azureTts(text: string, rate: number, key: string, region: string): Promise<Blob> {
+async function azureTts(text: string, rate: number, voice: string, key: string, region: string): Promise<Blob> {
   const escaped = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
   const percent = `${Math.round((rate - 1) * 100)}%`
   const res = await fetch(`https://${region}.tts.speech.microsoft.com/cognitiveservices/v1`, {
@@ -59,7 +64,7 @@ async function azureTts(text: string, rate: number, key: string, region: string)
       'Content-Type': 'application/ssml+xml',
       'X-Microsoft-OutputFormat': 'audio-24khz-48kbitrate-mono-mp3',
     },
-    body: `<speak version="1.0" xml:lang="zh-CN"><voice name="${VOICE}"><prosody rate="${percent}">${escaped}</prosody></voice></speak>`,
+    body: `<speak version="1.0" xml:lang="zh-CN"><voice name="${voice}"><prosody rate="${percent}">${escaped}</prosody></voice></speak>`,
   })
   if (!res.ok) throw new Error(`Azure TTS ${res.status}`)
   return res.blob()
@@ -71,9 +76,16 @@ function speakWithDevice(text: string, rate: number): void {
   const utterance = new SpeechSynthesisUtterance(text)
   utterance.lang = 'zh-CN'
   utterance.rate = rate
-  const voice = speechSynthesis.getVoices().find((v) => v.lang.replace('_', '-').startsWith('zh-CN'))
+  const voice = bestDeviceVoice()
   if (voice) utterance.voice = voice
   speechSynthesis.speak(utterance)
+}
+
+/** The clearest mainland Chinese voice installed: Premium, then Enhanced, then any (iOS lists downloads here). */
+function bestDeviceVoice(): SpeechSynthesisVoice | undefined {
+  const zh = speechSynthesis.getVoices().filter((v) => v.lang.replace('_', '-').startsWith('zh-CN'))
+  const rank = (v: SpeechSynthesisVoice) => (/premium/i.test(v.name + v.voiceURI) ? 2 : /enhanced/i.test(v.name + v.voiceURI) ? 1 : 0)
+  return zh.sort((a, b) => rank(b) - rank(a))[0]
 }
 
 /** TTS speed by level: 0.8× at level 1 up to 1.1× at level 6 (docs/SPEC.md §8). */

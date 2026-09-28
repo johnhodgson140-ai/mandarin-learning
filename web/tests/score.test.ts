@@ -17,11 +17,15 @@ test('soundScore: half initial, half final', () => {
   assert.equal(soundScore('mā', null), 0)
 })
 
-test('combine: sound and tone count equally; neutral tone is sound only', () => {
+test('combine: tone counts 60%, a wrong tone is capped; neutral tone is sound only', () => {
   const both = combine(100, [0.05, 0.8, 0.05, 0.05, 0.05], 2)
-  assert.equal(both.score, 90)
+  assert.equal(both.score, 88)
   assert.equal(both.heardTone, 2)
-  assert.equal(combine(50, [0.7, 0.1, 0.1, 0.05, 0.05], 3).score, 30)
+  assert.equal(combine(50, [0.7, 0.1, 0.1, 0.05, 0.05], 3).score, 26)
+  // Right word (recogniser happy) but tone 2 instead of 4: red, not amber.
+  const wrongTone = combine(100, [0.1, 0.6, 0.1, 0.15, 0.05], 4)
+  assert.equal(wrongTone.score, 49)
+  assert.equal(wrongTone.status, 'wrong')
   assert.equal(combine(100, [0.9, 0.025, 0.025, 0.025, 0.025], 5).score, 100)
   assert.equal(combine(null, [0.1, 0.1, 0.65, 0.1, 0.05], 3).score, 65)
   assert.equal(combine(null, null, 1).score, 1)

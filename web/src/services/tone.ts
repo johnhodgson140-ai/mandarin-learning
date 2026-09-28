@@ -1,10 +1,10 @@
 // Tone model adapter (docs/SPEC.md §6): my speaker profile + tone guesses per syllable.
-// Until I've calibrated, there is no profile and grading falls back to Azure only.
+// Until I've calibrated, the voice range is learned from my recordings (after about 5 of them).
 
 import { decodeTo16k, TARGET_RATE, wavSamples } from '../audio/wav.ts'
 import type { Tone } from '../chinese/tones.ts'
 import type { CharResult, ToneGuess } from '../grading/grade.ts'
-import { calibrate, contour, normalise, predict, type SpeakerProfile } from '../tone/model.ts'
+import { calibrate, contour, normalise, predict, profileFromPitches, voicedSemitones, type SpeakerProfile } from '../tone/model.ts'
 import { segmentSyllables } from '../tone/segment.ts'
 import { currentUser, dbGet, dbPut, isConfigured } from './firebase.ts'
 import { load, save } from './storage.ts'
@@ -12,8 +12,31 @@ import { nativeAudio } from './tts.ts'
 
 export type { SpeakerProfile }
 
+/** Pitch points kept from my recent recordings, so the app learns my voice range without calibrating. */
+const LEARNED_KEY = 'voicePitches'
+const POINTS_PER_RECORDING = 40
+const MAX_POINTS = 1200 // about my last 30 recordings
+const MIN_POINTS = 200 // about 5 recordings before tones are checked this way
+
+/** Calibrated profile if I did the 30-second calibration, else one learned from my recordings (or null). */
 export function getProfile(): SpeakerProfile | null {
-  return load<SpeakerProfile | null>('speakerProfile', null)
+  const calibrated = load<SpeakerProfile | null>('speakerProfile', null)
+  if (calibrated) return calibrated
+  const learned = load<number[]>(LEARNED_KEY, [])
+  return learned.length >= MIN_POINTS ? profileFromPitches(learned) : null
+}
+
+export const isCalibrated = () => load<SpeakerProfile | null>('speakerProfile', null) !== null
+
+/** Remember some pitch points from this recording (evenly spaced) to learn my voice range. */
+export async function learnVoice(wav: Blob): Promise<void> {
+  if (isCalibrated()) return
+  const voiced = voicedSemitones(await wavSamples(wav), TARGET_RATE)
+  if (voiced.length < 10) return
+  const step = Math.max(1, voiced.length / POINTS_PER_RECORDING)
+  const picked: number[] = []
+  for (let i = 0; i < voiced.length; i += step) picked.push(Math.round(voiced[Math.floor(i)] * 10) / 10)
+  save(LEARNED_KEY, [...load<number[]>(LEARNED_KEY, []), ...picked].slice(-MAX_POINTS))
 }
 
 export async function saveProfile(samples: Float32Array[]): Promise<SpeakerProfile> {

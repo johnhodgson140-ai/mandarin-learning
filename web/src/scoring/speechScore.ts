@@ -6,7 +6,7 @@ import type { Recording } from '../audio/recorder.ts'
 import type { Syllable } from '../chinese/tokens.ts'
 import { isHan } from '../chinese/tones.ts'
 import type { CharResult } from '../grading/grade.ts'
-import { segmentTones, syllableTones, type SyllableTone } from '../services/tone.ts'
+import { learnVoice, segmentTones, syllableTones, type SyllableTone } from '../services/tone.ts'
 import { bestAlternative, combine, soundScore, type SyllableScore } from './score.ts'
 
 /** `soundsChecked`: false when neither Azure nor the browser recogniser could check the sounds (tone only). */
@@ -19,6 +19,7 @@ function heardSyllables(text: string): string[] {
 }
 
 export async function scoreSpeech(syllables: Syllable[], rec: Recording, azure: CharResult[] | null = null): Promise<SpeechScore> {
+  await learnVoice(rec.wav).catch(() => {})
   // Tones: cut out with Azure's timings when we have them, else find the syllables on the device.
   const tones: (SyllableTone | null)[] | null = azure ? await syllableTones(rec.wav, azure) : await segmentTones(rec.wav, syllables.length)
 
