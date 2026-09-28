@@ -79,7 +79,7 @@ export default function HoldToTalk({ onRecorded, onError, listen = false }: Prop
       // Stopped before the mic was live (always the case on the first permission prompt).
       await rec.cancel()
       listening.current?.abort()
-      setHint('Microphone ready. Tap to start speaking.')
+      setHint('Stopped. Tap to start again.')
       return
     }
     try {
@@ -126,8 +126,8 @@ export default function HoldToTalk({ onRecorded, onError, listen = false }: Prop
         type="button"
         className="hold-button"
         data-recording={phase === 'recording' || undefined}
-        // A tap while the mic is still starting does nothing: it starts recording by itself.
-        onClick={() => void (phase === 'idle' ? begin() : phase === 'recording' ? end() : undefined)}
+        // A tap while the mic is still starting cancels it, so the button can never get stuck.
+        onClick={() => void (phase === 'idle' ? begin() : end())}
         onContextMenu={(e) => e.preventDefault()}
       >
         {label}

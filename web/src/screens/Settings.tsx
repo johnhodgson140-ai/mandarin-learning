@@ -236,11 +236,17 @@ function SpeechCheck() {
       <h2 className="card-title">Sound check</h2>
       {blocked ? (
         <>
-          <p className="muted small">The iPhone's speech recogniser is off: a recording came out silent while it was on. Tones are still checked.</p>
-          <button type="button" className="btn btn-secondary" onClick={() => { setRecogniserBlocked(false); setBlocked(false) }}>Turn it back on</button>
+          <p className="muted small">
+            Off. The phone's speech recogniser can check your sounds for free, but on iPhone it takes over the microphone
+            and later recordings fail. Tones are still checked; an Azure key checks sounds properly.
+          </p>
+          <button type="button" className="btn btn-secondary" onClick={() => { setRecogniserBlocked(false); setBlocked(false) }}>Turn on anyway</button>
         </>
       ) : (
-        <p className="muted small">On: the iPhone's speech recogniser checks your sounds (free). An Azure key checks them more precisely.</p>
+        <>
+          <p className="muted small">On: the phone's speech recogniser checks your sounds (free). If recordings stop working, turn it off.</p>
+          <button type="button" className="btn btn-secondary" onClick={() => { setRecogniserBlocked(true); setBlocked(true) }}>Turn off</button>
+        </>
       )}
     </section>
   )

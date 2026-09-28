@@ -23,10 +23,15 @@ function recognitionClass(): (new () => BrowserRecognition) | null {
   return w.SpeechRecognition ?? w.webkitSpeechRecognition ?? null
 }
 
-/** Switched off when it took the microphone and a recording came out silent (some iPhones); Settings can undo it. */
+/**
+ * On iPhone the recogniser takes over the audio after its first use, and the next recording hangs or comes out
+ * silent. So it's off by default there (sounds are then checked by Azure, or not at all); Settings can turn it on.
+ * It's also switched off if a recording comes out silent while it was running.
+ */
 const BLOCKED_KEY = 'recogniserBlocksMic'
-export const recogniserBlocked = () => load(BLOCKED_KEY, false)
-export const setRecogniserBlocked = (blocked: boolean) => save(BLOCKED_KEY, blocked || null)
+const isIOS = () => typeof navigator !== 'undefined' && (/iP(hone|ad|od)/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1))
+export const recogniserBlocked = () => load<boolean>(BLOCKED_KEY, isIOS())
+export const setRecogniserBlocked = (blocked: boolean) => save(BLOCKED_KEY, blocked)
 
 /** The phone's recogniser exists and hasn't been switched off. */
 export const hasRecogniser = () => typeof window !== 'undefined' && recognitionClass() !== null
