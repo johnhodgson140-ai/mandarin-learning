@@ -20,3 +20,4 @@
 .bench-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
 .bench-list li { display: flex; align-items: center; justify-content: space-between; gap: var(--space); }
 .bench-score { font-variant-numeric: tabular-nums; font-weight: 600; }
+@media (min-width: 900px) { .stat-tiles { grid-template-columns: repeat(4, 1fr); } }

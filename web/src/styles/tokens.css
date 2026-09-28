@@ -8,8 +8,16 @@
   --font-zh: "Noto Serif SC", "Songti SC", serif;
   --font-ui: -apple-system, "Segoe UI", Roboto, sans-serif;
   --fade: 180ms ease;
+  color-scheme: light;
 }
-@media (prefers-color-scheme: dark) { :root {
+/* Dark: follows the device unless I picked Light or Dark in Settings (data-theme on <html>). */
+@media (prefers-color-scheme: dark) { :root:not([data-theme='light']) {
   --bg: #1B1A18; --surface: #23221F; --text: #E4DED3; --text-muted: #9C958A; --line: #34322E; --accent: #7FA894;
   --on-accent: #1B1A18;
+  color-scheme: dark;
 }}
+:root[data-theme='dark'] {
+  --bg: #1B1A18; --surface: #23221F; --text: #E4DED3; --text-muted: #9C958A; --line: #34322E; --accent: #7FA894;
+  --on-accent: #1B1A18;
+  color-scheme: dark;
+}

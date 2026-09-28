@@ -5,6 +5,9 @@ import './styles/base.css'
 import App from './App.tsx'
 import { pruneRecordings } from './services/attempts.ts'
 import { loadDeck } from './services/words.ts'
+import { applyTheme } from './services/theme.ts'
+
+applyTheme()
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
