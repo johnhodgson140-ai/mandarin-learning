@@ -16,7 +16,7 @@ export const LENGTHS: Record<StoryLength, { label: string; chars: string }> = {
   long: { label: 'Long', chars: '400–600' },
 }
 
-const LEVEL_RULES: Record<number, string> = {
+export const LEVEL_RULES: Record<number, string> = {
   1: 'HSK 1 grammar only, sentences under 10 characters, at most 3 new words.',
   2: 'HSK 1–2 grammar, sentences under 14 characters, at most 4 new words.',
   3: 'HSK 3 grammar, sentences under 18 characters, at most 5 new words.',

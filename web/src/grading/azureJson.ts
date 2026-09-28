@@ -3,7 +3,9 @@ import type { AzureWord } from './grade.ts'
 
 type AzureJson = {
   Duration?: number
+  DisplayText?: string
   NBest?: {
+    Display?: string
     PronunciationAssessment?: { FluencyScore?: number }
     Words?: {
       Word: string
@@ -17,7 +19,7 @@ type AzureJson = {
 
 const TICKS_PER_MS = 10_000 // Azure times are in 100 ns ticks
 
-export type Utterance = { words: AzureWord[]; fluency: number; durationMs: number }
+export type Utterance = { text: string; words: AzureWord[]; fluency: number; durationMs: number }
 
 export function parseUtterance(raw: string): Utterance | null {
   let json: AzureJson
@@ -29,6 +31,7 @@ export function parseUtterance(raw: string): Utterance | null {
   const best = json.NBest?.[0]
   if (!best) return null
   return {
+    text: best.Display ?? json.DisplayText ?? '',
     words: (best.Words ?? []).map((word) => ({
       word: word.Word,
       accuracy: word.PronunciationAssessment?.AccuracyScore ?? 0,

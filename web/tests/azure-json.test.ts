@@ -34,6 +34,7 @@ const sample = JSON.stringify({
 test('parseUtterance reads words, syllables and fluency, converting ticks to ms', () => {
   const u = parseUtterance(sample)!
   assert.equal(u.fluency, 91)
+  assert.equal(u.text, '今天天气很好。')
   assert.equal(u.durationMs, 1100)
   assert.deepEqual(u.words[0], {
     word: '今天', accuracy: 98, errorType: 'None', offset: 40, duration: 400,
