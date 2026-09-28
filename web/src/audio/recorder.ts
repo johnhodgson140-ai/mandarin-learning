@@ -12,15 +12,111 @@ export function preloadRecorder(): void {
 }
 
 /**
- * Microphone → AudioWorklet → 16 kHz mono WAV.
- * Call `start()` from a user gesture (required on iOS). `onLevel` gets a 0..1 loudness value per batch.
+ * One microphone for the whole app, opened on the first tap and kept open while the app is on screen.
+ * iPhones often give back a silent microphone when it's opened and closed for every recording (especially
+ * after the speech recogniser or a playback has used the audio), so audio flows all the time and a
+ * Recorder only keeps what arrives between its start() and stop(). Released when the app is hidden.
  */
-export class Recorder {
+class Mic {
   private ctx: AudioContext | null = null
   private stream: MediaStream | null = null
   private node: AudioWorkletNode | null = null
+  private opening: Promise<void> | null = null
+  /** Where audio batches go while a Recorder is capturing. */
+  sink: ((chunk: Float32Array) => void) | null = null
+
+  get sampleRate(): number {
+    return this.ctx?.sampleRate ?? 48000
+  }
+
+  private healthy(): boolean {
+    const track = this.stream?.getAudioTracks()[0]
+    return Boolean(this.ctx && this.ctx.state !== 'closed' && this.node && track && track.readyState === 'live' && !track.muted)
+  }
+
+  /** Make sure audio is flowing. Call straight from a tap: iOS only lets audio start inside one. */
+  open(): Promise<void> {
+    if (this.opening) return this.opening
+    if (this.healthy()) {
+      // Resume synchronously inside the tap (iOS suspends or "interrupts" contexts, e.g. after a call).
+      const resumed = this.ctx!.state === 'running' ? Promise.resolve() : this.ctx!.resume()
+      return resumed
+    }
+    this.release()
+    const ctx = new AudioContext() // created synchronously inside the tap
+    this.ctx = ctx
+    const resumed = ctx.resume()
+    this.opening = (async () => {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({
+          audio: { channelCount: 1, echoCancellation: true, noiseSuppression: true, autoGainControl: true },
+        })
+        this.stream = stream
+        await resumed
+        await ctx.audioWorklet.addModule(workletUrl)
+        const node = new AudioWorkletNode(ctx, 'recorder')
+        node.port.onmessage = (e: MessageEvent<Float32Array>) => this.sink?.(e.data)
+        ctx.createMediaStreamSource(stream).connect(node)
+        this.node = node
+      } catch (err) {
+        this.release()
+        throw err
+      } finally {
+        this.opening = null
+      }
+    })()
+    return this.opening
+  }
+
+  /** Drop anything the worklet collected before this moment. */
+  reset(): void {
+    this.node?.port.postMessage('reset')
+  }
+
+  /** Ask the worklet for its last partial batch; resolves once it has arrived (or after 200 ms). */
+  flush(): Promise<void> {
+    const node = this.node
+    if (!node) return Promise.resolve()
+    return new Promise<void>((resolve) => {
+      const onFlushed = (e: MessageEvent<Float32Array>) => {
+        this.sink?.(e.data)
+        node.port.onmessage = (ev: MessageEvent<Float32Array>) => this.sink?.(ev.data)
+        resolve()
+      }
+      node.port.onmessage = onFlushed
+      node.port.postMessage('flush')
+      setTimeout(resolve, 200)
+    })
+  }
+
+  release(): void {
+    this.sink = null
+    this.node?.port.close()
+    this.node?.disconnect()
+    this.stream?.getTracks().forEach((t) => t.stop())
+    if (this.ctx && this.ctx.state !== 'closed') void this.ctx.close().catch(() => {})
+    this.node = null
+    this.stream = null
+    this.ctx = null
+  }
+}
+
+const mic = new Mic()
+
+if (typeof document !== 'undefined')
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden') mic.release()
+  })
+
+/**
+ * One recording from the shared microphone → 16 kHz mono WAV.
+ * Call `start()` from a tap (required on iOS). `onLevel` gets a 0..1 loudness value per batch.
+ */
+export class Recorder {
   private chunks: Float32Array[] = []
   private length = 0
+  private capturing = false
+  private readonly sink = (chunk: Float32Array) => this.push(chunk)
   private onLevel: (level: number) => void
   private onMaxLength: () => void
 
@@ -30,57 +126,30 @@ export class Recorder {
   }
 
   async start(): Promise<void> {
-    // Create the context synchronously inside the gesture so iOS lets it run.
-    const ctx = new AudioContext()
-    this.ctx = ctx
     this.chunks = []
     this.length = 0
-    try {
-      const resumed = ctx.resume()
-      this.stream = await navigator.mediaDevices.getUserMedia({
-        audio: { channelCount: 1, echoCancellation: true, noiseSuppression: true, autoGainControl: true },
-      })
-      await resumed
-      await ctx.audioWorklet.addModule(workletUrl)
-      const source = ctx.createMediaStreamSource(this.stream)
-      const node = new AudioWorkletNode(ctx, 'recorder')
-      node.port.onmessage = (e: MessageEvent<Float32Array>) => this.push(e.data)
-      source.connect(node)
-      this.node = node
-    } catch (err) {
-      await this.cleanup()
-      throw err
-    }
+    await mic.open()
+    mic.reset()
+    this.capturing = true
+    mic.sink = this.sink
   }
 
   private push(chunk: Float32Array) {
-    if (!this.ctx) return
+    if (!this.capturing) return
     this.chunks.push(chunk)
     this.length += chunk.length
     let sum = 0
     for (let i = 0; i < chunk.length; i++) sum += chunk[i] * chunk[i]
     const rms = Math.sqrt(sum / Math.max(chunk.length, 1))
     this.onLevel(Math.min(1, rms * 6))
-    if (this.length >= MAX_SECONDS * this.ctx.sampleRate) this.onMaxLength()
+    if (this.length >= MAX_SECONDS * mic.sampleRate) this.onMaxLength()
   }
 
   async stop(): Promise<Recording> {
-    const ctx = this.ctx
-    const node = this.node
-    if (!ctx || !node) throw new Error('recorder is not running')
-    // Ask the worklet for its partial batch before tearing down.
-    await new Promise<void>((resolve) => {
-      const prev = node.port.onmessage
-      node.port.onmessage = (e: MessageEvent<Float32Array>) => {
-        prev?.call(node.port, e)
-        resolve()
-      }
-      node.port.postMessage('flush')
-      setTimeout(resolve, 200)
-    })
-    const inRate = ctx.sampleRate
-    await this.cleanup()
-
+    if (!this.capturing) throw new Error('recorder is not running')
+    await mic.flush()
+    this.detach()
+    const inRate = mic.sampleRate
     const joined = new Float32Array(Math.min(this.length, MAX_SECONDS * inRate))
     let offset = 0
     for (const c of this.chunks) {
@@ -93,20 +162,18 @@ export class Recorder {
     return { wav: encodeWav(samples), seconds: samples.length / TARGET_RATE }
   }
 
-  /** Stop without producing a recording (e.g. the screen is closing). */
+  /** Stop without producing a recording (e.g. the screen is closing). The microphone stays open. */
   async cancel(): Promise<void> {
+    this.detach()
     this.chunks = []
     this.length = 0
-    await this.cleanup()
   }
 
-  private async cleanup() {
-    this.node?.port.close()
-    this.node?.disconnect()
-    this.stream?.getTracks().forEach((t) => t.stop())
-    if (this.ctx && this.ctx.state !== 'closed') await this.ctx.close()
-    this.node = null
-    this.stream = null
-    this.ctx = null
+  private detach() {
+    this.capturing = false
+    if (mic.sink === this.sink) mic.sink = null
   }
 }
+
+/** Close the microphone now (e.g. a recording came out silent, so the next tap gets a fresh one). */
+export const reopenMicNextTime = () => mic.release()
