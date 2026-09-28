@@ -7,7 +7,7 @@ so the phone works without my Mac being on. Hosted on GitHub Pages.
 
 Project docs: [`CLAUDE.md`](CLAUDE.md), [`docs/SPEC.md`](docs/SPEC.md), [`docs/DESIGN.md`](docs/DESIGN.md), [`docs/ROADMAP.md`](docs/ROADMAP.md).
 
-**Status:** M8 — desktop polish + theme (all milestones built; M1 setup still to do) (plus free scorer, Say your cards, daily content, my Anki deck). (M1's Anki sync is built; its one-time setup below is still to do.)
+**Status:** all milestones (M0–M8) built. Still to do by me: the one-time M1 setup below (Firebase + AnkiConnect).
 
 ## Install on the iPhone
 1. Open the app link above in **Safari**.
