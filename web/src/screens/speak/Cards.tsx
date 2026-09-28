@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import type { Recording } from '../../audio/recorder.ts'
-import { pickSession, type Card } from '../../cards/srs.ts'
+import { daysUntil, nextState, pickSession, type Card } from '../../cards/srs.ts'
 import { buildParagraph } from '../../chinese/tokens.ts'
 import { hskLabel, loadHsk, type HskInfo } from '../../services/hsk.ts'
 import HoldToTalk from '../../components/HoldToTalk.tsx'
@@ -133,9 +133,10 @@ function CardView({ card, mode, onNext }: { card: Card; mode: Mode; onNext: (sco
       {result && (
         <section className="card fade-in">
           <ScoreView syllables={token.syllables} result={result} />
+          <p className="muted small">{scored(result) ? nextReviewText(card.hanzi, result.overall) : 'Nothing could be checked, so this one doesn\'t count.'}</p>
           <div className="sheet-actions">
             <button type="button" className="btn btn-secondary" onClick={() => setResult(null)}>Again</button>
-            <button type="button" className="btn btn-primary" onClick={() => onNext(result.overall)}>Next</button>
+            <button type="button" className="btn btn-primary" onClick={() => onNext(scored(result) ? result.overall : null)}>Next</button>
           </div>
         </section>
       )}
@@ -146,3 +147,12 @@ function CardView({ card, mode, onNext }: { card: Card; mode: Mode; onNext: (sco
     </>
   )
 }
+
+/** What FSRS will do with this card at this score (a preview; it's saved on Next). */
+function nextReviewText(hanzi: string, score: number): string {
+  const days = daysUntil(nextState(cardStates()[hanzi], score))
+  return days === 0 ? 'Comes back again this session.' : `Next review in ${days} day${days === 1 ? '' : 's'}.`
+}
+
+/** Did anything get checked? (Not before my voice is known and with no sound checker: then don't schedule.) */
+const scored = (r: SpeechScore) => r.syllables.some((s) => s.checked)
