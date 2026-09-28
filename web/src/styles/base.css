@@ -107,3 +107,21 @@ button { font: inherit; color: inherit; }
 }
 .chip[aria-pressed='true'] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
 .chip:disabled { opacity: 0.5; cursor: default; }
+
+/* Pronunciation scores: green → red */
+.score-view { display: flex; flex-direction: column; gap: var(--space); }
+.score-overall { font-size: 40px; font-weight: 600; line-height: 1; font-variant-numeric: tabular-nums; }
+.score-of { font-size: 16px; color: var(--text-muted); font-weight: 400; margin-left: 4px; }
+.score-syllables { display: flex; flex-wrap: wrap; gap: var(--space); }
+.score-syllable {
+  display: flex; flex-direction: column; align-items: center; gap: 2px; min-width: 56px; min-height: 44px;
+  padding: var(--space); border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); cursor: pointer;
+}
+.score-syllable[aria-pressed='true'] { border-color: var(--accent); }
+.score-hanzi { font-size: 28px; line-height: 1.2; }
+.score-pinyin { font-size: 13px; color: var(--text-muted); }
+.score-number { min-width: 32px; padding: 1px 6px; border-radius: 999px; color: var(--surface); font-size: 13px; font-weight: 600; text-align: center; }
+.score-tips { padding: calc(var(--space) * 1.5); border-left: 3px solid var(--accent); background: var(--bg); font-size: 15px; }
+.score-tips p + p { margin-top: var(--space); }
+.score-explanation { font-size: 15px; }
+.link-quiet { align-self: flex-start; min-height: 36px; padding: 0; border: none; background: none; color: var(--accent); font-size: 14px; cursor: pointer; }

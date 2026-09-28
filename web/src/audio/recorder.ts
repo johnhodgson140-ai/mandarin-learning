@@ -3,7 +3,8 @@ import { downsample, encodeWav, TARGET_RATE } from './wav.ts'
 
 export const MAX_SECONDS = 30
 
-export type Recording = { wav: Blob; seconds: number }
+/** `heard`: the browser recogniser's guesses of what I said, when HoldToTalk was asked to listen. */
+export type Recording = { wav: Blob; seconds: number; heard?: string[] }
 
 /** Warm the HTTP cache for the worklet so the first press doesn't lose its opening words. */
 export function preloadRecorder(): void {

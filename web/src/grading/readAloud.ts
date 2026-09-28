@@ -1,14 +1,20 @@
 // Read-aloud: grade one paragraph of a story and log the attempt.
 
+import type { Recording } from '../audio/recorder.ts'
 import type { Token } from '../chinese/tokens.ts'
+import { scoreSpeech } from '../scoring/speechScore.ts'
+import { getKeys } from '../services/keys.ts'
 import { assess } from '../services/azure.ts'
 import { newId, saveAttempt, type AttemptSyllable } from '../services/attempts.ts'
 import { syllableTones } from '../services/tone.ts'
 import { alignToReference, statusFor, totals, type Scores, type Status } from './grade.ts'
 
-export type ParagraphResult = { attemptId: string; statuses: Status[]; scores: Scores; wav: Blob }
+/** `fluency` is null without Azure (the free scorer can't judge it). */
+export type ParagraphResult = { attemptId: string; statuses: Status[]; scores: Omit<Scores, 'fluency'> & { fluency: number | null }; wav: Blob }
 
-export async function gradeParagraph(tokens: Token[], wav: Blob, storyId: string, paragraph: number): Promise<ParagraphResult> {
+export async function gradeParagraph(tokens: Token[], rec: Recording, storyId: string, paragraph: number): Promise<ParagraphResult> {
+  if (!getKeys().azure) return gradeLocally(tokens, rec, storyId, paragraph)
+  const wav = rec.wav
   const refText = tokens.map((t) => t.text).join('')
   const { words, fluency } = await assess(wav, refText)
   const chars = alignToReference(refText, words)
@@ -29,4 +35,26 @@ export async function gradeParagraph(tokens: Token[], wav: Blob, storyId: string
   const attemptId = newId()
   await saveAttempt({ id: attemptId, type: 'read', refText, storyId, paragraph, scores, syllables: logged, createdAt: Date.now() }, wav)
   return { attemptId, statuses, scores, wav }
+}
+
+/** No Azure key: the browser recogniser checks the sounds (tones need Azure's timings for a whole paragraph). */
+async function gradeLocally(tokens: Token[], rec: Recording, storyId: string, paragraph: number): Promise<ParagraphResult> {
+  if (!rec.heard?.length) throw new Error("Couldn't hear the reading. This browser may not support speech recognition: add an Azure key in Settings for full checks.")
+  const refText = tokens.map((t) => t.text).join('')
+  const syllables = tokens.flatMap((t) => t.syllables)
+  const result = await scoreSpeech(syllables, rec)
+  const statuses = result.syllables.map((s) => s.status)
+  const heard = result.syllables.filter((s) => (s.sound ?? 0) > 0).length
+  const scores = { accuracy: result.overall, fluency: null, completeness: Math.round((heard / Math.max(1, syllables.length)) * 100) }
+  const logged: AttemptSyllable[] = syllables.map((s, i) => ({
+    hanzi: s.hanzi,
+    spokenTone: s.spoken,
+    prevTone: i > 0 ? syllables[i - 1].spoken : null,
+    predictedTone: null,
+    accuracy: result.syllables[i].score,
+    status: statuses[i],
+  }))
+  const attemptId = newId()
+  await saveAttempt({ id: attemptId, type: 'read', refText, storyId, paragraph, scores: { ...scores, fluency: 0 }, syllables: logged, createdAt: Date.now() }, rec.wav)
+  return { attemptId, statuses, scores, wav: rec.wav }
 }
