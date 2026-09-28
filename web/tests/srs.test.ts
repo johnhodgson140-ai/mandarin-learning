@@ -1,21 +1,30 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
-import { mergeCards, nextState, pickSession, type Card } from '../src/cards/srs.ts'
+import { mergeCards, nextState, pickSession, ratingFor, retrievability, RETENTION, type Card } from '../src/cards/srs.ts'
 
 const DAY = 24 * 60 * 60 * 1000
 const now = 1_000_000_000_000
 
-test('nextState: up a box when said well, stay when close, back to 1 when poor', () => {
-  const first = nextState(undefined, 90, now)
-  assert.deepEqual(first, { box: 1, due: now + DAY, lastScore: 90, seen: 1 })
-  const second = nextState(first, 85, now)
-  assert.equal(second.box, 2)
-  assert.equal(second.due, now + 2 * DAY)
-  assert.equal(nextState(second, 70, now).box, 2)
-  const poor = nextState(second, 40, now)
-  assert.equal(poor.box, 1)
-  assert.equal(poor.due, now) // straight back into the queue
-  assert.equal(nextState({ box: 5, due: 0, lastScore: 90, seen: 9 }, 95, now).box, 5)
+test('FSRS: good answers space reviews out, again brings it back today, box states convert', () => {
+  const first = nextState(undefined, 90, now) // good
+  assert.equal(first.seen, 1)
+  assert.ok(first.stability! > 2 && first.stability! < 4, `new card, good: stability ${first.stability}`)
+  const later = first.due + DAY // reviewed a day late
+  const second = nextState(first, 90, later)
+  assert.ok(second.stability! > first.stability! * 2, 'stability grows after a successful review')
+  assert.ok(second.due - later > (first.due - now) * 2, 'the next gap is much longer')
+  const hard = nextState(first, 70, later)
+  assert.ok(hard.stability! < second.stability!, 'hard grows less than good')
+  const again = nextState(second, 40, second.due)
+  assert.equal(again.due, second.due, 'forgotten: straight back into the queue')
+  assert.ok(again.stability! < second.stability!, 'forgetting lowers stability')
+  assert.ok(again.difficulty! > second.difficulty!, 'and raises difficulty')
+  // An old box-system state (box 3 = 4 days) reviewed on time.
+  const converted = nextState({ box: 3, due: now, lastScore: 90, seen: 3 }, 90, now)
+  assert.ok(converted.stability! > 4 && converted.difficulty !== undefined)
+  assert.equal(ratingFor(59), 1)
+  assert.equal(ratingFor(95), 4)
+  assert.ok(Math.abs(retrievability(10, 10) - RETENTION) < 0.001, 'stability = days to 90% recall')
 })
 
 test('pickSession: due cards first by box, then a few new ones, Anki words before app words', () => {
