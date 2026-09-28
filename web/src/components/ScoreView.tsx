@@ -59,6 +59,9 @@ export default function ScoreView({ syllables, result }: { syllables: Syllable[]
           Tones weren't checked yet: the app is still learning your voice (about 5 recordings), or <a href="#speak/calibrate">calibrate now</a> (30 s).
         </p>
       )}
+      {result.tones.some((t) => t !== null) && (
+        <a href="#speak/calibrate" className="link-quiet">Tones feel off? Recalibrate</a>
+      )}
       {!result.soundsChecked && (
         <p className="muted small">
           Sounds weren't checked (only tones): the phone's speech recogniser is off on iPhone because it breaks the mic.

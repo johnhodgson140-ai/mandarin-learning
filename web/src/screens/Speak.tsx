@@ -63,7 +63,7 @@ function Hub() {
           <span className="muted">Listen to a short story twice, then tell it back.</span>
         </a>
         <a href="#speak/calibrate" className="hub-row">
-          <span className="hub-title">Calibrate {voice.name === 'Me' ? 'your' : `${voice.name}'s`} voice</span>
+          <span className="hub-title">{calibrated ? 'Recalibrate' : 'Calibrate'} {voice.name === 'Me' ? 'your' : `${voice.name}'s`} voice</span>
           <span className="muted">{calibrated ? 'Done. Redo it if tone checks feel off.' : 'Four syllables, so tone checks fit this voice.'}</span>
         </a>
       </nav>
