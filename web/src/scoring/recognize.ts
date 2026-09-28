@@ -2,6 +2,7 @@
 // Safari (iPhone) and Chrome support it for zh-CN; elsewhere scoring uses the tone model alone.
 
 import { load, save } from '../services/storage.ts'
+import { log } from '../debug/log.ts'
 
 type Alternative = { transcript: string }
 type ResultList = ArrayLike<ArrayLike<Alternative> & { isFinal: boolean }>
@@ -52,14 +53,17 @@ export function listen(): Listening | null {
   let ended = false
   const endWaiters: (() => void)[] = []
   rec.onresult = (e) => (results = e.results)
-  rec.onerror = () => {}
+  rec.onerror = (e) => log('recogniser error', { error: e.error })
   rec.onend = () => {
+    log('recogniser ended')
     ended = true
     endWaiters.forEach((f) => f())
   }
   try {
     rec.start()
-  } catch {
+    log('recogniser started')
+  } catch (err) {
+    log('recogniser failed to start', { error: String(err) })
     return null
   }
   return {

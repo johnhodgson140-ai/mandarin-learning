@@ -2,6 +2,7 @@
 
 import { getKeys } from './keys.ts'
 import { load, save } from './storage.ts'
+import { log } from '../debug/log.ts'
 
 export type VoiceChoice = 'female' | 'male'
 const AZURE_VOICES: Record<VoiceChoice, string> = { female: 'zh-CN-XiaoxiaoNeural', male: 'zh-CN-YunxiNeural' }
@@ -31,9 +32,11 @@ export async function speak(text: string, rate = 1): Promise<void> {
       if (blob) {
         audio.src = URL.createObjectURL(blob)
         await audio.play()
+        log('voice: azure')
         return
       }
-    } catch {
+    } catch (err) {
+      log('voice: azure failed', { error: String(err) })
       // Fall through to the device voice.
     }
   }
@@ -73,6 +76,7 @@ async function azureTts(text: string, rate: number, voice: string, key: string, 
 function speakWithDevice(text: string, rate: number): void {
   if (typeof speechSynthesis === 'undefined') return
   speechSynthesis.cancel()
+  log('voice: device')
   const utterance = new SpeechSynthesisUtterance(text)
   utterance.lang = 'zh-CN'
   utterance.rate = rate

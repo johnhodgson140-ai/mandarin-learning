@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { preloadRecorder, Recorder, reopenMicNextTime, type Recording } from '../audio/recorder.ts'
 import { canRecognise, listen as startListening, setRecogniserBlocked, type Listening } from '../scoring/recognize.ts'
+import { log } from '../debug/log.ts'
 import './HoldToTalk.css'
 
 type Props = {
@@ -32,7 +33,7 @@ export default function HoldToTalk({ onRecorded, onError, listen = false }: Prop
   callbacks.current = { onRecorded, onError }
 
   async function begin() {
-    if (recorder.current) return
+    if (recorder.current) return log('tap ignored: already recording')
     const rec = new Recorder({
       onLevel: (l) => {
         peak.current = Math.max(peak.current, l)
@@ -44,6 +45,7 @@ export default function HoldToTalk({ onRecorded, onError, listen = false }: Prop
     peak.current = 0
     usedRecogniser.current = listen && canRecognise()
     listening.current = usedRecogniser.current ? startListening() : null // must start inside the tap
+    log('tap: start', { recogniser: usedRecogniser.current })
     live.current = false
     setHint(null)
     setPhase('starting')
@@ -56,6 +58,7 @@ export default function HoldToTalk({ onRecorded, onError, listen = false }: Prop
         return true
       },
       (err: unknown) => {
+        log('start failed', { error: String(err) })
         if (recorder.current === rec) {
           recorder.current = null
           setPhase('idle')
@@ -72,6 +75,7 @@ export default function HoldToTalk({ onRecorded, onError, listen = false }: Prop
     recorder.current = null
     setLevel(0)
     const wasLive = live.current
+    log('tap: stop', { wasLive })
     live.current = false
     setPhase('idle')
     if (!(await starting.current)) return // start failed; begin() already reported it
@@ -84,8 +88,10 @@ export default function HoldToTalk({ onRecorded, onError, listen = false }: Prop
     }
     try {
       const result = await rec.stop()
+      setLevel(0) // the last batch arrives during stop()
       const heard = await listening.current?.stop()
       listening.current = null
+      log('result', { seconds: Math.round(result.seconds * 10) / 10, peak: Math.round(peak.current * 1000) / 1000, heard: heard?.length ?? null })
       if (result.seconds < MIN_SECONDS) setHint('Too short. Tap, speak, then tap again when finished.')
       else if (peak.current < SILENT_PEAK) {
         reopenMicNextTime() // get a fresh microphone on the next tap
@@ -97,6 +103,7 @@ export default function HoldToTalk({ onRecorded, onError, listen = false }: Prop
       }
       else callbacks.current.onRecorded(heard?.length ? { ...result, heard } : result)
     } catch (err) {
+      log('stop failed', { error: String(err) })
       callbacks.current.onError(err instanceof Error ? err.message : String(err))
     }
   }
