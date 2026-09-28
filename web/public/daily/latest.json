@@ -1,0 +1,126 @@
+{
+  "date": "2026-09-28",
+  "level": 1,
+  "plan": {
+    "focus_en": "Third tones (low, then rising) and ordering things politely.",
+    "items": [
+      { "kind": "cards", "title_en": "Say your cards (10 cards)" },
+      { "kind": "dojo", "title_en": "Tone Dojo (5 minutes)" },
+      { "kind": "story", "title_en": "Read and read aloud: 周末看足球", "ref": "2026-09-28-s1" },
+      { "kind": "mission", "title_en": "Guided mission: at a restaurant", "ref": "2026-09-28-m1" }
+    ]
+  },
+  "stories": [
+    {
+      "id": "2026-09-28-s1",
+      "level": 1,
+      "topic": "football",
+      "title_zh": "周末看足球",
+      "title_en": "Watching football at the weekend",
+      "paragraphs": [
+        ["周末", "我", "和", "朋友", "去", "看", "足球", "比赛", "。", "我们", "都", "很", "喜欢", "曼联", "。"],
+        ["比赛", "很", "好看", "。", "曼联", "进", "了", "两", "个", "球", "！", "我们", "都", "很", "高兴", "。"],
+        ["比赛", "以后", "，", "我们", "去", "饭馆", "吃饭", "。", "朋友", "说", "：", "“", "下", "个", "周末", "我们", "再", "来", "吧", "！", "”"]
+      ],
+      "names": ["曼联"],
+      "new_words": ["进", "饭馆"],
+      "glossary": [
+        { "word": "曼联", "english": "Manchester United" },
+        { "word": "进", "english": "to score (a goal); to enter" },
+        { "word": "饭馆", "english": "restaurant" }
+      ]
+    },
+    {
+      "id": "2026-09-28-s2",
+      "level": 1,
+      "topic": "archive fashion",
+      "title_zh": "我的新外套",
+      "title_en": "My new jacket",
+      "paragraphs": [
+        ["我", "在", "闲鱼", "上", "看到", "一", "件", "外套", "。", "这", "件", "外套", "是", "黑色", "的", "，", "很", "好看", "。"],
+        ["卖家", "说", "：", "“", "八百", "块", "。", "”", "我", "说", "：", "“", "太", "贵", "了", "！", "六百", "块", "可以", "吗", "？", "”"],
+        ["卖家", "想", "了", "想", "，", "说", "：", "“", "好", "吧", "。", "”", "我", "很", "高兴", "！"]
+      ],
+      "names": ["闲鱼"],
+      "new_words": ["外套", "黑色", "卖家"],
+      "glossary": [
+        { "word": "闲鱼", "english": "Xianyu (second-hand marketplace app)" },
+        { "word": "外套", "english": "jacket; coat" },
+        { "word": "黑色", "english": "black" },
+        { "word": "卖家", "english": "seller" }
+      ]
+    }
+  ],
+  "missions": [
+    {
+      "id": "2026-09-28-m1",
+      "level": 1,
+      "title": "At a restaurant",
+      "role": "服务员",
+      "goal": "Say how many people, order food and a drink, then ask for the bill.",
+      "steps": [
+        {
+          "partner_zh": "您好！请问几位？",
+          "partner_en": "Hello! How many people?",
+          "prompt_en": "Say it's just you.",
+          "answers_zh": ["一位。", "一个人。", "就我一个人。"]
+        },
+        {
+          "partner_zh": "好的，请坐。您想吃什么？",
+          "partner_en": "OK, please sit down. What would you like to eat?",
+          "prompt_en": "Order dumplings.",
+          "answers_zh": ["我要饺子。", "我想吃饺子。", "请给我饺子。"]
+        },
+        {
+          "partner_zh": "好的。喝点什么？",
+          "partner_en": "Sure. Anything to drink?",
+          "prompt_en": "Ask for a bottle of cola.",
+          "answers_zh": ["我要一瓶可乐。", "来一瓶可乐。", "一瓶可乐，谢谢。"]
+        },
+        {
+          "partner_zh": "好的，请稍等。",
+          "partner_en": "OK, one moment please.",
+          "prompt_en": "(After eating) Ask for the bill.",
+          "answers_zh": ["服务员，买单！", "我要买单。", "请买单。"]
+        }
+      ],
+      "closing_zh": "一共四十五块。谢谢光临！",
+      "closing_en": "That's 45 yuan altogether. Thanks for coming!"
+    },
+    {
+      "id": "2026-09-28-m2",
+      "level": 1,
+      "title": "Buying a jacket on Xianyu",
+      "role": "卖家",
+      "goal": "Ask the size and the price, bargain a little, and agree to buy.",
+      "steps": [
+        {
+          "partner_zh": "你好，这件外套还在。",
+          "partner_en": "Hi, this jacket is still available.",
+          "prompt_en": "Ask what size it is.",
+          "answers_zh": ["这件外套多大？", "是多大号的？", "什么尺码？"]
+        },
+        {
+          "partner_zh": "四十六码，九成新。",
+          "partner_en": "Size 46, 90% new.",
+          "prompt_en": "Ask how much it is.",
+          "answers_zh": ["多少钱？", "这件多少钱？", "你要多少钱？"]
+        },
+        {
+          "partner_zh": "一千八。",
+          "partner_en": "1800 yuan.",
+          "prompt_en": "Say it's too expensive and offer 1500.",
+          "answers_zh": ["太贵了，一千五可以吗？", "有点贵，一千五行吗？", "一千五卖吗？"]
+        },
+        {
+          "partner_zh": "一千六吧，包邮。",
+          "partner_en": "1600 then, with free shipping.",
+          "prompt_en": "Agree and say you'll take it.",
+          "answers_zh": ["好的，我买了。", "好，我要了。", "行，就这么定了。"]
+        }
+      ],
+      "closing_zh": "好的，我现在给你发货。",
+      "closing_en": "OK, I'll send it to you now."
+    }
+  ]
+}

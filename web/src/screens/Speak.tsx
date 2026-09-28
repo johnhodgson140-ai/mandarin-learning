@@ -7,6 +7,7 @@ const Dojo = lazy(() => import('./speak/Dojo.tsx'))
 const Calibrate = lazy(() => import('./speak/Calibrate.tsx'))
 const Missions = lazy(() => import('./speak/Missions.tsx'))
 const Cards = lazy(() => import('./speak/Cards.tsx'))
+const Guided = lazy(() => import('./speak/Guided.tsx'))
 const Mission = lazy(() => import('./speak/Mission.tsx'))
 
 export default function Speak() {
@@ -15,6 +16,7 @@ export default function Speak() {
   if (sub === 'calibrate') return <Calibrate />
   if (sub === 'missions') return <Missions />
   if (sub === 'cards') return <Cards />
+  if (sub === 'guided' && arg) return <Guided id={arg} />
   if (sub === 'mission' && arg) return <Mission scenarioId={arg} />
   if (sub === 'free') return <Mission scenarioId="free" />
   return <Hub />

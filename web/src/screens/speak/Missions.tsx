@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { SCENARIOS } from '../../missions/logic.ts'
+import { cachedDaily } from '../../services/daily.ts'
+import { getKeys } from '../../services/keys.ts'
 import { load, save } from '../../services/storage.ts'
 
 export default function Missions() {
@@ -22,6 +24,21 @@ export default function Missions() {
           ))}
         </div>
       </fieldset>
+      {(cachedDaily()?.missions.length ?? 0) > 0 && (
+        <>
+          <h2 className="card-title">Today's guided missions</h2>
+          <nav className="hub">
+            {cachedDaily()!.missions.map((m) => (
+              <a key={m.id} href={`#speak/guided/${m.id}`} className="hub-row">
+                <span className="hub-title">{m.title}</span>
+                <span className="muted">{m.goal} No key needed.</span>
+              </a>
+            ))}
+          </nav>
+          <h2 className="card-title">Live missions</h2>
+        </>
+      )}
+      {!getKeys().claude && <p className="muted small">Live missions need a Claude key (Settings); guided ones don't.</p>}
       <nav className="hub">
         {SCENARIOS.map((s) => (
           <a key={s.id} href={`#speak/mission/${s.id}`} className="hub-row">
