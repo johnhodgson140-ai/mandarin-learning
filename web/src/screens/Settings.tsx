@@ -6,6 +6,7 @@ import { currentUser, isConfigured, signIn, signOut } from '../services/firebase
 import { getKeys, setKeys, type Keys } from '../services/keys.ts'
 import { load, save } from '../services/storage.ts'
 import { getTheme, setTheme, type Theme } from '../services/theme.ts'
+import { getVoice, setVoice, speak, type VoiceChoice } from '../services/tts.ts'
 import './Settings.css'
 
 export default function Settings() {
@@ -21,6 +22,7 @@ export default function Settings() {
       <Account user={user} onChange={() => setUser(currentUser())} />
       {user && <Anki />}
       <MyLevel />
+      <Voice />
       <Appearance />
       <ApiKeys />
     </>
@@ -219,6 +221,32 @@ function MyLevel() {
           <button key={n} type="button" className="chip" aria-pressed={level === n} onClick={() => { setLevel(n); save('level', n) }}>{n}</button>
         ))}
       </div>
+    </section>
+  )
+}
+
+function Voice() {
+  const [voice, set] = useState<VoiceChoice>(getVoice)
+  const hasAzure = Boolean(getKeys().azure)
+  return (
+    <section className="card">
+      <h2 className="card-title">Voice</h2>
+      <div className="chips">
+        {(['female', 'male'] as const).map((v) => (
+          <button key={v} type="button" className="chip" aria-pressed={voice === v} onClick={() => { set(v); setVoice(v) }}>
+            {v === 'female' ? 'Female' : 'Male'}
+          </button>
+        ))}
+        <button type="button" className="chip" onClick={() => void speak('你好，我们一起练习说中文吧。', 0.9)}>▶ Test</button>
+      </div>
+      {hasAzure ? (
+        <p className="muted small">Natural Azure voice ({voice === 'female' ? 'Xiaoxiao' : 'Yunxi'}).</p>
+      ) : (
+        <p className="muted small">
+          Using the iPhone's own voice. For a clearer one: iPhone Settings → Accessibility → Spoken Content → Voices →
+          Chinese (China mainland) → download a voice marked Enhanced or Premium. An Azure key switches to a natural voice.
+        </p>
+      )}
     </section>
   )
 }

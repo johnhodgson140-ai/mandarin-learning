@@ -36,6 +36,9 @@ export type SyllableScore = {
  * Combine the parts. Neutral-tone syllables are judged on sound only. With both parts, sound and tone
  * count equally; with one part, that part is the score.
  */
+const WRONG_TONE = 0.35
+const WRONG_TONE_CAP = 50
+
 export function combine(
   sound: number | null,
   toneProbs: number[] | null,
@@ -44,8 +47,12 @@ export function combine(
 ): SyllableScore {
   const tone = toneProbs && spokenTone !== 5 ? toneProbs[spokenTone - 1] : null
   const heardTone = toneProbs ? ((toneProbs.indexOf(Math.max(...toneProbs)) + 1) as Tone) : null
-  const parts = [sound, tone === null ? null : tone * 100].filter((p): p is number => p !== null)
-  const score = parts.length ? Math.max(1, Math.round(parts.reduce((a, b) => a + b, 0) / parts.length)) : 1
+  // The recogniser guesses words from context, so it "hears" the right word even with the wrong tone: when the
+  // tone is checked it counts for more, and a clearly wrong tone can't score above amber-red.
+  let raw = sound ?? (tone === null ? 1 : tone * 100)
+  if (sound !== null && tone !== null) raw = 0.4 * sound + 0.6 * tone * 100
+  if (tone !== null && heardTone !== spokenTone && tone < WRONG_TONE) raw = Math.min(raw, WRONG_TONE_CAP)
+  const score = Math.max(1, Math.round(raw))
   return { score, status: statusOf(score), sound, tone, heardPinyin, heardTone }
 }
 

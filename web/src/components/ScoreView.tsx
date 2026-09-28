@@ -44,6 +44,11 @@ export default function ScoreView({ syllables, result }: { syllables: Syllable[]
           )
         })}
       </div>
+      {result.tones.every((t) => t === null) && (
+        <p className="muted small">
+          Tones weren't checked yet: the app is still learning your voice (about 5 recordings), or <a href="#speak/calibrate">calibrate now</a> (30 s).
+        </p>
+      )}
       {!result.soundsChecked && (
         <p className="muted small">Tone only: this phone's speech recogniser isn't available here, so sounds weren't checked. A free Azure key (Settings) adds them.</p>
       )}
