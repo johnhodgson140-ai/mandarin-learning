@@ -33,7 +33,7 @@ export async function gradeParagraph(tokens: Token[], rec: Recording, storyId: s
   }))
 
   const attemptId = newId()
-  await saveAttempt({ id: attemptId, type: 'read', refText, storyId, paragraph, scores, syllables: logged, createdAt: Date.now() }, wav)
+  await saveAttempt({ id: attemptId, type: 'read', refText, storyId, paragraph, scores, syllables: logged, seconds: rec.seconds, createdAt: Date.now() }, wav)
   return { attemptId, statuses, scores, wav }
 }
 
@@ -55,6 +55,6 @@ async function gradeLocally(tokens: Token[], rec: Recording, storyId: string, pa
     status: statuses[i],
   }))
   const attemptId = newId()
-  await saveAttempt({ id: attemptId, type: 'read', refText, storyId, paragraph, scores: { ...scores, fluency: 0 }, syllables: logged, createdAt: Date.now() }, rec.wav)
+  await saveAttempt({ id: attemptId, type: 'read', refText, storyId, paragraph, scores: { ...scores, fluency: 0 }, syllables: logged, seconds: rec.seconds, createdAt: Date.now() }, rec.wav)
   return { attemptId, statuses, scores, wav: rec.wav }
 }

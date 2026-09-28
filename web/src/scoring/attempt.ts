@@ -26,6 +26,7 @@ export async function scoreAndLog(text: string, syllables: Syllable[], rec: Reco
       refText: text,
       scores: { accuracy: result.overall, fluency: 0, completeness: Math.round(heardShare * 100) },
       syllables: logged,
+      seconds: rec.seconds,
       createdAt: Date.now(),
     },
     rec.wav,

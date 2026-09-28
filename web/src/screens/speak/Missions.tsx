@@ -5,10 +5,12 @@ import { getKeys } from '../../services/keys.ts'
 import { load, save } from '../../services/storage.ts'
 
 export default function Missions() {
-  const [level, setLevel] = useState(() => load('level', 1))
+  // Which level to play missions at (my own level only changes by passing a boss mission, or in Settings).
+  const myLevel = load('level', 1)
+  const [level, setLevel] = useState(() => load('missionLevel', myLevel))
   const choose = (n: number) => {
     setLevel(n)
-    save('level', n)
+    save('missionLevel', n)
   }
   return (
     <>
@@ -39,6 +41,9 @@ export default function Missions() {
         </>
       )}
       {!getKeys().claude && <p className="muted small">Live missions need a Claude key (Settings); guided ones don't.</p>}
+      <p className="muted small">
+        You're level {myLevel}. To level up, play a live mission at level {Math.min(6, myLevel + 1)} and reach its goal with pronunciation 75+.
+      </p>
       <nav className="hub">
         {SCENARIOS.map((s) => (
           <a key={s.id} href={`#speak/mission/${s.id}`} className="hub-row">

@@ -106,9 +106,17 @@ Level-up = "boss" mission at next level passed with goal achieved + pronunciatio
 - XP only for real work: minutes spoken, syllables graded ok, stories finished, missions completed. None for app opens/taps.
 - Streak with 2 freezes per month. Level/XP shown only on Today header and session summaries.
 
+## 9b. Implementation notes (M7)
+XP = 1 per syllable said cleanly + 5 per minute spoken + 20 per story finished + 30 per mission with a report
+(computed from the attempt log, nothing stored separately). Streak = consecutive days with any of those, counted back
+from today; up to 2 missed days per calendar month are bridged by freezes. My level lives in Settings and goes up when a
+live mission one level above mine ends with its goal achieved and pronunciation ≥ 75; the Missions and New story level
+pickers are separate and never change my level. The daily plan comes from the daily file (docs/DAILY.md).
+
 ## 10. Progress
 Words known (young+mature), estimated HSK level, minutes spoken/week, tone-pair accuracy heatmap (5×5), monthly benchmark:
-same fixed passage recorded on the 1st of each month, playable side by side.
+same fixed passage recorded once each month, playable side by side (kept on the device; not pruned).
+The heatmap uses one hue (light → dark = fewer → more clean syllables) with the number in every cell.
 
 ## 11. Data model (Firebase, per signed-in user; recordings in IndexedDB on the device)
 Realtime Database, everything under `/users/{uid}/`: `words/{noteId}`, `meta` (last sync + counts), `ankiQueue/{id}` so far.

@@ -18,3 +18,4 @@
   border-radius: 50%; border: 1px solid var(--line); color: var(--text-muted); font-size: 14px;
 }
 .start-btn { justify-content: center; width: 100%; }
+.today-stats { font-size: 15px; color: var(--text-muted); font-variant-numeric: tabular-nums; }

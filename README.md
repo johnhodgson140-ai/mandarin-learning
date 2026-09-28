@@ -7,7 +7,7 @@ so the phone works without my Mac being on. Hosted on GitHub Pages.
 
 Project docs: [`CLAUDE.md`](CLAUDE.md), [`docs/SPEC.md`](docs/SPEC.md), [`docs/DESIGN.md`](docs/DESIGN.md), [`docs/ROADMAP.md`](docs/ROADMAP.md).
 
-**Status:** M6 — Shadowing + Retell (plus free scorer, Say your cards, daily content, my Anki deck). (M1's Anki sync is built; its one-time setup below is still to do.)
+**Status:** M7 — levels, XP, streaks, Progress (plus free scorer, Say your cards, daily content, my Anki deck). (M1's Anki sync is built; its one-time setup below is still to do.)
 
 ## Install on the iPhone
 1. Open the app link above in **Safari**.

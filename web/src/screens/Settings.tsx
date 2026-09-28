@@ -3,6 +3,7 @@ import { addTestCard, cachedMeta, fetchMeta, queuedCount, sync, type SyncMeta } 
 import { MASTERIES } from '../services/anki-mapping.ts'
 import { currentUser, isConfigured, signIn, signOut } from '../services/firebase.ts'
 import { getKeys, setKeys, type Keys } from '../services/keys.ts'
+import { load, save } from '../services/storage.ts'
 import './Settings.css'
 
 export default function Settings() {
@@ -16,6 +17,7 @@ export default function Settings() {
       </header>
       <Account user={user} onChange={() => setUser(currentUser())} />
       {user && <Anki />}
+      <MyLevel />
       <ApiKeys />
     </>
   )
@@ -199,4 +201,20 @@ function ApiKeys() {
 
 function formatTime(ms: number): string {
   return new Date(ms).toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' })
+}
+
+/** My level (1–6). It normally goes up by passing a mission at the next level; this is the manual override. */
+function MyLevel() {
+  const [level, setLevel] = useState(() => load('level', 1))
+  return (
+    <section className="card">
+      <h2 className="card-title">My level</h2>
+      <p className="muted small">Goes up when you pass a live mission at the next level. Change it here if it's wrong.</p>
+      <div className="chips">
+        {[1, 2, 3, 4, 5, 6].map((n) => (
+          <button key={n} type="button" className="chip" aria-pressed={level === n} onClick={() => { setLevel(n); save('level', n) }}>{n}</button>
+        ))}
+      </div>
+    </section>
+  )
 }
