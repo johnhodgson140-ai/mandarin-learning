@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { addTestCard, cachedMeta, fetchMeta, queuedCount, sync, type SyncMeta } from '../services/anki.ts'
+import { exportNewCards, importAnkiFile, newCards } from '../services/ankiFile.ts'
 import { MASTERIES } from '../services/anki-mapping.ts'
 import { currentUser, isConfigured, signIn, signOut } from '../services/firebase.ts'
 import { getKeys, setKeys, type Keys } from '../services/keys.ts'
@@ -16,6 +17,7 @@ export default function Settings() {
         <a href="#today" className="back-link">‹ Today</a>
         <h1>Settings</h1>
       </header>
+      <AnkiPhone />
       <Account user={user} onChange={() => setUser(currentUser())} />
       {user && <Anki />}
       <MyLevel />
@@ -138,7 +140,7 @@ function Anki() {
 
   return (
     <section className="card">
-      <h2 className="card-title">Anki</h2>
+      <h2 className="card-title">Anki on your Mac (live sync)</h2>
       <p className="muted">Last sync: {meta ? formatTime(meta.syncedAt) : 'never'}</p>
       {meta && (
         <dl className="counts">
@@ -232,6 +234,79 @@ function Appearance() {
           <button key={value} type="button" className="chip" aria-pressed={theme === value} onClick={() => { set(value); setTheme(value) }}>{label}</button>
         ))}
       </div>
+    </section>
+  )
+}
+
+/** AnkiMobile has no API, so the phone exchanges files with Anki: import an export, export words I added. */
+function AnkiPhone() {
+  const [meta, setMeta] = useState<SyncMeta | null>(cachedMeta)
+  const [busy, setBusy] = useState(false)
+  const [status, setStatus] = useState<string | null>(null)
+  const [error, setError] = useState<string | null>(null)
+  const [pending, setPending] = useState(() => newCards().filter((c) => !c.exported).length)
+
+  async function onFile(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0]
+    e.target.value = ''
+    if (!file) return
+    setBusy(true)
+    setError(null)
+    setStatus('Reading your deck…')
+    try {
+      const r = await importAnkiFile(file)
+      setMeta(cachedMeta())
+      setStatus(
+        r.hasScheduling
+          ? `Imported ${r.total} words.`
+          : `Imported ${r.total} words, but the export had no review history, so every word counts as new. Export again with "Include scheduling information" on.`,
+      )
+    } catch (err) {
+      setStatus(null)
+      setError(err instanceof Error ? err.message : String(err))
+    } finally {
+      setBusy(false)
+    }
+  }
+
+  async function onExport() {
+    const n = await exportNewCards()
+    setPending(0)
+    setStatus(n ? `Exported ${n} word${n === 1 ? '' : 's'}. Import the file into Anki (Hanzi, Pinyin, English).` : 'Nothing new to export.')
+  }
+
+  return (
+    <section className="card">
+      <h2 className="card-title">Anki</h2>
+      {meta && (
+        <>
+          <p className="muted">Word list from {new Date(meta.syncedAt).toLocaleDateString(undefined, { dateStyle: 'medium' })}: {meta.total} words</p>
+          <dl className="counts">
+            {MASTERIES.map((m) => (
+              <div key={m}><dt>{MASTERY_LABELS[m]}</dt><dd>{meta.counts[m]}</dd></div>
+            ))}
+          </dl>
+        </>
+      )}
+      <details className="howto">
+        <summary>How to export from AnkiMobile</summary>
+        <ol>
+          <li>In AnkiMobile, open the deck list and tap the ⚙ next to your deck, then <strong>Export</strong>.</li>
+          <li>Choose <strong>Anki Deck Package (.apkg)</strong> and turn on <strong>Include scheduling information</strong>.</li>
+          <li>Tap Export, then <strong>Save to Files</strong>.</li>
+          <li>Come back here and tap <strong>Import Anki export</strong>. Do this again whenever you want your progress updated.</li>
+        </ol>
+      </details>
+      <label className="btn btn-primary file-btn">
+        {busy ? 'Importing…' : 'Import Anki export'}
+        <input type="file" accept=".apkg,.colpkg,application/octet-stream,application/zip" onChange={(e) => void onFile(e)} disabled={busy} hidden />
+      </label>
+      <button type="button" className="btn btn-secondary" onClick={() => void onExport()}>
+        Export for Anki{pending ? ` (${pending} new)` : ''}
+      </button>
+      <p className="muted small">Words you add with + Anki are kept here until you export them. Anki imports the file as Hanzi, Pinyin, English.</p>
+      {status && <p className="muted" role="status">{status}</p>}
+      {error && <p className="error" role="alert">{error}</p>}
     </section>
   )
 }

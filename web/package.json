@@ -12,15 +12,19 @@
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.128.0",
+    "fflate": "^0.8.3",
+    "fzstd": "^0.1.1",
     "microsoft-cognitiveservices-speech-sdk": "^1.51.0",
     "pinyin-pro": "^3.29.4",
     "react": "^19.2.8",
-    "react-dom": "^19.2.8"
+    "react-dom": "^19.2.8",
+    "sql.js": "^1.14.2"
   },
   "devDependencies": {
     "@types/node": "^24.13.3",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.7",
+    "@types/sql.js": "^1.4.11",
     "@vitejs/plugin-react": "^6.1.1",
     "oxlint": "^1.81.0",
     "typescript": "~6.0.2",

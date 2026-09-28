@@ -57,6 +57,13 @@ The phone uses whatever was last synced; cards added on the phone are queued and
 4. **Go to resource → Keys and Endpoint**: copy **KEY 1** and the **Location/Region** (`uksouth`).
 5. In the app: Settings → paste the key into **Azure Speech key**, check the region says `uksouth`. Do this on each device.
 
+## Anki on the iPhone
+AnkiMobile has no API, so the app swaps files with it:
+1. **Anki → app:** in AnkiMobile, deck ⚙ → Export → *Anki Deck Package*, with **Include scheduling information** on →
+   Save to Files. In the app: Settings → Anki → **Import Anki export**. Repeat whenever you want your progress updated.
+2. **App → Anki:** words you tap **+ Anki** on are kept in the app; Settings → **Export for Anki** downloads them as a text
+   file (Hanzi, Pinyin, English) to import into Anki.
+
 ## My Anki deck
 `web/public/deck.json` and `content/words.json` come from my deck export:
 `python3 scripts/import_deck.py path/to/deck.apkg` (or send the .apkg to Claude). The app uses the deck for

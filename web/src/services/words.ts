@@ -35,6 +35,7 @@ export function studyWords(lexicon: Lexicon): string[] {
 
 /** Fetch the exported deck that ships with the app (refreshes when I send a new export). */
 export async function loadDeck(): Promise<void> {
+  if (load<boolean>('deckImported', false)) return // I imported my own export: keep it
   try {
     const res = await fetch(`${import.meta.env.BASE_URL}deck.json`, { cache: 'no-cache' })
     const json = (await res.json()) as { words?: DeckWord[] }

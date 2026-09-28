@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import type { Token } from '../../chinese/tokens.ts'
 import { addCard } from '../../services/anki.ts'
-import { currentUser, isConfigured } from '../../services/firebase.ts'
 import { getKeys } from '../../services/keys.ts'
 import { glossFor } from '../../services/gloss.ts'
 import { rateForLevel, speak } from '../../services/tts.ts'
@@ -57,7 +56,7 @@ export default function WordSheet({ token, sentence, level, onGloss, onClose }: 
     try {
       const result = await addCard({ hanzi: token.text, pinyin: token.syllables.map((s) => s.pinyin), english: gloss })
       setAnkiStatus(
-        result === 'added' ? 'Added to Anki.' : result === 'duplicate' ? 'Already in Anki.' : 'Queued: it goes to Anki on your next sync.',
+        result === 'added' ? 'Added to Anki.' : result === 'duplicate' ? 'Already in Anki.' : 'Saved. Send it to Anki with Settings → Export for Anki.',
       )
     } catch (err) {
       setAnkiStatus(err instanceof Error ? err.message : String(err))
@@ -66,7 +65,7 @@ export default function WordSheet({ token, sentence, level, onGloss, onClose }: 
     }
   }
 
-  const canAdd = isConfigured && currentUser() !== null
+  const canAdd = true
 
   return (
     <>
@@ -93,9 +92,6 @@ export default function WordSheet({ token, sentence, level, onGloss, onClose }: 
             </button>
           )}
         </div>
-        {!inAnki && token.kind === 'word' && !canAdd && (
-          <p className="muted small">Sign in (Settings) to add words to Anki.</p>
-        )}
         {ankiStatus && <p className="muted small" role="status">{ankiStatus}</p>}
       </aside>
     </>
