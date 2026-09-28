@@ -29,7 +29,7 @@ export async function syncProfile(): Promise<void> {
   if (remote) save('speakerProfile', remote)
 }
 
-export type SyllableTone = { guess: ToneGuess; contour: number[] }
+export type SyllableTone = { guess: ToneGuess; probs: number[]; contour: number[] }
 
 /** Cut each syllable out of the recording (Azure's timings) and ask the tone model what I said. */
 export async function syllableTones(wav: Blob, chars: Pick<CharResult, 'offset' | 'duration'>[]): Promise<(SyllableTone | null)[] | null> {
@@ -42,7 +42,7 @@ export async function syllableTones(wav: Blob, chars: Pick<CharResult, 'offset' 
     const to = Math.min(samples.length, Math.round(((c.offset + c.duration + 20) / 1000) * TARGET_RATE))
     const clip = samples.subarray(from, to)
     const p = predict(clip, TARGET_RATE, profile)
-    return { guess: { tone: p.tone, confidence: p.confidence }, contour: normalise(contour(clip, TARGET_RATE), profile) }
+    return { guess: { tone: p.tone, confidence: p.confidence }, probs: p.probs, contour: normalise(contour(clip, TARGET_RATE), profile) }
   })
 }
 
@@ -57,7 +57,7 @@ export async function evenSplitTones(wav: Blob, syllables: number): Promise<(Syl
   return Array.from({ length: syllables }, (_, i) => {
     const clip = samples.subarray(Math.round(span[0] + i * size), Math.round(span[0] + (i + 1) * size))
     const p = predict(clip, TARGET_RATE, profile)
-    return { guess: { tone: p.tone, confidence: p.confidence }, contour: normalise(contour(clip, TARGET_RATE), profile) }
+    return { guess: { tone: p.tone, confidence: p.confidence }, probs: p.probs, contour: normalise(contour(clip, TARGET_RATE), profile) }
   })
 }
 

@@ -3,6 +3,7 @@ import type { Token } from '../../chinese/tokens.ts'
 import type { Recording } from '../../audio/recorder.ts'
 import HoldToTalk from '../../components/HoldToTalk.tsx'
 import { gradeParagraph, type ParagraphResult } from '../../grading/readAloud.ts'
+import { canRecognise } from '../../scoring/recognize.ts'
 import { getKeys } from '../../services/keys.ts'
 import { rateForLevel, speak } from '../../services/tts.ts'
 
@@ -20,14 +21,15 @@ type Props = {
 export default function ReadAloudSheet({ tokens, storyId, paragraph, level, result, onResult, onClose }: Props) {
   const [checking, setChecking] = useState(false)
   const [error, setError] = useState<string | null>(null)
-  const hasKey = Boolean(getKeys().azure)
+  const hasAzure = Boolean(getKeys().azure)
+  const canGrade = hasAzure || canRecognise()
   const text = tokens.map((t) => t.text).join('')
 
   async function grade(rec: Recording) {
     setChecking(true)
     setError(null)
     try {
-      onResult(await gradeParagraph(tokens, rec.wav, storyId, paragraph))
+      onResult(await gradeParagraph(tokens, rec, storyId, paragraph))
       navigator.vibrate?.(15)
     } catch (err) {
       setError(err instanceof Error ? err.message : String(err))
@@ -43,16 +45,17 @@ export default function ReadAloudSheet({ tokens, storyId, paragraph, level, resu
         <button type="button" className="sheet-close icon-btn" onClick={onClose} aria-label="Close">×</button>
         <h2 className="card-title">Read aloud</h2>
 
-        {!hasKey && (
+        {!canGrade && (
           <p className="muted">
-            Add your Azure Speech key in <a href="#settings">Settings</a> to have your reading checked.
+            This browser can't check speech by itself: add your Azure Speech key in <a href="#settings">Settings</a>.
           </p>
         )}
 
-        {hasKey && !result && !checking && (
+        {canGrade && !result && !checking && (
           <>
             <p className="muted">Read the paragraph out loud, then tap again.</p>
-            <HoldToTalk mode="toggle" onRecorded={grade} onError={setError} />
+            <HoldToTalk mode="toggle" listen={!hasAzure} onRecorded={grade} onError={setError} />
+            {!hasAzure && <p className="muted small">Free check of your sounds. An Azure key (Settings) adds tones and fluency.</p>}
           </>
         )}
 
@@ -62,7 +65,7 @@ export default function ReadAloudSheet({ tokens, storyId, paragraph, level, resu
           <>
             <dl className="counts counts-3">
               <div><dt>Accuracy</dt><dd>{result.scores.accuracy}</dd></div>
-              <div><dt>Fluency</dt><dd>{result.scores.fluency}</dd></div>
+              <div><dt>Fluency</dt><dd>{result.scores.fluency ?? '–'}</dd></div>
               <div><dt>Completeness</dt><dd>{result.scores.completeness}</dd></div>
             </dl>
             <p className="muted small">

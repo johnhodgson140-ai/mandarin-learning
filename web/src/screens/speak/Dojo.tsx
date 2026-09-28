@@ -2,8 +2,10 @@ import { useEffect, useState } from 'react'
 import type { Recording } from '../../audio/recorder.ts'
 import ContourChart from '../../components/ContourChart.tsx'
 import HoldToTalk from '../../components/HoldToTalk.tsx'
+import ScoreView from '../../components/ScoreView.tsx'
+import { scoreAndLog } from '../../scoring/attempt.ts'
+import type { SpeechScore } from '../../scoring/speechScore.ts'
 import { buildDojo, type DojoItem } from '../../grading/dojo.ts'
-import { gradeWord, type WordResult } from '../../grading/dojoGrade.ts'
 import { pairStats } from '../../grading/toneStats.ts'
 import { allAttempts } from '../../services/attempts.ts'
 import { load } from '../../services/storage.ts'
@@ -86,7 +88,7 @@ function Back() {
 
 function DojoCard({ item, onNext }: { item: DojoItem; onNext: (clean: boolean) => void }) {
   const [checking, setChecking] = useState(false)
-  const [result, setResult] = useState<WordResult | null>(null)
+  const [result, setResult] = useState<SpeechScore | null>(null)
   const [native, setNative] = useState<number[] | null>(null)
   const [error, setError] = useState<string | null>(null)
   const rate = rateForLevel(load('level', 1))
@@ -105,9 +107,9 @@ function DojoCard({ item, onNext }: { item: DojoItem; onNext: (clean: boolean) =
     setChecking(true)
     setError(null)
     try {
-      const r = await gradeWord(item, rec.wav)
+      const r = await scoreAndLog(item.word, syllables, rec, 'dojo')
       setResult(r)
-      navigator.vibrate?.(r.statuses.every((s) => s === 'ok') ? 10 : [10, 60, 10])
+      navigator.vibrate?.(r.overall >= 80 ? 10 : [10, 60, 10])
     } catch (err) {
       setError(err instanceof Error ? err.message : String(err))
     } finally {
@@ -120,7 +122,7 @@ function DojoCard({ item, onNext }: { item: DojoItem; onNext: (clean: boolean) =
       <div className="drill-card tone-colours">
         <p className="drill-hanzi zh">
           {syllables.map((s, i) => (
-            <span key={i} className={result && result.statuses[i] !== 'ok' ? `st-${result.statuses[i]}` : undefined}>{s.hanzi}</span>
+            <span key={i}>{s.hanzi}</span>
           ))}
         </p>
         <p className="drill-pinyin">
@@ -135,26 +137,12 @@ function DojoCard({ item, onNext }: { item: DojoItem; onNext: (clean: boolean) =
         <button type="button" className="btn btn-secondary" onClick={() => speak(item.word, rate)}>▶ Hear it</button>
       </div>
 
-      {!result && !checking && <HoldToTalk onRecorded={(r) => void grade(r)} onError={setError} />}
+      {!result && !checking && <HoldToTalk listen onRecorded={(r) => void grade(r)} onError={setError} />}
       {checking && <p className="muted" role="status">Checking…</p>}
 
       {result && (
         <section className="card fade-in">
-          <ul className="syllable-results tone-colours">
-            {syllables.map((s, i) => {
-              const heard = result.tones[i]?.guess.tone
-              return (
-                <li key={i}>
-                  <span className={`zh ${result.statuses[i] !== 'ok' ? `st-${result.statuses[i]}` : ''}`}>{s.hanzi}</span>{' '}
-                  <span className={`t${s.spoken}`}>{toneLabel(s.spoken)}</span>
-                  <span className="muted">
-                    {heard === undefined ? ' · not heard' : heard === s.spoken ? ' ✓' : ` · you said ${toneLabel(heard)}`}
-                    {result.accuracy[i] !== null && ` · ${Math.round(result.accuracy[i] ?? 0)}`}
-                  </span>
-                </li>
-              )
-            })}
-          </ul>
+          <ScoreView syllables={syllables} result={result} />
           <ContourChart
             mine={result.tones.map((t) => t?.contour ?? null)}
             target={syllables.map((s) => templateContour(s.spoken))}
@@ -162,7 +150,7 @@ function DojoCard({ item, onNext }: { item: DojoItem; onNext: (clean: boolean) =
           />
           <div className="sheet-actions">
             <button type="button" className="btn btn-secondary" onClick={() => setResult(null)}>Again</button>
-            <button type="button" className="btn btn-primary" onClick={() => onNext(result.statuses.every((s) => s === 'ok'))}>Next</button>
+            <button type="button" className="btn btn-primary" onClick={() => onNext(result.overall >= 80)}>Next</button>
           </div>
         </section>
       )}

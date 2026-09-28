@@ -10,7 +10,7 @@ export type { AttemptSyllable }
 
 export type Attempt = {
   id: string
-  type: 'read' | 'shadow' | 'dojo'
+  type: 'read' | 'shadow' | 'dojo' | 'card'
   refText: string
   storyId?: string
   paragraph?: number

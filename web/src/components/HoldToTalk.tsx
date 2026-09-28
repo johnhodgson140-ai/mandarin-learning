@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { preloadRecorder, Recorder, type Recording } from '../audio/recorder.ts'
+import { listen as startListening, type Listening } from '../scoring/recognize.ts'
 import './HoldToTalk.css'
 
 type Props = {
@@ -7,6 +8,8 @@ type Props = {
   onError: (message: string) => void
   /** 'hold' (default): hold to talk. 'toggle': tap to start, tap to stop (for reading a whole paragraph). */
   mode?: 'hold' | 'toggle'
+  /** Also run the browser's speech recogniser, for free pronunciation scoring. */
+  listen?: boolean
 }
 
 type Phase = 'idle' | 'starting' | 'recording'
@@ -14,9 +17,10 @@ type Phase = 'idle' | 'starting' | 'recording'
 const MIN_SECONDS = 0.3
 
 /** One large talk button (hold, or tap to start/stop) with a single-bar level meter. */
-export default function HoldToTalk({ onRecorded, onError, mode = 'hold' }: Props) {
+export default function HoldToTalk({ onRecorded, onError, mode = 'hold', listen = false }: Props) {
   const recorder = useRef<Recorder | null>(null)
   const starting = useRef<Promise<boolean> | null>(null)
+  const listening = useRef<Listening | null>(null)
   const live = useRef(false) // mic is actually capturing (a ref, so timers never read stale state)
   const [phase, setPhase] = useState<Phase>('idle')
   const [level, setLevel] = useState(0)
@@ -30,6 +34,7 @@ export default function HoldToTalk({ onRecorded, onError, mode = 'hold' }: Props
     if (recorder.current) return
     const rec = new Recorder({ onLevel: setLevel, onMaxLength: () => void end() })
     recorder.current = rec
+    listening.current = listen ? startListening() : null // must start inside the tap
     live.current = false
     setHint(null)
     setPhase('starting')
@@ -64,13 +69,16 @@ export default function HoldToTalk({ onRecorded, onError, mode = 'hold' }: Props
     if (!wasLive) {
       // Released before the mic was live (always the case on the first permission prompt).
       await rec.cancel()
+      listening.current?.abort()
       setHint('Microphone ready. Hold the button while you speak.')
       return
     }
     try {
       const result = await rec.stop()
+      const heard = await listening.current?.stop()
+      listening.current = null
       if (result.seconds < MIN_SECONDS) setHint('Too short. Hold the button while you speak.')
-      else callbacks.current.onRecorded(result)
+      else callbacks.current.onRecorded(heard?.length ? { ...result, heard } : result)
     } catch (err) {
       callbacks.current.onError(err instanceof Error ? err.message : String(err))
     }
@@ -88,6 +96,7 @@ export default function HoldToTalk({ onRecorded, onError, mode = 'hold' }: Props
       // Switching tabs mid-recording: release the microphone, keep nothing.
       const rec = recorder.current
       recorder.current = null
+      listening.current?.abort()
       void starting.current?.then(() => rec?.cancel())
     }
   }, [])

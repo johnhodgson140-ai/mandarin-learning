@@ -37,6 +37,7 @@
 }
 .drill-hanzi { font-size: 56px; line-height: 1.2; }
 .drill-pinyin { font-size: 22px; display: flex; gap: 0.3em; }
+.drill-english { font-size: 26px; line-height: 1.3; }
 
 .st-minor, .st-wrong { text-decoration-line: underline; text-decoration-thickness: 3px; text-underline-offset: 0.2em; }
 .st-minor { text-decoration-color: var(--minor); }

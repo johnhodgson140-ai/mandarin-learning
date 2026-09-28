@@ -6,6 +6,7 @@ import './speak/speak.css'
 const Dojo = lazy(() => import('./speak/Dojo.tsx'))
 const Calibrate = lazy(() => import('./speak/Calibrate.tsx'))
 const Missions = lazy(() => import('./speak/Missions.tsx'))
+const Cards = lazy(() => import('./speak/Cards.tsx'))
 const Mission = lazy(() => import('./speak/Mission.tsx'))
 
 export default function Speak() {
@@ -13,6 +14,7 @@ export default function Speak() {
   if (sub === 'dojo') return <Dojo />
   if (sub === 'calibrate') return <Calibrate />
   if (sub === 'missions') return <Missions />
+  if (sub === 'cards') return <Cards />
   if (sub === 'mission' && arg) return <Mission scenarioId={arg} />
   if (sub === 'free') return <Mission scenarioId="free" />
   return <Hub />
@@ -24,6 +26,10 @@ function Hub() {
     <>
       <h1>Speak</h1>
       <nav className="hub">
+        <a href="#speak/cards" className="hub-row">
+          <span className="hub-title">Say your cards</span>
+          <span className="muted">Flashcards you answer out loud, scored 1–100.</span>
+        </a>
         <a href="#speak/dojo" className="hub-row">
           <span className="hub-title">Tone Dojo</span>
           <span className="muted">A short drill on the tone pairs you miss most.</span>

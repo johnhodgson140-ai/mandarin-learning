@@ -50,6 +50,18 @@ Everything the app shows or says is built from **words I already know in Anki**.
 4. Merge → per syllable status: `ok` · `minor` (accuracy 60–79 or low-confidence tone) · `wrong` (accuracy < 60 or wrong tone, confident).
 5. Log every syllable result to `attempt_syllables` (feeds tone-pair heatmap + weak-spot selection).
 
+## 5b. Free scorer (no key needed)
+Each syllable gets a 1–100 score on a green → amber → red scale: **sounds** (the browser's own zh-CN speech recogniser, matched
+by tone-less pinyin so homophones count; Azure accuracy instead when there's a key) and **tone** (my tone model's probability for
+the right tone; neutral tones are judged on sounds only), weighted equally. Status: ≥80 ok · 60–79 minor · <60 wrong.
+Tapping a syllable shows free, rule-based tips (zh/z, ch/c, sh/s, j/q/x, r/l, n/l, aspiration, ü, -n/-ng, what each tone does);
+"Explain in detail" asks Claude (Haiku) when a key is set.
+
+## 5c. Say your cards
+Speaking flashcards from Anki words + a starter list + new words from stories and mission reports. Read mode (hanzi shown) or
+Recall mode (English shown). Leitner boxes: 80+ up a box, 60–79 stay, <60 back to box 1; boxes come back after 1/2/4/8/16 days.
+Anki remains the main SRS.
+
 ## 6. Tone model interface (built in M4, runs in the browser)
 Implementation (`web/src/tone`): YIN pitch tracking (10 ms hops, 70–500 Hz) → semitones → contour scaled to my calibrated range
 (5th–95th percentile of my voiced pitch, never narrower than 6 semitones) → compared with textbook tone shapes (Chao: 55, 35,
