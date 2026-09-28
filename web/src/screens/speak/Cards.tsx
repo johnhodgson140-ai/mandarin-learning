@@ -104,12 +104,12 @@ function CardView({ card, mode, onNext }: { card: Card; mode: Mode; onNext: (sco
     <>
       <div className="drill-card tone-colours">
         {revealed ? <p className="drill-hanzi zh">{card.hanzi}</p> : <p className="drill-english">{card.english || '(no meaning yet)'}</p>}
-        {revealed && card.english && <p className="muted">{card.english}</p>}
-        {result && (
+        {revealed && (
           <p className="drill-pinyin">
             {token.syllables.map((s, i) => <span key={i} className={`t${s.written}`}>{s.pinyin}</span>)}
           </p>
         )}
+        {revealed && card.english && <p className="muted">{card.english}</p>}
         <span className="muted small">{card.source === 'anki' ? 'Anki' : card.source === 'app' ? 'Starter words' : card.source === 'story' ? 'From a story' : 'From a mission'}</span>
         {(mode === 'read' || result) && (
           <button type="button" className="btn btn-secondary" onClick={() => speak(card.hanzi, rate)}>▶ Hear it</button>
