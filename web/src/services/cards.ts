@@ -1,5 +1,5 @@
 // My speaking deck: Anki words + a starter list + new words from stories and mission reports.
-import { mergeCards, pickRecallSession, pickSession, rateCard, type Card, type CardState, type Rating } from '../cards/srs.ts'
+import { DEFAULT_SCALE, mergeCards, pickRecallSession, pickSession, rateCard, type Card, type CardState, type IntervalScale, type Rating } from '../cards/srs.ts'
 import { STARTER_CARDS } from '../cards/starter.ts'
 import type { Session } from '../missions/logic.ts'
 import { currentUser, dbPut, isConfigured } from './firebase.ts'
@@ -48,7 +48,7 @@ export function learnOrder(): string[] {
 export function rateCardIn(mode: CardMode, hanzi: string, rating: Rating, score: number | null = null): void {
   migrate()
   const states = cardStates(mode)
-  states[hanzi] = rateCard(states[hanzi], rating, Date.now(), score)
+  states[hanzi] = rateCard(states[hanzi], rating, Date.now(), score, intervalScale())
   save(STATE_KEY[mode], states)
   const order = learnOrder()
   if (mode === 'learn' && rating >= 2 && !order.includes(hanzi)) save('learnOrder', [...order, hanzi])
@@ -57,6 +57,15 @@ export function rateCardIn(mode: CardMode, hanzi: string, rating: Rating, score:
     if (mode === 'learn') void dbPut('learnOrder', learnOrder()).catch(() => {})
   }
 }
+
+/** My interval multipliers for Hard / Good / Easy (Settings → Flashcards). */
+export const intervalScale = () => ({ ...DEFAULT_SCALE, ...load<Partial<IntervalScale>>('cardIntervals', {}) })
+export const setIntervalScale = (scale: IntervalScale) => save('cardIntervals', scale)
+
+/** Rating buttons in colour (red / amber / green / blue) or plain. */
+export type ButtonColours = 'colour' | 'plain'
+export const buttonColours = () => load<ButtonColours>('cardColours', 'colour')
+export const setButtonColours = (c: ButtonColours) => save('cardColours', c)
 
 /** A new session for a mode: due reviews first, then new words (Recall's only as far as Learn has got). */
 export function newSession(mode: CardMode, newPerSession = 4): Card[] {

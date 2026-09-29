@@ -81,3 +81,5 @@
 .ear-word { font-size: 28px; }
 .ear-right { color: var(--ok); font-weight: 600; }
 .ear-wrong { color: var(--wrong); font-weight: 600; }
+
+.cards-bar { display: flex; align-items: center; justify-content: space-between; gap: var(--space); }

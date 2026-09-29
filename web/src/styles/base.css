@@ -173,3 +173,14 @@ a { color: var(--accent); }
   color: var(--text);
 }
 input, textarea { font-size: max(16px, 1em); }
+
+/* Rating buttons in colour: Again red, Hard amber, Good green, Easy blue (the app's muted tones). */
+.rate-btn { --c: var(--accent); background: color-mix(in srgb, var(--c) 12%, var(--surface)); border: 1px solid color-mix(in srgb, var(--c) 55%, transparent); color: var(--text); }
+.rate-btn .rate-when { color: var(--c); opacity: 1; font-weight: 600; }
+.rate-1 { --c: var(--wrong); }
+.rate-2 { --c: var(--minor); }
+.rate-3 { --c: var(--ok); }
+.rate-4 { --c: var(--t4); }
+.rate-btn.suggested { background: var(--c); border-color: var(--c); color: var(--on-accent); }
+.rate-btn.suggested .rate-when { color: inherit; }
+.rate-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--c); vertical-align: middle; }
