@@ -1,13 +1,12 @@
 // Local notifications (iOS app): word of the day, practice reminder with the cards due, streak saver.
 // Rescheduled whenever the app opens, after each practice, and when the settings change.
 import { LocalNotifications } from '@capacitor/local-notifications'
-import { pickSession } from '../cards/srs.ts'
 import { buildParagraph } from '../chinese/tokens.ts'
 import { log } from '../debug/log.ts'
 import { weakest, type EarStats } from '../ears/logic.ts'
 import { DEFAULT_NOTIFY, IDS, planNotifications, type NotifySettings, type Word } from '../notify/plan.ts'
 import { activeDays, dayKey } from '../progress/logic.ts'
-import { allCards, cardStates } from '../services/cards.ts'
+import { dueCounts } from '../services/cards.ts'
 import { gatherActivity } from '../services/progress.ts'
 import { load, save } from '../services/storage.ts'
 import { getLexicon } from '../services/words.ts'
@@ -60,7 +59,7 @@ export async function refreshNotifications(): Promise<void> {
     const plan = planNotifications({
       now: new Date(),
       settings: getNotifySettings(),
-      dueCount: pickSession(allCards(), cardStates(), { size: 200, newPerSession: 0 }).length,
+      dueCount: dueCounts().learn + dueCounts().recall,
       practisedToday: activeDays(activity).has(dayKey(Date.now())),
       words: words(),
       toneTip: toneTip(),

@@ -39,6 +39,8 @@ void navigator.storage?.persist?.().catch(() => false)
 pruneRecordings().catch(() => {})
 // Today's stories and missions, whichever screen the app opens on.
 void loadDaily()
+// A voice calibrated on my other device (only once I'm signed in to Firebase).
+void import('./services/tone.ts').then((m) => m.syncProfile()).catch(() => {})
 // iOS app: keep notifications current (cards due, streak) and open the right screen when one is tapped.
 if (isNativeApp())
   void import('./native/notifications.ts').then((n) => {

@@ -1,5 +1,5 @@
 // My speaking deck: Anki words + a starter list + new words from stories and mission reports.
-import { mergeCards, nextState, type Card, type CardState } from '../cards/srs.ts'
+import { mergeCards, nextState, orderFromStates, pickRecallSession, pickSession, type Card, type CardState } from '../cards/srs.ts'
 import { STARTER_CARDS } from '../cards/starter.ts'
 import type { Session } from '../missions/logic.ts'
 import { currentUser, dbPut, isConfigured } from './firebase.ts'
@@ -18,11 +18,66 @@ export function allCards(): Card[] {
   return mergeCards(anki, stories, missions, STARTER_CARDS)
 }
 
-export const cardStates = () => load<Record<string, CardState>>('cardStates', {})
+/** Two card modes on the same words: Learn (中 → English, where I meet a word) and Recall (English → 中, from memory). */
+export type CardMode = 'learn' | 'recall'
 
-export function recordCard(hanzi: string, score: number): void {
-  const states = cardStates()
+const STATE_KEY: Record<CardMode, string> = { learn: 'cardStates', recall: 'recallStates' }
+
+/** Learn keeps the states saved before Recall existed. */
+export const cardStates = (mode: CardMode = 'learn') => load<Record<string, CardState>>(STATE_KEY[mode], {})
+
+/** The words I've done in Learn, in the order I first did them: how far Recall may go. */
+export function learnOrder(): string[] {
+  const saved = load<string[] | null>('learnOrder', null)
+  if (saved) return saved
+  const derived = orderFromStates(allCards(), cardStates('learn'))
+  save('learnOrder', derived)
+  return derived
+}
+
+export function recordCard(hanzi: string, score: number, mode: CardMode = 'learn'): void {
+  const states = cardStates(mode)
   states[hanzi] = nextState(states[hanzi], score)
-  save('cardStates', states)
-  if (isConfigured && currentUser()) void dbPut('cardStates', states).catch(() => {})
+  save(STATE_KEY[mode], states)
+  if (mode === 'learn') {
+    const order = learnOrder()
+    if (!order.includes(hanzi)) save('learnOrder', [...order, hanzi])
+  }
+  if (isConfigured && currentUser()) {
+    void dbPut(STATE_KEY[mode], states).catch(() => {})
+    if (mode === 'learn') void dbPut('learnOrder', learnOrder()).catch(() => {})
+  }
+}
+
+/** A new session for a mode: due reviews first, then new words (Recall's only as far as Learn has got). */
+export function newSession(mode: CardMode, newPerSession = 4): Card[] {
+  return mode === 'learn'
+    ? pickSession(allCards(), cardStates('learn'), { newPerSession })
+    : pickRecallSession(allCards(), cardStates('recall'), learnOrder(), { newPerSession })
+}
+
+/** Reviews due now in each mode, plus (for Recall) words Learn has unlocked but Recall hasn't met yet. */
+export function dueCounts(): Record<CardMode, number> {
+  const cards = allCards()
+  const recall = cardStates('recall')
+  return {
+    learn: pickSession(cards, cardStates('learn'), { size: 9999, newPerSession: 0 }).length,
+    recall: pickRecallSession(cards, recall, learnOrder(), { size: 9999, newPerSession: 9999 }).length,
+  }
+}
+
+/** Where I got to in each mode: restored when I come back (the same day) or switch modes. */
+export type SavedSession = { day: string; hanzi: string[]; index: number; scores: number[] }
+const today = () => new Date().toDateString()
+
+export function resumeSession(mode: CardMode): { cards: Card[]; index: number; scores: number[] } {
+  const saved = load<SavedSession | null>(`cardSession-${mode}`, null)
+  const byHanzi = new Map(allCards().map((c) => [c.hanzi, c]))
+  const cards = saved?.day === today() ? saved.hanzi.flatMap((h) => byHanzi.get(h) ?? []) : []
+  if (saved && cards.length === saved.hanzi.length && saved.index < cards.length) return { cards, index: saved.index, scores: saved.scores }
+  return { cards: newSession(mode), index: 0, scores: [] }
+}
+
+export function keepSession(mode: CardMode, cards: Card[], index: number, scores: number[]): void {
+  save(`cardSession-${mode}`, { day: today(), hanzi: cards.map((c) => c.hanzi), index, scores } satisfies SavedSession)
 }

@@ -358,7 +358,7 @@ function Notifications() {
   }
   const rows: [keyof NotifySettings, string, string][] = [
     ['wordOfDay', 'Word of the day', 'A word from your deck with pinyin and meaning, and a tone tip.'],
-    ['practice', 'Practice reminder', 'With how many cards are due.'],
+    ['practice', 'Practice reminder', 'Tells you how many cards are due.'],
     ['streak', 'Streak saver', "Only on days you haven't practised yet."],
   ]
   return (

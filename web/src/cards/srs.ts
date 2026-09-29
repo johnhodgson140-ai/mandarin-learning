@@ -101,6 +101,35 @@ export function pickSession(
   return [...due.slice(0, size - Math.min(newPerSession, fresh.length)), ...fresh].slice(0, size)
 }
 
+/**
+ * Recall (English → Chinese): Recall reviews that are due first, then words I've already done in Learn but not yet in
+ * Recall, strictly in the order I first did them in Learn. A word Learn hasn't reached never appears.
+ */
+export function pickRecallSession(
+  cards: Card[],
+  recall: Record<string, CardState>,
+  learnOrder: readonly string[],
+  { size = 10, newPerSession = 4, now = Date.now() } = {},
+): Card[] {
+  const byHanzi = new Map(cards.map((c) => [c.hanzi, c]))
+  const unlocked = learnOrder.flatMap((h) => byHanzi.get(h) ?? [])
+  const due = unlocked
+    .filter((c) => recall[c.hanzi] && recall[c.hanzi].due <= now)
+    .sort((a, b) => recallNow(recall[a.hanzi], now) - recallNow(recall[b.hanzi], now) || recall[a.hanzi].due - recall[b.hanzi].due)
+  const fresh = unlocked.filter((c) => !recall[c.hanzi]).slice(0, newPerSession)
+  return [...due.slice(0, size - fresh.length), ...fresh].slice(0, size)
+}
+
+/** Words in the order I first did them in Learn, for states saved before that order was kept (oldest review first). */
+export function orderFromStates(cards: Card[], states: Record<string, CardState>): string[] {
+  const first = (s: CardState) => s.last ?? s.due
+  return cards
+    .map((c, i) => ({ c, i }))
+    .filter(({ c }) => states[c.hanzi])
+    .sort((a, b) => first(states[a.c.hanzi]) - first(states[b.c.hanzi]) || a.i - b.i)
+    .map(({ c }) => c.hanzi)
+}
+
 /** Merge card sources, first one wins for duplicates. */
 export function mergeCards(...lists: Card[][]): Card[] {
   const seen = new Map<string, Card>()

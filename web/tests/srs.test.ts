@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
-import { mergeCards, nextState, pickSession, ratingFor, retrievability, RETENTION, type Card } from '../src/cards/srs.ts'
+import { mergeCards, nextState, orderFromStates, pickRecallSession, pickSession, ratingFor, retrievability, RETENTION, type Card } from '../src/cards/srs.ts'
 
 const DAY = 24 * 60 * 60 * 1000
 const now = 1_000_000_000_000
@@ -47,4 +47,19 @@ test('pickSession: due cards first by box, then a few new ones, Anki words befor
 test('mergeCards keeps the first source for duplicates', () => {
   const merged = mergeCards([{ hanzi: '你好', english: 'hi (anki)', source: 'anki' }], [{ hanzi: '你好', english: 'hello', source: 'app' }, { hanzi: '谢谢', english: 'thanks', source: 'app' }])
   assert.deepEqual(merged.map((c) => `${c.hanzi}:${c.source}`), ['你好:anki', '谢谢:app'])
+})
+
+test('Recall follows Learn: only words done in Learn, in that order, new ones after due reviews', () => {
+  const card = (hanzi: string) => ({ hanzi, english: hanzi, source: 'anki' as const })
+  const cards = ['飞机', '中国', '铅笔', '你好', '再见'].map(card)
+  const learnOrder = ['飞机', '中国', '铅笔', '你好']
+  // Nothing done in Recall yet: starts at 飞机, stops at 你好 (再见 not reached in Learn).
+  assert.deepEqual(pickRecallSession(cards, {}, learnOrder, { newPerSession: 10 }).map((c) => c.hanzi), learnOrder)
+  // Due Recall reviews come first; then the next new word in Learn order.
+  const now = Date.UTC(2026, 8, 29)
+  const recall = { 飞机: { due: now - 1, lastScore: 50, seen: 1, stability: 1, difficulty: 5, last: now - 86400000 } }
+  assert.deepEqual(pickRecallSession(cards, recall, learnOrder, { newPerSession: 1, now }).map((c) => c.hanzi), ['飞机', '中国'])
+  // Old states without an order: oldest review first.
+  const states = { 中国: { due: 5, lastScore: 90, seen: 1, last: 2 }, 飞机: { due: 5, lastScore: 90, seen: 1, last: 1 } }
+  assert.deepEqual(orderFromStates(cards, states), ['飞机', '中国'])
 })
