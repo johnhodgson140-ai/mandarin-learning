@@ -1,0 +1,126 @@
+[
+  {
+    "id": "L3-m-bargain", "level": 3, "title": "Bargaining at the market", "role": "摊主",
+    "goal": "Haggle for a vintage leather bag at a market stall.",
+    "steps": [
+      { "partner_zh": "随便看看，这些都是老货。", "partner_en": "Have a look, these are all old pieces.", "prompt_en": "Ask how much the brown leather bag is.",
+        "answers_zh": ["那个棕色的皮包多少钱？", "请问这个皮包怎么卖？"], "answers_en": ["How much is that brown leather bag?", "How much is this leather bag?"] },
+      { "partner_zh": "这个是八十年代的，八百块。", "partner_en": "This one's from the eighties. Eight hundred.", "prompt_en": "Point out it's a bit worn and offer four hundred.",
+        "answers_zh": ["有点儿旧了，四百怎么样？", "这里都磨坏了，四百块吧。"], "answers_en": ["It's a bit worn, how about four hundred?", "It's worn here; four hundred."] },
+      { "partner_zh": "四百太少了，我进货都不止这个价。", "partner_en": "Four hundred's too little; I paid more than that for it.", "prompt_en": "Say you're a student and offer five hundred as your final price.",
+        "answers_zh": ["我是学生，五百，不能再多了。", "五百吧，这是我最后的价格。"], "answers_en": ["I'm a student; five hundred, I can't go higher.", "Five hundred, that's my final price."] },
+      { "partner_zh": "唉，六百，你拿走。", "partner_en": "Sigh, six hundred and it's yours.", "prompt_en": "Pretend to walk away politely.",
+        "answers_zh": ["那算了，我再看看别的。", "太贵了，我去别家看看。"], "answers_en": ["Never mind, I'll look at other things.", "Too expensive, I'll try elsewhere."] },
+      { "partner_zh": "好好好，五百五，真的不能再少了！", "partner_en": "Fine, fine, five-fifty, I really can't go lower!", "prompt_en": "Accept the deal.",
+        "answers_zh": ["成交！", "好吧，五百五就五百五。"], "answers_en": ["Deal!", "Alright, five-fifty it is."] }
+    ],
+    "closing_zh": "你真会讲价！下次再来啊。", "closing_en": "You really know how to haggle! Come again."
+  },
+  {
+    "id": "L3-m-doctor", "level": 3, "title": "Seeing a doctor", "role": "医生",
+    "goal": "Describe your symptoms and understand the advice.",
+    "steps": [
+      { "partner_zh": "你好，哪里不舒服？", "partner_en": "Hello, what seems to be the problem?", "prompt_en": "Say your stomach has hurt since last night.",
+        "answers_zh": ["我从昨天晚上开始肚子疼。", "昨天晚上起肚子一直疼。"], "answers_en": ["My stomach has hurt since last night.", "My stomach has been hurting since last night."] },
+      { "partner_zh": "昨天吃了什么？", "partner_en": "What did you eat yesterday?", "prompt_en": "Say you had spicy hotpot and a cold drink.",
+        "answers_zh": ["吃了很辣的火锅，还喝了冰饮料。", "我吃了火锅，喝了冰的。"], "answers_en": ["Very spicy hotpot, and a cold drink.", "I had hotpot and something iced."] },
+      { "partner_zh": "有没有拉肚子？", "partner_en": "Any diarrhoea?", "prompt_en": "Say yes, three times this morning.",
+        "answers_zh": ["有，今天早上拉了三次。", "拉了，早上三次。"], "answers_en": ["Yes, three times this morning.", "Yes, three times in the morning."] },
+      { "partner_zh": "应该是肠胃炎。这几天吃清淡一点儿。", "partner_en": "It's probably gastroenteritis. Eat plain food for a few days.", "prompt_en": "Ask whether you need to take medicine.",
+        "answers_zh": ["需要吃药吗？", "要不要吃什么药？"], "answers_en": ["Do I need medicine?", "Should I take any medicine?"] },
+      { "partner_zh": "我给你开一点儿药，一天三次。", "partner_en": "I'll prescribe something; three times a day.", "prompt_en": "Ask when you can eat spicy food again.",
+        "answers_zh": ["什么时候可以吃辣的？", "我多久以后能吃辣？"], "answers_en": ["When can I eat spicy food?", "How long until I can have spicy food?"] }
+    ],
+    "closing_zh": "至少一个星期以后。好好休息！", "closing_en": "At least a week. Get some rest!"
+  },
+  {
+    "id": "L3-m-landlord", "level": 3, "title": "Calling the landlord", "role": "房东",
+    "goal": "Report a broken water heater and arrange a repair.",
+    "steps": [
+      { "partner_zh": "喂，你好，有什么事吗？", "partner_en": "Hello, what's up?", "prompt_en": "Say the water heater is broken and there's no hot water.",
+        "answers_zh": ["热水器坏了，没有热水。", "家里的热水器坏了，不能洗澡。"], "answers_en": ["The water heater's broken, no hot water.", "The water heater's broken; I can't shower."] },
+      { "partner_zh": "什么时候坏的？", "partner_en": "When did it break?", "prompt_en": "Say it stopped working the day before yesterday.",
+        "answers_zh": ["前天就不能用了。", "从前天开始就坏了。"], "answers_en": ["It stopped working the day before yesterday.", "It's been broken since the day before yesterday."] },
+      { "partner_zh": "我找师傅明天下午去看看，你在家吗？", "partner_en": "I'll get a repairman to come tomorrow afternoon. Will you be in?", "prompt_en": "Say you have class in the afternoon; ask if the morning works.",
+        "answers_zh": ["我下午有课，上午可以吗？", "下午不在，上午行不行？"], "answers_en": ["I have class in the afternoon; is the morning OK?", "I'm out in the afternoon; does the morning work?"] },
+      { "partner_zh": "行，那就明天上午十点。", "partner_en": "Fine, ten tomorrow morning then.", "prompt_en": "Ask who pays for the repair.",
+        "answers_zh": ["修理费谁付？", "请问修的钱是您付吗？"], "answers_en": ["Who pays for the repair?", "Will you be paying for the repair?"] }
+    ],
+    "closing_zh": "放心，这个我来付。", "closing_en": "Don't worry, I'll pay for that."
+  },
+  {
+    "id": "L3-m-restaurant", "level": 3, "title": "Dinner with friends", "role": "服务员",
+    "goal": "Order several dishes for a group, then ask for a doggy bag.",
+    "steps": [
+      { "partner_zh": "几位要点什么？", "partner_en": "What would you all like?", "prompt_en": "Ask what the restaurant's speciality is.",
+        "answers_zh": ["你们这儿的招牌菜是什么？", "有什么推荐的吗？"], "answers_en": ["What's your signature dish?", "Anything you'd recommend?"] },
+      { "partner_zh": "我们的红烧肉和酸菜鱼都很有名。", "partner_en": "Our braised pork and pickled-cabbage fish are both famous.", "prompt_en": "Order both, plus a vegetable dish.",
+        "answers_zh": ["那两个都要，再来一个青菜。", "红烧肉、酸菜鱼，再加一个炒青菜。"], "answers_en": ["We'll have both, plus a greens dish.", "Braised pork, pickled fish, and stir-fried greens."] },
+      { "partner_zh": "酸菜鱼要辣的吗？", "partner_en": "Would you like the fish spicy?", "prompt_en": "Say medium spicy, because one friend can't eat very spicy food.",
+        "answers_zh": ["中辣吧，我朋友不太能吃辣。", "微辣就行，有人怕辣。"], "answers_en": ["Medium, my friend can't handle much spice.", "Mild is fine, someone's scared of spice."] },
+      { "partner_zh": "吃得怎么样？还需要什么吗？", "partner_en": "How was everything? Need anything else?", "prompt_en": "Say it was great; ask for the bill and a box for leftovers.",
+        "answers_zh": ["很好吃！买单，再帮我们打包。", "太好吃了。麻烦打包，然后买单。"], "answers_en": ["Delicious! The bill, and could you box this up?", "So good. Please box this up, then the bill."] }
+    ],
+    "closing_zh": "好的，马上来。", "closing_en": "Sure, right away."
+  },
+  {
+    "id": "L3-m-gym", "level": 3, "title": "Joining a gym", "role": "健身房销售",
+    "goal": "Ask about membership and avoid being upsold.",
+    "steps": [
+      { "partner_zh": "你好！想了解一下我们的会员卡吗？", "partner_en": "Hi! Want to hear about our memberships?", "prompt_en": "Ask how much a monthly card costs.",
+        "answers_zh": ["月卡多少钱？", "一个月的卡怎么收费？"], "answers_en": ["How much is a monthly card?", "What's the charge for a month?"] },
+      { "partner_zh": "月卡三百，但是年卡更划算，只要两千。", "partner_en": "Monthly is 300, but the annual card is better value, just 2,000.", "prompt_en": "Say you'd like to try one month first.",
+        "answers_zh": ["我想先试一个月。", "先办月卡吧，看看习惯不习惯。"], "answers_en": ["I'd like to try one month first.", "Monthly first; let's see if I get used to it."] },
+      { "partner_zh": "我们还有私教课，第一节免费。", "partner_en": "We also have personal training; the first session is free.", "prompt_en": "Ask if you have to buy more sessions after the free one.",
+        "answers_zh": ["免费课以后一定要买吗？", "上完免费的，必须继续买吗？"], "answers_en": ["Do I have to buy more after the free one?", "After the free session, must I keep buying?"] },
+      { "partner_zh": "不一定，你自己决定。", "partner_en": "Not necessarily, it's up to you.", "prompt_en": "Say fine, you'll sign up for the monthly card today.",
+        "answers_zh": ["好，那我今天办月卡。", "行，今天先办一张月卡。"], "answers_en": ["OK, I'll get the monthly card today.", "Fine, a monthly card for today."] }
+    ],
+    "closing_zh": "好的，请填一下这张表。", "closing_en": "Great, please fill in this form."
+  },
+  {
+    "id": "L3-m-lost", "level": 3, "title": "Lost property", "role": "地铁工作人员",
+    "goal": "Report a bag you left on the metro.",
+    "steps": [
+      { "partner_zh": "您好，需要帮忙吗？", "partner_en": "Hello, do you need help?", "prompt_en": "Say you left your bag on the train.",
+        "answers_zh": ["我把包忘在地铁上了。", "我的包落在车上了。"], "answers_en": ["I left my bag on the metro.", "I left my bag on the train."] },
+      { "partner_zh": "是几号线？大概几点？", "partner_en": "Which line? Roughly what time?", "prompt_en": "Say line 2, about twenty minutes ago.",
+        "answers_zh": ["二号线，大概二十分钟以前。", "二号线，二十分钟前下的车。"], "answers_en": ["Line 2, about twenty minutes ago.", "Line 2, I got off twenty minutes ago."] },
+      { "partner_zh": "包是什么样子的？", "partner_en": "What does the bag look like?", "prompt_en": "Say it's a black backpack with a laptop in it.",
+        "answers_zh": ["是一个黑色的双肩包，里面有电脑。", "黑色的背包，里面有一台笔记本电脑。"], "answers_en": ["A black backpack with a computer inside.", "A black rucksack with a laptop in it."] },
+      { "partner_zh": "请留一下您的电话，找到了马上通知您。", "partner_en": "Please leave your number; we'll tell you as soon as it's found.", "prompt_en": "Give your number and ask how long it usually takes.",
+        "answers_zh": ["好的。一般要多长时间？", "我的电话在这儿。大概要多久？"], "answers_en": ["OK. How long does it usually take?", "Here's my number. About how long?"] }
+    ],
+    "closing_zh": "一般一两个小时就有消息。", "closing_en": "Usually there's news within an hour or two."
+  },
+  {
+    "id": "L3-m-footballbar", "level": 3, "title": "Debating a match", "role": "球迷",
+    "goal": "Argue about a penalty decision with another fan.",
+    "steps": [
+      { "partner_zh": "刚才那个点球绝对不应该给！", "partner_en": "That penalty just now should never have been given!", "prompt_en": "Disagree: say you think it was a foul.",
+        "answers_zh": ["我觉得是犯规啊。", "我不同意，那明明是犯规。"], "answers_en": ["I think it was a foul.", "I disagree, it was clearly a foul."] },
+      { "partner_zh": "他自己摔倒的，根本没碰到！", "partner_en": "He fell over on his own, there was no contact!", "prompt_en": "Say the replay shows he touched his leg.",
+        "answers_zh": ["你看回放，他碰到腿了。", "回放里很清楚，他踢到了对方的腿。"], "answers_en": ["Watch the replay, he touched the leg.", "The replay's clear: he kicked the other player's leg."] },
+      { "partner_zh": "好吧……可是裁判今天真的很偏心。", "partner_en": "Fine... but the ref's been really biased today.", "prompt_en": "Half-agree, and say the first half was worse.",
+        "answers_zh": ["这个我同意，上半场更差。", "有一点儿，上半场判得更不公平。"], "answers_en": ["That I agree with; the first half was worse.", "A bit; the first half was even less fair."] },
+      { "partner_zh": "你觉得最后谁会赢？", "partner_en": "Who do you think will win in the end?", "prompt_en": "Predict a two-one win for your team.",
+        "answers_zh": ["我觉得我们二比一赢。", "我们会赢，二比一。"], "answers_en": ["I think we'll win two-one.", "We'll win, two-one."] }
+    ],
+    "closing_zh": "那我们打个赌，输了请喝啤酒！", "closing_en": "Let's bet on it then: loser buys the beer!"
+  },
+  {
+    "id": "L3-m-colleague", "level": 3, "title": "Asking a colleague for help", "role": "同事",
+    "goal": "Politely ask a colleague to explain a spreadsheet.",
+    "steps": [
+      { "partner_zh": "怎么了？看你好像很着急。", "partner_en": "What's up? You look stressed.", "prompt_en": "Say you don't understand this spreadsheet and ask if they have time.",
+        "answers_zh": ["这个表格我看不懂，你现在有空吗？", "不好意思，这个表我不太明白，能帮我看看吗？"], "answers_en": ["I can't make sense of this spreadsheet; are you free now?", "Sorry, I don't really get this sheet; could you take a look?"] },
+      { "partner_zh": "可以，哪里不明白？", "partner_en": "Sure, which part?", "prompt_en": "Ask why the total in this column is different from last month.",
+        "answers_zh": ["这一列的总数为什么和上个月不一样？", "为什么这里的合计跟上个月不同？"], "answers_en": ["Why is this column's total different from last month?", "Why doesn't this total match last month?"] },
+      { "partner_zh": "因为这个月多了两笔退款。", "partner_en": "Because there were two extra refunds this month.", "prompt_en": "Say you understand now, and ask where the refunds are recorded.",
+        "answers_zh": ["明白了。退款记在哪儿？", "原来是这样，退款在哪一页？"], "answers_en": ["Got it. Where are refunds recorded?", "I see. Which sheet are the refunds on?"] },
+      { "partner_zh": "在第二页，我给你标出来。", "partner_en": "On the second sheet; I'll highlight it for you.", "prompt_en": "Thank them and offer to buy them a coffee.",
+        "answers_zh": ["太感谢了，我请你喝咖啡！", "谢谢你，下午我请你喝咖啡吧。"], "answers_en": ["Thanks so much, coffee's on me!", "Thanks, let me buy you a coffee this afternoon."] }
+    ],
+    "closing_zh": "那我就不客气了！", "closing_en": "Then I won't say no!"
+  }
+]
