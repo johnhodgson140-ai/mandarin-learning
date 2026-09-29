@@ -133,5 +133,3 @@ export function validatePack(v: unknown): string[] {
     ...p.missions.flatMap((m, i) => missionErrors(m, `missions[${i}] (${m.id})`, ids)),
   ]
 }
-
-export const isPack = (v: unknown): v is Pack => validatePack(v).length === 0

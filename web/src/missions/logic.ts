@@ -17,7 +17,7 @@ export const SCENARIOS: Scenario[] = [
   { id: 'hotel', title: 'Hotel check-in', role: '前台', goal: 'Check in with your name and ask what time breakfast is.', setting: 'The front desk of a hotel in Chengdu. You are the receptionist.' },
   { id: 'shopping', title: 'Shopping', role: '店员', goal: 'Buy a T-shirt in your size and a colour you like, and pay.', setting: 'A clothes shop in a Shenzhen mall. You are the shop assistant.' },
   { id: 'bargaining', title: 'Bargaining', role: '摊主', goal: 'Get the price of a jacket down by at least 20%.', setting: 'A market stall in Guangzhou. You sell jackets, start at 300 yuan and bargain realistically.' },
-  { id: 'directions', title: 'Asking directions', role: '路人', goal: 'Find out how to get to the nearest subway station and how far it is.', setting: 'A street corner in Hangzhou. You are a friendly local passer-by.' },
+  { id: 'directions', title: 'Asking directions', role: '路人', goal: 'Find out how to get to the nearest metro station and how far it is.', setting: 'A street corner in Hangzhou. You are a friendly local passer-by.' },
   { id: 'xianyu', title: 'Xianyu seller', role: '卖家', goal: "Ask about a used Dior Homme jacket's size and condition, and agree a price.", setting: 'A Xianyu (闲鱼) chat. You are selling a second-hand Dior Homme jacket (2006, size 46, good condition) for 1800 yuan. Write like a real seller messaging: short and casual.' },
   { id: 'football', title: 'Football chat', role: '球迷', goal: "Chat about last weekend's match and say which team you support and why.", setting: 'A bar showing football. You are a fan who loves the Premier League and Chinese Super League.' },
 ]

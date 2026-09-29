@@ -3,7 +3,7 @@
 
 import type { AttemptSyllable, Scores } from '../grading/grade.ts'
 import { currentUser, dbPut, isConfigured } from './firebase.ts'
-import { idbAll, idbDelete, idbGet, idbPut } from './idb.ts'
+import { idbAll, idbDelete, idbPut } from './idb.ts'
 
 export type { AttemptSyllable }
 
@@ -36,10 +36,6 @@ export async function saveAttempt(attempt: Attempt, wav: Blob): Promise<void> {
 }
 
 export const allAttempts = () => idbAll<Attempt>('attempts')
-
-export async function recordingFor(id: string): Promise<Blob | null> {
-  return (await idbGet<Recording>('recordings', id))?.wav ?? null
-}
 
 /** Delete recordings older than 30 days (docs: recordings are kept for 30 days). */
 export async function pruneRecordings(): Promise<void> {

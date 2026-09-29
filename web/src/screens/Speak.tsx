@@ -42,7 +42,7 @@ function Hub() {
       <nav className="hub">
         <a href="#speak/cards" className="hub-row">
           <span className="hub-title">Say your cards</span>
-          <span className="muted">Flashcards you answer out loud, scored 1–100.</span>
+          <span className="muted">Flashcards you answer out loud, scored 1–100. Learn: characters first. Recall: English first, from memory.</span>
         </a>
         <a href="#speak/ears" className="hub-row">
           <span className="hub-title">Tone ears</span>
