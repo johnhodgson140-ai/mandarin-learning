@@ -18,7 +18,8 @@ free Apple ID. Apple's free signing lasts **7 days**, so you re-run it from Xcod
 2. **Open** `ios/App/App.xcodeproj` (double-click). Wait until the top bar stops showing
    "Resolving package graph" / "Fetching" (the first time takes a minute).
 3. **Signing:** in the left sidebar click **App** (blue icon) → under TARGETS click **App** → **Signing &
-   Capabilities** → **Team**: choose your name (*Personal Team*).
+   Capabilities** → **Team**: choose your name (*Personal Team*). Then do the same for the second target,
+   **ShuoWidgets** (the lock screen widget).
    If Xcode says the bundle identifier isn't available, change **Bundle Identifier** to something unique,
    e.g. `io.github.johnhodgson140.shuo.me` (the project already uses this one).
 4. **Connect your iPhone** with a cable, unlock it and tap **Trust** if asked.
@@ -40,3 +41,13 @@ Daily stories and missions update by themselves: the app fetches them from the w
 - The app keeps its own data, separate from the home-screen web app (calibration, voices, progress). Recalibrate
   once in the app. (Firebase sync, once set up, will share progress between them.)
 - API keys are typed into Settings in the app and stay on the phone, as on the website.
+
+## Widgets
+Long-press the lock screen → **Customize** → Lock Screen → tap the widget area under the clock → **Shuō** →
+**Chinese time** (characters + pinyin under the clock; the one-line version goes above the clock). On the home
+screen: long-press → **+** → Shuō. iOS decides exactly when widgets refresh, so the time can lag by a minute now
+and then.
+
+## Notifications
+Settings → Notifications (in the app): word of the day, practice reminder (with the cards due) and streak saver,
+each at a time you choose. Tapping one opens your cards.

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		012FCC2242DF74F2364231FE /* ShuoWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFB3362F3E754F42BA8BC50 /* ShuoWidgets.swift */; };
+		21A38C03B27948E9BF6B92E1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F7CAD1CF62F76BB2E1ADCED /* Foundation.framework */; };
 		2FAD9763203C412B000D30F8 /* config.xml in Resources */ = {isa = PBXBuildFile; fileRef = 2FAD9762203C412B000D30F8 /* config.xml */; };
 		4D22ABE92AF431CB00220026 /* CapApp-SPM in Frameworks */ = {isa = PBXBuildFile; productRef = 4D22ABE82AF431CB00220026 /* CapApp-SPM */; };
 		50379B232058CBB4000EE86E /* capacitor.config.json in Resources */ = {isa = PBXBuildFile; fileRef = 50379B222058CBB4000EE86E /* capacitor.config.json */; };
@@ -17,10 +19,37 @@
 		50B271D11FEDC1A000F3C39B /* public in Resources */ = {isa = PBXBuildFile; fileRef = 50B271D01FEDC1A000F3C39B /* public */; };
 		5A1C0A012F0000000000B001 /* SpeechCheckPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C0A012F0000000000A001 /* SpeechCheckPlugin.swift */; };
 		5A1C0A012F0000000000B002 /* ShuoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C0A012F0000000000A002 /* ShuoViewController.swift */; };
+		75DFA2425D91B684AC023F93 /* ShuoWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A82D4F313F78D55326FFC314 /* ShuoWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D06C1D1E8B6631A7572A4479 /* ChineseTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A0ADAC057049E82530AB74 /* ChineseTime.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6262FADC28B7B2F62F52F1CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 504EC2FC1FED79650016851F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5120706E6C8B5D4B93087AA4;
+			remoteInfo = ShuoWidgets;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		27F3963DE0068661B818B020 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				75DFA2425D91B684AC023F93 /* ShuoWidgets.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2FAD9762203C412B000D30F8 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = config.xml; sourceTree = "<group>"; };
+		3F7CAD1CF62F76BB2E1ADCED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		50379B222058CBB4000EE86E /* capacitor.config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = capacitor.config.json; sourceTree = "<group>"; };
 		504EC3041FED79650016851F /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		504EC3071FED79650016851F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -29,9 +58,13 @@
 		504EC3111FED79650016851F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		504EC3131FED79650016851F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50B271D01FEDC1A000F3C39B /* public */ = {isa = PBXFileReference; lastKnownFileType = folder; path = public; sourceTree = "<group>"; };
-		958DCC722DB07C7200EA8C5F /* debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = debug.xcconfig; path = ../debug.xcconfig; sourceTree = SOURCE_ROOT; };
 		5A1C0A012F0000000000A001 /* SpeechCheckPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechCheckPlugin.swift; sourceTree = "<group>"; };
 		5A1C0A012F0000000000A002 /* ShuoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuoViewController.swift; sourceTree = "<group>"; };
+		958DCC722DB07C7200EA8C5F /* debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = debug.xcconfig; path = ../debug.xcconfig; sourceTree = SOURCE_ROOT; };
+		A82D4F313F78D55326FFC314 /* ShuoWidgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShuoWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFFB3362F3E754F42BA8BC50 /* ShuoWidgets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ShuoWidgets.swift; sourceTree = "<group>"; };
+		B3A0ADAC057049E82530AB74 /* ChineseTime.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ChineseTime.swift; sourceTree = "<group>"; };
+		E31CE4E087653F236E3B7522 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +73,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D22ABE92AF431CB00220026 /* CapApp-SPM in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0665C2E3FCC37528E08230C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21A38C03B27948E9BF6B92E1 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +93,8 @@
 				958DCC722DB07C7200EA8C5F /* debug.xcconfig */,
 				504EC3061FED79650016851F /* App */,
 				504EC3051FED79650016851F /* Products */,
+				52C2EBDB2199BF64A76F470D /* Frameworks */,
+				6AAB718F4FB47E1BD4ABD616 /* ShuoWidgets */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				504EC3041FED79650016851F /* App.app */,
+				A82D4F313F78D55326FFC314 /* ShuoWidgets.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -80,6 +124,33 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		52C2EBDB2199BF64A76F470D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				950290E6022C359CC6E37F97 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6AAB718F4FB47E1BD4ABD616 /* ShuoWidgets */ = {
+			isa = PBXGroup;
+			children = (
+				B3A0ADAC057049E82530AB74 /* ChineseTime.swift */,
+				AFFB3362F3E754F42BA8BC50 /* ShuoWidgets.swift */,
+				E31CE4E087653F236E3B7522 /* Info.plist */,
+			);
+			name = ShuoWidgets;
+			path = ShuoWidgets;
+			sourceTree = "<group>";
+		};
+		950290E6022C359CC6E37F97 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3F7CAD1CF62F76BB2E1ADCED /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -90,10 +161,12 @@
 				504EC3001FED79650016851F /* Sources */,
 				504EC3011FED79650016851F /* Frameworks */,
 				504EC3021FED79650016851F /* Resources */,
+				27F3963DE0068661B818B020 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				702C8309A7FF41A6D0F9A01D /* PBXTargetDependency */,
 			);
 			name = App;
 			packageProductDependencies = (
@@ -102,6 +175,23 @@
 			productName = App;
 			productReference = 504EC3041FED79650016851F /* App.app */;
 			productType = "com.apple.product-type.application";
+		};
+		5120706E6C8B5D4B93087AA4 /* ShuoWidgets */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49DD61BA620AF218D8F171DA /* Build configuration list for PBXNativeTarget "ShuoWidgets" */;
+			buildPhases = (
+				28C8B4672D179DD9CD39E88D /* Sources */,
+				A0665C2E3FCC37528E08230C /* Frameworks */,
+				4F6686BE06782A332CF28FC6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShuoWidgets;
+			productName = ShuoWidgets;
+			productReference = A82D4F313F78D55326FFC314 /* ShuoWidgets.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -136,11 +226,19 @@
 			projectRoot = "";
 			targets = (
 				504EC3031FED79650016851F /* App */,
+				5120706E6C8B5D4B93087AA4 /* ShuoWidgets */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4F6686BE06782A332CF28FC6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		504EC3021FED79650016851F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -157,6 +255,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		28C8B4672D179DD9CD39E88D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D06C1D1E8B6631A7572A4479 /* ChineseTime.swift in Sources */,
+				012FCC2242DF74F2364231FE /* ShuoWidgets.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		504EC3001FED79650016851F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -168,6 +275,15 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		702C8309A7FF41A6D0F9A01D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ShuoWidgets;
+			target = 5120706E6C8B5D4B93087AA4 /* ShuoWidgets */;
+			targetProxy = 6262FADC28B7B2F62F52F1CE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		504EC30B1FED79650016851F /* Main.storyboard */ = {
@@ -342,9 +458,69 @@
 			};
 			name = Release;
 		};
+		710F42FAA374EC5F99F1E466 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ShuoWidgets/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.johnhodgson140.shuo.me.widgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		81154F02FECAEE493641979E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ShuoWidgets/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.johnhodgson140.shuo.me.widgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		49DD61BA620AF218D8F171DA /* Build configuration list for PBXNativeTarget "ShuoWidgets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				710F42FAA374EC5F99F1E466 /* Release */,
+				81154F02FECAEE493641979E /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		504EC2FF1FED79650016851F /* Build configuration list for PBXProject "App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

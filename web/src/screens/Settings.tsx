@@ -9,7 +9,9 @@ import { getTheme, setTheme, type Theme } from '../services/theme.ts'
 import HoldToTalk from '../components/HoldToTalk.tsx'
 import VoicePicker from '../components/VoicePicker.tsx'
 import { clearLog, logCount, logText } from '../debug/log.ts'
-import { getReminder, isNativeApp, nativeRecogniserInfo, setReminder, type Reminder as ReminderType } from '../native/app.ts'
+import { isNativeApp, nativeRecogniserInfo } from '../native/app.ts'
+import { getNotifySettings, setNotifySettings } from '../native/notifications.ts'
+import type { NotifySettings } from '../notify/plan.ts'
 import { hasRecogniser, recogniserBlocked, setRecogniserBlocked } from '../scoring/recognize.ts'
 import { AZURE_VOICES, deviceVoices, getDeviceVoice, getSpeed, getVoice, playBlob, rateForLevel, setDeviceVoice, setSpeed, setVoice, speak, SPEEDS, type Speed } from '../services/tts.ts'
 import PlayButton from '../components/PlayButton.tsx'
@@ -27,7 +29,7 @@ export default function Settings() {
       {/* Everyday settings first; setup and troubleshooting further down. */}
       <Voice />
       <Voices />
-      <Reminder />
+      <Notifications />
       <MyLevel />
       <Appearance />
       <AnkiPhone />
@@ -344,24 +346,40 @@ function SpeechCheck() {
   )
 }
 
-function Reminder() {
-  const [reminder, set] = useState<ReminderType>(getReminder)
+function Notifications() {
+  const [settings, set] = useState<NotifySettings>(getNotifySettings)
   const [message, setMessage] = useState<string | null>(null)
   if (!isNativeApp()) return null
-  async function update(next: ReminderType) {
+  async function update(next: NotifySettings) {
     set(next)
-    const problem = await setReminder(next)
+    const problem = await setNotifySettings(next)
     setMessage(problem)
-    if (problem) set({ ...next, on: false })
+    if (problem) set(getNotifySettings())
   }
+  const rows: [keyof NotifySettings, string, string][] = [
+    ['wordOfDay', 'Word of the day', 'A word from your deck with pinyin and meaning, and a tone tip.'],
+    ['practice', 'Practice reminder', 'With how many cards are due.'],
+    ['streak', 'Streak saver', "Only on days you haven't practised yet."],
+  ]
   return (
     <section className="card">
-      <h2 className="card-title">Daily reminder</h2>
-      <label className="check">
-        <input type="checkbox" checked={reminder.on} onChange={(e) => void update({ ...reminder, on: e.target.checked })} />
-        Remind me to practise every day at
-      </label>
-      <input type="time" className="type-input" value={reminder.time} onChange={(e) => void update({ ...reminder, time: e.target.value })} aria-label="Reminder time" />
+      <h2 className="card-title">Notifications</h2>
+      {rows.map(([key, title, hint]) => (
+        <div key={key} className="notify-row">
+          <label className="check">
+            <input type="checkbox" checked={settings[key].on} onChange={(e) => void update({ ...settings, [key]: { ...settings[key], on: e.target.checked } })} />
+            {title}
+          </label>
+          <input
+            type="time"
+            className="type-input notify-time"
+            value={settings[key].time}
+            onChange={(e) => void update({ ...settings, [key]: { ...settings[key], time: e.target.value } })}
+            aria-label={`${title} time`}
+          />
+          <p className="muted small">{hint}</p>
+        </div>
+      ))}
       {message && <p className="error">{message}</p>}
     </section>
   )

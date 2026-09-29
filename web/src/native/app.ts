@@ -1,8 +1,6 @@
 // The iOS app (Capacitor) only: native helpers. On the website these report "not available" and do nothing.
 import { Capacitor, registerPlugin } from '@capacitor/core'
-import { LocalNotifications } from '@capacitor/local-notifications'
 import { log } from '../debug/log.ts'
-import { load, save } from '../services/storage.ts'
 
 export const isNativeApp = () => Capacitor.isNativePlatform()
 
@@ -35,35 +33,4 @@ export async function nativeRecognise(wav: Blob): Promise<string[]> {
 export async function nativeRecogniserInfo(): Promise<{ available: boolean; onDevice: boolean } | null> {
   if (!isNativeApp()) return null
   return SpeechCheck.available().catch(() => null)
-}
-
-// ---- Daily reminder ----
-
-export type Reminder = { on: boolean; time: string } // "HH:MM"
-const REMINDER_ID = 1
-export const getReminder = () => load<Reminder>('reminder', { on: false, time: '19:00' })
-
-/** Turn the daily practice reminder on/off (asks for notification permission the first time). */
-export async function setReminder(reminder: Reminder): Promise<string | null> {
-  save('reminder', reminder)
-  if (!isNativeApp()) return null
-  await LocalNotifications.cancel({ notifications: [{ id: REMINDER_ID }] }).catch(() => {})
-  if (!reminder.on) return null
-  const permission = await LocalNotifications.requestPermissions()
-  if (permission.display !== 'granted') {
-    save('reminder', { ...reminder, on: false })
-    return 'Notifications are off for Shuō: turn them on in iPhone Settings → Notifications → Shuō.'
-  }
-  const [hour, minute] = reminder.time.split(':').map(Number)
-  await LocalNotifications.schedule({
-    notifications: [
-      {
-        id: REMINDER_ID,
-        title: 'Shuō 说',
-        body: 'A few minutes of speaking today? Your cards are waiting.',
-        schedule: { on: { hour, minute }, allowWhileIdle: true },
-      },
-    ],
-  })
-  return null
 }

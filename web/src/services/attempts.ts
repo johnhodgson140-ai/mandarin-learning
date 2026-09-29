@@ -31,6 +31,8 @@ export async function saveAttempt(attempt: Attempt, wav: Blob): Promise<void> {
   await idbPut('attempts', attempt)
   await idbPut('recordings', { id: attempt.id, wav, createdAt: attempt.createdAt } satisfies Recording).catch(() => {})
   if (isConfigured && currentUser()) await dbPut(`attempts/${attempt.id}`, attempt).catch(() => {})
+  // Practised: the streak saver moves to tomorrow and the cards-due count updates (iOS app).
+  void import('../native/notifications.ts').then((n) => n.refreshNotifications()).catch(() => {})
 }
 
 export const allAttempts = () => idbAll<Attempt>('attempts')
