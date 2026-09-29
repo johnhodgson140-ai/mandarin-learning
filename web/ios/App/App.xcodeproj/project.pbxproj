@@ -10,6 +10,7 @@
 		012FCC2242DF74F2364231FE /* ShuoWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFB3362F3E754F42BA8BC50 /* ShuoWidgets.swift */; };
 		21A38C03B27948E9BF6B92E1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F7CAD1CF62F76BB2E1ADCED /* Foundation.framework */; };
 		2FAD9763203C412B000D30F8 /* config.xml in Resources */ = {isa = PBXBuildFile; fileRef = 2FAD9762203C412B000D30F8 /* config.xml */; };
+		3BD0A1566B93D1141A42162F /* DeckWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91384A52F2C42EC1EA0A8017 /* DeckWord.swift */; };
 		4D22ABE92AF431CB00220026 /* CapApp-SPM in Frameworks */ = {isa = PBXBuildFile; productRef = 4D22ABE82AF431CB00220026 /* CapApp-SPM */; };
 		50379B232058CBB4000EE86E /* capacitor.config.json in Resources */ = {isa = PBXBuildFile; fileRef = 50379B222058CBB4000EE86E /* capacitor.config.json */; };
 		504EC3081FED79650016851F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504EC3071FED79650016851F /* AppDelegate.swift */; };
@@ -60,6 +61,7 @@
 		50B271D01FEDC1A000F3C39B /* public */ = {isa = PBXFileReference; lastKnownFileType = folder; path = public; sourceTree = "<group>"; };
 		5A1C0A012F0000000000A001 /* SpeechCheckPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechCheckPlugin.swift; sourceTree = "<group>"; };
 		5A1C0A012F0000000000A002 /* ShuoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuoViewController.swift; sourceTree = "<group>"; };
+		91384A52F2C42EC1EA0A8017 /* DeckWord.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DeckWord.swift; sourceTree = "<group>"; };
 		958DCC722DB07C7200EA8C5F /* debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = debug.xcconfig; path = ../debug.xcconfig; sourceTree = SOURCE_ROOT; };
 		A82D4F313F78D55326FFC314 /* ShuoWidgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShuoWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFFB3362F3E754F42BA8BC50 /* ShuoWidgets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ShuoWidgets.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				B3A0ADAC057049E82530AB74 /* ChineseTime.swift */,
 				AFFB3362F3E754F42BA8BC50 /* ShuoWidgets.swift */,
 				E31CE4E087653F236E3B7522 /* Info.plist */,
+				91384A52F2C42EC1EA0A8017 /* DeckWord.swift */,
 			);
 			name = ShuoWidgets;
 			path = ShuoWidgets;
@@ -261,6 +264,7 @@
 			files = (
 				D06C1D1E8B6631A7572A4479 /* ChineseTime.swift in Sources */,
 				012FCC2242DF74F2364231FE /* ShuoWidgets.swift in Sources */,
+				3BD0A1566B93D1141A42162F /* DeckWord.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

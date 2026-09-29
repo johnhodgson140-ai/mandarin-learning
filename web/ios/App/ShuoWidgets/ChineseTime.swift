@@ -1,6 +1,7 @@
 import Foundation
 
-/// The time said the way it's said in Mandarin: 下午三点二十 · xiàwǔ sān diǎn èrshí.
+/// The time and date said the way they're said in Mandarin: 下午三点二十 · xiàwǔ sān diǎn èrshí,
+/// 九月二十九日 星期二 · jiǔ yuè èrshíjiǔ rì · xīngqī èr.
 /// Mirrors web/src/chinese/clock.ts (which has the tests): keep them in step.
 enum ChineseTime {
     private static let digits = ["零", "一", "二", "三", "四", "五", "六", "七", "八", "九"]
@@ -44,5 +45,18 @@ enum ChineseTime {
     static func say(_ date: Date) -> (hanzi: String, pinyin: String) {
         let c = Calendar.current.dateComponents([.hour, .minute], from: date)
         return say(hour: c.hour ?? 0, minute: c.minute ?? 0)
+    }
+
+    private static let weekdays = [("日", "rì"), ("一", "yī"), ("二", "èr"), ("三", "sān"), ("四", "sì"), ("五", "wǔ"), ("六", "liù")]
+
+    /// `weekday` 0 = Sunday (as in JavaScript; Calendar's weekday is 1 = Sunday).
+    static func date(month: Int, day: Int, weekday: Int) -> (date: String, weekday: String, pinyin: String) {
+        let m = number(month), d = number(day), w = weekdays[weekday]
+        return ("\(m.hanzi)月\(d.hanzi)日", "星期\(w.0)", "\(m.pinyin) yuè \(d.pinyin) rì · xīngqī \(w.1)")
+    }
+
+    static func date(_ date: Date) -> (date: String, weekday: String, pinyin: String) {
+        let c = Calendar.current.dateComponents([.month, .day, .weekday], from: date)
+        return self.date(month: c.month ?? 1, day: c.day ?? 1, weekday: (c.weekday ?? 1) - 1)
     }
 }

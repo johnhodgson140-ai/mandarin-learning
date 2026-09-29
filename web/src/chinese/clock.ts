@@ -1,4 +1,5 @@
-// The time said the way it's said in Mandarin: 下午三点二十 · xiàwǔ sān diǎn èrshí.
+// The time and date said the way they're said in Mandarin: 下午三点二十 · xiàwǔ sān diǎn èrshí,
+// 九月二十九日 星期二 · jiǔ yuè èrshíjiǔ rì · xīngqī èr.
 // Mirrored in Swift for the lock screen widget (web/ios/App/ShuoWidgets/ChineseTime.swift): keep them in step.
 
 const DIGITS = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九']
@@ -34,4 +35,22 @@ export function chineseTime(hour: number, minute: number): { hanzi: string; piny
   else if (minute > 0 && minute < 10) m = { hanzi: `零${DIGITS[minute]}分`, pinyin: ` líng ${DIGITS_PY[minute]} fēn` }
   else if (minute >= 10) m = { hanzi: number(minute).hanzi, pinyin: ` ${number(minute).pinyin}` }
   return { hanzi: `${p.hanzi}${h.hanzi}点${m.hanzi}`, pinyin: `${p.pinyin} ${h.pinyin} diǎn${m.pinyin}` }
+}
+
+const WEEKDAYS = [
+  { hanzi: '日', pinyin: 'rì' }, // Sunday: 星期日 (also 星期天)
+  { hanzi: '一', pinyin: 'yī' },
+  { hanzi: '二', pinyin: 'èr' },
+  { hanzi: '三', pinyin: 'sān' },
+  { hanzi: '四', pinyin: 'sì' },
+  { hanzi: '五', pinyin: 'wǔ' },
+  { hanzi: '六', pinyin: 'liù' },
+]
+
+/** `month` 1–12, `day` 1–31, `weekday` 0 = Sunday. */
+export function chineseDate(month: number, day: number, weekday: number): { date: string; weekday: string; pinyin: string } {
+  const m = number(month)
+  const d = number(day)
+  const w = WEEKDAYS[weekday]
+  return { date: `${m.hanzi}月${d.hanzi}日`, weekday: `星期${w.hanzi}`, pinyin: `${m.pinyin} yuè ${d.pinyin} rì · xīngqī ${w.pinyin}` }
 }
