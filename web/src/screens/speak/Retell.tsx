@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
-import { pinyin } from 'pinyin-pro'
 import type { Recording } from '../../audio/recorder.ts'
-import { buildParagraph } from '../../chinese/tokens.ts'
+import { buildParagraph, pinyinOfText } from '../../chinese/tokens.ts'
+import { toneless } from '../../chinese/tones.ts'
 import HoldToTalk from '../../components/HoldToTalk.tsx'
 import RubyText from '../../components/RubyText.tsx'
 import { coverage, keyWords } from '../../practice/logic.ts'
@@ -78,7 +78,7 @@ export default function Retell() {
     }
   }
 
-  const said = heard ? (pinyin([...heard.text].filter((c) => /\p{Script=Han}/u.test(c)).join(''), { type: 'array', toneType: 'none' }) as string[]) : []
+  const said = heard ? (pinyinOfText([...heard.text].filter((c) => /\p{Script=Han}/u.test(c)).join('')).map(toneless)) : []
   const cov = heard ? coverage(keys, said) : null
 
   return (

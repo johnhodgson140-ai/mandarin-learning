@@ -1,10 +1,9 @@
 // Score what I said, syllable by syllable, 1–100: sounds from the browser recogniser (or Azure when there's
 // a key), tones from my tone model (once calibrated).
 
-import { pinyin } from 'pinyin-pro'
 import type { Recording } from '../audio/recorder.ts'
-import type { Syllable } from '../chinese/tokens.ts'
-import { isHan } from '../chinese/tones.ts'
+import { pinyinOfText, type Syllable } from '../chinese/tokens.ts'
+import { isHan, toneless } from '../chinese/tones.ts'
 import type { CharResult } from '../grading/grade.ts'
 import { learnVoice, segmentTones, syllableTones, type SyllableTone } from '../services/tone.ts'
 import { log } from '../debug/log.ts'
@@ -15,8 +14,7 @@ export type SpeechScore = { syllables: SyllableScore[]; overall: number; tones: 
 
 /** Tone-less pinyin of each character the recogniser wrote. */
 function heardSyllables(text: string): string[] {
-  const chars = [...text].filter(isHan).join('')
-  return chars ? (pinyin(chars, { type: 'array', toneSandhi: false, toneType: 'none' }) as string[]) : []
+  return pinyinOfText([...text].filter(isHan).join('')).map(toneless)
 }
 
 export async function scoreSpeech(syllables: Syllable[], rec: Recording, azure: CharResult[] | null = null): Promise<SpeechScore> {
