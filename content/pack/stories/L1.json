@@ -1,0 +1,218 @@
+[
+  {
+    "id": "L1-football-short", "level": 1, "topic": "football", "length": "short",
+    "title_zh": "星期六看球", "title_en": "Saturday football",
+    "paragraphs": [
+      "今天是星期六。我和朋友去看足球。我们坐出租车去。",
+      "人很多。大家都很高兴。我喜欢红色的球队。他们的号码很好看。",
+      "比赛很好看。我们的球队赢了！朋友说：“下个星期我们再来吧。”我说：“好！”"
+    ],
+    "translations": [
+      "Today is Saturday. My friend and I are going to watch football. We take a taxi there.",
+      "There are lots of people. Everyone is very happy. I like the team in red. Their numbers look great.",
+      "The match is great. Our team won! My friend says, \"Let's come again next week.\" I say, \"OK!\""
+    ],
+    "names": [], "glossary": { "球队": "team", "赢": "to win", "号码": "number" }
+  },
+  {
+    "id": "L1-football-medium", "level": 1, "topic": "football", "length": "medium",
+    "title_zh": "我和哥哥的球赛", "title_en": "My brother's match",
+    "paragraphs": [
+      "我哥哥很喜欢踢足球。他每个星期三和星期六都去踢球。他的球队很小，只有十二个人。",
+      "今天下午，哥哥有一个比赛。妈妈、爸爸和我都去看。天气很好，不冷也不热。我们坐在前面。",
+      "比赛开始了。对面的球队很高，也很快。第一个球是他们的。妈妈说：“没关系，还有时间。”",
+      "下半场，哥哥踢得很好。他跑得很快，踢进了一个球！我们都站起来叫：“哥哥，好！”",
+      "最后是一比一。哥哥有点儿累，可是很高兴。晚上，我们一起去饭馆吃饭。哥哥吃了很多米饭。",
+      "爸爸问我：“你也想踢足球吗？”我想了想，说：“我想！明天我跟哥哥去学。”"
+    ],
+    "translations": [
+      "My older brother loves playing football. He plays every Wednesday and Saturday. His team is small, only twelve people.",
+      "This afternoon my brother has a match. Mum, Dad and I all go to watch. The weather is nice, not cold and not hot. We sit at the front.",
+      "The match starts. The other team is tall, and fast too. The first goal is theirs. Mum says, \"It doesn't matter, there's still time.\"",
+      "In the second half my brother plays really well. He runs fast and scores a goal! We all stand up and shout, \"Go, brother!\"",
+      "In the end it's one-all. My brother is a bit tired, but happy. In the evening we go to a restaurant together. My brother eats lots of rice.",
+      "Dad asks me, \"Do you want to play football too?\" I think about it and say, \"I do! Tomorrow I'll go and learn with my brother.\""
+    ],
+    "names": [], "glossary": { "球队": "team", "对面": "opposite; the other side", "下半场": "second half", "踢进": "to kick in (score)" }
+  },
+  {
+    "id": "L1-fashion-short", "level": 1, "topic": "archive fashion", "length": "short",
+    "title_zh": "一件黑色的衣服", "title_en": "A black jacket",
+    "paragraphs": [
+      "我喜欢买旧衣服。今天我在网上看到一件黑色的衣服。",
+      "这件衣服很大，也很好看。它是日本的，有二十多年了。",
+      "我问卖家：“多少钱？”卖家说：“三百块。”我说：“太贵了！两百块，可以吗？”卖家说：“好吧。”我很高兴！"
+    ],
+    "translations": [
+      "I like buying old clothes. Today I saw a black jacket online.",
+      "This jacket is very big, and very nice-looking. It's Japanese, over twenty years old.",
+      "I ask the seller, \"How much?\" The seller says, \"Three hundred kuai.\" I say, \"Too expensive! Two hundred, is that OK?\" The seller says, \"Fine.\" I'm so happy!"
+    ],
+    "names": [], "glossary": { "卖家": "seller", "网上": "online" }
+  },
+  {
+    "id": "L1-fashion-medium", "level": 1, "topic": "archive fashion", "length": "medium",
+    "title_zh": "小林的衣服店", "title_en": "Xiao Lin's clothes shop",
+    "paragraphs": [
+      "小林是我的朋友。她有一个小店，在学校后面。店里的衣服都是旧的，可是都很好看。",
+      "星期天上午，我去她的店。店里人不多。小林在喝茶，她说：“你来了！坐吧。”",
+      "我看到一件白色的衣服。它很长，很大。小林说：“这件是九十年代的，是日本人做的。”",
+      "我问：“多少钱？”小林说：“五百块。”我说：“有点儿贵。”她笑了：“你是我朋友，四百吧。”",
+      "我穿上这件衣服。镜子里的我很不一样！小林说：“太好看了，你买吧。”",
+      "我买了这件衣服。回家的时候，我很高兴。妈妈看到了，问：“这是新衣服吗？”我说：“不是，是旧的，可是我很喜欢。”"
+    ],
+    "translations": [
+      "Xiao Lin is my friend. She has a small shop behind the school. The clothes in the shop are all old, but they all look great.",
+      "On Sunday morning I go to her shop. There aren't many people. Xiao Lin is drinking tea. She says, \"You're here! Sit down.\"",
+      "I see a white piece of clothing. It's very long and very big. Xiao Lin says, \"This one is from the nineties, made by a Japanese designer.\"",
+      "I ask, \"How much?\" Xiao Lin says, \"Five hundred kuai.\" I say, \"A bit expensive.\" She laughs: \"You're my friend, four hundred then.\"",
+      "I put it on. The me in the mirror looks so different! Xiao Lin says, \"It looks great, buy it.\"",
+      "I buy it. On the way home I'm very happy. Mum sees it and asks, \"Are these new clothes?\" I say, \"No, they're old, but I love them.\""
+    ],
+    "names": ["小林"], "glossary": { "小林": "Xiao Lin (a name)", "九十年代": "the nineties", "镜子": "mirror" }
+  },
+  {
+    "id": "L1-anime-short", "level": 1, "topic": "anime", "length": "short",
+    "title_zh": "晚上看动画", "title_en": "Anime in the evening",
+    "paragraphs": [
+      "我很喜欢看日本动画。每天晚上，我都看一个小时。",
+      "今天的动画很好看。一个小猫想找它的家。它走了很多天，很累。",
+      "最后，它找到了家。它的妈妈在门口等它。我哭了。妹妹说：“哥哥，你怎么哭了？”"
+    ],
+    "translations": [
+      "I really like watching Japanese anime. Every evening I watch for an hour.",
+      "Today's anime is really good. A little cat wants to find its home. It walks for many days and is very tired.",
+      "In the end it finds its home. Its mother is waiting for it at the door. I cried. My little sister says, \"Brother, why are you crying?\""
+    ],
+    "names": [], "glossary": { "动画": "animation; anime", "门口": "doorway" }
+  },
+  {
+    "id": "L1-anime-medium", "level": 1, "topic": "anime", "length": "medium",
+    "title_zh": "我想去日本", "title_en": "I want to go to Japan",
+    "paragraphs": [
+      "我是学生，今年十九岁。我很喜欢日本动画。我的房间里有很多动画的书。",
+      "我最喜欢的动画是一个男孩子的故事。他没有家，也没有钱。可是他有很多朋友。",
+      "他和朋友们一起去很远的地方。路上有很多事，有的很好，有的不好。他们都不怕。",
+      "我的朋友大卫也喜欢这个动画。我们每个星期五一起看。我们吃饭，喝茶，看动画，说话。",
+      "大卫问我：“你想去日本吗？”我说：“想！我想去东京，看看动画里的地方。”",
+      "现在我每天学习一点儿日语。明年，我想和大卫一起去日本。我们要坐飞机去！"
+    ],
+    "translations": [
+      "I'm a student, nineteen this year. I love Japanese anime. There are lots of anime books in my room.",
+      "My favourite anime is a boy's story. He has no home and no money. But he has lots of friends.",
+      "He and his friends go somewhere very far away. Lots happens on the way, some good, some bad. They aren't afraid.",
+      "My friend David likes this anime too. We watch it together every Friday. We eat, drink tea, watch anime and chat.",
+      "David asks me, \"Do you want to go to Japan?\" I say, \"Yes! I want to go to Tokyo and see the places in the anime.\"",
+      "Now I study a little Japanese every day. Next year I want to go to Japan with David. We'll fly there!"
+    ],
+    "names": ["大卫", "东京"], "glossary": { "大卫": "David", "东京": "Tokyo", "动画": "animation; anime", "故事": "story" }
+  },
+  {
+    "id": "L1-travel-short", "level": 1, "topic": "travel", "length": "short",
+    "title_zh": "去北京", "title_en": "Going to Beijing",
+    "paragraphs": [
+      "明天我去北京。我坐飞机去，飞机上午十点走。",
+      "北京很大，人也很多。我想去看看学校和商店。我也想吃北京的菜。",
+      "我的中国朋友在北京工作。他说：“我去飞机场找你。”我很高兴，明天见！"
+    ],
+    "translations": [
+      "Tomorrow I'm going to Beijing. I'm flying there; the plane leaves at ten in the morning.",
+      "Beijing is very big and has lots of people. I want to look around the schools and shops. I also want to eat Beijing food.",
+      "My Chinese friend works in Beijing. He says, \"I'll come and find you at the airport.\" I'm so happy. See you tomorrow!"
+    ],
+    "names": ["北京"], "glossary": { "北京": "Beijing" }
+  },
+  {
+    "id": "L1-travel-medium", "level": 1, "topic": "travel", "length": "medium",
+    "title_zh": "在上海的第一天", "title_en": "My first day in Shanghai",
+    "paragraphs": [
+      "我昨天到了上海。上海很大，也很漂亮。天气有点儿热，我穿了一件白色的衣服。",
+      "上午，我去了一个饭馆。服务员问我：“你想吃什么？”我说：“我要一个面条和一杯茶。”面条很好吃，也不贵。",
+      "吃了饭，我想去商店。我不认识路，就问一个老人：“请问，商店在哪儿？”老人说：“前面，走五分钟。”",
+      "商店里有很多东西。我买了一个杯子和一些水果。卖东西的人很好，她说：“你的汉语很好！”我笑了。",
+      "下午，我坐出租车回饭店。司机问我：“你是哪国人？”我说：“我是英国人。”他说：“欢迎你来上海！”",
+      "晚上，我给妈妈打电话。我说：“上海很好，我很喜欢这里。”明天，我想去看看上海的水。"
+    ],
+    "translations": [
+      "I arrived in Shanghai yesterday. Shanghai is very big and very beautiful. The weather is a bit hot, so I wore a white top.",
+      "In the morning I went to a restaurant. The waiter asked me, \"What would you like to eat?\" I said, \"I'd like noodles and a cup of tea.\" The noodles were delicious and not expensive.",
+      "After eating I wanted to go to the shops. I didn't know the way, so I asked an old man, \"Excuse me, where is the shop?\" He said, \"Up ahead, five minutes' walk.\"",
+      "The shop had lots of things. I bought a cup and some fruit. The woman selling things was very nice. She said, \"Your Chinese is very good!\" I smiled.",
+      "In the afternoon I took a taxi back to the hotel. The driver asked me, \"Where are you from?\" I said, \"I'm British.\" He said, \"Welcome to Shanghai!\"",
+      "In the evening I called my mum. I said, \"Shanghai is great, I really like it here.\" Tomorrow I want to go and see Shanghai's river."
+    ],
+    "names": ["上海", "英国"], "glossary": { "上海": "Shanghai", "英国": "Britain; the UK", "司机": "driver" }
+  },
+  {
+    "id": "L1-daily-short", "level": 1, "topic": "daily life", "length": "short",
+    "title_zh": "我的早上", "title_en": "My morning",
+    "paragraphs": [
+      "我每天七点起床。我先喝一杯水，再吃一点儿米饭。",
+      "八点，我坐公交车去学校。车上人很多，我没有座位。",
+      "九点上课。老师说：“同学们好！”我们说：“老师好！”今天我们学习汉字。我很喜欢写汉字。"
+    ],
+    "translations": [
+      "I get up at seven every day. First I drink a glass of water, then eat a little rice.",
+      "At eight I take the bus to school. There are lots of people on the bus, and I don't get a seat.",
+      "Class starts at nine. The teacher says, \"Hello, everyone!\" We say, \"Hello, teacher!\" Today we're studying characters. I love writing Chinese characters."
+    ],
+    "names": [], "glossary": { "公交车": "bus", "座位": "seat" }
+  },
+  {
+    "id": "L1-daily-medium", "level": 1, "topic": "daily life", "length": "medium",
+    "title_zh": "下雨的星期天", "title_en": "A rainy Sunday",
+    "paragraphs": [
+      "今天是星期天，外面下雨了。我不想出去，就在家里。",
+      "上午，我在床上看书。书里的故事很有意思。我看了两个小时，有点儿累了。",
+      "中午，我想做饭。家里有米饭、鸡蛋和一些菜。我做了一个鸡蛋米饭。不太好看，可是很好吃！",
+      "下午，我的朋友小王给我打电话。她问：“你在做什么？”我说：“我在家里，外面下雨。”她说：“我来你家吧，我们一起看电影。”",
+      "三点，小王来了。她买了很多水果。我们坐在一起看了一个中国电影。电影很好看，我们都笑了。",
+      "晚上，雨不下了。小王回家了。我想：下雨的星期天也很好。"
+    ],
+    "translations": [
+      "Today is Sunday, and it's raining outside. I don't want to go out, so I stay at home.",
+      "In the morning I read in bed. The story in the book is very interesting. I read for two hours and got a bit tired.",
+      "At noon I want to cook. At home there's rice, eggs and some vegetables. I make egg fried rice. It doesn't look great, but it's delicious!",
+      "In the afternoon my friend Xiao Wang calls me. She asks, \"What are you doing?\" I say, \"I'm at home, it's raining outside.\" She says, \"I'll come to yours, let's watch a film together.\"",
+      "At three Xiao Wang arrives. She's bought lots of fruit. We sit together and watch a Chinese film. The film is great and we both laugh.",
+      "In the evening the rain stops. Xiao Wang goes home. I think: a rainy Sunday is nice too."
+    ],
+    "names": ["小王"], "glossary": { "小王": "Xiao Wang (a name)", "鸡蛋": "egg", "故事": "story" }
+  },
+  {
+    "id": "L1-business-short", "level": 1, "topic": "business & finance", "length": "short",
+    "title_zh": "我的钱", "title_en": "My money",
+    "paragraphs": [
+      "我是大学生。我每个月有两千块钱。",
+      "吃饭要八百块，打车要两百块。我也喜欢买衣服和书。",
+      "这个月我买了太多东西。只有一百块了！我想：下个月，我要少买一点儿，多学习怎么用钱。"
+    ],
+    "translations": [
+      "I'm a university student. I have two thousand kuai a month.",
+      "Food costs eight hundred, taxis cost two hundred. I also like buying clothes and books.",
+      "This month I bought too many things. I only have a hundred left! I think: next month I'll buy a bit less and learn more about how to use money."
+    ],
+    "names": [], "glossary": { "打车": "to take a taxi" }
+  },
+  {
+    "id": "L1-business-medium", "level": 1, "topic": "business & finance", "length": "medium",
+    "title_zh": "爸爸的小商店", "title_en": "Dad's little shop",
+    "paragraphs": [
+      "我爸爸有一个小商店。商店在我们家前面，卖水果、茶和一些小东西。",
+      "每天早上六点，爸爸就去商店。他很忙，可是他很喜欢这个工作。",
+      "星期六我不上课，我去商店看爸爸。爸爸说：“你来得好！今天人很多，你帮我吧。”",
+      "一个女人想买苹果。她问：“苹果多少钱一斤？”我说：“八块一斤。”她买了三斤。我说：“二十四块。”她给了我三十块，我给她六块。",
+      "下午，爸爸问我：“今天我们卖了多少钱？”我看了看，说：“一千二百块！”爸爸很高兴。",
+      "晚上，爸爸说：“做生意不容易。你大学要好好学习，以后你来做我的老板吧！”我们都笑了。"
+    ],
+    "translations": [
+      "My dad has a small shop. It's in front of our house and sells fruit, tea and a few small things.",
+      "Every morning at six Dad goes to the shop. He's very busy, but he really likes this job.",
+      "On Saturday I don't have class, so I go to the shop to see Dad. Dad says, \"Good timing! Lots of people today, give me a hand.\"",
+      "A woman wants to buy apples. She asks, \"How much are the apples per jin?\" I say, \"Eight kuai a jin.\" She buys three jin. I say, \"Twenty-four kuai.\" She gives me thirty and I give her six.",
+      "In the afternoon Dad asks, \"How much did we sell today?\" I check and say, \"One thousand two hundred kuai!\" Dad is very happy.",
+      "In the evening Dad says, \"Doing business isn't easy. Study hard at university, and later you can be my boss!\" We both laugh."
+    ],
+    "names": [], "glossary": { "斤": "jin (half a kilo)", "做生意": "to do business", "老板": "boss" }
+  }
+]

@@ -1,13 +1,21 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import type { GuidedMission } from '../../daily/schema.ts'
 import { SCENARIOS } from '../../missions/logic.ts'
 import { cachedDaily } from '../../services/daily.ts'
 import { getKeys } from '../../services/keys.ts'
+import { packMissions } from '../../services/pack.ts'
 import { load, save } from '../../services/storage.ts'
 
 export default function Missions() {
   // Which level to play missions at (my own level only changes by passing a boss mission, or in Settings).
   const myLevel = load('level', 1)
   const [level, setLevel] = useState(() => load('missionLevel', myLevel))
+  const [pack, setPack] = useState<GuidedMission[] | null>(null)
+  useEffect(() => {
+    packMissions().then(setPack, () => setPack([]))
+  }, [])
+  const ready = (pack ?? []).filter((m) => m.level === level)
+  const done = load<string[]>('guidedDone', [])
   const choose = (n: number) => {
     setLevel(n)
     save('missionLevel', n)
@@ -37,9 +45,21 @@ export default function Missions() {
               </a>
             ))}
           </nav>
-          <h2 className="card-title">Live missions</h2>
         </>
       )}
+      <h2 className="card-title">Guided missions · level {level}</h2>
+      <p className="muted small">Scripted scenes with example answers. No key needed.</p>
+      {pack === null && <p className="muted small">Loading…</p>}
+      {pack !== null && ready.length === 0 && <p className="muted small">None at this level yet.</p>}
+      <nav className="hub">
+        {ready.map((m) => (
+          <a key={m.id} href={`#speak/guided/${m.id}`} className="hub-row">
+            <span className="hub-title">{m.title}{done.includes(m.id) && <span className="muted"> · done</span>}</span>
+            <span className="muted">{m.goal}</span>
+          </a>
+        ))}
+      </nav>
+      <h2 className="card-title">Live missions</h2>
       {!getKeys().claude && <p className="muted small">Live missions need a Claude key (Settings); guided ones don't.</p>}
       <p className="muted small">
         You're level {myLevel}. To level up, play a live mission at level {Math.min(6, myLevel + 1)} and reach its goal with pronunciation 75+.

@@ -8,6 +8,8 @@ import type { GuidedMission, GuidedStep } from '../../daily/schema.ts'
 import { scoreAndLog } from '../../scoring/attempt.ts'
 import { scoreSpeech, type SpeechScore } from '../../scoring/speechScore.ts'
 import { guidedMission } from '../../services/daily.ts'
+import { load, save } from '../../services/storage.ts'
+import { packMission } from '../../services/pack.ts'
 import { rateForLevel, speak } from '../../services/tts.ts'
 import { getLexicon } from '../../services/words.ts'
 
@@ -15,10 +17,15 @@ const segment = (text: string) => [...new Intl.Segmenter('zh', { granularity: 'w
 const tokensOf = (text: string) => buildParagraph(segment(text), getLexicon())
 
 export default function Guided({ id }: { id: string }) {
-  const mission = guidedMission(id)
+  // Today's missions are cached; pack missions load from the pack file.
+  const [mission, setMission] = useState<GuidedMission | null | undefined>(() => guidedMission(id))
+  useEffect(() => {
+    if (mission === undefined) packMission(id).then((m) => setMission(m ?? null), () => setMission(null))
+  }, [id, mission])
   const [step, setStep] = useState(0)
   const [scores, setScores] = useState<number[]>([])
   const [hideText, setHideText] = useState(false)
+  if (mission === undefined) return <p className="muted">Loading…</p>
   if (!mission) return <><a href="#speak/missions" className="back-link">‹ Missions</a><p className="muted">This mission isn't available any more.</p></>
 
   const done = step >= mission.steps.length
@@ -144,6 +151,10 @@ function StepView({ mission, step, hideText, onNext }: { mission: GuidedMission;
 
 function Closing({ mission, scores, hideText }: { mission: GuidedMission; scores: number[]; hideText: boolean }) {
   const avg = scores.length ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length) : 0
+  useEffect(() => {
+    const done = load<string[]>('guidedDone', [])
+    if (!done.includes(mission.id)) save('guidedDone', [...done, mission.id])
+  }, [mission.id])
   return (
     <>
       <PartnerLine zh={mission.closing_zh} en={mission.closing_en} role={mission.role} hideText={hideText} level={mission.level} />

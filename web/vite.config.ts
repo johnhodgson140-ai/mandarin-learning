@@ -33,8 +33,8 @@ export default defineConfig(({ mode }) => ({
         // Keep the reader font available offline once it has been seen.
         runtimeCaching: [
           {
-            // HSK word list: fetched on first use, then available offline (refreshed in the background).
-            urlPattern: ({ url }) => url.pathname.endsWith('/hsk.json'),
+            // HSK word list and the ready-made pack: fetched on first use, then available offline (refreshed in the background).
+            urlPattern: ({ url }) => /\/(hsk|pack\/stories|pack\/missions)\.json$/.test(url.pathname),
             handler: 'StaleWhileRevalidate',
             options: { cacheName: 'hsk' },
           },
