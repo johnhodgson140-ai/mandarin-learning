@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
-import { mergeCards, nextState, orderFromStates, pickRecallSession, pickSession, ratingFor, retrievability, RETENTION, type Card } from '../src/cards/srs.ts'
+import { mergeCards, nextState, pickRecallSession, pickSession, rateCard, ratingFor, retrievability, RETENTION, type Card } from '../src/cards/srs.ts'
 
 const DAY = 24 * 60 * 60 * 1000
 const now = 1_000_000_000_000
@@ -59,7 +59,16 @@ test('Recall follows Learn: only words done in Learn, in that order, new ones af
   const now = Date.UTC(2026, 8, 29)
   const recall = { 飞机: { due: now - 1, lastScore: 50, seen: 1, stability: 1, difficulty: 5, last: now - 86400000 } }
   assert.deepEqual(pickRecallSession(cards, recall, learnOrder, { newPerSession: 1, now }).map((c) => c.hanzi), ['飞机', '中国'])
-  // Old states without an order: oldest review first.
-  const states = { 中国: { due: 5, lastScore: 90, seen: 1, last: 2 }, 飞机: { due: 5, lastScore: 90, seen: 1, last: 1 } }
-  assert.deepEqual(orderFromStates(cards, states), ['飞机', '中国'])
+})
+
+test('Anki-style ratings: Again comes back now, Easy waits longest, and the rating is kept', () => {
+  const now = Date.UTC(2026, 8, 29)
+  const again = rateCard(undefined, 1, now)
+  const good = rateCard(undefined, 3, now)
+  const easy = rateCard(undefined, 4, now)
+  assert.equal(again.due, now)
+  assert.ok(good.due > now && easy.due > good.due)
+  assert.equal(good.lastRating, 3)
+  assert.equal(good.lastScore, null)
+  assert.equal(rateCard(undefined, 2, now, 72).lastScore, 72)
 })
