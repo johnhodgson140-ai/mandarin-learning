@@ -9,6 +9,7 @@ import { activeDays, estimateHsk, minutesThisWeek, streak, totalXp } from '../pr
 import { scoreAndLog } from '../scoring/attempt.ts'
 import { type Attempt } from '../services/attempts.ts'
 import { idbGet, idbPut } from '../services/idb.ts'
+import { ratingFor } from '../cards/srs.ts'
 import { cardStates } from '../services/cards.ts'
 import { gatherActivity } from '../services/progress.ts'
 import { load, save } from '../services/storage.ts'
@@ -20,8 +21,8 @@ const BENCHMARK = ['你好', '！', '我', '是', '英国人', '，', '我', '�
 
 type Bench = { month: string; score: number }
 
-/** Cards whose last score in that mode was 80 or more. */
-const passed = (mode: 'learn' | 'recall') => Object.values(cardStates(mode)).filter((s) => (s.lastScore ?? 0) >= 80).length
+/** Cards I last rated Good or Easy in that mode (older cards: a score of 80+). */
+const passed = (mode: 'learn' | 'recall') => Object.values(cardStates(mode)).filter((s) => (s.lastRating ?? ratingFor(s.lastScore ?? 0)) >= 3).length
 const monthKey = (ms = Date.now()) => new Date(ms).toISOString().slice(0, 7)
 
 export default function Progress() {
@@ -42,8 +43,8 @@ export default function Progress() {
         <div><dt>Words known</dt><dd>{known}</dd><span className="muted small">{lexicon.size} in your deck</span></div>
         <div><dt>Est. HSK</dt><dd>{estimateHsk(known) || '–'}</dd><span className="muted small">from words known</span></div>
         <div><dt>Minutes spoken</dt><dd>{minutesThisWeek(data.activity)}</dd><span className="muted small">this week</span></div>
-        <div><dt>Say on sight</dt><dd>{passed('learn')}</dd><span className="muted small">Learn cards, last score 80+</span></div>
-        <div><dt>Say from memory</dt><dd>{passed('recall')}</dd><span className="muted small">Recall cards, last score 80+</span></div>
+        <div><dt>Say on sight</dt><dd>{passed('learn')}</dd><span className="muted small">Learn cards rated Good or Easy</span></div>
+        <div><dt>Say from memory</dt><dd>{passed('recall')}</dd><span className="muted small">Recall cards rated Good or Easy</span></div>
         <div><dt>Streak</dt><dd>{s.days}</dd><span className="muted small">{s.freezesLeft} freeze{s.freezesLeft === 1 ? '' : 's'} left · {totalXp(data.activity)} XP</span></div>
       </dl>
 

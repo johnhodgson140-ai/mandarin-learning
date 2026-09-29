@@ -1,5 +1,5 @@
 // My speaking deck: Anki words + a starter list + new words from stories and mission reports.
-import { mergeCards, nextState, orderFromStates, pickRecallSession, pickSession, type Card, type CardState } from '../cards/srs.ts'
+import { mergeCards, pickRecallSession, pickSession, rateCard, type Card, type CardState, type Rating } from '../cards/srs.ts'
 import { STARTER_CARDS } from '../cards/starter.ts'
 import type { Session } from '../missions/logic.ts'
 import { currentUser, dbPut, isConfigured } from './firebase.ts'
@@ -26,23 +26,32 @@ const STATE_KEY: Record<CardMode, string> = { learn: 'cardStates', recall: 'reca
 /** Learn keeps the states saved before Recall existed. */
 export const cardStates = (mode: CardMode = 'learn') => load<Record<string, CardState>>(STATE_KEY[mode], {})
 
-/** The words I've done in Learn, in the order I first did them: how far Recall may go. */
-export function learnOrder(): string[] {
-  const saved = load<string[] | null>('learnOrder', null)
-  if (saved) return saved
-  const derived = orderFromStates(allCards(), cardStates('learn'))
-  save('learnOrder', derived)
-  return derived
+/**
+ * Recall's first version guessed "done in Learn" from old card history, which mixed in cards done English-first.
+ * Start Recall afresh once: only words I pass in Learn from now on unlock it.
+ */
+function migrate(): void {
+  if (load('cardsVersion', 1) >= 2) return
+  save('learnOrder', [])
+  save('recallStates', {})
+  save('cardSession-recall', null)
+  save('cardsVersion', 2)
 }
 
-export function recordCard(hanzi: string, score: number, mode: CardMode = 'learn'): void {
+/** The words I've passed in Learn (Hard or better), in the order I first passed them: how far Recall may go. */
+export function learnOrder(): string[] {
+  migrate()
+  return load<string[]>('learnOrder', [])
+}
+
+/** Rate a card, Anki style. Passing it in Learn (Hard or better) unlocks it in Recall. */
+export function rateCardIn(mode: CardMode, hanzi: string, rating: Rating, score: number | null = null): void {
+  migrate()
   const states = cardStates(mode)
-  states[hanzi] = nextState(states[hanzi], score)
+  states[hanzi] = rateCard(states[hanzi], rating, Date.now(), score)
   save(STATE_KEY[mode], states)
-  if (mode === 'learn') {
-    const order = learnOrder()
-    if (!order.includes(hanzi)) save('learnOrder', [...order, hanzi])
-  }
+  const order = learnOrder()
+  if (mode === 'learn' && rating >= 2 && !order.includes(hanzi)) save('learnOrder', [...order, hanzi])
   if (isConfigured && currentUser()) {
     void dbPut(STATE_KEY[mode], states).catch(() => {})
     if (mode === 'learn') void dbPut('learnOrder', learnOrder()).catch(() => {})
@@ -53,7 +62,8 @@ export function recordCard(hanzi: string, score: number, mode: CardMode = 'learn
 export function newSession(mode: CardMode, newPerSession = 4): Card[] {
   return mode === 'learn'
     ? pickSession(allCards(), cardStates('learn'), { newPerSession })
-    : pickRecallSession(allCards(), cardStates('recall'), learnOrder(), { newPerSession })
+    : // Recall keeps up with Learn: every word newly passed there comes up here (after any due reviews).
+      pickRecallSession(allCards(), cardStates('recall'), learnOrder(), { size: 40, newPerSession: 30 })
 }
 
 /** Reviews due now in each mode, plus (for Recall) words Learn has unlocked but Recall hasn't met yet. */
@@ -71,6 +81,7 @@ export type SavedSession = { day: string; hanzi: string[]; index: number; scores
 const today = () => new Date().toDateString()
 
 export function resumeSession(mode: CardMode): { cards: Card[]; index: number; scores: number[] } {
+  migrate()
   const saved = load<SavedSession | null>(`cardSession-${mode}`, null)
   const byHanzi = new Map(allCards().map((c) => [c.hanzi, c]))
   const cards = saved?.day === today() ? saved.hanzi.flatMap((h) => byHanzi.get(h) ?? []) : []

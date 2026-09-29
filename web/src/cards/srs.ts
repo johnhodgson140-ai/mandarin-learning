@@ -14,6 +14,8 @@ export type CardState = {
   difficulty?: number
   /** When it was last reviewed. */
   last?: number
+  /** How I rated it last time (Again 1 … Easy 4). */
+  lastRating?: Rating
   /** Box system (before FSRS). */
   box?: number
 }
@@ -43,7 +45,11 @@ const intervalDays = (stability: number) => Math.max(1, Math.round((stability / 
 
 /** Update a card after I say it (score 1–100). "Again" puts it straight back into today's queue. */
 export function nextState(state: CardState | undefined, score: number, now = Date.now()): CardState {
-  const g = ratingFor(score)
+  return rateCard(state, ratingFor(score), now, score)
+}
+
+/** Update a card with my own rating, Anki style (the speaking score, if any, is kept for stats). */
+export function rateCard(state: CardState | undefined, g: Rating, now = Date.now(), score: number | null = null): CardState {
   const seen = (state?.seen ?? 0) + 1
   let stability: number
   let difficulty: number
@@ -68,7 +74,7 @@ export function nextState(state: CardState | undefined, score: number, now = Dat
   }
   stability = Math.max(0.1, stability)
   const due = g === 1 ? now : now + intervalDays(stability) * DAY
-  return { due, lastScore: score, seen, stability, difficulty, last: now }
+  return { due, lastScore: score, lastRating: g, seen, stability, difficulty, last: now }
 }
 
 /** Days until a card comes back (for showing after a review). */
@@ -118,16 +124,6 @@ export function pickRecallSession(
     .sort((a, b) => recallNow(recall[a.hanzi], now) - recallNow(recall[b.hanzi], now) || recall[a.hanzi].due - recall[b.hanzi].due)
   const fresh = unlocked.filter((c) => !recall[c.hanzi]).slice(0, newPerSession)
   return [...due.slice(0, size - fresh.length), ...fresh].slice(0, size)
-}
-
-/** Words in the order I first did them in Learn, for states saved before that order was kept (oldest review first). */
-export function orderFromStates(cards: Card[], states: Record<string, CardState>): string[] {
-  const first = (s: CardState) => s.last ?? s.due
-  return cards
-    .map((c, i) => ({ c, i }))
-    .filter(({ c }) => states[c.hanzi])
-    .sort((a, b) => first(states[a.c.hanzi]) - first(states[b.c.hanzi]) || a.i - b.i)
-    .map(({ c }) => c.hanzi)
 }
 
 /** Merge card sources, first one wins for duplicates. */
