@@ -1,0 +1,256 @@
+[
+  {
+    "id": "L6-football-short", "level": 6, "topic": "football", "length": "short",
+    "title_zh": "资本与足球", "title_en": "Capital and football",
+    "paragraphs": [
+      "近二十年来，欧洲顶级联赛的俱乐部纷纷易主，买家从石油富豪到私募基金，不一而足。资本的涌入固然带来了巨星与新球场，却也让票价水涨船高，令不少本地老球迷望而却步。",
+      "更令人担忧的是，一旦投资方的战略重心发生转移，俱乐部便可能被当作资产随意处置，百年传统在财务报表面前显得不堪一击。",
+      "足球究竟是一门生意，还是一种社区的归属？这个问题，恐怕没有哪一方能够给出令人信服的答案。"
+    ],
+    "translations": [
+      "Over the past twenty years, clubs in Europe's top leagues have changed hands one after another, with buyers ranging from oil tycoons to private equity funds. The influx of capital has brought superstars and new stadiums, but has also sent ticket prices soaring, pricing out many long-time local fans.",
+      "More worrying still, once an investor's strategic focus shifts, a club may be disposed of like any other asset; a century of tradition looks utterly fragile in the face of a financial statement.",
+      "Is football a business, or a sense of belonging for a community? It's doubtful anyone can give a convincing answer."
+    ],
+    "names": ["欧洲"], "glossary": { "欧洲": "Europe", "顶级": "top-tier", "纷纷": "one after another", "易主": "to change owners", "富豪": "tycoon", "私募基金": "private equity fund", "不一而足": "of every kind", "涌入": "to pour in", "固然": "admittedly", "水涨船高": "to rise along with", "望而却步": "to be put off", "战略": "strategy", "重心": "focus", "资产": "asset", "处置": "to dispose of", "不堪一击": "can't withstand a blow", "归属": "belonging", "信服": "convincing" }
+  },
+  {
+    "id": "L6-football-medium", "level": 6, "topic": "football", "length": "medium",
+    "title_zh": "点球", "title_en": "The penalty",
+    "paragraphs": [
+      "十二码，不到十一米的距离，却被许多球员称为世界上最漫长的一段路。在点球大战中，门将几乎没有时间做出反应，理论上罚球者占据绝对优势，然而历史上因罚丢点球而抱憾终身的球星比比皆是。",
+      "心理学家的研究表明，决定点球成败的，往往不是技术，而是压力。当罚球的结果关系到整场比赛的胜负时，球员的命中率会显著下降；而当罚进意味着直接获胜时，命中率反而会上升。换句话说，对失败的恐惧，比对成功的渴望更能左右一个人的表现。",
+      "有意思的是，研究人员还发现，那些在罚球前匆匆跑向皮球、刻意回避门将目光的球员，罚丢的概率明显更高。他们似乎只想尽快结束这段煎熬，而不是专注于如何把球踢进。",
+      "因此，越来越多的球队开始把心理训练纳入日常。球员们在训练中模拟嘘声、灯光和疲劳，练习在高压下保持固定的呼吸节奏和助跑步数。有的教练甚至要求球员在罚球前停顿两秒，把注意力从“不能失误”转移到“我要把球踢向哪里”。",
+      "说到底，点球考验的不只是脚法，更是一个人与自己内心对话的能力。站在罚球点上的那几秒，也许是足球最接近人生的时刻：没有人能替你承担，也没有退路可走。"
+    ],
+    "translations": [
+      "Twelve yards, less than eleven metres, yet many players call it the longest walk in the world. In a penalty shoot-out the goalkeeper barely has time to react, so in theory the taker holds an overwhelming advantage; and yet history is full of stars who have regretted a missed penalty for the rest of their lives.",
+      "Psychologists' research shows that what decides a penalty is often not technique but pressure. When the kick determines whether the whole match is lost, players' conversion rates drop significantly; when scoring means winning outright, the rate actually goes up. In other words, fear of failure sways performance more than the desire for success.",
+      "Interestingly, researchers also found that players who rush at the ball and deliberately avoid the goalkeeper's gaze miss noticeably more often. They seem to want only to end the ordeal as fast as possible, rather than focusing on how to score.",
+      "So more and more teams are building mental training into their routine. In training, players simulate jeers, floodlights and fatigue, practising a fixed breathing rhythm and run-up under pressure. Some coaches even have players pause for two seconds before shooting, shifting their attention from \"I mustn't miss\" to \"where am I putting it\".",
+      "Ultimately, a penalty tests not just technique but your ability to hold a conversation with yourself. Those few seconds on the spot may be the moment where football comes closest to life: no one can carry it for you, and there's no way back."
+    ],
+    "names": [], "glossary": { "码": "yard", "漫长": "very long", "点球大战": "penalty shoot-out", "门将": "goalkeeper", "占据": "to hold; to occupy", "优势": "advantage", "抱憾终身": "to regret for life", "比比皆是": "found everywhere", "胜负": "victory or defeat", "命中率": "hit rate; conversion rate", "显著": "significant", "恐惧": "fear", "渴望": "longing; desire", "左右": "to sway; to control", "刻意": "deliberately", "回避": "to avoid", "目光": "gaze", "概率": "probability", "煎熬": "ordeal; torment", "纳入": "to incorporate", "模拟": "to simulate", "嘘声": "boos; jeers", "助跑": "run-up", "失误": "mistake", "承担": "to bear; to take on", "退路": "way back; way out" }
+  },
+  {
+    "id": "L6-fashion-short", "level": 6, "topic": "archive fashion", "length": "short",
+    "title_zh": "旧衣新价", "title_en": "Old clothes, new prices",
+    "paragraphs": [
+      "十年前，古着还只是少数爱好者的圈内游戏；如今，某些设计师早年的作品在拍卖会上屡创新高，二级市场俨然成了一门严肃的投资。",
+      "炒作者囤货居奇，真正想穿的人反倒望尘莫及，这未免有些讽刺。当一件衣服的价值只剩下价格，它最初承载的叛逆与态度，也就悄然消失了。"
+    ],
+    "translations": [
+      "Ten years ago vintage was still an insiders' game for a handful of enthusiasts; today, early work by certain designers keeps setting new records at auction, and the resale market has practically become a serious investment.",
+      "Speculators hoard stock and hold out for higher prices, while those who actually want to wear the clothes can't get anywhere near them, which is more than a little ironic. When a garment's value is reduced to its price, the rebellion and attitude it once carried quietly disappear."
+    ],
+    "names": [], "glossary": { "古着": "vintage clothing", "圈内": "insider; in the scene", "拍卖会": "auction", "屡创新高": "to repeatedly hit new highs", "二级市场": "secondary (resale) market", "俨然": "just like; practically", "炒作": "to speculate; to hype", "囤货居奇": "to hoard goods for a higher price", "望尘莫及": "too far behind to catch up", "未免": "rather; a bit too", "讽刺": "ironic", "承载": "to carry", "叛逆": "rebellion", "悄然": "quietly" }
+  },
+  {
+    "id": "L6-fashion-medium", "level": 6, "topic": "archive fashion", "length": "medium",
+    "title_zh": "缝纫机与诗", "title_en": "Sewing machines and poetry",
+    "paragraphs": [
+      "在比利时安特卫普的皇家艺术学院，时装系的学生常常被要求完成一项看似与服装毫不相干的作业：先写一首诗，或者拍一组照片，再把其中的情绪转化为衣服。",
+      "这种教学方式，与其说是在培养裁缝，不如说是在培养作者。老师们认为，技术可以在几年之内学会，但一个设计师是否有自己的语言，决定了他能走多远。",
+      "上世纪八十年代，六位从这里毕业的年轻人租了一辆卡车，把作品运到伦敦参加展会。他们的名字又长又难念，英国记者干脆把他们统称为“安特卫普六君子”。正是这次冒险，让这座以钻石贸易闻名的港口城市，一跃成为先锋时尚的重镇。",
+      "当然，这种教育模式也备受争议。学院以淘汰率高而著称，一个年级的学生到毕业时往往只剩下三分之一。有人批评它过于严苛，扼杀了不少才华；也有人认为，正是这种压力，逼出了真正的创造力。",
+      "我曾问过一位在那里读书的朋友，最大的收获是什么。她想了很久，说：“他们让我明白，衣服不是装饰，而是一种表达。你可以不喜欢我做的东西，但你不能看不出我想说什么。”"
+    ],
+    "translations": [
+      "At the Royal Academy of Fine Arts in Antwerp, Belgium, fashion students are often set an assignment that seems to have nothing to do with clothing: first write a poem, or take a series of photos, then turn the emotion in it into clothes.",
+      "This way of teaching is less about training tailors than about training authors. The teachers believe technique can be learned in a few years, but whether a designer has their own language decides how far they'll go.",
+      "In the 1980s, six young graduates from here hired a lorry and drove their work to London for a trade show. Their names were long and hard to pronounce, so British journalists simply called them the \"Antwerp Six\". It was this gamble that turned a port city famed for its diamond trade into a centre of avant-garde fashion almost overnight.",
+      "Of course, this model of education is highly controversial. The academy is known for its high drop-out rate; often only a third of a year group makes it to graduation. Some criticise it as too harsh, crushing plenty of talent; others believe it's exactly this pressure that draws out real creativity.",
+      "I once asked a friend who studied there what she gained most. She thought for a long time and said, \"They made me understand that clothes aren't decoration, they're expression. You can dislike what I make, but you can't fail to see what I'm trying to say.\""
+    ],
+    "names": ["比利时", "安特卫普", "伦敦", "英国"], "glossary": { "比利时": "Belgium", "安特卫普": "Antwerp", "伦敦": "London", "英国": "Britain", "皇家艺术学院": "Royal Academy of Fine Arts", "时装系": "fashion department", "毫不相干": "completely unrelated", "培养": "to train; to cultivate", "展会": "trade show", "统称": "to refer to collectively", "六君子": "the Six (gentlemen)", "冒险": "risk; gamble", "钻石贸易": "diamond trade", "港口": "port", "一跃": "in one leap", "重镇": "important centre", "备受争议": "highly controversial", "淘汰率": "elimination rate", "著称": "to be known for", "严苛": "harsh; severe", "扼杀": "to stifle", "才华": "talent", "创造力": "creativity", "装饰": "decoration" }
+  },
+  {
+    "id": "L6-fashion-long", "level": 6, "topic": "archive fashion", "length": "long",
+    "title_zh": "修补的艺术", "title_en": "The art of mending",
+    "paragraphs": [
+      "我外公是上海一家老牌西服店的裁缝，干了一辈子。小时候我常趴在他的工作台边，看他用粉笔在布料上画线，用剪刀沿着线剪开，那种干脆利落的声音，至今仍在我耳边回响。",
+      "外公最常说的一句话是：“衣服不怕旧，就怕没人管。”在他眼里，一件衣服穿破了并不可惜，可惜的是人们还没来得及修补，就把它扔掉了。他的抽屉里有几十种颜色的线，还有一个装满了各式纽扣的铁盒，那是他几十年来从旧衣服上拆下来的。",
+      "外公去世后，我继承了那只铁盒，却一直不知道该拿它怎么办。直到几年前，我在东京的一家小店里第一次见到了“褴褛”——那是日本东北地区的农民在物资匮乏的年代，用一块块碎布层层叠叠缝补出来的衣物和被子。",
+      "那件被缝补了不下几百次的蓝色旧衣，挂在店里最显眼的位置。仔细看，每一块补丁的颜色、每一行针脚的疏密都不相同，显然出自好几代人之手。店主告诉我，这类衣物如今已被当作艺术品收藏，甚至进了欧洲的博物馆。",
+      "站在那件衣服面前，我突然想起了外公的铁盒。原来，在大洋两岸，在两个互不相识的时代，有人用同样的方式对抗着“浪费”这件事：不是靠口号，而是靠一针一线的耐心。",
+      "回国以后，我开始学着修补自己的旧衣服。刚开始针脚歪歪扭扭，补丁也缝得很难看，但我渐渐发现，修补的过程本身就有一种奇特的疗愈作用。在一个万物都追求“更快、更新”的时代，坐下来花两个小时缝好一个洞，几乎是一种温和的反抗。",
+      "我还把这些修补的过程拍成视频放到网上，没想到引起了不少年轻人的共鸣。有人发来自己第一次缝补的照片，有人留言说想起了已经去世的奶奶，还有一个服装设计专业的学生告诉我，她的毕业作品就打算以“修补”为主题。",
+      "当然，我也收到过质疑的声音：一个人修补几件衣服，能改变什么呢？时装产业每年产生的纺织废料数以千万吨计，个人的努力显得微不足道。",
+      "对此我无法反驳，但我想，改变也许本来就不是一蹴而就的。外公用一辈子积攒的纽扣，东北农民用几代人缝出的旧衣，它们都没有改变世界，却让某种珍惜的态度得以流传下来。",
+      "如今，那只铁盒就放在我的工作台上。每当我找不到合适的纽扣，就会打开它翻一翻。那些来自不同年代、不同衣服的纽扣，静静地躺在一起，像是在提醒我：旧的东西，只要有人愿意管，就永远不会真正失去价值。"
+    ],
+    "translations": [
+      "My grandfather was a tailor at an old, established suit shop in Shanghai all his life. As a child I'd often lean on his workbench watching him mark lines on fabric with chalk and cut along them with scissors; that crisp, decisive sound still echoes in my ears.",
+      "His favourite saying was, \"Clothes don't mind being old; they mind being neglected.\" To him, wearing a garment out was no pity; the pity was people throwing it away before they'd had a chance to mend it. His drawer held dozens of colours of thread, and a tin full of all kinds of buttons he'd taken off old clothes over the decades.",
+      "When he died I inherited the tin but never knew what to do with it. Until a few years ago, in a little shop in Tokyo, I first saw boro: clothes and quilts that farmers in Japan's Tohoku region, in times of scarcity, stitched together from layer upon layer of scraps.",
+      "A blue garment mended at least several hundred times hung in the most prominent spot in the shop. Look closely and every patch's colour and every line of stitching's density differed; clearly it was the work of several generations. The owner told me such pieces are now collected as art, and have even entered European museums.",
+      "Standing in front of it, I suddenly thought of my grandfather's tin. On opposite sides of the ocean, in two eras unknown to each other, people had fought waste in the same way: not with slogans, but with patience, stitch by stitch.",
+      "After coming home I started learning to mend my own old clothes. At first my stitches were crooked and my patches ugly, but I gradually found the act of mending itself strangely healing. In an age when everything chases \"faster, newer\", sitting down for two hours to sew up a hole is almost a gentle act of resistance.",
+      "I also filmed my mending and posted it online, and to my surprise it struck a chord with lots of young people. Some sent photos of their first mend, some commented that it reminded them of a late grandmother, and a fashion design student told me she planned to make \"mending\" the theme of her graduate collection.",
+      "Of course, I've heard doubts too: what can one person mending a few clothes change? The fashion industry produces tens of millions of tonnes of textile waste every year; individual effort seems insignificant.",
+      "I can't argue with that. But perhaps change was never going to happen overnight. My grandfather's lifetime of buttons, the northern farmers' garments sewn over generations: none of them changed the world, yet they let a certain attitude of care be handed down.",
+      "Now the tin sits on my workbench. Whenever I can't find the right button, I open it and rummage. Buttons from different eras and different clothes lie quietly together, as if reminding me: as long as someone is willing to care for old things, they never truly lose their value."
+    ],
+    "names": ["上海", "东京", "欧洲"], "glossary": { "上海": "Shanghai", "东京": "Tokyo", "欧洲": "Europe", "外公": "grandfather (mother's father)", "老牌": "old, established (brand)", "趴": "to lean on; to lie prone", "粉笔": "chalk", "干脆利落": "crisp and decisive", "回响": "to echo", "修补": "to mend", "纽扣": "button", "继承": "to inherit", "褴褛": "boro (patched Japanese textiles); rags", "物资匮乏": "scarcity of goods", "层层叠叠": "layer upon layer", "补丁": "patch", "针脚": "stitch", "疏密": "density", "对抗": "to resist; to fight", "口号": "slogan", "歪歪扭扭": "crooked", "疗愈": "healing", "温和": "gentle", "反抗": "resistance", "共鸣": "resonance; to strike a chord", "质疑": "to question; doubt", "纺织废料": "textile waste", "微不足道": "insignificant", "反驳": "to refute", "一蹴而就": "to succeed at one go", "积攒": "to accumulate", "珍惜": "to cherish", "流传": "to be handed down" }
+  },
+  {
+    "id": "L6-anime-short", "level": 6, "topic": "anime", "length": "short",
+    "title_zh": "作画崩坏", "title_en": "Animation collapse",
+    "paragraphs": [
+      "每当一部热门动画出现“作画崩坏”，网上总少不了冷嘲热讽。可鲜有观众知道，这背后往往是制作周期被一再压缩、外包层层转手的结构性困境。",
+      "一线原画师的时薪低得惊人，熬夜赶工已是常态。与其一味指责画师敷衍了事，不如追问：在这条产业链上，利润究竟流向了哪里？"
+    ],
+    "translations": [
+      "Whenever a popular anime suffers \"animation collapse\", the internet is sure to fill with sneers. But few viewers realise that behind it there's usually a structural bind: production schedules squeezed again and again, and outsourcing passed down layer after layer.",
+      "Frontline key animators' hourly pay is shockingly low, and all-nighters to meet deadlines are the norm. Rather than blindly accusing animators of cutting corners, we should ask: where along this industrial chain does the profit actually go?"
+    ],
+    "names": [], "glossary": { "作画崩坏": "animation collapse (off-model drawing)", "冷嘲热讽": "sneers and sarcasm", "鲜有": "few; rarely", "周期": "cycle; schedule", "压缩": "to compress", "外包": "to outsource", "转手": "to pass on", "困境": "predicament", "时薪": "hourly wage", "常态": "the norm", "一味": "blindly", "指责": "to accuse", "敷衍了事": "to do a perfunctory job", "产业链": "industrial chain" }
+  },
+  {
+    "id": "L6-anime-medium", "level": 6, "topic": "anime", "length": "medium",
+    "title_zh": "宫崎骏的天空", "title_en": "Miyazaki's skies",
+    "paragraphs": [
+      "如果说宫崎骏的作品有什么共同的母题，那一定是飞翔。无论是骑着扫帚送快递的小魔女，还是在战火中设计飞机的工程师，他笔下的人物似乎总在寻找离开地面的方式。",
+      "然而，飞翔在他的故事里从来不是单纯的浪漫。《起风了》的主人公毕生追求设计出最美的飞机，却眼睁睁看着自己的心血被用于战争。美与毁灭、梦想与代价，在同一片天空下纠缠不清。",
+      "这种矛盾，某种程度上也映照着宫崎骏本人。他的父亲曾在家族工厂里生产战斗机的零件，而他自己却是一位坚定的反战主义者。他一边痴迷于机械之美，一边对技术被滥用深怀警惕。",
+      "也正因如此，他的作品很少提供非黑即白的答案。反派往往有着令人同情的理由，英雄也难免犯错。他更关心的，是人在复杂的世界里如何保持善良，如何在明知不完美的现实中，依然选择好好活下去。",
+      "或许这就是为什么，许多人在童年看他的电影时只看到了飞行的快乐，长大后重看，却常常在某个安静的镜头前泪流满面。天空还是那片天空，变的是我们终于读懂了它的重量。"
+    ],
+    "translations": [
+      "If Miyazaki's work has a common motif, it must be flight. Whether it's the little witch delivering parcels on a broomstick, or the engineer designing planes amid war, his characters always seem to be looking for a way to leave the ground.",
+      "Yet flight in his stories is never simply romantic. The hero of The Wind Rises devotes his life to designing the most beautiful aeroplane, only to watch helplessly as his life's work is used for war. Beauty and destruction, dreams and their cost, are tangled together under the same sky.",
+      "To some extent this contradiction mirrors Miyazaki himself. His father's family factory made parts for fighter planes, yet he is a committed pacifist. He is fascinated by the beauty of machines while remaining deeply wary of technology's misuse.",
+      "That's exactly why his work rarely offers black-and-white answers. Villains often have sympathetic reasons, and heroes inevitably make mistakes. What he cares about more is how people stay kind in a complicated world, and how, knowing reality is imperfect, they still choose to live well.",
+      "Perhaps that's why many people who saw only the joy of flying in his films as children find themselves in tears at some quiet shot when they rewatch them as adults. The sky is the same sky; what's changed is that we've finally understood its weight."
+    ],
+    "names": ["宫崎骏", "起风了"], "glossary": { "宫崎骏": "Hayao Miyazaki", "起风了": "The Wind Rises", "母题": "motif", "飞翔": "to fly", "扫帚": "broom", "魔女": "witch", "战火": "war; flames of war", "工程师": "engineer", "毕生": "lifelong", "眼睁睁": "helplessly (watching)", "心血": "painstaking effort", "毁灭": "destruction", "纠缠": "to be entangled", "矛盾": "contradiction", "映照": "to reflect", "战斗机": "fighter plane", "零件": "parts", "反战主义者": "pacifist", "痴迷": "obsessed", "机械": "machinery", "滥用": "misuse", "警惕": "vigilance; wary", "非黑即白": "black and white", "反派": "villain", "同情": "sympathy", "善良": "kind", "泪流满面": "face streaming with tears" }
+  },
+  {
+    "id": "L6-travel-short", "level": 6, "topic": "travel", "length": "short",
+    "title_zh": "过度旅游", "title_en": "Overtourism",
+    "paragraphs": [
+      "从威尼斯到京都，越来越多的热门城市开始对游客征收入城费、限制旅游团规模。当地居民不堪其扰，抱怨房租被短租平台推高，社区逐渐沦为只有游客的布景。",
+      "旅游固然能拉动经济，但若以牺牲居民的日常生活为代价，这种繁荣恐怕难以为继。作为游客，我们或许也该反思：怎样的到访，才算是对一个地方的尊重？"
+    ],
+    "translations": [
+      "From Venice to Kyoto, more and more popular cities are charging tourists entry fees and limiting the size of tour groups. Locals, fed up, complain that short-let platforms have pushed up rents and that neighbourhoods are turning into stage sets populated only by tourists.",
+      "Tourism can certainly boost the economy, but if it comes at the cost of residents' daily lives, this prosperity is unlikely to last. As tourists, perhaps we should also reflect: what kind of visit counts as respecting a place?"
+    ],
+    "names": ["威尼斯", "京都"], "glossary": { "威尼斯": "Venice", "京都": "Kyoto", "过度旅游": "overtourism", "征收": "to levy", "入城费": "entry fee (to a city)", "规模": "scale; size", "居民": "resident", "不堪其扰": "unable to bear the disturbance", "短租平台": "short-let platform", "沦为": "to be reduced to", "布景": "stage set", "拉动": "to boost", "牺牲": "to sacrifice", "难以为继": "hard to sustain", "反思": "to reflect", "尊重": "respect" }
+  },
+  {
+    "id": "L6-travel-medium", "level": 6, "topic": "travel", "length": "medium",
+    "title_zh": "敦煌的沙", "title_en": "The sands of Dunhuang",
+    "paragraphs": [
+      "抵达敦煌是在一个黄昏。飞机降落前，我从舷窗望出去，无边无际的戈壁在夕阳下泛着铁锈般的红色，城市像是被人随手丢在沙海里的一小块绿洲。",
+      "第二天清晨，我去了莫高窟。讲解员是一位在这里工作了二十多年的中年女士，说话不紧不慢。她告诉我们，为了保护壁画，每个洞窟每天的参观人数都有严格限制，游客呼出的水汽和二氧化碳，都会加速颜料的剥落。",
+      "走进一座唐代的洞窟，手电筒的光扫过墙壁，飞天衣带飘举，仿佛下一秒就要从墙上飞出来。讲解员说，这些壁画的作者大多没有留下名字，他们是千百年前一批批从中原和西域来到这里的普通画工。",
+      "最让我动容的，是一位老先生的故事。上世纪四十年代，他放弃了在巴黎学画的优渥生活，来到这片荒漠，一待就是半个世纪。那时这里没有电，冬天零下二十度，他们住在马厩改成的房子里，靠临摹和记录，一点一点地把残破的壁画整理成册。",
+      "离开前的傍晚，我爬上鸣沙山。风吹过沙丘，发出低沉的声响。山下的月牙泉静静地躺在沙漠中央，两千年来从未干涸。我突然觉得，这片土地上最珍贵的，除了那些壁画，还有一代代人不计回报的坚守。"
+    ],
+    "translations": [
+      "I arrived in Dunhuang at dusk. Before landing I looked out of the window: the endless Gobi glowed rust-red in the setting sun, and the city looked like a little oasis someone had casually dropped into a sea of sand.",
+      "Early the next morning I went to the Mogao Caves. Our guide was a middle-aged woman who'd worked there for over twenty years and spoke in an unhurried way. She told us that to protect the murals, each cave has a strict daily visitor limit; the moisture and carbon dioxide tourists breathe out speed up the flaking of the pigments.",
+      "Stepping into a Tang dynasty cave, as the torchlight swept across the walls, flying apsaras with ribbons streaming looked as if they might leap off the wall any second. The guide said most of the painters left no names; they were ordinary artisans who came here, generation after generation, from the Central Plains and the Western Regions over a thousand years ago.",
+      "What moved me most was the story of one old man. In the 1940s he gave up a comfortable life studying painting in Paris and came to this desert, where he stayed for half a century. There was no electricity then, winters hit minus twenty, and they lived in converted stables, gradually compiling the damaged murals into volumes by copying and recording them.",
+      "On my last evening I climbed Mingsha Mountain. Wind swept over the dunes with a deep hum. Below, the Crescent Moon Spring lay quietly in the middle of the desert; in two thousand years it has never run dry. I suddenly felt that the most precious thing in this land, besides the murals, is the dedication of generation after generation who asked nothing in return."
+    ],
+    "names": ["敦煌", "莫高窟", "巴黎", "鸣沙山", "月牙泉", "中原", "西域"], "glossary": { "敦煌": "Dunhuang", "莫高窟": "Mogao Caves", "巴黎": "Paris", "鸣沙山": "Mingsha (Singing Sand) Mountain", "月牙泉": "Crescent Moon Spring", "中原": "the Central Plains", "西域": "the Western Regions", "抵达": "to arrive", "黄昏": "dusk", "舷窗": "(plane) window", "无边无际": "boundless", "戈壁": "Gobi; stony desert", "铁锈": "rust", "绿洲": "oasis", "讲解员": "guide", "壁画": "mural", "洞窟": "cave", "二氧化碳": "carbon dioxide", "颜料": "pigment", "剥落": "to flake off", "唐代": "Tang dynasty", "飞天": "flying apsara", "飘举": "to flutter up", "画工": "artisan painter", "动容": "to be moved", "优渥": "comfortable; well-off", "荒漠": "desert", "马厩": "stable", "临摹": "to copy (a painting)", "残破": "damaged", "沙丘": "sand dune", "干涸": "to dry up", "坚守": "dedication; to hold fast" }
+  },
+  {
+    "id": "L6-daily-short", "level": 6, "topic": "daily life", "length": "short",
+    "title_zh": "独处", "title_en": "Solitude",
+    "paragraphs": [
+      "在这个信息无孔不入的时代，真正的独处反倒成了一种奢侈。我们习惯了用手机填满每一个空隙，排队时刷视频，吃饭时看剧，连睡前最后一眼也留给了屏幕。",
+      "可是，人需要一些什么都不做的时刻，让思绪自由游荡。独处并不等于孤独；恰恰相反，学会与自己相处，才能更从容地与他人相处。"
+    ],
+    "translations": [
+      "In an age when information seeps into every corner, real solitude has become a luxury. We're used to filling every gap with our phones: scrolling videos in queues, watching shows over meals, even saving our last glance before sleep for a screen.",
+      "But people need moments of doing nothing at all, to let their thoughts wander freely. Being alone doesn't mean being lonely; quite the opposite: only by learning to be with yourself can you be at ease with others."
+    ],
+    "names": [], "glossary": { "独处": "to be alone; solitude", "无孔不入": "to seep into everything", "奢侈": "luxury", "空隙": "gap", "看剧": "to watch a show", "思绪": "train of thought", "游荡": "to wander", "孤独": "loneliness", "恰恰相反": "quite the opposite", "从容": "calm; at ease" }
+  },
+  {
+    "id": "L6-daily-medium", "level": 6, "topic": "daily life", "length": "medium",
+    "title_zh": "父亲的沉默", "title_en": "My father's silence",
+    "paragraphs": [
+      "我父亲是个不善言辞的人。从小到大，我几乎没听他说过“我爱你”或者“我为你骄傲”之类的话。他表达关心的方式，总是出人意料地具体：一箱从老家寄来的苹果，一条提醒我降温加衣的短信，或者我回家时早已加满油的车。",
+      "年少时，我曾因此心怀怨气。看着同学的父亲在毕业典礼上又拥抱又拍照，我不止一次地想，为什么我的父亲就不能多说几句？他站在人群最后面，手里拿着一束有点儿蔫的花，冲我点了点头，就算是祝贺了。",
+      "直到我自己参加工作，才渐渐体会到他的不容易。那年我在外地遭遇了一次严重的裁员，失业整整半年。我没敢告诉家里，每次打电话都说一切都好。可是有一天，我的银行卡里突然多了两万块钱，转账备注只有四个字：“别太辛苦。”",
+      "后来母亲告诉我，那段时间父亲每天晚上都在网上搜我所在行业的新闻，看到裁员的消息，就一个人在阳台上抽烟，一抽就是半包。他什么都猜到了，却什么都没问。",
+      "如今我也成了父亲，才明白有些爱之所以沉默，并不是因为它浅，而是因为它太重，重到说出口反而显得轻飘飘的。前几天，我给他打电话，聊完天气和庄稼，犹豫了很久，终于说了一句：“爸，谢谢你。”电话那头沉默了几秒，然后传来一声有点儿沙哑的：“嗯。”"
+    ],
+    "translations": [
+      "My father isn't a man of words. Growing up, I almost never heard him say \"I love you\" or \"I'm proud of you\". His way of showing care was always surprisingly concrete: a box of apples sent from our home town, a text reminding me to wrap up when the temperature dropped, or a car already filled with petrol when I came home.",
+      "When I was young, I resented it. Watching classmates' fathers hug them and take photos at graduation, I wondered more than once why mine couldn't say a bit more. He stood at the very back of the crowd with a slightly wilted bunch of flowers, nodded at me, and that was his congratulations.",
+      "Only when I started working myself did I gradually understand how hard things were for him. That year, working in another city, I was hit by a major round of layoffs and was unemployed for six whole months. I didn't dare tell my family and said everything was fine every time I called. But one day twenty thousand kuai suddenly appeared in my bank account, with a transfer note of just four characters: \"Don't work too hard.\"",
+      "Later my mother told me that during that time my father searched online every night for news about my industry, and when he saw reports of layoffs he'd smoke alone on the balcony, half a pack at a time. He'd guessed everything, yet asked nothing.",
+      "Now that I'm a father myself, I understand that some love is silent not because it's shallow but because it's so heavy that saying it out loud would make it sound flimsy. A few days ago I called him. After talking about the weather and the crops, I hesitated for a long time and finally said, \"Dad, thank you.\" There were a few seconds of silence on the other end, then a slightly hoarse: \"Mm.\""
+    ],
+    "names": [], "glossary": { "不善言辞": "not good with words", "骄傲": "proud", "出人意料": "unexpectedly", "具体": "concrete; specific", "降温": "temperature drop", "怨气": "resentment", "毕业典礼": "graduation ceremony", "拥抱": "to hug", "蔫": "wilted", "祝贺": "to congratulate", "遭遇": "to encounter (misfortune)", "裁员": "layoffs", "失业": "unemployed", "转账": "bank transfer", "备注": "note; memo", "浅": "shallow", "轻飘飘": "light; flimsy", "庄稼": "crops", "沙哑": "hoarse" }
+  },
+  {
+    "id": "L6-business-short", "level": 6, "topic": "business & finance", "length": "short",
+    "title_zh": "商誉减值", "title_en": "Goodwill impairment",
+    "paragraphs": [
+      "企业并购时支付的价格高于被收购方净资产公允价值的部分，在会计上被确认为商誉。前几年并购潮中，不少上市公司溢价收购，账上积累了巨额商誉。",
+      "一旦被收购的业务业绩不达预期，公司就必须计提减值，利润可能在一夜之间由盈转亏。对投资者而言，商誉占净资产比例过高的公司，往往潜藏着不容忽视的风险。"
+    ],
+    "translations": [
+      "When a company makes an acquisition, the amount paid above the fair value of the target's net assets is recognised in the accounts as goodwill. During the M&A wave of recent years, many listed companies paid a premium for acquisitions and built up huge amounts of goodwill on their books.",
+      "Once an acquired business misses expectations, the company must book an impairment, and profit can flip to a loss overnight. For investors, companies where goodwill is a high share of net assets often hide risks that can't be ignored."
+    ],
+    "names": [], "glossary": { "商誉": "goodwill", "减值": "impairment", "并购": "mergers and acquisitions", "收购": "to acquire", "净资产": "net assets", "公允价值": "fair value", "确认": "to recognise", "上市公司": "listed company", "溢价": "premium", "巨额": "huge amount", "业绩": "performance; results", "预期": "expectation", "计提": "to provision; to book", "由盈转亏": "to swing from profit to loss", "潜藏": "to lie hidden", "忽视": "to ignore", "风险": "risk" }
+  },
+  {
+    "id": "L6-business-medium", "level": 6, "topic": "business & finance", "length": "medium",
+    "title_zh": "一家老字号的转型", "title_en": "An old brand reinvents itself",
+    "paragraphs": [
+      "在北京前门大街，有一家创立于清朝末年的布鞋老字号。上世纪九十年代，随着运动鞋和皮鞋的普及，它的销量一落千丈，门店从十几家缩减到仅剩一家，一度濒临倒闭。",
+      "二零一五年，创始家族的第五代传人接手了这家店。她曾在外资咨询公司工作多年，上任后做的第一件事，不是推出新产品，而是花了三个月时间，把过去三十年的销售数据和客户反馈逐一梳理。",
+      "分析结果出人意料：老顾客的流失固然严重，但真正的问题在于，品牌在年轻人心目中几乎是“隐形”的。很多人不是不喜欢布鞋，而是根本不知道还有人在做手工布鞋。",
+      "于是，她做了几个在当时颇具争议的决定：保留千层底的传统工艺，却大胆地和年轻设计师合作推出联名款；在社交媒体上直播老师傅纳鞋底的全过程；同时把一部分利润投入到非遗传承人的培养计划中。",
+      "起初，不少老员工担心这些做法会“砸了招牌”。然而，事实证明，传统与创新并非水火不容。三年后，品牌线上销售额占比超过六成，购买者中三十五岁以下的消费者比例翻了两番。",
+      "谈及成功的原因，她说：“老字号最值钱的不是招牌，而是招牌背后那份对手艺的敬畏。只要守住这一点，形式怎么变都不怕。”"
+    ],
+    "translations": [
+      "On Qianmen Street in Beijing there's a cloth-shoe brand founded in the late Qing dynasty. In the 1990s, as trainers and leather shoes became widespread, its sales plummeted; its shops shrank from over a dozen to just one, and at one point it was on the brink of closing.",
+      "In 2015 the fifth generation of the founding family took over. She had worked for years at a foreign consultancy, and the first thing she did on taking charge wasn't to launch new products but to spend three months going through thirty years of sales data and customer feedback, one item at a time.",
+      "The analysis was surprising: losing old customers was certainly a serious problem, but the real issue was that the brand was practically \"invisible\" to young people. Many didn't dislike cloth shoes; they simply didn't know anyone still made them by hand.",
+      "So she made a few decisions that were quite controversial at the time: keep the traditional thousand-layer sole craft, but boldly launch collaborations with young designers; livestream the whole process of the old masters stitching soles on social media; and invest part of the profits in a training programme for intangible heritage craftspeople.",
+      "At first many long-serving staff worried these moves would \"ruin the name\". But the facts proved that tradition and innovation aren't incompatible. Three years later online sales made up over sixty percent of revenue, and the share of buyers under thirty-five had quadrupled.",
+      "Asked why it worked, she said, \"The most valuable thing about an old brand isn't the name on the sign, but the reverence for craft behind it. As long as you hold on to that, you needn't fear any change of form.\""
+    ],
+    "names": ["北京", "前门大街", "清朝"], "glossary": { "北京": "Beijing", "前门大街": "Qianmen Street", "清朝": "Qing dynasty", "老字号": "time-honoured brand", "转型": "transformation", "创立": "to found", "布鞋": "cloth shoes", "一落千丈": "to plummet", "缩减": "to reduce", "濒临": "on the verge of", "传人": "successor; heir", "外资": "foreign-owned", "咨询公司": "consultancy", "反馈": "feedback", "梳理": "to sort through", "流失": "loss (of customers)", "隐形": "invisible", "颇具争议": "rather controversial", "千层底": "thousand-layer sole", "工艺": "craft; process", "联名款": "collaboration (product)", "纳鞋底": "to stitch shoe soles", "非遗": "intangible cultural heritage", "砸招牌": "to ruin one's reputation", "创新": "innovation", "水火不容": "incompatible", "翻了两番": "to quadruple", "敬畏": "reverence" }
+  },
+  {
+    "id": "L6-business-long", "level": 6, "topic": "business & finance", "length": "long",
+    "title_zh": "一张资产负债表", "title_en": "A balance sheet",
+    "paragraphs": [
+      "我入行的第一年，带我的是一位姓周的合伙人。他五十出头，头发花白，说话慢条斯理，却以“眼毒”闻名全所。据说，他只要翻几页财务报表，就能嗅出哪里不对劲。",
+      "有一次，我们接手了一家拟上市的制造企业。公司的财务数据漂亮得无可挑剔：营收连续三年增长百分之三十以上，毛利率远高于同行，现金储备充足。项目组里的年轻人都很兴奋，觉得这是一单再顺利不过的业务。",
+      "周老师却在会议室里对着那张资产负债表看了整整一个下午。傍晚时分，他把我叫过去，指着“应收账款”和“存货”两栏问我：“你觉得这两个数字有什么问题？”",
+      "我盯着看了半天，只觉得数字很大，却说不出所以然。他不急不躁地解释道：营收增长了百分之三十，应收账款却增长了百分之八十，这意味着越来越多的销售并没有收回现金；而存货周转天数一年比一年长，说明产品未必真正卖了出去。",
+      "“利润表可以讲故事，”他说，“但资产负债表会泄露秘密。一家公司如果真的赚了钱，钱总得有个去处。”",
+      "接下来的两个月，我们按照他的思路，逐笔核对了公司前二十大客户的合同、发货单和银行回款记录，还专程去了几家客户的仓库实地盘点。越查，疑点越多：有的客户注册地址是一间空置的办公室，有的“已售出”的货物原封不动地堆在公司自己租用的仓库里。",
+      "最终我们确认，公司通过关联方虚构交易，在三年间虚增了近四亿元收入。我们出具了保留意见，公司的上市计划也随之搁浅。事后，有同事私下抱怨，说我们丢了一个大客户，今年的奖金恐怕要泡汤了。",
+      "周老师听说后，只淡淡地说了一句：“审计师的签名，是给千千万万个看不见的投资者的承诺。签错一次，就再也没有人相信你了。”",
+      "那天晚上，我在笔记本的第一页写下了这句话。后来我陆续经手了上百个项目，见过形形色色的报表，也遇到过各种软硬兼施的压力。每当动摇的时候，我都会想起那个下午，想起周老师指着那两栏数字时平静的神情。",
+      "去年，周老师退休了。欢送会上，大家请他给年轻人留几句话。他想了想，说：“数字本身不会说谎，说谎的是人。我们这份工作，就是替那些信任数字的人，守住最后一道门。”"
+    ],
+    "translations": [
+      "In my first year in the profession, I was mentored by a partner surnamed Zhou. In his early fifties, grey-haired and unhurried in speech, he was famous throughout the firm for his \"sharp eye\". It was said he only had to flip through a few pages of financial statements to sniff out what was wrong.",
+      "Once we took on a manufacturer preparing to list. Its financials were impeccably good: revenue up over thirty percent three years running, gross margin far above its peers, ample cash reserves. The young people on the team were excited, thinking this would be the smoothest job imaginable.",
+      "Mr Zhou, however, spent a whole afternoon in the meeting room looking at the balance sheet. Towards evening he called me over, pointed at the \"accounts receivable\" and \"inventory\" lines and asked, \"What do you think is wrong with these two numbers?\"",
+      "I stared at them for ages; they just looked big, and I couldn't say why. Unhurried, he explained: revenue grew thirty percent, but receivables grew eighty percent, meaning more and more sales weren't being collected in cash; and inventory days were getting longer every year, suggesting the products might not really have been sold.",
+      "\"The income statement can tell a story,\" he said, \"but the balance sheet gives away secrets. If a company really made money, the money has to have gone somewhere.\"",
+      "Over the next two months, following his line of thinking, we checked the contracts, delivery notes and bank receipts of the company's top twenty customers item by item, and even visited several customers' warehouses to count stock in person. The more we dug, the more doubts arose: one customer's registered address was an empty office; some \"sold\" goods sat untouched in a warehouse the company itself rented.",
+      "In the end we confirmed that the company had used related parties to fabricate transactions, inflating revenue by nearly four hundred million yuan over three years. We issued a qualified opinion, and the company's listing plans stalled. Afterwards some colleagues grumbled privately that we'd lost a big client and this year's bonuses were probably gone.",
+      "When Mr Zhou heard, he just said calmly, \"An auditor's signature is a promise to the millions of investors you'll never see. Sign wrongly once, and no one will ever trust you again.\"",
+      "That night I wrote that sentence on the first page of my notebook. Since then I've handled over a hundred engagements, seen every kind of financial statement, and faced all sorts of pressure, carrot and stick alike. Whenever I waver, I think of that afternoon and Mr Zhou's calm expression as he pointed at those two lines.",
+      "Last year Mr Zhou retired. At his farewell party we asked him to leave a few words for the young ones. He thought for a moment and said, \"Numbers themselves don't lie; people do. Our job is to guard the last door for everyone who trusts the numbers.\""
+    ],
+    "names": ["周老师"], "glossary": { "周老师": "Mr Zhou", "资产负债表": "balance sheet", "入行": "to enter a profession", "合伙人": "partner", "慢条斯理": "unhurried", "眼毒": "sharp-eyed", "嗅": "to sniff", "不对劲": "not right", "拟上市": "preparing to list", "无可挑剔": "impeccable", "营收": "revenue", "毛利率": "gross margin", "同行": "peers (same industry)", "储备": "reserves", "应收账款": "accounts receivable", "存货": "inventory", "所以然": "the reason why", "周转天数": "turnover days", "泄露": "to leak; to give away", "思路": "line of thinking", "发货单": "delivery note", "回款": "payment received", "实地盘点": "on-site stock count", "疑点": "point of doubt", "空置": "vacant", "原封不动": "untouched", "关联方": "related party", "虚构": "to fabricate", "虚增": "to inflate", "出具": "to issue", "保留意见": "qualified opinion", "搁浅": "to stall; to run aground", "泡汤": "to fall through", "承诺": "promise", "陆续": "one after another", "形形色色": "of every kind", "软硬兼施": "carrot and stick", "动摇": "to waver", "神情": "expression", "欢送会": "farewell party", "信任": "to trust" }
+  }
+]
