@@ -19,6 +19,7 @@ export async function scoreAndLog(text: string, syllables: Syllable[], rec: Reco
     status: result.syllables[i].status,
   }))
   const heardShare = result.syllables.filter((s) => s.sound === null || s.sound > 0).length / Math.max(1, syllables.length)
+  // Saving is only for history and stats: if on-device storage fails, still show the score.
   await saveAttempt(
     {
       id: newId(),
@@ -30,6 +31,6 @@ export async function scoreAndLog(text: string, syllables: Syllable[], rec: Reco
       createdAt: Date.now(),
     },
     rec.wav,
-  )
+  ).catch((err) => console.warn('Could not save attempt', err))
   return result
 }

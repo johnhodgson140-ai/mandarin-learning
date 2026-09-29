@@ -8,29 +8,51 @@ type Store = (typeof STORES)[number]
 let opening: Promise<IDBDatabase> | null = null
 
 function open(): Promise<IDBDatabase> {
-  opening ??= new Promise((resolve, reject) => {
+  if (opening) return opening
+  const p: Promise<IDBDatabase> = new Promise((resolve, reject) => {
     const req = indexedDB.open(DB, VERSION)
     req.onupgradeneeded = () => {
       for (const name of STORES) if (!req.result.objectStoreNames.contains(name)) req.result.createObjectStore(name, { keyPath: 'id' })
     }
-    req.onsuccess = () => resolve(req.result)
+    req.onsuccess = () => {
+      const db = req.result
+      // iOS closes the connection when the app is in the background: forget it so the next call reopens.
+      const forget = () => {
+        if (opening === p) opening = null
+      }
+      db.onclose = forget
+      db.onversionchange = () => {
+        db.close()
+        forget()
+      }
+      resolve(db)
+    }
     req.onerror = () => {
-      opening = null
+      if (opening === p) opening = null
       reject(req.error ?? new Error('IndexedDB unavailable'))
     }
   })
-  return opening
+  opening = p
+  return p
 }
 
-function run<T>(store: Store, mode: IDBTransactionMode, fn: (s: IDBObjectStore) => IDBRequest<T>): Promise<T> {
-  return open().then(
-    (db) =>
-      new Promise<T>((resolve, reject) => {
-        const req = fn(db.transaction(store, mode).objectStore(store))
-        req.onsuccess = () => resolve(req.result)
-        req.onerror = () => reject(req.error ?? new Error('IndexedDB error'))
-      }),
-  )
+function attempt<T>(db: IDBDatabase, store: Store, mode: IDBTransactionMode, fn: (s: IDBObjectStore) => IDBRequest<T>): Promise<T> {
+  return new Promise<T>((resolve, reject) => {
+    const req = fn(db.transaction(store, mode).objectStore(store))
+    req.onsuccess = () => resolve(req.result)
+    req.onerror = () => reject(req.error ?? new Error('IndexedDB error'))
+  })
+}
+
+/** Run one request; if the connection was closed under us (iOS, after backgrounding), reopen once and retry. */
+async function run<T>(store: Store, mode: IDBTransactionMode, fn: (s: IDBObjectStore) => IDBRequest<T>): Promise<T> {
+  try {
+    return await attempt(await open(), store, mode, fn)
+  } catch (err) {
+    if (!(err instanceof DOMException && err.name === 'InvalidStateError')) throw err
+    opening = null
+    return attempt(await open(), store, mode, fn)
+  }
 }
 
 export const idbPut = <T extends { id: string }>(store: Store, value: T) => run(store, 'readwrite', (s) => s.put(value)).then(() => undefined)
