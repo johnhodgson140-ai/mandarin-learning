@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import type { Recording } from '../../audio/recorder.ts'
 import { daysUntil, nextState, type Card } from '../../cards/srs.ts'
-import { buildParagraph } from '../../chinese/tokens.ts'
+import { tokensOfText } from '../../chinese/tokens.ts'
 import { hskLabel, loadHsk, type HskInfo } from '../../services/hsk.ts'
 import HoldToTalk from '../../components/HoldToTalk.tsx'
 import PlayButton from '../../components/PlayButton.tsx'
@@ -121,7 +121,8 @@ export default function Cards() {
 }
 
 function CardView({ card, mode, onNext }: { card: Card; mode: CardMode; onNext: (score: number | null) => void }) {
-  const [token] = useMemo(() => buildParagraph([card.hanzi], getLexicon()), [card.hanzi])
+  // Split into words first: a sentence card (我会说一点儿中文) reads each word properly.
+  const syllables = useMemo(() => tokensOfText(card.hanzi, getLexicon()).flatMap((t) => t.syllables), [card.hanzi])
   const [hsk, setHsk] = useState<HskInfo | null>(null)
   useEffect(() => {
     let cancelled = false
@@ -143,7 +144,7 @@ function CardView({ card, mode, onNext }: { card: Card; mode: CardMode; onNext: 
     setChecking(true)
     setError(null)
     try {
-      const r = await scoreAndLog(card.hanzi, token.syllables, rec, 'card')
+      const r = await scoreAndLog(card.hanzi, syllables, rec, 'card')
       if (scored(r)) setFirst((f) => (f === null ? (shown ? 0 : r.overall) : f))
       setResult(r)
       navigator.vibrate?.(r.overall >= 80 ? 10 : [10, 60, 10])
@@ -160,7 +161,7 @@ function CardView({ card, mode, onNext }: { card: Card; mode: CardMode; onNext: 
         {revealed ? <p className="drill-hanzi zh">{card.hanzi}</p> : <p className="drill-english">{card.english || '(no meaning yet)'}</p>}
         {revealed && (
           <p className="drill-pinyin">
-            {token.syllables.map((s, i) => <span key={i} className={`t${s.written}`}>{s.pinyin}</span>)}
+            {syllables.map((s, i) => <span key={i} className={`t${s.written}`}>{s.pinyin}</span>)}
           </p>
         )}
         {revealed && card.english && <p className="muted">{card.english}</p>}
@@ -177,7 +178,7 @@ function CardView({ card, mode, onNext }: { card: Card; mode: CardMode; onNext: 
       {checking && <p className="muted" role="status">Scoring…</p>}
       {result && (
         <section className="card fade-in">
-          <ScoreView syllables={token.syllables} result={result} />
+          <ScoreView syllables={syllables} result={result} />
           <p className="muted small">
             {first !== null
               ? nextReviewText(card.hanzi, first, mode, first !== result.overall || shown)

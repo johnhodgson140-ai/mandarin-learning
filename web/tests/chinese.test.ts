@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import { spokenTones, type SandhiSyllable } from '../src/chinese/sandhi.ts'
-import { alignPinyin, buildParagraph, knownRatio, masteryOf, mergeWithLexicon, type Lexicon } from '../src/chinese/tokens.ts'
+import { alignPinyin, buildParagraph, knownRatio, masteryOf, mergeWithLexicon, tokensOfText, withAppTones, type Lexicon } from '../src/chinese/tokens.ts'
 import { toneless } from '../src/chinese/tones.ts'
 
 /** Spoken tones for a sentence split into words, via the real pipeline. */
@@ -94,7 +94,7 @@ test('dictionary pinyin where pinyin-pro is wrong: neutral tones and misreadings
   assert.equal(written(['裤子']), 'kù zi')
   assert.equal(written(['朋友']), 'péng you')
   assert.equal(written(['东西']), 'dōng xi')
-  assert.equal(written(['一点儿']), 'yī diǎn r')
+  assert.equal(written(['一点儿']), 'yì diǎn r')
   assert.equal(written(['只不过']), 'zhǐ bu guò')
   assert.equal(written(['局长']), 'jú zhǎng')
 })
@@ -113,10 +113,23 @@ test('one-character words read from their neighbours', () => {
   assert.equal(written(['他', '长', '得', '很', '高']), 'tā zhǎng de hěn gāo')
 })
 
-test('一 and 不 are written with their own tones; sandhi changes the spoken tone', () => {
+test('一 and 不 are written with the tone said, as textbooks do; 3+3 is not', () => {
   const anki: Lexicon = new Map([['一样', { pinyin: 'yíyàng', english: 'the same', mastery: 'young' }]])
   const [token] = buildParagraph(['一样'], anki)
-  assert.deepEqual(token.syllables.map((s) => [s.pinyin, s.spoken]), [['yī', 2], ['yàng', 4]])
+  assert.deepEqual(token.syllables.map((s) => [s.pinyin, s.written, s.spoken]), [['yí', 1, 2], ['yàng', 4, 4]])
+  assert.equal(written(['一起']), 'yì qǐ')
+  assert.equal(written(['不', '是']), 'bú shì')
+  assert.equal(written(['第一']), 'dì yī')
+  assert.equal(written(['你好']), 'nǐ hǎo') // 3+3 said ní hǎo, but written as is
+})
+
+test('my Anki pinyin keeps its spaces, capitals and punctuation, with the app\'s tones', () => {
+  const lex: Lexicon = new Map([['小姐', { pinyin: 'xiǎojiě', english: 'Miss', mastery: 'new' }]])
+  const syl = (text: string, l: Lexicon = new Map()) => tokensOfText(text, l).flatMap((t) => t.syllables)
+  assert.equal(withAppTones('xiǎojiě', syl('小姐', lex)), 'xiǎojie')
+  assert.equal(withAppTones('wǒ cóng Lúndūn lái.', syl('我从伦敦来。')), 'wǒ cóng Lúndūn lái.')
+  assert.equal(withAppTones('shéi', syl('谁')), 'shéi')
+  assert.equal(withAppTones('something else', syl('谁')), 'something else') // letters don't line up: keep Anki's
 })
 
 test('word-final 儿 and 子 are suffixes unless they are real syllables', () => {

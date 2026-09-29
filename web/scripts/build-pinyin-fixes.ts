@@ -11,13 +11,14 @@ import { markTone, type Tone } from '../src/chinese/tones.ts'
 
 type Entry = { simplified: string; forms: { transcriptions: { numeric: string } }[] }
 
-/** Everyday reading for words the dictionary lists more than once. */
+/** The everyday reading, for words the dictionary lists more than once (or that are usually said lighter: 进来 jìnlai). */
 const EVERYDAY: Record<string, string> = {
   把手: 'bǎ shou', 本事: 'běn shi', 出息: 'chū xi', 大方: 'dà fang', 大爷: 'dà ye', 地道: 'dì dao', 地方: 'dì fang',
   东西: 'dōng xi', 多少: 'duō shao', 恶心: 'ě xin', 分量: 'fèn liang', 告诉: 'gào su', 工夫: 'gōng fu', 故事: 'gù shi',
   管子: 'guǎn zi', 好处: 'hǎo chu', 金子: 'jīn zi', 妻子: 'qī zi', 起来: 'qǐ lai', 人家: 'rén jia', 上头: 'shàng tou',
   生意: 'shēng yi', 说法: 'shuō fa', 琢磨: 'zuó mo', 便宜: 'pián yi', 裁缝: 'cái feng', 大夫: 'dài fu', 狮子: 'shī zi',
   孙子: 'sūn zi', 结实: 'jiē shi', 片子: 'piān zi', 重点: 'zhòng diǎn', 好吃: 'hǎo chī', 结果: 'jié guǒ',
+  进来: 'jìn lai', 出来: 'chū lai', 过来: 'guò lai',
 }
 
 const HAN = /^\p{Script=Han}+$/u

@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "build:ios": "tsc -b && vite build --mode native --outDir dist-native && cap copy ios",
+    "build:ios": "tsc -b && vite build --mode native --outDir dist-native && node scripts/deck-pinyin.ts dist-native/deck.json && cap copy ios",
     "lint": "oxlint",
     "test": "node --test tests/*.test.ts",
     "bench": "node ../ml/tone-bench.ts",

@@ -1,7 +1,7 @@
 // Local notifications (iOS app): word of the day, practice reminder with the cards due, streak saver.
 // Rescheduled whenever the app opens, after each practice, and when the settings change.
 import { LocalNotifications } from '@capacitor/local-notifications'
-import { buildParagraph } from '../chinese/tokens.ts'
+import { tokensOfText, withAppTones } from '../chinese/tokens.ts'
 import { log } from '../debug/log.ts'
 import { weakest, type EarStats } from '../ears/logic.ts'
 import { DEFAULT_NOTIFY, IDS, planNotifications, type NotifySettings, type Word } from '../notify/plan.ts'
@@ -42,7 +42,7 @@ function words(): Word[] {
   const lexicon = getLexicon()
   return [...lexicon]
     .filter(([hanzi, e]) => e.english && [...hanzi].length <= 4)
-    .map(([hanzi, e]) => ({ hanzi, pinyin: buildParagraph([hanzi], lexicon)[0]?.syllables.map((s) => s.pinyin).join('') ?? '', english: e.english.split(/[;,]/)[0].trim() }))
+    .map(([hanzi, e]) => ({ hanzi, pinyin: withAppTones(e.pinyin, tokensOfText(hanzi, lexicon).flatMap((t) => t.syllables)), english: e.english.split(/[;,]/)[0].trim() }))
 }
 
 function toneTip(): string | null {
