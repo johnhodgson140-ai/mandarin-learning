@@ -54,6 +54,7 @@ export type DailyContent = {
 }
 
 const HAN = /\p{Script=Han}/u
+const LATIN = /[a-z]/i
 const isStr = (v: unknown): v is string => typeof v === 'string' && v.trim().length > 0
 
 /** Every problem in a daily file (empty list = valid). */
@@ -110,6 +111,7 @@ function missionErrors(m: GuidedMission, at: string, ids: Set<string>): string[]
   else
     m.steps.forEach((st, j) => {
       if (![st.partner_zh, st.partner_en, st.prompt_en].every(isStr)) errors.push(`${at}.steps[${j}] needs partner_zh, partner_en, prompt_en`)
+      else if ([st.partner_zh, ...(st.answers_zh ?? [])].some((t) => LATIN.test(t))) errors.push(`${at}.steps[${j}] Chinese lines must not contain Latin letters`)
       if (!Array.isArray(st.answers_zh) || st.answers_zh.length < 1 || !st.answers_zh.every((a) => isStr(a) && HAN.test(a)))
         errors.push(`${at}.steps[${j}].answers_zh needs 1–3 Chinese answers`)
       else if (!Array.isArray(st.answers_en) || st.answers_en.length !== st.answers_zh.length || !st.answers_en.every(isStr))
