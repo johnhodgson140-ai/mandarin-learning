@@ -20,6 +20,7 @@ const out = join(root, 'web', 'public', 'pack')
 const hsk: Record<string, [number, number, string]> = JSON.parse(readFileSync(join(root, 'web', 'public', 'hsk.json'), 'utf8')).words
 const deck = new Set<string>(JSON.parse(readFileSync(join(root, 'content', 'words.json'), 'utf8')).deck)
 const HAN = /\p{Script=Han}/u
+const MAX_NEW = 8
 const NUMBER = /^[零〇一二三四五六七八九十两百千万亿]+$/u
 
 const readAll = <T>(dir: string): T[] =>
@@ -91,8 +92,12 @@ function build(s: SourceStory): PackStory {
   const isNew = (w: string) => HAN.test(w) && !NUMBER.test(w) && !s.names.includes(w) && !deck.has(w) && (w in manual || w in hsk)
     // A word made entirely of deck words (很好 = 很 + 好) isn't new.
     && !split(w, (x) => deck.has(x)).every((x) => deck.has(x))
-  const newWords = [...new Set(paragraphs.flat().filter(isNew))]
-  const glossary = [...new Set([...s.names, ...newWords])]
+  const unknown = [...new Set(paragraphs.flat().filter(isNew))]
+  // Every unknown word gets a gloss, but only the 8 most useful become new words (and so flashcards):
+  // the ones glossed by hand first, then the most common.
+  const rank = (w: string) => (w in manual ? -1 : (hsk[w]?.[1] ?? Infinity))
+  const newWords = [...unknown].sort((a, b) => rank(a) - rank(b)).slice(0, MAX_NEW)
+  const glossary = [...new Set([...s.names, ...unknown])]
     .map((word) => ({ word, english: manual[word] ?? gloss(word) ?? '' }))
     .filter((g) => g.english)
   return { ...s, paragraphs, new_words: newWords, glossary }

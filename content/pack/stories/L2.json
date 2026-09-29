@@ -1,0 +1,270 @@
+[
+  {
+    "id": "L2-football-short", "level": 2, "topic": "football", "length": "short",
+    "title_zh": "球票卖完了", "title_en": "Sold out",
+    "paragraphs": [
+      "我和大卫想去看周末的足球比赛。可是我们打开手机的时候，球票已经卖完了。",
+      "大卫说：“没关系，我们去酒吧看吧。”酒吧里人很多，大家都穿着红色的衣服。",
+      "比赛非常精彩。最后我们的球队二比一赢了。大家一起唱歌，比在球场还快乐！"
+    ],
+    "translations": [
+      "David and I wanted to go to the weekend football match. But when we opened our phones, the tickets had already sold out.",
+      "David said, \"Never mind, let's watch it at a bar.\" The bar was packed, and everyone was wearing red.",
+      "The match was brilliant. In the end our team won two-one. Everyone sang together; it was even more fun than being at the stadium!"
+    ],
+    "names": ["大卫"], "glossary": { "大卫": "David", "球票": "match ticket", "酒吧": "bar; pub", "球场": "stadium; pitch", "精彩": "brilliant; exciting" }
+  },
+  {
+    "id": "L2-football-medium", "level": 2, "topic": "football", "length": "medium",
+    "title_zh": "新来的守门员", "title_en": "The new goalkeeper",
+    "paragraphs": [
+      "我们大学的足球队来了一个新的守门员，他叫小马。他个子很高，可是话很少。",
+      "第一次练习的时候，小马有点儿紧张。别人踢过来的球，他一个也没有接住。有人笑他，他的脸红了。",
+      "练习以后，我走过去对他说：“别担心，第一天大家都这样。”小马说：“谢谢你。我以前在小城市踢球，这里的人踢得太快了。”",
+      "从那天开始，小马每天早上六点就去球场练习。下雨也去，天冷也去。我有时候陪他一起练。",
+      "一个月以后，我们有一场很重要的比赛。对方踢了很多次，可是小马都接住了。最后我们一比零赢了。",
+      "比赛结束以后，大家都把小马举起来。他笑着说：“是我的朋友帮了我。”我听了，心里很高兴。"
+    ],
+    "translations": [
+      "Our university football team got a new goalkeeper called Xiao Ma. He's very tall, but doesn't say much.",
+      "At his first training session Xiao Ma was a bit nervous. He didn't catch a single ball kicked at him. Some people laughed at him, and his face went red.",
+      "After training I went over and said, \"Don't worry, everyone's like this on day one.\" Xiao Ma said, \"Thanks. I used to play in a small city; people here play so fast.\"",
+      "From that day on, Xiao Ma went to the pitch at six every morning to practise. Rain or cold, he went. Sometimes I trained with him.",
+      "A month later we had a very important match. The other team shot many times, but Xiao Ma stopped them all. In the end we won one-nil.",
+      "After the match everyone lifted Xiao Ma up. He smiled and said, \"My friend helped me.\" Hearing that made me really happy."
+    ],
+    "names": ["小马"], "glossary": { "小马": "Xiao Ma (a name)", "守门员": "goalkeeper", "接住": "to catch", "对方": "the other side; opponent", "举": "to lift", "陪": "to keep someone company" }
+  },
+  {
+    "id": "L2-football-long", "level": 2, "topic": "football", "length": "long",
+    "title_zh": "爷爷的球衣", "title_en": "Grandpa's football shirt",
+    "paragraphs": [
+      "我爷爷今年七十五岁了。他年轻的时候非常喜欢足球，每个周末都去球场看比赛。现在他的腿不太好，只能在家里看电视。",
+      "有一天，我在爷爷的房间里找东西，看到一个很旧的盒子。打开以后，里面有一件红白色的球衣。球衣已经有点儿黄了，后面写着一个“九”。",
+      "我拿着球衣去问爷爷：“这是谁的？”爷爷看到球衣，眼睛一下子亮了。他说：“这是我的！五十年前，我在工厂的球队踢球，我是九号。”",
+      "爷爷告诉我，那时候他们的球队不大，也没有钱。球鞋是自己买的，球场是一块很小的地。可是大家都很认真，每天下班以后都去练习。",
+      "“我们最好的一年，赢了城里所有的工厂球队。”爷爷一边说，一边笑。“那天晚上，我们一起去吃饭，喝了很多酒，唱了一晚上的歌。”",
+      "我问爷爷：“你想再去球场看一次比赛吗？”爷爷说：“想是想，可是我走不了那么远。”我想了想，说：“我带你去！我们坐车去，我推你的轮椅。”",
+      "下个星期六，我和爷爷一起去了球场。爷爷穿着那件旧球衣，很多人都看他。一个年轻人走过来说：“爷爷，您的球衣真酷！”",
+      "比赛的时候，爷爷一直在叫、在笑，好像又变年轻了。回家的路上，他拉着我的手说：“谢谢你，孩子。今天是我这几年最快乐的一天。”"
+    ],
+    "translations": [
+      "My grandpa is seventy-five this year. When he was young he loved football and went to the stadium every weekend. Now his legs aren't good, so he can only watch on TV at home.",
+      "One day I was looking for something in Grandpa's room and found a very old box. Inside was a red and white football shirt. It had gone a bit yellow, and it had a \"9\" on the back.",
+      "I took the shirt to Grandpa and asked, \"Whose is this?\" When he saw it, his eyes lit up. He said, \"It's mine! Fifty years ago I played for the factory team. I was number nine.\"",
+      "Grandpa told me their team wasn't big and had no money. They bought their own boots, and the pitch was a tiny patch of ground. But everyone was serious and trained every day after work.",
+      "\"In our best year we beat every factory team in the city,\" Grandpa said, laughing. \"That night we all went out to eat, drank a lot and sang all night.\"",
+      "I asked Grandpa, \"Would you like to watch a match at the stadium again?\" He said, \"I'd like to, but I can't walk that far.\" I thought for a moment and said, \"I'll take you! We'll drive, and I'll push your wheelchair.\"",
+      "The next Saturday Grandpa and I went to the stadium. He wore his old shirt, and lots of people looked at him. A young man came over and said, \"Grandpa, your shirt is so cool!\"",
+      "During the match Grandpa kept shouting and laughing, as if he'd become young again. On the way home he held my hand and said, \"Thank you, child. Today was the happiest day I've had in years.\""
+    ],
+    "names": [], "glossary": { "球衣": "football shirt", "工厂": "factory", "球鞋": "football boots; trainers", "轮椅": "wheelchair", "推": "to push", "酷": "cool", "亮": "bright; to light up" }
+  },
+  {
+    "id": "L2-fashion-short", "level": 2, "topic": "archive fashion", "length": "short",
+    "title_zh": "闲鱼上的外套", "title_en": "A coat on Xianyu",
+    "paragraphs": [
+      "我在闲鱼上看到一件山本耀司的外套。照片上的外套很新，价格只要八百块。",
+      "我觉得有点儿奇怪，就问卖家：“这是真的吗？”卖家说：“当然是真的，我只穿过两次。”",
+      "我让他多拍几张照片。看了照片以后，我发现衣服里面的字不对。我没有买，还好我问了！"
+    ],
+    "translations": [
+      "I saw a Yohji Yamamoto coat on Xianyu. In the photos it looked almost new, and the price was only eight hundred kuai.",
+      "I thought it was a bit strange, so I asked the seller, \"Is this real?\" The seller said, \"Of course it's real, I've only worn it twice.\"",
+      "I asked him to take a few more photos. After looking at them, I noticed the writing inside the coat was wrong. I didn't buy it. Good thing I asked!"
+    ],
+    "names": ["闲鱼", "山本耀司"], "glossary": { "闲鱼": "Xianyu (second-hand app)", "山本耀司": "Yohji Yamamoto", "卖家": "seller", "拍": "to take (a photo)", "价格": "price" }
+  },
+  {
+    "id": "L2-fashion-medium", "level": 2, "topic": "archive fashion", "length": "medium",
+    "title_zh": "妈妈的旧裙子", "title_en": "Mum's old skirt",
+    "paragraphs": [
+      "上个周末我回家，妈妈让我帮她打扫房间。我们打开一个大箱子，里面都是她年轻时候的衣服。",
+      "我拿出一条黑色的长裙子。它的样子很简单，可是做得非常好。我问妈妈：“这是在哪儿买的？”",
+      "妈妈笑了笑，说：“这是我二十岁的时候在东京买的。那时候我花了一个月的工资。”我听了很吃惊。",
+      "我在手机上找了一下，发现这是一个很有名的日本设计师做的。现在这条裙子在网上要五千多块！",
+      "妈妈说：“你喜欢就拿去吧，我现在也穿不了了。”我说：“不，我不卖。我要好好地穿它。”",
+      "现在，这条裙子是我最喜欢的衣服。每次穿它，我都会想起妈妈年轻时候的样子。"
+    ],
+    "translations": [
+      "Last weekend I went home, and Mum asked me to help her clean her room. We opened a big box full of clothes from when she was young.",
+      "I took out a long black skirt. Its shape was simple, but it was beautifully made. I asked Mum, \"Where did you buy this?\"",
+      "Mum smiled and said, \"I bought it in Tokyo when I was twenty. It cost me a month's wages back then.\" I was amazed.",
+      "I looked it up on my phone and found it was made by a famous Japanese designer. Now this skirt goes for over five thousand kuai online!",
+      "Mum said, \"If you like it, take it. I can't wear it any more anyway.\" I said, \"No, I won't sell it. I'm going to wear it properly.\"",
+      "Now that skirt is my favourite piece of clothing. Every time I wear it, I think of what Mum was like when she was young."
+    ],
+    "names": ["东京"], "glossary": { "东京": "Tokyo", "设计师": "designer", "工资": "wages; salary", "箱子": "box; suitcase", "吃惊": "surprised" }
+  },
+  {
+    "id": "L2-anime-short", "level": 2, "topic": "anime", "length": "short",
+    "title_zh": "最后一集", "title_en": "The last episode",
+    "paragraphs": [
+      "我等了一个星期，今天晚上终于可以看最后一集了。我准备了很多吃的，关了灯。",
+      "故事越来越紧张。主角和他的朋友们在大雨里找了很久，才找到回家的路。",
+      "结束的时候，我觉得有点儿难过。这个动画我看了三年，现在它结束了。我决定明天从第一集再看一遍。"
+    ],
+    "translations": [
+      "I waited a whole week, and tonight I can finally watch the last episode. I got lots of snacks ready and turned off the lights.",
+      "The story got more and more tense. The hero and his friends searched in the heavy rain for a long time before they found the way home.",
+      "When it ended I felt a bit sad. I've been watching this anime for three years, and now it's over. I've decided to watch it again from episode one tomorrow."
+    ],
+    "names": [], "glossary": { "集": "episode", "主角": "main character", "动画": "animation; anime", "遍": "time (once through)" }
+  },
+  {
+    "id": "L2-anime-medium", "level": 2, "topic": "anime", "length": "medium",
+    "title_zh": "动画展", "title_en": "The anime expo",
+    "paragraphs": [
+      "上个星期六，我和妹妹去了一个动画展。我们早上八点就到了，可是门口已经有很多人在排队。",
+      "很多人穿着动画里的衣服。有一个男孩子穿得和我最喜欢的角色一模一样，我们还跟他照了一张相。",
+      "里面有很多小店，卖书、衣服和小东西。妹妹买了两本漫画书，我买了一件印着猫的衣服。",
+      "下午两点，有一个画家来了。他就是我最喜欢的动画的作者！很多人都想让他签名。我们排了一个小时的队。",
+      "终于到我了。我很紧张，用不太好的日语说：“我非常喜欢您的作品。”他笑了，在我的书上画了一只小猫。",
+      "回家的路上，我一直看着那只小猫。妹妹说：“哥哥，你今天比过年还高兴。”"
+    ],
+    "translations": [
+      "Last Saturday my little sister and I went to an anime expo. We got there at eight in the morning, but there was already a big queue at the entrance.",
+      "Lots of people were dressed as anime characters. One boy was dressed exactly like my favourite character, and we even took a photo with him.",
+      "Inside there were lots of little stalls selling books, clothes and knick-knacks. My sister bought two manga, and I bought a top with a cat printed on it.",
+      "At two in the afternoon an artist arrived. It was the creator of my favourite anime! Everyone wanted his autograph. We queued for an hour.",
+      "Finally it was my turn. I was nervous and said in not-very-good Japanese, \"I really love your work.\" He smiled and drew a little cat in my book.",
+      "On the way home I kept looking at that little cat. My sister said, \"Brother, you're happier today than at New Year.\""
+    ],
+    "names": [], "glossary": { "动画展": "anime expo", "角色": "character; role", "一模一样": "exactly the same", "漫画": "manga; comics", "签名": "autograph; to sign", "作者": "author; creator", "作品": "work (of art)", "排队": "to queue" }
+  },
+  {
+    "id": "L2-travel-short", "level": 2, "topic": "travel", "length": "short",
+    "title_zh": "坐错了火车", "title_en": "The wrong train",
+    "paragraphs": [
+      "早上我在火车站买了一张去杭州的票。车站里人太多了，我走得很急。",
+      "上车半个小时以后，我听到广播说：“下一站，南京。”我吓了一跳，原来我坐错了火车！",
+      "我马上问服务员。她说：“别着急，你在南京下车，再买一张票就可以了。”最后我晚了三个小时，可是也看到了南京。"
+    ],
+    "translations": [
+      "This morning I bought a ticket to Hangzhou at the train station. The station was so crowded that I was rushing.",
+      "Half an hour after getting on, I heard the announcement: \"Next stop, Nanjing.\" I got a fright. I'd got on the wrong train!",
+      "I asked the attendant straight away. She said, \"Don't worry, get off at Nanjing and buy another ticket.\" In the end I was three hours late, but I got to see Nanjing too."
+    ],
+    "names": ["杭州", "南京"], "glossary": { "杭州": "Hangzhou", "南京": "Nanjing", "广播": "announcement; broadcast", "吓了一跳": "got a fright" }
+  },
+  {
+    "id": "L2-travel-medium", "level": 2, "topic": "travel", "length": "medium",
+    "title_zh": "成都的火锅", "title_en": "Hotpot in Chengdu",
+    "paragraphs": [
+      "我第一次来成都。朋友告诉我，来成都一定要吃火锅。晚上，我们就去了一家很有名的火锅店。",
+      "店里又热又吵，每张桌子上都有一个红红的锅。服务员问我们：“要辣的还是不辣的？”我说：“一半一半吧。”",
+      "我们点了牛肉、鱼、豆腐和很多菜。朋友说：“先放肉，再放菜。”我学着他的样子，把牛肉放进锅里。",
+      "我吃了一口辣的，马上开始咳嗽，眼睛里都是水。朋友笑得停不下来：“慢慢吃，喝点儿豆奶！”",
+      "吃了一会儿，我慢慢习惯了。辣是辣，可是真的很香。我们吃了两个多小时，一共花了三百块。",
+      "回酒店的路上，我对朋友说：“明天晚上我们还来吧！”他说：“你不怕辣了？”我说：“怕，可是我更喜欢！”"
+    ],
+    "translations": [
+      "It's my first time in Chengdu. My friend told me you have to eat hotpot here. So in the evening we went to a famous hotpot restaurant.",
+      "The place was hot and noisy, with a red pot on every table. The waiter asked us, \"Spicy or not spicy?\" I said, \"Half and half.\"",
+      "We ordered beef, fish, tofu and lots of vegetables. My friend said, \"Meat first, then veg.\" I copied him and put the beef into the pot.",
+      "I took a bite of the spicy side and started coughing straight away, my eyes watering. My friend couldn't stop laughing: \"Slowly! Drink some soy milk!\"",
+      "After a while I got used to it. It's spicy, sure, but it smells and tastes amazing. We ate for over two hours and spent three hundred kuai in total.",
+      "On the way back to the hotel I said to my friend, \"Let's come again tomorrow night!\" He said, \"Not scared of spice any more?\" I said, \"I am, but I like it more!\""
+    ],
+    "names": ["成都"], "glossary": { "成都": "Chengdu", "火锅": "hotpot", "锅": "pot", "辣": "spicy", "豆腐": "tofu", "咳嗽": "to cough", "豆奶": "soy milk", "香": "fragrant; tasty" }
+  },
+  {
+    "id": "L2-travel-long", "level": 2, "topic": "travel", "length": "long",
+    "title_zh": "长城上的雨", "title_en": "Rain on the Great Wall",
+    "paragraphs": [
+      "来北京以前，我就想好了：一定要去长城。我在网上看了很多照片，蓝色的天，长长的城墙，非常漂亮。",
+      "那天早上，我六点就起床了。天有点儿阴，可是我想，应该不会下雨吧。我坐了两个小时的车，到了长城下面。",
+      "我开始往上爬。长城比我想的难爬多了，有的地方很高，有的地方很窄。爬了半个小时，我已经累得不行了。",
+      "这时候，天上开始下雨。一开始是小雨，后来越下越大。我没有带伞，衣服很快就湿了。我站在一个小楼里，心里很不高兴。",
+      "小楼里还有一个老人。他看到我，笑着说：“小伙子，第一次来吗？”我说：“是啊，可是天气太不好了。”",
+      "老人说：“我在这儿卖水卖了二十年。晴天的长城很美，雨天的长城也很美，只是很少有人看到。”他给了我一杯热茶。",
+      "我喝着茶，看着外面。雨中的长城在山上一直往前走，看不到头。山上都是白白的雾，好像一张中国画。我拿出手机，拍了很多照片。",
+      "半个小时以后，雨停了。我跟老人说了再见，继续往上爬。那天我没有看到蓝天，可是我看到了别人很少看到的长城。",
+      "现在，我手机里最喜欢的照片，就是那天雨里的长城。每次看到它，我都会想起那杯热茶和那个老人的话。"
+    ],
+    "translations": [
+      "Before coming to Beijing I'd already decided: I had to go to the Great Wall. I'd looked at lots of photos online, blue sky, long walls, really beautiful.",
+      "That morning I got up at six. The sky was a bit overcast, but I thought it probably wouldn't rain. I took a two-hour bus ride to the foot of the Great Wall.",
+      "I started climbing. The Great Wall was much harder to climb than I'd imagined; some parts were very high, some very narrow. After half an hour I was exhausted.",
+      "Just then it started to rain. At first it was light, then it got heavier and heavier. I hadn't brought an umbrella, and my clothes were soon soaked. I stood in a little watchtower, feeling fed up.",
+      "There was an old man in the watchtower too. He saw me and said with a smile, \"Young man, first time here?\" I said, \"Yes, but the weather is awful.\"",
+      "The old man said, \"I've sold water here for twenty years. The Wall is beautiful on sunny days, and beautiful on rainy days too; it's just that few people see it.\" He gave me a cup of hot tea.",
+      "I drank the tea and looked outside. In the rain the Great Wall ran on over the mountains with no end in sight. The mountains were covered in white mist, like a Chinese painting. I took out my phone and took lots of photos.",
+      "Half an hour later the rain stopped. I said goodbye to the old man and kept climbing. I didn't see a blue sky that day, but I saw a Great Wall few people get to see.",
+      "Now my favourite photo on my phone is the Great Wall in the rain that day. Every time I see it, I remember that cup of hot tea and what the old man said."
+    ],
+    "names": ["北京", "长城"], "glossary": { "北京": "Beijing", "长城": "the Great Wall", "城墙": "city wall", "阴": "overcast", "窄": "narrow", "湿": "wet", "雾": "mist; fog", "小伙子": "young man", "晴天": "sunny day", "继续": "to continue" }
+  },
+  {
+    "id": "L2-daily-short", "level": 2, "topic": "daily life", "length": "short",
+    "title_zh": "新邻居", "title_en": "The new neighbour",
+    "paragraphs": [
+      "昨天我家旁边搬来了一个新邻居。她是一个老奶奶，一个人住。",
+      "今天早上，我看到她拿着很多东西上楼，就过去帮她。她很高兴，一直说谢谢。",
+      "晚上，有人敲门。打开门一看，是老奶奶！她给我做了一盘饺子。她说：“以后有事就找我，别客气。”"
+    ],
+    "translations": [
+      "Yesterday a new neighbour moved in next door. She's an old lady who lives alone.",
+      "This morning I saw her carrying lots of things upstairs, so I went over to help. She was delighted and kept saying thank you.",
+      "In the evening someone knocked. I opened the door and it was the old lady! She'd made me a plate of dumplings. She said, \"If you ever need anything, come to me. Don't be shy.\""
+    ],
+    "names": [], "glossary": { "邻居": "neighbour", "搬": "to move (house)", "敲门": "to knock on the door", "饺子": "dumplings" }
+  },
+  {
+    "id": "L2-daily-medium", "level": 2, "topic": "daily life", "length": "medium",
+    "title_zh": "我的手机不见了", "title_en": "My phone is missing",
+    "paragraphs": [
+      "今天早上，我要出门的时候，发现手机不见了。我找了桌子上、床上、包里，哪儿都没有。",
+      "没有手机，我不知道时间，也不能坐地铁，因为我的地铁卡在手机里。我急得不得了。",
+      "我想起来，昨天晚上我去了楼下的咖啡馆。是不是忘在那儿了？我马上跑下楼。",
+      "咖啡馆的服务员看到我，笑着说：“你是来找手机的吧？”她从桌子下面拿出了我的手机。我高兴得差点儿跳起来。",
+      "为了说谢谢，我买了两杯咖啡，一杯给自己，一杯给她。她说：“不用谢，下次别再忘了。”",
+      "去公司的路上，我想：没有手机的半个小时，比一天还长。也许我应该少用一点儿手机了。"
+    ],
+    "translations": [
+      "This morning, as I was about to leave, I found my phone was missing. I looked on the desk, on the bed, in my bag: it was nowhere.",
+      "Without my phone I didn't know the time and couldn't take the metro, because my metro card is on my phone. I was frantic.",
+      "Then I remembered I'd gone to the café downstairs last night. Had I left it there? I ran downstairs straight away.",
+      "The waitress saw me and said with a smile, \"You're here for your phone, right?\" She took my phone out from under the counter. I was so happy I nearly jumped.",
+      "To say thank you I bought two coffees, one for me and one for her. She said, \"No need to thank me. Just don't forget it again.\"",
+      "On the way to work I thought: that half hour without my phone felt longer than a day. Maybe I should use my phone a bit less."
+    ],
+    "names": [], "glossary": { "地铁卡": "metro card", "咖啡馆": "café", "差点儿": "almost; nearly" }
+  },
+  {
+    "id": "L2-business-short", "level": 2, "topic": "business & finance", "length": "short",
+    "title_zh": "第一份工资", "title_en": "My first pay",
+    "paragraphs": [
+      "今天我拿到了第一份工资，一共四千块。我在一家咖啡馆工作，每个星期工作二十个小时。",
+      "我想买新手机，也想去旅游。可是我想了想，决定先把一半的钱存起来。",
+      "剩下的钱，我给妈妈买了一件礼物。妈妈说：“你长大了，会用钱了。”我听了很开心。"
+    ],
+    "translations": [
+      "Today I got my first pay, four thousand kuai in total. I work at a café, twenty hours a week.",
+      "I want a new phone, and I want to travel too. But after thinking about it, I decided to save half the money first.",
+      "With the rest I bought Mum a present. She said, \"You've grown up; you know how to handle money now.\" That made me really happy."
+    ],
+    "names": [], "glossary": { "工资": "wages; pay", "存": "to save; to deposit", "剩下": "to be left over" }
+  },
+  {
+    "id": "L2-business-medium", "level": 2, "topic": "business & finance", "length": "medium",
+    "title_zh": "在银行开账户", "title_en": "Opening a bank account",
+    "paragraphs": [
+      "我刚来中国留学，需要开一个银行账户。星期一上午，我带着护照去了学校旁边的银行。",
+      "银行里人不少。我先拿了一个号，然后坐下来等。等了四十分钟，终于到我了。",
+      "工作人员问我：“您要办什么？”我说：“我想开一个账户。”她让我填一张表，写名字、电话和地址。",
+      "有一个问题我看不懂，就问她。她很耐心地告诉我：“这里写您的工作。您是学生，就写‘学生’。”",
+      "办好以后，她给了我一张银行卡，还告诉我怎么在手机上用。我试了一下，很方便。",
+      "走出银行，我觉得很高兴。现在我可以在手机上付钱了，就像中国人一样！"
+    ],
+    "translations": [
+      "I've just come to China to study, and I need to open a bank account. On Monday morning I took my passport to the bank next to the university.",
+      "There were quite a few people in the bank. I took a number first, then sat down to wait. After forty minutes it was finally my turn.",
+      "The clerk asked me, \"What would you like to do?\" I said, \"I'd like to open an account.\" She had me fill in a form with my name, phone number and address.",
+      "There was one question I didn't understand, so I asked her. She patiently explained, \"Put your job here. You're a student, so write 'student'.\"",
+      "Once it was done she gave me a bank card and showed me how to use it on my phone. I tried it; it's very convenient.",
+      "Walking out of the bank, I felt really happy. Now I can pay with my phone, just like Chinese people!"
+    ],
+    "names": [], "glossary": { "账户": "account", "护照": "passport", "填表": "to fill in a form", "耐心": "patient", "付钱": "to pay" }
+  }
+]
