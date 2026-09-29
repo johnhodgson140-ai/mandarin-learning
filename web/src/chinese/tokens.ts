@@ -6,7 +6,7 @@ import type { Mastery } from '../services/anki-mapping.ts'
 import FIXES from './pinyin-fixes.json' with { type: 'json' }
 import { contextReading } from './polyphones.ts'
 import { spokenTones, type SandhiSyllable } from './sandhi.ts'
-import { isHan, toneless, toneOf, type Tone } from './tones.ts'
+import { isHan, markTone, toneless, toneOf, type Tone } from './tones.ts'
 
 export type LexiconEntry = { pinyin: string; english: string; mastery: Mastery }
 /** My Anki words by hanzi. */
@@ -151,10 +151,12 @@ function erhua(word: string, pieces: string[]): string[] {
 
 /**
  * Written pinyin for one word, best source first: the context rule for a one-character word (踢得 de), the dictionary
- * where pinyin-pro is wrong (朋友 péng you), my Anki pinyin, then pinyin-pro. 一 and 不 are written yī / bù (or neutral):
- * the tone changes are worked out by the sandhi rules.
+ * where pinyin-pro is wrong (朋友 péng you), my Anki pinyin, then pinyin-pro. 一 and 不 start from yī / bù (or neutral)
+ * so the sandhi rules can work out the tone said, which is then written (applySandhi).
  */
 function pinyinFor(word: string, length: number, words: readonly string[], index: number, anki: string | undefined, own: string[]): string[] {
+  // A word on its own (a flashcard) has no neighbours to go by: my Anki reading says which one is meant (只 zhī, 了 le).
+  if (length === 1 && words.length === 1 && anki && toneless(anki).length) return [anki.replace(/[\s']/g, '')]
   const context = length === 1 ? contextReading(words, index) : null
   const fixed = DICTIONARY[word]?.split(' ')
   // A whole word is read on its own (as a dictionary would), not from the sentence around it: pinyin-pro's
@@ -172,7 +174,11 @@ function applySandhi(tokens: Token[]): void {
   let phrase: { syllable: Syllable; input: SandhiSyllable }[] = []
   const flush = () => {
     const spoken = spokenTones(phrase.map((p) => p.input))
-    phrase.forEach((p, i) => (p.syllable.spoken = spoken[i]))
+    phrase.forEach((p, i) => {
+      p.syllable.spoken = spoken[i]
+      // 一 and 不 are written with the tone actually said, as textbooks do (一起 yìqǐ, 不是 bú shì); 3+3 isn't.
+      if ((p.syllable.hanzi === '一' || p.syllable.hanzi === '不') && spoken[i] !== p.syllable.written) p.syllable.pinyin = markTone(toneless(p.syllable.pinyin), spoken[i])
+    })
     phrase = []
   }
   for (const token of tokens) {
@@ -204,8 +210,44 @@ export function knownRatio(tokens: Iterable<Token>): { known: number; total: num
 
 const wordSplitter = new Intl.Segmenter('zh', { granularity: 'word' })
 
-/** Pinyin for each Chinese character of free text (e.g. what the recogniser heard), read the same way as stories. */
+/** Free text (a card, a sentence, what the recogniser heard) split into words and read like a story. */
+export function tokensOfText(text: string, lexicon: Lexicon = new Map()): Token[] {
+  return buildParagraph([...wordSplitter.segment(text)].map((s) => s.segment), lexicon)
+}
+
+/** Pinyin for each Chinese character of free text, read the same way as stories. */
 export function pinyinOfText(text: string): string[] {
-  const words = [...wordSplitter.segment(text)].map((s) => s.segment)
-  return buildParagraph(words, new Map()).flatMap((t) => t.syllables.map((s) => s.pinyin))
+  return tokensOfText(text).flatMap((t) => t.syllables.map((s) => s.pinyin))
+}
+
+/** Pinyin as one line, written the usual way: words apart, syllables joined, ' before a/e/o (nǚ'ér, wǎn'ān). */
+export function pinyinLine(tokens: Token[]): string {
+  return tokens
+    .filter((t) => t.syllables.length)
+    .map((t) => t.syllables.map((s, i) => (i > 0 && /^[aeoāáǎàēéěèōóǒò]/i.test(s.pinyin) ? `'${s.pinyin}` : s.pinyin)).join(''))
+    .join(' ')
+}
+
+/**
+ * My Anki pinyin ("wǒ huì shuō yìdiǎnr Zhōngwén?") restyled with the app's reading, syllable by syllable: Anki's spaces,
+ * capitals and punctuation are kept, the tone marks are the app's. If the letters don't line up (a different reading),
+ * Anki's is kept as it is.
+ */
+export function withAppTones(anki: string, syllables: Syllable[]): string {
+  const letters = [...anki.normalize('NFC')]
+  const isLetter = (c: string) => toneless(c).length > 0
+  let out = ''
+  let pos = 0
+  for (const s of syllables) {
+    const want = toneless(s.pinyin)
+    // Copy separators (spaces, apostrophes, punctuation) up to the next letter.
+    while (pos < letters.length && !isLetter(letters[pos])) out += letters[pos++]
+    const piece = letters.slice(pos, pos + [...want].length).join('')
+    if (toneless(piece) !== want) return anki
+    const capital = piece[0] !== piece[0].toLowerCase()
+    out += capital ? s.pinyin[0].toUpperCase() + s.pinyin.slice(1) : s.pinyin
+    pos += [...want].length
+  }
+  const rest = letters.slice(pos).join('')
+  return rest.split('').some(isLetter) ? anki : out + rest
 }

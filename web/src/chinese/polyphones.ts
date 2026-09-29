@@ -64,6 +64,12 @@ export function contextReading(words: readonly string[], i: number): string | nu
     case '应':
       // 应该, 应收: should (答应, 反应 are whole words).
       return 'yīng'
+    case '了':
+      // 走不了, 受得了: "able to"; otherwise the particle.
+      return last(prev) === '不' || last(prev) === '得' ? 'liǎo' : 'le'
+    case '谁':
+      // Everyday Mandarin says shéi (shuí is the formal reading).
+      return 'shéi'
     default:
       return null
   }
