@@ -1,0 +1,274 @@
+[
+  {
+    "id": "L4-football-short", "level": 4, "topic": "football", "length": "short",
+    "title_zh": "转会传闻", "title_en": "Transfer rumours",
+    "paragraphs": [
+      "最近网上到处都是我们队长要转会的消息。有人说他已经和一家西班牙俱乐部签了合同，也有人说这只是经纪人故意放出来的传闻。",
+      "作为一个老球迷，我心里很复杂。他在这里踢了十年，几乎是看着我长大的。可是他今年三十岁了，想去更大的舞台，我也能理解。",
+      "昨天晚上，他终于在社交媒体上发了一句话：“我哪儿也不去。”评论区一下子就有了几万条留言。"
+    ],
+    "translations": [
+      "Lately the internet has been full of news that our captain is leaving. Some say he's already signed with a Spanish club; others say it's just a rumour his agent leaked on purpose.",
+      "As a long-time fan, I have mixed feelings. He's played here for ten years; he practically watched me grow up. But he's thirty this year and wants a bigger stage, and I can understand that.",
+      "Last night he finally posted one line on social media: \"I'm not going anywhere.\" The comments section got tens of thousands of replies in no time."
+    ],
+    "names": ["西班牙"], "glossary": { "西班牙": "Spain", "转会": "to transfer (clubs)", "传闻": "rumour", "俱乐部": "club", "合同": "contract", "经纪人": "agent", "故意": "on purpose", "复杂": "complicated; mixed", "舞台": "stage", "社交媒体": "social media", "评论区": "comments section" }
+  },
+  {
+    "id": "L4-football-medium", "level": 4, "topic": "football", "length": "medium",
+    "title_zh": "数据分析师", "title_en": "The data analyst",
+    "paragraphs": [
+      "很多人以为足球俱乐部里只有球员和教练，其实还有很多人在幕后工作。我的表哥就是一家职业俱乐部的数据分析师。",
+      "他的工作是把每场比赛的数据整理出来：每个球员跑了多少公里、传球成功率是多少、在哪些位置最容易丢球。这些数字最后都会交给主教练。",
+      "表哥说，数据有时候能发现眼睛看不到的问题。比如去年，球队总是在下半场最后十五分钟丢球。大家都以为是球员体力不够。",
+      "可是表哥研究了数据以后发现，问题不在体力，而在换人的时间。教练总是太晚换人，新上场的球员还没进入状态，比赛就结束了。",
+      "教练听了他的建议，把换人时间提前了十分钟。结果那个赛季最后阶段，球队的丢球少了一半。",
+      "我问表哥，数据会不会让足球变得没有意思。他笑着说：“数据只能告诉你发生了什么，但是比赛里最精彩的那一脚，永远是人踢出来的。”"
+    ],
+    "translations": [
+      "Lots of people think a football club only has players and coaches, but many people work behind the scenes. My cousin is a data analyst at a professional club.",
+      "His job is to compile the data from every match: how many kilometres each player ran, their pass completion rate, where they lose the ball most. In the end all these numbers go to the head coach.",
+      "My cousin says data can sometimes reveal problems the eye can't see. For example, last year the team kept conceding in the last fifteen minutes. Everyone assumed the players lacked stamina.",
+      "But after studying the data, my cousin found the problem wasn't stamina but the timing of substitutions. The coach always subbed too late; the new players hadn't got into the game before it was over.",
+      "The coach took his advice and made substitutions ten minutes earlier. In the final stretch of that season the team conceded half as many goals.",
+      "I asked my cousin whether data would make football boring. He smiled: \"Data can only tell you what happened. The most brilliant strike in a match will always come from a person.\""
+    ],
+    "names": [], "glossary": { "教练": "coach", "幕后": "behind the scenes", "职业": "professional", "数据分析师": "data analyst", "成功率": "success rate", "丢球": "to lose the ball; to concede", "主教练": "head coach", "体力": "stamina", "换人": "to substitute (players)", "状态": "form; state", "建议": "advice", "阶段": "stage; phase" }
+  },
+  {
+    "id": "L4-football-long", "level": 4, "topic": "football", "length": "long",
+    "title_zh": "女足", "title_en": "The women's team",
+    "paragraphs": [
+      "我妹妹小雨从八岁开始踢足球。那时候，学校里只有男生足球队，她每天放学以后站在场边看，一看就是一个小时。",
+      "有一天，教练走过来问她：“你是不是也想踢？”小雨点了点头。教练想了想，让她跟男生一起练。刚开始，很多男生不愿意把球传给她，觉得女生踢不好。",
+      "小雨没有抱怨，只是练得比别人更认真。别人练一个小时，她就练两个小时。一个学期以后，她已经成了队里速度最快的人，那些男生也开始主动把球传给她了。",
+      "上了初中，小雨加入了市里的女子足球队。训练非常辛苦，每天早上五点半就要起床跑步。周末别的同学去玩，她却在球场上一遍又一遍地练射门。",
+      "我们家里一开始也有不同的意见。奶奶觉得女孩子踢足球太危险，将来也找不到好工作。爸爸妈妈虽然支持她，但也担心她的学习。",
+      "为了证明自己，小雨给自己定了一个规矩：训练再累，作业也一定要完成。她常常在回家的公交车上背单词，晚上写作业写到十一点。那一年，她的成绩反而比以前更好了。",
+      "去年夏天，小雨的球队参加了全国比赛。决赛那天，我们全家都去了现场，连奶奶也去了。比赛打到最后几分钟还是零比零，小雨突然在禁区外起脚，球直接飞进了球门的右上角。",
+      "整个看台都站了起来。我转过头，看到奶奶一边鼓掌一边擦眼泪。她大声地对旁边的人说：“那是我孙女！”",
+      "现在，小雨已经收到了几所大学的邀请。她说她以后想当一名教练，让更多想踢球的女孩子不用再站在场边看。"
+    ],
+    "translations": [
+      "My little sister Xiaoyu started playing football at eight. Back then her school only had a boys' team, and every day after school she'd stand on the sidelines and watch, often for an hour.",
+      "One day the coach came over and asked, \"Do you want to play too?\" Xiaoyu nodded. The coach thought about it and let her train with the boys. At first many of the boys didn't want to pass to her, thinking girls couldn't play.",
+      "Xiaoyu didn't complain; she just trained harder than everyone else. If others trained for an hour, she trained for two. After a term she was the fastest player on the team, and the boys started passing to her of their own accord.",
+      "In middle school Xiaoyu joined the city girls' team. Training was really tough: she had to get up at half five every morning to run. At weekends, while her classmates went out, she practised shooting on the pitch over and over.",
+      "At first our family didn't all agree. Grandma thought football was too dangerous for a girl, and that she'd never find a good job. Mum and Dad supported her but worried about her studies.",
+      "To prove herself, Xiaoyu set herself a rule: however tired she was from training, she'd always finish her homework. She often memorised vocabulary on the bus home and did homework until eleven at night. That year her grades actually got better.",
+      "Last summer Xiaoyu's team entered the national championship. On the day of the final our whole family went to watch, even Grandma. In the last few minutes it was still nil-nil, when Xiaoyu suddenly shot from outside the box and the ball flew straight into the top right corner.",
+      "The whole stand rose to its feet. I turned and saw Grandma clapping and wiping away tears. She said loudly to the person next to her, \"That's my granddaughter!\"",
+      "Now Xiaoyu has had offers from several universities. She says she wants to be a coach one day, so more girls who want to play won't have to stand on the sidelines and watch."
+    ],
+    "names": ["小雨"], "glossary": { "小雨": "Xiaoyu (a name)", "场边": "sidelines", "抱怨": "to complain", "主动": "of one's own accord", "训练": "training", "射门": "to shoot (at goal)", "意见": "opinion", "支持": "to support", "证明": "to prove", "背单词": "to memorise vocabulary", "决赛": "final", "禁区": "penalty area", "看台": "stand (in a stadium)", "鼓掌": "to clap", "邀请": "invitation" }
+  },
+  {
+    "id": "L4-fashion-short", "level": 4, "topic": "archive fashion", "length": "short",
+    "title_zh": "解构", "title_en": "Deconstruction",
+    "paragraphs": [
+      "第一次看到马吉拉的衣服时，我以为是做坏了：袖子翻在外面，线头也没剪，衬里露在最显眼的地方。",
+      "后来我才明白，这叫“解构”。设计师故意把衣服拆开，让人看到平时藏在里面的结构，重新思考一件衣服是怎么做成的。",
+      "现在我穿衣服也开始注意细节了。一件好衣服，不只是外面好看，里面也一样讲究。"
+    ],
+    "translations": [
+      "The first time I saw Margiela's clothes I thought they'd been made wrong: sleeves turned inside out, loose threads left uncut, the lining showing in the most visible spot.",
+      "Only later did I realise this is called \"deconstruction\". The designer deliberately takes clothes apart so you can see the structure normally hidden inside, and rethink how a garment is made.",
+      "Now I pay attention to details when I dress too. A good piece of clothing isn't just nice outside; it's just as carefully made inside."
+    ],
+    "names": ["马吉拉"], "glossary": { "马吉拉": "Margiela", "解构": "deconstruction", "袖子": "sleeve", "翻": "to turn over", "线头": "loose thread", "衬里": "lining", "露": "to show; to expose", "显眼": "conspicuous", "结构": "structure", "细节": "detail", "讲究": "carefully made; particular about" }
+  },
+  {
+    "id": "L4-fashion-medium", "level": 4, "topic": "archive fashion", "length": "medium",
+    "title_zh": "档案", "title_en": "The archive",
+    "paragraphs": [
+      "我的朋友阿杰是一个收藏家，专门收藏九十年代日本设计师的作品。他的公寓里有一个房间，完全用来放衣服，温度和湿度都要严格控制。",
+      "他的衣服不是用来穿的。每一件都有编号，旁边放着当年的秀场照片和杂志报道。他说，这不是衣柜，而是一个档案馆。",
+      "有一次，他给我看一件黑色的外套。表面看起来很普通，可是翻过来，里面缝满了手写的诗。那是设计师在一场秀上只做了三件的样衣。",
+      "阿杰找这件外套找了整整五年。最后在大阪一个老人的仓库里找到了它。老人不知道它的价值，只收了他很少的钱。",
+      "我问他会不会觉得不好意思。阿杰沉默了一会儿，说他后来又去了一次，给老人多付了一笔钱，还请他吃了一顿饭。",
+      "他说：“收藏不只是拥有，而是保护。有一天，这些衣服会进博物馆，让更多人看到那个年代的想法。”"
+    ],
+    "translations": [
+      "My friend A-Jie is a collector who specialises in work by Japanese designers from the nineties. His flat has a room just for clothes, with temperature and humidity strictly controlled.",
+      "His clothes aren't for wearing. Each one is numbered, with the runway photos and magazine coverage from the time kept alongside. He says it isn't a wardrobe; it's an archive.",
+      "Once he showed me a black jacket. From the outside it looked ordinary, but turned inside out, it was covered in handwritten poems. It was a sample the designer made only three of for one show.",
+      "A-Jie spent five whole years looking for that jacket. He finally found it in an old man's storeroom in Osaka. The old man didn't know what it was worth and charged him very little.",
+      "I asked whether he felt bad about that. A-Jie was silent for a moment, then said he'd gone back, paid the old man more, and taken him out for a meal.",
+      "He said, \"Collecting isn't just owning, it's protecting. One day these clothes will be in a museum, so more people can see the ideas of that era.\""
+    ],
+    "names": ["阿杰", "大阪"], "glossary": { "阿杰": "A-Jie (a name)", "大阪": "Osaka", "收藏家": "collector", "收藏": "to collect", "公寓": "flat; apartment", "湿度": "humidity", "严格": "strict", "编号": "serial number", "秀场": "runway show", "报道": "report; coverage", "档案馆": "archive", "诗": "poem", "样衣": "sample garment", "仓库": "storeroom; warehouse", "价值": "value", "沉默": "silent", "拥有": "to own", "博物馆": "museum" }
+  },
+  {
+    "id": "L4-anime-short", "level": 4, "topic": "anime", "length": "short",
+    "title_zh": "声优", "title_en": "The voice actor",
+    "paragraphs": [
+      "我一直以为给动画配音很简单，只要对着话筒念台词就行。直到上个月，我参加了一个配音的体验课。",
+      "老师让我给一个哭泣的角色配音。我念了十几遍，每次都被老师说“没有感情”。原来声音里的情绪，比表情还难表达。",
+      "从那以后，我看动画的时候总会特别注意声优的表演。每一句台词背后，可能都练习了几十次。"
+    ],
+    "translations": [
+      "I always thought dubbing anime was easy: just read the lines into a microphone. Until last month, when I went to a taster class in voice acting.",
+      "The teacher had me voice a character who was crying. I read it over a dozen times, and every time the teacher said \"no emotion\". It turns out emotion in the voice is even harder to express than on the face.",
+      "Since then, when I watch anime I always pay special attention to the voice actors' performances. Every line might have been practised dozens of times."
+    ],
+    "names": [], "glossary": { "声优": "voice actor (anime)", "配音": "to dub; voice acting", "话筒": "microphone", "台词": "lines (script)", "体验课": "taster class", "哭泣": "to weep", "情绪": "emotion", "表情": "facial expression", "表达": "to express", "表演": "performance" }
+  },
+  {
+    "id": "L4-anime-medium", "level": 4, "topic": "anime", "length": "medium",
+    "title_zh": "动画里的城市", "title_en": "The city in the anime",
+    "paragraphs": [
+      "有一部动画电影我看了不下十遍。故事发生在东京的一个小车站附近，画面非常真实，连路边的自动售货机都画得清清楚楚。",
+      "去年去日本旅游，我专门花了一天时间去找电影里的地方。这种旅行在网上被叫做“圣地巡礼”。",
+      "我按照网上的攻略，先找到了那个车站。站在月台上，和电影里的画面一模一样，我激动得差点儿叫出来。",
+      "接下来是那段长长的楼梯。电影里，男女主角就是在这里最后一次相遇的。楼梯上已经有好几个年轻人在拍照，大家都拿着手机，对比电影截图找角度。",
+      "我们虽然互相不认识，却很自然地聊了起来。一个从台湾来的女孩告诉我，她已经是第三次来了，每次都会发现新的细节。",
+      "那天傍晚，我一个人坐在楼梯上看夕阳。我突然明白，我喜欢的不只是那部电影，还有它让我相信的东西：两个人不管走多远，总有一天会再相遇。"
+    ],
+    "translations": [
+      "There's one anime film I've watched at least ten times. The story takes place near a small station in Tokyo, and the visuals are incredibly realistic; even the vending machines by the road are drawn in detail.",
+      "Last year when I travelled to Japan, I spent a whole day finding places from the film. Online this kind of trip is called a \"pilgrimage\".",
+      "Following an online guide, I found the station first. Standing on the platform, it looked exactly like the film; I was so excited I nearly shouted.",
+      "Next was the long staircase. In the film, the two leads meet here for the last time. There were already several young people on the stairs taking photos, holding up screenshots on their phones to find the angle.",
+      "We didn't know each other, but we started chatting naturally. A girl from Taiwan told me it was her third visit, and each time she noticed new details.",
+      "That evening I sat alone on the stairs watching the sunset. I suddenly realised that what I love isn't just the film, but what it makes me believe: however far apart two people go, one day they'll meet again."
+    ],
+    "names": ["东京", "台湾"], "glossary": { "东京": "Tokyo", "台湾": "Taiwan", "画面": "visuals; frame", "自动售货机": "vending machine", "圣地巡礼": "pilgrimage (to anime locations)", "攻略": "guide; walkthrough", "月台": "platform", "相遇": "to meet", "截图": "screenshot", "角度": "angle", "傍晚": "dusk", "夕阳": "sunset" }
+  },
+  {
+    "id": "L4-anime-long", "level": 4, "topic": "anime", "length": "long",
+    "title_zh": "动画公司的新人", "title_en": "The new animator",
+    "paragraphs": [
+      "大学毕业以后，我进了一家做动画的小公司。面试的时候，我给他们看了自己画的作品集。老板看了很久，只说了一句：“明天来上班吧。”",
+      "第一天上班，我才发现现实和想象完全不一样。我以为自己会马上参与设计角色，结果被安排去画“中间帧”。",
+      "所谓中间帧，就是在原画师画好的两个关键动作之间，补上中间的每一个画面。比如一个人转头，原画师只画开始和结束，中间的十几张都要由我这样的新人来画。",
+      "这份工作非常枯燥，也非常累。我每天要画一百多张，一张的工资还不到十块钱。晚上十二点下班是常事，周末也经常加班。",
+      "有一段时间，我真的想放弃。我开始怀疑，自己到底是喜欢动画，还是只是喜欢看动画。",
+      "就在那时候，公司里一位老原画师注意到了我。他叫林老师，已经在这一行做了三十年。他把我的画一张一张地看，然后指出了很多我从来没有想过的问题。",
+      "“你画得很干净，可是没有重量。”他说，“一个人跳下来的时候，衣服、头发、身体，每一部分落地的时间都不一样。你要先观察生活，再画动画。”",
+      "从那天起，我每天坐地铁的时候都在观察别人：怎么走路、怎么转身、包是怎么晃的。我的本子上画满了速写。慢慢地，我画的中间帧开始有了生命。",
+      "两年以后，我第一次被允许画原画。那是一个小女孩在雨中奔跑的镜头，只有三秒钟。片子播出的那天晚上，我盯着屏幕，看了一遍又一遍。",
+      "片尾的名单很长，我的名字在很后面，小得几乎看不清。可是对我来说，那是世界上最好看的三秒钟。"
+    ],
+    "translations": [
+      "After graduating I joined a small animation studio. At the interview I showed them my portfolio. The boss looked at it for a long time and said just one thing: \"Start tomorrow.\"",
+      "On my first day I discovered that reality was nothing like I'd imagined. I thought I'd be designing characters straight away; instead I was assigned to draw in-betweens.",
+      "In-betweens are all the frames that fill the gap between two key poses drawn by a key animator. If someone turns their head, the key animator draws only the start and end; the dozen or so frames in between are drawn by newcomers like me.",
+      "The work was incredibly tedious and exhausting. I drew over a hundred frames a day, earning less than ten kuai per frame. Finishing at midnight was normal, and I often worked weekends.",
+      "For a while I really wanted to quit. I began to wonder whether I actually liked making animation, or just liked watching it.",
+      "Right then, a veteran key animator at the studio noticed me. His name was Mr Lin, and he'd been in the industry thirty years. He went through my drawings one by one and pointed out many problems I'd never considered.",
+      "\"Your drawing is clean, but it has no weight,\" he said. \"When someone jumps down, their clothes, hair and body all land at different moments. Observe life first, then animate.\"",
+      "From that day, every time I took the metro I watched people: how they walked, how they turned, how their bags swung. My notebook filled with sketches. Slowly my in-betweens came to life.",
+      "Two years later I was allowed to draw key animation for the first time. It was a shot of a little girl running in the rain, only three seconds long. On the night it aired, I stared at the screen, watching it again and again.",
+      "The end credits were long, and my name was near the end, so small it was almost unreadable. But to me those were the best three seconds in the world."
+    ],
+    "names": ["林老师"], "glossary": { "林老师": "Mr Lin", "作品集": "portfolio", "现实": "reality", "想象": "to imagine", "参与": "to take part in", "中间帧": "in-between frame", "原画师": "key animator", "关键": "key", "枯燥": "tedious", "加班": "to work overtime", "放弃": "to give up", "怀疑": "to doubt", "重量": "weight", "观察": "to observe", "晃": "to sway; to swing", "速写": "sketch", "允许": "to allow", "镜头": "shot (film)", "盯": "to stare at", "屏幕": "screen", "片尾": "end credits" }
+  },
+  {
+    "id": "L4-travel-short", "level": 4, "topic": "travel", "length": "short",
+    "title_zh": "一个人的旅行", "title_en": "Travelling alone",
+    "paragraphs": [
+      "以前我总觉得一个人旅行很孤单，吃饭没人聊天，拍照也没人帮忙。今年我终于鼓起勇气，一个人去了大理。",
+      "没想到，一个人反而更自由。想在哪儿停就在哪儿停，想发呆就发呆。在青年旅社里，我还认识了来自五个国家的朋友。",
+      "回来以后我发现，旅行的意义有时候不在于去了哪里，而在于你在路上变成了什么样的人。"
+    ],
+    "translations": [
+      "I used to think travelling alone would be lonely: no one to chat with over meals, no one to take photos. This year I finally plucked up the courage and went to Dali by myself.",
+      "Unexpectedly, being alone was actually freer. I could stop wherever I liked, and zone out whenever I wanted. At the youth hostel I even made friends from five countries.",
+      "After coming back I realised that sometimes the point of travelling isn't where you go, but who you become along the way."
+    ],
+    "names": ["大理"], "glossary": { "大理": "Dali (Yunnan)", "鼓起勇气": "to pluck up courage", "自由": "free; freedom", "发呆": "to zone out", "青年旅社": "youth hostel", "意义": "meaning; point", "在于": "to lie in" }
+  },
+  {
+    "id": "L4-travel-medium", "level": 4, "topic": "travel", "length": "medium",
+    "title_zh": "护照丢了", "title_en": "Lost passport",
+    "paragraphs": [
+      "在广州的最后一天，我准备去机场的时候，突然发现护照不见了。我把行李箱翻了三遍，还是找不到。离起飞只有五个小时了。",
+      "我的第一反应是慌，脑子一片空白。酒店前台的小姐看到我的样子，让我先坐下喝杯水，然后帮我一步一步地想办法。",
+      "她先帮我打电话给昨天去过的餐厅，没有找到。然后建议我马上去附近的派出所报案，因为补办护照需要报案证明。",
+      "在派出所，警察很耐心地帮我填了表，还告诉我领事馆的地址和电话。我只好改签了机票，在广州多待了三天。",
+      "第三天，我接到派出所的电话：有一位出租车司机在车上捡到了我的护照，送到了派出所。原来它是从我的外套口袋里滑出去的。",
+      "我想当面感谢那位司机，可是他没有留下名字。我在网上写了一篇长长的文章，感谢这座城市里所有帮助过我的陌生人。"
+    ],
+    "translations": [
+      "On my last day in Guangzhou, as I got ready for the airport, I suddenly found my passport was gone. I went through my suitcase three times and still couldn't find it. Take-off was only five hours away.",
+      "My first reaction was panic; my mind went blank. The woman at the hotel reception saw the state I was in, sat me down with a glass of water, then helped me think it through step by step.",
+      "First she called the restaurant I'd been to the day before, but it wasn't there. Then she suggested I go straight to the local police station to report it, because replacing a passport requires a police report.",
+      "At the police station an officer patiently helped me fill in the form and gave me the consulate's address and phone number. I had to change my flight and stay in Guangzhou three more days.",
+      "On the third day the police station called: a taxi driver had found my passport in his car and handed it in. It had slipped out of my jacket pocket.",
+      "I wanted to thank the driver in person, but he hadn't left his name. I wrote a long post online thanking all the strangers in the city who'd helped me."
+    ],
+    "names": ["广州"], "glossary": { "广州": "Guangzhou", "行李箱": "suitcase", "起飞": "to take off", "反应": "reaction", "慌": "flustered; panicked", "前台": "reception", "派出所": "local police station", "报案": "to report (to the police)", "补办": "to get a replacement", "领事馆": "consulate", "改签": "to change (a ticket)", "捡": "to pick up; to find", "滑": "to slip", "陌生人": "stranger" }
+  },
+  {
+    "id": "L4-daily-short", "level": 4, "topic": "daily life", "length": "short",
+    "title_zh": "断网的一天", "title_en": "A day offline",
+    "paragraphs": [
+      "上周六，我们小区的网络坏了一整天。一开始我特别焦虑，不停地刷新手机，好像少了什么重要的东西。",
+      "后来我干脆把手机放在一边，拿出了一本买了半年都没打开的小说。没想到一口气就看了一百多页。",
+      "晚上网络恢复了，我却没有马上打开手机。那一天让我意识到，很多时候，是我们自己不愿意离开网络。"
+    ],
+    "translations": [
+      "Last Saturday the internet in our estate was down all day. At first I was really anxious, constantly refreshing my phone as if I'd lost something important.",
+      "Later I just put my phone aside and took out a novel I'd bought six months ago and never opened. To my surprise I read over a hundred pages in one go.",
+      "In the evening the internet came back, but I didn't open my phone straight away. That day made me realise that often it's us who don't want to leave the internet."
+    ],
+    "names": [], "glossary": { "小区": "housing estate", "网络": "internet; network", "焦虑": "anxious", "刷新": "to refresh", "干脆": "simply; just", "一口气": "in one go", "恢复": "to recover; to be restored", "意识到": "to realise" }
+  },
+  {
+    "id": "L4-daily-medium", "level": 4, "topic": "daily life", "length": "medium",
+    "title_zh": "楼下的面馆", "title_en": "The noodle shop downstairs",
+    "paragraphs": [
+      "我家楼下有一家开了二十多年的面馆。店面很小，只有六张桌子，可是每天中午都坐得满满的。",
+      "老板姓何，大家都叫他何叔。他每天凌晨四点就起来和面、熬汤。他说，汤要熬六个小时，味道才够。",
+      "我上大学的四年，几乎每个星期都去吃。何叔记得我不吃香菜，每次都会提醒厨房。有时候看我考试压力大，还会偷偷给我多加一个鸡蛋。",
+      "毕业以后我去了别的城市工作。第一次回家，我放下行李就去了面馆。何叔看到我，第一句话是：“还是不要香菜吧？”",
+      "那一刻，我的眼睛有点儿湿。在外面这一年，我吃过很多高级的餐厅，但是没有一碗面让我有这种感觉。",
+      "何叔说他打算再干五年就退休。我问他以后面馆怎么办。他笑着说：“我儿子在学呢。手艺不能断，这条街上的人还要吃面呢。”"
+    ],
+    "translations": [
+      "Below my flat there's a noodle shop that's been open for over twenty years. It's tiny, only six tables, but it's packed every lunchtime.",
+      "The owner's surname is He, and everyone calls him Uncle He. He gets up at four every morning to knead dough and simmer the broth. He says the broth needs six hours to taste right.",
+      "In my four years at university I went almost every week. Uncle He remembered I don't eat coriander and reminded the kitchen every time. When he saw I was stressed about exams, he'd sneak me an extra egg.",
+      "After graduating I moved to another city for work. The first time I came home, I dropped my bags and went straight to the noodle shop. The first thing Uncle He said was: \"Still no coriander?\"",
+      "In that moment my eyes welled up. In the year away I'd eaten at lots of fancy restaurants, but no bowl of noodles had made me feel like that.",
+      "Uncle He says he plans to work five more years and then retire. I asked what would happen to the shop. He smiled: \"My son's learning. The craft can't die out; people on this street still need their noodles.\""
+    ],
+    "names": ["何叔"], "glossary": { "何叔": "Uncle He", "面馆": "noodle shop", "凌晨": "early morning (before dawn)", "和面": "to knead dough", "熬汤": "to simmer broth", "香菜": "coriander", "压力": "pressure; stress", "偷偷": "secretly", "高级": "high-end; fancy", "退休": "to retire", "手艺": "craft; skill" }
+  },
+  {
+    "id": "L4-business-short", "level": 4, "topic": "business & finance", "length": "short",
+    "title_zh": "复利", "title_en": "Compound interest",
+    "paragraphs": [
+      "上大学时，金融课的老师在黑板上写了一个问题：“每天进步百分之一，一年以后会怎么样？”",
+      "我们算了一下，答案是原来的三十七倍多。老师说，这就是复利的力量：一开始看不出区别，时间长了差距会越来越大。",
+      "从那以后，我每个月都会存一小笔钱去投资。钱不多，但我相信，时间会帮我完成剩下的事。"
+    ],
+    "translations": [
+      "At university my finance lecturer wrote a question on the board: \"If you improve by one percent every day, what happens after a year?\"",
+      "We worked it out: the answer is over thirty-seven times where you started. The lecturer said that's the power of compounding: at first you can't see a difference, but over time the gap grows and grows.",
+      "Since then I've put a small amount into investments every month. It's not much, but I trust time to do the rest."
+    ],
+    "names": [], "glossary": { "复利": "compound interest", "金融": "finance", "进步": "to improve", "百分之一": "one percent", "倍": "times (multiple)", "力量": "power", "区别": "difference", "差距": "gap", "投资": "to invest" }
+  },
+  {
+    "id": "L4-business-medium", "level": 4, "topic": "business & finance", "length": "medium",
+    "title_zh": "审计季", "title_en": "Audit season",
+    "paragraphs": [
+      "每年一月到三月是会计师事务所最忙的时候，大家叫它“审计季”。我在事务所实习的第一年，终于体会到了这句话的意思。",
+      "我们小组负责审计一家做家具的公司。第一周，我的任务是核对他们的银行流水和账本，每一笔收入和支出都要对得上。",
+      "有一天晚上十点，我发现有一笔五十万的付款找不到合同。我很紧张，不知道是自己看错了，还是真的有问题。",
+      "我把发现告诉了经理。她没有批评我耽误时间，反而表扬我细心。第二天，她和我一起去问公司的财务，才知道那是一笔还没补合同的设备款。",
+      "虽然最后证明没有问题，但是经理说，审计的意义就在这里：不放过任何一个疑问。",
+      "三月底，审计报告终于交了。那天晚上，整个小组去吃了一顿火锅。我累得几乎睁不开眼睛，但是心里很有成就感。"
+    ],
+    "translations": [
+      "January to March every year is the busiest time at an accounting firm; everyone calls it \"busy season\". In my first year interning at a firm, I finally understood what that meant.",
+      "Our team was auditing a furniture company. In the first week my job was reconciling their bank statements with their ledger; every payment in and out had to match.",
+      "One night at ten I found a payment of five hundred thousand with no contract. I was nervous; I didn't know whether I'd misread something or there was really a problem.",
+      "I told the manager what I'd found. Rather than criticise me for wasting time, she praised me for being careful. The next day she came with me to ask the company's finance staff, and we learned it was an equipment payment whose contract hadn't been filed yet.",
+      "Although it turned out to be fine, the manager said that's the whole point of auditing: never let a single question go.",
+      "At the end of March the audit report was finally submitted. That evening the whole team went for hotpot. I was so tired I could barely keep my eyes open, but I felt a real sense of achievement."
+    ],
+    "names": [], "glossary": { "会计师事务所": "accounting firm", "审计": "audit", "体会": "to understand (from experience)", "小组": "team; group", "负责": "to be responsible for", "核对": "to check; to reconcile", "流水": "(bank) statement", "支出": "expenditure", "付款": "payment", "批评": "to criticise", "耽误": "to waste (time); delay", "表扬": "to praise", "财务": "finance (department)", "设备": "equipment", "疑问": "doubt; question", "报告": "report", "成就感": "sense of achievement" }
+  }
+]

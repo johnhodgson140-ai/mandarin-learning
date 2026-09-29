@@ -1,0 +1,276 @@
+[
+  {
+    "id": "L5-football-short", "level": 5, "topic": "football", "length": "short",
+    "title_zh": "视频助理裁判", "title_en": "VAR",
+    "paragraphs": [
+      "自从引入视频助理裁判以后，球迷们对它的评价一直分成两派。支持的人认为，它让比赛更加公平，减少了明显的误判。",
+      "反对的人则抱怨，每次进球都要等上好几分钟，庆祝的激情被一点点消耗掉了。更何况，同样的画面，不同的裁判也可能做出完全相反的判断。",
+      "说到底，技术只能提供证据，最后做决定的，依然是人。也许足球的魅力，本来就包括那一点点的不完美。"
+    ],
+    "translations": [
+      "Ever since VAR was introduced, fans have been split into two camps. Supporters argue it makes matches fairer and cuts down on obvious mistakes.",
+      "Opponents complain that every goal now means waiting several minutes, and the thrill of celebrating gets worn away bit by bit. Besides, from the same footage, different referees can reach completely opposite decisions.",
+      "In the end, technology can only provide evidence; the decision is still made by people. Perhaps the charm of football has always included a little imperfection."
+    ],
+    "names": [], "glossary": { "视频助理裁判": "VAR (video assistant referee)", "引入": "to introduce", "评价": "opinion; assessment", "派": "camp; faction", "公平": "fair", "误判": "wrong decision", "激情": "passion; thrill", "消耗": "to wear away", "何况": "besides; let alone", "判断": "judgement", "证据": "evidence", "依然": "still", "魅力": "charm", "完美": "perfect" }
+  },
+  {
+    "id": "L5-football-medium", "level": 5, "topic": "football", "length": "medium",
+    "title_zh": "球场之外的经济", "title_en": "The economy around the stadium",
+    "paragraphs": [
+      "我老家所在的小城去年升入了中超，这件事对当地的影响远远超出了体育本身。",
+      "比赛日那天，球场周围的饭馆和小吃摊从中午就开始排队。一位卖烤串的大叔告诉我，一个比赛日的收入，差不多相当于他平时一个星期的营业额。",
+      "酒店的入住率也明显上升。客队的球迷常常提前一天到，顺便在城里逛逛，带动了景点和商场的消费。本地政府还专门增加了比赛日的公交线路。",
+      "不过，繁荣的背后也有隐忧。随着球场附近的房价上涨，一些老住户觉得生活成本变高了。还有人担心，一旦球队降级，这一切都会迅速消失。",
+      "我的一位学经济的朋友说，体育带来的增长往往很不稳定，城市真正需要的，是把短期的热度转化为长期的产业，比如青训基地、体育培训和旅游品牌。",
+      "我不知道球队能在中超待多久，但至少现在，每到比赛日，整座城市都像过节一样。对很多人来说，这种自豪感是没法用数字衡量的。"
+    ],
+    "translations": [
+      "The small city where I grew up was promoted to the Chinese Super League last year, and the impact on the area has gone far beyond sport itself.",
+      "On match days the restaurants and food stalls around the stadium have queues from noon. A man selling skewers told me that one match day brings in roughly what he normally takes in a week.",
+      "Hotel occupancy has clearly risen too. Away fans often arrive a day early and look around the city while they're at it, boosting spending at sights and malls. The local government has even added match-day bus routes.",
+      "But behind the boom there are worries. As house prices near the stadium rise, some long-time residents feel their cost of living has gone up. Others fear that if the team is relegated, it'll all vanish quickly.",
+      "A friend of mine who studies economics says growth from sport is often unstable; what a city really needs is to turn short-term buzz into long-term industry, like youth academies, sports training and a tourism brand.",
+      "I don't know how long the team will stay in the Super League, but at least for now, every match day the whole city feels like a festival. For many people, that sense of pride can't be measured in numbers."
+    ],
+    "names": ["中超"], "glossary": { "中超": "Chinese Super League", "升入": "to be promoted to", "当地": "local", "小吃摊": "food stall", "烤串": "grilled skewers", "相当于": "equivalent to", "营业额": "turnover; takings", "入住率": "occupancy rate", "客队": "away team", "带动": "to drive; to boost", "消费": "consumption; spending", "繁荣": "prosperity; boom", "隐忧": "hidden worry", "房价": "house prices", "成本": "cost", "降级": "to be relegated", "稳定": "stable", "转化": "to transform", "产业": "industry", "青训": "youth training", "自豪感": "sense of pride", "衡量": "to measure" }
+  },
+  {
+    "id": "L5-fashion-short", "level": 5, "topic": "archive fashion", "length": "short",
+    "title_zh": "快时尚的代价", "title_en": "The cost of fast fashion",
+    "paragraphs": [
+      "一件短袖只要几十块，看起来是消费者占了便宜。可是很少有人追问，这么低的价格是怎么做到的。",
+      "答案往往藏在供应链的另一端：工人的低工资、被污染的河流，还有每年被扔进垃圾场的上亿件衣服。",
+      "这也是我越来越喜欢二手和古着的原因。与其不断追逐潮流，不如让一件好衣服被穿得更久一些。"
+    ],
+    "translations": [
+      "A T-shirt for a few dozen kuai looks like a bargain for the consumer. But few people ask how such a low price is possible.",
+      "The answer is usually hidden at the other end of the supply chain: workers' low wages, polluted rivers, and hundreds of millions of garments thrown into landfill every year.",
+      "That's why I've come to love second-hand and vintage more and more. Rather than chasing trends endlessly, it's better to let a good piece of clothing be worn for longer."
+    ],
+    "names": [], "glossary": { "快时尚": "fast fashion", "代价": "cost; price paid", "消费者": "consumer", "占便宜": "to get a bargain", "追问": "to ask further", "供应链": "supply chain", "污染": "to pollute", "垃圾场": "landfill; dump", "古着": "vintage clothing", "与其": "rather than", "追逐": "to chase", "潮流": "trend" }
+  },
+  {
+    "id": "L5-fashion-medium", "level": 5, "topic": "archive fashion", "length": "medium",
+    "title_zh": "一场改变时尚的秀", "title_en": "A show that changed fashion",
+    "paragraphs": [
+      "一九八一年，两位日本设计师第一次在巴黎发布作品。在当时以华丽和性感为主流的巴黎，她们的衣服几乎全是黑色的，宽松、破旧，还带着不规则的洞。",
+      "第二天，法国媒体的评价非常刻薄，有人甚至用“广岛时尚”来形容这场秀，认为这些衣服看起来像是经历过一场灾难。",
+      "然而，正是这种颠覆性的审美，吸引了一批年轻的设计师和买手。他们从中看到的不是贫穷，而是一种全新的自由：衣服不必取悦身体，也不必取悦别人。",
+      "几年之内，黑色成为了先锋时尚的代名词。从安特卫普到纽约，许多后来的重要设计师都坦言，自己深受那场秀的影响。",
+      "今天回头看，那些当年被嘲笑的衣服，已经成为各大博物馆争相收藏的经典。二手市场上，一件八十年代的原版作品，价格往往是当年的几十倍。",
+      "这段历史常常让我思考：真正有价值的东西，在刚出现的时候，也许总是会让人感到不舒服。"
+    ],
+    "translations": [
+      "In 1981 two Japanese designers showed in Paris for the first time. In a Paris where glamour and sex appeal were the mainstream, their clothes were almost all black: loose, tattered, even with irregular holes.",
+      "The next day the French press was scathing. Some even called the show \"Hiroshima chic\", saying the clothes looked as if they'd survived a disaster.",
+      "Yet it was exactly this subversive aesthetic that won over a group of young designers and buyers. What they saw wasn't poverty but a completely new freedom: clothes didn't have to flatter the body, or please anyone else.",
+      "Within a few years black had become shorthand for avant-garde fashion. From Antwerp to New York, many important later designers have openly said they were deeply influenced by that show.",
+      "Looking back today, the clothes that were mocked back then have become classics that major museums compete to collect. On the second-hand market an original piece from the eighties often sells for dozens of times its original price.",
+      "This history often makes me think: things of real value may always make people uncomfortable when they first appear."
+    ],
+    "names": ["巴黎", "法国", "广岛", "安特卫普", "纽约"], "glossary": { "巴黎": "Paris", "法国": "France", "广岛": "Hiroshima", "安特卫普": "Antwerp", "纽约": "New York", "发布": "to show; to launch", "华丽": "glamorous; ornate", "性感": "sexy", "主流": "mainstream", "宽松": "loose-fitting", "破旧": "worn out; tattered", "不规则": "irregular", "刻薄": "harsh; scathing", "形容": "to describe", "灾难": "disaster", "颠覆性": "subversive", "审美": "aesthetic", "买手": "(fashion) buyer", "取悦": "to please", "先锋": "avant-garde", "代名词": "byword; synonym", "坦言": "to say frankly", "嘲笑": "to mock", "经典": "classic" }
+  },
+  {
+    "id": "L5-anime-short", "level": 5, "topic": "anime", "length": "short",
+    "title_zh": "国产动画的崛起", "title_en": "The rise of Chinese animation",
+    "paragraphs": [
+      "十年前，提到动画，大多数中国观众首先想到的是日本和美国的作品。国产动画常常被认为是“给小孩子看的”。",
+      "这几年情况发生了明显的变化。一批以神话和历史为题材的国产动画电影，不仅票房惊人，在画面和叙事上也获得了专业人士的认可。",
+      "当然，行业依然面临人才短缺和资金不稳定的问题。但越来越多的年轻观众愿意走进电影院支持国产动画，这本身就是一个积极的信号。"
+    ],
+    "translations": [
+      "Ten years ago, when animation came up, most Chinese viewers thought first of Japanese and American work. Domestic animation was often seen as \"for little kids\".",
+      "In recent years that has clearly changed. A wave of Chinese animated films based on myths and history have not only had astonishing box office, but also won recognition from professionals for their visuals and storytelling.",
+      "Of course, the industry still faces talent shortages and unstable funding. But more and more young viewers are willing to go to the cinema to support Chinese animation, and that in itself is a positive sign."
+    ],
+    "names": [], "glossary": { "国产": "domestically made", "崛起": "rise", "观众": "audience; viewers", "神话": "myth", "题材": "subject matter", "票房": "box office", "惊人": "astonishing", "叙事": "narrative; storytelling", "认可": "recognition", "行业": "industry", "面临": "to face", "人才": "talent", "短缺": "shortage", "资金": "funding", "信号": "signal" }
+  },
+  {
+    "id": "L5-anime-medium", "level": 5, "topic": "anime", "length": "medium",
+    "title_zh": "字幕组", "title_en": "The fansub group",
+    "paragraphs": [
+      "上大学的时候，我加入过一个字幕组。那是一群素不相识的年轻人，在网上自发组织起来，把刚播出的日本动画翻译成中文。",
+      "字幕组的分工非常细：片源负责下载视频，翻译负责听译台词，校对检查错误，时间轴把字幕和画面对齐，最后由压制把所有东西合成一个文件。",
+      "我是翻译之一。每周新一集播出后，我们往往要在六个小时内完成全部工作。有一次为了赶时间，我通宵没睡，第二天早上还有考试。",
+      "最难翻的不是长句子，而是那些带有文化背景的笑话和双关语。有时候为了一个词，几个人能在群里讨论一个小时，最后还要在屏幕上方加一行注释。",
+      "我们没有任何报酬，唯一的回报是观众在弹幕里说的一句“字幕组辛苦了”。现在回想起来，那可能是我这辈子学日语最拼命的一段时间。",
+      "随着正版平台的普及，字幕组渐渐退出了历史舞台。但我始终记得那些深夜里一起赶工的伙伴。我们也许从未见过面，却一起完成了几百集动画。"
+    ],
+    "translations": [
+      "At university I joined a fansub group: a bunch of young people who'd never met, who organised themselves online to translate newly aired Japanese anime into Chinese.",
+      "The division of labour was very detailed: the source person downloaded the video, translators translated the dialogue by ear, proofreaders checked for errors, the timers synced subtitles to the picture, and finally the encoder combined everything into one file.",
+      "I was one of the translators. Each week after a new episode aired, we often had to finish all the work within six hours. Once, to meet the deadline, I stayed up all night, with an exam the next morning.",
+      "The hardest things to translate weren't long sentences but jokes and puns rooted in culture. Sometimes several of us would discuss a single word in the group chat for an hour, and still end up adding a note at the top of the screen.",
+      "We weren't paid anything; our only reward was viewers writing \"thanks, fansub team\" in the on-screen comments. Looking back, that was probably the hardest I've ever worked at Japanese.",
+      "As licensed streaming platforms spread, fansub groups gradually faded out. But I'll always remember the partners who worked late into the night with me. We may never have met, but together we finished hundreds of episodes."
+    ],
+    "names": [], "glossary": { "字幕组": "fansub group", "素不相识": "complete strangers", "自发": "spontaneous(ly)", "分工": "division of labour", "片源": "video source", "校对": "proofreading", "时间轴": "timing (of subtitles)", "对齐": "to align", "压制": "encoding", "通宵": "all night", "双关语": "pun", "注释": "note; annotation", "报酬": "pay", "回报": "reward", "弹幕": "on-screen scrolling comments", "拼命": "with all one's might", "正版": "licensed; official", "普及": "to spread widely", "伙伴": "partner" }
+  },
+  {
+    "id": "L5-travel-short", "level": 5, "topic": "travel", "length": "short",
+    "title_zh": "特种兵旅游", "title_en": "\"Special forces\" travel",
+    "paragraphs": [
+      "最近在年轻人中流行一种“特种兵式旅游”：周五下班坐夜车出发，两天打卡十几个景点，周日深夜再赶回来，周一照常上班。",
+      "支持者认为，这种方式花钱少、效率高，适合假期不多的上班族。批评者却觉得，走马观花地拍照打卡，根本谈不上真正的旅行。",
+      "在我看来，旅行没有标准答案。重要的不是走了多少地方，而是你是否在某一个瞬间，真正地感受到了什么。"
+    ],
+    "translations": [
+      "A kind of \"special forces travel\" has recently caught on among young people: leave on a night train after work on Friday, tick off a dozen sights in two days, rush back late on Sunday night, and go to work as usual on Monday.",
+      "Supporters say it's cheap and efficient, suited to office workers with little holiday. Critics think that snapping photos at a glance hardly counts as real travel.",
+      "To me, there's no right answer to travel. What matters isn't how many places you go, but whether, at some moment, you truly felt something."
+    ],
+    "names": [], "glossary": { "特种兵": "special forces", "流行": "popular; trending", "打卡": "to check in (at a sight)", "照常": "as usual", "效率": "efficiency", "上班族": "office workers", "走马观花": "to see things superficially", "谈不上": "hardly counts as", "瞬间": "moment", "感受": "to feel; to experience" }
+  },
+  {
+    "id": "L5-travel-medium", "level": 5, "topic": "travel", "length": "medium",
+    "title_zh": "茶山上的一周", "title_en": "A week on a tea mountain",
+    "paragraphs": [
+      "去年春天，我在云南一座茶山上住了一个星期，住在一户做了四代普洱茶的人家里。主人叫岩温，是布朗族人。",
+      "每天清晨五点，雾还没散，岩温就带着我们上山采茶。他说，春茶最好的时候，只有清明前后那短短的二十来天，错过了就要再等一年。",
+      "采茶看似简单，其实很讲究：只摘一芽两叶，手指要轻，不能用指甲掐，否则茶叶会发黑。我采了一上午，还不到他的五分之一。",
+      "下午是杀青和揉捻。巨大的铁锅烧得滚烫，岩温直接用手在锅里翻炒茶叶，动作快得我看不清楚。整个院子里都是茶的清香。",
+      "晚上，一家人围坐在火塘边喝茶聊天。岩温的父亲说，以前茶叶卖不出价钱，年轻人都出去打工了。这些年茶山出了名，年轻人才慢慢回来。",
+      "离开的那天，岩温送给我一饼自己压的茶，上面写着我的名字和年份。他说：“普洱越放越香，十年以后你再喝，就会想起这座山。”"
+    ],
+    "translations": [
+      "Last spring I spent a week on a tea mountain in Yunnan, living with a family that has made Pu'er tea for four generations. The host, Yan Wen, is from the Blang ethnic group.",
+      "Every day at five in the morning, before the mist had cleared, Yan Wen took us up the mountain to pick tea. He said the best spring tea comes in just twenty-odd days around Qingming; miss it and you wait another year.",
+      "Picking tea looks simple but takes real care: only pick one bud and two leaves, with a light touch, never pinching with your nails, or the leaves turn black. I picked all morning and managed less than a fifth of what he did.",
+      "In the afternoon came the kill-green and rolling. A huge iron wok was scorching hot, and Yan Wen tossed the leaves in it with his bare hands, so fast I couldn't follow. The whole courtyard smelled of fresh tea.",
+      "In the evening the family sat round the fire pit drinking tea and chatting. Yan Wen's father said tea used to fetch no price, and young people all left to work elsewhere. Only in recent years, as the mountain became famous, have they slowly come back.",
+      "The day I left, Yan Wen gave me a cake of tea he'd pressed himself, with my name and the year written on it. He said, \"Pu'er gets better with age. Drink it in ten years and you'll remember this mountain.\""
+    ],
+    "names": ["云南", "岩温", "布朗族", "普洱"], "glossary": { "云南": "Yunnan", "岩温": "Yan Wen (a name)", "布朗族": "the Blang people", "普洱": "Pu'er (tea)", "普洱茶": "Pu'er tea", "清晨": "early morning", "散": "to disperse", "采茶": "to pick tea", "清明": "Qingming festival (early April)", "芽": "bud", "指甲": "fingernail", "掐": "to pinch", "杀青": "kill-green (heating fresh tea leaves)", "揉捻": "rolling (tea leaves)", "铁锅": "iron wok", "滚烫": "scorching hot", "翻炒": "to stir-fry; to toss", "火塘": "fire pit", "打工": "to work away from home", "饼": "cake (of pressed tea)" }
+  },
+  {
+    "id": "L5-travel-long", "level": 5, "topic": "travel", "length": "long",
+    "title_zh": "三千公里的公路", "title_en": "Three thousand kilometres of road",
+    "paragraphs": [
+      "毕业那年夏天，我和大学室友阿凯决定开车走一趟川藏线。从成都出发到拉萨，全程两千多公里，加上绕路，最后我们一共开了将近三千公里。",
+      "出发前，家里人几乎都反对。妈妈在电话里一遍遍地提醒我高原反应的危险，爸爸则担心我们开车经验不足。为了让他们放心，我们提前一个月开始锻炼身体，还专门去学了基本的汽车维修。",
+      "前几天的路还算顺利。车窗外的风景从四川盆地的绿色，慢慢变成了高山峡谷。过了康定以后，海拔迅速升高，我第一次感到头痛和呼吸困难，晚上几乎整夜没睡。",
+      "第四天，我们遇到了真正的麻烦。前一夜的大雨引发了塌方，前面的路被完全堵住了。几百辆车排成了长龙，谁也不知道要等多久。",
+      "就在大家焦急等待的时候，我注意到车队里的人开始互相帮助。一位藏族大哥给每辆车送去热水，几个骑行的年轻人把自己的饼干分给了带着孩子的家庭，还有人拿出吉他，在路边唱起了歌。",
+      "我们一共等了十一个小时。道路抢通的那一刻，整条车队响起了喇叭声，好像在庆祝一场胜利。那一晚，我在日记里写道：“最美的风景，也许不是雪山，而是陌生人之间的善意。”",
+      "接下来的路越来越险，也越来越美。我们翻过了好几座海拔五千米左右的山口，看到了蓝得不真实的湖水，也在草原上被一大群牦牛拦住了半个小时。",
+      "有一天晚上，我们住在一个只有十几户人家的小村子里。房东奶奶不会说汉语，只会笑着给我们倒酥油茶。我们用手机翻译软件，断断续续地聊了一整晚。",
+      "第十五天，我们终于到了拉萨。站在布达拉宫前面，阿凯突然说：“其实到哪儿已经不重要了。”我明白他的意思。这一路上，我们学会的不是怎么开车，而是怎么在不确定中保持耐心。",
+      "回来以后，我们很快就各自开始了工作，每天挤地铁、开会、加班。可是每当压力大的时候，我都会想起那条堵了十一个小时的公路，想起那碗热水和那首歌，然后告诉自己：再等一等，路总会通的。"
+    ],
+    "translations": [
+      "The summer we graduated, my university roommate A-Kai and I decided to drive the Sichuan–Tibet highway. From Chengdu to Lhasa is over two thousand kilometres; with detours, we drove nearly three thousand in the end.",
+      "Before we left almost the whole family was against it. Mum reminded me again and again on the phone about the dangers of altitude sickness, and Dad worried we didn't have enough driving experience. To reassure them, we started getting fit a month ahead and even took a basic car maintenance course.",
+      "The first few days went fairly smoothly. The view outside gradually changed from the green of the Sichuan Basin to high mountains and gorges. After Kangding the altitude rose rapidly; for the first time I had headaches and trouble breathing, and barely slept all night.",
+      "On day four we hit real trouble. Heavy rain the night before had caused a landslide, and the road ahead was completely blocked. Hundreds of vehicles formed a long line, and no one knew how long we'd wait.",
+      "As everyone waited anxiously, I noticed people in the line starting to help each other. A Tibetan man took hot water to every car, some young cyclists shared their biscuits with families travelling with children, and someone got out a guitar and started singing by the road.",
+      "We waited eleven hours in all. The moment the road was cleared, the whole line erupted in horns, as if celebrating a victory. That night I wrote in my diary: \"The most beautiful sight may not be the snow mountains, but kindness between strangers.\"",
+      "The road ahead grew more dangerous, and more beautiful. We crossed several passes around five thousand metres, saw lakes so blue they looked unreal, and were held up for half an hour on the grassland by a huge herd of yaks.",
+      "One night we stayed in a little village of only a dozen or so households. The old lady who ran the guesthouse spoke no Mandarin; she just smiled and poured us butter tea. Using a translation app, we chatted haltingly all evening.",
+      "On day fifteen we finally reached Lhasa. Standing in front of the Potala Palace, A-Kai suddenly said, \"Actually, where we ended up doesn't matter any more.\" I knew what he meant. On the way we hadn't learned how to drive; we'd learned how to stay patient amid uncertainty.",
+      "Back home we both soon started work: squeezing onto the metro, meetings, overtime. But whenever I'm under pressure, I think of that road blocked for eleven hours, of that cup of hot water and that song, and tell myself: wait a little longer, the road always opens again."
+    ],
+    "names": ["阿凯", "川藏线", "成都", "拉萨", "四川", "康定", "布达拉宫"], "glossary": { "阿凯": "A-Kai (a name)", "川藏线": "Sichuan–Tibet highway", "成都": "Chengdu", "拉萨": "Lhasa", "四川": "Sichuan", "康定": "Kangding", "布达拉宫": "Potala Palace", "室友": "roommate", "全程": "whole journey", "绕路": "to detour", "高原反应": "altitude sickness", "维修": "maintenance; repair", "盆地": "basin", "峡谷": "gorge", "海拔": "altitude", "塌方": "landslide", "堵": "to block", "焦急": "anxious", "藏族": "Tibetan (ethnic group)", "骑行": "cycling", "抢通": "to rush to reopen (a road)", "喇叭": "horn", "胜利": "victory", "善意": "kindness", "山口": "mountain pass", "牦牛": "yak", "酥油茶": "butter tea", "断断续续": "on and off", "不确定": "uncertainty" }
+  },
+  {
+    "id": "L5-daily-short", "level": 5, "topic": "daily life", "length": "short",
+    "title_zh": "躺平与内卷", "title_en": "Lying flat and involution",
+    "paragraphs": [
+      "“内卷”和“躺平”是这几年最常被提起的两个词。前者指大家为了有限的机会过度竞争，后者则是干脆退出竞争，只满足于最低限度的生活。",
+      "表面上看，这两种态度完全相反。但仔细想想，它们其实来自同一种感受：努力和回报之间的联系变得越来越模糊。",
+      "我觉得，比起在两者之间选边站，更重要的是找到属于自己的节奏：知道什么值得拼，什么可以放下。"
+    ],
+    "translations": [
+      "\"Involution\" and \"lying flat\" are two of the most talked-about words of recent years. The first means everyone over-competing for limited opportunities; the second means dropping out of the competition altogether and settling for a minimal life.",
+      "On the surface the two attitudes are complete opposites. But think about it and they come from the same feeling: the link between effort and reward is getting blurrier and blurrier.",
+      "I think rather than picking a side, what matters more is finding your own rhythm: knowing what's worth fighting for, and what you can let go."
+    ],
+    "names": [], "glossary": { "躺平": "to lie flat (opt out)", "内卷": "involution (pointless competition)", "有限": "limited", "过度": "excessive", "竞争": "competition", "满足": "to be satisfied", "限度": "limit", "态度": "attitude", "模糊": "blurry; vague", "选边站": "to pick a side", "属于": "to belong to", "节奏": "rhythm; pace" }
+  },
+  {
+    "id": "L5-daily-medium", "level": 5, "topic": "daily life", "length": "medium",
+    "title_zh": "奶奶学用智能手机", "title_en": "Grandma learns to use a smartphone",
+    "paragraphs": [
+      "疫情那年，七十八岁的奶奶突然发现，没有智能手机，几乎寸步难行：进超市要扫码，看病要预约，连买菜都要用手机付钱。",
+      "于是，春节回家的时候，我给她买了一部新手机，决定教她。没想到，这比我想象的难多了。",
+      "对我们来说理所当然的操作，对她来说都是难题。她分不清“点击”和“长按”，经常不小心把应用删掉。字太小看不清，声音太小听不见，每一步都要重复好几遍。",
+      "有一次我忍不住有点儿不耐烦，说了一句“这个我都教了三遍了”。奶奶愣了一下，小声说：“对不起，我老了，脑子不好用了。”那一刻，我觉得特别惭愧。",
+      "后来我换了一个方法：把每一步都画在一张大纸上，用红笔写上编号，贴在她床头。我还把字体调到最大，把常用的几个应用放在第一页。",
+      "现在，奶奶已经能熟练地视频通话、发语音，甚至会在家庭群里发表情包了。前几天，她还给我发了一条消息：“孙子，天冷了，多穿点儿。”后面跟着一个大大的笑脸。"
+    ],
+    "translations": [
+      "The year of the pandemic, my 78-year-old grandma suddenly found she could barely do anything without a smartphone: scanning a code to enter the supermarket, booking to see a doctor, even paying by phone to buy vegetables.",
+      "So when I went home for Spring Festival I bought her a new phone and decided to teach her. It turned out to be much harder than I'd imagined.",
+      "Things we take for granted were all puzzles for her. She couldn't tell \"tap\" from \"long press\" and often deleted apps by accident. The text was too small to read and the sound too quiet to hear; every step had to be repeated several times.",
+      "Once I couldn't help getting a bit impatient and said, \"I've already shown you this three times.\" Grandma froze for a second, then said quietly, \"Sorry, I'm old, my brain doesn't work well any more.\" In that moment I felt deeply ashamed.",
+      "So I tried a different approach: I drew every step on a big sheet of paper, numbered in red pen, and stuck it by her bed. I also set the font to the largest size and put the few apps she uses on the first screen.",
+      "Now Grandma can video-call and send voice messages with ease, and even posts stickers in the family group chat. A few days ago she sent me a message: \"Grandson, it's getting cold, wrap up warm.\" Followed by a big smiley face."
+    ],
+    "names": [], "glossary": { "疫情": "pandemic; epidemic", "智能手机": "smartphone", "寸步难行": "can't take a step", "扫码": "to scan a code", "预约": "to book an appointment", "理所当然": "taken for granted", "操作": "operation; action", "点击": "to tap; to click", "长按": "long press", "应用": "app", "不耐烦": "impatient", "愣": "to be stunned", "惭愧": "ashamed", "调": "to adjust", "熟练": "skilled; fluent", "视频通话": "video call", "表情包": "sticker; meme pack" }
+  },
+  {
+    "id": "L5-daily-long", "level": 5, "topic": "daily life", "length": "long",
+    "title_zh": "搬家", "title_en": "Moving out",
+    "paragraphs": [
+      "在上海租房的第六年，房东突然通知我，房子要卖了，希望我一个月内搬走。挂了电话，我坐在沙发上发了很久的呆。",
+      "这套一室一厅的老房子，是我刚毕业时找到的。那时我拿着不高的工资，在中介的带领下看了二十几套房，最后选中它，只是因为阳台上能看到一棵很大的梧桐树。",
+      "六年里，这间屋子见证了我人生中许多重要的时刻。我在这里熬夜准备过注册会计师考试，在这里收到过第一份升职通知，也在这里一个人度过了分手后最难熬的冬天。",
+      "打包的时候，我才发现自己竟然积累了这么多东西。抽屉深处有一张电影票根，是和前女友看的第一场电影；衣柜顶上放着一箱大学时的课本，书页上还有密密麻麻的笔记。",
+      "我给自己定了一个原则：一年以上没用过的东西，要么送人，要么扔掉。可真做起来，每拿起一样东西，都要犹豫很久。最后，我还是把那张票根夹进了一本书里，一起带走了。",
+      "搬家前一天晚上，楼下的邻居王阿姨来敲门。她端着一碗刚包好的馄饨，说：“这几年你帮我修过水管，还帮我拿过快递。以后你在新地方，也要好好吃饭。”我接过碗，喉咙一下子哽住了。",
+      "新家离公司更近，房子也更新、更亮。第一天晚上，我躺在陌生的床上，听着陌生的声音，怎么也睡不着。窗外没有梧桐树，只有一栋栋一模一样的高楼。",
+      "那段时间，我常常下班后绕路回到老房子楼下，抬头看看那个阳台。有一天，我看到阳台上多了一盆花，灯是亮着的，有人在里面走动。",
+      "那一刻，我突然释然了。房子不属于任何人，它只是陪我们走过一段路。重要的不是留住它，而是记住在那里变成了什么样的自己。",
+      "回家的地铁上，我给王阿姨发了一条消息，约她下个周末来新家吃饭。她很快回复了一个大大的“好”字。我看着手机屏幕，第一次觉得，新家好像也没那么陌生了。"
+    ],
+    "translations": [
+      "In my sixth year renting in Shanghai, my landlord suddenly told me the flat was being sold and he hoped I'd move out within a month. After hanging up, I sat on the sofa staring into space for a long time.",
+      "I found this old one-bedroom flat just after graduating. On my modest salary, I viewed over twenty flats with an agent, and chose this one simply because from the balcony you could see a huge plane tree.",
+      "Over six years this flat witnessed many of the important moments of my life. Here I stayed up late studying for the CPA exam, got my first promotion letter, and spent, alone, the hardest winter after a breakup.",
+      "Only when packing did I realise how much stuff I'd accumulated. Deep in a drawer was a cinema ticket stub from the first film I saw with my ex; on top of the wardrobe was a box of university textbooks, their pages covered in dense notes.",
+      "I set myself a rule: anything unused for over a year either gets given away or thrown out. But when it came to it, every item I picked up made me hesitate for ages. In the end I tucked that ticket stub into a book and took it with me.",
+      "The night before the move, my downstairs neighbour, Auntie Wang, knocked on the door. She was holding a bowl of freshly made wontons and said, \"These past few years you fixed my pipes and picked up my parcels. At your new place, make sure you eat properly.\" As I took the bowl, a lump rose in my throat.",
+      "The new flat is closer to work, newer and brighter. The first night I lay in an unfamiliar bed listening to unfamiliar sounds and just couldn't sleep. Outside the window there was no plane tree, only rows of identical tower blocks.",
+      "For a while I often took the long way home after work, back past the old building, and looked up at that balcony. One day I saw a new pot of flowers on it; the light was on, and someone was moving about inside.",
+      "In that moment I suddenly let go. A home doesn't belong to anyone; it just keeps us company along part of the way. What matters isn't holding on to it, but remembering who you became there.",
+      "On the metro home I messaged Auntie Wang and invited her to dinner at my new place the next weekend. She quickly replied with a big \"OK\". Looking at my phone screen, for the first time the new flat didn't feel quite so strange."
+    ],
+    "names": ["上海", "王阿姨"], "glossary": { "上海": "Shanghai", "王阿姨": "Auntie Wang", "房东": "landlord", "发呆": "to stare blankly", "一室一厅": "one-bedroom flat", "中介": "estate agent", "阳台": "balcony", "梧桐树": "plane tree", "见证": "to witness", "熬夜": "to stay up late", "注册会计师": "certified public accountant (CPA)", "升职": "promotion", "分手": "to break up", "熬": "to endure", "积累": "to accumulate", "抽屉": "drawer", "票根": "ticket stub", "密密麻麻": "densely packed", "原则": "principle; rule", "犹豫": "to hesitate", "馄饨": "wontons", "快递": "parcel; courier", "哽": "to choke up", "释然": "relieved; at peace", "回复": "to reply" }
+  },
+  {
+    "id": "L5-business-short", "level": 5, "topic": "business & finance", "length": "short",
+    "title_zh": "现金流", "title_en": "Cash flow",
+    "paragraphs": [
+      "很多人以为，公司只要赚钱就不会倒闭。其实，大量企业倒闭时，账面上仍然是盈利的，真正的原因是现金流断了。",
+      "举个例子：你卖出一批货，利润很可观，但客户要半年后才付款。而这半年里，你每个月都要付工资、房租和供应商的货款。",
+      "所以会计老师常说：“利润是观点，现金是事实。”看一家公司是否健康，不能只看利润表，更要看现金流量表。"
+    ],
+    "translations": [
+      "Many people think that as long as a company makes a profit, it won't go under. In fact, lots of businesses are still profitable on paper when they collapse; the real cause is that their cash flow dried up.",
+      "For example: you sell a batch of goods at a handsome profit, but the customer won't pay for six months. Meanwhile, every month you have to pay wages, rent and your suppliers.",
+      "That's why accounting teachers often say, \"Profit is an opinion, cash is a fact.\" To judge whether a company is healthy, don't just look at the income statement; look even more at the cash flow statement."
+    ],
+    "names": [], "glossary": { "现金流": "cash flow", "倒闭": "to go bankrupt", "企业": "enterprise; business", "账面": "on paper; book value", "盈利": "profitable; profit", "可观": "considerable", "客户": "client; customer", "供应商": "supplier", "货款": "payment for goods", "观点": "opinion", "利润表": "income statement", "现金流量表": "cash flow statement" }
+  },
+  {
+    "id": "L5-business-medium", "level": 5, "topic": "business & finance", "length": "medium",
+    "title_zh": "直播带货", "title_en": "Livestream selling",
+    "paragraphs": [
+      "我的表妹大学学的是市场营销，毕业后没有进公司，而是开始在网上直播卖家乡的特产：腊肉、米酒和手工辣椒酱。",
+      "刚开始的三个月，每场直播只有几十个人看，一晚上卖不出十单。她每天对着手机讲四五个小时，嗓子都哑了，收入却还不够付房租。",
+      "转折点出现在一次意外。有一天直播时，她奶奶突然走进镜头，用一口浓重的方言教观众怎么做腊肉。没想到，这段视频被剪辑后在网上传开了，一夜之间多了五万个粉丝。",
+      "表妹意识到，观众真正想看的不是推销，而是真实的生活。于是她调整了策略：少说价格，多讲故事，把镜头对准村里的田地、灶台和老人们的手艺。",
+      "现在，她已经组建了一个六个人的小团队，还和村里的合作社签了长期采购协议。去年，她的店铺销售额突破了三百万元，也帮村里十几户人家增加了收入。",
+      "但表妹也很清醒。她说直播行业变化太快，流量来得快去得也快。她正在打算注册自己的品牌，把产品卖进超市。她说：“流量是别人给的，品牌才是自己的。”"
+    ],
+    "translations": [
+      "My cousin studied marketing at university. After graduating, instead of joining a company, she started livestreaming online to sell specialities from her home town: cured pork, rice wine and handmade chilli sauce.",
+      "For the first three months each stream had only a few dozen viewers, and she couldn't sell ten orders a night. She talked to her phone for four or five hours a day until her voice went, yet her income wasn't even enough for rent.",
+      "The turning point came by accident. One day during a stream, her grandma suddenly walked into shot and, in a thick dialect, taught viewers how to make cured pork. Unexpectedly, the clip was edited and went viral; overnight she gained fifty thousand followers.",
+      "My cousin realised that what viewers really wanted wasn't a sales pitch but real life. So she changed strategy: talk less about prices, tell more stories, and point the camera at the village fields, the stoves and the old people's craft.",
+      "Now she has built a small team of six and signed a long-term purchasing agreement with the village cooperative. Last year her shop's sales passed three million yuan, and it helped over a dozen village households earn more.",
+      "But my cousin is clear-headed about it. She says the livestream industry changes too fast; traffic comes quickly and goes just as quickly. She's planning to register her own brand and get her products into supermarkets. As she says, \"Traffic is given to you by others. A brand is your own.\""
+    ],
+    "names": [], "glossary": { "表妹": "(younger female) cousin", "市场营销": "marketing", "直播": "livestream", "带货": "to sell goods (via influencing)", "特产": "local speciality", "腊肉": "cured pork", "米酒": "rice wine", "辣椒酱": "chilli sauce", "嗓子": "voice; throat", "哑": "hoarse", "转折点": "turning point", "方言": "dialect", "剪辑": "to edit (video)", "粉丝": "followers; fans", "推销": "sales pitch", "策略": "strategy", "灶台": "stove", "合作社": "cooperative", "采购": "purchasing", "协议": "agreement", "销售额": "sales revenue", "突破": "to break through", "清醒": "clear-headed", "流量": "traffic (online)", "品牌": "brand" }
+  }
+]

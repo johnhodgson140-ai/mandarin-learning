@@ -1,25 +1,44 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import type { PackStory } from '../../daily/schema.ts'
 import { go } from '../../hash.ts'
 import { getKeys } from '../../services/keys.ts'
+import { addPackStory, packStories } from '../../services/pack.ts'
 import { load, save } from '../../services/storage.ts'
-import { generateStory, LENGTHS, TOPICS, type StoryLength, type Topic } from '../../services/stories.ts'
+import { generateStory, getStory, LENGTHS, TOPICS, type StoryLength, type Topic } from '../../services/stories.ts'
 import { getLexicon } from '../../services/words.ts'
 import './read.css'
 
 export default function NewStory() {
   const [level, setLevel] = useState(() => load('storyLevel', load('level', 1)))
   const [topic, setTopic] = useState<Topic>(() => load<Topic>('topic', 'football'))
-  const [length, setLength] = useState<StoryLength>('short')
+  const [length, setLength] = useState<StoryLength>(() => load<StoryLength>('storyLength', 'short'))
+  const [pack, setPack] = useState<PackStory[] | null>(null)
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const hasKey = Boolean(getKeys().claude)
   const hasWords = getLexicon().size > 0
 
+  useEffect(() => {
+    packStories().then(setPack, () => setPack([]))
+  }, [])
+  useEffect(() => {
+    save('storyLevel', level)
+    save('topic', topic)
+    save('storyLength', length)
+  }, [level, topic, length])
+
+  const atLevel = (pack ?? []).filter((s) => s.level === level)
+  const exact = atLevel.filter((s) => s.topic === topic && s.length === length)
+  // Nothing at exactly this topic + length: offer the rest of the level, this topic first.
+  const nearby = exact.length ? [] : [...atLevel].sort((a, b) => Number(b.topic === topic) - Number(a.topic === topic))
+
+  async function open(s: PackStory) {
+    go(`read/${await addPackStory(s)}`)
+  }
+
   async function write() {
     setBusy(true)
     setError(null)
-    save('storyLevel', level)
-    save('topic', topic)
     try {
       const story = await generateStory(level, topic, length)
       go(`read/${story.id}`)
@@ -33,7 +52,7 @@ export default function NewStory() {
     <>
       <header className="settings-header">
         <a href="#read" className="back-link">‹ Library</a>
-        <h1>New story</h1>
+        <h1>Stories</h1>
       </header>
 
       <fieldset className="choice">
@@ -69,14 +88,37 @@ export default function NewStory() {
         </div>
       </fieldset>
 
-      {!hasWords && (
+      <h2 className="card-title">Ready-made</h2>
+      {pack === null && <p className="muted small">Loading…</p>}
+      {pack !== null && exact.length === 0 && (
+        <p className="muted small">
+          {atLevel.length ? `None for ${topic} at this length yet. Other level ${level} stories:` : `No ready-made stories at level ${level} yet.`}
+        </p>
+      )}
+      <ul className="story-list">
+        {(exact.length ? exact : nearby).map((s) => (
+          <li key={s.id}>
+            <button type="button" className="story-row" onClick={() => void open(s)}>
+              <span className="story-title-zh">{s.title_zh}</span>
+              <span className="muted">{s.title_en}</span>
+              <span className="story-meta">
+                Level {s.level} · {s.topic} · {LENGTHS[s.length].label.toLowerCase()}
+                {getStory(s.id)?.readAt && ' · read'}
+              </span>
+            </button>
+          </li>
+        ))}
+      </ul>
+
+      <h2 className="card-title">Write a new one</h2>
+      {hasKey && !hasWords && (
         <p className="muted small">
           Your word list hasn't loaded yet, so this story uses standard HSK vocabulary for the level.
         </p>
       )}
       {!hasKey && (
-        <p className="muted">
-          Add your Claude API key in <a href="#settings">Settings</a> to write stories.
+        <p className="muted small">
+          Writing a fresh story on demand needs a Claude API key (<a href="#settings">Settings</a>). The ready-made ones don't.
         </p>
       )}
       {error && <p className="error" role="alert">{error}</p>}

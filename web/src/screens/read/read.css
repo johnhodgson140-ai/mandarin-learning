@@ -14,6 +14,7 @@
   color: var(--text);
   text-decoration: none;
 }
+button.story-row { width: 100%; text-align: left; cursor: pointer; }
 .story-title-zh { font-family: var(--font-zh); font-size: 1.25rem; }
 .story-meta { font-size: 14px; color: var(--text-muted); }
 

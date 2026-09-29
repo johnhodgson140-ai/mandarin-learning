@@ -1,0 +1,124 @@
+[
+  {
+    "id": "L4-m-interview", "level": 4, "title": "Internship interview", "role": "面试官",
+    "goal": "Answer common interview questions for a finance internship.",
+    "steps": [
+      { "partner_zh": "请先简单介绍一下你自己。", "partner_en": "Please briefly introduce yourself.", "prompt_en": "Say you're a third-year accounting and finance student, interested in auditing.",
+        "answers_zh": ["我是会计与金融专业的大三学生，对审计很感兴趣。", "我读会计和金融，现在大三，特别想做审计方面的工作。"], "answers_en": ["I'm a third-year accounting and finance student, very interested in auditing.", "I study accounting and finance, third year, and really want to work in audit."] },
+      { "partner_zh": "你为什么选择我们公司？", "partner_en": "Why did you choose our firm?", "prompt_en": "Say their clients are varied and the training is well known.",
+        "answers_zh": ["因为贵公司的客户类型很多，培训也很有名。", "我了解到你们的客户很多样，而且培训体系非常好。"], "answers_en": ["Because your clients are so varied, and your training is well known.", "I learned your client base is diverse and your training system is excellent."] },
+      { "partner_zh": "说说你的一个缺点。", "partner_en": "Tell me about one of your weaknesses.", "prompt_en": "Say you sometimes spend too long on details, but you're learning to manage your time.",
+        "answers_zh": ["我有时候在细节上花太多时间，不过我正在学习安排时间。", "我太注重细节了，有时候影响速度，现在我会先定好时间。"], "answers_en": ["I sometimes spend too long on details, but I'm learning to manage my time.", "I focus too much on detail, which can slow me down; now I set time limits first."] },
+      { "partner_zh": "如果工作压力很大，你会怎么处理？", "partner_en": "How do you handle heavy work pressure?", "prompt_en": "Say you'd list priorities and ask for help early if needed.",
+        "answers_zh": ["我会先列出最重要的任务，需要的话早点儿请别人帮忙。", "先分清轻重缓急，有问题及时跟同事沟通。"], "answers_en": ["I'd list the most important tasks first and ask for help early if needed.", "Sort out priorities first, and communicate with colleagues promptly if there's a problem."] },
+      { "partner_zh": "你有什么问题想问我们吗？", "partner_en": "Do you have any questions for us?", "prompt_en": "Ask what a typical day looks like for an intern.",
+        "answers_zh": ["实习生一天的工作一般是怎样的？", "我想了解一下实习生平时主要做什么。"], "answers_en": ["What does an intern's typical day look like?", "I'd like to know what interns mainly do day to day."] }
+    ],
+    "closing_zh": "好问题。我们一周内会通知你结果。", "closing_en": "Good question. We'll let you know the result within a week."
+  },
+  {
+    "id": "L4-m-complaint", "level": 4, "title": "Complaining about an order", "role": "客服",
+    "goal": "Get a refund for a jacket that arrived damaged.",
+    "steps": [
+      { "partner_zh": "您好，请问有什么可以帮您？", "partner_en": "Hello, how can I help you?", "prompt_en": "Say the jacket you received has a hole in the sleeve.",
+        "answers_zh": ["我收到的外套袖子上有一个洞。", "你好，我买的外套到了，可是袖子破了一个洞。"], "answers_en": ["The jacket I received has a hole in the sleeve.", "Hi, my jacket arrived but there's a hole in the sleeve."] },
+      { "partner_zh": "非常抱歉。方便拍张照片发给我们吗？", "partner_en": "So sorry. Could you send us a photo?", "prompt_en": "Say you've already sent photos in the chat.",
+        "answers_zh": ["我已经在聊天里发了照片。", "照片刚才已经发给你们了。"], "answers_en": ["I've already sent photos in the chat.", "I sent the photos to you just now."] },
+      { "partner_zh": "看到了。我们可以给您补偿五十元，您看可以吗？", "partner_en": "Got them. We can offer fifty yuan compensation, is that OK?", "prompt_en": "Decline: you'd prefer a full refund and to send it back.",
+        "answers_zh": ["不用补偿，我想退货退款。", "我还是希望全额退款，把衣服寄回去。"], "answers_en": ["No compensation, I want to return it for a refund.", "I'd rather have a full refund and send it back."] },
+      { "partner_zh": "好的。运费需要您先垫付。", "partner_en": "OK. You'll need to pay the return postage first.", "prompt_en": "Say it's their mistake, so they should pay shipping.",
+        "answers_zh": ["这是你们的问题，运费应该由你们出。", "质量问题不是我造成的，运费应该你们承担。"], "answers_en": ["This is your problem; you should pay the postage.", "I didn't cause the defect; you should cover shipping."] }
+    ],
+    "closing_zh": "您说得对，我们会安排快递上门取件。", "closing_en": "You're right; we'll arrange a courier to collect it."
+  },
+  {
+    "id": "L4-m-flatviewing", "level": 4, "title": "Viewing a flat", "role": "中介",
+    "goal": "Ask the key questions before renting a flat.",
+    "steps": [
+      { "partner_zh": "这套房子采光特别好，您觉得怎么样？", "partner_en": "This flat gets great light; what do you think?", "prompt_en": "Say it's nice, and ask how much the rent is per month.",
+        "answers_zh": ["挺不错的，房租一个月多少？", "感觉还可以。每个月租金是多少？"], "answers_en": ["Pretty nice. What's the monthly rent?", "Seems OK. How much is rent per month?"] },
+      { "partner_zh": "四千五，押一付三。", "partner_en": "Four thousand five, one month's deposit plus three months upfront.", "prompt_en": "Ask whether water, electricity and internet are included.",
+        "answers_zh": ["水电和网费包括在里面吗？", "房租包不包水电网？"], "answers_en": ["Are water, electricity and internet included?", "Does the rent include utilities and internet?"] },
+      { "partner_zh": "不包括，另外算。", "partner_en": "Not included, charged separately.", "prompt_en": "Say it's a bit over budget; ask if the rent is negotiable.",
+        "answers_zh": ["有点儿超预算了，房租还能商量吗？", "比我的预算高一点儿，可以便宜一些吗？"], "answers_en": ["That's a bit over budget; is the rent negotiable?", "It's a bit above my budget; could it be cheaper?"] },
+      { "partner_zh": "如果您签一年，房东可以少两百。", "partner_en": "If you sign for a year, the landlord will knock off two hundred.", "prompt_en": "Say you need to think about it and will reply tomorrow.",
+        "answers_zh": ["我考虑一下，明天给您答复。", "让我想想，明天回复您。"], "answers_en": ["I'll think about it and get back to you tomorrow.", "Let me think; I'll reply tomorrow."] }
+    ],
+    "closing_zh": "好的，不过这套房子很抢手，您尽快哦。", "closing_en": "Sure, but this flat's in demand, so don't wait too long."
+  },
+  {
+    "id": "L4-m-bank", "level": 4, "title": "A problem at the bank", "role": "银行职员",
+    "goal": "Sort out a blocked card and an international transfer.",
+    "steps": [
+      { "partner_zh": "您好，请问办理什么业务？", "partner_en": "Hello, what can I do for you today?", "prompt_en": "Say your card was blocked when you tried to pay yesterday.",
+        "answers_zh": ["我的卡昨天付款的时候被冻结了。", "昨天刷卡的时候，卡突然不能用了。"], "answers_en": ["My card was frozen when I paid yesterday.", "When I used my card yesterday it suddenly stopped working."] },
+      { "partner_zh": "我查一下……是因为系统检测到异常交易。", "partner_en": "Let me check... the system detected an unusual transaction.", "prompt_en": "Explain you were buying something from overseas.",
+        "answers_zh": ["那是我在国外网站上买东西。", "我当时在海外网站上付款，是我本人操作的。"], "answers_en": ["That was me buying on a foreign website.", "I was paying on an overseas website; it was me."] },
+      { "partner_zh": "好的，已经帮您解冻了。还有别的吗？", "partner_en": "OK, I've unfrozen it. Anything else?", "prompt_en": "Say you also want to send money to the UK and ask about the fee.",
+        "answers_zh": ["我还想往英国汇款，手续费是多少？", "另外我想转账到英国，要收多少手续费？"], "answers_en": ["I'd also like to send money to the UK; what's the fee?", "Also, I want to transfer to the UK; how much is the fee?"] },
+      { "partner_zh": "每笔一百五十元，另外还有汇率差价。", "partner_en": "One hundred and fifty yuan per transfer, plus the exchange rate margin.", "prompt_en": "Ask how many working days it takes to arrive.",
+        "answers_zh": ["一般几个工作日能到账？", "大概多久能到？"], "answers_en": ["How many working days until it arrives?", "About how long does it take?"] }
+    ],
+    "closing_zh": "一般三到五个工作日。", "closing_en": "Usually three to five working days."
+  },
+  {
+    "id": "L4-m-teammate", "level": 4, "title": "Recruiting for five-a-side", "role": "球友",
+    "goal": "Persuade a friend to join your weekly five-a-side game.",
+    "steps": [
+      { "partner_zh": "听说你们每周都踢球？", "partner_en": "I hear you play football every week?", "prompt_en": "Say yes, every Thursday evening, and you're one player short.",
+        "answers_zh": ["对，每周四晚上，我们正好缺一个人。", "是啊，周四晚上踢五人制，现在还差一个。"], "answers_en": ["Yes, every Thursday night, and we're one short.", "Yep, five-a-side Thursday nights, and we need one more."] },
+      { "partner_zh": "可是我好久没踢了，水平很一般。", "partner_en": "But I haven't played in ages; I'm pretty average.", "prompt_en": "Reassure them: it's just for fun, nobody's a pro.",
+        "answers_zh": ["没关系，就是玩玩，大家都不是专业的。", "放心，我们主要是锻炼身体，水平都差不多。"], "answers_en": ["No worries, it's just for fun, nobody's a pro.", "Don't worry, it's mainly exercise; we're all about the same level."] },
+      { "partner_zh": "场地费怎么算？", "partner_en": "How is the pitch fee split?", "prompt_en": "Say it's split evenly, about forty each.",
+        "answers_zh": ["大家平摊，每人大概四十块。", "费用平分，一个人四十左右。"], "answers_en": ["Split evenly, about forty each.", "Split equally, around forty per person."] },
+      { "partner_zh": "那好吧，我试一次。需要带什么？", "partner_en": "OK then, I'll try once. What should I bring?", "prompt_en": "Say trainers (not studs) and a dark top.",
+        "answers_zh": ["带双运动鞋就行，别穿钉鞋，再穿件深色的衣服。", "运动鞋和一件深色上衣，场地不能穿钉鞋。"], "answers_en": ["Just trainers, no studs, and wear a dark top.", "Trainers and a dark top; no studs on that pitch."] }
+    ],
+    "closing_zh": "好，周四见，我可不保证进球啊！", "closing_en": "OK, see you Thursday. No promises on goals!"
+  },
+  {
+    "id": "L4-m-tailor", "level": 4, "title": "At the tailor's", "role": "裁缝",
+    "goal": "Get vintage trousers altered without ruining them.",
+    "steps": [
+      { "partner_zh": "这条裤子要怎么改？", "partner_en": "How do you want these trousers altered?", "prompt_en": "Say shorten them by about three centimetres.",
+        "answers_zh": ["裤腿改短三厘米左右。", "麻烦帮我改短大概三公分。"], "answers_en": ["Take the legs up about three centimetres.", "Please shorten them by about three centimetres."] },
+      { "partner_zh": "这布料挺特别的，是老货吧？", "partner_en": "This fabric's quite special. Vintage, right?", "prompt_en": "Say yes, it's from the nineties, so please keep the original hem.",
+        "answers_zh": ["对，是九十年代的，请尽量保留原来的裤边。", "是老的，所以原来的裤脚能不能别剪掉？"], "answers_en": ["Yes, it's from the nineties; please keep the original hem if you can.", "It's vintage, so could you avoid cutting off the original hem?"] },
+      { "partner_zh": "可以往里面折，不剪，这样以后还能放长。", "partner_en": "I can fold it inside without cutting, so it can be let down later.", "prompt_en": "Say that's perfect and ask when it'll be ready.",
+        "answers_zh": ["太好了，什么时候能改好？", "这样最好，大概几天能拿？"], "answers_en": ["Perfect, when will it be ready?", "That's ideal; in how many days can I collect it?"] },
+      { "partner_zh": "后天下午来拿吧，三十块。", "partner_en": "Come back the day after tomorrow in the afternoon. Thirty kuai.", "prompt_en": "Agree, and ask if you pay now or on collection.",
+        "answers_zh": ["好的，现在付还是拿的时候付？", "行，钱是现在给吗？"], "answers_en": ["OK, do I pay now or when I collect?", "Fine, do I pay now?"] }
+    ],
+    "closing_zh": "拿的时候再付就行。", "closing_en": "Just pay when you collect."
+  },
+  {
+    "id": "L4-m-airport", "level": 4, "title": "Missed connection", "role": "航空公司工作人员",
+    "goal": "Rebook after missing a connecting flight.",
+    "steps": [
+      { "partner_zh": "您好，请问有什么问题？", "partner_en": "Hello, what's the problem?", "prompt_en": "Say your first flight was delayed and you missed your connection.",
+        "answers_zh": ["我的第一班飞机晚点了，没赶上转机。", "前一班延误了，我错过了中转航班。"], "answers_en": ["My first flight was late and I missed my connection.", "The previous flight was delayed; I missed my transfer."] },
+      { "partner_zh": "请出示您的登机牌。今天最晚一班已经满了。", "partner_en": "Your boarding pass, please. Today's last flight is full.", "prompt_en": "Ask what the earliest flight tomorrow is.",
+        "answers_zh": ["那明天最早的一班是几点？", "明天最早能坐几点的飞机？"], "answers_en": ["Then what time's the earliest flight tomorrow?", "What's the earliest I can fly tomorrow?"] },
+      { "partner_zh": "明天早上七点五十有一班。", "partner_en": "There's one at 7:50 tomorrow morning.", "prompt_en": "Ask whether the airline will provide a hotel.",
+        "answers_zh": ["航空公司会安排酒店吗？", "今晚住的地方你们负责吗？"], "answers_en": ["Will the airline arrange a hotel?", "Are you responsible for tonight's accommodation?"] },
+      { "partner_zh": "因为是我们的原因，会给您安排酒店和晚餐。", "partner_en": "As it was our fault, we'll arrange a hotel and dinner.", "prompt_en": "Ask where to wait for the hotel shuttle.",
+        "answers_zh": ["那我在哪儿等酒店的班车？", "请问去酒店的车在哪里坐？"], "answers_en": ["Where do I wait for the hotel shuttle?", "Where do I catch the bus to the hotel?"] }
+    ],
+    "closing_zh": "出门左转，三号门等就可以了。", "closing_en": "Turn left out of here and wait at door three."
+  },
+  {
+    "id": "L4-m-anime", "level": 4, "title": "Recommending an anime", "role": "同学",
+    "goal": "Convince a classmate to try an anime you love.",
+    "steps": [
+      { "partner_zh": "最近有什么好看的动画推荐吗？", "partner_en": "Any good anime to recommend lately?", "prompt_en": "Recommend one about a boy who becomes a professional football player.",
+        "answers_zh": ["有一部讲一个男孩成为职业球员的，特别好看。", "我推荐一部足球动画，讲一个男孩怎么变成职业球员。"], "answers_en": ["There's one about a boy becoming a pro footballer; it's brilliant.", "I'd recommend a football anime about how a boy turns pro."] },
+      { "partner_zh": "我不太喜欢体育类的。", "partner_en": "I'm not really into sports ones.", "prompt_en": "Say it's really about friendship and growing up, not just football.",
+        "answers_zh": ["其实它主要讲友情和成长，不只是足球。", "它不光是体育，更多是关于朋友和成长的故事。"], "answers_en": ["Actually it's mainly about friendship and growing up, not just football.", "It's not only sport; it's more a story about friends and growing up."] },
+      { "partner_zh": "有多少集？太长我可没时间。", "partner_en": "How many episodes? If it's too long I won't have time.", "prompt_en": "Say twenty-four episodes, and the first three are enough to decide.",
+        "answers_zh": ["二十四集，你看前三集就知道喜不喜欢了。", "一共二十四集，先看三集，不喜欢就算了。"], "answers_en": ["Twenty-four episodes; watch the first three and you'll know.", "Twenty-four in total; try three, and drop it if you don't like it."] },
+      { "partner_zh": "好吧，那今晚试试。", "partner_en": "Alright, I'll try it tonight.", "prompt_en": "Say great, and tell them not to read spoilers online.",
+        "answers_zh": ["太好了，千万别在网上看剧透！", "好，记住别去看评论，会被剧透的。"], "answers_en": ["Great, whatever you do, don't read spoilers online!", "OK, remember not to read comments or you'll get spoiled."] }
+    ],
+    "closing_zh": "放心，看完了告诉你感想。", "closing_en": "Don't worry, I'll tell you what I think when I'm done."
+  }
+]

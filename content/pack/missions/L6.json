@@ -1,0 +1,122 @@
+[
+  {
+    "id": "L6-m-audit", "level": 6, "title": "Challenging a client's numbers", "role": "客户财务总监",
+    "goal": "As an auditor, press a finance director on suspicious receivables.",
+    "steps": [
+      { "partner_zh": "报表我们都核对过了，应该没什么问题吧？", "partner_en": "We've checked the statements; there shouldn't be any problems, right?", "prompt_en": "Say overall it's fine, but receivables grew much faster than revenue and you need an explanation.",
+        "answers_zh": ["整体没问题，但应收账款的增速远高于营收，我们需要一个合理的解释。", "大部分都没问题，只是应收账款增长了八成，而收入只增长了三成，这点需要说明。"], "answers_en": ["Overall it's fine, but receivables grew far faster than revenue; we need a reasonable explanation.", "Most of it's fine, but receivables rose eighty percent while revenue rose only thirty; that needs explaining."] },
+      { "partner_zh": "那是因为我们今年放宽了信用政策，为了抢占市场。", "partner_en": "That's because we loosened credit terms this year to grab market share.", "prompt_en": "Ask for the board approval of the credit policy change and the ageing analysis.",
+        "answers_zh": ["那请提供信用政策调整的董事会决议和应收账款账龄分析表。", "能否提供政策变更的审批文件，以及应收账款的账龄明细？"], "answers_en": ["Then please provide the board resolution on the credit policy change and the receivables ageing analysis.", "Could you provide the approval documents for the policy change and a detailed ageing of receivables?"] },
+      { "partner_zh": "这些……需要一点儿时间整理。", "partner_en": "Those... will take a little time to put together.", "prompt_en": "Say that's fine, but you'll also need to send confirmation letters to the top ten customers directly.",
+        "answers_zh": ["可以理解，另外我们会直接向前十大客户发函询证。", "没关系，不过前十大客户的余额我们需要独立发函确认。"], "answers_en": ["Understood; also, we'll send confirmation requests directly to the top ten customers.", "No problem, but we'll need to independently confirm the top ten customers' balances."] },
+      { "partner_zh": "有这个必要吗？这些都是长期合作的客户。", "partner_en": "Is that necessary? These are all long-standing clients.", "prompt_en": "Explain firmly but politely that it's a standard procedure and protects both sides.",
+        "answers_zh": ["这是审计准则要求的标准程序，其实也是对贵公司的一种保护。", "这是常规程序，并不是针对贵公司，结果清楚了对双方都好。"], "answers_en": ["It's a standard procedure required by auditing standards, and actually protects your company too.", "It's routine, not aimed at you; clear results are good for both sides."] }
+    ],
+    "closing_zh": "好吧，我让团队配合你们。", "closing_en": "Fine, I'll have my team cooperate with you."
+  },
+  {
+    "id": "L6-m-curator", "level": 6, "title": "Lending to an exhibition", "role": "博物馆策展人",
+    "goal": "Negotiate terms for lending your archive pieces to a museum.",
+    "steps": [
+      { "partner_zh": "我们非常希望借展您收藏的那几件九十年代作品。", "partner_en": "We'd very much like to borrow those nineties pieces from your collection.", "prompt_en": "Say you're honoured, but first ask about conservation conditions in the gallery.",
+        "answers_zh": ["很荣幸，不过我想先了解一下展厅的保存条件。", "这是我的荣幸。请问展厅的温湿度和光照是怎么控制的？"], "answers_en": ["I'm honoured, but I'd first like to know about the gallery's conservation conditions.", "It's an honour. How are temperature, humidity and lighting controlled in the gallery?"] },
+      { "partner_zh": "恒温恒湿，照明也低于五十勒克斯，符合纺织品标准。", "partner_en": "Constant temperature and humidity, lighting under fifty lux, meeting textile standards.", "prompt_en": "Say good; then ask who covers insurance and transport.",
+        "answers_zh": ["那很好。保险和运输费用由哪一方承担？", "听起来很专业。保险和运输是博物馆负责吗？"], "answers_en": ["Good. Which party covers insurance and transport?", "Sounds very professional. Does the museum handle insurance and transport?"] },
+      { "partner_zh": "全部由我们承担，按您提供的估价全额投保。", "partner_en": "We cover it all, insured in full at your valuation.", "prompt_en": "Request that the pieces are displayed on custom mannequins, not hung.",
+        "answers_zh": ["另外，希望展品用定制的人台展示，不要直接悬挂。", "我有个要求：衣服不能挂着，最好按尺寸定做人台。"], "answers_en": ["Also, I'd like the pieces shown on custom mannequins rather than hung.", "One request: the clothes mustn't be hung; ideally use made-to-measure mannequins."] },
+      { "partner_zh": "没问题。展签上希望怎么署名？", "partner_en": "No problem. How would you like to be credited on the labels?", "prompt_en": "Say 'private collection' is enough; you prefer to stay anonymous.",
+        "answers_zh": ["写“私人收藏”就可以，我不想公开姓名。", "署“私人藏家”即可，我希望保持匿名。"], "answers_en": ["\"Private collection\" is fine; I'd rather not give my name.", "Just \"private collector\"; I'd like to stay anonymous."] }
+    ],
+    "closing_zh": "完全尊重您的意见，合同草稿下周发给您。", "closing_en": "We fully respect that; the draft contract will reach you next week."
+  },
+  {
+    "id": "L6-m-investor", "level": 6, "title": "Pitching to an investor", "role": "投资人",
+    "goal": "Defend your startup's numbers under tough questions.",
+    "steps": [
+      { "partner_zh": "你们的用户增长很快，但我更关心的是留存率。", "partner_en": "Your user growth is fast, but I care more about retention.", "prompt_en": "Say thirty-day retention is forty percent, well above the industry average.",
+        "answers_zh": ["我们三十天留存率是百分之四十，明显高于行业平均水平。", "次月留存稳定在四成左右，比同行高出不少。"], "answers_en": ["Our thirty-day retention is forty percent, clearly above the industry average.", "Month-two retention is steady at about forty percent, well above peers."] },
+      { "partner_zh": "获客成本呢？现在流量越来越贵。", "partner_en": "And customer acquisition cost? Traffic keeps getting pricier.", "prompt_en": "Say most users come from referrals, so acquisition cost has fallen for three quarters.",
+        "answers_zh": ["我们大部分新用户来自老用户推荐，获客成本已经连续三个季度下降。", "六成以上的用户是口碑带来的，所以获客成本一直在降。"], "answers_en": ["Most new users come from referrals, so acquisition cost has fallen for three straight quarters.", "Over sixty percent of users come via word of mouth, so acquisition cost keeps falling."] },
+      { "partner_zh": "那你们什么时候能实现盈亏平衡？", "partner_en": "So when will you break even?", "prompt_en": "Say that with this round, you expect to break even in eighteen months.",
+        "answers_zh": ["如果这轮融资到位，我们预计十八个月内实现盈亏平衡。", "按现在的增长，拿到这轮资金后大约一年半能打平。"], "answers_en": ["If this round closes, we expect to break even within eighteen months.", "At current growth, with this round we'd break even in about eighteen months."] },
+      { "partner_zh": "估值方面，你们的要价偏高了。", "partner_en": "On valuation, your ask is on the high side.", "prompt_en": "Stay firm: say the price reflects your margins, but you're open to discussing the terms.",
+        "answers_zh": ["这个估值是基于我们的毛利水平，不过具体条款我们可以商量。", "价格反映的是我们的盈利能力，但在条款上我们愿意灵活一些。"], "answers_en": ["The valuation is based on our margins, but we can discuss the specific terms.", "The price reflects our profitability, but we're willing to be flexible on terms."] }
+    ],
+    "closing_zh": "好，把详细的财务模型发给我，我们内部讨论一下。", "closing_en": "OK, send me the detailed financial model and we'll discuss internally."
+  },
+  {
+    "id": "L6-m-pundit", "level": 6, "title": "Football podcast debate", "role": "播客主持人",
+    "goal": "Argue on a podcast about money in football.",
+    "steps": [
+      { "partner_zh": "有人说，没有资本，就没有今天的顶级足球。你同意吗？", "partner_en": "Some say without capital there'd be no top-level football today. Do you agree?", "prompt_en": "Agree capital raised standards, but argue it has widened the gap between clubs.",
+        "answers_zh": ["资本确实提高了比赛水平，但也拉大了俱乐部之间的差距。", "我同意一半：钱带来了更好的比赛，却让强弱分化越来越严重。"], "answers_en": ["Capital has raised the standard of play, but it has also widened the gap between clubs.", "I half agree: money brought better football, but made the divide between strong and weak ever sharper."] },
+      { "partner_zh": "可是强队本来就会更强，这不是自然规律吗？", "partner_en": "But strong teams naturally get stronger; isn't that just how it goes?", "prompt_en": "Say without regulation that's true, which is why spending caps matter.",
+        "answers_zh": ["如果没有监管，的确会这样，所以财政公平规则才这么重要。", "正因为这样，才需要工资帽之类的制度来维持竞争。"], "answers_en": ["Without regulation, yes, which is exactly why financial fair play rules matter so much.", "That's precisely why systems like salary caps are needed to keep competition alive."] },
+      { "partner_zh": "但这些规则执行起来漏洞百出。", "partner_en": "But these rules are full of loopholes in practice.", "prompt_en": "Concede that, but say imperfect rules beat no rules.",
+        "answers_zh": ["这我承认，不过有缺陷的规则总比没有规则强。", "执行确实有问题，但不能因此就否定规则本身。"], "answers_en": ["I'll admit that, but flawed rules are better than none.", "Enforcement has problems, but that's no reason to reject the rules themselves."] },
+      { "partner_zh": "最后，用一句话总结你的观点。", "partner_en": "Finally, sum up your view in one sentence.", "prompt_en": "Say football can welcome money, but must not be owned by it.",
+        "answers_zh": ["足球可以欢迎资本，但不能被资本绑架。", "钱可以为足球服务，但足球不能只为钱服务。"], "answers_en": ["Football can welcome capital, but must not be held hostage by it.", "Money can serve football, but football mustn't serve only money."] }
+    ],
+    "closing_zh": "说得好！感谢今天的精彩讨论。", "closing_en": "Well said! Thanks for a great discussion today."
+  },
+  {
+    "id": "L6-m-condolence", "level": 6, "title": "Supporting a grieving friend", "role": "朋友",
+    "goal": "Comfort a friend whose grandmother has died, with the right words.",
+    "steps": [
+      { "partner_zh": "我奶奶上周走了……我到现在还不敢相信。", "partner_en": "My grandma passed away last week... I still can't believe it.", "prompt_en": "Express your condolences and say you're here if they need anything.",
+        "answers_zh": ["太突然了，请节哀。有什么需要帮忙的，随时告诉我。", "听到这个消息我很难过。你需要什么，我都在。"], "answers_en": ["So sudden; I'm so sorry for your loss. Tell me anytime if there's anything I can do.", "I'm so sad to hear it. Whatever you need, I'm here."] },
+      { "partner_zh": "我最后悔的是，今年春节都没回去看她。", "partner_en": "What I regret most is not going home to see her this Spring Festival.", "prompt_en": "Gently say she surely understood, and knew how much you loved her.",
+        "answers_zh": ["她一定能理解的，她肯定知道你有多爱她。", "别太自责了，奶奶心里一直都明白你的心意。"], "answers_en": ["She'd surely have understood; she must have known how much you loved her.", "Don't blame yourself too much; your grandma always knew how you felt."] },
+      { "partner_zh": "她以前总给我包饺子，说是我最爱吃的。", "partner_en": "She always used to make me dumplings, said they were my favourite.", "prompt_en": "Ask if they'd like to make dumplings together this weekend, to remember her.",
+        "answers_zh": ["要不这个周末我们一起包饺子吧，就当是纪念她。", "周末我陪你包一次饺子，好不好？也算是怀念奶奶。"], "answers_en": ["How about we make dumplings together this weekend, to remember her?", "Shall I make dumplings with you this weekend? A way of remembering her."] },
+      { "partner_zh": "……好。谢谢你。", "partner_en": "...OK. Thank you.", "prompt_en": "Say there's no need for thanks, and that you'll come round on Saturday.",
+        "answers_zh": ["跟我还客气什么，周六我过去找你。", "不用谢，周六下午我带面粉过去。"], "answers_en": ["No need to stand on ceremony with me; I'll come over on Saturday.", "No need to thank me; I'll bring the flour on Saturday afternoon."] }
+    ],
+    "closing_zh": "嗯，我等你。", "closing_en": "Mm, I'll be waiting."
+  },
+  {
+    "id": "L6-m-policy", "level": 6, "title": "Town hall on tourism", "role": "街道办主任",
+    "goal": "Voice a resident's concerns about overtourism at a local meeting.",
+    "steps": [
+      { "partner_zh": "今天开会是想听听居民对旅游开发的意见。", "partner_en": "Today's meeting is to hear residents' views on tourism development.", "prompt_en": "Say tourism has helped shops, but noise and short-lets are driving residents out.",
+        "answers_zh": ["旅游确实带动了商铺，但噪音和短租房正在把老居民挤走。", "我不反对旅游，只是现在短租太多，很多老邻居都搬走了。"], "answers_en": ["Tourism has certainly helped the shops, but noise and short-lets are pushing long-time residents out.", "I'm not against tourism, but there are too many short-lets now; lots of old neighbours have moved away."] },
+      { "partner_zh": "你有什么具体的建议吗？", "partner_en": "Do you have any concrete suggestions?", "prompt_en": "Propose capping short-let days per year and quiet hours after ten.",
+        "answers_zh": ["建议限制短租每年的出租天数，并规定晚上十点以后保持安静。", "可以给短租设一个年度天数上限，再定一个夜间静音时段。"], "answers_en": ["I suggest capping short-lets' rental days per year and requiring quiet after 10 pm.", "Set an annual day limit on short-lets, and designate night-time quiet hours."] },
+      { "partner_zh": "这样会不会影响本地的经济收入？", "partner_en": "Won't that hurt local income?", "prompt_en": "Argue that a liveable neighbourhood is what attracts tourists in the first place.",
+        "answers_zh": ["短期可能有影响，但游客来这里，本来就是为了看真实的社区生活。", "如果居民都走了，这里就只剩空壳，游客也不会再来。"], "answers_en": ["There may be a short-term hit, but tourists come here to see real neighbourhood life in the first place.", "If the residents all leave, it'll be an empty shell and tourists won't come either."] },
+      { "partner_zh": "你的意见我们会认真考虑。", "partner_en": "We'll consider your views seriously.", "prompt_en": "Ask for a concrete timeline and a follow-up meeting.",
+        "answers_zh": ["希望能给出一个具体的时间表，下个月再开一次会跟进。", "能不能定个时间，下次开会时告诉我们进展？"], "answers_en": ["I'd like a concrete timetable, and a follow-up meeting next month.", "Could you set a date and update us on progress at the next meeting?"] }
+    ],
+    "closing_zh": "可以，我们下个月十五号再开一次。", "closing_en": "Agreed; we'll meet again on the fifteenth of next month."
+  },
+  {
+    "id": "L6-m-translator", "level": 6, "title": "Discussing a translation", "role": "编辑",
+    "goal": "Defend your translation choices to an editor.",
+    "steps": [
+      { "partner_zh": "你把原文的这个比喻完全换掉了，为什么？", "partner_en": "You completely replaced this metaphor from the original. Why?", "prompt_en": "Say a literal translation would confuse Chinese readers, so you used an equivalent idiom.",
+        "answers_zh": ["直译的话中文读者会看不懂，所以我用了一个意思相近的成语。", "原文的比喻有文化背景，照搬会让读者困惑，我就换成了对应的说法。"], "answers_en": ["A literal translation would confuse Chinese readers, so I used an idiom with a similar meaning.", "The metaphor is culturally rooted; copying it would confuse readers, so I swapped in an equivalent expression."] },
+      { "partner_zh": "可是这样会不会丢掉作者的风格？", "partner_en": "But won't that lose the author's style?", "prompt_en": "Concede the risk, and offer to keep the original image in a footnote.",
+        "answers_zh": ["确实有这个风险，我可以在脚注里保留原来的意象。", "这点您说得对，要不我加个注释，把原文的比喻说明一下？"], "answers_en": ["That's a real risk; I can keep the original image in a footnote.", "You're right; shall I add a note explaining the original metaphor?"] },
+      { "partner_zh": "脚注太多会影响阅读节奏。", "partner_en": "Too many footnotes will disrupt the reading rhythm.", "prompt_en": "Suggest a compromise: footnotes only for key recurring images.",
+        "answers_zh": ["那折中一下，只给反复出现的关键意象加注。", "可以只在最重要、会反复出现的地方加注，其他的就意译。"], "answers_en": ["Then a compromise: notes only for key recurring images.", "Notes only where the image is most important and recurs; translate the rest freely."] },
+      { "partner_zh": "这个方案可以。交稿时间没问题吧？", "partner_en": "That works. The deadline's fine, right?", "prompt_en": "Confirm you'll deliver the revised draft by the end of the month.",
+        "answers_zh": ["没问题，月底前一定交修改稿。", "放心，这个月底我把修订版发给您。"], "answers_en": ["No problem, the revised draft will be in by the end of the month.", "Don't worry, I'll send you the revised version by month's end."] }
+    ],
+    "closing_zh": "好，辛苦了，期待你的修改稿。", "closing_en": "Great, thanks for your work. Looking forward to the revision."
+  },
+  {
+    "id": "L6-m-mentor", "level": 6, "title": "Career advice from a mentor", "role": "前辈",
+    "goal": "Discuss whether to stay in audit or move into investment.",
+    "steps": [
+      { "partner_zh": "听说你在考虑跳槽去做投资？", "partner_en": "I hear you're thinking of moving into investment?", "prompt_en": "Say yes; audit taught you a lot, but you want to be closer to decisions.",
+        "answers_zh": ["是的，审计让我学到了很多，但我更想参与到决策当中。", "对，审计打下了基础，不过我希望离决策更近一些。"], "answers_en": ["Yes; audit taught me a lot, but I want to be part of the decision-making.", "Right; audit gave me the foundation, but I'd like to be closer to the decisions."] },
+      { "partner_zh": "投资的压力和不确定性可比审计大多了。", "partner_en": "Investment has far more pressure and uncertainty than audit.", "prompt_en": "Say you know, and that's partly why you want to try it while you're young.",
+        "answers_zh": ["我知道，正因为这样，我才想趁年轻去试一试。", "我明白，可是年轻的时候不试，以后可能就更没勇气了。"], "answers_en": ["I know, and that's exactly why I want to try it while I'm young.", "I understand, but if I don't try while I'm young, I may never have the nerve later."] },
+      { "partner_zh": "那你的专业资格证还考吗？", "partner_en": "Will you still finish your professional qualification?", "prompt_en": "Say definitely: reading financial statements is the core skill either way.",
+        "answers_zh": ["一定要考完，不管做什么，看懂报表都是核心能力。", "当然会，读懂财务报表在投资里一样是基本功。"], "answers_en": ["Definitely; whatever I do, understanding financial statements is the core skill.", "Of course; reading statements is just as fundamental in investment."] },
+      { "partner_zh": "想清楚了就去吧。有什么需要，随时来找我。", "partner_en": "If you've thought it through, go for it. Come to me anytime you need anything.", "prompt_en": "Thank them sincerely for years of guidance.",
+        "answers_zh": ["真的很感谢您这几年的指导。", "这些年多亏了您的提携，我一直记在心里。"], "answers_en": ["Thank you so much for your guidance these past few years.", "I owe a lot to your support over the years; I'll always remember it."] }
+    ],
+    "closing_zh": "好好干，别忘了常联系。", "closing_en": "Do well, and don't forget to keep in touch."
+  }
+]

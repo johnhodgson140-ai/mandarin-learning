@@ -1,0 +1,124 @@
+[
+  {
+    "id": "L2-m-hotel", "level": 2, "title": "Checking into a hotel", "role": "前台",
+    "goal": "Check in, ask about breakfast and Wi-Fi.",
+    "steps": [
+      { "partner_zh": "晚上好！请问有预订吗？", "partner_en": "Good evening! Do you have a booking?", "prompt_en": "Say yes, you booked a room for two nights.",
+        "answers_zh": ["有，我订了一个房间，住两个晚上。", "有，两个晚上。"], "answers_en": ["Yes, I booked a room for two nights.", "Yes, two nights."] },
+      { "partner_zh": "请给我看一下您的护照。", "partner_en": "May I see your passport, please?", "prompt_en": "Hand it over: say here you go.",
+        "answers_zh": ["好的，给您。", "在这儿，给您。"], "answers_en": ["Sure, here you are.", "Here it is."] },
+      { "partner_zh": "好了，您的房间在八楼。", "partner_en": "All done, your room is on the eighth floor.", "prompt_en": "Ask what time breakfast is.",
+        "answers_zh": ["早饭几点开始？", "请问早饭是几点？"], "answers_en": ["What time does breakfast start?", "Excuse me, what time is breakfast?"] },
+      { "partner_zh": "早上七点到十点，在二楼。", "partner_en": "Seven to ten in the morning, on the second floor.", "prompt_en": "Ask for the Wi-Fi password.",
+        "answers_zh": ["无线网的密码是多少？", "请问网络密码是什么？"], "answers_en": ["What's the Wi-Fi password?", "What's the internet password, please?"] },
+      { "partner_zh": "密码在房卡后面。", "partner_en": "The password is on the back of your key card.", "prompt_en": "Thank her and say goodnight.",
+        "answers_zh": ["好的，谢谢！晚安。", "谢谢你，晚安！"], "answers_en": ["OK, thanks! Goodnight.", "Thank you, goodnight!"] }
+    ],
+    "closing_zh": "不客气，祝您住得愉快！", "closing_en": "You're welcome, enjoy your stay!"
+  },
+  {
+    "id": "L2-m-xianyu", "level": 2, "title": "Messaging a Xianyu seller", "role": "卖家",
+    "goal": "Ask about a second-hand jacket and agree a price.",
+    "steps": [
+      { "partner_zh": "你好，在的。", "partner_en": "Hi, I'm here.", "prompt_en": "Ask if the jacket is still available.",
+        "answers_zh": ["你好，这件外套还在吗？", "请问这件衣服还有吗？"], "answers_en": ["Hi, is this jacket still available?", "Is this jacket still for sale?"] },
+      { "partner_zh": "还在，只穿过两次。", "partner_en": "Still here, only worn twice.", "prompt_en": "Ask what size it is.",
+        "answers_zh": ["是多大号的？", "这件是什么尺码？"], "answers_en": ["What size is it?", "What size is this one?"] },
+      { "partner_zh": "是二号，比较宽松。", "partner_en": "It's a size 2, fairly loose.", "prompt_en": "Ask if 500 kuai is OK.",
+        "answers_zh": ["五百块可以吗？", "五百卖吗？"], "answers_en": ["Would 500 be OK?", "Would you sell it for 500?"] },
+      { "partner_zh": "最低六百，包邮。", "partner_en": "Six hundred minimum, free shipping.", "prompt_en": "Accept and say you'll pay now.",
+        "answers_zh": ["好吧，我现在拍。", "行，那我现在付钱。"], "answers_en": ["OK, I'll buy it now.", "Fine, I'll pay now."] }
+    ],
+    "closing_zh": "好的，我明天发货。", "closing_en": "Great, I'll ship it tomorrow."
+  },
+  {
+    "id": "L2-m-pharmacy", "level": 2, "title": "At the pharmacy", "role": "药店店员",
+    "goal": "Explain you have a cold and buy medicine.",
+    "steps": [
+      { "partner_zh": "你好，哪里不舒服？", "partner_en": "Hello, what's wrong?", "prompt_en": "Say you have a cold and a sore throat.",
+        "answers_zh": ["我感冒了，嗓子疼。", "我好像感冒了，嗓子很疼。"], "answers_en": ["I have a cold and a sore throat.", "I think I've got a cold; my throat really hurts."] },
+      { "partner_zh": "发烧吗？", "partner_en": "Do you have a fever?", "prompt_en": "Say a little, since yesterday.",
+        "answers_zh": ["有一点儿，从昨天开始。", "昨天开始有点儿发烧。"], "answers_en": ["A little, since yesterday.", "A slight fever since yesterday."] },
+      { "partner_zh": "这个药一天吃三次，一次两片。", "partner_en": "Take this medicine three times a day, two tablets each time.", "prompt_en": "Ask whether to take it before or after meals.",
+        "answers_zh": ["饭前吃还是饭后吃？", "是吃饭以前吃吗？"], "answers_en": ["Before or after meals?", "Do I take it before eating?"] },
+      { "partner_zh": "饭后吃。多喝水，多休息。", "partner_en": "After meals. Drink lots of water and rest.", "prompt_en": "Say OK and ask how much.",
+        "answers_zh": ["好的，多少钱？", "知道了，一共多少钱？"], "answers_en": ["OK, how much?", "Got it. How much altogether?"] }
+    ],
+    "closing_zh": "三十六块。希望你早点儿好！", "closing_en": "Thirty-six kuai. Hope you feel better soon!"
+  },
+  {
+    "id": "L2-m-train", "level": 2, "title": "Buying a train ticket", "role": "售票员",
+    "goal": "Buy a high-speed train ticket to Hangzhou.",
+    "steps": [
+      { "partner_zh": "您好，去哪里？", "partner_en": "Hello, where to?", "prompt_en": "Say one ticket to Hangzhou, please.",
+        "answers_zh": ["一张去杭州的票。", "我要一张到杭州的票。"], "answers_en": ["One ticket to Hangzhou.", "I'd like a ticket to Hangzhou."] },
+      { "partner_zh": "什么时候走？", "partner_en": "When are you travelling?", "prompt_en": "Say this afternoon, around three.",
+        "answers_zh": ["今天下午，三点左右。", "今天下午三点左右的。"], "answers_en": ["This afternoon, around three.", "One around three this afternoon."] },
+      { "partner_zh": "三点十分有一趟高铁，二等座一百二十块。", "partner_en": "There's a high-speed train at 3:10; second class is 120 kuai.", "prompt_en": "Say fine, and ask for a window seat.",
+        "answers_zh": ["可以。有靠窗的座位吗？", "好，我要靠窗的。"], "answers_en": ["Fine. Is there a window seat?", "OK, I'd like a window seat."] },
+      { "partner_zh": "有。请出示一下证件。", "partner_en": "Yes. Please show your ID.", "prompt_en": "Say here's your passport.",
+        "answers_zh": ["这是我的护照。", "给您，我的护照。"], "answers_en": ["Here's my passport.", "Here you are, my passport."] }
+    ],
+    "closing_zh": "好了，七号车厢，祝您旅途愉快。", "closing_en": "All set, carriage seven. Have a good trip."
+  },
+  {
+    "id": "L2-m-delivery", "level": 2, "title": "The delivery rider calls", "role": "外卖员",
+    "goal": "Explain where you are so your food arrives.",
+    "steps": [
+      { "partner_zh": "喂，你好，你的外卖到了。你在哪儿？", "partner_en": "Hello, your food's here. Where are you?", "prompt_en": "Say you're in building 3, room 502.",
+        "answers_zh": ["我在三号楼五零二。", "三号楼，五零二房间。"], "answers_en": ["I'm in building 3, 502.", "Building 3, room 502."] },
+      { "partner_zh": "小区门口的保安不让我进。", "partner_en": "The guard at the estate gate won't let me in.", "prompt_en": "Say you'll come down to get it.",
+        "answers_zh": ["那我下来拿吧。", "没关系，我下去拿。"], "answers_en": ["Then I'll come down for it.", "No problem, I'll come down."] },
+      { "partner_zh": "好的，我在门口等你。", "partner_en": "OK, I'll wait at the gate.", "prompt_en": "Say you'll be there in five minutes.",
+        "answers_zh": ["五分钟就到。", "我五分钟以后到。"], "answers_en": ["I'll be there in five minutes.", "I'll get there in five minutes."] },
+      { "partner_zh": "给你，小心，汤很烫。", "partner_en": "Here you go. Careful, the soup's hot.", "prompt_en": "Thank him, and say sorry for the trouble.",
+        "answers_zh": ["谢谢，麻烦你了！", "辛苦了，谢谢！"], "answers_en": ["Thanks, sorry for the trouble!", "Thanks for your hard work!"] }
+    ],
+    "closing_zh": "没事，记得给个好评哦！", "closing_en": "No worries, remember to leave a good review!"
+  },
+  {
+    "id": "L2-m-haircut", "level": 2, "title": "Getting a haircut", "role": "理发师",
+    "goal": "Explain how you want your hair cut.",
+    "steps": [
+      { "partner_zh": "你好，今天想怎么剪？", "partner_en": "Hi, how would you like it cut today?", "prompt_en": "Say shorter, but not too short.",
+        "answers_zh": ["剪短一点儿，别太短。", "短一点儿，可是不要太短。"], "answers_en": ["A bit shorter, not too short.", "Shorter, but not too short."] },
+      { "partner_zh": "两边也剪吗？", "partner_en": "The sides too?", "prompt_en": "Say yes, the sides shorter, the top a bit longer.",
+        "answers_zh": ["两边短一点儿，上面长一点儿。", "对，两边剪短，上面留长一点儿。"], "answers_en": ["Sides shorter, top a bit longer.", "Yes, sides short, leave the top a bit longer."] },
+      { "partner_zh": "要不要洗头？", "partner_en": "Would you like a wash?", "prompt_en": "Say no need, and ask how much.",
+        "answers_zh": ["不用了。多少钱？", "不洗了，一共多少钱？"], "answers_en": ["No need. How much?", "No wash. How much altogether?"] },
+      { "partner_zh": "好了，你看看怎么样？", "partner_en": "Done. How does it look?", "prompt_en": "Say it looks great, thanks.",
+        "answers_zh": ["很好看，谢谢！", "非常好，我很满意。"], "answers_en": ["Looks great, thanks!", "Really good, I'm very happy with it."] }
+    ],
+    "closing_zh": "四十块。欢迎下次再来！", "closing_en": "Forty kuai. Come again!"
+  },
+  {
+    "id": "L2-m-weekend", "level": 2, "title": "Making weekend plans", "role": "朋友",
+    "goal": "Arrange to see a film with a friend.",
+    "steps": [
+      { "partner_zh": "这个周末你有空吗？", "partner_en": "Are you free this weekend?", "prompt_en": "Say Saturday afternoon you're free.",
+        "answers_zh": ["星期六下午有空。", "周六下午我有时间。"], "answers_en": ["I'm free Saturday afternoon.", "I have time on Saturday afternoon."] },
+      { "partner_zh": "我们去看电影吧？有一个新的动画电影。", "partner_en": "Shall we see a film? There's a new animated one.", "prompt_en": "Say great, you've wanted to see it for ages.",
+        "answers_zh": ["好啊！我早就想看了。", "太好了，我一直想看。"], "answers_en": ["Sure! I've wanted to see it for ages.", "Great, I've been wanting to see it."] },
+      { "partner_zh": "那几点见？在哪儿见？", "partner_en": "So what time and where shall we meet?", "prompt_en": "Suggest two o'clock at the cinema entrance.",
+        "answers_zh": ["两点在电影院门口见吧。", "下午两点，电影院门口。"], "answers_en": ["Let's meet at two at the cinema entrance.", "Two pm, cinema entrance."] },
+      { "partner_zh": "好，我来买票。", "partner_en": "OK, I'll buy the tickets.", "prompt_en": "Say then you'll buy the snacks and drinks.",
+        "answers_zh": ["那我买吃的和喝的。", "好，零食和饮料我来买。"], "answers_en": ["Then I'll get food and drinks.", "OK, I'll buy the snacks and drinks."] }
+    ],
+    "closing_zh": "好，周六见！", "closing_en": "Great, see you Saturday!"
+  },
+  {
+    "id": "L2-m-returns", "level": 2, "title": "Returning shoes", "role": "店员",
+    "goal": "Exchange a pair of shoes that are too small.",
+    "steps": [
+      { "partner_zh": "您好，有什么可以帮您？", "partner_en": "Hello, how can I help?", "prompt_en": "Say you bought these shoes yesterday but they're too small.",
+        "answers_zh": ["我昨天买了这双鞋，可是太小了。", "这双鞋是昨天买的，有点儿小。"], "answers_en": ["I bought these shoes yesterday, but they're too small.", "I bought these yesterday; they're a bit small."] },
+      { "partner_zh": "您想换还是退？", "partner_en": "Would you like to exchange or return them?", "prompt_en": "Say you'd like to exchange for a bigger size.",
+        "answers_zh": ["我想换大一号的。", "换一双大一点儿的吧。"], "answers_en": ["I'd like to swap for one size up.", "Let me swap for a bigger pair."] },
+      { "partner_zh": "有小票吗？", "partner_en": "Do you have the receipt?", "prompt_en": "Say yes, here it is.",
+        "answers_zh": ["有，在这儿。", "有，给您。"], "answers_en": ["Yes, here it is.", "Yes, here you are."] },
+      { "partner_zh": "您试试这双，四十三号的。", "partner_en": "Try these, a size 43.", "prompt_en": "Say they fit perfectly.",
+        "answers_zh": ["这双正好。", "很合适，就要这双。"], "answers_en": ["These fit perfectly.", "They fit well, I'll take these."] }
+    ],
+    "closing_zh": "好的，给您换好了。", "closing_en": "All right, they're exchanged for you."
+  }
+]

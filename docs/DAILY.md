@@ -43,3 +43,9 @@ the optional Claude API key.
 ## Changing what it writes
 Edit `content/config.json` (level, topics, counts), or add `content/words.json` with my Anki words.
 This repo is public, so everything here (including `words.json`) is publicly readable.
+
+## The ready-made pack (separate from daily content)
+`content/pack/` holds stories (levels 1–6 × six topics × short/medium/long) and guided missions written ahead of
+time. `cd web && npm run pack` splits the stories into words, picks up to 8 new words each and glosses them from
+`hsk.json`, then writes `web/public/pack/`. The app shows them under Read → More stories and Speak → Missions,
+filtered by the level, topic and length I pick. The daily session doesn't touch the pack.

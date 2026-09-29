@@ -1,0 +1,272 @@
+[
+  {
+    "id": "L3-football-short", "level": 3, "topic": "football", "length": "short",
+    "title_zh": "最后一分钟", "title_en": "The last minute",
+    "paragraphs": [
+      "比赛只剩下最后一分钟，我们还是零比一输着。很多球迷已经站起来准备回家了。",
+      "就在这时候，我们的九号突然拿到了球。他一个人跑过了两个后卫，在门前轻轻一踢，球进了！",
+      "整个球场一下子安静了，然后大家都疯了。我旁边的叔叔抱着我又叫又跳。原来，足球最精彩的就是最后一分钟。"
+    ],
+    "translations": [
+      "There was only one minute of the match left, and we were still losing one-nil. Lots of fans had already stood up to go home.",
+      "Right then our number nine suddenly got the ball. He ran past two defenders on his own and, in front of goal, gave it a gentle kick. Goal!",
+      "The whole stadium went silent for a second, then everyone went wild. The man next to me hugged me, shouting and jumping. So the best bit of football really is the last minute."
+    ],
+    "names": [], "glossary": { "球迷": "fan (of a sport)", "后卫": "defender", "疯": "crazy; to go wild", "输": "to lose", "整个": "whole" }
+  },
+  {
+    "id": "L3-football-medium", "level": 3, "topic": "football", "length": "medium",
+    "title_zh": "周末联赛", "title_en": "Sunday league",
+    "paragraphs": [
+      "我每个星期天都和同事在城市东边踢业余联赛。我们的球队叫“周一不上班”，名字很好笑，可是踢得不太好。",
+      "这个赛季我们一场都没赢过。每次比赛结束，队长老张都会说：“没关系，下次一定能赢。”大家都笑他太乐观。",
+      "上个星期，老张做了一个决定：每个星期三下班以后，大家一起练习一个小时。刚开始只来了三四个人，后来越来越多。",
+      "我们练传球，练跑位，也开始研究对手的视频。慢慢地，大家之间的配合越来越好了。",
+      "昨天我们遇到了联赛第一名的球队。上半场我们就进了一个球。下半场对方一直进攻，可是我们守住了。",
+      "比赛结束的哨声一响，大家都跑向老张。他激动得说不出话来，只是一直笑。那天晚上，我们在烧烤店庆祝到很晚。"
+    ],
+    "translations": [
+      "Every Sunday I play in an amateur league on the east side of the city with colleagues. Our team is called \"Not Working Monday\". The name is funny, but we're not very good.",
+      "We hadn't won a single match this season. After every match the captain, Lao Zhang, would say, \"Never mind, we'll definitely win next time.\" Everyone laughed at how optimistic he was.",
+      "Last week Lao Zhang made a decision: every Wednesday after work, we'd all train together for an hour. At first only three or four people came, but more and more joined.",
+      "We practised passing and movement, and started studying videos of our opponents. Gradually we played better and better together.",
+      "Yesterday we played the team top of the league. We scored in the first half. In the second half they attacked non-stop, but we held on.",
+      "As soon as the final whistle blew, everyone ran to Lao Zhang. He was too emotional to speak and just kept smiling. That night we celebrated at a barbecue place until late."
+    ],
+    "names": ["老张"], "glossary": { "老张": "Lao Zhang (a name)", "业余": "amateur", "联赛": "league", "赛季": "season", "队长": "captain", "乐观": "optimistic", "传球": "to pass (the ball)", "跑位": "off-the-ball movement", "对手": "opponent", "配合": "teamwork; to coordinate", "进攻": "to attack", "守住": "to hold (a lead)", "哨声": "whistle", "烧烤": "barbecue", "庆祝": "to celebrate" }
+  },
+  {
+    "id": "L3-fashion-short", "level": 3, "topic": "archive fashion", "length": "short",
+    "title_zh": "旧货市场", "title_en": "The flea market",
+    "paragraphs": [
+      "每个月的第一个星期六，城里都有一个旧货市场。我七点就到了，因为好东西总是被早来的人买走。",
+      "今天我在一个角落发现了一件灰色的毛衣。上面有几个小洞，可是设计很特别，一看就是九十年代的。",
+      "老板只要一百五十块。我没有讲价就买了。回家查了一下，原来这是一个很有名的比利时设计师的作品。今天真是太幸运了！"
+    ],
+    "translations": [
+      "On the first Saturday of every month there's a flea market in town. I got there at seven, because the good stuff always gets bought by the early birds.",
+      "Today I found a grey jumper in a corner. It had a few small holes, but the design was really unusual; you could tell straight away it was from the nineties.",
+      "The seller only wanted a hundred and fifty. I bought it without haggling. When I looked it up at home, it turned out to be by a famous Belgian designer. So lucky today!"
+    ],
+    "names": ["比利时"], "glossary": { "比利时": "Belgium", "旧货市场": "flea market", "角落": "corner", "毛衣": "jumper; sweater", "洞": "hole", "设计师": "designer", "讲价": "to haggle", "幸运": "lucky" }
+  },
+  {
+    "id": "L3-fashion-medium", "level": 3, "topic": "archive fashion", "length": "medium",
+    "title_zh": "真的还是假的", "title_en": "Real or fake?",
+    "paragraphs": [
+      "我朋友小李最近迷上了二手名牌。他每天晚上都在网上看，看到喜欢的就想买。",
+      "有一天，他很兴奋地给我发了一个链接：“你看，一件川久保玲的外套，只要一千块！原价要八千多。”",
+      "我看了照片，觉得有点儿不对。衣服的标签太新了，缝得也不太整齐。我让他先别急着付钱。",
+      "我们一起找了很多资料，比较了真的和假的标签。果然，这件外套的字体和真的不一样，扣子也不对。",
+      "小李有点儿失望，但是也很庆幸：“还好你提醒我，要不然这一千块就白花了。”",
+      "从那以后，小李买东西以前都会先认真检查。他说：“买二手衣服，眼睛比钱包更重要。”"
+    ],
+    "translations": [
+      "My friend Xiao Li has recently got hooked on second-hand designer clothes. He browses online every evening and wants to buy anything he likes.",
+      "One day he excitedly sent me a link: \"Look, a Comme des Garçons jacket for only a thousand! It was over eight thousand new.\"",
+      "I looked at the photos and something seemed off. The label was too new, and the stitching wasn't very neat. I told him not to rush to pay.",
+      "We looked up lots of information together and compared real and fake labels. Sure enough, the font on this jacket's label was different from the real one, and the buttons were wrong too.",
+      "Xiao Li was a bit disappointed, but also relieved: \"Good thing you warned me, otherwise that thousand would've been wasted.\"",
+      "Since then Xiao Li always checks carefully before buying. He says, \"When buying second-hand clothes, your eyes matter more than your wallet.\""
+    ],
+    "names": ["小李", "川久保玲"], "glossary": { "小李": "Xiao Li (a name)", "川久保玲": "Rei Kawakubo (Comme des Garçons)", "迷上": "to get hooked on", "二手": "second-hand", "名牌": "designer brand", "链接": "link", "原价": "original price", "标签": "label", "缝": "to sew", "资料": "information; material", "字体": "font", "扣子": "button", "庆幸": "to feel lucky; relieved", "提醒": "to remind; to warn" }
+  },
+  {
+    "id": "L3-fashion-long", "level": 3, "topic": "archive fashion", "length": "long",
+    "title_zh": "裁缝铺", "title_en": "The tailor's shop",
+    "paragraphs": [
+      "在我们学校附近有一条很老的街道，街道的尽头有一家小小的裁缝铺。门口没有招牌，只挂着一把旧剪刀。",
+      "第一次进去，是因为我在二手市场买了一条很长的裤子，想改短一点儿。店里很暗，到处都是布，一个头发全白的老师傅正在缝衣服。",
+      "老师傅姓陈，已经做了五十年裁缝。他看了看我的裤子，用手摸了摸布，说：“这条裤子不简单，是日本做的，布很好。改短可惜了。”",
+      "我有点儿吃惊，问他怎么知道。陈师傅笑着说：“做了五十年，手一摸就知道。你看这里的线，每一针都很整齐，现在很少有人这样做了。”",
+      "他没有把裤子剪短，而是在里面缝了一个小小的边。“这样，你以后想穿长的，把线拆了就行。”我试了一下，长短正好。",
+      "从那以后，我常常去陈师傅的店里。有时候改衣服，有时候只是去喝茶，听他讲以前的故事。他说，八十年代的时候，每个人的衣服都是自己做的，他的店门口天天排长队。",
+      "“现在大家都去商场买便宜的衣服，穿一年就扔了。”陈师傅有点儿难过地说，“衣服和人一样，要慢慢相处，才能有感情。”",
+      "上个月，我听说这条街要拆了。我马上去找陈师傅。他正在收拾东西，看起来很平静。他送给我一把小剪刀，说：“以后你的衣服，自己学着改吧。”",
+      "现在，那把剪刀就放在我的桌子上。每次我买到一件旧衣服，都会先仔细看看它的线和布，好像陈师傅还在我旁边。"
+    ],
+    "translations": [
+      "Near our university there's a very old street, and at the end of it is a tiny tailor's shop. There's no sign outside, just an old pair of scissors hanging by the door.",
+      "The first time I went in was because I'd bought a very long pair of trousers at a second-hand market and wanted them shortened. The shop was dark, with fabric everywhere, and an old master with completely white hair was sewing.",
+      "The old tailor's surname was Chen, and he'd been a tailor for fifty years. He looked at my trousers, felt the fabric and said, \"These aren't ordinary trousers. They're made in Japan, and the fabric is excellent. It'd be a shame to cut them.\"",
+      "I was surprised and asked how he knew. Master Chen smiled: \"Fifty years in, you can tell by touch. Look at the thread here: every stitch is neat. Few people make things like this now.\"",
+      "Instead of cutting the trousers, he sewed a small hem on the inside. \"This way, if you want them long later, just unpick the thread.\" I tried them on; the length was perfect.",
+      "After that I often went to Master Chen's shop. Sometimes to alter clothes, sometimes just to drink tea and hear his old stories. He said that in the eighties everyone had their clothes made, and there was a long queue outside his shop every day.",
+      "\"Now everyone buys cheap clothes at the mall and throws them away after a year,\" Master Chen said a little sadly. \"Clothes are like people: you have to spend time with them before you get attached.\"",
+      "Last month I heard the street was going to be demolished. I went to find Master Chen straight away. He was packing up and seemed calm. He gave me a small pair of scissors and said, \"From now on, learn to alter your own clothes.\"",
+      "Now those scissors sit on my desk. Every time I buy an old piece of clothing, I look carefully at its thread and fabric first, as if Master Chen were still beside me."
+    ],
+    "names": ["陈师傅"], "glossary": { "陈师傅": "Master Chen", "裁缝铺": "tailor's shop", "裁缝": "tailor", "尽头": "end (of a road)", "招牌": "shop sign", "剪刀": "scissors", "师傅": "master (craftsman)", "布": "cloth; fabric", "摸": "to touch; to feel", "可惜": "a pity", "针": "stitch; needle", "拆": "to take apart; to demolish", "相处": "to get along; spend time with", "收拾": "to pack up; to tidy", "平静": "calm" }
+  },
+  {
+    "id": "L3-anime-short", "level": 3, "topic": "anime", "length": "short",
+    "title_zh": "学日语的原因", "title_en": "Why I learn Japanese",
+    "paragraphs": [
+      "很多人问我为什么学日语。说实话，一开始只是因为我想看动画的时候不用看字幕。",
+      "可是学着学着，我发现语言比我想的更有意思。动画里的一句话，翻译成中文常常会少了一些感觉。",
+      "现在我已经能听懂一半了。虽然还是会用字幕，但是我更喜欢自己去猜角色真正的意思。"
+    ],
+    "translations": [
+      "Lots of people ask me why I'm learning Japanese. To be honest, at first it was just so I could watch anime without subtitles.",
+      "But as I kept learning, I found languages were more interesting than I'd thought. A line from an anime often loses some of its feeling when translated into Chinese.",
+      "Now I can understand about half. I still use subtitles, but I prefer working out what the characters really mean myself."
+    ],
+    "names": [], "glossary": { "字幕": "subtitles", "翻译": "to translate", "角色": "character; role", "猜": "to guess" }
+  },
+  {
+    "id": "L3-anime-medium", "level": 3, "topic": "anime", "length": "medium",
+    "title_zh": "我画的第一部漫画", "title_en": "My first manga",
+    "paragraphs": [
+      "从小我就喜欢画画。上高中的时候，我决定自己画一部漫画，讲一个会说话的机器人和一个小女孩的故事。",
+      "我每天放学以后画两个小时。画人物很难，特别是手和眼睛。我画了一遍又一遍，桌子上都是纸。",
+      "三个月以后，我终于画完了第一章，一共二十页。我把它放到网上，心里很紧张，怕没有人看。",
+      "第一天只有十个人看，第二天有一百个，一个星期以后，已经有五千人看过了。很多人留言说：“快点儿画下一章！”",
+      "有一个读者给我写了一封很长的信。她说她生病住院的时候，每天都看我的漫画，那个小机器人让她觉得不那么孤单。",
+      "看完这封信，我哭了。我第一次明白，自己画的东西也可以帮助别人。我对自己说：不管多累，都要把这个故事画完。"
+    ],
+    "translations": [
+      "I've loved drawing since I was little. In secondary school I decided to draw my own manga, about a talking robot and a little girl.",
+      "I drew for two hours every day after school. Drawing people was hard, especially hands and eyes. I drew them again and again until my desk was covered in paper.",
+      "Three months later I finally finished chapter one, twenty pages in total. I put it online, nervous that no one would read it.",
+      "On the first day only ten people read it, on the second a hundred, and a week later five thousand people had read it. Lots of people commented: \"Hurry up with the next chapter!\"",
+      "One reader wrote me a very long letter. She said that while she was ill in hospital she read my manga every day, and the little robot made her feel less lonely.",
+      "When I finished the letter I cried. For the first time I understood that what I draw can help other people. I told myself: however tired I get, I'll finish this story."
+    ],
+    "names": [], "glossary": { "漫画": "manga; comics", "机器人": "robot", "人物": "character (in a story)", "章": "chapter", "页": "page", "留言": "to leave a comment", "读者": "reader", "住院": "to be in hospital", "孤单": "lonely" }
+  },
+  {
+    "id": "L3-travel-short", "level": 3, "topic": "travel", "length": "short",
+    "title_zh": "迷路", "title_en": "Lost",
+    "paragraphs": [
+      "在西安的第二天，我决定不用地图，一个人在老城里随便走走。结果一个小时以后，我完全迷路了。",
+      "我走进一家卖包子的小店问路。老板不但给我画了一张地图，还非要请我吃两个包子。",
+      "那是我在西安吃过最好吃的东西。有时候，迷路反而会让你遇到最好的风景和最好的人。"
+    ],
+    "translations": [
+      "On my second day in Xi'an I decided to put the map away and wander round the old town on my own. An hour later I was completely lost.",
+      "I went into a little bun shop to ask the way. Not only did the owner draw me a map, he insisted on treating me to two buns.",
+      "That was the best thing I ate in Xi'an. Sometimes getting lost leads you to the best views and the best people."
+    ],
+    "names": ["西安"], "glossary": { "西安": "Xi'an", "迷路": "to get lost", "随便": "casually; as you like", "包子": "steamed bun", "非要": "to insist on", "反而": "on the contrary; instead", "风景": "scenery" }
+  },
+  {
+    "id": "L3-travel-medium", "level": 3, "topic": "travel", "length": "medium",
+    "title_zh": "夜里的火车", "title_en": "The night train",
+    "paragraphs": [
+      "从北京到昆明，我选择了坐三十多个小时的火车。朋友们都觉得我疯了，坐飞机只要四个小时。",
+      "我买的是卧铺。同一个房间里还有一对老夫妻和一个年轻的军人。一开始大家都不说话，只是看手机。",
+      "到了晚上，老奶奶拿出一大袋橘子，非要分给我们吃。就这样，大家慢慢聊了起来。",
+      "老夫妻是去昆明看孙子的，已经三年没见了。那个军人刚刚放假，要回云南的老家。他说他妈妈一定会做一桌子菜等他。",
+      "半夜我睡不着，就站在窗户旁边。外面一片黑，只有偶尔经过的小站有几盏灯。火车的声音很有节奏，让人觉得很安心。",
+      "第二天下午，火车到了昆明。下车的时候，老奶奶拉着我的手说：“孩子，路上小心。”那一刻，我觉得这三十个小时一点儿都不长。"
+    ],
+    "translations": [
+      "From Beijing to Kunming, I chose a train of over thirty hours. My friends all thought I was mad: flying only takes four.",
+      "I'd bought a sleeper berth. In the same compartment were an elderly couple and a young soldier. At first nobody talked; everyone just looked at their phones.",
+      "In the evening the old lady took out a big bag of mandarins and insisted on sharing them. That's how everyone gradually started chatting.",
+      "The couple were going to Kunming to see their grandson; they hadn't seen him for three years. The soldier had just gone on leave and was heading back to his home town in Yunnan. He said his mum would definitely have a whole table of food waiting.",
+      "In the middle of the night I couldn't sleep, so I stood by the window. Outside was pitch black, with just a few lights at the odd small station we passed. The train's rhythm was soothing.",
+      "The next afternoon the train reached Kunming. As we got off, the old lady held my hand and said, \"Take care on your way, child.\" In that moment the thirty hours didn't feel long at all."
+    ],
+    "names": ["北京", "昆明", "云南"], "glossary": { "北京": "Beijing", "昆明": "Kunming", "云南": "Yunnan", "卧铺": "sleeper berth", "夫妻": "married couple", "军人": "soldier", "橘子": "mandarin orange", "孙子": "grandson", "偶尔": "occasionally", "盏": "(measure word for lamps)", "节奏": "rhythm", "安心": "at ease" }
+  },
+  {
+    "id": "L3-daily-short", "level": 3, "topic": "daily life", "length": "short",
+    "title_zh": "早起的挑战", "title_en": "The early-rising challenge",
+    "paragraphs": [
+      "我给自己定了一个目标：一个月每天早上六点起床。第一个星期非常痛苦，闹钟响了五次我才起来。",
+      "第二个星期，我开始晚上十一点以前睡觉，早上起来去公园跑步。慢慢地，身体习惯了。",
+      "现在一个月过去了。我发现早上的时间特别安静，能做很多事。最重要的是，我的心情比以前好多了。"
+    ],
+    "translations": [
+      "I set myself a goal: get up at six every morning for a month. The first week was agony; my alarm went off five times before I got up.",
+      "In the second week I started going to bed before eleven and running in the park in the mornings. Gradually my body got used to it.",
+      "Now the month is over. I've found that mornings are especially quiet, and I can get a lot done. Most importantly, my mood is much better than before."
+    ],
+    "names": [], "glossary": { "目标": "goal", "痛苦": "painful; agony", "闹钟": "alarm clock", "心情": "mood" }
+  },
+  {
+    "id": "L3-daily-medium", "level": 3, "topic": "daily life", "length": "medium",
+    "title_zh": "合租", "title_en": "Flatmates",
+    "paragraphs": [
+      "今年九月，我开始和两个人合租一套房子。一个是做设计的小周，一个是在医院上班的阿明。",
+      "刚开始，我们之间有很多问题。小周喜欢晚上画画，常常到两三点才睡。阿明早上五点就要起床上班，所以总是睡不好。",
+      "厨房也是一个问题。每个人都觉得别人不洗碗。有一天，阿明在冰箱上贴了一张纸：“请用完厨房以后打扫干净。”",
+      "那天晚上，我们终于坐下来好好谈了一次。大家说出了自己的想法，也听了别人的难处。",
+      "最后我们定了几条规矩：晚上十二点以后要安静；每个人轮流打扫厨房；周末一起吃一顿饭。",
+      "现在两个月过去了，我们的关系越来越好。星期天晚上，三个人一起做饭、聊天，感觉就像一家人一样。"
+    ],
+    "translations": [
+      "This September I started sharing a flat with two people: Xiao Zhou, who does design, and A-Ming, who works at a hospital.",
+      "At first there were lots of problems between us. Xiao Zhou likes drawing at night and often doesn't sleep until two or three. A-Ming has to get up at five for work, so he never slept well.",
+      "The kitchen was another problem. Everyone thought everyone else didn't wash up. One day A-Ming stuck a note on the fridge: \"Please clean the kitchen after using it.\"",
+      "That evening we finally sat down and had a proper talk. Everyone said what they thought and listened to the others' difficulties.",
+      "In the end we agreed a few rules: quiet after midnight; take turns cleaning the kitchen; eat a meal together at weekends.",
+      "Two months on, we get along better and better. On Sunday evenings the three of us cook and chat together; it feels like a family."
+    ],
+    "names": ["小周", "阿明"], "glossary": { "小周": "Xiao Zhou (a name)", "阿明": "A-Ming (a name)", "合租": "to share a rented flat", "贴": "to stick", "难处": "difficulty", "规矩": "rule", "轮流": "to take turns", "关系": "relationship" }
+  },
+  {
+    "id": "L3-business-short", "level": 3, "topic": "business & finance", "length": "short",
+    "title_zh": "记账", "title_en": "Keeping accounts",
+    "paragraphs": [
+      "上个月底，我的银行卡里只剩下三十块钱。我完全不知道钱都花到哪儿去了。",
+      "于是我开始用手机记账，每花一笔钱都记下来。一个星期以后，我吓了一跳：光是奶茶，我就花了两百多块！",
+      "现在我每个星期都看一下自己的账单。记账没有让我变得更有钱，但是让我更清楚自己真正需要什么。"
+    ],
+    "translations": [
+      "At the end of last month there was only thirty kuai left on my bank card. I had no idea where all the money had gone.",
+      "So I started tracking my spending on my phone, recording every payment. A week later I got a shock: I'd spent over two hundred on bubble tea alone!",
+      "Now I look over my spending every week. Keeping accounts hasn't made me richer, but it's made me clearer about what I really need."
+    ],
+    "names": [], "glossary": { "记账": "to keep accounts", "月底": "end of the month", "笔": "(measure word for sums of money)", "光是": "alone; just", "奶茶": "bubble tea; milk tea", "账单": "bill; statement" }
+  },
+  {
+    "id": "L3-business-medium", "level": 3, "topic": "business & finance", "length": "medium",
+    "title_zh": "第一次面试", "title_en": "My first interview",
+    "paragraphs": [
+      "大三的时候，我申请了一家会计师事务所的实习。收到面试通知的那天，我高兴得睡不着觉。",
+      "面试前一个星期，我每天都在准备。我复习了专业知识，还请朋友扮演面试官，练习回答问题。",
+      "面试那天，我穿上了新买的西装，提前半个小时就到了。等待的时候，我的手一直在出汗。",
+      "面试官问的第一个问题很简单：“你为什么选择会计专业？”我说，我喜欢数字，因为数字不会说谎。她笑了。",
+      "后面的问题越来越难。有一个关于税的问题，我完全答不上来。我只好老实说：“对不起，这个我还不太清楚，但是我回去会好好学习。”",
+      "一个星期以后，我收到了邮件：我通过了！后来经理告诉我，他们喜欢我的诚实。原来，不知道的时候说实话，也是一种能力。"
+    ],
+    "translations": [
+      "In my third year I applied for an internship at an accounting firm. The day I got the interview invitation I was too excited to sleep.",
+      "The week before the interview I prepared every day. I revised my course material and got a friend to play the interviewer so I could practise answering questions.",
+      "On the day I wore my new suit and arrived half an hour early. While I waited my hands wouldn't stop sweating.",
+      "The interviewer's first question was simple: \"Why did you choose accounting?\" I said I like numbers, because numbers don't lie. She smiled.",
+      "The questions got harder and harder. There was one about tax I just couldn't answer. I had to be honest: \"Sorry, I'm not clear on that yet, but I'll go back and study it properly.\"",
+      "A week later I got an email: I'd passed! The manager later told me they liked my honesty. So telling the truth when you don't know is a skill too."
+    ],
+    "names": [], "glossary": { "会计师事务所": "accounting firm", "实习": "internship", "面试": "interview", "通知": "notice; invitation", "专业": "major; specialised", "扮演": "to play (a role)", "面试官": "interviewer", "西装": "suit", "出汗": "to sweat", "说谎": "to lie", "税": "tax", "诚实": "honest; honesty", "能力": "ability; skill" }
+  },
+  {
+    "id": "L3-business-long", "level": 3, "topic": "business & finance", "length": "long",
+    "title_zh": "奶茶店的账本", "title_en": "The bubble tea shop's books",
+    "paragraphs": [
+      "我表姐去年在大学城开了一家奶茶店。开业的时候生意特别好，每天门口都排着长队。可是半年以后，她打电话给我，声音听起来很累。",
+      "“你是学会计的，能不能帮我看看账？”她说，“店里每天都很忙，可是月底一算，钱总是不够。”",
+      "周末我去了她的店。她的账本很乱，有的写在本子上，有的写在手机里，还有一些根本没记。我花了整整两天，才把半年的账整理清楚。",
+      "问题很快就出来了。第一，房租太贵了，占了收入的三分之一。第二，她每天都做很多新鲜水果，可是晚上卖不完，只能扔掉。第三，外卖平台要收两成的费用。",
+      "表姐看着我做的表格，半天没说话。最后她说：“原来我一直在忙，可是没有在赚钱。”",
+      "我们一起想了几个办法。水果不再一次准备一天的，而是每天分三次准备。菜单上去掉了几种卖得不好的饮料。她还开始在店里卖自己做的蛋糕，因为蛋糕的利润比奶茶高。",
+      "最重要的是，我帮她做了一个简单的表格，每天关门以后花十分钟记账。刚开始她觉得麻烦，后来发现，每天看着数字，心里特别踏实。",
+      "三个月以后，表姐又给我打电话。这次她的声音很开心：“这个月终于赚钱了！”她说要请我喝一年的奶茶。",
+      "我笑着说：“那我可要变胖了。”挂了电话，我第一次觉得，课本上的会计知识，真的可以帮助一个人实现自己的梦想。"
+    ],
+    "translations": [
+      "Last year my cousin opened a bubble tea shop in the university district. When it opened business was great, with a long queue every day. But six months later she called me, sounding exhausted.",
+      "\"You study accounting, can you look at my books?\" she said. \"The shop's busy every day, but at the end of the month there's never enough money.\"",
+      "At the weekend I went to her shop. Her books were a mess: some in a notebook, some on her phone, and some not recorded at all. It took me two full days to sort out six months of accounts.",
+      "The problems soon became clear. One: rent was too high, a third of revenue. Two: she prepared lots of fresh fruit every day, but it didn't sell by evening and had to be thrown away. Three: the delivery platform took a twenty percent fee.",
+      "My cousin looked at the spreadsheet I'd made and said nothing for ages. Finally she said, \"So I've been busy all this time, but not making money.\"",
+      "We came up with a few ideas together. Instead of preparing a whole day's fruit at once, she'd prep it three times a day. She cut a few slow-selling drinks from the menu. She also started selling homemade cakes, because cakes have a higher margin than bubble tea.",
+      "Most importantly, I made her a simple spreadsheet so she could spend ten minutes on the books after closing each day. At first she found it a hassle, but then she found that seeing the numbers every day gave her real peace of mind.",
+      "Three months later my cousin called again. This time she sounded happy: \"We finally made a profit this month!\" She said she'd treat me to a year of bubble tea.",
+      "I laughed: \"Then I'm going to get fat.\" After hanging up I felt, for the first time, that the accounting in my textbooks really could help someone make their dream come true."
+    ],
+    "names": [], "glossary": { "表姐": "(older female) cousin", "大学城": "university district", "开业": "to open for business", "账本": "account book", "整理": "to sort out", "房租": "rent", "占": "to make up (a share)", "收入": "income; revenue", "外卖平台": "food delivery platform", "费用": "fee; cost", "表格": "table; spreadsheet", "赚钱": "to make money", "利润": "profit; margin", "踏实": "steady; at ease", "梦想": "dream" }
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "id": "L5-m-negotiate", "level": 5, "title": "Negotiating a salary", "role": "人力资源经理",
+    "goal": "Negotiate a better starting salary politely but firmly.",
+    "steps": [
+      { "partner_zh": "恭喜你通过了面试。我们给你的月薪是八千，你看可以吗？", "partner_en": "Congratulations on passing the interview. We're offering eight thousand a month; does that work?", "prompt_en": "Thank her, and say you hoped for something closer to ten thousand.",
+        "answers_zh": ["谢谢您。不过我原本期望的是一万左右。", "非常感谢这个机会，但我的期望薪资是一万上下。"], "answers_en": ["Thank you. But I'd originally hoped for around ten thousand.", "Thanks so much for the opportunity, but my expected salary is about ten thousand."] },
+      { "partner_zh": "这个岗位的预算有限，你为什么觉得值一万呢？", "partner_en": "The budget for this role is limited. Why do you think it's worth ten thousand?", "prompt_en": "Point to your internship experience and your professional qualification progress.",
+        "answers_zh": ["我有两段审计实习经历，而且已经通过了三门专业资格考试。", "考虑到我的实习经验和已经取得的资格证书，我觉得这个要求是合理的。"], "answers_en": ["I have two audit internships and have already passed three professional exams.", "Given my internship experience and the qualifications I've earned, I think it's a reasonable request."] },
+      { "partner_zh": "我们最多能到九千，但试用期三个月后可以再评估。", "partner_en": "We can go up to nine thousand at most, but we can reassess after the three-month probation.", "prompt_en": "Ask whether the reassessment can be written into the contract.",
+        "answers_zh": ["试用期后的评估能写进合同里吗？", "可以把转正后调薪的条件写在合同上吗？"], "answers_en": ["Can the post-probation review be written into the contract?", "Could the conditions for a raise after probation go in the contract?"] },
+      { "partner_zh": "可以，我们会注明评估标准。", "partner_en": "Yes, we'll specify the review criteria.", "prompt_en": "Accept, and ask about the training budget too.",
+        "answers_zh": ["那我接受。另外，公司对考证有补贴吗？", "好的，我同意。请问公司会报销考试费用吗？"], "answers_en": ["Then I accept. Also, does the company subsidise professional exams?", "OK, I agree. Does the company reimburse exam fees?"] }
+    ],
+    "closing_zh": "有的，每年最多报销五千。欢迎加入！", "closing_en": "Yes, up to five thousand a year. Welcome aboard!"
+  },
+  {
+    "id": "L5-m-authenticate", "level": 5, "title": "Authenticating a designer piece", "role": "鉴定师",
+    "goal": "Discuss whether a vintage jacket is genuine.",
+    "steps": [
+      { "partner_zh": "这件外套你是从哪里买的？", "partner_en": "Where did you buy this jacket?", "prompt_en": "Say from a second-hand app; the seller claimed it's from a 1998 collection.",
+        "answers_zh": ["在二手平台上买的，卖家说是九八年那一季的。", "二手软件上买的，对方说是一九九八年的系列。"], "answers_en": ["On a second-hand platform; the seller said it's from the '98 season.", "From a second-hand app; they said it's from the 1998 collection."] },
+      { "partner_zh": "从面料看，年代是对的，但这个洗标有点儿可疑。", "partner_en": "The fabric fits the era, but this care label is a bit suspicious.", "prompt_en": "Ask what exactly looks wrong about it.",
+        "answers_zh": ["具体是哪里不对劲？", "您能说说洗标到底有什么问题吗？"], "answers_en": ["What exactly looks off?", "Could you explain what's wrong with the label?"] },
+      { "partner_zh": "那一季的洗标是日文和英文，这个多了法文，更像是后来的版本。", "partner_en": "That season's labels were Japanese and English; this has French too, more like a later version.", "prompt_en": "Ask whether that means it's fake, or just a later re-release.",
+        "answers_zh": ["那说明是假的，还是只是后来复刻的？", "这是仿品，还是官方后来再版的？"], "answers_en": ["Does that mean it's fake, or just a later reissue?", "Is it a counterfeit, or an official later re-run?"] },
+      { "partner_zh": "针脚和纽扣都是正品的特征，我倾向于是二零零几年的正品复刻。", "partner_en": "The stitching and buttons match genuine pieces; I lean towards an authentic reissue from the 2000s.", "prompt_en": "Say then you paid too much for a '98 piece, and ask if you can get a written report.",
+        "answers_zh": ["那我按九八年的价格买贵了。能给我出一份书面报告吗？", "看来我多花了钱。可以开一份鉴定报告吗？我想找卖家协商。"], "answers_en": ["Then I overpaid at a '98 price. Could you give me a written report?", "Looks like I overpaid. Can you issue a report? I want to negotiate with the seller."] }
+    ],
+    "closing_zh": "可以，报告明天发到你邮箱。", "closing_en": "Sure, the report will be in your inbox tomorrow."
+  },
+  {
+    "id": "L5-m-neighbour", "level": 5, "title": "Noise complaint", "role": "楼上邻居",
+    "goal": "Resolve a noise problem with your upstairs neighbour without a fight.",
+    "steps": [
+      { "partner_zh": "你好，有什么事吗？", "partner_en": "Hi, can I help you?", "prompt_en": "Introduce yourself as the downstairs neighbour and mention the late-night noise gently.",
+        "answers_zh": ["你好，我是楼下的。最近晚上楼上有点儿吵，想跟你商量一下。", "打扰了，我住你楼下。这几天半夜总能听到声音，不知道是不是你们家。"], "answers_en": ["Hi, I'm from downstairs. It's been a bit noisy at night lately; I wanted to talk it over.", "Sorry to bother you, I live below. I keep hearing noise late at night; I wonder if it's from yours."] },
+      { "partner_zh": "啊，不好意思，可能是我儿子晚上在练跳绳。", "partner_en": "Oh, sorry, it might be my son practising skipping in the evenings.", "prompt_en": "Say you understand kids need exercise, but after eleven you have to sleep for an early shift.",
+        "answers_zh": ["我理解孩子需要锻炼，但我早上要早起上班，十一点以后能不能安静一点儿？", "锻炼是好事，只是我第二天要早起，希望十一点以后能注意一下。"], "answers_en": ["I understand kids need exercise, but I start work early; could it be quieter after eleven?", "Exercise is good, it's just I have to get up early; could you keep it down after eleven?"] },
+      { "partner_zh": "没问题。其实他也没地方练，外面太冷了。", "partner_en": "No problem. The thing is he has nowhere to practise; it's too cold outside.", "prompt_en": "Suggest putting a thick mat down, which would help a lot.",
+        "answers_zh": ["要不在地上铺一块厚垫子？这样声音会小很多。", "可以考虑铺个瑜伽垫，效果应该挺明显的。"], "answers_en": ["How about putting a thick mat on the floor? It'd make it much quieter.", "Maybe put down a yoga mat; it should make a real difference."] },
+      { "partner_zh": "好主意，我明天就去买。谢谢你这么客气地来说。", "partner_en": "Good idea, I'll buy one tomorrow. Thanks for being so polite about it.", "prompt_en": "Say not at all, neighbours should look out for each other.",
+        "answers_zh": ["别客气，邻居之间互相体谅嘛。", "哪里哪里，远亲不如近邻，有事随时说。"], "answers_en": ["Not at all, neighbours should be considerate of each other.", "Don't mention it; a close neighbour beats a distant relative. Just say if there's anything."] }
+    ],
+    "closing_zh": "说得对！改天请你来家里吃饭。", "closing_en": "So true! Come round for dinner some time."
+  },
+  {
+    "id": "L5-m-pitch", "level": 5, "title": "Pitching to a client", "role": "潜在客户",
+    "goal": "Pitch your bookkeeping service to a small business owner.",
+    "steps": [
+      { "partner_zh": "你们的记账服务跟别人有什么不同？", "partner_en": "How is your bookkeeping service different from others?", "prompt_en": "Say you give a monthly cash-flow report in plain language, not just the books.",
+        "answers_zh": ["我们不只是记账，每个月还会用通俗的语言给您做一份现金流报告。", "除了记账，我们每月提供一份简单易懂的现金流分析。"], "answers_en": ["We don't just keep the books; every month we give you a cash-flow report in plain language.", "Beyond bookkeeping, we provide an easy-to-understand monthly cash-flow analysis."] },
+      { "partner_zh": "听起来不错，但是价格呢？我现在找的人每个月只收三百。", "partner_en": "Sounds good, but the price? The person I use now charges only three hundred a month.", "prompt_en": "Say you charge six hundred, but can save more than that by spotting waste.",
+        "answers_zh": ["我们每月收六百，但通过发现不必要的开支，帮您省下的钱通常远不止这个数。", "价格是六百，不过我们找出的浪费，一般能帮客户省下更多。"], "answers_en": ["We charge six hundred a month, but the money we save you by finding unnecessary costs is usually far more.", "It's six hundred, but the waste we find usually saves clients more than that."] },
+      { "partner_zh": "你怎么证明？", "partner_en": "How can you prove that?", "prompt_en": "Offer a free first month so they can judge for themselves.",
+        "answers_zh": ["第一个月免费，您看了报告再决定。", "我们可以先免费做一个月，效果您自己判断。"], "answers_en": ["The first month is free; decide after you see the report.", "We can do a first month free, and you judge the results yourself."] },
+      { "partner_zh": "那我需要准备什么？", "partner_en": "So what do I need to prepare?", "prompt_en": "Ask for the last three months of bank statements and receipts.",
+        "answers_zh": ["麻烦您准备最近三个月的银行流水和发票。", "只需要近三个月的银行对账单和收据就可以了。"], "answers_en": ["Please prepare the last three months' bank statements and invoices.", "Just the last three months of bank statements and receipts."] }
+    ],
+    "closing_zh": "行，下周一我让助理发给你。", "closing_en": "Fine, I'll have my assistant send them to you next Monday."
+  },
+  {
+    "id": "L5-m-journalist", "level": 5, "title": "Fan interview after a match", "role": "记者",
+    "goal": "Give a TV reporter your view on the match.",
+    "steps": [
+      { "partner_zh": "你好，能简单谈谈你对今天比赛的看法吗？", "partner_en": "Hello, could you briefly share your view of today's match?", "prompt_en": "Say the result was disappointing, but the young players showed promise.",
+        "answers_zh": ["结果挺让人失望的，不过几个年轻球员表现得很有潜力。", "虽然输了，但年轻球员的表现让我看到了希望。"], "answers_en": ["The result was pretty disappointing, but a few young players showed real potential.", "We lost, but the young players' performance gave me hope."] },
+      { "partner_zh": "很多球迷批评主教练换人太保守，你怎么看？", "partner_en": "Many fans criticise the head coach's substitutions as too conservative. What do you think?", "prompt_en": "Agree partly: he should have brought on the striker earlier.",
+        "answers_zh": ["我部分同意，他应该早点儿把前锋换上来。", "有一定道理，前锋如果早二十分钟上场，结果可能不一样。"], "answers_en": ["I partly agree; he should have brought the striker on earlier.", "There's something in it; if the striker had come on twenty minutes earlier, it might have been different."] },
+      { "partner_zh": "你对下一场有信心吗？", "partner_en": "Are you confident about the next match?", "prompt_en": "Say yes, playing at home the atmosphere will lift the team.",
+        "answers_zh": ["有信心，下一场是主场，气氛会帮球队提升士气。", "当然，回到主场，球迷的支持会让他们发挥得更好。"], "answers_en": ["Yes, the next one's at home; the atmosphere will lift the team's morale.", "Of course; back at home, the fans' support will help them play better."] },
+      { "partner_zh": "最后想对球队说点儿什么？", "partner_en": "Anything you'd like to say to the team?", "prompt_en": "Say keep your heads up, the fans are behind you.",
+        "answers_zh": ["别灰心，我们球迷永远支持你们！", "抬起头来，不管输赢我们都在。"], "answers_en": ["Don't lose heart, we fans will always back you!", "Heads up; win or lose, we're here."] }
+    ],
+    "closing_zh": "谢谢你接受采访！", "closing_en": "Thanks for the interview!"
+  },
+  {
+    "id": "L5-m-guesthouse", "level": 5, "title": "Booking a guesthouse by phone", "role": "民宿老板",
+    "goal": "Book a room for a special trip and arrange extras.",
+    "steps": [
+      { "partner_zh": "你好，这里是云水民宿。", "partner_en": "Hello, Yunshui Guesthouse.", "prompt_en": "Say you'd like to book a double room with a view for next weekend, two nights.",
+        "answers_zh": ["您好，我想订下周末两晚的双人房，最好能看到风景的。", "你好，下个周末我想订一间景观房，住两个晚上。"], "answers_en": ["Hello, I'd like to book a double room for two nights next weekend, ideally with a view.", "Hi, I'd like a room with a view next weekend, two nights."] },
+      { "partner_zh": "有一间湖景房，但是周六涨价，要六百八。", "partner_en": "There's a lake-view room, but prices go up on Saturday: 680.", "prompt_en": "Say that's fine, it's your parents' anniversary, and ask if you could arrange flowers.",
+        "answers_zh": ["没问题。是我父母的结婚纪念日，能帮忙准备一束花吗？", "可以。这次是给爸妈庆祝纪念日的，房间里能放些花吗？"], "answers_en": ["No problem. It's my parents' wedding anniversary; could you arrange some flowers?", "Fine. It's to celebrate my parents' anniversary; could you put some flowers in the room?"] },
+      { "partner_zh": "当然可以，我们还可以做一桌本地菜。", "partner_en": "Of course, and we can also cook a table of local dishes.", "prompt_en": "Ask whether dishes can be less oily, as your dad has high blood pressure.",
+        "answers_zh": ["太好了。我爸血压高，菜能少放点儿油和盐吗？", "谢谢！麻烦清淡一点儿，我爸爸血压有点儿高。"], "answers_en": ["Great. My dad has high blood pressure; could you use less oil and salt?", "Thanks! Please keep it light; my dad's blood pressure is a bit high."] },
+      { "partner_zh": "明白，我们会注意的。需要接站吗？", "partner_en": "Understood, we'll take care. Do you need a station pick-up?", "prompt_en": "Say yes, the train arrives at 4:20 on Friday afternoon.",
+        "answers_zh": ["需要，火车周五下午四点二十到。", "要的，我们周五下午四点二十到站，麻烦了。"], "answers_en": ["Yes, the train gets in at 4:20 on Friday afternoon.", "Yes please, we arrive at 4:20 Friday afternoon. Thanks for the trouble."] }
+    ],
+    "closing_zh": "好的，到时候在出站口等你们。", "closing_en": "Great, we'll wait for you at the station exit."
+  },
+  {
+    "id": "L5-m-deadline", "level": 5, "title": "Asking for an extension", "role": "导师",
+    "goal": "Ask your supervisor for more time on your dissertation.",
+    "steps": [
+      { "partner_zh": "你的论文初稿周五能交吗？", "partner_en": "Can you hand in your dissertation draft on Friday?", "prompt_en": "Say honestly you're behind, because the survey data came back late.",
+        "answers_zh": ["说实话，我进度落后了，因为问卷数据回来得比较晚。", "不好意思，我可能来不及，调查数据晚到了一个星期。"], "answers_en": ["Honestly, I'm behind, because the survey data came back late.", "Sorry, I might not make it; the survey data arrived a week late."] },
+      { "partner_zh": "那你需要多少时间？", "partner_en": "So how much time do you need?", "prompt_en": "Ask for one more week, and offer to send the finished chapters now.",
+        "answers_zh": ["能再给我一个星期吗？写好的章节我可以先发给您。", "希望能延长一周，已完成的部分我今天就发给您。"], "answers_en": ["Could I have one more week? I can send the finished chapters first.", "I'd like a one-week extension; I'll send the finished parts today."] },
+      { "partner_zh": "可以，但数据分析部分是重点，不能马虎。", "partner_en": "OK, but the data analysis is the key part; don't be sloppy.", "prompt_en": "Say you understand, and ask if you could book a meeting to discuss the method.",
+        "answers_zh": ["明白。我能约个时间跟您讨论一下分析方法吗？", "我知道。下周方便的话，想跟您当面确认一下方法。"], "answers_en": ["Understood. Could I book a time to discuss the analysis method with you?", "I know. If convenient next week, I'd like to confirm the method with you in person."] },
+      { "partner_zh": "周二下午三点，来我办公室。", "partner_en": "Tuesday at three, come to my office.", "prompt_en": "Thank them for their understanding.",
+        "answers_zh": ["好的，谢谢您的理解！", "非常感谢，周二见。"], "answers_en": ["OK, thank you for understanding!", "Thank you very much, see you Tuesday."] }
+    ],
+    "closing_zh": "别客气，加油。", "closing_en": "You're welcome. Keep going."
+  },
+  {
+    "id": "L5-m-otaku", "level": 5, "title": "Debating an adaptation", "role": "漫画迷",
+    "goal": "Argue whether a live-action adaptation ruins the original.",
+    "steps": [
+      { "partner_zh": "你看了那部真人版吗？我觉得完全毁了原作。", "partner_en": "Did you see the live-action version? I think it totally ruined the original.", "prompt_en": "Say you think it's not that bad; the visuals were faithful.",
+        "answers_zh": ["我觉得没那么差，画面还是挺还原的。", "也没有那么糟糕吧，场景还原得很用心。"], "answers_en": ["I don't think it's that bad; the visuals were pretty faithful.", "It's not that terrible; they took care recreating the settings."] },
+      { "partner_zh": "可是主角的性格完全变了！", "partner_en": "But the main character's personality totally changed!", "prompt_en": "Concede that's true, but a two-hour film has to simplify.",
+        "answers_zh": ["这点我承认，不过两个小时的电影总得有所取舍。", "确实改了很多，但电影篇幅有限，不可能全部照搬。"], "answers_en": ["I'll grant that, but a two-hour film has to make trade-offs.", "They did change a lot, but a film's length is limited; it can't copy everything."] },
+      { "partner_zh": "那为什么不干脆拍成电视剧？", "partner_en": "Then why not just make it a TV series?", "prompt_en": "Suggest it's about budget and risk: films are easier to finance.",
+        "answers_zh": ["估计是资金和风险的问题，电影更容易拉到投资。", "我猜是成本考虑，电影的投资回报更明确。"], "answers_en": ["Probably money and risk; films attract investment more easily.", "I guess it's cost; a film's return on investment is clearer."] },
+      { "partner_zh": "有道理。不过我还是更喜欢原作。", "partner_en": "Fair point. But I still prefer the original.", "prompt_en": "Agree the original is better, and say at least the film brings new readers.",
+        "answers_zh": ["原作当然更好，至少电影能吸引一些新读者。", "我也同意，不过它让更多人去看原作，也算好事。"], "answers_en": ["The original's better, of course; at least the film brings in new readers.", "I agree, but if it sends more people to the original, that's a good thing."] }
+    ],
+    "closing_zh": "这倒是。走，去书店看看有没有新刊！", "closing_en": "True. Come on, let's see if the bookshop has the new volume!"
+  }
+]

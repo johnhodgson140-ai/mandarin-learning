@@ -1,0 +1,122 @@
+[
+  {
+    "id": "L1-m-noodles", "level": 1, "title": "Ordering noodles", "role": "服务员",
+    "goal": "Order a bowl of noodles and a drink, then pay.",
+    "steps": [
+      { "partner_zh": "你好！几位？", "partner_en": "Hello! How many of you?", "prompt_en": "Say it's just you, one person.",
+        "answers_zh": ["一个人。", "就我一个人。"], "answers_en": ["One person.", "Just me."] },
+      { "partner_zh": "请坐。你想吃什么？", "partner_en": "Please sit. What would you like to eat?", "prompt_en": "Say you want a bowl of beef noodles.",
+        "answers_zh": ["我要一碗牛肉面。", "一碗牛肉面，谢谢。"], "answers_en": ["I'd like a bowl of beef noodles.", "A bowl of beef noodles, thanks."] },
+      { "partner_zh": "好的。喝什么？", "partner_en": "OK. Anything to drink?", "prompt_en": "Ask for a cup of tea.",
+        "answers_zh": ["我要一杯茶。", "一杯茶吧。"], "answers_en": ["I'd like a cup of tea.", "A cup of tea, please."] },
+      { "partner_zh": "你的面来了。好吃吗？", "partner_en": "Here are your noodles. Are they good?", "prompt_en": "Say they're delicious, and ask for the bill.",
+        "answers_zh": ["很好吃！买单。", "非常好吃，买单吧。"], "answers_en": ["Delicious! The bill, please.", "Really tasty. Let's have the bill."] },
+      { "partner_zh": "一共二十八块。", "partner_en": "That's twenty-eight kuai altogether.", "prompt_en": "Say you'll pay by phone.",
+        "answers_zh": ["我用手机付。", "可以用手机吗？"], "answers_en": ["I'll pay by phone.", "Can I use my phone?"] }
+    ],
+    "closing_zh": "可以。谢谢，再见！", "closing_en": "Sure. Thanks, goodbye!"
+  },
+  {
+    "id": "L1-m-taxi", "level": 1, "title": "Taking a taxi", "role": "司机",
+    "goal": "Tell the driver where to go and pay at the end.",
+    "steps": [
+      { "partner_zh": "你好，去哪儿？", "partner_en": "Hi, where to?", "prompt_en": "Say you're going to the train station.",
+        "answers_zh": ["我去火车站。", "去火车站，谢谢。"], "answers_en": ["I'm going to the train station.", "The train station, thanks."] },
+      { "partner_zh": "好。你是哪国人？", "partner_en": "OK. Where are you from?", "prompt_en": "Say you're British.",
+        "answers_zh": ["我是英国人。", "英国人。"], "answers_en": ["I'm British.", "British."] },
+      { "partner_zh": "你的汉语很好！学了多长时间？", "partner_en": "Your Chinese is good! How long have you studied?", "prompt_en": "Say thank you, and that you've studied for one year.",
+        "answers_zh": ["谢谢！我学了一年。", "谢谢，一年了。"], "answers_en": ["Thanks! I've studied for a year.", "Thanks, a year now."] },
+      { "partner_zh": "到了。三十五块。", "partner_en": "We're here. Thirty-five kuai.", "prompt_en": "Say here you go, and thank the driver.",
+        "answers_zh": ["给你。谢谢！", "好的，给你钱。谢谢你！"], "answers_en": ["Here you go. Thanks!", "OK, here's the money. Thank you!"] }
+    ],
+    "closing_zh": "不客气，再见！", "closing_en": "You're welcome, bye!"
+  },
+  {
+    "id": "L1-m-fruit", "level": 1, "title": "Buying fruit", "role": "卖水果的",
+    "goal": "Buy some apples and haggle a little.",
+    "steps": [
+      { "partner_zh": "你好！要买什么？", "partner_en": "Hello! What would you like?", "prompt_en": "Ask how much the apples are.",
+        "answers_zh": ["苹果多少钱？", "苹果多少钱一斤？"], "answers_en": ["How much are the apples?", "How much are the apples per jin?"] },
+      { "partner_zh": "十块一斤。", "partner_en": "Ten kuai a jin.", "prompt_en": "Say it's too expensive.",
+        "answers_zh": ["太贵了！", "太贵了，便宜一点儿吧。"], "answers_en": ["Too expensive!", "Too expensive, make it a bit cheaper."] },
+      { "partner_zh": "那八块吧。要几斤？", "partner_en": "Eight then. How many jin?", "prompt_en": "Say you want two jin.",
+        "answers_zh": ["我要两斤。", "两斤，谢谢。"], "answers_en": ["I'd like two jin.", "Two jin, thanks."] },
+      { "partner_zh": "好的，十六块。还要别的吗？", "partner_en": "OK, sixteen kuai. Anything else?", "prompt_en": "Say no thanks, that's all.",
+        "answers_zh": ["不要了，谢谢。", "就这些。"], "answers_en": ["Nothing else, thanks.", "That's all."] }
+    ],
+    "closing_zh": "好，慢走！", "closing_en": "OK, take care!"
+  },
+  {
+    "id": "L1-m-newfriend", "level": 1, "title": "Meeting a classmate", "role": "新同学",
+    "goal": "Introduce yourself to a new classmate.",
+    "steps": [
+      { "partner_zh": "你好！我叫小明。你叫什么名字？", "partner_en": "Hi! I'm Xiao Ming. What's your name?", "prompt_en": "Say hello and tell him your name.",
+        "answers_zh": ["你好！我叫约翰。", "你好，我的名字是约翰。"], "answers_en": ["Hi! I'm John.", "Hi, my name is John."] },
+      { "partner_zh": "你是学生吗？", "partner_en": "Are you a student?", "prompt_en": "Say yes, you study accounting.",
+        "answers_zh": ["是，我学习会计。", "是的，我是学会计的。"], "answers_en": ["Yes, I study accounting.", "Yes, I'm an accounting student."] },
+      { "partner_zh": "你喜欢做什么？", "partner_en": "What do you like doing?", "prompt_en": "Say you like watching football.",
+        "answers_zh": ["我喜欢看足球。", "我很喜欢看足球比赛。"], "answers_en": ["I like watching football.", "I really like watching football matches."] },
+      { "partner_zh": "我也喜欢！星期六一起看吧？", "partner_en": "Me too! Shall we watch together on Saturday?", "prompt_en": "Say great, see you Saturday.",
+        "answers_zh": ["好啊！星期六见。", "太好了，星期六见！"], "answers_en": ["Sure! See you Saturday.", "Great, see you Saturday!"] }
+    ],
+    "closing_zh": "好，星期六见！", "closing_en": "OK, see you Saturday!"
+  },
+  {
+    "id": "L1-m-coffee", "level": 1, "title": "At a café", "role": "服务员",
+    "goal": "Order a coffee to take away.",
+    "steps": [
+      { "partner_zh": "你好，喝点儿什么？", "partner_en": "Hi, what would you like to drink?", "prompt_en": "Ask for a hot coffee.",
+        "answers_zh": ["我要一杯热咖啡。", "一杯热咖啡，谢谢。"], "answers_en": ["I'd like a hot coffee.", "A hot coffee, thanks."] },
+      { "partner_zh": "大杯还是小杯？", "partner_en": "Large or small?", "prompt_en": "Say large.",
+        "answers_zh": ["大杯。", "大杯的，谢谢。"], "answers_en": ["Large.", "A large one, thanks."] },
+      { "partner_zh": "在这儿喝还是带走？", "partner_en": "Drink here or take away?", "prompt_en": "Say take away.",
+        "answers_zh": ["带走。", "打包带走。"], "answers_en": ["Take away.", "To take away."] },
+      { "partner_zh": "好的，二十五块。", "partner_en": "OK, twenty-five kuai.", "prompt_en": "Say here you go.",
+        "answers_zh": ["给你。", "好，给你。"], "answers_en": ["Here you go.", "OK, here you are."] }
+    ],
+    "closing_zh": "请等一下，马上好。", "closing_en": "Please wait a moment, it'll be right up."
+  },
+  {
+    "id": "L1-m-directions", "level": 1, "title": "Asking the way", "role": "路人",
+    "goal": "Find out where the metro station is.",
+    "steps": [
+      { "partner_zh": "你好，有什么事吗？", "partner_en": "Hi, can I help?", "prompt_en": "Ask where the metro station is.",
+        "answers_zh": ["请问，地铁站在哪儿？", "你好，地铁站在哪儿？"], "answers_en": ["Excuse me, where's the metro station?", "Hi, where's the metro station?"] },
+      { "partner_zh": "在前面，你往前走。", "partner_en": "It's ahead. Walk straight on.", "prompt_en": "Ask if it's far.",
+        "answers_zh": ["远吗？", "离这儿远不远？"], "answers_en": ["Is it far?", "Is it far from here?"] },
+      { "partner_zh": "不远，走五分钟就到了。", "partner_en": "Not far, five minutes' walk.", "prompt_en": "Say thank you very much.",
+        "answers_zh": ["谢谢你！", "太谢谢了！"], "answers_en": ["Thank you!", "Thanks so much!"] }
+    ],
+    "closing_zh": "不客气！", "closing_en": "You're welcome!"
+  },
+  {
+    "id": "L1-m-clothes", "level": 1, "title": "Buying a jacket", "role": "店员",
+    "goal": "Try on a jacket and buy it.",
+    "steps": [
+      { "partner_zh": "欢迎光临！你想买什么？", "partner_en": "Welcome! What are you looking for?", "prompt_en": "Say you want to look at that black jacket.",
+        "answers_zh": ["我想看看那件黑色的衣服。", "我要看那件黑的。"], "answers_en": ["I'd like to look at that black jacket.", "I want to see that black one."] },
+      { "partner_zh": "这件吗？你可以试试。", "partner_en": "This one? You can try it on.", "prompt_en": "Say it's a bit big, and ask for a smaller one.",
+        "answers_zh": ["有点儿大。有小的吗？", "太大了，有小一点儿的吗？"], "answers_en": ["It's a bit big. Is there a smaller one?", "Too big. Is there a smaller one?"] },
+      { "partner_zh": "有，你看这件。", "partner_en": "Yes, try this one.", "prompt_en": "Say this one is good, you want it.",
+        "answers_zh": ["这件很好，我要这个。", "好看！我要这件。"], "answers_en": ["This one's good, I'll take it.", "Looks great! I'll take this one."] },
+      { "partner_zh": "三百块。", "partner_en": "Three hundred kuai.", "prompt_en": "Ask if it can be cheaper.",
+        "answers_zh": ["可以便宜一点儿吗？", "太贵了，便宜点儿吧。"], "answers_en": ["Can it be a bit cheaper?", "Too expensive, cheaper please."] }
+    ],
+    "closing_zh": "好吧，两百八十块。", "closing_en": "Alright, two hundred and eighty."
+  },
+  {
+    "id": "L1-m-football", "level": 1, "title": "Football chat", "role": "朋友",
+    "goal": "Chat with a friend about last night's match.",
+    "steps": [
+      { "partner_zh": "你昨天看足球了吗？", "partner_en": "Did you watch the football yesterday?", "prompt_en": "Say yes, you watched it.",
+        "answers_zh": ["看了！", "看了，很好看。"], "answers_en": ["I did!", "Yes, it was great."] },
+      { "partner_zh": "你喜欢哪个球队？", "partner_en": "Which team do you like?", "prompt_en": "Say you like the red team.",
+        "answers_zh": ["我喜欢红色的球队。", "红队！"], "answers_en": ["I like the red team.", "The reds!"] },
+      { "partner_zh": "他们赢了吗？", "partner_en": "Did they win?", "prompt_en": "Say yes, they won two-one.",
+        "answers_zh": ["赢了，二比一。", "他们赢了，二比一！"], "answers_en": ["They won, two-one.", "They won, two-one!"] },
+      { "partner_zh": "太好了！下次我们一起看吧。", "partner_en": "Great! Let's watch together next time.", "prompt_en": "Agree and suggest your place.",
+        "answers_zh": ["好啊，来我家看吧。", "好！在我家看。"], "answers_en": ["Sure, come and watch at mine.", "OK! At my place."] }
+    ],
+    "closing_zh": "好，我带水果来！", "closing_en": "OK, I'll bring fruit!"
+  }
+]

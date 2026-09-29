@@ -21,9 +21,9 @@ export default function Library() {
     <>
       <header className="read-header">
         <h1>Read</h1>
-        <a href="#read/new" className="btn btn-primary link-btn">New story</a>
+        <a href="#read/new" className="btn btn-primary link-btn">More stories</a>
       </header>
-      {stories.length === 0 && <p className="muted">No stories yet. Write your first one.</p>}
+      {stories.length === 0 && <p className="muted">No stories yet. Tap More stories to pick one.</p>}
       <ul className="story-list">
         {stories.map((s) => (
           <li key={s.id}>
