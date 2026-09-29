@@ -1,144 +1,157 @@
 {
-  "date": "2026-09-28",
+  "date": "2026-09-29",
   "level": 1,
   "plan": {
-    "focus_en": "Third tones (low, then rising) and ordering things politely.",
+    "focus_en": "了 for things that already happened, and asking where and when (哪儿, 几点).",
     "items": [
       { "kind": "cards", "title_en": "Say your cards (10 cards)" },
       { "kind": "dojo", "title_en": "Tone Dojo (5 minutes)" },
-      { "kind": "story", "title_en": "Read and read aloud: 周末看足球", "ref": "2026-09-28-s1" },
-      { "kind": "mission", "title_en": "Guided mission: at a restaurant", "ref": "2026-09-28-m1" }
+      { "kind": "story", "title_en": "Read and read aloud: 去北京旅游", "ref": "2026-09-29-s2" },
+      { "kind": "mission", "title_en": "Guided mission: taking a taxi to the airport", "ref": "2026-09-29-m1" }
     ]
   },
   "stories": [
     {
-      "id": "2026-09-28-s1",
+      "id": "2026-09-29-s1",
       "level": 1,
-      "topic": "football",
-      "title_zh": "周末看足球",
-      "title_en": "Watching football at the weekend",
+      "topic": "anime",
+      "title_zh": "我喜欢看动漫",
+      "title_en": "I like watching anime",
       "paragraphs": [
-        ["周末", "我", "和", "朋友", "去", "看", "足球", "比赛", "。", "我们", "都", "很", "喜欢", "曼联", "。"],
-        ["比赛", "很", "好看", "。", "曼联", "进", "了", "两", "个", "球", "！", "我们", "都", "很", "高兴", "。"],
-        ["比赛", "以后", "，", "我们", "去", "饭馆", "吃饭", "。", "朋友", "说", "：", "“", "下", "个", "周末", "我们", "再", "来", "吧", "！", "”"]
+        ["我", "很", "喜欢", "看", "动漫", "。", "晚上", "，", "我", "在", "房间", "里", "用", "手机", "看", "。"],
+        ["我", "最", "喜欢", "《", "海贼王", "》", "。", "它", "是", "日本", "的", "动漫", "，", "很", "有意思", "。"],
+        ["但是", "，", "我", "听不懂", "日语", "。", "所以", "我", "正在", "学", "日语", "。"],
+        ["以后", "，", "我", "想", "去", "日本", "旅游", "。", "我", "想", "去", "东京", "玩", "！"]
       ],
       "translations": [
-        "At the weekend my friends and I went to watch a football match. We all really like Manchester United.",
-        "The match was great. Man United scored two goals! We were all really happy.",
-        "After the match, we went to a restaurant to eat. My friend said: “Let’s come again next weekend!”"
+        "I really like watching anime. In the evening I watch it on my phone in my room.",
+        "My favourite is One Piece. It's a Japanese anime, and it's really fun.",
+        "But I can't understand Japanese. So I'm learning Japanese.",
+        "In the future I want to travel to Japan. I want to go to Tokyo and have fun!"
       ],
-      "names": ["曼联"],
-      "new_words": ["进", "饭馆"],
+      "names": ["海贼王", "东京"],
+      "new_words": ["动漫", "日语", "听不懂"],
       "glossary": [
-        { "word": "曼联", "english": "Manchester United" },
-        { "word": "进", "english": "to score (a goal); to enter" },
-        { "word": "饭馆", "english": "restaurant" }
+        { "word": "动漫", "english": "anime; animation and comics" },
+        { "word": "日语", "english": "Japanese (language)" },
+        { "word": "听不懂", "english": "can't understand (by listening)" },
+        { "word": "海贼王", "english": "One Piece (anime)" },
+        { "word": "东京", "english": "Tokyo" }
       ]
     },
     {
-      "id": "2026-09-28-s2",
+      "id": "2026-09-29-s2",
       "level": 1,
-      "topic": "archive fashion",
-      "title_zh": "我的新外套",
-      "title_en": "My new jacket",
+      "topic": "travel",
+      "title_zh": "去北京旅游",
+      "title_en": "A trip to Beijing",
       "paragraphs": [
-        ["我", "在", "闲鱼", "上", "看到", "一", "件", "外套", "。", "这", "件", "外套", "是", "黑色", "的", "，", "很", "好看", "。"],
-        ["卖家", "说", "：", "“", "八百", "块", "。", "”", "我", "说", "：", "“", "太", "贵", "了", "！", "六百", "块", "可以", "吗", "？", "”"],
-        ["卖家", "想", "了", "想", "，", "说", "：", "“", "好", "吧", "。", "”", "我", "很", "高兴", "！"]
+        ["上", "个", "月", "，", "我", "和", "姐姐", "去", "北京", "旅游", "了", "。"],
+        ["我们", "坐", "飞机", "去", "。", "飞机", "很", "快", "，", "但是", "票", "很", "贵", "。"],
+        ["北京", "很", "大", "，", "也", "很", "热", "。", "我们", "走", "了", "很", "多", "路", "，", "很", "累", "。"],
+        ["晚上", "，", "我们", "去", "饭馆", "吃", "烤鸭", "。", "烤鸭", "非常", "好吃", "！"],
+        ["我", "觉得", "北京", "很", "有意思", "。", "以后", "我", "还", "想", "再", "去", "！"]
       ],
       "translations": [
-        "I saw a jacket on Xianyu. The jacket is black and looks really good.",
-        "The seller said: “800 yuan.” I said: “Too expensive! Is 600 OK?”",
-        "The seller thought for a moment and said: “Alright.” I was really happy!"
+        "Last month my older sister and I went on a trip to Beijing.",
+        "We went by plane. The plane was fast, but the tickets were expensive.",
+        "Beijing is big, and it was hot too. We walked a lot and were very tired.",
+        "In the evening we went to a restaurant to eat roast duck. The roast duck was delicious!",
+        "I think Beijing is really interesting. I want to go again one day!"
       ],
-      "names": ["闲鱼"],
-      "new_words": ["外套", "黑色", "卖家"],
+      "names": ["北京"],
+      "new_words": ["烤鸭"],
       "glossary": [
-        { "word": "闲鱼", "english": "Xianyu (second-hand marketplace app)" },
-        { "word": "外套", "english": "jacket; coat" },
-        { "word": "黑色", "english": "black" },
-        { "word": "卖家", "english": "seller" }
+        { "word": "烤鸭", "english": "roast duck" },
+        { "word": "北京", "english": "Beijing" }
       ]
     }
   ],
   "missions": [
     {
-      "id": "2026-09-28-m1",
+      "id": "2026-09-29-m1",
       "level": 1,
-      "title": "At a restaurant",
-      "role": "服务员",
-      "goal": "Say how many people, order food and a drink, then ask for the bill.",
+      "title": "Taking a taxi to the airport",
+      "role": "司机",
+      "goal": "Say where you're going and when your flight is, ask the driver to hurry, then pay.",
       "steps": [
         {
-          "partner_zh": "您好！请问几位？",
-          "partner_en": "Hello! How many people?",
-          "prompt_en": "Say it's just you.",
-          "answers_zh": ["一位。", "一个人。", "就我一个人。"],
-          "answers_en": ["Just one.", "One person.", "Just me."]
+          "partner_zh": "你好，去哪儿？",
+          "partner_en": "Hi, where to?",
+          "prompt_en": "Say you're going to the airport.",
+          "answers_zh": ["我要去机场。", "去机场。", "请去机场，谢谢。"],
+          "answers_en": ["I'm going to the airport.", "The airport.", "To the airport, please. Thanks."]
         },
         {
-          "partner_zh": "好的，请坐。您想吃什么？",
-          "partner_en": "OK, please sit down. What would you like to eat?",
-          "prompt_en": "Order dumplings.",
-          "answers_zh": ["我要饺子。", "我想吃饺子。", "请给我饺子。"],
-          "answers_en": ["I want dumplings.", "I'd like to eat dumplings.", "Dumplings for me, please."]
+          "partner_zh": "好的。你几点的飞机？",
+          "partner_en": "OK. What time is your flight?",
+          "prompt_en": "Say your flight is at 3 pm.",
+          "answers_zh": ["下午三点。", "下午三点的飞机。"],
+          "answers_en": ["3 pm.", "My flight is at 3 pm."]
         },
         {
-          "partner_zh": "好的。喝点什么？",
-          "partner_en": "Sure. Anything to drink?",
-          "prompt_en": "Ask for a bottle of cola.",
-          "answers_zh": ["我要一瓶可乐。", "来一瓶可乐。", "一瓶可乐，谢谢。"],
-          "answers_en": ["I want a bottle of cola.", "A bottle of cola, please.", "A bottle of cola, thanks."]
+          "partner_zh": "现在路上车很多，要一个小时。",
+          "partner_en": "There's a lot of traffic now. It'll take an hour.",
+          "prompt_en": "Ask the driver to go a bit faster.",
+          "answers_zh": ["请快一点儿。", "能快一点儿吗？", "可以快一点儿吗？"],
+          "answers_en": ["A bit faster, please.", "Could you go a bit faster?", "Can you go a little faster?"]
         },
         {
-          "partner_zh": "好的，请稍等。",
-          "partner_en": "OK, one moment please.",
-          "prompt_en": "(After eating) Ask for the bill.",
-          "answers_zh": ["服务员，买单！", "我要买单。", "请买单。"],
-          "answers_en": ["Waiter, the bill please!", "I'd like to pay.", "The bill, please."]
+          "partner_zh": "到了。一共一百二十块。",
+          "partner_en": "We're here. That's 120 yuan altogether.",
+          "prompt_en": "Say thanks and that you'll pay with your phone.",
+          "answers_zh": ["谢谢，我用手机付。", "好的，我用手机付钱。"],
+          "answers_en": ["Thanks, I'll pay with my phone.", "OK, I'll pay by phone."]
         }
       ],
-      "closing_zh": "一共四十五块。谢谢光临！",
-      "closing_en": "That's 45 yuan altogether. Thanks for coming!"
+      "closing_zh": "好的，收到了。慢走！",
+      "closing_en": "OK, got it. Take care!"
     },
     {
-      "id": "2026-09-28-m2",
+      "id": "2026-09-29-m2",
       "level": 1,
-      "title": "Buying a jacket on Xianyu",
-      "role": "卖家",
-      "goal": "Ask the size and the price, bargain a little, and agree to buy.",
+      "title": "Checking in at a hotel",
+      "role": "前台",
+      "goal": "Check in, confirm how many nights, and ask about breakfast and the lift.",
       "steps": [
         {
-          "partner_zh": "你好，这件外套还在。",
-          "partner_en": "Hi, this jacket is still available.",
-          "prompt_en": "Ask what size it is.",
-          "answers_zh": ["这件外套多大？", "是多大号的？", "什么尺码？"],
-          "answers_en": ["What size is this jacket?", "What size is it?", "What size?"]
+          "partner_zh": "您好，欢迎光临！请问有预订吗？",
+          "partner_en": "Hello, welcome! Do you have a booking?",
+          "prompt_en": "Say yes, you booked a room.",
+          "answers_zh": ["有，我订了一个房间。", "有的，我订了房间。"],
+          "answers_en": ["Yes, I booked a room.", "Yes, I booked a room."]
         },
         {
-          "partner_zh": "四十六码，九成新。",
-          "partner_en": "Size 46, 90% new.",
-          "prompt_en": "Ask how much it is.",
-          "answers_zh": ["多少钱？", "这件多少钱？", "你要多少钱？"],
-          "answers_en": ["How much?", "How much is this one?", "How much do you want for it?"]
+          "partner_zh": "请给我看一下您的护照。",
+          "partner_en": "Please let me see your passport.",
+          "prompt_en": "Say sure, here you are.",
+          "answers_zh": ["好的，给你。", "好，在这里。"],
+          "answers_en": ["Sure, here you are.", "OK, here it is."]
         },
         {
-          "partner_zh": "一千八。",
-          "partner_en": "1800 yuan.",
-          "prompt_en": "Say it's too expensive and offer 1500.",
-          "answers_zh": ["太贵了，一千五可以吗？", "有点贵，一千五行吗？", "一千五卖吗？"],
-          "answers_en": ["Too expensive. Is 1500 OK?", "It's a bit pricey. Would 1500 work?", "Will you sell it for 1500?"]
+          "partner_zh": "您住三个晚上，对吗？",
+          "partner_en": "You're staying three nights, right?",
+          "prompt_en": "Say yes, three nights.",
+          "answers_zh": ["对，三个晚上。", "是的，住三个晚上。"],
+          "answers_en": ["Yes, three nights.", "That's right, three nights."]
         },
         {
-          "partner_zh": "一千六吧，包邮。",
-          "partner_en": "1600 then, with free shipping.",
-          "prompt_en": "Agree and say you'll take it.",
-          "answers_zh": ["好的，我买了。", "好，我要了。", "行，就这么定了。"],
-          "answers_en": ["OK, I'll buy it.", "OK, I'll take it.", "Fine, it's a deal."]
+          "partner_zh": "这是您的房卡。房间在八楼。",
+          "partner_en": "Here's your key card. Your room is on the 8th floor.",
+          "prompt_en": "Ask what time breakfast is.",
+          "answers_zh": ["早饭几点？", "请问，早饭是几点？"],
+          "answers_en": ["What time is breakfast?", "Excuse me, what time is breakfast?"]
+        },
+        {
+          "partner_zh": "早饭七点到十点，在二楼。",
+          "partner_en": "Breakfast is from 7 to 10, on the 2nd floor.",
+          "prompt_en": "Ask where the lift is.",
+          "answers_zh": ["电梯在哪儿？", "请问，电梯在哪里？"],
+          "answers_en": ["Where's the lift?", "Excuse me, where is the lift?"]
         }
       ],
-      "closing_zh": "好的，我现在给你发货。",
-      "closing_en": "OK, I'll send it to you now."
+      "closing_zh": "电梯在左边。祝您住得愉快！",
+      "closing_en": "The lift is on the left. Enjoy your stay!"
     }
   ]
 }
