@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import { addTestCard, cachedMeta, fetchMeta, queuedCount, sync, type SyncMeta } from '../services/anki.ts'
 import { exportNewCards, importAnkiFile, newCards } from '../services/ankiFile.ts'
+import { daysUntil, rateCard, type IntervalScale, type Rating } from '../cards/srs.ts'
+import { buttonColours, intervalScale, setButtonColours, setIntervalScale, type ButtonColours } from '../services/cards.ts'
 import { MASTERIES } from '../services/anki-mapping.ts'
 import { currentUser, isConfigured, signIn, signOut } from '../services/firebase.ts'
 import { getKeys, setKeys, type Keys } from '../services/keys.ts'
@@ -30,6 +32,7 @@ export default function Settings() {
       <Voice />
       <Voices />
       <Notifications />
+      <Flashcards />
       <MyLevel />
       <Appearance />
       <AnkiPhone />
@@ -434,6 +437,53 @@ function Voice() {
           An Azure key switches to natural neural voices.
         </p>
       )}
+    </section>
+  )
+}
+
+const SCALES = [0.5, 0.75, 1, 1.5, 2, 3]
+const BUTTONS: { key: keyof IntervalScale; label: string; rating: Rating }[] = [
+  { key: 'hard', label: 'Hard', rating: 2 },
+  { key: 'good', label: 'Good', rating: 3 },
+  { key: 'easy', label: 'Easy', rating: 4 },
+]
+
+/** Card intervals (Anki-style modifiers on top of FSRS) and the rating buttons' colours. */
+function Flashcards() {
+  const [scale, setScale] = useState<IntervalScale>(intervalScale)
+  const [colours, setColours] = useState<ButtonColours>(buttonColours)
+  const choose = (key: keyof IntervalScale, value: number) => {
+    const next = { ...scale, [key]: value }
+    setScale(next)
+    setIntervalScale(next)
+  }
+  // What a brand-new card would get with these settings.
+  const preview = BUTTONS.map(({ label, rating }) => `${label} ${daysUntil(rateCard(undefined, rating, 0, null, scale), 0)}d`).join(' · ')
+  return (
+    <section className="card">
+      <h2 className="card-title">Flashcards</h2>
+      <p className="muted small">Stretch or shrink the gap each button gives. 1× is the standard schedule.</p>
+      {BUTTONS.map(({ key, label, rating }) => (
+        <fieldset key={key} className="choice">
+          <legend><span className={`rate-dot rate-${rating}`} aria-hidden="true" /> {label}</legend>
+          <div className="chips">
+            {SCALES.map((v) => (
+              <button key={v} type="button" className="chip" aria-pressed={scale[key] === v} onClick={() => choose(key, v)}>{v}×</button>
+            ))}
+          </div>
+        </fieldset>
+      ))}
+      <p className="muted small">A new card: {preview}. Again always comes back in the same session.</p>
+      <fieldset className="choice">
+        <legend>Button colours</legend>
+        <div className="chips">
+          {(['colour', 'plain'] as const).map((c) => (
+            <button key={c} type="button" className="chip" aria-pressed={colours === c} onClick={() => { setColours(c); setButtonColours(c) }}>
+              {c === 'colour' ? 'Colour' : 'Plain'}
+            </button>
+          ))}
+        </div>
+      </fieldset>
     </section>
   )
 }

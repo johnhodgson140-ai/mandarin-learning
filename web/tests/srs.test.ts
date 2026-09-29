@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
-import { mergeCards, nextState, pickRecallSession, pickSession, rateCard, ratingFor, retrievability, RETENTION, type Card } from '../src/cards/srs.ts'
+import { mergeCards, nextState, pickRecallSession, pickSession, rateCard, shuffleRest, ratingFor, retrievability, RETENTION, type Card } from '../src/cards/srs.ts'
 
 const DAY = 24 * 60 * 60 * 1000
 const now = 1_000_000_000_000
@@ -71,4 +71,24 @@ test('Anki-style ratings: Again comes back now, Easy waits longest, and the rati
   assert.equal(good.lastRating, 3)
   assert.equal(good.lastScore, null)
   assert.equal(rateCard(undefined, 2, now, 72).lastScore, 72)
+})
+
+test('interval multipliers stretch Hard / Good / Easy, never below a day, and leave Again alone', () => {
+  const now = Date.UTC(2026, 8, 29)
+  const days = (s: { due: number }) => Math.round((s.due - now) / DAY)
+  const plain = rateCard(undefined, 3, now)
+  const doubled = rateCard(undefined, 3, now, null, { hard: 1, good: 2, easy: 1 })
+  assert.equal(days(doubled), Math.round(days(plain) * 2))
+  assert.equal(days(rateCard(undefined, 2, now, null, { hard: 0.5, good: 1, easy: 1 })), 1)
+  assert.equal(rateCard(undefined, 1, now, null, { hard: 3, good: 3, easy: 3 }).due, now)
+})
+
+test('shuffle only moves the cards not done yet, and keeps every card', () => {
+  const cards = ['a', 'b', 'c', 'd', 'e', 'f']
+  let seed = 0.42
+  const random = () => (seed = ((seed * 9301 + 49297) % 233280) / 233280)
+  const out = shuffleRest(cards, 2, random)
+  assert.deepEqual(out.slice(0, 2), ['a', 'b'])
+  assert.deepEqual([...out].sort(), cards)
+  assert.notDeepEqual(out, cards)
 })

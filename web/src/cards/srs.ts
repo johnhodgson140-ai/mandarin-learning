@@ -48,8 +48,18 @@ export function nextState(state: CardState | undefined, score: number, now = Dat
   return rateCard(state, ratingFor(score), now, score)
 }
 
+/** My own stretch or shrink of the interval each button gives (1 = FSRS as is), like Anki's interval modifiers. */
+export type IntervalScale = { hard: number; good: number; easy: number }
+export const DEFAULT_SCALE: IntervalScale = { hard: 1, good: 1, easy: 1 }
+
 /** Update a card with my own rating, Anki style (the speaking score, if any, is kept for stats). */
-export function rateCard(state: CardState | undefined, g: Rating, now = Date.now(), score: number | null = null): CardState {
+export function rateCard(
+  state: CardState | undefined,
+  g: Rating,
+  now = Date.now(),
+  score: number | null = null,
+  scale: IntervalScale = DEFAULT_SCALE,
+): CardState {
   const seen = (state?.seen ?? 0) + 1
   let stability: number
   let difficulty: number
@@ -73,7 +83,8 @@ export function rateCard(state: CardState | undefined, g: Rating, now = Date.now
         (Math.exp(W[8]) * (11 - d0) * s0 ** -W[9] * (Math.exp(W[10] * (1 - r)) - 1) * (g === 2 ? W[15] : 1) * (g === 4 ? W[16] : 1) + 1)
   }
   stability = Math.max(0.1, stability)
-  const due = g === 1 ? now : now + intervalDays(stability) * DAY
+  const factor = g === 2 ? scale.hard : g === 3 ? scale.good : scale.easy
+  const due = g === 1 ? now : now + Math.max(1, Math.round(intervalDays(stability) * factor)) * DAY
   return { due, lastScore: score, lastRating: g, seen, stability, difficulty, last: now }
 }
 
@@ -124,6 +135,16 @@ export function pickRecallSession(
     .sort((a, b) => recallNow(recall[a.hanzi], now) - recallNow(recall[b.hanzi], now) || recall[a.hanzi].due - recall[b.hanzi].due)
   const fresh = unlocked.filter((c) => !recall[c.hanzi]).slice(0, newPerSession)
   return [...due.slice(0, size - fresh.length), ...fresh].slice(0, size)
+}
+
+/** Shuffle the cards I haven't done yet in this session (Fisher–Yates); the ones already done stay put. */
+export function shuffleRest<T>(cards: T[], from: number, random = Math.random): T[] {
+  const rest = cards.slice(from)
+  for (let i = rest.length - 1; i > 0; i--) {
+    const j = Math.floor(random() * (i + 1))
+    ;[rest[i], rest[j]] = [rest[j], rest[i]]
+  }
+  return [...cards.slice(0, from), ...rest]
 }
 
 /** Merge card sources, first one wins for duplicates. */

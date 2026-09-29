@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import type { Recording } from '../../audio/recorder.ts'
-import { daysUntil, rateCard, ratingFor, type Card, type CardState, type Rating } from '../../cards/srs.ts'
+import { daysUntil, rateCard, ratingFor, shuffleRest, type Card, type CardState, type Rating } from '../../cards/srs.ts'
 import { tokensOfText } from '../../chinese/tokens.ts'
 import { hskLabel, loadHsk, type HskInfo } from '../../services/hsk.ts'
 import HoldToTalk from '../../components/HoldToTalk.tsx'
@@ -9,7 +9,7 @@ import ScoreView from '../../components/ScoreView.tsx'
 import { canRecognise } from '../../scoring/recognize.ts'
 import { scoreAndLog } from '../../scoring/attempt.ts'
 import type { SpeechScore } from '../../scoring/speechScore.ts'
-import { cardStates, dueCounts, keepSession, learnOrder, newSession, rateCardIn, resumeSession, type CardMode } from '../../services/cards.ts'
+import { buttonColours, cardStates, dueCounts, intervalScale, keepSession, learnOrder, newSession, rateCardIn, resumeSession, type CardMode } from '../../services/cards.ts'
 import { load, save } from '../../services/storage.ts'
 import { getProfile } from '../../services/tone.ts'
 import { rateForLevel, speak } from '../../services/tts.ts'
@@ -54,6 +54,7 @@ export default function Cards() {
     </div>
   )
   const hint = <p className="muted small">{MODES.find((m) => m.mode === mode)!.hint}</p>
+  const left = session.length - index
 
   if (index >= session.length) {
     const again = scores.filter((r) => r === 1).length
@@ -92,7 +93,14 @@ export default function Cards() {
         <a href="#speak" className="back-link">‹ Speak</a>
         {toggles}
       </header>
-      {hint}
+      <div className="cards-bar">
+        {hint}
+        {left > 1 && (
+          <button type="button" className="chip" onClick={() => update(shuffleRest(session, index), index, scores)} aria-label={`Shuffle the ${left} cards left`}>
+            Shuffle
+          </button>
+        )}
+      </div>
       {!canScore && (
         <p className="muted small">
           This browser has no speech recogniser: <a href="#speak/calibrate">calibrate your voice</a> so tones can still be scored.
@@ -148,6 +156,10 @@ function CardView({ card, mode, onNext }: { card: Card; mode: CardMode; onNext: 
   // Saying it before looking suggests a rating; I still choose.
   const suggested = score !== null ? ratingFor(score) : null
   const state = cardStates(mode)[card.hanzi]
+  const scale = intervalScale()
+  // When this card was shown: the button previews are worked out from then.
+  const [shownAt] = useState(Date.now)
+  const coloured = buttonColours() === 'colour'
 
   async function grade(rec: Recording) {
     setChecking(true)
@@ -200,16 +212,18 @@ function CardView({ card, mode, onNext }: { card: Card; mode: CardMode; onNext: 
       {revealed && !checking && (
         <section className="card fade-in">
           <p className="card-title">How well did you know it?</p>
+          {suggested && <p id="suggested-note" className="muted small">Filled in: what your score suggests.</p>}
           <div className="rate-row" role="group" aria-label="Rate this card">
             {RATINGS.map(({ rating, label }) => (
               <button
                 key={rating}
                 type="button"
-                className={`btn ${rating === suggested ? 'btn-primary' : 'btn-secondary'}`}
+                className={coloured ? `btn rate-btn rate-${rating}${rating === suggested ? ' suggested' : ''}` : `btn ${rating === suggested ? 'btn-primary' : 'btn-secondary'}`}
+                aria-describedby={rating === suggested ? 'suggested-note' : undefined}
                 onClick={() => onNext(rating, score)}
               >
                 {label}
-                <span className="rate-when">{whenText(rateCard(state, rating))}</span>
+                <span className="rate-when">{whenText(rateCard(state, rating, shownAt, null, scale), shownAt)}</span>
               </button>
             ))}
           </div>
@@ -229,8 +243,8 @@ function CardView({ card, mode, onNext }: { card: Card; mode: CardMode; onNext: 
 }
 
 /** When a card comes back after this rating, as Anki shows it on its buttons. */
-function whenText(next: CardState): string {
-  const days = daysUntil(next)
+function whenText(next: CardState, now: number): string {
+  const days = daysUntil(next, now)
   return days === 0 ? 'soon' : days < 30 ? `${days}d` : days < 365 ? `${Math.round(days / 30)}mo` : `${(days / 365).toFixed(1)}y`
 }
 
