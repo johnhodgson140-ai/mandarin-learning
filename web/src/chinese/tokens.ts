@@ -3,6 +3,8 @@
 
 import { pinyin } from 'pinyin-pro'
 import type { Mastery } from '../services/anki-mapping.ts'
+import FIXES from './pinyin-fixes.json' with { type: 'json' }
+import { contextReading } from './polyphones.ts'
 import { spokenTones, type SandhiSyllable } from './sandhi.ts'
 import { isHan, toneless, toneOf, type Tone } from './tones.ts'
 
@@ -105,14 +107,14 @@ export function buildParagraph(
 
   const tokens: Token[] = []
   let at = 0
-  for (const word of merged) {
+  for (const [index, word] of merged.entries()) {
     const wordChars = [...word]
     const own = readings.slice(at, at + wordChars.length)
     at += wordChars.length
     const kind = kindOf(word, names)
     const entry = lexicon.get(word)
     const hanOnly = wordChars.every(isHan)
-    const pieces = (entry && hanOnly && alignPinyin(entry.pinyin, own)) || own
+    const pieces = hanOnly ? pinyinFor(word, wordChars.length, merged, index, entry?.pinyin, own) : own
     const syllables: Syllable[] = hanOnly
       ? wordChars.map((hanzi, i) => {
           const tone = toneOf(pieces[i])
@@ -129,6 +131,40 @@ export function buildParagraph(
   }
   applySandhi(tokens)
   return tokens
+}
+
+const DICTIONARY: Readonly<Record<string, string>> = FIXES
+
+/** Words where 儿 is a real syllable (daughter, baby…); anywhere else at the end of a word it's the erhua r (点儿). */
+const ER_SYLLABLE = /^儿|[女婴幼孤健男胎少宠混生]儿$/
+
+/** Words where a final 子 keeps its full tone (君子, 女子, 电子); anywhere else it's the neutral suffix (扣子 kòu zi). */
+const ZI_FULL = /(君|孔|老|孟|庄|墨|荀|男|女|电|原|分|因|瓜|莲|棋|弟|天|太|王|公|游|赤|学|才|孝|夫|骄|精|卵|离|质|中|量|粒|孢|臣|士)子$/
+
+/** Word-final 儿 and 子 as suffixes: 点儿 diǎn r, 袖子 xiù zi. */
+function erhua(word: string, pieces: string[]): string[] {
+  if (word.length < 2) return pieces
+  if (word.endsWith('儿') && !ER_SYLLABLE.test(word)) return [...pieces.slice(0, -1), 'r']
+  if (word.endsWith('子') && pieces.at(-1) === 'zǐ' && !ZI_FULL.test(word)) return [...pieces.slice(0, -1), 'zi']
+  return pieces
+}
+
+/**
+ * Written pinyin for one word, best source first: the context rule for a one-character word (踢得 de), the dictionary
+ * where pinyin-pro is wrong (朋友 péng you), my Anki pinyin, then pinyin-pro. 一 and 不 are written yī / bù (or neutral):
+ * the tone changes are worked out by the sandhi rules.
+ */
+function pinyinFor(word: string, length: number, words: readonly string[], index: number, anki: string | undefined, own: string[]): string[] {
+  const context = length === 1 ? contextReading(words, index) : null
+  const fixed = DICTIONARY[word]?.split(' ')
+  // A whole word is read on its own (as a dictionary would), not from the sentence around it: pinyin-pro's
+  // sentence mode sometimes drops neutral tones it gets right for the word alone (孩子 hái zi).
+  const alone = length > 1 ? (pinyin(word, { type: 'array', toneSandhi: false }) as string[]) : own
+  const base = alone.length === length ? erhua(word, alone) : own
+  const pieces = (context && [context]) || (fixed?.length === length && fixed) || (anki && alignPinyin(anki, base)) || base
+  // Undo sandhi already written in (Anki's yíyàng, búkèqi); neutral 不 (对不起 duì bu qǐ) stays as it is.
+  const chars = [...word]
+  return pieces.map((p, i) => (chars[i] === '一' && (p === 'yí' || p === 'yì') ? 'yī' : chars[i] === '不' && p === 'bú' ? 'bù' : p))
 }
 
 /** Spoken tones per phrase; anything that isn't Chinese characters (punctuation, digits) ends a phrase. */
@@ -164,4 +200,12 @@ export function knownRatio(tokens: Iterable<Token>): { known: number; total: num
     if (t.mastery === 'young' || t.mastery === 'mature') known++
   }
   return { known, total, ratio: total === 0 ? 1 : known / total }
+}
+
+const wordSplitter = new Intl.Segmenter('zh', { granularity: 'word' })
+
+/** Pinyin for each Chinese character of free text (e.g. what the recogniser heard), read the same way as stories. */
+export function pinyinOfText(text: string): string[] {
+  const words = [...wordSplitter.segment(text)].map((s) => s.segment)
+  return buildParagraph(words, new Map()).flatMap((t) => t.syllables.map((s) => s.pinyin))
 }

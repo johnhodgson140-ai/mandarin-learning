@@ -83,3 +83,50 @@ test('known ratio skips punctuation, numbers and names', () => {
 test('toneless strips tone marks and separators', () => {
   assert.equal(toneless("Xī'ān lǜ"), 'xianlü')
 })
+
+/** Written pinyin for a sentence split into words, with no Anki words. */
+const written = (words: string[]) =>
+  buildParagraph(words, new Map())
+    .flatMap((t) => t.syllables.map((s) => s.pinyin))
+    .join(' ')
+
+test('dictionary pinyin where pinyin-pro is wrong: neutral tones and misreadings', () => {
+  assert.equal(written(['裤子']), 'kù zi')
+  assert.equal(written(['朋友']), 'péng you')
+  assert.equal(written(['东西']), 'dōng xi')
+  assert.equal(written(['一点儿']), 'yī diǎn r')
+  assert.equal(written(['只不过']), 'zhǐ bu guò')
+  assert.equal(written(['局长']), 'jú zhǎng')
+})
+
+test('one-character words read from their neighbours', () => {
+  assert.equal(written(['他', '踢', '得', '很', '好']), 'tā tī de hěn hǎo')
+  assert.equal(written(['我', '得', '走', '了']).split(' ')[1] === 'de', false)
+  assert.equal(written(['慢慢', '地', '走']), 'màn màn de zǒu')
+  assert.equal(written(['一', '块', '地', '。']).split(' ')[2], 'dì')
+  assert.equal(written(['他', '拿', '着', '手机']), 'tā ná zhe shǒu jī')
+  assert.equal(written(['睡', '不', '着']), 'shuì bù zháo')
+  assert.equal(written(['我', '只', '穿', '过']).split(' ')[1], 'zhǐ')
+  assert.equal(written(['一', '只', '猫']).split(' ')[1], 'zhī')
+  assert.equal(written(['教', '她']).split(' ')[0], 'jiāo')
+  assert.equal(written(['排', '长', '队']).split(' ')[1], 'cháng')
+  assert.equal(written(['他', '长', '得', '很', '高']), 'tā zhǎng de hěn gāo')
+})
+
+test('一 and 不 are written with their own tones; sandhi changes the spoken tone', () => {
+  const anki: Lexicon = new Map([['一样', { pinyin: 'yíyàng', english: 'the same', mastery: 'young' }]])
+  const [token] = buildParagraph(['一样'], anki)
+  assert.deepEqual(token.syllables.map((s) => [s.pinyin, s.spoken]), [['yī', 2], ['yàng', 4]])
+})
+
+test('word-final 儿 and 子 are suffixes unless they are real syllables', () => {
+  assert.equal(written(['袖子']), 'xiù zi')
+  assert.equal(written(['女子']), 'nǚ zǐ')
+  assert.equal(written(['有', '点儿']).split(' ').at(-1), 'r')
+  assert.equal(written(['女儿']), 'nǚ ér')
+})
+
+test('为 is wéi only for "as / into"', () => {
+  assert.equal(written(['转化', '为', '衣服']).split(' ')[2], 'wéi')
+  assert.equal(written(['钱', '可以', '为', '足球', '服务']).split(' ')[3], 'wèi')
+})
