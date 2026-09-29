@@ -7,6 +7,7 @@ import App from './App.tsx'
 import { startLogging } from './debug/log.ts'
 import { pruneRecordings } from './services/attempts.ts'
 import { loadDaily } from './services/daily.ts'
+import { isNativeApp } from './native/app.ts'
 import { loadDeck } from './services/words.ts'
 import { applyTheme } from './services/theme.ts'
 
@@ -38,5 +39,11 @@ void navigator.storage?.persist?.().catch(() => false)
 pruneRecordings().catch(() => {})
 // Today's stories and missions, whichever screen the app opens on.
 void loadDaily()
+// iOS app: keep notifications current (cards due, streak) and open the right screen when one is tapped.
+if (isNativeApp())
+  void import('./native/notifications.ts').then((n) => {
+    n.listenForNotificationTaps()
+    void n.refreshNotifications()
+  })
 // My exported Anki deck ships with the app (web/public/deck.json).
 void loadDeck()
