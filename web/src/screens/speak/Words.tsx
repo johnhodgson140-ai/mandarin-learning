@@ -62,7 +62,7 @@ export default function Words() {
       {words && words.length > 0 && (
         <div className="sheet-actions">
           <button type="button" className="btn btn-secondary" onClick={() => void moreWordsToday(5).then(setWords).then(refreshWidgets)}>
-            5 more new words
+            +5 more
           </button>
           <button type="button" className="btn btn-primary" onClick={start}>
             {words.every((w) => rated[w.hanzi]) ? 'Review cards' : 'Learn them'}

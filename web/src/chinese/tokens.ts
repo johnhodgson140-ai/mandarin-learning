@@ -196,6 +196,22 @@ function applySandhi(tokens: Token[]): void {
   flush()
 }
 
+/**
+ * Share of a story's words I've learned (rated in Learn), straight from its word split (no pinyin needed): for picking
+ * stories I can mostly read. Punctuation, numbers and names don't count.
+ */
+export function shareKnown(paragraphs: string[][], names: Iterable<string>, lexicon: Lexicon): number {
+  const skip = new Set(names)
+  let known = 0
+  let total = 0
+  for (const w of paragraphs.flat()) {
+    if (![...w].some(isHan) || skip.has(w) || CHINESE_NUMBER.test(w)) continue
+    total++
+    if (masteryOf(w, lexicon) !== 'unknown' && masteryOf(w, lexicon) !== 'new') known++
+  }
+  return total ? known / total : 0
+}
+
 /** Share of real words (not punctuation, numbers or names) that are known = young or mature in Anki. */
 export function knownRatio(tokens: Iterable<Token>): { known: number; total: number; ratio: number } {
   let known = 0

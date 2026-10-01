@@ -48,8 +48,10 @@ Long-press the lock screen → **Customize** → Lock Screen → tap the widget 
 screen: long-press → **+** → Shuō. iOS decides exactly when widgets refresh, so the time can lag by a minute now
 and then.
 
-**Today's words** (iOS 17+): a few new words each day from the built-in list (HSK 1 → 6, most common first; not
-tied to Anki), the same ones as Speak → Today's words and the notifications. On the lock screen it moves to the next word every 20 minutes. On the home screen it's a
+**Today's words** (iOS 17+): your new words for the day (Speak → Today's words), the same ones as the notifications.
+The app hands them to the widget through an App Group (`group.io.github.johnhodgson140.shuo.me`): if Xcode asks,
+tick **App Groups** with that group under Signing & Capabilities for both App and ShuoWidgets. Without it the widget
+still works, showing the built-in list by date. On the lock screen it moves to the next word every 20 minutes. On the home screen it's a
 quiz: the characters, **Show** for pinyin and meaning, **Next** for the next word. Long-press it → **Edit widget** to
 set words a day; use the same number as Settings → Notifications → Today's words. If you imported your own Anki export
 in Settings, the widget still reads the deck the app was built with.

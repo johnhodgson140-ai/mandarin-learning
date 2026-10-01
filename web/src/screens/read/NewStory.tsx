@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { shareKnown } from '../../chinese/tokens.ts'
 import type { PackStory } from '../../daily/schema.ts'
 import { go } from '../../hash.ts'
 import { getKeys } from '../../services/keys.ts'
@@ -31,6 +32,19 @@ export default function NewStory() {
   const exact = atLevel.filter((s) => s.topic === topic && s.length === length)
   // Nothing at exactly this topic + length: offer the rest of the level, this topic first.
   const nearby = exact.length ? [] : [...atLevel].sort((a, b) => Number(b.topic === topic) - Number(a.topic === topic))
+
+  // How much of each ready-made story I already know: the best to read are the ones I mostly know (about 90%+),
+  // so a few new words are clear from context. Worked out once per visit.
+  const [fit] = useState(() => new Map<string, number>())
+  const lexicon = getLexicon()
+  const known = (s: PackStory) => {
+    if (!fit.has(s.id)) fit.set(s.id, shareKnown(s.paragraphs, s.names, lexicon))
+    return fit.get(s.id)!
+  }
+  const best = (pack ?? [])
+    .filter((s) => !getStory(s.id)?.readAt)
+    .sort((a, b) => known(b) - known(a) || a.level - b.level)
+    .slice(0, 3)
 
   async function open(s: PackStory) {
     go(`read/${await addPackStory(s)}`)
@@ -88,6 +102,24 @@ export default function NewStory() {
         </div>
       </fieldset>
 
+      {best.length > 0 && known(best[0]) > 0 && (
+        <>
+          <h2 className="card-title">Best for you</h2>
+          <p className="muted small">The ready-made stories you know most of: easiest to read, a few new words each.</p>
+          <ul className="story-list">
+            {best.map((s) => (
+              <li key={s.id}>
+                <button type="button" className="story-row" onClick={() => void open(s)}>
+                  <span className="story-title-zh">{s.title_zh}</span>
+                  <span className="muted">{s.title_en}</span>
+                  <span className="story-meta">Level {s.level} · {s.topic} · {Math.round(known(s) * 100)}% known</span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+
       <h2 className="card-title">Ready-made</h2>
       {pack === null && <p className="muted small">Loading…</p>}
       {pack !== null && exact.length === 0 && (
@@ -102,7 +134,7 @@ export default function NewStory() {
               <span className="story-title-zh">{s.title_zh}</span>
               <span className="muted">{s.title_en}</span>
               <span className="story-meta">
-                Level {s.level} · {s.topic} · {LENGTHS[s.length].label.toLowerCase()}
+                Level {s.level} · {s.topic} · {LENGTHS[s.length].label.toLowerCase()} · {Math.round(known(s) * 100)}% known
                 {getStory(s.id)?.readAt && ' · read'}
               </span>
             </button>
@@ -113,7 +145,7 @@ export default function NewStory() {
       <h2 className="card-title">Write a new one</h2>
       {hasKey && !hasWords && (
         <p className="muted small">
-          Your word list hasn't loaded yet, so this story uses standard HSK vocabulary for the level.
+          You haven’t met any words yet, so this story uses the most common words for the level.
         </p>
       )}
       {!hasKey && (

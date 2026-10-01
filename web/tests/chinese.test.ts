@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import { spokenTones, type SandhiSyllable } from '../src/chinese/sandhi.ts'
-import { alignPinyin, buildParagraph, knownRatio, masteryOf, mergeWithLexicon, tokensOfText, withAppTones, type Lexicon } from '../src/chinese/tokens.ts'
+import { alignPinyin, buildParagraph, knownRatio, masteryOf, mergeWithLexicon, shareKnown, tokensOfText, withAppTones, type Lexicon } from '../src/chinese/tokens.ts'
 import { toneless } from '../src/chinese/tones.ts'
 
 /** Spoken tones for a sentence split into words, via the real pipeline. */
@@ -142,4 +142,15 @@ test('word-final 儿 and 子 are suffixes unless they are real syllables', () =>
 test('为 is wéi only for "as / into"', () => {
   assert.equal(written(['转化', '为', '衣服']).split(' ')[2], 'wéi')
   assert.equal(written(['钱', '可以', '为', '足球', '服务']).split(' ')[3], 'wèi')
+})
+
+test('shareKnown: words I have rated, compounds of them, names and punctuation left out', () => {
+  const lex: Lexicon = new Map([
+    ['我', { pinyin: 'wǒ', english: 'I', mastery: 'young' }],
+    ['喜欢', { pinyin: 'xǐhuan', english: 'like', mastery: 'learning' }],
+    ['足球', { pinyin: 'zúqiú', english: 'football', mastery: 'new' }],
+  ])
+  // 我 喜欢 足球 小明 。 → 2 of 3 (足球 not rated yet; 小明 is a name)
+  assert.equal(shareKnown([['我', '喜欢', '足球', '小明', '。']], ['小明'], lex), 2 / 3)
+  assert.equal(shareKnown([['。']], [], lex), 0)
 })
