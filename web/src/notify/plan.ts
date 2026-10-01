@@ -9,16 +9,18 @@ export const DEFAULT_NOTIFY: NotifySettings = {
   wordOfDay: { on: false, time: '09:00' },
   practice: { on: false, time: '19:00' },
   streak: { on: false, time: '20:30' },
-  dailyWords: { on: false, count: 5, from: '09:00', to: '21:00' },
+  dailyWords: { on: false, count: 8, from: '09:00', to: '21:00' },
 }
-export const DAILY_COUNTS = [3, 5, 8, 10]
+/** New words a day. 8 is a steady start; 20 is Anki's default, a lot when every card is said out loud. */
+export const DAILY_COUNTS = [5, 8, 10, 15, 20]
 
 export type Word = { hanzi: string; pinyin: string; english: string }
 export type Planned = { id: number; title: string; body: string; at: Date; route: string }
 
 const DAYS_AHEAD = 7
-/** Today's words are planned 3 days ahead (up to 11 a day): with the rest, under iOS's limit of 64 pending. */
+/** Today's words are planned 3 days ahead, at most 10 + a recap a day: with the rest, under iOS's limit of 64 pending. */
 export const DAILY_DAYS = 3
+const MAX_WORD_PINGS = 10
 /** Notification ids by kind. Today's words: 100 + day × 20 + word (recap at + 15). */
 export const IDS = { practice: 10, wordOfDay: 20, streak: 30, dailyWords: 100 }
 export const dailyWordIds = () => [...Array(DAILY_DAYS).keys()].flatMap((d) => [...Array(16).keys()].map((i) => IDS.dailyWords + d * 20 + i))
@@ -29,8 +31,8 @@ export const dayNumber = (date: Date) => Math.round(Date.UTC(date.getFullYear(),
 const DAILY_START = Date.UTC(2026, 9, 1) / 86_400_000
 
 /**
- * Today's words: the next `count` words of my deck in deck order, a new set each day, round and round the deck.
- * Mirrored in the widget (web/ios/App/ShuoWidgets/DeckWord.swift: DeckWord.daily): keep them in step.
+ * A date-based set of `count` words (the next ones each day, round the list): only the widget's fallback now, before
+ * the app has told it my real words (DeckWord.daily in web/ios/App/ShuoWidgets/DeckWord.swift mirrors this).
  */
 export function dailyWords<T>(date: Date, words: T[], count: number): T[] {
   const n = Math.min(count, words.length)
@@ -66,17 +68,18 @@ export function planNotifications(input: {
   dueCount: number
   practisedToday: boolean
   words: Word[]
-  /** My deck in deck order, for today's words (defaults to `words`). */
-  deckOrder?: Word[]
+  /** Today's words and the next days' (from services/curriculum.ts: comingDays), for today's words notifications. */
+  dailySets?: Word[][]
   toneTip: string | null
 }): Planned[] {
   const { now, settings, dueCount, practisedToday, words, toneTip } = input
-  const deckOrder = input.deckOrder ?? words
+  const dailySets = input.dailySets ?? []
   const out: Planned[] = []
   for (let d = 0; d < DAYS_AHEAD; d++) {
     if (settings.wordOfDay.on) {
       const when = at(now, settings.wordOfDay.time, d)
-      const word = wordFor(when, words)
+      // The word of the day is the first of that day's new words when I have them (else one from my words).
+      const word = dailySets[d]?.[0] ?? wordFor(when, words)
       if (word && when > now)
         out.push({
           id: IDS.wordOfDay + d,
@@ -100,15 +103,15 @@ export function planNotifications(input: {
     }
   }
   if (settings.dailyWords.on) {
-    const { count, from, to } = settings.dailyWords
-    // Spread the words evenly from `from`, leaving `to` for the recap.
+    const { from, to } = settings.dailyWords
     const start = minutes(from)
-    const end = Math.max(start + count, minutes(to))
-    const gap = (end - start) / count
     for (let d = 0; d < DAILY_DAYS; d++) {
-      const day = at(now, from, d)
-      const set = dailyWords(day, deckOrder, count)
-      set.forEach((word, i) => {
+      const set = dailySets[d] ?? []
+      // One notification per word (at most MAX_WORD_PINGS, spread evenly from `from`), then a recap of all at `to`.
+      const pinged = set.slice(0, MAX_WORD_PINGS)
+      const end = Math.max(start + pinged.length, minutes(to))
+      const gap = (end - start) / Math.max(1, pinged.length)
+      pinged.forEach((word, i) => {
         const when = at(now, clock(Math.round(start + i * gap)), d)
         if (when > now)
           out.push({
@@ -137,4 +140,28 @@ export function planNotifications(input: {
     out.push({ id: IDS.streak, title: 'Keep your streak 🔥', body: 'Two minutes of cards keeps it going.', at: when, route: '#speak/cards' })
   }
   return out
+}
+
+/**
+ * Today's new words: first words I met on an earlier day but haven't rated yet (a missed day waits for me), then the
+ * next words of the list I haven't met, `count` in all. Used by services/curriculum.ts (which saves the result).
+ */
+export function pickToday<W extends Word>(input: {
+  list: W[]
+  /** Words I've met, with the day I met them. */
+  met: Record<string, { day: number }>
+  /** Words I've rated in Learn. */
+  rated: Record<string, unknown>
+  day: number
+  count: number
+}): { carried: string[]; fresh: W[] } {
+  const { list, met, rated, day, count } = input
+  const carried = Object.entries(met)
+    .filter(([hanzi, w]) => w.day < day && !rated[hanzi])
+    .sort((a, b) => a[1].day - b[1].day)
+    .slice(0, count)
+    .map(([hanzi]) => hanzi)
+  // Words I've already rated (e.g. before the built-in list) aren't new to me.
+  const fresh = list.filter((w) => !met[w.hanzi] && !rated[w.hanzi]).slice(0, count - carried.length)
+  return { carried, fresh }
 }

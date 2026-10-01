@@ -9,6 +9,7 @@ import { scoreAndLog } from '../../scoring/attempt.ts'
 import { scoreSpeech, type SpeechScore } from '../../scoring/speechScore.ts'
 import { guidedMission } from '../../services/daily.ts'
 import { load, save } from '../../services/storage.ts'
+import { meetWords } from '../../services/vocab.ts'
 import { packMission } from '../../services/pack.ts'
 import { rateForLevel, speak } from '../../services/tts.ts'
 import { getLexicon } from '../../services/words.ts'
@@ -39,6 +40,18 @@ export default function Guided({ id }: { id: string }) {
       </header>
       <h1>{mission.title}</h1>
       <p className="muted">Goal: {mission.goal}</p>
+      {step === 0 && mission.new_words && mission.new_words.length > 0 && (
+        <section className="card tone-colours">
+          <h2 className="card-title">New words in this mission</h2>
+          <ul className="new-words">
+            {mission.new_words.map((w) => (
+              <li key={w.word}>
+                <RubyText tokens={tokensOf(w.word)} /> <span className="muted">{w.english}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
       {done ? (
         <Closing mission={mission} scores={scores} hideText={hideText} />
       ) : (
@@ -154,7 +167,9 @@ function Closing({ mission, scores, hideText }: { mission: GuidedMission; scores
   useEffect(() => {
     const done = load<string[]>('guidedDone', [])
     if (!done.includes(mission.id)) save('guidedDone', [...done, mission.id])
-  }, [mission.id])
+    // Its new words join my words: they come back as tomorrow's new words.
+    void meetWords((mission.new_words ?? []).map((w) => w.word)).catch(() => 0)
+  }, [mission.id, mission.new_words])
   return (
     <>
       <PartnerLine zh={mission.closing_zh} en={mission.closing_en} role={mission.role} hideText={hideText} level={mission.level} />

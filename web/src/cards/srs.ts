@@ -105,17 +105,21 @@ function recallNow(state: CardState, now: number): number {
 export function pickSession(
   cards: Card[],
   states: Record<string, CardState>,
-  { size = 10, newPerSession = 4, now = Date.now() } = {},
+  { size = 10, newPerSession = 4, now = Date.now(), fresh }: { size?: number; newPerSession?: number; now?: number; fresh?: Card[] } = {},
 ): Card[] {
   const due = cards
     .filter((c) => states[c.hanzi] && states[c.hanzi].due <= now)
     .sort((a, b) => recallNow(states[a.hanzi], now) - recallNow(states[b.hanzi], now) || states[a.hanzi].due - states[b.hanzi].due)
   const order: CardSource[] = ['anki', 'daily', 'story', 'mission', 'app']
-  const fresh = cards
-    .filter((c) => !states[c.hanzi])
-    .sort((a, b) => order.indexOf(a.source) - order.indexOf(b.source))
-    .slice(0, newPerSession)
-  return [...due.slice(0, size - Math.min(newPerSession, fresh.length)), ...fresh].slice(0, size)
+  // New cards: the ones given (today's words), else the first unseen ones, by source.
+  const newCards =
+    fresh ??
+    cards
+      .filter((c) => !states[c.hanzi])
+      .sort((a, b) => order.indexOf(a.source) - order.indexOf(b.source))
+      .slice(0, newPerSession)
+  // New cards never squeeze out due reviews: the session grows to fit both.
+  return [...due.slice(0, Math.max(0, size - newCards.length)), ...newCards]
 }
 
 /**

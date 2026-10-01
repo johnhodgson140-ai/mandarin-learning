@@ -590,7 +590,7 @@ function AnkiPhone() {
       <button type="button" className="btn btn-secondary" onClick={() => void onExport()}>
         Export for Anki{pending ? ` (${pending} new)` : ''}
       </button>
-      <p className="muted small">Words you add with + Anki are kept here until you export them. Anki imports the file as Hanzi, Pinyin, English.</p>
+      <p className="muted small">Words you added with + Anki (before My words) are kept here until you export them. Anki imports the file as Hanzi, Pinyin, English.</p>
       {status && <p className="muted" role="status">{status}</p>}
       {error && <p className="error" role="alert">{error}</p>}
     </section>

@@ -4,7 +4,8 @@ import { buildParagraph } from '../../chinese/tokens.ts'
 import HoldToTalk from '../../components/HoldToTalk.tsx'
 import RubyText from '../../components/RubyText.tsx'
 import { pronunciationSummary, scenarioById, type Session, type Turn } from '../../missions/logic.ts'
-import { addCard } from '../../services/anki.ts'
+import { myWords } from '../../services/curriculum.ts'
+import { meetWords } from '../../services/vocab.ts'
 import { assess } from '../../services/azure.ts'
 import { canRecognise } from '../../scoring/recognize.ts'
 import { scoreSpeech } from '../../scoring/speechScore.ts'
@@ -290,14 +291,14 @@ function ReportView({ session }: { session: Session }) {
   )
 }
 
+/** A new word from the conversation: words of my list join my words automatically (tomorrow's new words). */
 function NewWord({ word, english }: { word: string; english: string }) {
-  const [status, setStatus] = useState<string | null>(null)
   const [token] = useMemo(() => buildParagraph([word], getLexicon()), [word])
-  const canAdd = true
+  const [status, setStatus] = useState<string | null>(() => (myWords()[word] ? 'In your words: comes up tomorrow' : null))
   async function add() {
     try {
-      const r = await addCard({ hanzi: word, pinyin: token.syllables.map((s) => s.pinyin), english })
-      setStatus(r === 'added' ? 'Added' : r === 'duplicate' ? 'Already in Anki' : 'Saved for export')
+      const added = await meetWords([word], { [word]: { hanzi: word, pinyin: token.syllables.map((s) => s.pinyin).join(''), english } })
+      setStatus(added ? 'Added: comes up tomorrow' : 'Already one of your words')
     } catch (err) {
       setStatus(err instanceof Error ? err.message : String(err))
     }
@@ -308,7 +309,7 @@ function NewWord({ word, english }: { word: string; english: string }) {
         <RubyText tokens={[token]} /> <span className="muted">{english}</span>
       </span>
       {status ? <span className="muted small">{status}</span> : (
-        <button type="button" className="btn btn-secondary" onClick={() => void add()} disabled={!canAdd}>+ Anki</button>
+        <button type="button" className="btn btn-secondary" onClick={() => void add()}>+ My words</button>
       )}
     </li>
   )

@@ -39,6 +39,8 @@ void navigator.storage?.persist?.().catch(() => false)
 pruneRecordings().catch(() => {})
 // Today's stories and missions, whichever screen the app opens on.
 void loadDaily()
+// My progress from my other device (only once I'm signed in to Firebase).
+void import('./services/sync.ts').then((m) => m.syncProgress()).catch(() => {})
 // A voice calibrated on my other device (only once I'm signed in to Firebase).
 void import('./services/tone.ts').then((m) => m.syncProfile()).catch(() => {})
 // iOS app: keep notifications current (cards due, streak) and open the right screen when one is tapped.
@@ -46,6 +48,10 @@ if (isNativeApp())
   void import('./native/notifications.ts').then((n) => {
     n.listenForNotificationTaps()
     void n.refreshNotifications()
+    // On leaving the app: what I just did (cards rated, words added) is reflected in the widgets and notifications.
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'hidden') void n.refreshNotifications()
+    })
   })
 // My exported Anki deck ships with the app (web/public/deck.json).
 void loadDeck()

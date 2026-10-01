@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import type { Recording } from '../../audio/recorder.ts'
 import { daysUntil, rateCard, ratingFor, shuffleRest, type Card, type CardState, type Rating } from '../../cards/srs.ts'
 import { tokensOfText } from '../../chinese/tokens.ts'
@@ -9,14 +9,15 @@ import ScoreView from '../../components/ScoreView.tsx'
 import { canRecognise } from '../../scoring/recognize.ts'
 import { scoreAndLog } from '../../scoring/attempt.ts'
 import type { SpeechScore } from '../../scoring/speechScore.ts'
-import { buttonColours, cardStates, dueCounts, intervalScale, keepSession, learnOrder, newSession, rateCardIn, resumeSession, type CardMode } from '../../services/cards.ts'
+import { buttonColours, cardStates, dueCounts, intervalScale, keepSession, learnOrder, newSession, rateCardIn, resumeSession, todaysNewCards, type CardMode } from '../../services/cards.ts'
+import { moreWordsToday, todaysWords } from '../../services/curriculum.ts'
 import { load, save } from '../../services/storage.ts'
 import { getProfile } from '../../services/tone.ts'
 import { rateForLevel, speak } from '../../services/tts.ts'
 import { getLexicon } from '../../services/words.ts'
 
 const MODES: { mode: CardMode; label: string; hint: string }[] = [
-  { mode: 'learn', label: 'Learn', hint: '中 → English: read it, check the answer, rate yourself.' },
+  { mode: 'learn', label: 'Learn', hint: '中 → English: today’s new words and your reviews. Rate a word you already know Easy.' },
   { mode: 'recall', label: 'Recall', hint: 'English → 中: say it from memory. Only words you’ve passed in Learn.' },
 ]
 
@@ -35,6 +36,37 @@ export default function Cards() {
   const update = (cards: Card[], i: number, sc: number[]) => {
     setRun({ cards, index: i, scores: sc })
     keepSession(mode, cards, i, sc)
+  }
+
+  // Today's words are worked out once the word list has loaded: make sure every new one is in today's Learn session.
+  // (Reads the latest session when the list arrives, so cards rated meanwhile aren't rewound.)
+  const latest = useRef({ session, index, scores })
+  useEffect(() => {
+    latest.current = { session, index, scores }
+  })
+  useEffect(() => {
+    if (mode !== 'learn') return
+    let cancelled = false
+    void todaysWords().then(() => {
+      if (cancelled) return
+      const now = latest.current
+      const ahead = new Set(now.session.slice(now.index).map((c) => c.hanzi))
+      const missing = todaysNewCards().filter((c) => !ahead.has(c.hanzi))
+      if (missing.length) update([...now.session, ...missing], now.index, now.scores)
+      setCounts(dueCounts())
+    })
+    return () => {
+      cancelled = true
+    }
+    // Only when the mode changes or the screen opens; update() itself changes the session.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mode])
+
+  async function moreCards() {
+    // Learn: 5 more new words today (pulling ahead); Recall: whatever Learn has unlocked since.
+    if (mode === 'learn') await moreWordsToday(5)
+    update(newSession(mode), 0, [])
+    setCounts(dueCounts())
   }
   const chooseMode = (m: CardMode) => {
     if (m === mode) return
@@ -63,7 +95,7 @@ export default function Cards() {
         ? learnOrder().length === 0
           ? 'Words unlock here once you’ve passed them in Learn (Hard or better).'
           : 'You’re in step with Learn. Pass more words there to unlock more here.'
-        : 'Nothing due right now.'
+        : 'Nothing due right now: today’s new words and reviews are done.'
     return (
       <>
         <header className="mission-bar">
@@ -77,8 +109,8 @@ export default function Cards() {
           {session.length > 0 && <p>{scores.length} cards rated{again > 0 && ` · ${again} marked Again`}</p>}
           <div className="sheet-actions">
             <a href="#speak" className="btn btn-secondary link-btn center">Speak</a>
-            <button type="button" className="btn btn-primary" onClick={() => update(newSession(mode, 6), 0, [])}>
-              More cards
+            <button type="button" className="btn btn-primary" onClick={() => void moreCards()}>
+              {mode === 'learn' ? '5 more new words' : 'More cards'}
             </button>
           </div>
         </section>

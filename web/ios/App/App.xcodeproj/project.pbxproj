@@ -10,6 +10,7 @@
 		012FCC2242DF74F2364231FE /* ShuoWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFB3362F3E754F42BA8BC50 /* ShuoWidgets.swift */; };
 		21A38C03B27948E9BF6B92E1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F7CAD1CF62F76BB2E1ADCED /* Foundation.framework */; };
 		2FAD9763203C412B000D30F8 /* config.xml in Resources */ = {isa = PBXBuildFile; fileRef = 2FAD9762203C412B000D30F8 /* config.xml */; };
+		339C1D5621AA06F210F5FD89 /* WidgetBridgePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F9CDC1CE2153000679157 /* WidgetBridgePlugin.swift */; };
 		3BD0A1566B93D1141A42162F /* DeckWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91384A52F2C42EC1EA0A8017 /* DeckWord.swift */; };
 		4D22ABE92AF431CB00220026 /* CapApp-SPM in Frameworks */ = {isa = PBXBuildFile; productRef = 4D22ABE82AF431CB00220026 /* CapApp-SPM */; };
 		50379B232058CBB4000EE86E /* capacitor.config.json in Resources */ = {isa = PBXBuildFile; fileRef = 50379B222058CBB4000EE86E /* capacitor.config.json */; };
@@ -61,12 +62,15 @@
 		50B271D01FEDC1A000F3C39B /* public */ = {isa = PBXFileReference; lastKnownFileType = folder; path = public; sourceTree = "<group>"; };
 		5A1C0A012F0000000000A001 /* SpeechCheckPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechCheckPlugin.swift; sourceTree = "<group>"; };
 		5A1C0A012F0000000000A002 /* ShuoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuoViewController.swift; sourceTree = "<group>"; };
+		845F9CDC1CE2153000679157 /* WidgetBridgePlugin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WidgetBridgePlugin.swift; sourceTree = "<group>"; };
+		86286FEEA9454539A7D87191 /* App.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; path = App.entitlements; sourceTree = "<group>"; };
 		91384A52F2C42EC1EA0A8017 /* DeckWord.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DeckWord.swift; sourceTree = "<group>"; };
 		958DCC722DB07C7200EA8C5F /* debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = debug.xcconfig; path = ../debug.xcconfig; sourceTree = SOURCE_ROOT; };
 		A82D4F313F78D55326FFC314 /* ShuoWidgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShuoWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFFB3362F3E754F42BA8BC50 /* ShuoWidgets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ShuoWidgets.swift; sourceTree = "<group>"; };
 		B3A0ADAC057049E82530AB74 /* ChineseTime.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ChineseTime.swift; sourceTree = "<group>"; };
 		E31CE4E087653F236E3B7522 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6BE6B37D183D1809740F7A7 /* ShuoWidgets.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; path = ShuoWidgets.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,8 @@
 				504EC3131FED79650016851F /* Info.plist */,
 				2FAD9762203C412B000D30F8 /* config.xml */,
 				50B271D01FEDC1A000F3C39B /* public */,
+				845F9CDC1CE2153000679157 /* WidgetBridgePlugin.swift */,
+				86286FEEA9454539A7D87191 /* App.entitlements */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -141,6 +147,7 @@
 				AFFB3362F3E754F42BA8BC50 /* ShuoWidgets.swift */,
 				E31CE4E087653F236E3B7522 /* Info.plist */,
 				91384A52F2C42EC1EA0A8017 /* DeckWord.swift */,
+				E6BE6B37D183D1809740F7A7 /* ShuoWidgets.entitlements */,
 			);
 			name = ShuoWidgets;
 			path = ShuoWidgets;
@@ -275,6 +282,7 @@
 				504EC3081FED79650016851F /* AppDelegate.swift in Sources */,
 				5A1C0A012F0000000000B001 /* SpeechCheckPlugin.swift in Sources */,
 				5A1C0A012F0000000000B002 /* ShuoViewController.swift in Sources */,
+				339C1D5621AA06F210F5FD89 /* WidgetBridgePlugin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +431,7 @@
 			baseConfigurationReference = 958DCC722DB07C7200EA8C5F /* debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = App/App.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = App/Info.plist;
@@ -445,6 +454,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = App/App.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = App/Info.plist;
@@ -467,6 +477,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "";
 				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_ENTITLEMENTS = ShuoWidgets/ShuoWidgets.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = NO;
@@ -493,6 +504,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "";
 				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_ENTITLEMENTS = ShuoWidgets/ShuoWidgets.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = NO;

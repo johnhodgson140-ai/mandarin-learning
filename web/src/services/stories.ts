@@ -1,17 +1,21 @@
 // Story generation + saved library. Stories live on this device, and in Firebase when signed in.
 
 import storyPrompt from '../prompts/story.md?raw'
-import { buildParagraph, knownRatio, type Lexicon, type Token } from '../chinese/tokens.ts'
+import { buildParagraph, isLearned, knownRatio, type Lexicon, type Token } from '../chinese/tokens.ts'
 import { callJson } from './claude.ts'
 import { loadHsk, newWordsFor } from './hsk.ts'
 import { saveStory, type Story, type StoryLength, type Topic } from './library.ts'
-import { getLexicon, knownWords, studyWords, targetWords } from './words.ts'
+import { learnerVocab } from './vocab.ts'
+import { getLexicon } from './words.ts'
 
 export const LENGTHS: Record<StoryLength, { label: string; chars: string }> = {
   short: { label: 'Short', chars: '80–120' },
   medium: { label: 'Medium', chars: '200–300' },
   long: { label: 'Long', chars: '400–600' },
 }
+
+/** How many new words a story may bring in (the rest are the learner's own). */
+const LEVEL_NEW: Record<number, number> = { 1: 3, 2: 4, 3: 5, 4: 6, 5: 7, 6: 8 }
 
 export const LEVEL_RULES: Record<number, string> = {
   1: 'HSK 1 grammar only, sentences under 10 characters, at most 3 new words.',
@@ -84,14 +88,15 @@ export function storyTokens(story: Story, lexicon: Lexicon = getLexicon()): Toke
 
 export async function generateStory(level: number, topic: Topic, length: StoryLength): Promise<Story> {
   const lexicon = getLexicon()
-  // Before Anki says which words I know, write from the words I'm studying (my deck).
-  const known = knownWords(lexicon).length > 0 ? knownWords(lexicon) : studyWords(lexicon)
-  const targets = targetWords(lexicon)
-  // New words: the most common HSK words at my level that I don't have yet.
+  // Mostly my words, today's and shaky words on purpose, and new words from the next words of my list.
+  const { known, practise, upcoming } = await learnerVocab()
   await loadHsk()
-  const hskNew = newWordsFor(Math.min(level, 6), new Set(lexicon.keys()), 40)
+  const newPool = upcoming.length ? upcoming.map((w) => w.hanzi) : newWordsFor(Math.min(level, 6), new Set(lexicon.keys()), 40)
   const hasWords = known.length > 0
-  const measureRatio = knownWords(lexicon).length > 0
+  // The 90% check is against all the words Claude was given: mine (plus the basics early on), the ones to practise
+  // and the new ones it may bring in.
+  const allowed: Lexicon = new Map([...known, ...practise, ...newPool].map((w) => [w, { pinyin: '', english: '', mastery: 'young' as const }]))
+  const measureRatio = hasWords
 
   const system = storyPrompt
     .replace('{{LEVEL}}', () => String(level))
@@ -104,9 +109,9 @@ export async function generateStory(level: number, topic: Topic, length: StoryLe
     // Replacer functions, so nothing in the word list is read as a `$` replacement pattern.
     .replace('{{WORD_LIST}}', () =>
       hasWords
-        ? `Learner's word list (words they know or are studying):\n${known.join(' ')}\n\nTarget words to practise (use up to 8, naturally):\n${targets.join(' ') || '(none)'}` +
-          (hskNew.length ? `\n\nWhen you need a new word, prefer one of these common HSK ${level} words:\n${hskNew.join(' ')}` : '')
-        : hskNew.length ? `Prefer new words from these common HSK ${level} words:\n${hskNew.join(' ')}` : '',
+        ? `Learner's word list (words they know or are learning):\n${known.join(' ')}\n\nWords to practise (use as many as fit naturally, at least 4):\n${practise.join(' ') || '(none)'}` +
+          (newPool.length ? `\n\nWhen you need a new word, prefer one of these (the next words the learner will study), at most ${LEVEL_NEW[level]} new words in all:\n${newPool.join(' ')}` : '')
+        : newPool.length ? `Prefer new words from these common words:\n${newPool.join(' ')}` : '',
     )
   const ask = (extra = '') =>
     callJson({
@@ -117,12 +122,12 @@ export async function generateStory(level: number, topic: Topic, length: StoryLe
     })
 
   let json = await ask()
-  let ratio = measureRatio ? knownRatio(tokensOf(json, lexicon)).ratio : null
+  let ratio = measureRatio ? knownRatio(tokensOf(json, allowed)).ratio : null
   if (ratio !== null && ratio < 0.9) {
     // Regenerate once, telling Claude which words were outside the list; keep whichever is better.
-    const unknown = unknownWords(json, lexicon)
+    const unknown = unknownWords(json, allowed)
     const retry = await ask(` Your last draft used too many words outside the list (${unknown.join('、')}). Replace them with words from the list.`)
-    const retryRatio = knownRatio(tokensOf(retry, lexicon)).ratio
+    const retryRatio = knownRatio(tokensOf(retry, allowed)).ratio
     if (retryRatio > ratio) {
       json = retry
       ratio = retryRatio
@@ -156,7 +161,7 @@ function tokensOf(json: StoryJson, lexicon: Lexicon): Token[] {
 }
 
 function unknownWords(json: StoryJson, lexicon: Lexicon): string[] {
-  const words = tokensOf(json, lexicon).filter((t) => t.kind === 'word' && t.mastery !== 'young' && t.mastery !== 'mature')
+  const words = tokensOf(json, lexicon).filter((t) => t.kind === 'word' && !isLearned(t.mastery))
   return [...new Set(words.map((t) => t.text))].slice(0, 20)
 }
 

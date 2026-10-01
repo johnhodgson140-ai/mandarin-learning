@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import type { DailyContent, PlanItem } from '../daily/schema.ts'
+import { dailyCount } from '../services/curriculum.ts'
 import { cachedDaily, loadDaily } from '../services/daily.ts'
 import { summary } from '../services/progress.ts'
 import './Today.css'
@@ -43,16 +44,23 @@ export default function Today() {
         <>
           <p className="muted">{daily.plan.focus_en}</p>
           <ol className="plan">
+            {/* Every day starts with my new words (then cards for them and my reviews, a story, a mission). */}
+            <li>
+              <a href="#speak/words" className="hub-row plan-row">
+                <span className="plan-step">1</span>
+                <span className="hub-title">Today’s new words ({dailyCount()})</span>
+              </a>
+            </li>
             {daily.plan.items.map((item, i) => (
               <li key={i}>
                 <a href={LINKS[item.kind](item.ref)} className="hub-row plan-row">
-                  <span className="plan-step">{i + 1}</span>
+                  <span className="plan-step">{i + 2}</span>
                   <span className="hub-title">{item.title_en}</span>
                 </a>
               </li>
             ))}
           </ol>
-          <a href={LINKS[daily.plan.items[0].kind](daily.plan.items[0].ref)} className="btn btn-primary link-btn start-btn">Start</a>
+          <a href="#speak/words" className="btn btn-primary link-btn start-btn">Start</a>
         </>
       )}
     </>

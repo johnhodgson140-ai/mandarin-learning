@@ -37,6 +37,8 @@ export type GuidedMission = {
   steps: GuidedStep[]
   closing_zh: string
   closing_en: string
+  /** The 2–3 new words this mission brings in (the rest are words the learner has met), shown before it starts. */
+  new_words?: { word: string; english: string }[]
 }
 
 /** A ready-made story in the pack: the same shape as a daily story, plus its length. */
@@ -107,6 +109,8 @@ function missionErrors(m: GuidedMission, at: string, ids: Set<string>): string[]
   ids.add(m.id)
   if (!Number.isInteger(m.level) || m.level < 1 || m.level > 6) errors.push(`${at}.level must be 1–6`)
   if (![m.title, m.role, m.goal, m.closing_zh, m.closing_en].every(isStr)) errors.push(`${at} needs title, role, goal, closing_zh, closing_en`)
+  if (m.new_words !== undefined && (!Array.isArray(m.new_words) || !m.new_words.every((w) => isStr(w?.word) && isStr(w?.english))))
+    errors.push(`${at}.new_words entries need word + english`)
   if (!Array.isArray(m.steps) || m.steps.length < 3 || m.steps.length > 8) errors.push(`${at} needs 3–8 steps`)
   else
     m.steps.forEach((st, j) => {

@@ -1,7 +1,19 @@
 {
   "level": 1,
-  "topics": ["football", "archive fashion", "anime", "travel", "daily life", "business & finance"],
+  "topics": [
+    "football",
+    "archive fashion",
+    "anime",
+    "travel",
+    "daily life",
+    "business & finance"
+  ],
   "stories_per_day": 2,
   "missions_per_day": 2,
-  "words_file": "content/words.json"
+  "curriculum": {
+    "start": "2026-10-01",
+    "per_day": 8,
+    "basics": 150
+  },
+  "level_note": "level is now worked out from the curriculum position by web/scripts/daily-vocab.ts; this value is only a fallback"
 }

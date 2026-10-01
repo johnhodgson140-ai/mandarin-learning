@@ -8,7 +8,7 @@ import { callJson } from './claude.ts'
 import { currentUser, dbPut, isConfigured } from './firebase.ts'
 import { load, save } from './storage.ts'
 import { LEVEL_RULES } from './stories.ts'
-import { getLexicon, knownWords, studyWords } from './words.ts'
+import { learnerVocab, meetWords } from './vocab.ts'
 
 const REPLY_SCHEMA = {
   type: 'object',
@@ -45,19 +45,25 @@ const REPORT_SCHEMA = {
   },
 }
 
-function wordList(): { rule: string; list: string } {
-  const lexicon = getLexicon()
-  const known = knownWords(lexicon).length > 0 ? knownWords(lexicon) : studyWords(lexicon)
-  return known.length > 0
-    ? {
-        rule: "Use words from the learner's word list below wherever you can; keep anything else simple and guessable.",
-        list: `Learner's word list (words they know or are studying):\n${known.join(' ')}`,
-      }
-    : { rule: 'Stay within HSK vocabulary for this level.', list: '' }
+/**
+ * Mostly the learner's own words, a few they're learning on purpose, and at most 2–3 new words in the whole
+ * conversation (the next words of their list), each made clear from context: a good way to meet new words.
+ */
+async function wordList(): Promise<{ rule: string; list: string }> {
+  const { known, practise, upcoming } = await learnerVocab()
+  if (known.length === 0) return { rule: 'Stay within HSK vocabulary for this level.', list: '' }
+  return {
+    rule:
+      "Build your lines mainly from the learner's word list below. Work in some of the 'words to practise' naturally over the conversation. " +
+      "Bring in at most 3 new words in the whole conversation, preferably from 'new words to introduce', and make each one's meaning clear from context the first time.",
+    list:
+      `Learner's word list (words they know or are learning):\n${known.join(' ')}\n\nWords to practise:\n${practise.join(' ') || '(none)'}` +
+      (upcoming.length ? `\n\nNew words to introduce (the next ones they'll study; at most 3):\n${upcoming.map((w) => `${w.hanzi} (${w.english})`).join(', ')}` : ''),
+  }
 }
 
-function systemFor(scenario: Scenario, level: number): string {
-  const { rule, list } = wordList()
+async function systemFor(scenario: Scenario, level: number): Promise<string> {
+  const { rule, list } = await wordList()
   return missionPrompt
     .replaceAll('{{LEVEL}}', () => String(level))
     .replace('{{SETTING}}', () => scenario.setting)
@@ -82,7 +88,7 @@ function messagesFor(session: Session): Anthropic.MessageParam[] {
 
 async function partnerTurn(session: Session): Promise<Session> {
   const scenario = scenarioById(session.scenario)!
-  const reply = await callJson({ system: systemFor(scenario, session.level), prompt: messagesFor(session), schema: REPLY_SCHEMA, guard: isPartnerReply, maxTokens: 2000 })
+  const reply = await callJson({ system: await systemFor(scenario, session.level), prompt: messagesFor(session), schema: REPLY_SCHEMA, guard: isPartnerReply, maxTokens: 2000 })
   const next: Session = {
     ...session,
     turns: [...session.turns, { role: 'partner', zh: reply.reply_zh.trim(), en: reply.reply_en, hint: reply.hint_en }],
@@ -112,7 +118,7 @@ export function sendTurn(session: Session, mine: Extract<Turn, { role: 'me' }>):
 
 export async function finishSession(session: Session): Promise<Session> {
   const scenario = scenarioById(session.scenario)!
-  const { list } = wordList()
+  const { list } = await wordList()
   const system = reportPrompt
     .replace('{{LEVEL}}', () => String(session.level))
     .replace('{{GOAL}}', () => scenario.goal || 'none (free chat).')
@@ -127,6 +133,8 @@ export async function finishSession(session: Session): Promise<Session> {
   report.corrections = report.corrections.slice(0, 3)
   const done = { ...session, report }
   saveSession(done)
+  // New words from the conversation join my words: they come back as tomorrow's new words.
+  await meetWords(report.new_words.map((w) => w.word)).catch(() => 0)
   return done
 }
 

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import type { Token } from '../../chinese/tokens.ts'
-import { addCard } from '../../services/anki.ts'
+import { meetWords } from '../../services/vocab.ts'
 import { getKeys } from '../../services/keys.ts'
 import { glossFor } from '../../services/gloss.ts'
 import { hskLabel, loadHsk, type HskInfo } from '../../services/hsk.ts'
@@ -21,9 +21,9 @@ export default function WordSheet({ token, sentence, level, onGloss, onClose }: 
   const [gloss, setGloss] = useState(token.gloss)
   const [glossError, setGlossError] = useState<string | null>(null)
   const [hsk, setHsk] = useState<HskInfo | null>(null)
-  const [ankiStatus, setAnkiStatus] = useState<string | null>(null)
+  const [addStatus, setAddStatus] = useState<string | null>(null)
   const [busy, setBusy] = useState(false)
-  const inAnki = token.mastery !== null && token.mastery !== 'unknown'
+  const mine = token.mastery !== null && token.mastery !== 'unknown'
 
   // Latest callback in a ref, so the lookup below runs once per word rather than on every parent render.
   const onGlossRef = useRef(onGloss)
@@ -62,21 +62,18 @@ export default function WordSheet({ token, sentence, level, onGloss, onClose }: 
     return () => window.removeEventListener('keydown', onKey)
   }, [onClose])
 
-  async function addToAnki() {
+  async function addToMyWords() {
     setBusy(true)
     try {
-      const result = await addCard({ hanzi: token.text, pinyin: token.syllables.map((s) => s.pinyin), english: english })
-      setAnkiStatus(
-        result === 'added' ? 'Added to Anki.' : result === 'duplicate' ? 'Already in Anki.' : 'Saved. Send it to Anki with Settings → Export for Anki.',
-      )
+      const pinyin = token.syllables.map((s) => s.pinyin).join('')
+      const added = await meetWords([token.text], { [token.text]: { hanzi: token.text, pinyin, english } })
+      setAddStatus(added ? 'Added: it comes up in tomorrow’s new words.' : 'Already one of your words.')
     } catch (err) {
-      setAnkiStatus(err instanceof Error ? err.message : String(err))
+      setAddStatus(err instanceof Error ? err.message : String(err))
     } finally {
       setBusy(false)
     }
   }
-
-  const canAdd = true
   // Claude's meaning for this sentence when there is one, else the dictionary's.
   const english = gloss || hsk?.meaning || ''
 
@@ -96,19 +93,19 @@ export default function WordSheet({ token, sentence, level, onGloss, onClose }: 
         </p>
         {gloss && hsk && gloss !== hsk.meaning && <p className="muted small">Dictionary: {hsk.meaning}</p>}
         <p className="muted small">
-          {[hsk && hskLabel(hsk.level), inAnki && `In Anki · ${MASTERY_TEXT[token.mastery as keyof typeof MASTERY_TEXT]}`].filter(Boolean).join(' · ')}
+          {[hsk && hskLabel(hsk.level), mine && `Your word · ${MASTERY_TEXT[token.mastery as keyof typeof MASTERY_TEXT]}`].filter(Boolean).join(' · ')}
         </p>
         <div className="sheet-actions">
           <button type="button" className="btn btn-secondary" onClick={() => speak(token.text, rateForLevel(level))}>
             ▶ Play
           </button>
-          {!inAnki && token.kind === 'word' && (
-            <button type="button" className="btn btn-primary" onClick={addToAnki} disabled={busy || !english || !canAdd}>
-              + Anki
+          {!mine && token.kind === 'word' && (
+            <button type="button" className="btn btn-primary" onClick={() => void addToMyWords()} disabled={busy || !english}>
+              + My words
             </button>
           )}
         </div>
-        {ankiStatus && <p className="muted small" role="status">{ankiStatus}</p>}
+        {addStatus && <p className="muted small" role="status">{addStatus}</p>}
       </aside>
     </>
   )
