@@ -6,8 +6,9 @@ import { callJson, MODEL_FAST } from './claude.ts'
 const SCHEMA = { type: 'object', additionalProperties: false, required: ['explanation'], properties: { explanation: { type: 'string' } } }
 
 export async function explainAttempt(syllables: Syllable[], scores: SyllableScore[]): Promise<string> {
-  const lines = syllables.map((s, i) => {
+  const lines = syllables.flatMap((s, i) => {
     const sc = scores[i]
+    if (!sc.checked) return []
     return `${s.hanzi} ${s.pinyin} (tone ${s.spoken}): score ${sc.score}; heard sounds "${sc.heardPinyin ?? '?'}"; tone model heard ${sc.heardTone ?? '?'}`
   })
   const result = await callJson({

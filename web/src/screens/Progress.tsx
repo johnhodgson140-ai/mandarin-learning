@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import type { Recording } from '../audio/recorder.ts'
 import { buildParagraph } from '../chinese/tokens.ts'
 import HoldToTalk from '../components/HoldToTalk.tsx'
+import PlayButton from '../components/PlayButton.tsx'
 import RubyText from '../components/RubyText.tsx'
 import ToneHeatmap from '../components/ToneHeatmap.tsx'
 import { pairStats } from '../grading/toneStats.ts'
@@ -13,6 +14,7 @@ import { ratingFor } from '../cards/srs.ts'
 import { cardStates } from '../services/cards.ts'
 import { gatherActivity } from '../services/progress.ts'
 import { load, save } from '../services/storage.ts'
+import { playBlob } from '../services/tts.ts'
 import { getLexicon } from '../services/words.ts'
 import './Progress.css'
 
@@ -72,6 +74,11 @@ function Benchmark() {
     setError(null)
     try {
       const result = await scoreAndLog(BENCHMARK.join(''), syllables, rec, 'read')
+      // Nothing could be judged (no sound check, voice not calibrated): don't lock the month with a 0.
+      if (!result.syllables.some((s) => s.checked)) {
+        setError('Couldn’t score that recording. Calibrate your voice (Speak → Calibrate) or add an Azure key, then try again.')
+        return
+      }
       await idbPut('recordings', { id: `bench-${monthKey()}`, wav: rec.wav, createdAt: Date.now() })
       const next = [...history.filter((b) => b.month !== monthKey()), { month: monthKey(), score: result.overall }].sort((a, b) => a.month.localeCompare(b.month))
       setHistory(next)
@@ -86,10 +93,7 @@ function Benchmark() {
   async function play(month: string) {
     const r = await idbGet<{ wav: Blob }>('recordings', `bench-${month}`)
     if (!r) return
-    const url = URL.createObjectURL(r.wav)
-    const audio = new Audio(url)
-    audio.onended = () => URL.revokeObjectURL(url)
-    void audio.play()
+    await playBlob(r.wav, `bench-${month}`)
   }
 
   return (
@@ -106,7 +110,7 @@ function Benchmark() {
             <li key={b.month}>
               <span>{new Date(`${b.month}-01T12:00:00`).toLocaleDateString(undefined, { month: 'long', year: 'numeric' })}</span>
               <span className="bench-score">{b.score}/100</span>
-              <button type="button" className="link-quiet" onClick={() => void play(b.month)}>▶ Play</button>
+              <PlayButton id={`bench-${b.month}`} label="Play" className="link-quiet" start={() => play(b.month)} />
             </li>
           ))}
         </ul>

@@ -78,6 +78,7 @@ function Account({ user, onChange }: { user: { email: string } | null; onChange:
     try {
       await signIn(email.trim(), password)
       setPassword('')
+      void import('../services/sync.ts').then((m) => m.syncProgress()).catch(() => {})
       onChange()
     } catch (err) {
       setError(err instanceof Error ? err.message : String(err))
@@ -556,7 +557,13 @@ function AnkiPhone() {
   }
 
   async function onExport() {
-    const n = await exportNewCards()
+    let n: number
+    try {
+      n = await exportNewCards()
+    } catch (err) {
+      if (!(err instanceof Error && err.name === 'AbortError')) setError(err instanceof Error ? err.message : String(err))
+      return
+    }
     setPending(0)
     setStatus(n ? `Exported ${n} word${n === 1 ? '' : 's'}. Import the file into Anki (Hanzi, Pinyin, English).` : 'Nothing new to export.')
   }

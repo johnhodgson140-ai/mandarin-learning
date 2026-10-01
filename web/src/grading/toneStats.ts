@@ -11,6 +11,7 @@ const key = (prev: Tone | null, tone: Tone) => `${prev ?? 0}-${tone}`
 export function pairStats(syllables: Iterable<Pick<AttemptSyllable, 'prevTone' | 'spokenTone' | 'status'>>): Map<string, PairStat> {
   const stats = new Map<string, PairStat>()
   for (const s of syllables) {
+    if (s.status === 'unchecked') continue
     const k = key(s.prevTone, s.spokenTone)
     const stat = stats.get(k) ?? { prev: s.prevTone, tone: s.spokenTone, total: 0, ok: 0 }
     stat.total++

@@ -73,3 +73,10 @@ test('markTone puts the mark on the right vowel', () => {
     ['hǎo', 'gǒu', 'duì', 'liú', 'lǜ', 'ma', 'ér', 'xióng'],
   )
 })
+
+test('a syllable nothing could check is unchecked, not wrong', () => {
+  const s = combine(null, null, 5)
+  assert.equal(s.checked, false)
+  assert.equal(s.status, 'unchecked')
+  assert.equal(combine(100, null, 5).status, 'ok')
+})

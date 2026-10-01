@@ -21,3 +21,12 @@ test('pair stats, heatmap and weakest pairs', () => {
   assert.equal(grid[4][4], null) // no data
   assert.deepEqual(weakestPairs(stats), [[3, 4], [2, 3], [1, 1]])
 })
+
+test('unchecked syllables are left out of the tone-pair stats', () => {
+  const stats = pairStats([
+    { prevTone: 3, spokenTone: 5, status: 'unchecked' },
+    { prevTone: 3, spokenTone: 4, status: 'ok' },
+  ])
+  assert.equal(stats.has('3-5'), false)
+  assert.equal(stats.get('3-4')?.total, 1)
+})

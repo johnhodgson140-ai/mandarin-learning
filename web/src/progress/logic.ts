@@ -7,6 +7,8 @@ export type Activity = {
   storiesFinished: { readAt: number }[]
   /** Missions / free talks with a report. */
   missionsDone: { createdAt: number }[]
+  /** Days I rated flashcards (local day keys): cards count for the streak, though not for XP. */
+  cardDays?: string[]
 }
 
 export const XP = { okSyllable: 1, minuteSpoken: 5, storyFinished: 20, missionDone: 30 }
@@ -28,6 +30,7 @@ export function activeDays(a: Activity): Set<string> {
     ...a.attempts.map((t) => dayKey(t.createdAt)),
     ...a.storiesFinished.map((s) => dayKey(s.readAt)),
     ...a.missionsDone.map((m) => dayKey(m.createdAt)),
+    ...(a.cardDays ?? []),
   ])
 }
 

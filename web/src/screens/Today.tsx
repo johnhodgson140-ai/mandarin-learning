@@ -13,12 +13,22 @@ const LINKS: Record<PlanItem['kind'], (ref?: string) => string> = {
   free: () => '#speak/free',
 }
 
+/** No plan for today (offline, or today's content isn't out yet): words and cards still work. */
+const BASIC: PlanItem[] = [
+  { kind: 'cards', title_en: 'Review your cards' },
+  { kind: 'story', title_en: 'Read a story', ref: 'new' },
+]
+
 export default function Today() {
   const [daily, setDaily] = useState<DailyContent | null>(cachedDaily)
+  const [loading, setLoading] = useState(!cachedDaily())
   const [stats, setStats] = useState<Awaited<ReturnType<typeof summary>> | null>(null)
 
   useEffect(() => {
-    loadDaily().then(setDaily, () => {})
+    loadDaily()
+      .then((d) => d && setDaily(d))
+      .catch(() => {})
+      .finally(() => setLoading(false))
     summary().then(setStats, () => {})
   }, [])
 
@@ -39,10 +49,10 @@ export default function Today() {
           Level {stats.level} · {stats.xp} XP · {stats.streak}-day streak
         </p>
       )}
-      {!daily && <p className="muted">Loading today's plan…</p>}
-      {daily && (
+      {!daily && loading && <p className="muted">Loading today's plan…</p>}
+      {(daily || !loading) && (
         <>
-          <p className="muted">{daily.plan.focus_en}</p>
+          {daily && <p className="muted">{daily.plan.focus_en}</p>}
           <ol className="plan">
             {/* Every day starts with my new words (then cards for them and my reviews, a story, a mission). */}
             <li>
@@ -51,7 +61,7 @@ export default function Today() {
                 <span className="hub-title">Today’s new words ({dailyCount()})</span>
               </a>
             </li>
-            {daily.plan.items.map((item, i) => (
+            {(daily?.plan.items ?? BASIC).map((item, i) => (
               <li key={i}>
                 <a href={LINKS[item.kind](item.ref)} className="hub-row plan-row">
                   <span className="plan-step">{i + 2}</span>

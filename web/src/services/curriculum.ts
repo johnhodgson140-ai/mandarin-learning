@@ -3,7 +3,7 @@
 // so a missed day just waits for me; they're my new Learn cards, and what I've met and rated is "my words" everywhere
 // else (reader colours, story difficulty, missions). Not tied to Anki.
 import { dayNumber, DEFAULT_NOTIFY, pickToday, type NotifySettings, type Word } from '../notify/plan.ts'
-import { currentUser, dbPut, isConfigured } from './firebase.ts'
+import { sendProgress } from './sync.ts'
 import { load, save } from './storage.ts'
 
 export type { Word }
@@ -97,7 +97,7 @@ function adoptRated(list: Word[]): Record<string, MyWord> {
 /** Save my words (and share them with my other device when signed in to Firebase). */
 export function saveMine(mine: Record<string, MyWord>): void {
   save('myWords', mine)
-  if (isConfigured && currentUser()) void dbPut('myWords', mine).catch(() => {})
+  sendProgress('myWords', mine)
 }
 
 function keepToday(day: number, words: Word[]): Word[] {
