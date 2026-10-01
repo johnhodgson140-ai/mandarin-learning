@@ -1,8 +1,7 @@
 // What to write with, for AI stories and live missions: mostly words I've met (comprehensible input), a few I'm
 // learning right now woven in on purpose, and a couple of brand-new ones from the next words of my list (so stories
 // and missions preview what I'm about to learn).
-import { curriculumList, myWords, todaysWords, type Word } from './curriculum.ts'
-import { save } from './storage.ts'
+import { curriculumList, myWords, saveMine, todaysWords, type Word } from './curriculum.ts'
 import { dayNumber } from '../notify/plan.ts'
 import { getLexicon } from './words.ts'
 
@@ -48,6 +47,6 @@ export async function meetWords(hanzi: string[], fallback: Record<string, Word> 
       added++
     }
   }
-  if (added) save('myWords', mine)
+  if (added) saveMine(mine)
   return added
 }

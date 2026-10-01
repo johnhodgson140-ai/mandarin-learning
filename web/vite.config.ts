@@ -34,7 +34,7 @@ export default defineConfig(({ mode }) => ({
         runtimeCaching: [
           {
             // HSK word list and the ready-made pack: fetched on first use, then available offline (refreshed in the background).
-            urlPattern: ({ url }) => /\/(hsk|pack\/stories|pack\/missions)\.json$/.test(url.pathname),
+            urlPattern: ({ url }) => /\/(hsk|daily-words|pack\/stories|pack\/missions)\.json$/.test(url.pathname),
             handler: 'StaleWhileRevalidate',
             options: { cacheName: 'hsk' },
           },

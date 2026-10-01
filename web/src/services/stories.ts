@@ -1,12 +1,12 @@
 // Story generation + saved library. Stories live on this device, and in Firebase when signed in.
 
 import storyPrompt from '../prompts/story.md?raw'
-import { buildParagraph, knownRatio, type Lexicon, type Token } from '../chinese/tokens.ts'
+import { buildParagraph, isLearned, knownRatio, type Lexicon, type Token } from '../chinese/tokens.ts'
 import { callJson } from './claude.ts'
 import { loadHsk, newWordsFor } from './hsk.ts'
 import { saveStory, type Story, type StoryLength, type Topic } from './library.ts'
 import { learnerVocab } from './vocab.ts'
-import { getLexicon, knownWords } from './words.ts'
+import { getLexicon } from './words.ts'
 
 export const LENGTHS: Record<StoryLength, { label: string; chars: string }> = {
   short: { label: 'Short', chars: '80–120' },
@@ -93,7 +93,9 @@ export async function generateStory(level: number, topic: Topic, length: StoryLe
   await loadHsk()
   const newPool = upcoming.length ? upcoming.map((w) => w.hanzi) : newWordsFor(Math.min(level, 6), new Set(lexicon.keys()), 40)
   const hasWords = known.length > 0
-  const measureRatio = knownWords(lexicon).length > 0
+  // The 90% check is against the words Claude was given (my words plus, early on, the basics).
+  const allowed: Lexicon = new Map(known.map((w) => [w, { pinyin: '', english: '', mastery: 'young' as const }]))
+  const measureRatio = hasWords
 
   const system = storyPrompt
     .replace('{{LEVEL}}', () => String(level))
@@ -119,12 +121,12 @@ export async function generateStory(level: number, topic: Topic, length: StoryLe
     })
 
   let json = await ask()
-  let ratio = measureRatio ? knownRatio(tokensOf(json, lexicon)).ratio : null
+  let ratio = measureRatio ? knownRatio(tokensOf(json, allowed)).ratio : null
   if (ratio !== null && ratio < 0.9) {
     // Regenerate once, telling Claude which words were outside the list; keep whichever is better.
-    const unknown = unknownWords(json, lexicon)
+    const unknown = unknownWords(json, allowed)
     const retry = await ask(` Your last draft used too many words outside the list (${unknown.join('、')}). Replace them with words from the list.`)
-    const retryRatio = knownRatio(tokensOf(retry, lexicon)).ratio
+    const retryRatio = knownRatio(tokensOf(retry, allowed)).ratio
     if (retryRatio > ratio) {
       json = retry
       ratio = retryRatio
@@ -158,7 +160,7 @@ function tokensOf(json: StoryJson, lexicon: Lexicon): Token[] {
 }
 
 function unknownWords(json: StoryJson, lexicon: Lexicon): string[] {
-  const words = tokensOf(json, lexicon).filter((t) => t.kind === 'word' && t.mastery !== 'young' && t.mastery !== 'mature')
+  const words = tokensOf(json, lexicon).filter((t) => t.kind === 'word' && !isLearned(t.mastery))
   return [...new Set(words.map((t) => t.text))].slice(0, 20)
 }
 

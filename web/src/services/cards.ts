@@ -13,14 +13,18 @@ export function allCards(): Card[] {
   const met: Card[] = Object.values(myWords())
     .sort((a, b) => a.day - b.day)
     .map((w) => ({ hanzi: w.hanzi, english: w.english, source: 'daily' as const }))
-  // Words I practised before the built-in list: keep them (and their meanings) so their reviews carry on.
+  // Any other word I've rated (before the built-in list: Anki, starter words, stories, missions) stays a card so its
+  // reviews carry on, with its meaning from wherever the app knew it.
   const states = cardStates('learn')
   const before: Card[] = [
     ...deckWords().map((w) => ({ hanzi: w.hanzi, english: w.english, source: 'anki' as const })),
+    ...load<{ hanzi: string; english: string }[]>('words', []).map((w) => ({ hanzi: w.hanzi, english: w.english, source: 'anki' as const })),
+    ...load<{ hanzi: string; english: string }[]>('dailyCards', []).map((w) => ({ hanzi: w.hanzi, english: w.english, source: 'daily' as const })),
     ...listStories().flatMap((s) => s.newWords.map((w) => ({ hanzi: w, english: s.glossary[w] ?? '', source: 'story' as const }))),
     ...load<Session[]>('sessions', []).flatMap((s) => (s.report?.new_words ?? []).map((w) => ({ hanzi: w.word, english: w.english, source: 'mission' as const }))),
   ].filter((c) => states[c.hanzi])
-  return mergeCards(met, before)
+  const rest: Card[] = Object.keys(states).map((hanzi) => ({ hanzi, english: '', source: 'app' as const }))
+  return mergeCards(met, before, rest)
 }
 
 /** Today's words I haven't rated in Learn yet: my new Learn cards (synchronous, from the set saved for today). */
@@ -85,7 +89,7 @@ export const setButtonColours = (c: ButtonColours) => save('cardColours', c)
 export function newSession(mode: CardMode, newPerSession = 0): Card[] {
   return mode === 'learn'
     ? // Learn: reviews that are due, then today's new words (all of them, in order).
-      pickSession(allCards(), cardStates('learn'), { size: 40 + newPerSession, fresh: todaysNewCards() })
+      pickSession(allCards(), cardStates('learn'), { size: 40 + todaysNewCards().length + newPerSession, fresh: todaysNewCards() })
     : // Recall keeps up with Learn: every word newly passed there comes up here (after any due reviews).
       pickRecallSession(allCards(), cardStates('recall'), learnOrder(), { size: 40, newPerSession: 30 })
 }

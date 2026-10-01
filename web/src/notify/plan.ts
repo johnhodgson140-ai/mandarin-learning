@@ -161,6 +161,7 @@ export function pickToday<W extends Word>(input: {
     .sort((a, b) => a[1].day - b[1].day)
     .slice(0, count)
     .map(([hanzi]) => hanzi)
-  const fresh = list.filter((w) => !met[w.hanzi]).slice(0, count - carried.length)
+  // Words I've already rated (e.g. before the built-in list) aren't new to me.
+  const fresh = list.filter((w) => !met[w.hanzi] && !rated[w.hanzi]).slice(0, count - carried.length)
   return { carried, fresh }
 }

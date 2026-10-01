@@ -1,11 +1,11 @@
 // My words: the words I've met through Today's words (services/curriculum.ts), with how well I know each one from my
 // Learn cards, plus Anki words I've practised here or synced (optional, from before the built-in list).
 
-import type { Lexicon, LexiconEntry } from '../chinese/tokens.ts'
+import { isLearned, type Lexicon, type LexiconEntry } from '../chinese/tokens.ts'
 import type { Mastery, Word } from './anki-mapping.ts'
 import { myWords } from './curriculum.ts'
 import { currentUser, dbGet, isConfigured } from './firebase.ts'
-import { load, save } from './storage.ts'
+import { load, revision, save } from './storage.ts'
 
 let lexicon: Map<string, LexiconEntry> | null = null
 let lexiconKey = ''
@@ -30,7 +30,7 @@ const isSentence = (hanzi: string) => /[，。？！,.?!…]/.test(hanzi)
  * Mastery comes from my Learn cards. Rebuilt whenever my cards or words change. Whole sentences stay out.
  */
 export function getLexicon(): Lexicon {
-  const key = `${rawLength('cardStates')}:${rawLength('myWords')}:${rawLength('words')}:${rawLength('deck')}`
+  const key = ['cardStates', 'myWords', 'words', 'deck'].map(revision).join(':')
   if (!lexicon || key !== lexiconKey) {
     lexiconKey = key
     lexicon = new Map()
@@ -46,21 +46,7 @@ export function getLexicon(): Lexicon {
   return lexicon
 }
 
-/** Size of a stored value: changes whenever it does (a cheap way to know the word table needs rebuilding). */
-function rawLength(key: string): number {
-  try {
-    return localStorage.getItem(`shuo.${key}`)?.length ?? 0
-  } catch {
-    return 0
-  }
-}
-
 export const deckWords = () => load<DeckWord[]>('deck', [])
-
-/** Words I'm studying (my deck), for writing stories before Anki tells us which ones I know. */
-export function studyWords(lexicon: Lexicon): string[] {
-  return [...lexicon.keys()]
-}
 
 /** Fetch the exported deck that ships with the app (refreshes when I send a new export). */
 export async function loadDeck(): Promise<void> {
@@ -82,14 +68,9 @@ export function saveWords(words: Word[]): void {
   lexicon = null
 }
 
-/** Words I know (young + mature): what stories should be built from. */
+/** Words I know: rated in Learn (learning, young or mature; see isLearned). */
 export function knownWords(lexicon: Lexicon): string[] {
-  return [...lexicon].filter(([, e]) => e.mastery === 'young' || e.mastery === 'mature').map(([hanzi]) => hanzi)
-}
-
-/** Words I'm currently learning in Anki: up to 8 to practise in a story. */
-export function targetWords(lexicon: Lexicon): string[] {
-  return [...lexicon].filter(([, e]) => e.mastery === 'learning').map(([hanzi]) => hanzi).slice(0, 8)
+  return [...lexicon].filter(([, e]) => isLearned(e.mastery)).map(([hanzi]) => hanzi)
 }
 
 /** Refresh this device's copy from the last Anki sync (on any device). */

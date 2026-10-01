@@ -118,7 +118,8 @@ export function pickSession(
       .filter((c) => !states[c.hanzi])
       .sort((a, b) => order.indexOf(a.source) - order.indexOf(b.source))
       .slice(0, newPerSession)
-  return [...due.slice(0, size - newCards.length), ...newCards].slice(0, size)
+  // New cards never squeeze out due reviews: the session grows to fit both.
+  return [...due.slice(0, Math.max(0, size - newCards.length)), ...newCards]
 }
 
 /**

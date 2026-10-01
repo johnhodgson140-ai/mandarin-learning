@@ -3,6 +3,7 @@
 // so a missed day just waits for me; they're my new Learn cards, and what I've met and rated is "my words" everywhere
 // else (reader colours, story difficulty, missions). Not tied to Anki.
 import { dayNumber, DEFAULT_NOTIFY, pickToday, type NotifySettings, type Word } from '../notify/plan.ts'
+import { currentUser, dbPut, isConfigured } from './firebase.ts'
 import { load, save } from './storage.ts'
 
 export type { Word }
@@ -50,11 +51,16 @@ const rated = () => load<Record<string, unknown>>('cardStates', {})
  */
 export async function todaysWords(date = new Date(), count = dailyCount()): Promise<Word[]> {
   const day = dayNumber(date)
-  const mine = myWords()
   const saved = load<TodaySet | null>('todaysWords', null)
-  if (saved?.day === day && saved.words.every((h) => mine[h])) return saved.words.map((h) => mine[h])
-  const { carried, fresh } = pickToday({ list: await curriculumList(), met: mine, rated: rated(), day, count })
-  return keepToday(day, [...carried.map((h) => mine[h]), ...fresh])
+  const known = myWords()
+  if (saved?.day === day && saved.words.length > 0 && saved.words.every((h) => known[h])) return saved.words.map((h) => known[h])
+  const list = await curriculumList()
+  const mine = adoptRated(list)
+  const { carried, fresh } = pickToday({ list, met: mine, rated: rated(), day, count })
+  const words = [...carried.map((h) => mine[h]), ...fresh]
+  // The list didn't load (offline): show what's carried over, but don't fix today's set until it does.
+  if (list.length === 0) return words
+  return keepToday(day, words)
 }
 
 /** Pull ahead: `extra` more new words today. */
@@ -66,13 +72,38 @@ export async function moreWordsToday(extra: number, date = new Date()): Promise<
 async function nextUnmet(n: number, skip: ReadonlySet<string> = new Set()): Promise<Word[]> {
   if (n <= 0) return []
   const mine = myWords()
-  return (await curriculumList()).filter((w) => !mine[w.hanzi] && !skip.has(w.hanzi)).slice(0, n)
+  const states = rated()
+  return (await curriculumList()).filter((w) => !mine[w.hanzi] && !states[w.hanzi] && !skip.has(w.hanzi)).slice(0, n)
+}
+
+/**
+ * Words I'd already rated in Learn before the built-in list (Anki deck, starter words…) that are on the list become
+ * my words (met on day 0), with the list's pinyin and meaning: they're not new, and their reviews carry on.
+ */
+function adoptRated(list: Word[]): Record<string, MyWord> {
+  const mine = myWords()
+  const states = rated()
+  let added = false
+  for (const w of list) {
+    if (states[w.hanzi] && !mine[w.hanzi]) {
+      mine[w.hanzi] = { ...w, day: 0 }
+      added = true
+    }
+  }
+  if (added) saveMine(mine)
+  return mine
+}
+
+/** Save my words (and share them with my other device when signed in to Firebase). */
+export function saveMine(mine: Record<string, MyWord>): void {
+  save('myWords', mine)
+  if (isConfigured && currentUser()) void dbPut('myWords', mine).catch(() => {})
 }
 
 function keepToday(day: number, words: Word[]): Word[] {
   const mine = myWords()
   for (const w of words) mine[w.hanzi] ??= { ...w, day }
-  save('myWords', mine)
+  saveMine(mine)
   save('todaysWords', { day, words: words.map((w) => w.hanzi) } satisfies TodaySet)
   return words.map((w) => mine[w.hanzi])
 }
@@ -80,6 +111,17 @@ function keepToday(day: number, words: Word[]): Word[] {
 /** Today's words and my best guess for the next days (the next words of the list): for notifications and the widget. */
 export async function comingDays(days: number, date = new Date()): Promise<Word[][]> {
   const today = await todaysWords(date)
-  const ahead = await nextUnmet(dailyCount() * (days - 1), new Set(today.map((w) => w.hanzi)))
-  return [today, ...[...Array(days - 1).keys()].map((d) => ahead.slice(d * dailyCount(), (d + 1) * dailyCount()))]
+  const n = dailyCount()
+  // Tomorrow starts with today's words I haven't rated yet (they carry over), then new ones; later days, new ones.
+  const states = rated()
+  const carry = today.filter((w) => !states[w.hanzi]).slice(0, n)
+  const ahead = await nextUnmet(n * (days - 1), new Set(today.map((w) => w.hanzi)))
+  const sets = [today]
+  let next = 0
+  for (let d = 1; d < days; d++) {
+    const take = d === 1 ? n - carry.length : n
+    sets.push([...(d === 1 ? carry : []), ...ahead.slice(next, next + take)])
+    next += take
+  }
+  return sets
 }

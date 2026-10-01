@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import type { Recording } from '../../audio/recorder.ts'
 import { daysUntil, rateCard, ratingFor, shuffleRest, type Card, type CardState, type Rating } from '../../cards/srs.ts'
 import { tokensOfText } from '../../chinese/tokens.ts'
@@ -39,14 +39,20 @@ export default function Cards() {
   }
 
   // Today's words are worked out once the word list has loaded: make sure every new one is in today's Learn session.
+  // (Reads the latest session when the list arrives, so cards rated meanwhile aren't rewound.)
+  const latest = useRef({ session, index, scores })
+  useEffect(() => {
+    latest.current = { session, index, scores }
+  })
   useEffect(() => {
     if (mode !== 'learn') return
     let cancelled = false
     void todaysWords().then(() => {
       if (cancelled) return
-      const ahead = new Set(session.slice(index).map((c) => c.hanzi))
+      const now = latest.current
+      const ahead = new Set(now.session.slice(now.index).map((c) => c.hanzi))
       const missing = todaysNewCards().filter((c) => !ahead.has(c.hanzi))
-      if (missing.length) update([...session, ...missing], index, scores)
+      if (missing.length) update([...now.session, ...missing], now.index, now.scores)
       setCounts(dueCounts())
     })
     return () => {

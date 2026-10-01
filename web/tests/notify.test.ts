@@ -91,3 +91,10 @@ test('the word of the day is the first of that day’s new words', () => {
   const plan = planNotifications({ now, settings, dueCount: 0, practisedToday: false, words, dailySets: [[words[2]]], toneTip: null })
   assert.ok(plan[0].title.includes('可乐'))
 })
+
+test("today's words skip words I've already rated (e.g. from before the built-in list)", async () => {
+  const { pickToday } = await import('../src/notify/plan.ts')
+  const list = ['你好', '谢谢', '朋友', '老师'].map((hanzi) => ({ hanzi, pinyin: '', english: '' }))
+  const pick = pickToday({ list, met: {}, rated: { 你好: {}, 朋友: {} }, day: 1, count: 2 })
+  assert.deepEqual(pick.fresh.map((w) => w.hanzi), ['谢谢', '老师'])
+})

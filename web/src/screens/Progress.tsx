@@ -13,7 +13,7 @@ import { ratingFor } from '../cards/srs.ts'
 import { cardStates } from '../services/cards.ts'
 import { gatherActivity } from '../services/progress.ts'
 import { load, save } from '../services/storage.ts'
-import { getLexicon, knownWords } from '../services/words.ts'
+import { getLexicon } from '../services/words.ts'
 import './Progress.css'
 
 /** The same passage every month, so recordings can be compared. */
@@ -31,7 +31,8 @@ export default function Progress() {
     gatherActivity().then(setData, () => {})
   }, [])
   const lexicon = getLexicon()
-  const known = knownWords(lexicon).length
+  // Known = passed and holding (young or mature), stricter than the 'rated' used for picking stories.
+  const known = [...lexicon.values()].filter((e) => e.mastery === 'young' || e.mastery === 'mature').length
   const stats = useMemo(() => pairStats((data?.attempts ?? []).flatMap((a: Attempt) => a.syllables)), [data])
 
   if (!data) return <h1>Progress</h1>
