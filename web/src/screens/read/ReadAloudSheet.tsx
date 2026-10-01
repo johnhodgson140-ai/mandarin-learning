@@ -2,11 +2,12 @@ import { useState } from 'react'
 import type { Token } from '../../chinese/tokens.ts'
 import type { Recording } from '../../audio/recorder.ts'
 import HoldToTalk from '../../components/HoldToTalk.tsx'
+import PlayButton from '../../components/PlayButton.tsx'
 import { gradeParagraph, type ParagraphResult } from '../../grading/readAloud.ts'
 import { canRecognise } from '../../scoring/recognize.ts'
 import { getProfile } from '../../services/tone.ts'
 import { getKeys } from '../../services/keys.ts'
-import { rateForLevel, speak } from '../../services/tts.ts'
+import { playBlob, rateForLevel, speak } from '../../services/tts.ts'
 
 type Props = {
   tokens: Token[]
@@ -74,12 +75,8 @@ export default function ReadAloudSheet({ tokens, storyId, paragraph, level, resu
               <span className="legend st-minor">Amber</span> close · <span className="legend st-wrong">red</span> needs work
             </p>
             <div className="sheet-actions">
-              <button type="button" className="btn btn-secondary" onClick={() => playBlob(result.wav)}>
-                ▶ Mine
-              </button>
-              <button type="button" className="btn btn-secondary" onClick={() => speak(text, rateForLevel(level))}>
-                ▶ Native
-              </button>
+              <PlayButton id={`mine-${result.attemptId}`} label="Mine" className="btn btn-secondary" start={() => playBlob(result.wav, `mine-${result.attemptId}`)} />
+              <PlayButton id={`native-${text}`} label="Native" className="btn btn-secondary" start={() => speak(text, rateForLevel(level), `native-${text}`)} />
             </div>
             <button type="button" className="btn btn-primary" onClick={() => onResult(undefined)}>
               Try again
@@ -93,9 +90,3 @@ export default function ReadAloudSheet({ tokens, storyId, paragraph, level, resu
   )
 }
 
-function playBlob(blob: Blob) {
-  const url = URL.createObjectURL(blob)
-  const audio = new Audio(url)
-  audio.onended = () => URL.revokeObjectURL(url)
-  void audio.play()
-}

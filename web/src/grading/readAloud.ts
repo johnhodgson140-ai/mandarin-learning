@@ -33,7 +33,8 @@ export async function gradeParagraph(tokens: Token[], rec: Recording, storyId: s
   }))
 
   const attemptId = newId()
-  await saveAttempt({ id: attemptId, type: 'read', refText, storyId, paragraph, scores, syllables: logged, seconds: rec.seconds, createdAt: Date.now() }, wav)
+  // Saving is for history and stats only: if on-device storage fails, still show the grade.
+  await saveAttempt({ id: attemptId, type: 'read', refText, storyId, paragraph, scores, syllables: logged, seconds: rec.seconds, createdAt: Date.now() }, wav).catch(() => {})
   return { attemptId, statuses, scores, wav }
 }
 
@@ -43,17 +44,18 @@ async function gradeLocally(tokens: Token[], rec: Recording, storyId: string, pa
   const syllables = tokens.flatMap((t) => t.syllables)
   const result = await scoreSpeech(syllables, rec)
   const statuses = result.syllables.map((s) => s.status)
-  const heard = result.syllables.filter((s) => (s.sound ?? 0) > 0).length
+  const heard = result.syllables.filter((s) => s.sound === null || s.sound > 0).length
   const scores = { accuracy: result.overall, fluency: null, completeness: Math.round((heard / Math.max(1, syllables.length)) * 100) }
   const logged: AttemptSyllable[] = syllables.map((s, i) => ({
     hanzi: s.hanzi,
     spokenTone: s.spoken,
     prevTone: i > 0 ? syllables[i - 1].spoken : null,
     predictedTone: result.syllables[i].heardTone,
-    accuracy: result.syllables[i].score,
+    accuracy: result.syllables[i].checked ? result.syllables[i].score : null,
     status: statuses[i],
   }))
   const attemptId = newId()
-  await saveAttempt({ id: attemptId, type: 'read', refText, storyId, paragraph, scores: { ...scores, fluency: 0 }, syllables: logged, seconds: rec.seconds, createdAt: Date.now() }, rec.wav)
+  // Saving is for history and stats only: if on-device storage fails, still show the grade.
+  await saveAttempt({ id: attemptId, type: 'read', refText, storyId, paragraph, scores: { ...scores, fluency: 0 }, syllables: logged, seconds: rec.seconds, createdAt: Date.now() }, rec.wav).catch(() => {})
   return { attemptId, statuses, scores, wav: rec.wav }
 }

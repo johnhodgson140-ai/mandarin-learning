@@ -40,3 +40,8 @@ test('active days, HSK estimate, minutes this week, boss rule', () => {
   assert.ok(!passesBoss(2, 1, true, 70))
   assert.ok(!passesBoss(1, 1, true, 90))
 })
+
+test('days I only rated cards count as active', () => {
+  const a: Activity = { attempts: [], storiesFinished: [], missionsDone: [], cardDays: ['2026-09-30'] }
+  assert.equal(activeDays(a).has('2026-09-30'), true)
+})

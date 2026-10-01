@@ -56,7 +56,7 @@ export function combine(
   let raw = sound !== null && tone !== null ? 0.4 * sound + 0.6 * tone * 100 : (sound ?? (tone ?? 0) * 100)
   if (tone !== null && heardTone !== spokenTone && tone < WRONG_TONE) raw = Math.min(raw, WRONG_TONE_CAP)
   const score = checked ? Math.max(1, Math.round(raw)) : 0
-  return { score, status: statusOf(score), sound, tone, heardPinyin, heardTone, checked }
+  return { score, status: checked ? statusOf(score) : 'unchecked', sound, tone, heardPinyin, heardTone, checked }
 }
 
 export const statusOf = (score: number): Status => (score >= 80 ? 'ok' : score >= 60 ? 'minor' : 'wrong')

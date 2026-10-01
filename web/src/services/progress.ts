@@ -3,6 +3,7 @@ import { activeDays, streak, totalXp, type Activity } from '../progress/logic.ts
 import type { Session } from '../missions/logic.ts'
 import { allAttempts, type Attempt } from './attempts.ts'
 import { listStories } from './library.ts'
+import { cardDays } from './cards.ts'
 import { load } from './storage.ts'
 
 export async function gatherActivity(): Promise<{ activity: Activity; attempts: Attempt[] }> {
@@ -11,6 +12,7 @@ export async function gatherActivity(): Promise<{ activity: Activity; attempts: 
     attempts: attempts.map((a) => ({ createdAt: a.createdAt, okSyllables: a.syllables.filter((s) => s.status === 'ok').length, seconds: a.seconds ?? 0 })),
     storiesFinished: listStories().flatMap((s) => (s.readAt ? [{ readAt: s.readAt }] : [])),
     missionsDone: load<Session[]>('sessions', []).flatMap((s) => (s.report ? [{ createdAt: s.createdAt }] : [])),
+    cardDays: cardDays(),
   }
   return { activity, attempts }
 }

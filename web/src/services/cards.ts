@@ -3,8 +3,9 @@
 import { DEFAULT_SCALE, mergeCards, pickRecallSession, pickSession, rateCard, type Card, type CardState, type IntervalScale, type Rating } from '../cards/srs.ts'
 import type { Session } from '../missions/logic.ts'
 import { dayNumber } from '../notify/plan.ts'
+import { dayKey } from '../progress/logic.ts'
 import { myWords } from './curriculum.ts'
-import { currentUser, dbPut, isConfigured } from './firebase.ts'
+import { sendProgress } from './sync.ts'
 import { load, save } from './storage.ts'
 import { listStories } from './library.ts'
 import { deckWords, getLexicon } from './words.ts'
@@ -63,6 +64,14 @@ export function learnOrder(): string[] {
   return load<string[]>('learnOrder', [])
 }
 
+/** Days I rated cards, for the streak (before this was kept: the days of each card's latest rating). */
+export function cardDays(): string[] {
+  const kept = load<string[] | null>('cardDays', null)
+  if (kept) return kept
+  const lasts = [...Object.values(cardStates('learn')), ...Object.values(cardStates('recall'))].map((s) => s.last)
+  return [...new Set(lasts.filter((t): t is number => typeof t === 'number' && t > 0).map(dayKey))]
+}
+
 /** Rate a card, Anki style. Passing it in Learn (Hard or better) unlocks it in Recall. */
 export function rateCardIn(mode: CardMode, hanzi: string, rating: Rating, score: number | null = null): void {
   migrate()
@@ -71,10 +80,11 @@ export function rateCardIn(mode: CardMode, hanzi: string, rating: Rating, score:
   save(STATE_KEY[mode], states)
   const order = learnOrder()
   if (mode === 'learn' && rating >= 2 && !order.includes(hanzi)) save('learnOrder', [...order, hanzi])
-  if (isConfigured && currentUser()) {
-    void dbPut(STATE_KEY[mode], states).catch(() => {})
-    if (mode === 'learn') void dbPut('learnOrder', learnOrder()).catch(() => {})
-  }
+  const today = dayKey(Date.now())
+  const days = cardDays()
+  if (!days.includes(today)) save('cardDays', [...days, today].slice(-400))
+  sendProgress(STATE_KEY[mode], states)
+  if (mode === 'learn') sendProgress('learnOrder', learnOrder())
 }
 
 /** My interval multipliers for Hard / Good / Easy (Settings → Flashcards). */

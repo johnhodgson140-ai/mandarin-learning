@@ -15,7 +15,7 @@ export async function scoreAndLog(text: string, syllables: Syllable[], rec: Reco
     spokenTone: s.spoken,
     prevTone: i > 0 ? syllables[i - 1].spoken : null,
     predictedTone: result.syllables[i].heardTone,
-    accuracy: result.syllables[i].score,
+    accuracy: result.syllables[i].checked ? result.syllables[i].score : null,
     status: result.syllables[i].status,
   }))
   const heardShare = result.syllables.filter((s) => s.sound === null || s.sound > 0).length / Math.max(1, syllables.length)

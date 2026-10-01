@@ -3,7 +3,8 @@
 
 import { isHan, type Tone } from '../chinese/tones.ts'
 
-export type Status = 'ok' | 'minor' | 'wrong'
+/** 'unchecked': nothing could judge this syllable (e.g. a neutral tone with no sound check), so it isn't marked or counted. */
+export type Status = 'ok' | 'minor' | 'wrong' | 'unchecked'
 
 /** One word as Azure Pronunciation Assessment reports it (times in ms). */
 export type AzureWord = {

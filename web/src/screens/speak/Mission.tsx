@@ -215,9 +215,9 @@ async function phonePron(text: string, rec: Recording): Promise<Extract<Turn, { 
   const result = await scoreSpeech(syllables, { wav: rec.wav, seconds: rec.seconds })
   if (result.tones.every((t) => t === null)) return null
   let i = 0
-  const words = tokens.map((t) => {
-    const scores = result.syllables.slice(i, (i += t.syllables.length)).map((s) => s.score)
-    return { word: t.text, accuracy: Math.round(scores.reduce((a, b) => a + b, 0) / scores.length) }
+  const words = tokens.flatMap((t) => {
+    const scores = result.syllables.slice(i, (i += t.syllables.length)).filter((s) => s.checked).map((s) => s.score)
+    return scores.length ? [{ word: t.text, accuracy: Math.round(scores.reduce((a, b) => a + b, 0) / scores.length) }] : []
   })
   return { accuracy: result.overall, fluency: null, words }
 }

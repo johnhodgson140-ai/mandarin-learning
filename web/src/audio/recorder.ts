@@ -239,6 +239,8 @@ export class Recorder {
   private chunks: Float32Array[] = []
   private length = 0
   private capturing = false
+  /** The microphone's rate when recording started (the app being hidden mid-recording closes the microphone). */
+  private rate = 48000
   private readonly sink = (chunk: Float32Array) => this.push(chunk)
   private onLevel: (level: number) => void
   private onMaxLength: () => void
@@ -253,6 +255,7 @@ export class Recorder {
     this.length = 0
     await mic.open()
     mic.reset()
+    this.rate = mic.sampleRate
     log('recording start', mic.state())
     this.capturing = true
     mic.sink = this.sink
@@ -266,15 +269,15 @@ export class Recorder {
     for (let i = 0; i < chunk.length; i++) sum += chunk[i] * chunk[i]
     const rms = Math.sqrt(sum / Math.max(chunk.length, 1))
     this.onLevel(Math.min(1, rms * 6))
-    if (this.length >= MAX_SECONDS * mic.sampleRate) this.onMaxLength()
+    if (this.length >= MAX_SECONDS * this.rate) this.onMaxLength()
   }
 
   async stop(): Promise<Recording> {
     if (!this.capturing) throw new Error('recorder is not running')
     await mic.flush()
     this.detach()
-    log('recording stop', { chunks: this.chunks.length, seconds: Math.round((this.length / mic.sampleRate) * 10) / 10, ...mic.state() })
-    const inRate = mic.sampleRate
+    log('recording stop', { chunks: this.chunks.length, seconds: Math.round((this.length / this.rate) * 10) / 10, ...mic.state() })
+    const inRate = this.rate
     const joined = new Float32Array(Math.min(this.length, MAX_SECONDS * inRate))
     let offset = 0
     for (const c of this.chunks) {
