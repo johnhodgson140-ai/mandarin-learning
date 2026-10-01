@@ -7,7 +7,7 @@ import { myWords } from './curriculum.ts'
 import { currentUser, dbPut, isConfigured } from './firebase.ts'
 import { load, save } from './storage.ts'
 import { listStories } from './library.ts'
-import { deckWords } from './words.ts'
+import { deckWords, getLexicon } from './words.ts'
 
 export function allCards(): Card[] {
   const met: Card[] = Object.values(myWords())
@@ -23,7 +23,8 @@ export function allCards(): Card[] {
     ...listStories().flatMap((s) => s.newWords.map((w) => ({ hanzi: w, english: s.glossary[w] ?? '', source: 'story' as const }))),
     ...load<Session[]>('sessions', []).flatMap((s) => (s.report?.new_words ?? []).map((w) => ({ hanzi: w.word, english: w.english, source: 'mission' as const }))),
   ].filter((c) => states[c.hanzi])
-  const rest: Card[] = Object.keys(states).map((hanzi) => ({ hanzi, english: '', source: 'app' as const }))
+  const lexicon = getLexicon()
+  const rest: Card[] = Object.keys(states).map((hanzi) => ({ hanzi, english: lexicon.get(hanzi)?.english ?? '', source: 'app' as const }))
   return mergeCards(met, before, rest)
 }
 

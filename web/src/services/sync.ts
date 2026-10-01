@@ -13,14 +13,14 @@ export async function syncProgress(): Promise<void> {
     dbGet<Record<string, { day: number }>>('myWords'),
     dbGet<string[]>('learnOrder'),
   ])
+  // Merge with what's here right now and save it straight away (no waiting in between, so nothing saved while
+  // Firebase was answering is lost), then send the result back.
   const merged = {
     cardStates: mergeStates(load('cardStates', {}), states ?? {}),
     recallStates: mergeStates(load('recallStates', {}), recall ?? {}),
     myWords: mergeMet(load('myWords', {}), met ?? {}),
     learnOrder: mergeOrder(load<string[]>('learnOrder', []), order ?? []),
   }
-  for (const [key, value] of Object.entries(merged)) {
-    save(key, value)
-    await dbPut(key, value)
-  }
+  for (const [key, value] of Object.entries(merged)) save(key, value)
+  await Promise.all(Object.entries(merged).map(([key, value]) => dbPut(key, value)))
 }

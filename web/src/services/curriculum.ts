@@ -112,9 +112,13 @@ function keepToday(day: number, words: Word[]): Word[] {
 export async function comingDays(days: number, date = new Date()): Promise<Word[][]> {
   const today = await todaysWords(date)
   const n = dailyCount()
-  // Tomorrow starts with today's words I haven't rated yet (they carry over), then new ones; later days, new ones.
+  // Tomorrow starts with words I've met but not rated yet (today's, and any met in a story or mission), as the real
+  // pick does; then new ones. Later days: new ones.
   const states = rated()
-  const carry = today.filter((w) => !states[w.hanzi]).slice(0, n)
+  const carry = Object.values(myWords())
+    .filter((w) => !states[w.hanzi])
+    .sort((a, b) => a.day - b.day)
+    .slice(0, n)
   const ahead = await nextUnmet(n * (days - 1), new Set(today.map((w) => w.hanzi)))
   const sets = [today]
   let next = 0

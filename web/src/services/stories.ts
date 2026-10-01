@@ -93,8 +93,9 @@ export async function generateStory(level: number, topic: Topic, length: StoryLe
   await loadHsk()
   const newPool = upcoming.length ? upcoming.map((w) => w.hanzi) : newWordsFor(Math.min(level, 6), new Set(lexicon.keys()), 40)
   const hasWords = known.length > 0
-  // The 90% check is against the words Claude was given (my words plus, early on, the basics).
-  const allowed: Lexicon = new Map(known.map((w) => [w, { pinyin: '', english: '', mastery: 'young' as const }]))
+  // The 90% check is against all the words Claude was given: mine (plus the basics early on), the ones to practise
+  // and the new ones it may bring in.
+  const allowed: Lexicon = new Map([...known, ...practise, ...newPool].map((w) => [w, { pinyin: '', english: '', mastery: 'young' as const }]))
   const measureRatio = hasWords
 
   const system = storyPrompt
