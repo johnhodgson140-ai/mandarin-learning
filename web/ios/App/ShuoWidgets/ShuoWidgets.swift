@@ -1,3 +1,4 @@
+import AppIntents
 import SwiftUI
 import WidgetKit
 
@@ -214,11 +215,211 @@ struct WordOfDayWidget: Widget {
     }
 }
 
+// ---- Today's words: a few words from my deck each day (the same ones as the app's Today's words screen) ----
+// Lock screen: a new one of today's words every 20 minutes. Home screen: a small quiz, Show the answer, then Next.
+
+/// How many words a day (set the same number in Shuō: Settings → Notifications → Today's words).
+@available(iOSApplicationExtension 17.0, *)
+enum WordsPerDay: Int, AppEnum {
+    case three = 3, five = 5, eight = 8, ten = 10
+    static let typeDisplayRepresentation: TypeDisplayRepresentation = "Words a day"
+    static let caseDisplayRepresentations: [WordsPerDay: DisplayRepresentation] = [.three: "3", .five: "5", .eight: "8", .ten: "10"]
+}
+
+@available(iOSApplicationExtension 17.0, *)
+struct DailyWordsConfig: WidgetConfigurationIntent {
+    static let title: LocalizedStringResource = "Today's words"
+    static let description = IntentDescription("Set the same number of words a day as in Shuō's settings.")
+    @Parameter(title: "Words a day", default: .five) var perDay: WordsPerDay
+}
+
+/// Where I am in today's words on the home screen widget (kept by the widget itself: no shared container needed).
+enum DailyState {
+    static func current(day: Int) -> (index: Int, revealed: Bool) {
+        let d = UserDefaults.standard
+        guard d.integer(forKey: "dw.day") == day else { return (0, false) }
+        return (d.integer(forKey: "dw.index"), d.bool(forKey: "dw.revealed"))
+    }
+
+    static func set(day: Int, index: Int, revealed: Bool) {
+        let d = UserDefaults.standard
+        d.set(day, forKey: "dw.day")
+        d.set(index, forKey: "dw.index")
+        d.set(revealed, forKey: "dw.revealed")
+    }
+}
+
+@available(iOSApplicationExtension 17.0, *)
+struct ShowAnswerIntent: AppIntent {
+    static let title: LocalizedStringResource = "Show the answer"
+    func perform() async throws -> some IntentResult {
+        let day = DeckWord.dayNumber(Date())
+        let state = DailyState.current(day: day)
+        DailyState.set(day: day, index: state.index, revealed: !state.revealed)
+        return .result()
+    }
+}
+
+@available(iOSApplicationExtension 17.0, *)
+struct NextWordIntent: AppIntent {
+    static let title: LocalizedStringResource = "Next word"
+    @Parameter(title: "Words today") var count: Int
+    init() {}
+    init(count: Int) { self.count = count }
+    func perform() async throws -> some IntentResult {
+        let day = DeckWord.dayNumber(Date())
+        let state = DailyState.current(day: day)
+        DailyState.set(day: day, index: (state.index + 1) % max(count, 1), revealed: false)
+        return .result()
+    }
+}
+
+struct DailyEntry: TimelineEntry {
+    let date: Date
+    let words: [DeckWord]
+    let index: Int
+    let revealed: Bool
+}
+
+@available(iOSApplicationExtension 17.0, *)
+struct DailyWordsProvider: AppIntentTimelineProvider {
+    func placeholder(in context: Context) -> DailyEntry { DailyEntry(date: Date(), words: [], index: 0, revealed: false) }
+
+    func snapshot(for configuration: DailyWordsConfig, in context: Context) async -> DailyEntry {
+        entries(for: configuration, family: context.family).first ?? placeholder(in: context)
+    }
+
+    func timeline(for configuration: DailyWordsConfig, in context: Context) async -> Timeline<DailyEntry> {
+        Timeline(entries: entries(for: configuration, family: context.family), policy: .atEnd)
+    }
+
+    private func entries(for configuration: DailyWordsConfig, family: WidgetFamily) -> [DailyEntry] {
+        let calendar = Calendar.current
+        let now = Date()
+        let all = DeckWord.all()
+        let count = configuration.perDay.rawValue
+        let words = DeckWord.daily(now, in: all, count: count)
+        let midnight = calendar.startOfDay(for: calendar.date(byAdding: .day, value: 1, to: now) ?? now)
+        let tomorrow = DailyEntry(date: midnight, words: DeckWord.daily(midnight, in: all, count: count), index: 0, revealed: false)
+        switch family {
+        case .accessoryRectangular, .accessoryInline, .accessoryCircular:
+            // Lock screen: the next of today's words every 20 minutes until midnight.
+            let startOfDay = calendar.startOfDay(for: now)
+            let slot = Int(now.timeIntervalSince(startOfDay) / 1200)
+            var out: [DailyEntry] = []
+            var s = slot
+            while let at = calendar.date(byAdding: .minute, value: s * 20, to: startOfDay), at < midnight {
+                out.append(DailyEntry(date: s == slot ? now : at, words: words, index: s % max(words.count, 1), revealed: true))
+                s += 1
+            }
+            return out + [tomorrow]
+        default:
+            // Home screen: where I got to with Show / Next; a fresh start at midnight.
+            let state = DailyState.current(day: DeckWord.dayNumber(now))
+            return [DailyEntry(date: now, words: words, index: state.index, revealed: state.revealed), tomorrow]
+        }
+    }
+}
+
+@available(iOSApplicationExtension 17.0, *)
+struct DailyWordsView: View {
+    @Environment(\.widgetFamily) private var family
+    let entry: DailyEntry
+
+    var body: some View {
+        if entry.words.isEmpty {
+            Text("Open Shuō once to load your words.").font(.system(size: 12)).foregroundColor(ink)
+        } else {
+            let i = entry.index % entry.words.count
+            let w = entry.words[i]
+            let place = "\(i + 1)/\(entry.words.count)"
+            switch family {
+            case .accessoryInline:
+                Text("\(w.hanzi) \(w.pinyin) · \(w.meaning)")
+            case .accessoryRectangular:
+                VStack(alignment: .leading, spacing: 1) {
+                    HStack(alignment: .firstTextBaseline, spacing: 6) {
+                        Text(w.hanzi).font(.system(size: 20, weight: .semibold, design: .serif)).lineLimit(1)
+                        Text(w.pinyin).font(.system(size: 13)).lineLimit(1).opacity(0.85)
+                    }
+                    Text("\(w.meaning) · \(place)").font(.system(size: 13)).lineLimit(1).minimumScaleFactor(0.7)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+            case .systemMedium:
+                HStack(alignment: .center, spacing: 14) {
+                    Text(w.hanzi).font(.system(size: 44, weight: .semibold, design: .serif)).foregroundColor(ink)
+                        .minimumScaleFactor(0.5).lineLimit(1)
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("今天的词 · \(place)").font(.system(size: 11, weight: .semibold, design: .serif)).foregroundColor(jade)
+                        if entry.revealed {
+                            Text(w.pinyin).font(.system(size: 16, weight: .medium)).foregroundColor(jade)
+                            Text(w.meaning).font(.system(size: 14)).foregroundColor(ink.opacity(0.8)).lineLimit(2)
+                        } else {
+                            Text("Know it? Say it, then check.").font(.system(size: 13)).foregroundColor(ink.opacity(0.6)).lineLimit(2)
+                        }
+                        Spacer(minLength: 0)
+                        buttons
+                    }
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+            default:
+                VStack(alignment: .leading, spacing: 2) {
+                    HStack {
+                        Text("今天的词").font(.system(size: 11, weight: .semibold, design: .serif)).foregroundColor(jade)
+                        Spacer()
+                        Text(place).font(.system(size: 11)).foregroundColor(ink.opacity(0.6))
+                    }
+                    Spacer(minLength: 0)
+                    Text(w.hanzi).font(.system(size: 32, weight: .semibold, design: .serif)).foregroundColor(ink)
+                        .minimumScaleFactor(0.5).lineLimit(1)
+                    if entry.revealed {
+                        Text(w.pinyin).font(.system(size: 13, weight: .medium)).foregroundColor(jade).lineLimit(1)
+                        Text(w.meaning).font(.system(size: 11)).foregroundColor(ink.opacity(0.7)).lineLimit(1)
+                    }
+                    Spacer(minLength: 0)
+                    buttons
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+            }
+        }
+    }
+
+    private var buttons: some View {
+        HStack(spacing: 6) {
+            Button(intent: ShowAnswerIntent()) {
+                Text(entry.revealed ? "Hide" : "Show").font(.system(size: 12, weight: .semibold)).frame(maxWidth: .infinity)
+            }
+            .tint(jade)
+            Button(intent: NextWordIntent(count: entry.words.count)) {
+                Text("Next").font(.system(size: 12, weight: .semibold)).frame(maxWidth: .infinity)
+            }
+            .tint(ink)
+        }
+        .buttonStyle(.bordered)
+        .controlSize(.small)
+    }
+}
+
+@available(iOSApplicationExtension 17.0, *)
+struct DailyWordsWidget: Widget {
+    var body: some WidgetConfiguration {
+        AppIntentConfiguration(kind: "DailyWords", intent: DailyWordsConfig.self, provider: DailyWordsProvider()) { entry in
+            DailyWordsView(entry: entry).containerBackground(for: .widget) { paper }
+        }
+        .configurationDisplayName("Today's words")
+        .description("Today's words from your deck. Lock screen: a new one every 20 minutes. Home screen: Show the answer, then Next.")
+        .supportedFamilies([.accessoryRectangular, .accessoryInline, .systemSmall, .systemMedium])
+    }
+}
+
 @main
 struct ShuoWidgets: WidgetBundle {
     var body: some Widget {
         ChineseTimeWidget()
         ChineseDateWidget()
         WordOfDayWidget()
+        if #available(iOSApplicationExtension 17.0, *) {
+            DailyWordsWidget()
+        }
     }
 }

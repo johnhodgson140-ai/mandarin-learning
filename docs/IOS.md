@@ -48,6 +48,13 @@ Long-press the lock screen → **Customize** → Lock Screen → tap the widget 
 screen: long-press → **+** → Shuō. iOS decides exactly when widgets refresh, so the time can lag by a minute now
 and then.
 
+**Today's words** (iOS 17+): a few words from your deck each day, in deck order, the same ones as Speak → Today's
+words and the notifications. On the lock screen it moves to the next word every 20 minutes. On the home screen it's a
+quiz: the characters, **Show** for pinyin and meaning, **Next** for the next word. Long-press it → **Edit widget** to
+set words a day; use the same number as Settings → Notifications → Today's words. If you imported your own Anki export
+in Settings, the widget still reads the deck the app was built with.
+
 ## Notifications
 Settings → Notifications (in the app): word of the day, practice reminder (with the cards due) and streak saver,
-each at a time you choose. Tapping one opens your cards.
+each at a time you choose. Tapping one opens your cards. **Today's words** sends each of the day's words on its own,
+spread between two times you choose, then a recap of all of them; tapping one opens Speak → Today's words.

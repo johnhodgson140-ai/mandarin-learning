@@ -83,3 +83,10 @@
 .ear-wrong { color: var(--wrong); font-weight: 600; }
 
 .cards-bar { display: flex; align-items: center; justify-content: space-between; gap: var(--space); }
+
+/* Today's words */
+.word-list { list-style: none; margin: calc(var(--space) * 2) 0; padding: 0; display: flex; flex-direction: column; gap: var(--space); }
+.word-row { display: grid; grid-template-columns: 1.2em auto 1fr auto; align-items: center; gap: calc(var(--space) * 1.5); padding: var(--space) calc(var(--space) * 1.5); background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+.word-hanzi { font-size: 28px; }
+.word-info { display: flex; flex-direction: column; min-width: 0; }
+.word-pinyin { display: flex; gap: 0.3em; font-size: 17px; }

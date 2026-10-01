@@ -13,7 +13,7 @@ import VoicePicker from '../components/VoicePicker.tsx'
 import { clearLog, logCount, logText } from '../debug/log.ts'
 import { isNativeApp, nativeRecogniserInfo } from '../native/app.ts'
 import { getNotifySettings, setNotifySettings } from '../native/notifications.ts'
-import type { NotifySettings } from '../notify/plan.ts'
+import { DAILY_COUNTS, type NotifySettings } from '../notify/plan.ts'
 import { hasRecogniser, recogniserBlocked, setRecogniserBlocked } from '../scoring/recognize.ts'
 import { AZURE_VOICES, deviceVoices, getDeviceVoice, getSpeed, getVoice, playBlob, rateForLevel, setDeviceVoice, setSpeed, setVoice, speak, SPEEDS, type Speed } from '../services/tts.ts'
 import PlayButton from '../components/PlayButton.tsx'
@@ -353,13 +353,14 @@ function Notifications() {
   const [settings, set] = useState<NotifySettings>(getNotifySettings)
   const [message, setMessage] = useState<string | null>(null)
   if (!isNativeApp()) return null
+  const daily = settings.dailyWords
   async function update(next: NotifySettings) {
     set(next)
     const problem = await setNotifySettings(next)
     setMessage(problem)
     if (problem) set(getNotifySettings())
   }
-  const rows: [keyof NotifySettings, string, string][] = [
+  const rows: [Exclude<keyof NotifySettings, 'dailyWords'>, string, string][] = [
     ['wordOfDay', 'Word of the day', 'A word from your deck with pinyin and meaning, and a tone tip.'],
     ['practice', 'Practice reminder', 'Tells you how many cards are due.'],
     ['streak', 'Streak saver', "Only on days you haven't practised yet."],
@@ -367,6 +368,26 @@ function Notifications() {
   return (
     <section className="card">
       <h2 className="card-title">Notifications</h2>
+      <div className="notify-row">
+        <label className="check">
+          <input type="checkbox" checked={daily.on} onChange={(e) => void update({ ...settings, dailyWords: { ...daily, on: e.target.checked } })} />
+          Today’s words
+        </label>
+        <span />
+        <p className="muted small">
+          {daily.count} words from your deck each day, one at a time, then an evening recap. Set the same number on the Today’s words widget.
+        </p>
+        <div className="chips">
+          {DAILY_COUNTS.map((n) => (
+            <button key={n} type="button" className="chip" aria-pressed={daily.count === n} onClick={() => void update({ ...settings, dailyWords: { ...daily, count: n } })}>{n}</button>
+          ))}
+        </div>
+        <span />
+        <label className="muted small notify-range">
+          From <input type="time" className="type-input notify-time" value={daily.from} onChange={(e) => void update({ ...settings, dailyWords: { ...daily, from: e.target.value } })} />
+          to <input type="time" className="type-input notify-time" value={daily.to} onChange={(e) => void update({ ...settings, dailyWords: { ...daily, to: e.target.value } })} />
+        </label>
+      </div>
       {rows.map(([key, title, hint]) => (
         <div key={key} className="notify-row">
           <label className="check">
