@@ -14,6 +14,7 @@ const Guided = lazy(() => import('./speak/Guided.tsx'))
 const Shadow = lazy(() => import('./speak/Shadow.tsx'))
 const Retell = lazy(() => import('./speak/Retell.tsx'))
 const Mission = lazy(() => import('./speak/Mission.tsx'))
+const Words = lazy(() => import('./speak/Words.tsx'))
 
 export default function Speak() {
   const [, sub, arg] = useHash().split('/')
@@ -21,7 +22,8 @@ export default function Speak() {
   if (sub === 'ears') return <Ears />
   if (sub === 'calibrate') return <Calibrate />
   if (sub === 'missions') return <Missions />
-  if (sub === 'cards') return <Cards />
+  if (sub === 'cards') return <Cards today={arg === 'today'} />
+  if (sub === 'words') return <Words />
   if (sub === 'guided' && arg) return <Guided id={arg} />
   if (sub === 'shadow') return <Shadow />
   if (sub === 'retell') return <Retell />
@@ -43,6 +45,10 @@ function Hub() {
         <a href="#speak/cards" className="hub-row">
           <span className="hub-title">Say your cards</span>
           <span className="muted">Flashcards you answer out loud, scored 1–100. Learn: characters first. Recall: English first, from memory.</span>
+        </a>
+        <a href="#speak/words" className="hub-row">
+          <span className="hub-title">Today’s words</span>
+          <span className="muted">A few new words from your deck each day, also on the widget and in notifications.</span>
         </a>
         <a href="#speak/ears" className="hub-row">
           <span className="hub-title">Tone ears</span>

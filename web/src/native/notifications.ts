@@ -4,9 +4,10 @@ import { LocalNotifications } from '@capacitor/local-notifications'
 import { tokensOfText, withAppTones } from '../chinese/tokens.ts'
 import { log } from '../debug/log.ts'
 import { weakest, type EarStats } from '../ears/logic.ts'
-import { DEFAULT_NOTIFY, IDS, planNotifications, type NotifySettings, type Word } from '../notify/plan.ts'
+import { DEFAULT_NOTIFY, IDS, dailyWordIds, planNotifications, type NotifySettings, type Word } from '../notify/plan.ts'
 import { activeDays, dayKey } from '../progress/logic.ts'
 import { dueCounts } from '../services/cards.ts'
+import { dailyWordList } from '../services/dailyWords.ts'
 import { gatherActivity } from '../services/progress.ts'
 import { load, save } from '../services/storage.ts'
 import { getLexicon } from '../services/words.ts'
@@ -14,7 +15,7 @@ import { isNativeApp } from './app.ts'
 
 export function getNotifySettings(): NotifySettings {
   const saved = load<NotifySettings | null>('notifications', null)
-  if (saved) return { ...DEFAULT_NOTIFY, ...saved }
+  if (saved) return { ...DEFAULT_NOTIFY, ...saved, dailyWords: { ...DEFAULT_NOTIFY.dailyWords, ...saved.dailyWords } }
   // Before these settings existed there was one daily reminder: keep it as the practice reminder.
   const old = load<{ on: boolean; time: string } | null>('reminder', null)
   return old ? { ...DEFAULT_NOTIFY, practice: old } : DEFAULT_NOTIFY
@@ -24,11 +25,16 @@ export function getNotifySettings(): NotifySettings {
 export async function setNotifySettings(settings: NotifySettings): Promise<string | null> {
   save('notifications', settings)
   if (!isNativeApp()) return null
-  const anyOn = settings.wordOfDay.on || settings.practice.on || settings.streak.on
+  const anyOn = settings.wordOfDay.on || settings.practice.on || settings.streak.on || settings.dailyWords.on
   if (anyOn) {
     const permission = await LocalNotifications.requestPermissions()
     if (permission.display !== 'granted') {
-      save('notifications', { wordOfDay: { ...settings.wordOfDay, on: false }, practice: { ...settings.practice, on: false }, streak: { ...settings.streak, on: false } })
+      save('notifications', {
+        wordOfDay: { ...settings.wordOfDay, on: false },
+        practice: { ...settings.practice, on: false },
+        streak: { ...settings.streak, on: false },
+        dailyWords: { ...settings.dailyWords, on: false },
+      })
       await refreshNotifications()
       return 'Notifications are off for Shuō: turn them on in iPhone Settings → Notifications → Shuō.'
     }
@@ -53,7 +59,7 @@ function toneTip(): string | null {
 export async function refreshNotifications(): Promise<void> {
   if (!isNativeApp()) return
   try {
-    const all = [...Array(7).keys()].flatMap((d) => [IDS.practice + d, IDS.wordOfDay + d]).concat(IDS.streak, 1 /* the old reminder */)
+    const all = [...Array(7).keys()].flatMap((d) => [IDS.practice + d, IDS.wordOfDay + d]).concat(IDS.streak, 1 /* the old reminder */, ...dailyWordIds())
     await LocalNotifications.cancel({ notifications: all.map((id) => ({ id })) })
     const { activity } = await gatherActivity()
     const plan = planNotifications({
@@ -62,6 +68,7 @@ export async function refreshNotifications(): Promise<void> {
       dueCount: dueCounts().learn + dueCounts().recall,
       practisedToday: activeDays(activity).has(dayKey(Date.now())),
       words: words(),
+      deckOrder: dailyWordList(),
       toneTip: toneTip(),
     })
     if (plan.length)
