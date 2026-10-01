@@ -26,8 +26,11 @@ test('validateDaily catches the usual mistakes', () => {
     'missions[0] needs 3–8 steps',
     'plan item "Read" refers to unknown id missing',
   ])
-  assert.deepEqual(validateDaily({ ...JSON.parse(readFileSync(new URL('../public/daily/latest.json', import.meta.url), 'utf8')), stories: [] }), [
+  // Today's file without its stories: the plan's story item points nowhere. (Read from the file, which changes daily.)
+  const daily = JSON.parse(readFileSync(new URL('../public/daily/latest.json', import.meta.url), 'utf8'))
+  const storyItem = daily.plan.items.find((i: { kind: string }) => i.kind === 'story')
+  assert.deepEqual(validateDaily({ ...daily, stories: [] }), [
     'at least one story',
-    'plan item "Read and read aloud: 周末看足球" refers to unknown id 2026-09-28-s1',
+    ...(storyItem ? [`plan item "${storyItem.title_en}" refers to unknown id ${storyItem.ref}`] : []),
   ])
 })
