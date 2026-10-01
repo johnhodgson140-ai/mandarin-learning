@@ -1,6 +1,6 @@
 // "Say your cards": FSRS scheduling for speaking practice (Anki stays my main SRS).
 
-export type CardSource = 'anki' | 'app' | 'story' | 'mission'
+export type CardSource = 'anki' | 'app' | 'story' | 'mission' | 'daily'
 export type Card = { hanzi: string; english: string; source: CardSource }
 /**
  * FSRS (the scheduler Anki uses by default): `stability` = days until my chance of recalling it falls to 90%,
@@ -110,7 +110,7 @@ export function pickSession(
   const due = cards
     .filter((c) => states[c.hanzi] && states[c.hanzi].due <= now)
     .sort((a, b) => recallNow(states[a.hanzi], now) - recallNow(states[b.hanzi], now) || states[a.hanzi].due - states[b.hanzi].due)
-  const order: CardSource[] = ['anki', 'story', 'mission', 'app']
+  const order: CardSource[] = ['anki', 'daily', 'story', 'mission', 'app']
   const fresh = cards
     .filter((c) => !states[c.hanzi])
     .sort((a, b) => order.indexOf(a.source) - order.indexOf(b.source))

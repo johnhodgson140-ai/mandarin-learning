@@ -5,6 +5,7 @@ import type { Session } from '../missions/logic.ts'
 import { currentUser, dbPut, isConfigured } from './firebase.ts'
 import { load, save } from './storage.ts'
 import { listStories } from './library.ts'
+import { dailyCards } from './dailyWords.ts'
 import { deckWords, getLexicon } from './words.ts'
 
 export function allCards(): Card[] {
@@ -15,7 +16,8 @@ export function allCards(): Card[] {
   ]
   const stories: Card[] = listStories().flatMap((s) => s.newWords.map((w) => ({ hanzi: w, english: s.glossary[w] ?? '', source: 'story' as const })))
   const missions: Card[] = load<Session[]>('sessions', []).flatMap((s) => (s.report?.new_words ?? []).map((w) => ({ hanzi: w.word, english: w.english, source: 'mission' as const })))
-  return mergeCards(anki, stories, missions, STARTER_CARDS)
+  const daily: Card[] = dailyCards().map((w) => ({ hanzi: w.hanzi, english: w.english, source: 'daily' as const }))
+  return mergeCards(anki, daily, stories, missions, STARTER_CARDS)
 }
 
 /** Two card modes on the same words: Learn (中 → English, where I meet a word) and Recall (English → 中, from memory). */
