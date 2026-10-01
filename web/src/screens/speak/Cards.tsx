@@ -2,7 +2,6 @@ import { useEffect, useMemo, useState } from 'react'
 import type { Recording } from '../../audio/recorder.ts'
 import { daysUntil, rateCard, ratingFor, shuffleRest, type Card, type CardState, type Rating } from '../../cards/srs.ts'
 import { tokensOfText } from '../../chinese/tokens.ts'
-import { todaysWords } from '../../services/dailyWords.ts'
 import { hskLabel, loadHsk, type HskInfo } from '../../services/hsk.ts'
 import HoldToTalk from '../../components/HoldToTalk.tsx'
 import PlayButton from '../../components/PlayButton.tsx'
@@ -10,7 +9,7 @@ import ScoreView from '../../components/ScoreView.tsx'
 import { canRecognise } from '../../scoring/recognize.ts'
 import { scoreAndLog } from '../../scoring/attempt.ts'
 import type { SpeechScore } from '../../scoring/speechScore.ts'
-import { allCards, buttonColours, cardStates, dueCounts, intervalScale, keepSession, learnOrder, newSession, rateCardIn, resumeSession, type CardMode } from '../../services/cards.ts'
+import { buttonColours, cardStates, dueCounts, intervalScale, keepSession, learnOrder, newSession, rateCardIn, resumeSession, type CardMode } from '../../services/cards.ts'
 import { load, save } from '../../services/storage.ts'
 import { getProfile } from '../../services/tone.ts'
 import { rateForLevel, speak } from '../../services/tts.ts'
@@ -27,17 +26,9 @@ function lastMode(): CardMode {
   return saved === 'recall' ? 'recall' : 'learn'
 }
 
-/** Today's words as Learn cards ("Learn these now" on the Today's words screen). */
-function todaysSession(): { cards: Card[]; index: number; scores: number[] } {
-  const known = new Map(allCards().map((c) => [c.hanzi, c]))
-  const cards = todaysWords().map((w) => known.get(w.hanzi) ?? { hanzi: w.hanzi, english: w.english, source: 'anki' as const })
-  keepSession('learn', cards, 0, [])
-  return { cards, index: 0, scores: [] }
-}
-
-export default function Cards({ today = false }: { today?: boolean }) {
-  const [mode, setMode] = useState<CardMode>(() => (today ? 'learn' : lastMode()))
-  const [{ cards: session, index, scores }, setRun] = useState(() => (today ? todaysSession() : resumeSession(mode)))
+export default function Cards() {
+  const [mode, setMode] = useState<CardMode>(lastMode)
+  const [{ cards: session, index, scores }, setRun] = useState(() => resumeSession(mode))
   const [counts, setCounts] = useState(dueCounts)
   const canScore = canRecognise() || getProfile() !== null
 
@@ -137,6 +128,14 @@ export default function Cards({ today = false }: { today?: boolean }) {
   )
 }
 
+const SOURCE_LABEL: Record<Card['source'], string> = {
+  anki: 'Anki',
+  daily: 'Today’s words',
+  app: 'Starter words',
+  story: 'From a story',
+  mission: 'From a mission',
+}
+
 const RATINGS: { rating: Rating; label: string }[] = [
   { rating: 1, label: 'Again' },
   { rating: 2, label: 'Hard' },
@@ -203,7 +202,7 @@ function CardView({ card, mode, onNext }: { card: Card; mode: CardMode; onNext: 
           </>
         )}
         <span className="muted small">
-          {card.source === 'anki' ? 'Anki' : card.source === 'app' ? 'Starter words' : card.source === 'story' ? 'From a story' : 'From a mission'}
+          {SOURCE_LABEL[card.source]}
           {hsk && ` · ${hskLabel(hsk.level)}`}
         </span>
       </div>

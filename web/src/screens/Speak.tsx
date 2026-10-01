@@ -22,7 +22,7 @@ export default function Speak() {
   if (sub === 'ears') return <Ears />
   if (sub === 'calibrate') return <Calibrate />
   if (sub === 'missions') return <Missions />
-  if (sub === 'cards') return <Cards today={arg === 'today'} />
+  if (sub === 'cards') return <Cards />
   if (sub === 'words') return <Words />
   if (sub === 'guided' && arg) return <Guided id={arg} />
   if (sub === 'shadow') return <Shadow />

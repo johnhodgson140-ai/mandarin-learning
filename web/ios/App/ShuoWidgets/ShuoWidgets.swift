@@ -215,7 +215,7 @@ struct WordOfDayWidget: Widget {
     }
 }
 
-// ---- Today's words: a few words from my deck each day (the same ones as the app's Today's words screen) ----
+// ---- Today's words: a few words a day from the built-in list (the same ones as the app's Today's words screen) ----
 // Lock screen: a new one of today's words every 20 minutes. Home screen: a small quiz, Show the answer, then Next.
 
 /// How many words a day (set the same number in Shuō: Settings → Notifications → Today's words).
@@ -296,7 +296,7 @@ struct DailyWordsProvider: AppIntentTimelineProvider {
     private func entries(for configuration: DailyWordsConfig, family: WidgetFamily) -> [DailyEntry] {
         let calendar = Calendar.current
         let now = Date()
-        let all = DeckWord.all()
+        let all = DeckWord.dailyList()
         let count = configuration.perDay.rawValue
         let words = DeckWord.daily(now, in: all, count: count)
         let midnight = calendar.startOfDay(for: calendar.date(byAdding: .day, value: 1, to: now) ?? now)
@@ -407,7 +407,7 @@ struct DailyWordsWidget: Widget {
             DailyWordsView(entry: entry).containerBackground(for: .widget) { paper }
         }
         .configurationDisplayName("Today's words")
-        .description("Today's words from your deck. Lock screen: a new one every 20 minutes. Home screen: Show the answer, then Next.")
+        .description("A few new words a day (HSK 1 → 6). Lock screen: a new one every 20 minutes. Home screen: Show the answer, then Next.")
         .supportedFamilies([.accessoryRectangular, .accessoryInline, .systemSmall, .systemMedium])
     }
 }

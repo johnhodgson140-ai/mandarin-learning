@@ -23,6 +23,19 @@ struct DeckWord: Decodable {
         }
     }
 
+    /// The built-in Today's words list (public/daily-words.json: HSK 1 → 6, most common first, with the app's pinyin),
+    /// read from the app's bundle like the deck: the same list the app uses (web/src/services/dailyWords.ts).
+    static func dailyList() -> [DeckWord] {
+        let app = Bundle.main.bundleURL.deletingLastPathComponent().deletingLastPathComponent()
+        guard let data = try? Data(contentsOf: app.appendingPathComponent("public/daily-words.json")),
+              let list = try? JSONDecoder().decode(DailyList.self, from: data) else { return [] }
+        return list.words.compactMap { row in
+            row.count == 3 ? DeckWord(hanzi: row[0], pinyin: row[1], english: row[2], example: nil) : nil
+        }
+    }
+
+    private struct DailyList: Decodable { let words: [[String]] }
+
     /// Same word all day, a different one each day (the formula in web/src/notify/plan.ts: wordFor).
     static func of(_ date: Date, in words: [DeckWord]) -> DeckWord? {
         guard !words.isEmpty else { return nil }

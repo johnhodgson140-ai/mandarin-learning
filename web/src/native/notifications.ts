@@ -68,7 +68,7 @@ export async function refreshNotifications(): Promise<void> {
       dueCount: dueCounts().learn + dueCounts().recall,
       practisedToday: activeDays(activity).has(dayKey(Date.now())),
       words: words(),
-      deckOrder: dailyWordList(),
+      deckOrder: await dailyWordList(),
       toneTip: toneTip(),
     })
     if (plan.length)
