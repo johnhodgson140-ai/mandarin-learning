@@ -155,10 +155,9 @@ struct ChineseDateWidget: Widget {
 struct WordOfDayView: View {
     @Environment(\.widgetFamily) private var family
     let entry: DayEntry
-    private let words = DeckWord.all()
-
     var body: some View {
-        if let w = DeckWord.of(entry.date, in: words) {
+        // The first of today's new words (shared by the app), else one from the built-in list.
+        if let w = DeckWord.today(entry.date, count: 8).first {
             switch family {
             case .accessoryRectangular:
                 VStack(alignment: .leading, spacing: 1) {
@@ -210,7 +209,7 @@ struct WordOfDayWidget: Widget {
             }
         }
         .configurationDisplayName("Word of the day")
-        .description("A word from your deck with pinyin and meaning. Changes at midnight.")
+        .description("The first of today's new words, with pinyin and meaning. Changes at midnight.")
         .supportedFamilies([.accessoryRectangular, .systemSmall, .systemMedium])
     }
 }
@@ -221,16 +220,16 @@ struct WordOfDayWidget: Widget {
 /// How many words a day (set the same number in Shuō: Settings → Notifications → Today's words).
 @available(iOSApplicationExtension 17.0, *)
 enum WordsPerDay: Int, AppEnum {
-    case three = 3, five = 5, eight = 8, ten = 10
+    case five = 5, eight = 8, ten = 10, fifteen = 15, twenty = 20
     static let typeDisplayRepresentation: TypeDisplayRepresentation = "Words a day"
-    static let caseDisplayRepresentations: [WordsPerDay: DisplayRepresentation] = [.three: "3", .five: "5", .eight: "8", .ten: "10"]
+    static let caseDisplayRepresentations: [WordsPerDay: DisplayRepresentation] = [.five: "5", .eight: "8", .ten: "10", .fifteen: "15", .twenty: "20"]
 }
 
 @available(iOSApplicationExtension 17.0, *)
 struct DailyWordsConfig: WidgetConfigurationIntent {
     static let title: LocalizedStringResource = "Today's words"
-    static let description = IntentDescription("Set the same number of words a day as in Shuō's settings.")
-    @Parameter(title: "Words a day", default: .five) var perDay: WordsPerDay
+    static let description = IntentDescription("Shows the words Shuō gives you each day. Words a day is only used until the app has shared them.")
+    @Parameter(title: "Words a day", default: .eight) var perDay: WordsPerDay
 }
 
 /// Where I am in today's words on the home screen widget (kept by the widget itself: no shared container needed).
@@ -296,11 +295,10 @@ struct DailyWordsProvider: AppIntentTimelineProvider {
     private func entries(for configuration: DailyWordsConfig, family: WidgetFamily) -> [DailyEntry] {
         let calendar = Calendar.current
         let now = Date()
-        let all = DeckWord.dailyList()
         let count = configuration.perDay.rawValue
-        let words = DeckWord.daily(now, in: all, count: count)
+        let words = DeckWord.today(now, count: count)
         let midnight = calendar.startOfDay(for: calendar.date(byAdding: .day, value: 1, to: now) ?? now)
-        let tomorrow = DailyEntry(date: midnight, words: DeckWord.daily(midnight, in: all, count: count), index: 0, revealed: false)
+        let tomorrow = DailyEntry(date: midnight, words: DeckWord.today(midnight, count: count), index: 0, revealed: false)
         switch family {
         case .accessoryRectangular, .accessoryInline, .accessoryCircular:
             // Lock screen: the next of today's words every 20 minutes until midnight.

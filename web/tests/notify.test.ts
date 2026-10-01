@@ -61,7 +61,7 @@ test("today's words: next words of the deck in order, a new set each day, round 
 test("today's words notifications: spread out, then a recap, three days ahead", () => {
   const now = new Date(2026, 9, 1, 12, 0)
   const settings: NotifySettings = { ...DEFAULT_NOTIFY, dailyWords: { on: true, count: 3, from: '09:00', to: '21:00' } }
-  const plan = planNotifications({ now, settings, dueCount: 0, practisedToday: false, words, toneTip: null })
+  const plan = planNotifications({ now, settings, dueCount: 0, practisedToday: false, words, dailySets: [words, words, words], toneTip: null })
   const today = plan.filter((p) => p.at.getDate() === 1)
   // 9:00 has passed; 13:00 and 17:00 are still to come, then the recap at 21:00.
   assert.deepEqual(today.map((p) => `${p.at.getHours()}:${p.at.getMinutes()}`), ['13:0', '17:0', '21:0'])
@@ -69,4 +69,25 @@ test("today's words notifications: spread out, then a recap, three days ahead", 
   assert.equal(plan.length, 3 + 4 + 4)
   assert.ok(plan.every((p) => p.route === '#speak/words'))
   assert.equal(new Set(plan.map((p) => p.id)).size, plan.length)
+})
+
+test("today's words: words I didn't get to wait for me, then the next ones I haven't met", async () => {
+  const { pickToday } = await import('../src/notify/plan.ts')
+  const list = ['的', '了', '我', '是', '你', '在', '不'].map((hanzi) => ({ hanzi, pinyin: '', english: '' }))
+  // Day 10: met 的 了 我 on day 9; rated 的 and 了 but not 我.
+  const met = { 的: { day: 9 }, 了: { day: 9 }, 我: { day: 9 } }
+  const pick = pickToday({ list, met, rated: { 的: {}, 了: {} }, day: 10, count: 3 })
+  assert.deepEqual(pick.carried, ['我'])
+  assert.deepEqual(pick.fresh.map((w) => w.hanzi), ['是', '你'])
+  // Nothing met yet: the first words of the list.
+  assert.deepEqual(pickToday({ list, met: {}, rated: {}, day: 1, count: 2 }).fresh.map((w) => w.hanzi), ['的', '了'])
+  // Words met today don't count as carried over.
+  assert.deepEqual(pickToday({ list, met: { 的: { day: 10 } }, rated: {}, day: 10, count: 2 }).carried, [])
+})
+
+test('the word of the day is the first of that day’s new words', () => {
+  const now = new Date(2026, 9, 1, 8, 0)
+  const settings: NotifySettings = { ...DEFAULT_NOTIFY, wordOfDay: { on: true, time: '09:00' } }
+  const plan = planNotifications({ now, settings, dueCount: 0, practisedToday: false, words, dailySets: [[words[2]]], toneTip: null })
+  assert.ok(plan[0].title.includes('可乐'))
 })

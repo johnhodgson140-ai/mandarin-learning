@@ -2,26 +2,29 @@ import { useEffect, useState } from 'react'
 import { tokensOfText } from '../../chinese/tokens.ts'
 import PlayButton from '../../components/PlayButton.tsx'
 import { go } from '../../hash.ts'
-import type { Word } from '../../notify/plan.ts'
-import { allCards, keepSession } from '../../services/cards.ts'
-import { addDailyCards, dailyCount, todaysWords } from '../../services/dailyWords.ts'
+import { isNativeApp } from '../../native/app.ts'
+import { cardStates } from '../../services/cards.ts'
+import { curriculumList, dailyCount, moreWordsToday, myWords, todaysWords, type Word } from '../../services/curriculum.ts'
 import { load, save } from '../../services/storage.ts'
 import { rateForLevel, speak } from '../../services/tts.ts'
 import { getLexicon } from '../../services/words.ts'
 
-/** Today's words (also on the widget and in the notifications): look, listen, then drill them as Learn cards. */
+/** The iPhone app: widgets and notifications follow the new set. */
+const refreshWidgets = () => (isNativeApp() ? void import('../../native/notifications.ts').then((m) => m.refreshNotifications()) : undefined)
+
+/** Today's new words (also on the widget and in the notifications): look and listen, then learn them as cards. */
 export default function Words() {
   const [words, setWords] = useState<Word[] | null>(null)
+  const [total, setTotal] = useState(0)
   useEffect(() => {
     todaysWords().then(setWords, () => setWords([]))
+    curriculumList().then((l) => setTotal(l.length), () => {})
   }, [])
   const rate = rateForLevel(load('level', 1))
+  const rated = cardStates('learn')
+  const met = Object.keys(myWords()).length
 
-  function learnNow(list: Word[]) {
-    // They become Learn cards (even when they're not in Anki), first in a fresh Learn session.
-    addDailyCards(list)
-    const cards = new Map(allCards().map((c) => [c.hanzi, c]))
-    keepSession('learn', list.flatMap((w) => cards.get(w.hanzi) ?? []), 0, [])
+  function start() {
     save('cardMode', 'learn')
     go('speak/cards')
   }
@@ -33,8 +36,8 @@ export default function Words() {
         <h1>Today’s words</h1>
       </header>
       <p className="muted small">
-        {dailyCount()} words a day from the built-in list (HSK 1 to 6, most common first), the same ones as the widget and notifications. Change
-        how many in Settings → Notifications.
+        {dailyCount()} new words a day from the most common words in Chinese (HSK 1 to 6), at your pace: a word you don’t get to waits for
+        tomorrow. They’re your new Learn cards today. {total > 0 && `You’ve met ${met} of ${total}.`}
       </p>
       {words === null && <p className="muted">Loading…</p>}
       {words?.length === 0 && <p className="muted">Couldn’t load the word list. Check your connection and try again.</p>}
@@ -43,7 +46,7 @@ export default function Words() {
           const syllables = tokensOfText(w.hanzi, getLexicon()).flatMap((t) => t.syllables)
           return (
             <li key={w.hanzi} className="word-row">
-              <span className="muted small">{i + 1}</span>
+              <span className="muted small">{rated[w.hanzi] ? '✓' : i + 1}</span>
               <span className="word-hanzi zh">{w.hanzi}</span>
               <span className="word-info">
                 <span className="word-pinyin">
@@ -57,8 +60,16 @@ export default function Words() {
         })}
       </ul>
       {words && words.length > 0 && (
-        <button type="button" className="btn btn-primary" onClick={() => learnNow(words)}>Learn these now</button>
+        <div className="sheet-actions">
+          <button type="button" className="btn btn-secondary" onClick={() => void moreWordsToday(5).then(setWords).then(refreshWidgets)}>
+            5 more new words
+          </button>
+          <button type="button" className="btn btn-primary" onClick={start}>
+            {words.every((w) => rated[w.hanzi]) ? 'Review cards' : 'Learn them'}
+          </button>
+        </div>
       )}
+      <p className="muted small">Already know a word? Rate it Easy in Learn and it won’t come back for weeks.</p>
     </>
   )
 }

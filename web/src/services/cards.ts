@@ -1,23 +1,35 @@
-// My speaking deck: Anki words + a starter list + new words from stories and mission reports.
+// My cards: the words I've met through Today's words (new ones come from there, a few a day), plus any word I already
+// have Learn progress on from before (Anki deck, stories, missions), so its reviews carry on.
 import { DEFAULT_SCALE, mergeCards, pickRecallSession, pickSession, rateCard, type Card, type CardState, type IntervalScale, type Rating } from '../cards/srs.ts'
-import { STARTER_CARDS } from '../cards/starter.ts'
 import type { Session } from '../missions/logic.ts'
+import { dayNumber } from '../notify/plan.ts'
+import { myWords } from './curriculum.ts'
 import { currentUser, dbPut, isConfigured } from './firebase.ts'
 import { load, save } from './storage.ts'
 import { listStories } from './library.ts'
-import { dailyCards } from './dailyWords.ts'
-import { deckWords, getLexicon } from './words.ts'
+import { deckWords } from './words.ts'
 
 export function allCards(): Card[] {
-  // Words from Anki / my deck, plus the deck's whole sentences (great for speaking practice).
-  const anki: Card[] = [
-    ...[...getLexicon()].map(([hanzi, e]) => ({ hanzi, english: e.english, source: 'anki' as const })),
+  const met: Card[] = Object.values(myWords())
+    .sort((a, b) => a.day - b.day)
+    .map((w) => ({ hanzi: w.hanzi, english: w.english, source: 'daily' as const }))
+  // Words I practised before the built-in list: keep them (and their meanings) so their reviews carry on.
+  const states = cardStates('learn')
+  const before: Card[] = [
     ...deckWords().map((w) => ({ hanzi: w.hanzi, english: w.english, source: 'anki' as const })),
-  ]
-  const stories: Card[] = listStories().flatMap((s) => s.newWords.map((w) => ({ hanzi: w, english: s.glossary[w] ?? '', source: 'story' as const })))
-  const missions: Card[] = load<Session[]>('sessions', []).flatMap((s) => (s.report?.new_words ?? []).map((w) => ({ hanzi: w.word, english: w.english, source: 'mission' as const })))
-  const daily: Card[] = dailyCards().map((w) => ({ hanzi: w.hanzi, english: w.english, source: 'daily' as const }))
-  return mergeCards(anki, daily, stories, missions, STARTER_CARDS)
+    ...listStories().flatMap((s) => s.newWords.map((w) => ({ hanzi: w, english: s.glossary[w] ?? '', source: 'story' as const }))),
+    ...load<Session[]>('sessions', []).flatMap((s) => (s.report?.new_words ?? []).map((w) => ({ hanzi: w.word, english: w.english, source: 'mission' as const }))),
+  ].filter((c) => states[c.hanzi])
+  return mergeCards(met, before)
+}
+
+/** Today's words I haven't rated in Learn yet: my new Learn cards (synchronous, from the set saved for today). */
+export function todaysNewCards(date = new Date()): Card[] {
+  const saved = load<{ day: number; words: string[] } | null>('todaysWords', null)
+  if (saved?.day !== dayNumber(date)) return []
+  const mine = myWords()
+  const states = cardStates('learn')
+  return saved.words.filter((h) => mine[h] && !states[h]).map((h) => ({ hanzi: h, english: mine[h].english, source: 'daily' as const }))
 }
 
 /** Two card modes on the same words: Learn (中 → English, where I meet a word) and Recall (English → 中, from memory). */
@@ -70,9 +82,10 @@ export const buttonColours = () => load<ButtonColours>('cardColours', 'colour')
 export const setButtonColours = (c: ButtonColours) => save('cardColours', c)
 
 /** A new session for a mode: due reviews first, then new words (Recall's only as far as Learn has got). */
-export function newSession(mode: CardMode, newPerSession = 4): Card[] {
+export function newSession(mode: CardMode, newPerSession = 0): Card[] {
   return mode === 'learn'
-    ? pickSession(allCards(), cardStates('learn'), { newPerSession })
+    ? // Learn: reviews that are due, then today's new words (all of them, in order).
+      pickSession(allCards(), cardStates('learn'), { size: 40 + newPerSession, fresh: todaysNewCards() })
     : // Recall keeps up with Learn: every word newly passed there comes up here (after any due reviews).
       pickRecallSession(allCards(), cardStates('recall'), learnOrder(), { size: 40, newPerSession: 30 })
 }
@@ -82,7 +95,7 @@ export function dueCounts(): Record<CardMode, number> {
   const cards = allCards()
   const recall = cardStates('recall')
   return {
-    learn: pickSession(cards, cardStates('learn'), { size: 9999, newPerSession: 0 }).length,
+    learn: pickSession(cards, cardStates('learn'), { size: 9999, fresh: todaysNewCards() }).length,
     recall: pickRecallSession(cards, recall, learnOrder(), { size: 9999, newPerSession: 9999 }).length,
   }
 }

@@ -1,4 +1,4 @@
-// Local notifications (iOS app): word of the day, practice reminder with the cards due, streak saver.
+// Local notifications (iOS app): today's words, word of the day, practice reminder with the cards due, streak saver.
 // Rescheduled whenever the app opens, after each practice, and when the settings change.
 import { LocalNotifications } from '@capacitor/local-notifications'
 import { tokensOfText, withAppTones } from '../chinese/tokens.ts'
@@ -7,7 +7,8 @@ import { weakest, type EarStats } from '../ears/logic.ts'
 import { DEFAULT_NOTIFY, IDS, dailyWordIds, planNotifications, type NotifySettings, type Word } from '../notify/plan.ts'
 import { activeDays, dayKey } from '../progress/logic.ts'
 import { dueCounts } from '../services/cards.ts'
-import { dailyWordList } from '../services/dailyWords.ts'
+import { comingDays } from '../services/curriculum.ts'
+import { shareWithWidgets } from './widget.ts'
 import { gatherActivity } from '../services/progress.ts'
 import { load, save } from '../services/storage.ts'
 import { getLexicon } from '../services/words.ts'
@@ -56,19 +57,24 @@ function toneTip(): string | null {
   return worst ? `Tone tip: ${worst.pattern.replace('-', ' + ')} is your trickiest (${Math.round(worst.accuracy * 100)}% in Tone ears).` : null
 }
 
+/** Reschedule notifications and update the widgets' words (on opening the app, after practice, on settings changes). */
 export async function refreshNotifications(): Promise<void> {
   if (!isNativeApp()) return
   try {
     const all = [...Array(7).keys()].flatMap((d) => [IDS.practice + d, IDS.wordOfDay + d]).concat(IDS.streak, 1 /* the old reminder */, ...dailyWordIds())
     await LocalNotifications.cancel({ notifications: all.map((id) => ({ id })) })
     const { activity } = await gatherActivity()
+    const sets = await comingDays(7)
+    // The widgets show the same words (today and the next two days, so they're right after midnight too).
+    await shareWithWidgets(sets.slice(0, 3))
     const plan = planNotifications({
       now: new Date(),
       settings: getNotifySettings(),
       dueCount: dueCounts().learn + dueCounts().recall,
       practisedToday: activeDays(activity).has(dayKey(Date.now())),
       words: words(),
-      deckOrder: await dailyWordList(),
+      // Today's words and my likely next days', for today's words and the word of the day.
+      dailySets: sets,
       toneTip: toneTip(),
     })
     if (plan.length)

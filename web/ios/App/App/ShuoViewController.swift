@@ -5,5 +5,6 @@ import UIKit
 class ShuoViewController: CAPBridgeViewController {
     override open func capacitorDidLoad() {
         bridge?.registerPluginInstance(SpeechCheckPlugin())
+        bridge?.registerPluginInstance(WidgetBridgePlugin())
     }
 }

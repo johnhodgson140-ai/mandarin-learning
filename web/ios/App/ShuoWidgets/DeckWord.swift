@@ -1,30 +1,16 @@
 import Foundation
 
-/// A word from my exported Anki deck, read from the app's own bundle (public/deck.json): the widget lives inside
-/// the app (App.app/PlugIns/ShuoWidgets.appex), so it can read the app's files without any shared container.
-struct DeckWord: Decodable {
+/// A word for the widgets: my real Today's words as the app shared them (App Group), else the built-in list
+/// (public/daily-words.json) read from the app's own bundle: the widget lives inside the app
+/// (App.app/PlugIns/ShuoWidgets.appex), so it can read the app's files without any shared container.
+struct DeckWord {
     let hanzi: String
     let pinyin: String
     let english: String
     let example: String?
 
-    /// Words (not sentences) with a meaning, in deck order: the same list and order as the app's word-of-the-day
-    /// notification (web/src/native/notifications.ts), so both show the same word each day.
-    static func all() -> [DeckWord] {
-        let app = Bundle.main.bundleURL.deletingLastPathComponent().deletingLastPathComponent()
-        guard let data = try? Data(contentsOf: app.appendingPathComponent("public/deck.json")),
-              let deck = try? JSONDecoder().decode(Deck.self, from: data) else { return [] }
-        var seen = Set<String>()
-        return deck.words.filter { w in
-            let isSentence = w.hanzi.rangeOfCharacter(from: CharacterSet(charactersIn: "，。？！,.?!…")) != nil
-            guard !isSentence, !w.english.isEmpty, w.hanzi.count <= 4, !seen.contains(w.hanzi) else { return false }
-            seen.insert(w.hanzi)
-            return true
-        }
-    }
-
     /// The built-in Today's words list (public/daily-words.json: HSK 1 → 6, most common first, with the app's pinyin),
-    /// read from the app's bundle like the deck: the same list the app uses (web/src/services/dailyWords.ts).
+    /// read from the app's bundle: the same list the app uses (web/src/services/curriculum.ts).
     static func dailyList() -> [DeckWord] {
         let app = Bundle.main.bundleURL.deletingLastPathComponent().deletingLastPathComponent()
         guard let data = try? Data(contentsOf: app.appendingPathComponent("public/daily-words.json")),
@@ -36,11 +22,17 @@ struct DeckWord: Decodable {
 
     private struct DailyList: Decodable { let words: [[String]] }
 
-    /// Same word all day, a different one each day (the formula in web/src/notify/plan.ts: wordFor).
-    static func of(_ date: Date, in words: [DeckWord]) -> DeckWord? {
-        guard !words.isEmpty else { return nil }
-        let day = Int(floor(Calendar.current.startOfDay(for: date).timeIntervalSince1970 / 86_400))
-        return words[((day * 7919) % words.count + words.count) % words.count]
+    /// My real words for a day, as the app shared them through the App Group (WidgetBridgePlugin), or nil.
+    static func shared(_ date: Date) -> [DeckWord]? {
+        guard let data = UserDefaults(suiteName: "group.io.github.johnhodgson140.shuo.me")?.data(forKey: "days"),
+              let days = try? JSONDecoder().decode([String: [[String: String]]].self, from: data),
+              let day = days[String(dayNumber(date))], !day.isEmpty else { return nil }
+        return day.map { DeckWord(hanzi: $0["h"] ?? "", pinyin: $0["p"] ?? "", english: $0["e"] ?? "", example: nil) }
+    }
+
+    /// Today's words: what the app shared, else the built-in list by date (`count` a day).
+    static func today(_ date: Date, count: Int) -> [DeckWord] {
+        shared(date) ?? daily(date, in: dailyList(), count: count)
     }
 
     /// Calendar day number of a local date (days since 1970-01-01): the same as dayNumber in web/src/notify/plan.ts.
@@ -56,10 +48,10 @@ struct DeckWord: Decodable {
         return Int((d.timeIntervalSince1970 / 86_400).rounded())
     }
 
-    /// Today's words began on 1 October 2026 with the first words of the deck.
+    /// The date-based fallback began on 1 October 2026 with the first words of the list.
     private static let dailyStart = utcDay(year: 2026, month: 10, day: 1)
 
-    /// Today's words: the next `count` words of the deck in order, a new set each day, round and round the deck.
+    /// Fallback when the app hasn't shared my words: the next `count` words of the list each day, round the list.
     /// Mirrors dailyWords in web/src/notify/plan.ts (which has the tests): keep them in step.
     static func daily(_ date: Date, in words: [DeckWord], count: Int) -> [DeckWord] {
         let n = min(count, words.count)
@@ -72,6 +64,4 @@ struct DeckWord: Decodable {
     var meaning: String {
         english.split(whereSeparator: { $0 == ";" || $0 == "," }).first.map { $0.trimmingCharacters(in: .whitespaces) } ?? english
     }
-
-    private struct Deck: Decodable { let words: [DeckWord] }
 }
