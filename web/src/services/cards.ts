@@ -1,7 +1,8 @@
 // My cards: the words I've met through Today's words (new ones come from there, a few a day), plus any word I already
 // have Learn progress on from before (Anki deck, stories, missions), so its reviews carry on.
 import { fitParams, paramsFrom, type Fit, type Review } from '../cards/fit.ts'
-import { DEFAULT_SCALE, mergeCards, pickRecallSession, pickSession, rateCard, type Card, type CardState, type IntervalScale, type Rating } from '../cards/srs.ts'
+import { DEFAULT_FIXED, schedule, type FixedTimes, type Timing, type TimingMode } from '../cards/timing.ts'
+import { DEFAULT_SCALE, mergeCards, pickRecallSession, pickSession, type Card, type CardState, type IntervalScale, type Rating } from '../cards/srs.ts'
 import type { Session } from '../missions/logic.ts'
 import { dayNumber } from '../notify/plan.ts'
 import { dayKey } from '../progress/logic.ts'
@@ -82,7 +83,7 @@ export function rateCardIn(mode: CardMode, hanzi: string, rating: Rating, score:
   const states = cardStates(mode)
   const now = Date.now()
   logReview({ t: now, m: mode, h: hanzi, r: rating, before: snapshot(states[hanzi]) })
-  states[hanzi] = rateCard(states[hanzi], rating, now, score, intervalScale(), scheduleParams())
+  states[hanzi] = schedule(states[hanzi], rating, now, score, timing())
   save(STATE_KEY[mode], states)
   const order = learnOrder()
   if (mode === 'learn' && rating >= 2 && !order.includes(hanzi)) save('learnOrder', [...order, hanzi])
@@ -122,6 +123,18 @@ export function refitSchedule(force = false): Fit | null {
   return fit ?? old
 }
 
+/** How cards come back: standard, my multipliers, or my fixed times (Settings → Flashcards, or the Cards screen). */
+export function timingMode(): TimingMode {
+  // Before the modes existed, multipliers other than 1× meant I'd adjusted the schedule.
+  const s = intervalScale()
+  return load<TimingMode>('cardTiming', s.hard !== 1 || s.good !== 1 || s.easy !== 1 ? 'adjusted' : 'standard')
+}
+export const setTimingMode = (m: TimingMode) => save('cardTiming', m)
+export const fixedTimes = () => ({ ...DEFAULT_FIXED, ...load<Partial<FixedTimes>>('cardFixedTimes', {}) })
+export const setFixedTimes = (t: FixedTimes) => save('cardFixedTimes', t)
+/** Everything a rating needs to work out when the card comes back. */
+export const timing = (): Timing => ({ mode: timingMode(), scale: intervalScale(), fixed: fixedTimes(), params: scheduleParams() })
+
 /** My interval multipliers for Hard / Good / Easy (Settings → Flashcards). */
 export const intervalScale = () => ({ ...DEFAULT_SCALE, ...load<Partial<IntervalScale>>('cardIntervals', {}) })
 export const setIntervalScale = (scale: IntervalScale) => save('cardIntervals', scale)
@@ -153,18 +166,43 @@ export function dueCounts(): Record<CardMode, number> {
 }
 
 /** Where I got to in each mode: restored when I come back (the same day) or switch modes. */
-export type SavedSession = { day: string; hanzi: string[]; index: number; scores: number[] }
+/** `pending`: cards rated this session that come back within a few hours (fixed times, or learning steps). */
+export type SavedSession = { day: string; hanzi: string[]; index: number; scores: number[]; pending?: string[] }
+export type Run = { cards: Card[]; index: number; scores: number[]; pending: string[] }
 const today = () => new Date().toDateString()
 
-export function resumeSession(mode: CardMode): { cards: Card[]; index: number; scores: number[] } {
+export function resumeSession(mode: CardMode): Run {
   migrate()
   const saved = load<SavedSession | null>(`cardSession-${mode}`, null)
   const byHanzi = new Map(allCards().map((c) => [c.hanzi, c]))
   const cards = saved?.day === today() ? saved.hanzi.flatMap((h) => byHanzi.get(h) ?? []) : []
-  if (saved && cards.length === saved.hanzi.length && saved.index < cards.length) return { cards, index: saved.index, scores: saved.scores }
-  return { cards: newSession(mode), index: 0, scores: [] }
+  const pending = saved?.pending ?? []
+  if (saved && cards.length === saved.hanzi.length && (saved.index < cards.length || pending.length > 0))
+    return { cards, index: saved.index, scores: saved.scores, pending }
+  return { cards: newSession(mode), index: 0, scores: [], pending: [] }
 }
 
-export function keepSession(mode: CardMode, cards: Card[], index: number, scores: number[]): void {
-  save(`cardSession-${mode}`, { day: today(), hanzi: cards.map((c) => c.hanzi), index, scores } satisfies SavedSession)
+export function keepSession(mode: CardMode, run: Run): void {
+  save(`cardSession-${mode}`, { day: today(), hanzi: run.cards.map((c) => c.hanzi), index: run.index, scores: run.scores, pending: run.pending } satisfies SavedSession)
+}
+
+/** How soon a card must come back to wait in this session (later than this, it's a normal review another day). */
+export const COMES_BACK_IN_SESSION = 4 * 60 * 60 * 1000
+
+/**
+ * Move cards from `pending` into the session once they're due again, right after the current card. Pure apart from
+ * reading the card states, so a waiting card shows up as soon as its time comes.
+ */
+export function bringBackDue(run: Run, mode: CardMode, now = Date.now(), all = false): Run {
+  if (run.pending.length === 0) return run
+  const states = cardStates(mode)
+  const ready = run.pending.filter((h) => all || (states[h]?.due ?? 0) <= now)
+  if (ready.length === 0) return run
+  const byHanzi = new Map(run.cards.map((c) => [c.hanzi, c]))
+  const back = ready.flatMap((h) => byHanzi.get(h) ?? [])
+  return {
+    ...run,
+    cards: [...run.cards.slice(0, run.index), ...back, ...run.cards.slice(run.index)],
+    pending: run.pending.filter((h) => !ready.includes(h)),
+  }
 }
