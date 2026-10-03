@@ -4,7 +4,8 @@
 import { decodeTo16k, encodeWav, TARGET_RATE, wavSamples } from '../audio/wav.ts'
 import type { Tone } from '../chinese/tones.ts'
 import type { CharResult, ToneGuess } from '../grading/grade.ts'
-import { adaptProfile, calibrate, contour, normalise, predict, targetPitch, profileFromPitches, voicedSemitones, type SpeakerProfile } from '../tone/model.ts'
+import { comparePitch, ownRange, PER_SYLLABLE, resampleTo, textbookReference, type PitchComparison } from '../tone/compare.ts'
+import { adaptProfile, calibrate, contour, normalise, predict, targetPitch, profileFromPitches, templateContour, voicedSemitones, type SpeakerProfile } from '../tone/model.ts'
 import { retune } from '../tone/resynth.ts'
 import { segmentSyllables, type Span } from '../tone/segment.ts'
 import { HOP_MS, pitchTrack } from '../tone/pitch.ts'
@@ -150,6 +151,29 @@ export async function nativeSeconds(text: string, rate: number): Promise<number 
   if (!blob) return null
   const span = voicedSpan(await decodeTo16k(blob))
   return span ? (span[1] - span[0]) / TARGET_RATE : null
+}
+
+/**
+ * My whole phrase against the native voice (with an Azure key) or the textbook tone shapes: works before my voice is
+ * calibrated, since each line is compared within its own range. Null when there's too little voice to compare.
+ */
+export async function comparePhrase(
+  wav: Blob,
+  syllables: { hanzi: string; spoken: Tone }[],
+): Promise<(PitchComparison & { against: 'native' | 'textbook' }) | null> {
+  const mine = voicedSemitones(await wavSamples(wav), TARGET_RATE)
+  const text = syllables.map((s) => s.hanzi).join('')
+  const native = await nativeAudio(text).catch(() => null)
+  if (native) {
+    const voiced = voicedSemitones(await decodeTo16k(native), TARGET_RATE)
+    if (voiced.length >= 8) {
+      const reference = resampleTo(ownRange(voiced), syllables.length * PER_SYLLABLE)
+      const result = comparePitch(mine, reference, syllables)
+      return result && { ...result, against: 'native' }
+    }
+  }
+  const result = comparePitch(mine, textbookReference(syllables, (tone, half) => templateContour(tone, { half })), syllables)
+  return result && { ...result, against: 'textbook' }
 }
 
 export const toneLabel = (tone: Tone) => (tone === 5 ? 'neutral' : `tone ${tone}`)

@@ -45,6 +45,8 @@ export type Playback = { id: string | null; status: 'idle' | 'loading' | 'playin
 let playback: Playback = { id: null, status: 'idle' }
 const listeners = new Set<(p: Playback) => void>()
 let token = 0 // bumped on every start/stop, so a slow Azure request can't start after something newer
+/** The id of the last sound that played to the end (not stopped or replaced). */
+let lastEnded: string | null = null
 
 function set(p: Playback) {
   playback = p
@@ -59,7 +61,10 @@ export function subscribePlayback(listener: (p: Playback) => void): () => void {
 const audio = typeof Audio === 'undefined' ? null : new Audio()
 let usingDevice = false
 if (audio) {
-  audio.addEventListener('ended', () => set({ id: null, status: 'idle' }))
+  audio.addEventListener('ended', () => {
+    lastEnded = playback.id
+    set({ id: null, status: 'idle' })
+  })
   audio.addEventListener('pause', () => {
     if (!audio.ended && playback.status === 'playing' && !usingDevice) set({ ...playback, status: 'paused' })
   })
@@ -78,6 +83,22 @@ export function unlockAudio(): void {
   unlocked = true
   audio.src = 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA='
   audio.play().catch(() => {})
+}
+
+/**
+ * Wait for sound `id` to finish: true if it played to the end, false if it was stopped or something else started.
+ * (Pausing just keeps waiting.) Call it right after starting the sound.
+ */
+export function whenDone(id: string): Promise<boolean> {
+  return new Promise((resolve) => {
+    const check = (p: Playback) => {
+      if (p.id === id) return
+      stop()
+      resolve(p.id === null && lastEnded === id)
+    }
+    const stop = subscribePlayback(check)
+    check(playback)
+  })
 }
 
 /** Stop anything playing. */
@@ -128,7 +149,11 @@ function playDevice(text: string, rate: number, id: string, voice?: SpeechSynthe
   utterance.rate = rate
   const v = voice ?? chosenDeviceVoice()
   if (v) utterance.voice = v
-  utterance.onend = () => playback.id === id && set({ id: null, status: 'idle' })
+  utterance.onend = () => {
+    if (playback.id !== id) return
+    lastEnded = id
+    set({ id: null, status: 'idle' })
+  }
   set({ id, status: 'playing' })
   speechSynthesis.speak(utterance)
 }
@@ -224,6 +249,29 @@ function chosenDeviceVoice(): SpeechSynthesisVoice | undefined {
 
 /** Several different speakers, for ear training (many voices train the ear better than one). */
 const VARIETY_AZURE = ['zh-CN-XiaoxiaoNeural', 'zh-CN-YunxiNeural', 'zh-CN-XiaoyiNeural', 'zh-CN-YunjianNeural', 'zh-CN-XiaochenNeural', 'zh-CN-YunyangNeural']
+
+const clips = new Map<string, Blob>()
+
+/** Play a recording from a URL (the bundled human voices), through the one player. */
+export async function playUrl(url: string, id = `url:${url}`): Promise<void> {
+  unlockAudio()
+  stopPlayback()
+  const mine = token
+  set({ id, status: 'loading' })
+  try {
+    let blob = clips.get(url)
+    if (!blob) {
+      const res = await fetch(url)
+      if (!res.ok) throw new Error(`HTTP ${res.status}`)
+      blob = await res.blob()
+      clips.set(url, blob)
+    }
+    await playAudio(blob, id, mine)
+  } catch (err) {
+    log('voice: recording failed', { url, error: String(err) })
+    if (mine === token) set({ id: null, status: 'idle' })
+  }
+}
 
 /** How many different voices ear training can use on this device. */
 export function varietyCount(): number {

@@ -1,10 +1,10 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react'
 import type { Token } from '../../chinese/tokens.ts'
 import { go } from '../../hash.ts'
 import { load, save } from '../../services/storage.ts'
 import { loadDaily } from '../../services/daily.ts'
 import { getStory, saveStory, storyTokens, type Story } from '../../services/stories.ts'
-import { rateForLevel, speak, unlockAudio } from '../../services/tts.ts'
+import { playbackState, rateForLevel, speak, stopPlayback, subscribePlayback, togglePlayback, unlockAudio, whenDone } from '../../services/tts.ts'
 import type { ParagraphResult } from '../../grading/readAloud.ts'
 import ReadAloudSheet from './ReadAloudSheet.tsx'
 import WordSheet from './WordSheet.tsx'
@@ -15,7 +15,8 @@ const DEFAULT_PREFS: ReaderPrefs = { fontSize: 24, toneColours: false, english: 
 const SENTENCE_END = /^[。！？!?…]+$/u
 const LONG_PRESS_MS = 500
 
-export default function Reader({ id }: { id: string }) {
+/** `listen`: opened to listen (from Today): the listening bar is open and the text hidden until I tap it. */
+export default function Reader({ id, listen = false }: { id: string; listen?: boolean }) {
   const [story, setStory] = useState<Story | undefined>(() => getStory(id))
   const [looked, setLooked] = useState(false)
   // Opened before today's stories were added (e.g. straight from a link): fetch them, then look again.
@@ -38,11 +39,12 @@ export default function Reader({ id }: { id: string }) {
         <p className="muted">{looked ? "This story isn't on this device." : 'Loading…'}</p>
       </>
     )
-  return <StoryView story={story} onChange={setStory} />
+  return <StoryView story={story} onChange={setStory} listen={listen} />
 }
 
-function StoryView({ story, onChange }: { story: Story; onChange: (s: Story) => void }) {
+function StoryView({ story, onChange, listen }: { story: Story; onChange: (s: Story) => void; listen: boolean }) {
   const paragraphs = useMemo(() => storyTokens(story), [story])
+  const listening = useListening(story, paragraphs, listen)
   const [prefs, setPrefs] = useState<ReaderPrefs>(() => ({ ...DEFAULT_PREFS, ...load<Partial<ReaderPrefs>>('reader', {}) }))
   const [showPrefs, setShowPrefs] = useState(false)
   const [selected, setSelected] = useState<{ p: number; t: number } | null>(null)
@@ -81,10 +83,16 @@ function StoryView({ story, onChange }: { story: Story; onChange: (s: Story) => 
       <div className="reading-progress" style={{ transform: `scaleX(${progress})` }} aria-hidden="true" />
       <header className="reader-bar">
         <a href="#read" className="back-link">‹ Library</a>
-        <button type="button" className="icon-btn" aria-expanded={showPrefs} onClick={() => setShowPrefs(!showPrefs)}>
-          Aa
-        </button>
+        <span>
+          <button type="button" className="icon-btn" aria-expanded={listening.open} onClick={listening.toggleOpen}>
+            Listen
+          </button>
+          <button type="button" className="icon-btn" aria-expanded={showPrefs} onClick={() => setShowPrefs(!showPrefs)}>
+            Aa
+          </button>
+        </span>
       </header>
+      {listening.open && <ListenBar listening={listening} />}
       {showPrefs && (
         <div className="reader-prefs card fade-in">
           <label className="field">
@@ -110,8 +118,14 @@ function StoryView({ story, onChange }: { story: Story; onChange: (s: Story) => 
         {paragraphs.map((tokens, p) => {
           const statuses = results[p]?.statuses
           let syllableIndex = 0
+          const hidden = listening.isHidden(p)
           return (
-          <p key={p}>
+          <p
+            key={p}
+            id={`para-${p}`}
+            className={`${listening.at === p ? 'para-now' : ''}${hidden ? ' para-hidden' : ''}`.trim() || undefined}
+            onClickCapture={hidden ? (e) => (e.stopPropagation(), e.preventDefault(), listening.reveal(p)) : undefined}
+          >
             {tokens.map((tok, t) =>
               tok.syllables.length === 0 ? (
                 <span key={t}>{tok.text}</span>
@@ -174,6 +188,91 @@ function StoryView({ story, onChange }: { story: Story; onChange: (s: Story) => 
         />
       )}
     </article>
+  )
+}
+
+type Listening = ReturnType<typeof useListening>
+
+/**
+ * Listen to the whole story, paragraph by paragraph, in the app's voice. Listening first and reading after is the
+ * best ear training: "Hide text" blurs each paragraph until I tap it, so I check what I understood.
+ */
+function useListening(story: Story, paragraphs: Token[][], listen: boolean) {
+  const [open, setOpen] = useState(listen)
+  const [hideText, setHideText] = useState(listen)
+  const [revealed, setRevealed] = useState<Set<number>>(() => new Set())
+  const [at, setAt] = useState<number | null>(null)
+  const run = useRef(0)
+  const idOf = (p: number) => `listen-${story.id}-${p}`
+
+  // Leaving the story stops it.
+  useEffect(
+    () => () => {
+      run.current++
+      if (playbackState().id?.startsWith(`listen-${story.id}-`)) stopPlayback()
+    },
+    [story.id],
+  )
+
+  async function from(start: number) {
+    const mine = ++run.current
+    for (let p = start; p < paragraphs.length; p++) {
+      setAt(p)
+      document.getElementById(`para-${p}`)?.scrollIntoView({ block: 'center', behavior: 'smooth' })
+      void speak(paragraphs[p].map((t) => t.text).join(''), rateForLevel(story.level), idOf(p))
+      const finished = await whenDone(idOf(p))
+      if (mine !== run.current) return
+      if (!finished) break
+    }
+    setAt(null)
+  }
+
+  return {
+    open,
+    at,
+    hideText,
+    toggleOpen: () => setOpen((o) => !o),
+    start: () => void from(0),
+    pause: () => at !== null && togglePlayback(idOf(at), async () => {}),
+    stop: () => {
+      run.current++
+      setAt(null)
+      stopPlayback()
+    },
+    setHideText: (on: boolean) => {
+      setHideText(on)
+      setRevealed(new Set())
+    },
+    isHidden: (p: number) => hideText && !revealed.has(p),
+    reveal: (p: number) => setRevealed((r) => new Set(r).add(p)),
+    revealAll: () => setRevealed(new Set(paragraphs.map((_, p) => p))),
+    paused: (status: string) => at !== null && status === 'paused',
+  }
+}
+
+function ListenBar({ listening: l }: { listening: Listening }) {
+  const p = useSyncExternalStore(subscribePlayback, playbackState)
+  const paused = l.paused(p.status)
+  return (
+    <div className="listen-bar card fade-in">
+      <div className="listen-controls">
+        {l.at === null ? (
+          <button type="button" className="btn btn-primary" onClick={l.start}>▶ Listen to the story</button>
+        ) : (
+          <>
+            <button type="button" className="btn btn-secondary" onClick={l.pause}>{paused ? '▶ Resume' : '⏸ Pause'}</button>
+            <button type="button" className="btn btn-secondary" onClick={l.stop}>■ Stop</button>
+          </>
+        )}
+      </div>
+      <label className="check">
+        <input type="checkbox" checked={l.hideText} onChange={(e) => l.setHideText(e.target.checked)} />
+        Hide text (tap a paragraph to check it)
+      </label>
+      {l.hideText && (
+        <button type="button" className="link-quiet" onClick={l.revealAll}>Show all</button>
+      )}
+    </div>
   )
 }
 

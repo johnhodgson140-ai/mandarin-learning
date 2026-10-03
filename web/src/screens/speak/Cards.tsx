@@ -5,11 +5,12 @@ import { tokensOfText } from '../../chinese/tokens.ts'
 import { hskLabel, loadHsk, type HskInfo } from '../../services/hsk.ts'
 import HoldToTalk from '../../components/HoldToTalk.tsx'
 import PlayButton from '../../components/PlayButton.tsx'
+import ExampleSentence from '../../components/ExampleSentence.tsx'
 import ScoreView from '../../components/ScoreView.tsx'
 import { canRecognise } from '../../scoring/recognize.ts'
 import { scoreAndLog } from '../../scoring/attempt.ts'
 import type { SpeechScore } from '../../scoring/speechScore.ts'
-import { buttonColours, cardStates, dueCounts, intervalScale, keepSession, learnOrder, newSession, rateCardIn, resumeSession, todaysNewCards, type CardMode } from '../../services/cards.ts'
+import { buttonColours, cardStates, dueCounts, intervalScale, keepSession, learnOrder, newSession, rateCardIn, resumeSession, scheduleParams, todaysNewCards, type CardMode } from '../../services/cards.ts'
 import { moreWordsToday, todaysWords } from '../../services/curriculum.ts'
 import { load, save } from '../../services/storage.ts'
 import { getProfile } from '../../services/tone.ts'
@@ -19,12 +20,13 @@ import { getLexicon } from '../../services/words.ts'
 const MODES: { mode: CardMode; label: string; hint: string }[] = [
   { mode: 'learn', label: 'Learn', hint: '中 → English: today’s new words and your reviews. Rate a word you already know Easy.' },
   { mode: 'recall', label: 'Recall', hint: 'English → 中: say it from memory. Only words you’ve passed in Learn.' },
+  { mode: 'listen', label: 'Listen', hint: 'Hear it → what it means: no characters until you check. Only words you’ve passed in Learn.' },
 ]
 
 /** The mode I used last ('read'/'recall' before the modes were renamed). */
 function lastMode(): CardMode {
   const saved = load<string>('cardMode', 'learn')
-  return saved === 'recall' ? 'recall' : 'learn'
+  return saved === 'recall' || saved === 'listen' ? saved : 'learn'
 }
 
 export default function Cards() {
@@ -63,7 +65,7 @@ export default function Cards() {
   }, [mode])
 
   async function moreCards() {
-    // Learn: 5 more new words today (pulling ahead); Recall: whatever Learn has unlocked since.
+    // Learn: 5 more new words today (pulling ahead); Recall and Listen: whatever Learn has unlocked since.
     if (mode === 'learn') await moreWordsToday(5)
     update(newSession(mode), 0, [])
     setCounts(dueCounts())
@@ -91,7 +93,7 @@ export default function Cards() {
   if (index >= session.length) {
     const again = scores.filter((r) => r === 1).length
     const empty =
-      mode === 'recall'
+      mode !== 'learn'
         ? learnOrder().length === 0
           ? 'Words unlock here once you’ve passed them in Learn (Hard or better).'
           : 'You’re in step with Learn. Pass more words there to unlock more here.'
@@ -197,6 +199,7 @@ function CardView({ card, mode, onNext }: { card: Card; mode: CardMode; onNext: 
   const suggested = score !== null ? ratingFor(score) : null
   const state = cardStates(mode)[card.hanzi]
   const scale = intervalScale()
+  const params = scheduleParams()
   // When this card was shown: the button previews are worked out from then.
   const [shownAt] = useState(Date.now)
   const coloured = buttonColours() === 'colour'
@@ -216,7 +219,23 @@ function CardView({ card, mode, onNext }: { card: Card; mode: CardMode; onNext: 
     }
   }
 
-  const front = mode === 'learn' ? <p className="drill-hanzi zh">{card.hanzi}</p> : <p className="drill-english">{card.english || '(no meaning yet)'}</p>
+  const hear = () => speak(card.hanzi, rate, `card-${card.hanzi}`)
+  // Listen: the word plays as the card appears (the tap that brought it up allows the sound).
+  useEffect(() => {
+    if (mode === 'listen') void speak(card.hanzi, rate, `card-${card.hanzi}`)
+  }, [mode, card.hanzi, rate])
+
+  const front =
+    mode === 'learn' ? (
+      <p className="drill-hanzi zh">{card.hanzi}</p>
+    ) : mode === 'recall' ? (
+      <p className="drill-english">{card.english || '(no meaning yet)'}</p>
+    ) : (
+      <div className="drill-listen">
+        <PlayButton id={`card-${card.hanzi}`} label="Hear it again" className="btn btn-secondary" start={hear} />
+        <p className="muted small">What does it mean?</p>
+      </div>
+    )
 
   return (
     <>
@@ -225,12 +244,13 @@ function CardView({ card, mode, onNext }: { card: Card; mode: CardMode; onNext: 
         {revealed && (
           <>
             <hr className="card-divider" />
-            {mode === 'recall' && <p className="drill-hanzi zh">{card.hanzi}</p>}
+            {mode !== 'learn' && <p className="drill-hanzi zh">{card.hanzi}</p>}
             <p className="drill-pinyin">
               {syllables.map((s, i) => <span key={i} className={`t${s.written}`}>{s.pinyin}</span>)}
             </p>
-            {mode === 'learn' && card.english && <p className="drill-meaning">{card.english}</p>}
-            <PlayButton id={`card-${card.hanzi}`} label="Hear it" className="btn btn-secondary" start={() => speak(card.hanzi, rate, `card-${card.hanzi}`)} />
+            {mode !== 'recall' && card.english && <p className="drill-meaning">{card.english}</p>}
+            {mode !== 'listen' && <PlayButton id={`card-${card.hanzi}`} label="Hear it" className="btn btn-secondary" start={hear} />}
+            <ExampleSentence hanzi={card.hanzi} rate={rate} />
           </>
         )}
         <span className="muted small">
@@ -242,8 +262,12 @@ function CardView({ card, mode, onNext }: { card: Card; mode: CardMode; onNext: 
       {!revealed && !checking && (
         <>
           <button type="button" className="btn btn-primary show-answer" onClick={() => setRevealed(true)}>Show answer</button>
-          <p className="muted small say-first">Or say it first to get a score:</p>
-          <HoldToTalk listen onRecorded={(r) => void grade(r)} onError={setError} />
+          {mode !== 'listen' && (
+            <>
+              <p className="muted small say-first">Or say it first to get a score:</p>
+              <HoldToTalk listen onRecorded={(r) => void grade(r)} onError={setError} />
+            </>
+          )}
           <button type="button" className="link-quiet" onClick={() => onNext(null, null)}>Skip</button>
         </>
       )}
@@ -263,7 +287,7 @@ function CardView({ card, mode, onNext }: { card: Card; mode: CardMode; onNext: 
                 onClick={() => onNext(rating, score)}
               >
                 {label}
-                <span className="rate-when">{whenText(rateCard(state, rating, shownAt, null, scale), shownAt)}</span>
+                <span className="rate-when">{whenText(rateCard(state, rating, shownAt, null, scale, params), shownAt)}</span>
               </button>
             ))}
           </div>

@@ -22,6 +22,7 @@
 .drill-hanzi { font-size: 56px; line-height: 1.2; }
 .drill-pinyin { font-size: 22px; display: flex; gap: 0.3em; }
 .drill-english { font-size: 26px; line-height: 1.3; }
+.drill-listen { display: flex; flex-direction: column; align-items: center; gap: var(--space); padding: calc(var(--space) * 2) 0; }
 .drill-meaning { font-size: 18px; color: var(--text-muted); margin: 0; }
 .card-divider { width: 60%; border: none; border-top: 1px solid var(--line); margin: calc(var(--space) / 2) 0; }
 
@@ -49,8 +50,11 @@
 }
 
 /* ---- Missions: message-style list, no bubbles ---- */
-.mission-bar { display: flex; align-items: center; justify-content: space-between; gap: var(--space); }
-.mission-toggles { display: flex; gap: var(--space); }
+.mission-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space); }
+.mission-toggles { display: flex; gap: calc(var(--space) * 0.75); }
+.mission-toggles .chip { white-space: nowrap; }
+.mission-bar .back-link { white-space: nowrap; }
+@media (max-width: 420px) { .mission-toggles .chip { padding-left: 10px; padding-right: 10px; } }
 .transcript { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: calc(var(--space) * 2.5); }
 .turn { display: flex; flex-direction: column; gap: 4px; }
 .turn-label { font-size: 13px; color: var(--text-muted); }
@@ -90,3 +94,11 @@
 .word-hanzi { font-size: 28px; }
 .word-info { display: flex; flex-direction: column; min-width: 0; }
 .word-pinyin { display: flex; gap: 0.3em; font-size: 17px; }
+
+/* Example sentence under a card's answer */
+.example { display: flex; flex-direction: column; align-items: center; gap: 2px; margin-top: var(--space); text-align: center; }
+.example p { margin: 0; }
+.example-zh { font-size: 22px; line-height: 1.5; }
+.example-zh strong { color: var(--accent); font-weight: 600; }
+.example-pinyin { font-size: 15px; color: var(--text-muted); }
+.example-en { font-size: 15px; }

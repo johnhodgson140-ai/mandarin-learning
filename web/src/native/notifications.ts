@@ -70,7 +70,7 @@ export async function refreshNotifications(): Promise<void> {
     const plan = planNotifications({
       now: new Date(),
       settings: getNotifySettings(),
-      dueCount: dueCounts().learn + dueCounts().recall,
+      dueCount: Object.values(dueCounts()).reduce((a, b) => a + b, 0),
       practisedToday: activeDays(activity).has(dayKey(Date.now())),
       words: words(),
       // Today's words and my likely next days', for today's words and the word of the day.

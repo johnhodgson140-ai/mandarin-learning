@@ -1,5 +1,6 @@
 // My cards: the words I've met through Today's words (new ones come from there, a few a day), plus any word I already
 // have Learn progress on from before (Anki deck, stories, missions), so its reviews carry on.
+import { fitParams, paramsFrom, type Fit, type Review } from '../cards/fit.ts'
 import { DEFAULT_SCALE, mergeCards, pickRecallSession, pickSession, rateCard, type Card, type CardState, type IntervalScale, type Rating } from '../cards/srs.ts'
 import type { Session } from '../missions/logic.ts'
 import { dayNumber } from '../notify/plan.ts'
@@ -38,10 +39,13 @@ export function todaysNewCards(date = new Date()): Card[] {
   return saved.words.filter((h) => mine[h] && !states[h]).map((h) => ({ hanzi: h, english: mine[h].english, source: 'daily' as const }))
 }
 
-/** Two card modes on the same words: Learn (中 → English, where I meet a word) and Recall (English → 中, from memory). */
-export type CardMode = 'learn' | 'recall'
+/**
+ * Three card modes on the same words: Learn (中 → English, where I meet a word), Recall (English → 中, from memory)
+ * and Listen (hear it → its meaning: ears, not eyes). Recall and Listen follow Learn: only words passed there.
+ */
+export type CardMode = 'learn' | 'recall' | 'listen'
 
-const STATE_KEY: Record<CardMode, string> = { learn: 'cardStates', recall: 'recallStates' }
+export const STATE_KEY: Record<CardMode, string> = { learn: 'cardStates', recall: 'recallStates', listen: 'listenStates' }
 
 /** Learn keeps the states saved before Recall existed. */
 export const cardStates = (mode: CardMode = 'learn') => load<Record<string, CardState>>(STATE_KEY[mode], {})
@@ -68,15 +72,17 @@ export function learnOrder(): string[] {
 export function cardDays(): string[] {
   const kept = load<string[] | null>('cardDays', null)
   if (kept) return kept
-  const lasts = [...Object.values(cardStates('learn')), ...Object.values(cardStates('recall'))].map((s) => s.last)
+  const lasts = (['learn', 'recall', 'listen'] as const).flatMap((m) => Object.values(cardStates(m))).map((s) => s.last)
   return [...new Set(lasts.filter((t): t is number => typeof t === 'number' && t > 0).map(dayKey))]
 }
 
-/** Rate a card, Anki style. Passing it in Learn (Hard or better) unlocks it in Recall. */
+/** Rate a card, Anki style. Passing it in Learn (Hard or better) unlocks it in Recall and Listen. */
 export function rateCardIn(mode: CardMode, hanzi: string, rating: Rating, score: number | null = null): void {
   migrate()
   const states = cardStates(mode)
-  states[hanzi] = rateCard(states[hanzi], rating, Date.now(), score, intervalScale())
+  const now = Date.now()
+  logReview({ t: now, m: mode, h: hanzi, r: rating, before: snapshot(states[hanzi]) })
+  states[hanzi] = rateCard(states[hanzi], rating, now, score, intervalScale(), scheduleParams())
   save(STATE_KEY[mode], states)
   const order = learnOrder()
   if (mode === 'learn' && rating >= 2 && !order.includes(hanzi)) save('learnOrder', [...order, hanzi])
@@ -85,6 +91,35 @@ export function rateCardIn(mode: CardMode, hanzi: string, rating: Rating, score:
   if (!days.includes(today)) save('cardDays', [...days, today].slice(-400))
   sendProgress(STATE_KEY[mode], states)
   if (mode === 'learn') sendProgress('learnOrder', learnOrder())
+}
+
+// ---- My review log and the schedule fitted to it (cards/fit.ts) ----
+
+const LOG_CAP = 30_000
+export const reviewLog = () => load<Review[]>('reviewLog', [])
+
+function logReview(r: Review): void {
+  const log = reviewLog()
+  log.push(r)
+  save('reviewLog', log.slice(-LOG_CAP))
+}
+
+const snapshot = (s: CardState | undefined): Review['before'] =>
+  s && { seen: s.seen, stability: s.stability, difficulty: s.difficulty, last: s.last, due: s.due }
+
+export const scheduleFit = () => load<Fit | null>('scheduleFit', null)
+export const personalScheduleOn = () => load('scheduleFitOn', true)
+export const setPersonalScheduleOn = (on: boolean) => save('scheduleFitOn', on)
+/** The parameters cards are scheduled with: fitted to me once that predicts better, else FSRS's defaults. */
+export const scheduleParams = () => paramsFrom(scheduleFit(), personalScheduleOn())
+
+/** Fit the schedule to my log (again once a week, as reviews add up). Returns the fit, or null if not enough yet. */
+export function refitSchedule(force = false): Fit | null {
+  const old = scheduleFit()
+  if (!force && old && Date.now() - old.fittedAt < 7 * 86_400_000) return old
+  const fit = fitParams(reviewLog())
+  if (fit) save('scheduleFit', fit)
+  return fit ?? old
 }
 
 /** My interval multipliers for Hard / Good / Easy (Settings → Flashcards). */
@@ -101,17 +136,19 @@ export function newSession(mode: CardMode, newPerSession = 0): Card[] {
   return mode === 'learn'
     ? // Learn: reviews that are due, then today's new words (all of them, in order).
       pickSession(allCards(), cardStates('learn'), { size: 40 + todaysNewCards().length + newPerSession, fresh: todaysNewCards() })
-    : // Recall keeps up with Learn: every word newly passed there comes up here (after any due reviews).
-      pickRecallSession(allCards(), cardStates('recall'), learnOrder(), { size: 40, newPerSession: 30 })
+    : // Recall and Listen keep up with Learn: every word newly passed there comes up here (after any due reviews).
+      pickRecallSession(allCards(), cardStates(mode), learnOrder(), { size: 40, newPerSession: 30 })
 }
 
-/** Reviews due now in each mode, plus (for Recall) words Learn has unlocked but Recall hasn't met yet. */
+/** Reviews due now in each mode, plus (Recall, Listen) words Learn has unlocked that the mode hasn't met yet. */
 export function dueCounts(): Record<CardMode, number> {
   const cards = allCards()
-  const recall = cardStates('recall')
+  const order = learnOrder()
+  const following = (mode: CardMode) => pickRecallSession(cards, cardStates(mode), order, { size: 9999, newPerSession: 9999 }).length
   return {
     learn: pickSession(cards, cardStates('learn'), { size: 9999, fresh: todaysNewCards() }).length,
-    recall: pickRecallSession(cards, recall, learnOrder(), { size: 9999, newPerSession: 9999 }).length,
+    recall: following('recall'),
+    listen: following('listen'),
   }
 }
 

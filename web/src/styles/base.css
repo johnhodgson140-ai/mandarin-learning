@@ -184,3 +184,11 @@ input, textarea { font-size: max(16px, 1em); }
 .rate-btn.suggested { background: var(--c); border-color: var(--c); color: var(--on-accent); }
 .rate-btn.suggested .rate-when { color: inherit; }
 .rate-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--c); vertical-align: middle; }
+
+/* Whole-phrase pitch match (ScoreView) */
+.pitch-compare { margin: 0; display: flex; flex-direction: column; gap: 4px; }
+.pitch-compare svg { width: 100%; height: auto; display: block; }
+.pitch-head { display: flex; justify-content: space-between; align-items: baseline; font-size: 14px; color: var(--text-muted); }
+.pitch-head strong { font-size: 18px; color: var(--text); }
+.pitch-label { font-family: var(--font-zh); font-size: 12px; fill: var(--text-muted); }
+.pitch-tip { margin: 0; font-size: 15px; }

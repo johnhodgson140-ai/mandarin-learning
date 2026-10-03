@@ -5,10 +5,12 @@ import type { Tone } from '../../chinese/tones.ts'
 import { earItems, patternOf, pickItem, recordAnswer, weakest, type EarItem, type EarStats } from '../../ears/logic.ts'
 import { hskInfo, loadHsk } from '../../services/hsk.ts'
 import { load, save } from '../../services/storage.ts'
-import { speakVariety, varietyCount } from '../../services/tts.ts'
+import { humanVoicesFor, loadHumanVoices, type HumanVoice } from '../../services/humanVoices.ts'
+import { playUrl, speakVariety, varietyCount } from '../../services/tts.ts'
 import { getLexicon } from '../../services/words.ts'
 
 type Mode = 1 | 2
+type EarVoice = { kind: 'tts'; index: number } | ({ kind: 'human' } & HumanVoice)
 const ROUND = 20
 const TONES: { tone: Tone; mark: string }[] = [
   { tone: 1, mark: 'ˉ' },
@@ -47,7 +49,11 @@ export default function Ears() {
   const items = useItems(mode)
   const [stats, setStats] = useState<EarStats>(() => load<EarStats>('earStats', {}))
   const [item, setItem] = useState<EarItem | null>(null)
-  const [voice, setVoice] = useState(0)
+  const [voice, setVoice] = useState<EarVoice>({ kind: 'tts', index: 0 })
+  const [humans, setHumans] = useState<Awaited<ReturnType<typeof loadHumanVoices>> | null>(null)
+  useEffect(() => {
+    void loadHumanVoices().then(setHumans)
+  }, [])
   const [answer, setAnswer] = useState<Tone[]>([])
   const [done, setDone] = useState<boolean[]>([])
   const checked = item !== null && answer.length === item.tones.length
@@ -56,11 +62,22 @@ export default function Ears() {
   function next(pool = items) {
     if (!pool?.length) return
     const it = pickItem(pool, stats, item?.text ?? null)
-    const v = Math.floor(Math.random() * varietyCount())
+    if (!it) return
+    // Half the time a real recording when there is one, else one of the synthetic voices.
+    const recorded = humans ? humanVoicesFor(it, humans) : []
+    const v: EarVoice =
+      recorded.length && Math.random() < 0.5
+        ? { kind: 'human', ...recorded[Math.floor(Math.random() * recorded.length)] }
+        : { kind: 'tts', index: Math.floor(Math.random() * varietyCount()) }
     setItem(it)
     setVoice(v)
     setAnswer([])
-    if (it) void speakVariety(it.text, v, 0.85 + Math.random() * 0.2)
+    play(it, v, 0.85 + Math.random() * 0.2)
+  }
+
+  function play(it: EarItem, v: EarVoice, rate?: number) {
+    if (v.kind === 'human') void playUrl(v.url)
+    else void speakVariety(it.text, v.index, rate)
   }
 
   function choose(tone: Tone) {
@@ -91,7 +108,7 @@ export default function Ears() {
     <>
       <a href="#speak" className="back-link">‹ Speak</a>
       <h1>Tone ears</h1>
-      <p className="muted small">Hear it, pick the tones. Different voices each time: that's what trains the ear.</p>
+      <p className="muted small">Hear it, pick the tones. Different voices each time, real recordings among them: that's what trains the ear.</p>
       <div className="chips">
         <button type="button" className="chip" aria-pressed={mode === 1} onClick={() => chooseMode(1)}>Syllables</button>
         <button type="button" className="chip" aria-pressed={mode === 2} onClick={() => chooseMode(2)}>Tone pairs</button>
@@ -107,9 +124,9 @@ export default function Ears() {
       {item && !roundOver && (
         <section className="card">
           <p className="muted small">
-            {done.length + 1} of {ROUND} · voice {voice + 1}
+            {done.length + 1} of {ROUND} · {voice.kind === 'human' ? voice.name : `voice ${voice.index + 1}`}
           </p>
-          <button type="button" className="btn btn-secondary" onClick={() => void speakVariety(item.text, voice)}>▶ Play again</button>
+          <button type="button" className="btn btn-secondary" onClick={() => play(item, voice)}>▶ Play again</button>
           {item.tones.map((_, pos) => (
             <div key={pos} className="ear-row">
               {mode === 2 && <span className="muted small">{pos === 0 ? 'First' : 'Second'}</span>}
@@ -150,6 +167,7 @@ export default function Ears() {
         </section>
       )}
 
+      <p className="muted small">Recordings: Chen Wang and Yue Tan, from audio-cmn (CC BY-SA).</p>
       {weak.length > 0 && (
         <p className="muted small">
           Hardest for you so far: {weak.map((w) => `${w.pattern.replace('-', ' + ')} (${Math.round(w.accuracy * 100)}%)`).join(', ')}. They come up more often.

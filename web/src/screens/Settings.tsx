@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react'
 import { addTestCard, cachedMeta, fetchMeta, queuedCount, sync, type SyncMeta } from '../services/anki.ts'
 import { exportNewCards, importAnkiFile, newCards } from '../services/ankiFile.ts'
 import { daysUntil, rateCard, type IntervalScale, type Rating } from '../cards/srs.ts'
-import { buttonColours, intervalScale, setButtonColours, setIntervalScale, type ButtonColours } from '../services/cards.ts'
+import { buttonColours, intervalScale, personalScheduleOn, refitSchedule, reviewLog, scheduleFit, scheduleParams, setButtonColours, setIntervalScale, setPersonalScheduleOn, type ButtonColours } from '../services/cards.ts'
+import { MIN_REVIEWS } from '../cards/fit.ts'
 import { MASTERIES } from '../services/anki-mapping.ts'
 import { currentUser, isConfigured, signIn, signOut } from '../services/firebase.ts'
 import { getKeys, setKeys, type Keys } from '../services/keys.ts'
@@ -480,7 +481,12 @@ function Flashcards() {
     setIntervalScale(next)
   }
   // What a brand-new card would get with these settings.
-  const preview = BUTTONS.map(({ label, rating }) => `${label} ${daysUntil(rateCard(undefined, rating, 0, null, scale), 0)}d`).join(' · ')
+  const [fit, setFit] = useState(scheduleFit)
+  const [personal, setPersonal] = useState(personalScheduleOn)
+  const params = personal ? scheduleParams() : undefined
+  const preview = BUTTONS.map(({ label, rating }) => `${label} ${daysUntil(rateCard(undefined, rating, 0, null, scale, params), 0)}d`).join(' · ')
+  const logged = reviewLog().length
+  const better = fit && fit.lossFitted < fit.lossDefault ? Math.round((1 - fit.lossFitted / fit.lossDefault) * 100) : 0
   return (
     <section className="card">
       <h2 className="card-title">Flashcards</h2>
@@ -496,6 +502,29 @@ function Flashcards() {
         </fieldset>
       ))}
       <p className="muted small">A new card: {preview}. Again always comes back in the same session.</p>
+      <fieldset className="choice">
+        <legend>Schedule fitted to you</legend>
+        {fit ? (
+          better > 0 ? (
+            <p className="muted small">
+              Fitted to {fit.reviews} of your reviews ({new Date(fit.fittedAt).toLocaleDateString()}): it predicts what you remember {better}% better
+              than the standard schedule. It refits once a week.
+            </p>
+          ) : (
+            <p className="muted small">Fitted to {fit.reviews} reviews: the standard schedule still suits you best, so it’s used.</p>
+          )
+        ) : (
+          <p className="muted small">
+            Once you have about {MIN_REVIEWS} reviews spaced a day or more apart, the app fits the schedule to how you remember (the
+            way FSRS does in Anki). {logged} ratings logged so far.
+          </p>
+        )}
+        <div className="chips">
+          <button type="button" className="chip" aria-pressed={personal} onClick={() => { setPersonal(true); setPersonalScheduleOn(true) }}>Fitted</button>
+          <button type="button" className="chip" aria-pressed={!personal} onClick={() => { setPersonal(false); setPersonalScheduleOn(false) }}>Standard</button>
+          <button type="button" className="chip" onClick={() => setFit(refitSchedule(true))}>Refit now</button>
+        </div>
+      </fieldset>
       <fieldset className="choice">
         <legend>Button colours</legend>
         <div className="chips">

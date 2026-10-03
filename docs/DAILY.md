@@ -10,8 +10,9 @@ the optional Claude API key.
 1. Work in the repo `johnhodgson140-ai/mandarin-learning` on `main`. Pull the latest `main` first.
 2. Run `cd web && node scripts/daily-vocab.ts` and read its output. The learner works through the app's built-in word
    list (`web/public/daily-words.json`: HSK 1 → 6, most common first) a few words a day; the script estimates how far
-   they've got and prints `level`, `known` (the words to write with) and `new` (the next words on their list, with
-   meanings). Also read `content/config.json` (topics, how many stories/missions).
+   they've got and prints `level`, `known` (the words to write with), `new` (the next words on their list, with
+   meanings) and `need_sentences` (upcoming words with no example sentence yet). Also read `content/config.json`
+   (topics, how many stories/missions).
 3. Read the current `web/public/daily/latest.json` so today's topics and scenarios differ from yesterday's.
 4. Write a new `web/public/daily/latest.json` for today's date (Europe/London), following the types in
    `web/src/daily/schema.ts` and the example already in that file:
@@ -35,10 +36,15 @@ the optional Claude API key.
      punctuation marks are their own items; no spaces inside items.
    - `names`: people, clubs, brands, places. `new_words`: words used that aren't in the known list.
      `glossary`: short English for every new word and name.
-6. Validate: `cd web && npm ci && npm test` must pass (it checks `latest.json` with `validateDaily`).
-   Fix any error it reports; never push a failing file.
-7. Commit only `web/public/daily/latest.json` with the message `Daily content YYYY-MM-DD` and push it straight to
-   `main` (the owner has authorised this for daily content). Pushing to `main` publishes it to the app.
+6. Example sentences: for every word in `need_sentences`, add one line to `web/public/sentences.json`
+   (`"word":["Chinese sentence。","English"]`, keep the file's one-entry-per-line layout, in list order). Each sentence:
+   short (under 20 characters), everyday and natural, contains the word with its meaning as given, and otherwise uses
+   only very common words (HSK 1–2, or `known`). English: natural, short. No pinyin.
+7. Validate: `cd web && npm ci && npm test` must pass (it checks `latest.json` with `validateDaily`, and every
+   example sentence with `sentenceErrors`). Fix any error it reports; never push a failing file.
+8. Commit only `web/public/daily/latest.json` and `web/public/sentences.json` with the message
+   `Daily content YYYY-MM-DD` and push it straight to `main` (the owner has authorised this for daily content).
+   Pushing to `main` publishes it to the app.
 
 ## Changing what it writes
 Edit `content/config.json`: topics, counts, and `curriculum` (`start`, `per_day` new words a day, `basics` = how many

@@ -41,6 +41,8 @@ pruneRecordings().catch(() => {})
 void loadDaily()
 // My progress from my other device (only once I'm signed in to Firebase).
 void import('./services/sync.ts').then((m) => m.syncProgress()).catch(() => {})
+// The schedule fitted to my reviews: refit once a week, a few seconds after opening (it takes a moment).
+setTimeout(() => void import('./services/cards.ts').then((m) => m.refitSchedule()).catch(() => {}), 5000)
 // A voice calibrated on my other device (only once I'm signed in to Firebase).
 void import('./services/tone.ts').then((m) => m.syncProfile()).catch(() => {})
 // iOS app: keep notifications current (cards due, streak) and open the right screen when one is tapped.
