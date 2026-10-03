@@ -44,11 +44,11 @@ function Hub() {
       <nav className="hub">
         <a href="#speak/cards" className="hub-row">
           <span className="hub-title">Say your cards</span>
-          <span className="muted">Flashcards you answer out loud, scored 1–100. Learn: characters first. Recall: English first, from memory.</span>
+          <span className="muted">Flashcards, Anki style, with a 1–100 score if you say them. Learn: characters first. Recall: English first. Listen: by ear.</span>
         </a>
         <a href="#speak/words" className="hub-row">
           <span className="hub-title">Today’s words</span>
-          <span className="muted">A few new words from your deck each day, also on the widget and in notifications.</span>
+          <span className="muted">New words each day from the most common words in Chinese, also on the widget and in notifications.</span>
         </a>
         <a href="#speak/ears" className="hub-row">
           <span className="hub-title">Tone ears</span>

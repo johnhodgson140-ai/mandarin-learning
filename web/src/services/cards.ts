@@ -90,13 +90,14 @@ export function rateCardIn(mode: CardMode, hanzi: string, rating: Rating, score:
   const today = dayKey(Date.now())
   const days = cardDays()
   if (!days.includes(today)) save('cardDays', [...days, today].slice(-400))
-  sendProgress(STATE_KEY[mode], states)
+  sendProgress(`${STATE_KEY[mode]}/${encodeURIComponent(hanzi)}`, states[hanzi])
   if (mode === 'learn') sendProgress('learnOrder', learnOrder())
 }
 
 // ---- My review log and the schedule fitted to it (cards/fit.ts) ----
 
-const LOG_CAP = 30_000
+// About 1 MB at most: plenty for fitting, and well inside the browser's ~5 MB for everything the app keeps.
+const LOG_CAP = 10_000
 export const reviewLog = () => load<Review[]>('reviewLog', [])
 
 function logReview(r: Review): void {
@@ -105,8 +106,9 @@ function logReview(r: Review): void {
   save('reviewLog', log.slice(-LOG_CAP))
 }
 
+const round = (v: number | undefined) => (v === undefined ? undefined : Math.round(v * 1000) / 1000)
 const snapshot = (s: CardState | undefined): Review['before'] =>
-  s && { seen: s.seen, stability: s.stability, difficulty: s.difficulty, last: s.last, due: s.due }
+  s && { seen: s.seen, stability: round(s.stability), difficulty: round(s.difficulty), last: s.last, due: s.due }
 
 export const scheduleFit = () => load<Fit | null>('scheduleFit', null)
 export const personalScheduleOn = () => load('scheduleFitOn', true)

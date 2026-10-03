@@ -1,6 +1,7 @@
-// My progress on all my devices (Firebase, once it's set up and I'm signed in): on opening the app, merge what the
-// other device saved with what's here, then save the result to both. Card states and words met are also sent as they
-// change (services/cards.ts, services/curriculum.ts).
+// My progress on all my devices (Firebase, once it's set up and I'm signed in): on opening the app, and each time it
+// comes back on screen, merge what the other device saved with what's here, then save the result to both. Each card
+// rated and word met is also sent as it changes, on its own (services/cards.ts, services/curriculum.ts), so it
+// never overwrites what the other device sent.
 import { mergeLog, mergeMet, mergeOrder, mergeStates } from '../progress/merge.ts'
 import { currentUser, dbGet, dbPut, isConfigured } from './firebase.ts'
 import { load, save } from './storage.ts'
@@ -26,7 +27,22 @@ const PARTS: Record<string, Merge> = {
 }
 const EMPTY: Record<string, unknown> = { learnOrder: [], reviewLog: [] }
 
-export async function syncProgress(): Promise<void> {
+let lastSync = 0
+let syncing: Promise<void> | null = null
+
+/** Merge again when the app comes back on screen (at most every few minutes): the other device may have been used. */
+export function syncIfStale(minutes = 5): void {
+  if (Date.now() - lastSync > minutes * 60_000) void syncProgress().catch(() => {})
+}
+
+export function syncProgress(): Promise<void> {
+  syncing ??= mergeNow().finally(() => {
+    syncing = null
+  })
+  return syncing
+}
+
+async function mergeNow(): Promise<void> {
   if (!isConfigured || !currentUser()) return
   const keys = Object.keys(PARTS)
   const remote = await Promise.all(keys.map((key) => dbGet<unknown>(key)))
@@ -38,5 +54,6 @@ export async function syncProgress(): Promise<void> {
   })
   for (const [key, value] of result) save(key, value)
   merged = true
+  lastSync = Date.now()
   await Promise.all(result.map(([key, value]) => dbPut(key, value)))
 }

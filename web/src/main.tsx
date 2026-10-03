@@ -40,7 +40,11 @@ pruneRecordings().catch(() => {})
 // Today's stories and missions, whichever screen the app opens on.
 void loadDaily()
 // My progress from my other device (only once I'm signed in to Firebase).
-void import('./services/sync.ts').then((m) => m.syncProgress()).catch(() => {})
+void import('./services/sync.ts').then((m) => {
+  void m.syncProgress().catch(() => {})
+  // Back on screen (the iPhone app can stay open for days): pick up what I did on the other device meanwhile.
+  document.addEventListener('visibilitychange', () => document.visibilityState === 'visible' && m.syncIfStale())
+})
 // The schedule fitted to my reviews: refit once a week, a few seconds after opening (it takes a moment).
 setTimeout(() => void import('./services/cards.ts').then((m) => m.refitSchedule()).catch(() => {}), 5000)
 // A voice calibrated on my other device (only once I'm signed in to Firebase).

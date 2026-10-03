@@ -27,6 +27,12 @@ function loadCurated(): Promise<Sentences> {
   return curated
 }
 
+/** The curated example sentences for these words (those that have one), for shadowing. */
+export async function sentencesFor(words: string[]): Promise<Example[]> {
+  const all = await loadCurated()
+  return words.flatMap((w) => (all[w] ? [{ zh: all[w][0], en: all[w][1] }] : []))
+}
+
 /** An example sentence for a word, or null if there's none anywhere. */
 export async function exampleFor(hanzi: string): Promise<Example | null> {
   const mine = (await loadCurated())[hanzi]

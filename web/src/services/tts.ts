@@ -104,6 +104,7 @@ export function whenDone(id: string): Promise<boolean> {
 /** Stop anything playing. */
 export function stopPlayback(): void {
   token++
+  lastEnded = null // a stopped sound didn't finish
   audio?.pause()
   if (typeof speechSynthesis !== 'undefined') speechSynthesis.cancel()
   set({ id: null, status: 'idle' })

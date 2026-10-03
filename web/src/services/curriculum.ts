@@ -96,8 +96,10 @@ function adoptRated(list: Word[]): Record<string, MyWord> {
 
 /** Save my words (and share them with my other device when signed in to Firebase). */
 export function saveMine(mine: Record<string, MyWord>): void {
+  const before = myWords()
   save('myWords', mine)
-  sendProgress('myWords', mine)
+  // Only the words that changed, so this never overwrites words my other device added.
+  for (const [hanzi, w] of Object.entries(mine)) if (before[hanzi]?.day !== w.day) sendProgress(`myWords/${encodeURIComponent(hanzi)}`, w)
 }
 
 function keepToday(day: number, words: Word[]): Word[] {

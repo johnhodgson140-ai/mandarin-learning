@@ -219,9 +219,14 @@ function useListening(story: Story, paragraphs: Token[][], listen: boolean) {
     for (let p = start; p < paragraphs.length; p++) {
       setAt(p)
       document.getElementById(`para-${p}`)?.scrollIntoView({ block: 'center', behavior: 'smooth' })
-      void speak(paragraphs[p].map((t) => t.text).join(''), rateForLevel(story.level), idOf(p))
-      const finished = await whenDone(idOf(p))
-      if (mine !== run.current) return
+      // A sentence at a time: device voices (Chrome's especially) can stop partway through long text.
+      let finished = true
+      for (const sentence of sentencesOf(paragraphs[p])) {
+        void speak(sentence, rateForLevel(story.level), idOf(p))
+        finished = await whenDone(idOf(p))
+        if (mine !== run.current) return
+        if (!finished) break
+      }
       if (!finished) break
     }
     setAt(null)
@@ -274,6 +279,21 @@ function ListenBar({ listening: l }: { listening: Listening }) {
       )}
     </div>
   )
+}
+
+/** A paragraph's sentences as text (each up to and including 。！？). */
+function sentencesOf(tokens: Token[]): string[] {
+  const out: string[] = []
+  let current = ''
+  for (const t of tokens) {
+    current += t.text
+    if (SENTENCE_END.test(t.text)) {
+      out.push(current)
+      current = ''
+    }
+  }
+  if (current.trim()) out.push(current)
+  return out
 }
 
 /** The sentence (up to and including 。！？) containing token t. */

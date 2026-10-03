@@ -213,8 +213,9 @@ export default function Cards() {
               // Again in the standard schedule: see it again later this session (up to three times, like Anki's learning steps).
               if (session.filter((c) => c.hanzi === card.hanzi).length < 3) next.cards = [...session, card]
             } else if (due - now <= COMES_BACK_IN_SESSION && !pending.includes(card.hanzi)) {
-              // Back in a few minutes or hours: it waits, then slots in when its time comes.
+              // Back in a few minutes or hours: it waits, then slots in when its time comes (not also later in the queue).
               next.pending = [...pending, card.hanzi]
+              next.cards = [...session.slice(0, index + 1), ...session.slice(index + 1).filter((c) => c.hanzi !== card.hanzi)]
             }
             setCounts(dueCounts())
           }
