@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import type { DailyContent, PlanItem } from '../daily/schema.ts'
+import { dueCounts } from '../services/cards.ts'
 import { dailyCount } from '../services/curriculum.ts'
 import { cachedDaily, loadDaily } from '../services/daily.ts'
 import { summary } from '../services/progress.ts'
@@ -32,6 +33,9 @@ export default function Today() {
     summary().then(setStats, () => {})
   }, [])
 
+  // The plan is written ahead of time; the cards due are counted here, now.
+  const due = Object.values(dueCounts()).reduce((a, b) => a + b, 0)
+  const cardsTitle = due > 0 ? `Say your cards (${due} due)` : 'Say your cards'
   const listenRef = daily?.plan.items.find((i) => i.kind === 'story' && i.ref)?.ref
 
   return (
@@ -67,7 +71,7 @@ export default function Today() {
               <li key={i}>
                 <a href={LINKS[item.kind](item.ref)} className="hub-row plan-row">
                   <span className="plan-step">{i + 2}</span>
-                  <span className="hub-title">{item.title_en}</span>
+                  <span className="hub-title">{item.kind === 'cards' ? cardsTitle : item.title_en}</span>
                 </a>
               </li>
             ))}
