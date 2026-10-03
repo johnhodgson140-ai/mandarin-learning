@@ -49,8 +49,9 @@ const TEMPLATES: { tone: Tone; points: number[] }[] = [
   { tone: 5, points: [0.4, 0.3] },
 ]
 
-export function templateContour(tone: Tone): number[] {
-  return resample(TEMPLATES.find((t) => t.tone === tone)!.points, POINTS)
+export function templateContour(tone: Tone, { half = false } = {}): number[] {
+  const forms = TEMPLATES.filter((t) => t.tone === tone)
+  return resample((half && forms[1] ? forms[1] : forms[0]).points, POINTS)
 }
 
 /**

@@ -24,8 +24,9 @@ const DAY = 24 * 60 * 60 * 1000
 /** Days per box in the old box system (only used to convert old states). */
 export const BOX_DAYS = [0, 1, 2, 4, 8, 16]
 
-// FSRS-5 default parameters (open-spaced-repetition), fitted on hundreds of millions of Anki reviews.
-const W = [0.40255, 1.18385, 3.173, 15.69105, 7.1949, 0.5345, 1.4604, 0.0046, 1.54575, 0.1192, 1.01925, 1.9395, 0.11, 0.29605, 2.2698, 0.2315, 2.9898, 0.51655, 0.6621]
+// FSRS-5 default parameters (open-spaced-repetition), fitted on hundreds of millions of Anki reviews. Once I have
+// enough reviews, cards/fit.ts fits the most important ones to me (Settings → Flashcards).
+export const W: readonly number[] = [0.40255, 1.18385, 3.173, 15.69105, 7.1949, 0.5345, 1.4604, 0.0046, 1.54575, 0.1192, 1.01925, 1.9395, 0.11, 0.29605, 2.2698, 0.2315, 2.9898, 0.51655, 0.6621]
 const DECAY = -0.5
 const FACTOR = 19 / 81
 /** Aim to review when I'd still recall it 90% of the time. */
@@ -40,7 +41,7 @@ export const ratingFor = (score: number): Rating => (score < 60 ? 1 : score < 80
 export const retrievability = (days: number, stability: number) => (1 + (FACTOR * days) / stability) ** DECAY
 
 const clampD = (d: number) => Math.min(10, Math.max(1, d))
-const initialDifficulty = (g: Rating) => clampD(W[4] - Math.exp(W[5] * (g - 1)) + 1)
+const initialDifficulty = (g: Rating, w: readonly number[] = W) => clampD(w[4] - Math.exp(w[5] * (g - 1)) + 1)
 const intervalDays = (stability: number) => Math.max(1, Math.round((stability / FACTOR) * (RETENTION ** (1 / DECAY) - 1)))
 
 /** Update a card after I say it (score 1–100). "Again" puts it straight back into today's queue. */
@@ -59,13 +60,14 @@ export function rateCard(
   now = Date.now(),
   score: number | null = null,
   scale: IntervalScale = DEFAULT_SCALE,
+  w: readonly number[] = W,
 ): CardState {
   const seen = (state?.seen ?? 0) + 1
   let stability: number
   let difficulty: number
   if (!state || state.seen === 0) {
-    stability = W[g - 1]
-    difficulty = initialDifficulty(g)
+    stability = w[g - 1]
+    difficulty = initialDifficulty(g, w)
   } else {
     // Convert a box-system state the first time.
     const s0 = state.stability ?? Math.max(0.5, BOX_DAYS[state.box ?? 1] ?? 1)
@@ -73,14 +75,14 @@ export function rateCard(
     const last = state.last ?? state.due - (BOX_DAYS[state.box ?? 1] ?? 1) * DAY
     const elapsed = Math.max(0, (now - last) / DAY)
     const r = retrievability(elapsed, s0)
-    const delta = -W[6] * (g - 3)
-    difficulty = clampD(W[7] * initialDifficulty(4) + (1 - W[7]) * (d0 + (delta * (10 - d0)) / 9))
-    if (elapsed < 1) stability = s0 * Math.exp(W[17] * (g - 3 + W[18])) // reviewed again the same day
-    else if (g === 1) stability = Math.min(s0, W[11] * d0 ** -W[12] * ((s0 + 1) ** W[13] - 1) * Math.exp(W[14] * (1 - r)))
+    const delta = -w[6] * (g - 3)
+    difficulty = clampD(w[7] * initialDifficulty(4, w) + (1 - w[7]) * (d0 + (delta * (10 - d0)) / 9))
+    if (elapsed < 1) stability = s0 * Math.exp(w[17] * (g - 3 + w[18])) // reviewed again the same day
+    else if (g === 1) stability = Math.min(s0, w[11] * d0 ** -w[12] * ((s0 + 1) ** w[13] - 1) * Math.exp(w[14] * (1 - r)))
     else
       stability =
         s0 *
-        (Math.exp(W[8]) * (11 - d0) * s0 ** -W[9] * (Math.exp(W[10] * (1 - r)) - 1) * (g === 2 ? W[15] : 1) * (g === 4 ? W[16] : 1) + 1)
+        (Math.exp(w[8]) * (11 - d0) * s0 ** -w[9] * (Math.exp(w[10] * (1 - r)) - 1) * (g === 2 ? w[15] : 1) * (g === 4 ? w[16] : 1) + 1)
   }
   stability = Math.max(0.1, stability)
   const factor = g === 2 ? scale.hard : g === 3 ? scale.good : scale.easy

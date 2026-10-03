@@ -32,6 +32,8 @@ export default function Today() {
     summary().then(setStats, () => {})
   }, [])
 
+  const listenRef = daily?.plan.items.find((i) => i.kind === 'story' && i.ref)?.ref
+
   return (
     <>
       <header className="today-header">
@@ -69,6 +71,15 @@ export default function Today() {
                 </a>
               </li>
             ))}
+            {/* Ears last: today's story again, listening only (text hidden until I check). */}
+            {listenRef && (
+              <li>
+                <a href={`#read/${listenRef}/listen`} className="hub-row plan-row">
+                  <span className="plan-step">{(daily?.plan.items ?? BASIC).length + 2}</span>
+                  <span className="hub-title">Listen to today’s story</span>
+                </a>
+              </li>
+            )}
           </ol>
           <a href="#speak/words" className="btn btn-primary link-btn start-btn">Start</a>
         </>

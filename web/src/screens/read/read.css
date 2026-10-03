@@ -151,3 +151,10 @@ button.story-row { width: 100%; text-align: left; cursor: pointer; }
   cursor: pointer;
 }
 .counts-3 { grid-template-columns: repeat(3, 1fr); }
+
+/* ---- Listening ---- */
+.listen-bar { gap: var(--space); margin-top: var(--space); }
+.listen-controls { display: flex; gap: var(--space); flex-wrap: wrap; }
+.reader-text p.para-now { box-shadow: -10px 0 0 var(--surface), -12px 0 0 var(--accent); }
+.reader-text p.para-hidden { cursor: pointer; }
+.reader-text p.para-hidden > *, .reader-text p.para-hidden rt { filter: blur(8px); user-select: none; transition: filter var(--fade); }

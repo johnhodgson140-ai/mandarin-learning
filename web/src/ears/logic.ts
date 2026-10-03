@@ -3,7 +3,7 @@
 // voices improves how the tones are produced too, and carries over to new voices and words.
 
 import type { Syllable } from '../chinese/tokens.ts'
-import type { Tone } from '../chinese/tones.ts'
+import { toneless, type Tone } from '../chinese/tones.ts'
 
 export type EarItem = { text: string; syllables: Syllable[]; tones: Tone[] }
 /** Per tone pattern ("3" or "3-2"): how often I've heard it and how often I got it right. */
@@ -75,3 +75,8 @@ export function weakest(stats: EarStats, count = 3): { pattern: string; accuracy
     .sort((a, b) => a.accuracy - b.accuracy)
     .slice(0, count)
 }
+
+/** Bundled recording names (web/public/voices/): a word by its characters' code points ("你好" → "4f60-597d"). */
+export const wordKey = (text: string) => [...text].map((c) => c.codePointAt(0)!.toString(16)).join('-')
+/** A syllable: tone-less pinyin with ü as v, then the tone ("lǜ" tone 4 → "lv4"), as audio-cmn names them. */
+export const syllableKey = (pinyin: string, tone: number) => `${toneless(pinyin).replace(/ü/g, 'v')}${tone}`

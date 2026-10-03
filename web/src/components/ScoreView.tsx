@@ -2,6 +2,7 @@
 import { useId, useState } from 'react'
 import PlayButton from './PlayButton.tsx'
 import ContourChart from './ContourChart.tsx'
+import PitchCompare from './PitchCompare.tsx'
 import type { Syllable } from '../chinese/tokens.ts'
 import { markTone, toneless } from '../chinese/tones.ts'
 import { scoreColour, tips } from '../scoring/score.ts'
@@ -76,6 +77,7 @@ export default function ScoreView({ syllables, result, native }: { syllables: Sy
         {tonesChecked && <PlayButton id={`${uid}-corrected`} label="You, corrected" start={playCorrected} />}
         <PlayButton id={`${uid}-native`} label="Native" start={() => speak(syllables.map((s) => s.hanzi).join(''), rateForLevel(), `${uid}-native`)} />
       </div>
+      <PitchCompare wav={result.wav} syllables={syllables} />
       {tonesChecked && (
         <ContourChart mine={result.tones.map((t) => t?.contour ?? null)} target={syllables.map((s) => templateContour(s.spoken))} native={native} />
       )}

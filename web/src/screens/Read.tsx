@@ -4,8 +4,8 @@ import NewStory from './read/NewStory.tsx'
 import Reader from './read/Reader.tsx'
 
 export default function Read() {
-  const [, sub] = useHash().split('/')
+  const [, sub, extra] = useHash().split('/')
   if (!sub) return <Library />
   if (sub === 'new') return <NewStory />
-  return <Reader id={sub} />
+  return <Reader id={sub} listen={extra === 'listen'} />
 }

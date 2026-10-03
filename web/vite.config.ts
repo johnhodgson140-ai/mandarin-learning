@@ -33,10 +33,16 @@ export default defineConfig(({ mode }) => ({
         // Keep the reader font available offline once it has been seen.
         runtimeCaching: [
           {
-            // HSK word list and the ready-made pack: fetched on first use, then available offline (refreshed in the background).
-            urlPattern: ({ url }) => /\/(hsk|daily-words|pack\/stories|pack\/missions)\.json$/.test(url.pathname),
+            // HSK word list, example sentences and the ready-made pack: fetched on first use, then available offline (refreshed in the background).
+            urlPattern: ({ url }) => /\/(hsk|daily-words|sentences|pack\/stories|pack\/missions)\.json$/.test(url.pathname),
             handler: 'StaleWhileRevalidate',
             options: { cacheName: 'hsk' },
+          },
+          {
+            // Tone ears' recorded voices: kept once heard.
+            urlPattern: ({ url }) => url.pathname.includes('/voices/'),
+            handler: 'CacheFirst',
+            options: { cacheName: 'voices', expiration: { maxEntries: 2500 } },
           },
           {
             urlPattern: ({ url }) => url.origin === 'https://fonts.googleapis.com' || url.origin === 'https://fonts.gstatic.com',

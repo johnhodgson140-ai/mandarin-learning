@@ -25,3 +25,11 @@ export function mergeOrder(a: string[], b: string[]): string[] {
   const seen = new Set(a)
   return [...a, ...(b ?? []).filter((h) => !seen.has(h))]
 }
+
+/** Review logs: every rating from both devices, once each, in time order (the newest `cap` kept). */
+export function mergeLog<R extends { t: number; m: string; h: string }>(a: R[], b: R[], cap = 30_000): R[] {
+  const key = (r: R) => `${r.t}|${r.m}|${r.h}`
+  const out = new Map((a ?? []).map((r) => [key(r), r]))
+  for (const r of b ?? []) if (!out.has(key(r))) out.set(key(r), r)
+  return [...out.values()].sort((x, y) => x.t - y.t).slice(-cap)
+}
