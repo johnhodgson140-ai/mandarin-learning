@@ -18,3 +18,5 @@
 .notify-row .muted { grid-column: 1 / -1; }
 .notify-time { flex: none; width: 7.5em; min-height: 40px; }
 .notify-range { grid-column: 1 / -1; display: flex; align-items: center; gap: var(--space); flex-wrap: wrap; }
+.fixed-time { flex-direction: row; align-items: center; justify-content: space-between; }
+.fixed-time select { min-height: 40px; }

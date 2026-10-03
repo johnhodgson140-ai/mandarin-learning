@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
 import { addTestCard, cachedMeta, fetchMeta, queuedCount, sync, type SyncMeta } from '../services/anki.ts'
 import { exportNewCards, importAnkiFile, newCards } from '../services/ankiFile.ts'
-import { daysUntil, rateCard, type IntervalScale, type Rating } from '../cards/srs.ts'
-import { buttonColours, intervalScale, personalScheduleOn, refitSchedule, reviewLog, scheduleFit, scheduleParams, setButtonColours, setIntervalScale, setPersonalScheduleOn, type ButtonColours } from '../services/cards.ts'
+import { type IntervalScale, type Rating } from '../cards/srs.ts'
+import { FIXED_CHOICES, FIXED_PRESETS, minutesLabel, schedule, whenText, type FixedTimes, type TimingMode } from '../cards/timing.ts'
+import { buttonColours, fixedTimes, intervalScale, personalScheduleOn, setFixedTimes, setTimingMode, timingMode, refitSchedule, reviewLog, scheduleFit, scheduleParams, setButtonColours, setIntervalScale, setPersonalScheduleOn, type ButtonColours } from '../services/cards.ts'
 import { MIN_REVIEWS } from '../cards/fit.ts'
 import { MASTERIES } from '../services/anki-mapping.ts'
 import { currentUser, isConfigured, signIn, signOut } from '../services/firebase.ts'
@@ -471,27 +472,81 @@ const BUTTONS: { key: keyof IntervalScale; label: string; rating: Rating }[] = [
   { key: 'easy', label: 'Easy', rating: 4 },
 ]
 
-/** Card intervals (Anki-style modifiers on top of FSRS) and the rating buttons' colours. */
+const FIXED_BUTTONS: { key: keyof FixedTimes; label: string; rating: Rating }[] = [
+  { key: 'again', label: 'Again', rating: 1 },
+  { key: 'hard', label: 'Hard', rating: 2 },
+  { key: 'good', label: 'Good', rating: 3 },
+  { key: 'easy', label: 'Easy', rating: 4 },
+]
+const TIMING_MODES: { mode: TimingMode; label: string; hint: string }[] = [
+  { mode: 'standard', label: 'Standard', hint: 'The normal spaced-repetition schedule (FSRS, as in Anki): gaps grow as you remember.' },
+  { mode: 'adjusted', label: 'My multipliers', hint: 'The normal schedule, with each button’s gap stretched or shrunk.' },
+  { mode: 'fixed', label: 'Fixed times', hint: 'You choose exactly when each button brings a card back, e.g. to learn a batch of words in one sitting. Cards due back within 4 hours come back in the same session.' },
+]
+
+/** When cards come back (standard, my multipliers, or fixed times) and the rating buttons' colours. */
 function Flashcards() {
+  const [mode, setMode] = useState<TimingMode>(timingMode)
   const [scale, setScale] = useState<IntervalScale>(intervalScale)
+  const [fixed, setFixed] = useState<FixedTimes>(fixedTimes)
   const [colours, setColours] = useState<ButtonColours>(buttonColours)
   const choose = (key: keyof IntervalScale, value: number) => {
     const next = { ...scale, [key]: value }
     setScale(next)
     setIntervalScale(next)
   }
+  const chooseFixed = (next: FixedTimes) => {
+    setFixed(next)
+    setFixedTimes(next)
+  }
   // What a brand-new card would get with these settings.
   const [fit, setFit] = useState(scheduleFit)
   const [personal, setPersonal] = useState(personalScheduleOn)
   const params = personal ? scheduleParams() : undefined
-  const preview = BUTTONS.map(({ label, rating }) => `${label} ${daysUntil(rateCard(undefined, rating, 0, null, scale, params), 0)}d`).join(' · ')
+  const preview = FIXED_BUTTONS.map(({ label, rating }) => `${label} ${whenText(schedule(undefined, rating, 0, null, { mode, scale, fixed, params }).due, 0)}`).join(' · ')
   const logged = reviewLog().length
   const better = fit && fit.lossFitted < fit.lossDefault ? Math.round((1 - fit.lossFitted / fit.lossDefault) * 100) : 0
   return (
     <section className="card">
       <h2 className="card-title">Flashcards</h2>
-      <p className="muted small">Stretch or shrink the gap each button gives. 1× is the standard schedule.</p>
-      {BUTTONS.map(({ key, label, rating }) => (
+      <fieldset className="choice">
+        <legend>When cards come back</legend>
+        <div className="chips">
+          {TIMING_MODES.map((t) => (
+            <button key={t.mode} type="button" className="chip" aria-pressed={mode === t.mode} onClick={() => { setMode(t.mode); setTimingMode(t.mode) }}>
+              {t.label}
+            </button>
+          ))}
+        </div>
+        <p className="muted small">{TIMING_MODES.find((t) => t.mode === mode)!.hint} You can also switch on the cards screen.</p>
+      </fieldset>
+      {mode === 'fixed' && (
+        <>
+          <div className="chips" role="group" aria-label="Quick choices">
+            {FIXED_PRESETS.map((p) => (
+              <button
+                key={p.name}
+                type="button"
+                className="chip"
+                aria-pressed={FIXED_BUTTONS.every(({ key }) => fixed[key] === p.times[key])}
+                onClick={() => chooseFixed(p.times)}
+              >
+                {p.name}: {FIXED_BUTTONS.map(({ key }) => whenText(p.times[key] * 60_000, 0)).join(' · ')}
+              </button>
+            ))}
+          </div>
+          {FIXED_BUTTONS.map(({ key, label, rating }) => (
+            <label key={key} className="field fixed-time">
+              <span><span className={`rate-dot rate-${rating}`} aria-hidden="true" /> {label}</span>
+              <select value={fixed[key]} onChange={(e) => chooseFixed({ ...fixed, [key]: Number(e.target.value) })}>
+                {FIXED_CHOICES.map((m) => <option key={m} value={m}>{minutesLabel(m)}</option>)}
+              </select>
+            </label>
+          ))}
+        </>
+      )}
+      {mode === 'adjusted' && <p className="muted small">Stretch or shrink the gap each button gives. 1× is the standard schedule.</p>}
+      {mode === 'adjusted' && BUTTONS.map(({ key, label, rating }) => (
         <fieldset key={key} className="choice">
           <legend><span className={`rate-dot rate-${rating}`} aria-hidden="true" /> {label}</legend>
           <div className="chips">
@@ -501,7 +556,7 @@ function Flashcards() {
           </div>
         </fieldset>
       ))}
-      <p className="muted small">A new card: {preview}. Again always comes back in the same session.</p>
+      <p className="muted small">A new card: {preview}.{mode !== 'fixed' && ' Again always comes back in the same session.'}</p>
       <fieldset className="choice">
         <legend>Schedule fitted to you</legend>
         {fit ? (

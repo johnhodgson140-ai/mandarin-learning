@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import type { Recording } from '../../audio/recorder.ts'
-import { daysUntil, rateCard, ratingFor, shuffleRest, type Card, type CardState, type Rating } from '../../cards/srs.ts'
+import { ratingFor, shuffleRest, type Card, type Rating } from '../../cards/srs.ts'
 import { tokensOfText } from '../../chinese/tokens.ts'
 import { hskLabel, loadHsk, type HskInfo } from '../../services/hsk.ts'
 import HoldToTalk from '../../components/HoldToTalk.tsx'
@@ -10,7 +10,8 @@ import ScoreView from '../../components/ScoreView.tsx'
 import { canRecognise } from '../../scoring/recognize.ts'
 import { scoreAndLog } from '../../scoring/attempt.ts'
 import type { SpeechScore } from '../../scoring/speechScore.ts'
-import { buttonColours, cardStates, dueCounts, intervalScale, keepSession, learnOrder, newSession, rateCardIn, resumeSession, scheduleParams, todaysNewCards, type CardMode } from '../../services/cards.ts'
+import { bringBackDue, buttonColours, cardStates, COMES_BACK_IN_SESSION, dueCounts, keepSession, learnOrder, newSession, rateCardIn, resumeSession, setTimingMode, timing, timingMode, todaysNewCards, type CardMode, type Run } from '../../services/cards.ts'
+import { schedule, whenText, type TimingMode } from '../../cards/timing.ts'
 import { moreWordsToday, todaysWords } from '../../services/curriculum.ts'
 import { load, save } from '../../services/storage.ts'
 import { getProfile } from '../../services/tone.ts'
@@ -31,20 +32,22 @@ function lastMode(): CardMode {
 
 export default function Cards() {
   const [mode, setMode] = useState<CardMode>(lastMode)
-  const [{ cards: session, index, scores }, setRun] = useState(() => resumeSession(mode))
+  const [run, setRun] = useState<Run>(() => resumeSession(mode))
+  const { cards: session, index, scores, pending } = run
   const [counts, setCounts] = useState(dueCounts)
+  const [timingNow, setTimingNow] = useState<TimingMode>(timingMode)
   const canScore = canRecognise() || getProfile() !== null
 
-  const update = (cards: Card[], i: number, sc: number[]) => {
-    setRun({ cards, index: i, scores: sc })
-    keepSession(mode, cards, i, sc)
+  const update = (next: Run) => {
+    setRun(next)
+    keepSession(mode, next)
   }
 
   // Today's words are worked out once the word list has loaded: make sure every new one is in today's Learn session.
   // (Reads the latest session when the list arrives, so cards rated meanwhile aren't rewound.)
-  const latest = useRef({ session, index, scores })
+  const latest = useRef(run)
   useEffect(() => {
-    latest.current = { session, index, scores }
+    latest.current = run
   })
   useEffect(() => {
     if (mode !== 'learn') return
@@ -52,9 +55,9 @@ export default function Cards() {
     void todaysWords().then(() => {
       if (cancelled) return
       const now = latest.current
-      const ahead = new Set(now.session.slice(now.index).map((c) => c.hanzi))
+      const ahead = new Set([...now.cards.slice(now.index).map((c) => c.hanzi), ...now.pending])
       const missing = todaysNewCards().filter((c) => !ahead.has(c.hanzi))
-      if (missing.length) update([...now.session, ...missing], now.index, now.scores)
+      if (missing.length) update({ ...now, cards: [...now.cards, ...missing] })
       setCounts(dueCounts())
     })
     return () => {
@@ -64,18 +67,36 @@ export default function Cards() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mode])
 
+  // Cards waiting to come back (5 minutes, 30 minutes…): once the rest are done, check every few seconds.
+  const waiting = index >= session.length && pending.length > 0
+  const [, tick] = useState(0)
+  useEffect(() => {
+    if (!waiting) return
+    const timer = window.setInterval(() => {
+      const next = bringBackDue(latest.current, mode)
+      if (next !== latest.current) update(next)
+      else tick((t) => t + 1) // keeps "next in …" counting down
+    }, 5000)
+    return () => window.clearInterval(timer)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [waiting, mode])
+
   async function moreCards() {
     // Learn: 5 more new words today (pulling ahead); Recall and Listen: whatever Learn has unlocked since.
     if (mode === 'learn') await moreWordsToday(5)
-    update(newSession(mode), 0, [])
+    update({ cards: newSession(mode), index: 0, scores: [], pending: [] })
     setCounts(dueCounts())
   }
   const chooseMode = (m: CardMode) => {
     if (m === mode) return
-    keepSession(mode, session, index, scores)
+    keepSession(mode, run)
     setMode(m)
     save('cardMode', m)
     setRun(resumeSession(m))
+  }
+  const chooseTiming = (t: TimingMode) => {
+    setTimingNow(t)
+    setTimingMode(t)
   }
 
   const toggles = (
@@ -88,7 +109,42 @@ export default function Cards() {
     </div>
   )
   const hint = <p className="muted small">{MODES.find((m) => m.mode === mode)!.hint}</p>
+  const timingPicker = (
+    <label className="timing-pick">
+      <span className="muted small">Comes back</span>
+      <select value={timingNow} onChange={(e) => chooseTiming(e.target.value as TimingMode)}>
+        {TIMING_LABELS.map(([value, label]) => <option key={value} value={value}>{label}</option>)}
+      </select>
+    </label>
+  )
   const left = session.length - index
+
+  if (waiting) {
+    const states = cardStates(mode)
+    const soonest = Math.min(...pending.map((h) => states[h]?.due ?? Date.now()))
+    return (
+      <>
+        <header className="mission-bar">
+          <a href="#speak" className="back-link">‹ Speak</a>
+          {toggles}
+        </header>
+        <h1>Say your cards</h1>
+        <section className="card">
+          <h2 className="card-title">
+            {pending.length} card{pending.length === 1 ? '' : 's'} coming back · next in {whenText(soonest, Date.now())}
+          </h2>
+          <p className="muted">They’ll appear here when it’s time (keep this open, or come back later today).</p>
+          <div className="sheet-actions">
+            <a href="#speak" className="btn btn-secondary link-btn center">Speak</a>
+            <button type="button" className="btn btn-primary" onClick={() => update(bringBackDue(run, mode, Date.now(), true))}>
+              Review now
+            </button>
+          </div>
+        </section>
+        {timingPicker}
+      </>
+    )
+  }
 
   if (index >= session.length) {
     const again = scores.filter((r) => r === 1).length
@@ -116,6 +172,7 @@ export default function Cards() {
             </button>
           </div>
         </section>
+        {timingPicker}
       </>
     )
   }
@@ -130,7 +187,7 @@ export default function Cards() {
       <div className="cards-bar">
         {hint}
         {left > 1 && (
-          <button type="button" className="chip" onClick={() => update(shuffleRest(session, index), index, scores)} aria-label={`Shuffle the ${left} cards left`}>
+          <button type="button" className="chip" onClick={() => update({ ...run, cards: shuffleRest(session, index) })} aria-label={`Shuffle the ${left} cards left`}>
             Shuffle
           </button>
         )}
@@ -145,22 +202,36 @@ export default function Cards() {
         card={session[index]}
         mode={mode}
         onNext={(rating, score) => {
-          let next = session
-          let rated = scores
+          let next: Run = { ...run, index: index + 1 }
           if (rating !== null) {
             const card = session[index]
             rateCardIn(mode, card.hanzi, rating, score)
-            rated = [...scores, rating]
-            // Again: see it again later this session (up to three times, like Anki's learning steps).
-            if (rating === 1 && session.filter((c) => c.hanzi === card.hanzi).length < 3) next = [...session, card]
+            next.scores = [...scores, rating]
+            const due = cardStates(mode)[card.hanzi]?.due ?? 0
+            const now = Date.now()
+            if (due <= now) {
+              // Again in the standard schedule: see it again later this session (up to three times, like Anki's learning steps).
+              if (session.filter((c) => c.hanzi === card.hanzi).length < 3) next.cards = [...session, card]
+            } else if (due - now <= COMES_BACK_IN_SESSION && !pending.includes(card.hanzi)) {
+              // Back in a few minutes or hours: it waits, then slots in when its time comes.
+              next.pending = [...pending, card.hanzi]
+            }
             setCounts(dueCounts())
           }
-          update(next, index + 1, rated)
+          next = bringBackDue(next, mode)
+          update(next)
         }}
       />
+      {timingPicker}
     </>
   )
 }
+
+const TIMING_LABELS: [TimingMode, string][] = [
+  ['standard', 'Standard'],
+  ['adjusted', 'My multipliers'],
+  ['fixed', 'Fixed times'],
+]
 
 const SOURCE_LABEL: Record<Card['source'], string> = {
   anki: 'Anki',
@@ -198,8 +269,7 @@ function CardView({ card, mode, onNext }: { card: Card; mode: CardMode; onNext: 
   // Saying it before looking suggests a rating; I still choose.
   const suggested = score !== null ? ratingFor(score) : null
   const state = cardStates(mode)[card.hanzi]
-  const scale = intervalScale()
-  const params = scheduleParams()
+  const when = timing()
   // When this card was shown: the button previews are worked out from then.
   const [shownAt] = useState(Date.now)
   const coloured = buttonColours() === 'colour'
@@ -287,7 +357,7 @@ function CardView({ card, mode, onNext }: { card: Card; mode: CardMode; onNext: 
                 onClick={() => onNext(rating, score)}
               >
                 {label}
-                <span className="rate-when">{whenText(rateCard(state, rating, shownAt, null, scale, params), shownAt)}</span>
+                <span className="rate-when">{whenText(schedule(state, rating, shownAt, null, when).due, shownAt)}</span>
               </button>
             ))}
           </div>
@@ -304,12 +374,6 @@ function CardView({ card, mode, onNext }: { card: Card; mode: CardMode; onNext: 
       {error && <p className="error" role="alert">{error}</p>}
     </>
   )
-}
-
-/** When a card comes back after this rating, as Anki shows it on its buttons. */
-function whenText(next: CardState, now: number): string {
-  const days = daysUntil(next, now)
-  return days === 0 ? 'soon' : days < 30 ? `${days}d` : days < 365 ? `${Math.round(days / 30)}mo` : `${(days / 365).toFixed(1)}y`
 }
 
 /** Did anything get checked? (Not before my voice is known and with no sound checker: then don't schedule.) */

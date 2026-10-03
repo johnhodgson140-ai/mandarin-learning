@@ -102,3 +102,7 @@
 .example-zh strong { color: var(--accent); font-weight: 600; }
 .example-pinyin { font-size: 15px; color: var(--text-muted); }
 .example-en { font-size: 15px; }
+
+/* "Comes back" timing picker under the cards */
+.timing-pick { display: flex; align-items: center; justify-content: center; gap: var(--space); margin-top: calc(var(--space) * 2); }
+.timing-pick select { min-height: 36px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--text); padding: 0 12px; font: inherit; font-size: 14px; }
