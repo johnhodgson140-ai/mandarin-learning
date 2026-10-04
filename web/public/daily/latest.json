@@ -1,167 +1,167 @@
 {
-  "date": "2026-10-03",
+  "date": "2026-10-04",
   "level": 1,
   "plan": {
-    "focus_en": "了 for things that happened, and talking about scores with 比 (三比一).",
+    "focus_en": "Asking how much with 多少, and 别 for “don’t”.",
     "items": [
       { "kind": "cards", "title_en": "Say your cards (10 cards)" },
       { "kind": "dojo", "title_en": "Tone Dojo (5 minutes)" },
-      { "kind": "story", "title_en": "Read and read aloud: 在家看球", "ref": "2026-10-03-s1" },
-      { "kind": "mission", "title_en": "Guided mission: bargaining at a market stall", "ref": "2026-10-03-m1" }
+      { "kind": "story", "title_en": "Read and read aloud: 学开车", "ref": "2026-10-04-s1" },
+      { "kind": "mission", "title_en": "Guided mission: asking the way to the station", "ref": "2026-10-04-m1" }
     ]
   },
   "stories": [
     {
-      "id": "2026-10-03-s1",
+      "id": "2026-10-04-s1",
       "level": 1,
-      "topic": "football",
-      "title_zh": "在家看球",
-      "title_en": "Watching football at home",
+      "topic": "daily life",
+      "title_zh": "学开车",
+      "title_en": "Learning to drive",
       "paragraphs": [
-        ["今天", "晚上", "，", "我", "和", "朋友", "在", "家", "看", "球", "。", "我们", "都", "喜欢", "曼联", "。"],
-        ["朋友", "拿", "来", "了", "一些", "吃", "的", "和", "喝", "的", "。", "我们", "坐", "着", "一起", "看", "。"],
-        ["八", "点", "，", "曼联", "进", "了", "一", "个", "球", "！", "我们", "都", "站", "起来", "了", "。"],
-        ["最后", "是", "三", "比", "一", "。", "我们", "都", "笑", "了", "。", "我", "非常", "爱", "曼联", "！"],
-        ["朋友", "说", "：", "“", "下", "次", "我们", "一起", "去", "看", "吧", "！", "”"]
+        ["我", "正在", "学", "开", "朋友", "的", "车", "。", "这", "真", "难", "！"],
+        ["前", "两", "次", "，", "我", "错", "了", "很", "多", "。", "那", "两", "次", "我", "都", "没", "开", "好", "。"],
+        ["朋友", "坐", "在", "车", "里", "帮", "我", "。", "他", "说", "：", "“", "别", "太", "快", "！", "”"],
+        ["今天", "，", "我", "一", "次", "也", "没有", "错", "！", "朋友", "笑", "了", "，", "说", "：", "“", "你", "真", "行", "！", "”", "我", "也", "笑", "了", "。"],
+        ["我", "想", "明天", "再", "开", "一", "次", "。", "多", "开", "几", "次", "，", "就", "不", "难", "了", "！"]
       ],
       "translations": [
-        "This evening my friend and I watched the football at home. We both like Manchester United.",
-        "My friend brought some food and drinks. We sat and watched together.",
-        "At eight, Man United scored a goal! We both jumped to our feet.",
-        "In the end it was three–one. We were all smiling. I really love Man United!",
-        "My friend said: “Next time let’s go and watch it together!”"
+        "I'm learning to drive my friend's car. It's really hard!",
+        "The first two times, I made lots of mistakes. Both times I didn’t drive well.",
+        "My friend sits in the car and helps me. He says: “Don’t go too fast!”",
+        "Today I didn’t make a single mistake! My friend laughed and said: “You’re really good!” I laughed too.",
+        "I want to drive again tomorrow. Drive a few more times and it won’t be hard any more!"
       ],
-      "names": ["曼联"],
-      "new_words": ["晚上", "球"],
+      "names": [],
+      "new_words": ["学", "难", "错"],
       "glossary": [
-        { "word": "晚上", "english": "evening; night" },
-        { "word": "球", "english": "ball; a game of football (看球: watch the football)" },
-        { "word": "曼联", "english": "Manchester United" }
+        { "word": "学", "english": "to learn; to study" },
+        { "word": "难", "english": "difficult" },
+        { "word": "错", "english": "wrong; to make a mistake" }
       ]
     },
     {
-      "id": "2026-10-03-s2",
+      "id": "2026-10-04-s2",
       "level": 1,
-      "topic": "travel",
-      "title_zh": "和妈去上海",
-      "title_en": "To Shanghai with Mum",
+      "topic": "business & finance",
+      "title_zh": "少了两块",
+      "title_en": "Two kuai short",
       "paragraphs": [
-        ["这", "个", "月", "，", "我", "和", "妈", "去", "上海", "玩", "。"],
-        ["我们", "很", "早", "就", "走", "了", "。", "我们", "坐", "了", "四", "个", "小时", "的", "车", "。"],
-        ["上海", "很", "大", "，", "人", "也", "很", "多", "。", "我们", "走", "了", "很", "多", "路", "。"],
-        ["我们", "找到", "了", "一", "个", "小", "地方", "吃", "东西", "。", "妈", "很", "喜欢", "这里", "的", "东西", "。"],
-        ["最后", "，", "我们", "坐", "车", "回", "家", "。", "我们", "都", "很", "喜欢", "上海", "！"]
+        ["今天", "我", "想", "喝", "水", "，", "就", "去", "买", "了", "。", "我", "问", "：", "“", "多少", "钱", "？", "”", "他", "说", "：", "“", "三", "块", "。", "”"],
+        ["我", "买", "了", "两", "个", "，", "给", "了", "他", "十", "块", "。", "他", "给", "了", "我", "两", "块", "。"],
+        ["回", "家", "后", "，", "我", "想", "：", "“", "不", "对", "！", "他", "少", "给", "了", "我", "两", "块", "！", "”"],
+        ["我", "再", "去", "找", "他", "。", "他", "笑", "了", "，", "拿", "钱", "给", "我", "。"],
+        ["买", "东西", "的", "时候", "，", "我们", "都", "要", "看", "一", "看", "手", "里", "的", "钱", "。"]
       ],
       "translations": [
-        "This month Mum and I went to Shanghai for fun.",
-        "We left very early. We were in the car for four hours.",
-        "Shanghai is big, and there are lots of people too. We walked a long way.",
-        "We found a little place to eat. Mum really liked the food here.",
-        "In the end we took the car home. We both really liked Shanghai!"
+        "Today I wanted a drink of water, so I went to buy some. I asked: “How much?” He said: “Three kuai.”",
+        "I bought two and gave him ten kuai. He gave me two kuai back.",
+        "When I got home I thought: “That’s not right! He gave me two kuai too little!”",
+        "I went back to find him. He laughed and handed me the money.",
+        "When we buy things, we should all check the money in our hands."
       ],
-      "names": ["上海"],
-      "new_words": ["妈", "早"],
+      "names": [],
+      "new_words": ["多少", "块", "少"],
       "glossary": [
-        { "word": "妈", "english": "mum" },
-        { "word": "早", "english": "early" },
-        { "word": "上海", "english": "Shanghai" }
+        { "word": "多少", "english": "how much; how many" },
+        { "word": "块", "english": "kuai (yuan)" },
+        { "word": "少", "english": "few; too little" }
       ]
     }
   ],
   "missions": [
     {
-      "id": "2026-10-03-m1",
+      "id": "2026-10-04-m1",
       "level": 1,
-      "title": "Bargaining at a market stall",
-      "role": "老板",
-      "goal": "Look at something, ask the price, bargain it down and buy it.",
+      "title": "Asking the way to the station",
+      "role": "路人",
+      "goal": "Ask a passer-by the way to the metro station, check how far it is and thank them.",
       "new_words": [
-        { "word": "块", "english": "kuai (yuan)" },
-        { "word": "谢谢", "english": "thanks" }
+        { "word": "第二", "english": "second; number two" },
+        { "word": "外", "english": "outside" }
       ],
       "steps": [
         {
-          "partner_zh": "你好，想买什么？",
-          "partner_en": "Hi, what would you like to buy?",
-          "prompt_en": "Say you'd like to have a look at this one.",
-          "answers_zh": ["我想看看这个。", "我看一下这个。"],
-          "answers_en": ["I'd like to look at this one.", "Let me have a look at this one."]
+          "partner_zh": "你好，有什么事吗？",
+          "partner_en": "Hi, can I help you?",
+          "prompt_en": "Ask where the metro station is.",
+          "answers_zh": ["请问，地铁站在哪儿？", "请问，地铁站怎么走？"],
+          "answers_en": ["Excuse me, where is the metro station?", "Excuse me, how do I get to the metro station?"]
         },
         {
-          "partner_zh": "好的，你穿一下吧。",
-          "partner_en": "Sure, try it on.",
-          "prompt_en": "Ask how much it is.",
-          "answers_zh": ["这个多少钱？", "多少钱？"],
-          "answers_en": ["How much is this?", "How much?"]
+          "partner_zh": "一直走，第二个路口往左。",
+          "partner_en": "Go straight on, and turn left at the second junction.",
+          "prompt_en": "Ask if it's far.",
+          "answers_zh": ["远吗？", "离这里远吗？"],
+          "answers_en": ["Is it far?", "Is it far from here?"]
         },
         {
-          "partner_zh": "一百五十块。",
-          "partner_en": "150 kuai.",
-          "prompt_en": "Say it's too expensive and offer 100.",
-          "answers_zh": ["太贵了，一百块行吗？", "一百块，可以吗？"],
-          "answers_en": ["Too expensive. Is 100 OK?", "Can you do 100?"]
+          "partner_zh": "不远，就在大商店外面，走五分钟就到了。",
+          "partner_en": "Not far. It's just outside the big shop, five minutes' walk.",
+          "prompt_en": "Check it's the second junction.",
+          "answers_zh": ["是第二个路口吗？", "第二个，对吗？"],
+          "answers_en": ["Is it the second junction?", "The second one, right?"]
         },
         {
-          "partner_zh": "一百二十块吧，不能再少了。",
-          "partner_en": "120 then, I can't go any lower.",
-          "prompt_en": "Say OK, you'll take it, thanks.",
-          "answers_zh": ["好，我要了，谢谢！", "行，我买了。谢谢！"],
-          "answers_en": ["OK, I'll take it, thanks!", "Fine, I'll buy it. Thanks!"]
+          "partner_zh": "对，第二个。",
+          "partner_en": "Yes, the second one.",
+          "prompt_en": "Say thank you.",
+          "answers_zh": ["谢谢你！", "好的，谢谢！"],
+          "answers_en": ["Thank you!", "OK, thanks!"]
         }
       ],
-      "closing_zh": "谢谢，欢迎再来！",
-      "closing_en": "Thanks, come again!"
+      "closing_zh": "不客气！",
+      "closing_en": "You're welcome!"
     },
     {
-      "id": "2026-10-03-m2",
+      "id": "2026-10-04-m2",
       "level": 1,
-      "title": "Football plans with a friend",
-      "role": "朋友",
-      "goal": "Tell your friend you're watching the match tonight, invite them over and make a plan for tomorrow.",
+      "title": "Calling Mum",
+      "role": "妈妈",
+      "goal": "Tell Mum what you did today, how it went, and when you're coming home.",
       "new_words": [
-        { "word": "晚上", "english": "evening; night" },
-        { "word": "球", "english": "ball; a football game" },
-        { "word": "明天", "english": "tomorrow" }
+        { "word": "妈妈", "english": "mum" },
+        { "word": "晚上", "english": "evening" },
+        { "word": "回来", "english": "to come back" }
       ],
       "steps": [
         {
-          "partner_zh": "喂，你今天晚上干什么？",
-          "partner_en": "Hey, what are you doing tonight?",
-          "prompt_en": "Say you're watching the football at home.",
-          "answers_zh": ["我在家看球。", "我要在家看球。"],
-          "answers_en": ["I'm watching the football at home.", "I'm going to watch the football at home."]
+          "partner_zh": "喂，是你吗？",
+          "partner_en": "Hello, is that you?",
+          "prompt_en": "Say hi Mum, it's me.",
+          "answers_zh": ["妈妈，是我。", "喂，妈妈，是我！"],
+          "answers_en": ["Mum, it's me.", "Hi Mum, it's me!"]
         },
         {
-          "partner_zh": "谁跟谁？",
-          "partner_en": "Who's playing?",
-          "prompt_en": "Say Man United against Chelsea.",
-          "answers_zh": ["曼联对切尔西。", "曼联跟切尔西。"],
-          "answers_en": ["Man United against Chelsea.", "Man United and Chelsea."]
+          "partner_zh": "你今天干什么了？",
+          "partner_en": "What did you do today?",
+          "prompt_en": "Say you had a driving lesson today.",
+          "answers_zh": ["我今天学开车了。", "我学开车了。"],
+          "answers_en": ["I had a driving lesson today.", "I was learning to drive."]
         },
         {
-          "partner_zh": "我也想看！我能去你家吗？",
-          "partner_en": "I want to watch it too! Can I come to yours?",
-          "prompt_en": "Say of course, come at seven.",
-          "answers_zh": ["当然，七点来吧。", "好啊，你七点来吧。"],
-          "answers_en": ["Of course, come at seven.", "Sure, come at seven."]
+          "partner_zh": "难不难？",
+          "partner_en": "Was it hard?",
+          "prompt_en": "Say it's hard but fun.",
+          "answers_zh": ["很难，但是很有意思。", "有点难，但是很好玩。"],
+          "answers_en": ["It's hard, but really interesting.", "A bit hard, but really fun."]
         },
         {
-          "partner_zh": "好！要我拿什么来吗？",
-          "partner_en": "Great! Do you want me to bring anything?",
-          "prompt_en": "Ask them to bring some drinks.",
-          "answers_zh": ["拿一些喝的来吧。", "你带点喝的吧。"],
-          "answers_en": ["Bring some drinks.", "Bring something to drink."]
+          "partner_zh": "你什么时候回来？",
+          "partner_en": "When are you coming home?",
+          "prompt_en": "Say you'll be back tomorrow evening.",
+          "answers_zh": ["明天晚上回来。", "我明天晚上回来。"],
+          "answers_en": ["Tomorrow evening.", "I'll be back tomorrow evening."]
         },
         {
-          "partner_zh": "没问题。明天下午我们去踢球吧？",
-          "partner_en": "No problem. Shall we go and play football tomorrow afternoon?",
-          "prompt_en": "Say great, tomorrow afternoon then.",
-          "answers_zh": ["好啊，明天下午见！", "行，明天下午去。"],
-          "answers_en": ["Great, see you tomorrow afternoon!", "OK, let's go tomorrow afternoon."]
+          "partner_zh": "好，回来吃饭吧！我给你做你最爱吃的。",
+          "partner_en": "OK, come home for dinner! I'll make your favourite.",
+          "prompt_en": "Say great, thanks Mum.",
+          "answers_zh": ["太好了，谢谢妈妈！", "好的，谢谢妈！"],
+          "answers_en": ["Great, thanks Mum!", "OK, thanks Mum!"]
         }
       ],
-      "closing_zh": "好，那晚上见！",
-      "closing_en": "Great, see you tonight!"
+      "closing_zh": "好，路上小心！明天见！",
+      "closing_en": "OK, take care on the way! See you tomorrow!"
     }
   ]
 }
