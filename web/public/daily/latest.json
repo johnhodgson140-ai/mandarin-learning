@@ -1,174 +1,173 @@
 {
-  "date": "2026-10-06",
+  "date": "2026-10-07",
   "level": 1,
   "plan": {
-    "focus_en": "了 after actions, and 还是没(有) for “still didn’t”.",
+    "focus_en": "Measure words 口 and 杯, and 了 for a new situation (五岁了, 明白了).",
     "items": [
       { "kind": "cards", "title_en": "Say your cards (10 cards)" },
       { "kind": "dojo", "title_en": "Tone Dojo (5 minutes)" },
-      { "kind": "story", "title_en": "Read and read aloud: 坐车回家", "ref": "2026-10-06-s1" },
-      { "kind": "mission", "title_en": "Guided mission: seeing a doctor", "ref": "2026-10-06-m1" }
+      { "kind": "story", "title_en": "Read and read aloud: 学生的工作", "ref": "2026-10-07-s1" },
+      { "kind": "mission", "title_en": "Guided mission: at a bubble tea shop", "ref": "2026-10-07-m1" }
     ]
   },
   "stories": [
     {
-      "id": "2026-10-06-s1",
+      "id": "2026-10-07-s1",
       "level": 1,
-      "topic": "travel",
-      "title_zh": "坐车回家",
-      "title_en": "Going home",
+      "topic": "business & finance",
+      "title_zh": "学生的工作",
+      "title_en": "A student's job",
       "paragraphs": [
-        ["这", "个", "月", "，", "我", "坐", "车", "回家", "看", "妈妈", "。"],
-        ["我", "的", "东西", "很", "多", "，", "也", "很", "重", "。", "我", "一", "个", "人", "拿", "不", "了", "。"],
-        ["站", "里", "人", "非常", "多", "。", "车", "来", "晚", "了", "，", "我", "等", "了", "两", "个", "小时", "。"],
-        ["一", "个", "男人", "帮", "我", "拿", "东西", "。", "我", "说", "：", "“", "谢谢", "！", "”"],
-        ["晚上", "十", "点", "，", "我", "到", "家", "了", "。", "妈妈", "笑", "着", "说", "：", "“", "你", "回来", "了", "！", "”", "我们", "一起", "吃", "了", "点", "东西", "。"]
+        ["我", "是", "学生", "。", "晚上", "，", "我", "还", "要", "去", "工作", "。"],
+        ["工作", "的", "地方", "很", "远", "，", "我", "要", "坐", "一", "个", "小时", "的", "车", "。", "车", "里", "人", "很", "多", "。"],
+        ["我", "一", "个", "小时", "能", "得到", "二十", "块", "钱", "。", "这", "个", "月", "，", "我", "得到", "了", "一千", "块", "。", "我", "觉得", "这些", "钱", "很", "多", "。"],
+        ["我", "给", "妈妈", "买", "了", "一些", "东西", "。", "妈妈", "说", "：", "“", "你", "真", "好", "！", "”"],
+        ["我", "也", "明白", "了", "：", "工作", "很", "难", "，", "钱", "很", "重要", "。"]
       ],
       "translations": [
-        "This month I took the train home to see Mum.",
-        "I had lots of things with me, and they were heavy. I couldn’t carry them on my own.",
-        "The station was really crowded. The train was late, and I waited two hours.",
-        "A man helped me carry my things. I said: “Thank you!”",
-        "At ten in the evening I got home. Mum smiled and said: “You’re back!” We had a bite to eat together."
+        "I'm a student. In the evenings I also have to go to work.",
+        "My workplace is far away — I have to spend an hour on the bus. The bus is very crowded.",
+        "I can earn twenty kuai an hour. This month I earned a thousand kuai. That feels like a lot of money to me.",
+        "I bought Mum a few things. Mum said: “You’re so good to me!”",
+        "I’ve also realised: work is hard, and money matters."
       ],
       "names": [],
-      "new_words": ["回家", "重", "晚"],
+      "new_words": ["学生", "远", "明白"],
       "glossary": [
-        { "word": "回家", "english": "to go home" },
-        { "word": "重", "english": "heavy" },
-        { "word": "晚", "english": "late" }
+        { "word": "学生", "english": "student" },
+        { "word": "远", "english": "far" },
+        { "word": "明白", "english": "to understand; to realise" }
       ]
     },
     {
-      "id": "2026-10-06-s2",
+      "id": "2026-10-07-s2",
       "level": 1,
-      "topic": "daily life",
-      "title_zh": "我的书在哪？",
-      "title_en": "Where's my book?",
+      "topic": "football",
+      "title_zh": "儿子进球了",
+      "title_en": "My son scored",
       "paragraphs": [
-        ["我", "的", "书", "在", "哪", "？", "我", "找", "了", "很", "多", "地方", "。", "今天", "我", "还", "要", "用", "呢", "！"],
-        ["我", "问", "妈妈", "：", "“", "你", "看到", "我", "的", "书", "了", "吗", "？", "”", "妈妈", "说", "：", "“", "没有", "。", "”"],
-        ["我", "再", "找", "了", "一", "次", "，", "还是", "没有", "找到", "。"],
-        ["最后", "，", "我", "看到", "了", "：", "书", "就", "在", "我", "手", "里", "！", "我", "正", "拿", "着", "呢", "。"],
-        ["妈妈", "问", "：", "“", "真的", "吗", "？", "”", "我们", "都", "笑", "了", "。"]
+        ["我", "的", "儿子", "五", "岁", "了", "。", "他", "非常", "喜欢", "球", "。", "他", "有", "五", "个", "球", "。"],
+        ["今天", "，", "我们", "一起", "去", "玩", "球", "。", "他", "跑", "来", "跑", "去", "，", "一", "点", "也", "不", "想", "回家", "。"],
+        ["最后", "，", "他", "进", "了", "一", "个", "球", "！", "他", "说", "：", "“", "你", "看", "！", "你", "看", "！", "”"],
+        ["晚上", "回家", "，", "他", "告诉", "了", "妈妈", "。", "妈妈", "也", "笑", "了", "。", "她", "说", "：", "“", "你", "真", "行", "！", "”"],
+        ["我", "想", "，", "我", "会", "记得", "这", "一", "天", "的", "。"]
       ],
       "translations": [
-        "Where’s my book? I’ve looked in lots of places. I need it today!",
-        "I asked Mum: “Have you seen my book?” Mum said: “No.”",
-        "I looked once more, but still didn't find it.",
-        "In the end I saw it: the book was in my hand! I was holding it the whole time.",
-        "Mum asked: “Really?” We both laughed."
+        "My son is five. He loves playing with a ball. He has five balls.",
+        "Today we went to play football together. He ran all over the place and didn’t want to go home at all.",
+        "In the end he scored a goal! He said: “Look! Look!”",
+        "When we got home in the evening, he told his mum. She smiled too and said: “Well done!”",
+        "I think I’ll remember this day."
       ],
       "names": [],
-      "new_words": ["书", "哪", "真的"],
+      "new_words": ["儿子", "记得"],
       "glossary": [
-        { "word": "书", "english": "book" },
-        { "word": "哪", "english": "which; where (在哪: where is)" },
-        { "word": "真的", "english": "really; true" }
+        { "word": "儿子", "english": "son" },
+        { "word": "记得", "english": "to remember" }
       ]
     }
   ],
   "missions": [
     {
-      "id": "2026-10-06-m1",
+      "id": "2026-10-07-m1",
       "level": 1,
-      "title": "Seeing a doctor",
-      "role": "医生",
-      "goal": "Say what hurts and how it happened, and ask when you can play football again.",
+      "title": "At a bubble tea shop",
+      "role": "店员",
+      "goal": "Order two milk teas, choose sugar and temperature, and agree to wait.",
       "new_words": [
-        { "word": "动", "english": "to move" },
-        { "word": "重", "english": "serious; heavy" }
+        { "word": "杯", "english": "cup (measure word for drinks)" },
+        { "word": "明白", "english": "to understand" }
       ],
       "steps": [
         {
-          "partner_zh": "你好，哪里不舒服？",
-          "partner_en": "Hello, what's the problem?",
-          "prompt_en": "Say your hand hurts.",
-          "answers_zh": ["我的手很疼。", "我手疼。"],
-          "answers_en": ["My hand really hurts.", "My hand hurts."]
+          "partner_zh": "你好，要喝点什么？",
+          "partner_en": "Hi, what would you like to drink?",
+          "prompt_en": "Ask for a cup of milk tea.",
+          "answers_zh": ["我要一杯奶茶。", "一杯奶茶，谢谢。"],
+          "answers_en": ["I'd like a milk tea.", "A milk tea, please."]
         },
         {
-          "partner_zh": "怎么了？",
-          "partner_en": "What happened?",
-          "prompt_en": "Say you fell while playing football yesterday.",
-          "answers_zh": ["昨天踢球的时候摔了。", "我踢球摔了。"],
-          "answers_en": ["I fell playing football yesterday.", "I fell while playing football."]
+          "partner_zh": "要几分甜？",
+          "partner_en": "How sweet would you like it?",
+          "prompt_en": "Say half sugar.",
+          "answers_zh": ["半糖。", "要半糖的。"],
+          "answers_en": ["Half sugar.", "Half sugar, please."]
         },
         {
-          "partner_zh": "你动一下手。",
-          "partner_en": "Try moving your hand.",
-          "prompt_en": "Say you can't move it, it hurts.",
-          "answers_zh": ["动不了，很疼。", "我动不了。"],
-          "answers_en": ["I can't move it, it hurts.", "I can't move it."]
+          "partner_zh": "要冰的还是热的？",
+          "partner_en": "Iced or hot?",
+          "prompt_en": "Say hot.",
+          "answers_zh": ["热的。", "我要热的。"],
+          "answers_en": ["Hot.", "Hot, please."]
         },
         {
-          "partner_zh": "不太重，休息几天就好了。",
-          "partner_en": "It's not too serious. Rest for a few days and it'll be fine.",
-          "prompt_en": "Ask when you can play football.",
-          "answers_zh": ["什么时候能踢球？", "我能踢球吗？"],
-          "answers_en": ["When can I play football?", "Can I play football?"]
+          "partner_zh": "好的，还要别的吗？",
+          "partner_en": "OK, anything else?",
+          "prompt_en": "Say one more cup, the same.",
+          "answers_zh": ["再来一杯一样的。", "再要一杯，一样的。"],
+          "answers_en": ["One more, the same.", "Another cup, the same, please."]
         },
         {
-          "partner_zh": "这个星期别踢了。",
-          "partner_en": "Don't play this week.",
-          "prompt_en": "Say OK, thanks doctor.",
-          "answers_zh": ["好的，谢谢医生！", "好，谢谢！"],
-          "answers_en": ["OK, thank you, doctor!", "OK, thanks!"]
+          "partner_zh": "两杯一共三十块。要等十分钟，可以吗？",
+          "partner_en": "Two cups, 30 kuai altogether. It'll be a ten-minute wait — is that OK?",
+          "prompt_en": "Say you understand, no problem.",
+          "answers_zh": ["明白，没问题。", "好的，我等一下。"],
+          "answers_en": ["Got it, no problem.", "OK, I'll wait."]
         }
       ],
-      "closing_zh": "不客气，回家好好休息。",
-      "closing_en": "You're welcome. Go home and get some good rest."
+      "closing_zh": "好了，这是你的两杯奶茶！",
+      "closing_en": "Here you go, your two milk teas!"
     },
     {
-      "id": "2026-10-06-m2",
+      "id": "2026-10-07-m2",
       "level": 1,
-      "title": "Ordering a takeaway by phone",
-      "role": "店员",
-      "goal": "Order food and a drink, give your address and ask them not to be late.",
+      "title": "Talking about family",
+      "role": "同事",
+      "goal": "Tell a colleague about your family and ask about their son.",
       "new_words": [
-        { "word": "先生", "english": "sir; Mr" },
-        { "word": "五", "english": "five" },
-        { "word": "晚", "english": "late" }
+        { "word": "口", "english": "(measure word for family members)" },
+        { "word": "儿子", "english": "son" },
+        { "word": "医院", "english": "hospital" }
       ],
       "steps": [
         {
-          "partner_zh": "你好，这里是小王饭馆。",
-          "partner_en": "Hello, this is Xiao Wang's restaurant.",
-          "prompt_en": "Say you'd like to order a takeaway.",
-          "answers_zh": ["你好，我想点外卖。", "你好，我要叫外卖。"],
-          "answers_en": ["Hi, I'd like to order a takeaway.", "Hi, I want to order delivery."]
+          "partner_zh": "你家有几口人？",
+          "partner_en": "How many people are in your family?",
+          "prompt_en": "Say four.",
+          "answers_zh": ["我家有四口人。", "四口人。"],
+          "answers_en": ["There are four of us.", "Four people."]
         },
         {
-          "partner_zh": "先生，您要什么？",
-          "partner_en": "What would you like, sir?",
-          "prompt_en": "Order two portions of dumplings.",
-          "answers_zh": ["我要两份饺子。", "两份饺子。"],
-          "answers_en": ["I'd like two portions of dumplings.", "Two portions of dumplings."]
+          "partner_zh": "都有谁？",
+          "partner_en": "Who are they?",
+          "prompt_en": "Say Dad, Mum, your older sister and you.",
+          "answers_zh": ["爸爸、妈妈、姐姐和我。", "有爸爸妈妈、姐姐和我。"],
+          "answers_en": ["Dad, Mum, my older sister and me.", "There's Dad, Mum, my older sister and me."]
         },
         {
-          "partner_zh": "还要别的吗？",
-          "partner_en": "Anything else?",
-          "prompt_en": "Say you'd also like a bottle of cola.",
-          "answers_zh": ["还要一瓶可乐。", "再要一瓶可乐。"],
-          "answers_en": ["A bottle of cola as well.", "And one more bottle of cola."]
+          "partner_zh": "你姐姐做什么工作？",
+          "partner_en": "What does your sister do?",
+          "prompt_en": "Say she's a doctor at a hospital.",
+          "answers_zh": ["她在医院工作，是医生。", "她是医生。"],
+          "answers_en": ["She works at a hospital — she's a doctor.", "She's a doctor."]
         },
         {
-          "partner_zh": "好的，您住哪儿？",
-          "partner_en": "OK, where do you live?",
-          "prompt_en": "Say Building 5, Room 302.",
-          "answers_zh": ["五号楼三零二。", "我住五号楼三零二。"],
-          "answers_en": ["Building 5, room 302.", "I live in Building 5, room 302."]
+          "partner_zh": "我有一个儿子，五岁了。",
+          "partner_en": "I have a son — he's five.",
+          "prompt_en": "Ask if he likes football.",
+          "answers_zh": ["他喜欢足球吗？", "他喜欢踢球吗？"],
+          "answers_en": ["Does he like football?", "Does he like playing football?"]
         },
         {
-          "partner_zh": "好的，大概四十分钟到。",
-          "partner_en": "OK, it'll be there in about forty minutes.",
-          "prompt_en": "Ask them not to be too late — you're hungry.",
-          "answers_zh": ["别太晚，我很饿。", "能快点吗？我很饿。"],
-          "answers_en": ["Don't be too late, I'm hungry.", "Could it be a bit quicker? I'm hungry."]
+          "partner_zh": "喜欢！男孩子都喜欢。",
+          "partner_en": "He loves it! All boys do.",
+          "prompt_en": "Say bring him to play next time.",
+          "answers_zh": ["下次带他来玩吧！", "下次带他一起来吧！"],
+          "answers_en": ["Bring him to play next time!", "Bring him along next time!"]
         }
       ],
-      "closing_zh": "没问题，我们很快就到！",
-      "closing_en": "No problem, we'll be there soon!"
+      "closing_zh": "好啊，下次带他来！",
+      "closing_en": "Sure, I'll bring him next time!"
     }
   ]
 }
