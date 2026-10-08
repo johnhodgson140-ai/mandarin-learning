@@ -1,173 +1,176 @@
 {
-  "date": "2026-10-07",
+  "date": "2026-10-08",
   "level": 1,
   "plan": {
-    "focus_en": "Measure words 口 and 杯, and 了 for a new situation (五岁了, 明白了).",
+    "focus_en": "Prices with 元 and 块, and half past with 半 (八点半).",
     "items": [
       { "kind": "cards", "title_en": "Say your cards (10 cards)" },
       { "kind": "dojo", "title_en": "Tone Dojo (5 minutes)" },
-      { "kind": "story", "title_en": "Read and read aloud: 学生的工作", "ref": "2026-10-07-s1" },
-      { "kind": "mission", "title_en": "Guided mission: at a bubble tea shop", "ref": "2026-10-07-m1" }
+      { "kind": "story", "title_en": "Read and read aloud: 一个老包", "ref": "2026-10-08-s1" },
+      { "kind": "mission", "title_en": "Guided mission: finding a friend's flat", "ref": "2026-10-08-m1" }
     ]
   },
   "stories": [
     {
-      "id": "2026-10-07-s1",
+      "id": "2026-10-08-s1",
       "level": 1,
-      "topic": "business & finance",
-      "title_zh": "学生的工作",
-      "title_en": "A student's job",
+      "topic": "archive fashion",
+      "title_zh": "一个老包",
+      "title_en": "A vintage bag",
       "paragraphs": [
-        ["我", "是", "学生", "。", "晚上", "，", "我", "还", "要", "去", "工作", "。"],
-        ["工作", "的", "地方", "很", "远", "，", "我", "要", "坐", "一", "个", "小时", "的", "车", "。", "车", "里", "人", "很", "多", "。"],
-        ["我", "一", "个", "小时", "能", "得到", "二十", "块", "钱", "。", "这", "个", "月", "，", "我", "得到", "了", "一千", "块", "。", "我", "觉得", "这些", "钱", "很", "多", "。"],
-        ["我", "给", "妈妈", "买", "了", "一些", "东西", "。", "妈妈", "说", "：", "“", "你", "真", "好", "！", "”"],
-        ["我", "也", "明白", "了", "：", "工作", "很", "难", "，", "钱", "很", "重要", "。"]
+        ["我", "在", "闲鱼", "上", "看到", "了", "一", "个", "老", "包", "。", "我", "一", "看", "就", "很", "喜欢", "。"],
+        ["这", "个", "包", "是", "二十", "年", "前", "的", "，", "还", "很", "新", "。", "我", "很", "想", "要", "。"],
+        ["我", "问", "：", "“", "多少", "钱", "？", "”", "他", "说", "：", "“", "五百", "元", "。", "”"],
+        ["我", "说", "：", "“", "五百", "太", "多", "了", "，", "四百", "行", "吗", "？", "”", "他", "想", "了", "想", "，", "说", "：", "“", "行", "吧", "。", "”"],
+        ["今天", "，", "包", "到", "了", "。", "我", "真", "喜欢", "！", "我", "明天", "就", "要", "用", "。", "朋友", "们", "都", "说", "很", "好", "。"]
       ],
       "translations": [
-        "I'm a student. In the evenings I also have to go to work.",
-        "My workplace is far away — I have to spend an hour on the bus. The bus is very crowded.",
-        "I can earn twenty kuai an hour. This month I earned a thousand kuai. That feels like a lot of money to me.",
-        "I bought Mum a few things. Mum said: “You’re so good to me!”",
-        "I’ve also realised: work is hard, and money matters."
+        "I saw an old bag on Xianyu. I liked it as soon as I saw it.",
+        "The bag is twenty years old, but it still looks new. I really wanted it.",
+        "I asked: “How much?” He said: “500 yuan.”",
+        "I said: “500 is too much. Would 400 be OK?” He thought for a moment and said: “Fine.”",
+        "Today the bag arrived. I really love it! I’m going to use it tomorrow. My friends all say it’s great."
       ],
-      "names": [],
-      "new_words": ["学生", "远", "明白"],
+      "names": ["闲鱼"],
+      "new_words": ["包", "元"],
       "glossary": [
-        { "word": "学生", "english": "student" },
-        { "word": "远", "english": "far" },
-        { "word": "明白", "english": "to understand; to realise" }
+        { "word": "包", "english": "bag" },
+        { "word": "元", "english": "yuan (money)" },
+        { "word": "闲鱼", "english": "Xianyu (second-hand marketplace app)" }
       ]
     },
     {
-      "id": "2026-10-07-s2",
+      "id": "2026-10-08-s2",
       "level": 1,
-      "topic": "football",
-      "title_zh": "儿子进球了",
-      "title_en": "My son scored",
+      "topic": "anime",
+      "title_zh": "电影里的歌",
+      "title_en": "Songs from films",
       "paragraphs": [
-        ["我", "的", "儿子", "五", "岁", "了", "。", "他", "非常", "喜欢", "球", "。", "他", "有", "五", "个", "球", "。"],
-        ["今天", "，", "我们", "一起", "去", "玩", "球", "。", "他", "跑", "来", "跑", "去", "，", "一", "点", "也", "不", "想", "回家", "。"],
-        ["最后", "，", "他", "进", "了", "一", "个", "球", "！", "他", "说", "：", "“", "你", "看", "！", "你", "看", "！", "”"],
-        ["晚上", "回家", "，", "他", "告诉", "了", "妈妈", "。", "妈妈", "也", "笑", "了", "。", "她", "说", "：", "“", "你", "真", "行", "！", "”"],
-        ["我", "想", "，", "我", "会", "记得", "这", "一", "天", "的", "。"]
+        ["我", "喜欢", "听", "日本", "的", "歌", "。", "很", "多", "都", "是", "电影", "里", "的", "。"],
+        ["我", "最", "喜欢", "《", "千与千寻", "》", "里", "的", "歌", "。", "我", "一", "天", "能", "听", "很", "多", "次", "。"],
+        ["晚上", "，", "我", "在", "家", "听", "歌", "，", "一", "听", "就", "是", "两", "个", "半", "小时", "。"],
+        ["歌", "里", "说", "什么", "，", "我", "不", "知道", "。", "我", "还是", "很", "喜欢", "！"],
+        ["朋友", "问", "我", "：", "“", "你", "在", "哪里", "听", "的", "？", "”", "我", "说", "：", "“", "我", "告诉", "你", "！", "我们", "一起", "听", "吧", "！", "”"]
       ],
       "translations": [
-        "My son is five. He loves playing with a ball. He has five balls.",
-        "Today we went to play football together. He ran all over the place and didn’t want to go home at all.",
-        "In the end he scored a goal! He said: “Look! Look!”",
-        "When we got home in the evening, he told his mum. She smiled too and said: “Well done!”",
-        "I think I’ll remember this day."
+        "I like listening to Japanese songs. Lots of them are from films.",
+        "My favourite is the song from Spirited Away. I can listen to it lots of times a day.",
+        "In the evening I listen to songs at home — once I start, it's two and a half hours.",
+        "I don't know what the songs are saying. I still really like them!",
+        "My friend asked me: “Where did you listen to them?” I said: “I’ll tell you! Let’s listen together!”"
       ],
-      "names": [],
-      "new_words": ["儿子", "记得"],
+      "names": ["日本", "千与千寻"],
+      "new_words": ["歌", "半", "哪里"],
       "glossary": [
-        { "word": "儿子", "english": "son" },
-        { "word": "记得", "english": "to remember" }
+        { "word": "歌", "english": "song" },
+        { "word": "半", "english": "half" },
+        { "word": "哪里", "english": "where" },
+        { "word": "日本", "english": "Japan" },
+        { "word": "千与千寻", "english": "Spirited Away (Studio Ghibli film)" }
       ]
     }
   ],
   "missions": [
     {
-      "id": "2026-10-07-m1",
+      "id": "2026-10-08-m1",
       "level": 1,
-      "title": "At a bubble tea shop",
-      "role": "店员",
-      "goal": "Order two milk teas, choose sugar and temperature, and agree to wait.",
+      "title": "Finding a friend's flat",
+      "role": "保安",
+      "goal": "Tell the security guard who you're visiting, which building and floor, and find the lift.",
       "new_words": [
-        { "word": "杯", "english": "cup (measure word for drinks)" },
-        { "word": "明白", "english": "to understand" }
+        { "word": "楼", "english": "building; floor" },
+        { "word": "哪里", "english": "where" }
       ],
       "steps": [
         {
-          "partner_zh": "你好，要喝点什么？",
-          "partner_en": "Hi, what would you like to drink?",
-          "prompt_en": "Ask for a cup of milk tea.",
-          "answers_zh": ["我要一杯奶茶。", "一杯奶茶，谢谢。"],
-          "answers_en": ["I'd like a milk tea.", "A milk tea, please."]
+          "partner_zh": "你好，你找谁？",
+          "partner_en": "Hello, who are you looking for?",
+          "prompt_en": "Say you're here to see your friend Xiao Li.",
+          "answers_zh": ["我找我朋友小李。", "我来找小李。"],
+          "answers_en": ["I'm looking for my friend Xiao Li.", "I'm here to see Xiao Li."]
         },
         {
-          "partner_zh": "要几分甜？",
-          "partner_en": "How sweet would you like it?",
-          "prompt_en": "Say half sugar.",
-          "answers_zh": ["半糖。", "要半糖的。"],
-          "answers_en": ["Half sugar.", "Half sugar, please."]
+          "partner_zh": "他住哪个楼？",
+          "partner_en": "Which building does he live in?",
+          "prompt_en": "Say Building 2.",
+          "answers_zh": ["二号楼。", "他住二号楼。"],
+          "answers_en": ["Building 2.", "He lives in Building 2."]
         },
         {
-          "partner_zh": "要冰的还是热的？",
-          "partner_en": "Iced or hot?",
-          "prompt_en": "Say hot.",
-          "answers_zh": ["热的。", "我要热的。"],
-          "answers_en": ["Hot.", "Hot, please."]
+          "partner_zh": "二号楼在那边。几楼？",
+          "partner_en": "Building 2 is over there. Which floor?",
+          "prompt_en": "Say the 5th floor, flat 502.",
+          "answers_zh": ["五楼，五零二。", "他住五楼五零二。"],
+          "answers_en": ["5th floor, 502.", "He lives on the 5th floor, 502."]
         },
         {
-          "partner_zh": "好的，还要别的吗？",
-          "partner_en": "OK, anything else?",
-          "prompt_en": "Say one more cup, the same.",
-          "answers_zh": ["再来一杯一样的。", "再要一杯，一样的。"],
-          "answers_en": ["One more, the same.", "Another cup, the same, please."]
+          "partner_zh": "好的。你往前走，左边就是。",
+          "partner_en": "OK. Go straight ahead, it's on the left.",
+          "prompt_en": "Ask where the lift is.",
+          "answers_zh": ["电梯在哪里？", "请问，电梯在哪里？"],
+          "answers_en": ["Where's the lift?", "Excuse me, where's the lift?"]
         },
         {
-          "partner_zh": "两杯一共三十块。要等十分钟，可以吗？",
-          "partner_en": "Two cups, 30 kuai altogether. It'll be a ten-minute wait — is that OK?",
-          "prompt_en": "Say you understand, no problem.",
-          "answers_zh": ["明白，没问题。", "好的，我等一下。"],
-          "answers_en": ["Got it, no problem.", "OK, I'll wait."]
+          "partner_zh": "电梯就在门口。",
+          "partner_en": "The lift is right by the entrance.",
+          "prompt_en": "Say thank you.",
+          "answers_zh": ["谢谢你！", "好的，谢谢！"],
+          "answers_en": ["Thank you!", "OK, thanks!"]
         }
       ],
-      "closing_zh": "好了，这是你的两杯奶茶！",
-      "closing_en": "Here you go, your two milk teas!"
+      "closing_zh": "不客气。",
+      "closing_en": "You're welcome."
     },
     {
-      "id": "2026-10-07-m2",
+      "id": "2026-10-08-m2",
       "level": 1,
-      "title": "Talking about family",
-      "role": "同事",
-      "goal": "Tell a colleague about your family and ask about their son.",
+      "title": "Planning a karaoke night",
+      "role": "朋友",
+      "goal": "Agree on a time for karaoke and talk about which Chinese songs you like.",
       "new_words": [
-        { "word": "口", "english": "(measure word for family members)" },
-        { "word": "儿子", "english": "son" },
-        { "word": "医院", "english": "hospital" }
+        { "word": "歌", "english": "song" },
+        { "word": "半", "english": "half" },
+        { "word": "中国", "english": "China" }
       ],
       "steps": [
         {
-          "partner_zh": "你家有几口人？",
-          "partner_en": "How many people are in your family?",
-          "prompt_en": "Say four.",
-          "answers_zh": ["我家有四口人。", "四口人。"],
-          "answers_en": ["There are four of us.", "Four people."]
+          "partner_zh": "今天晚上去唱歌吧！",
+          "partner_en": "Let's go to karaoke tonight!",
+          "prompt_en": "Say great, and ask what time.",
+          "answers_zh": ["好啊，几点？", "太好了！几点去？"],
+          "answers_en": ["Sure, what time?", "Great! What time shall we go?"]
         },
         {
-          "partner_zh": "都有谁？",
-          "partner_en": "Who are they?",
-          "prompt_en": "Say Dad, Mum, your older sister and you.",
-          "answers_zh": ["爸爸、妈妈、姐姐和我。", "有爸爸妈妈、姐姐和我。"],
-          "answers_en": ["Dad, Mum, my older sister and me.", "There's Dad, Mum, my older sister and me."]
+          "partner_zh": "八点半，好吗？",
+          "partner_en": "Half past eight, OK?",
+          "prompt_en": "Say half past eight is fine.",
+          "answers_zh": ["八点半可以。", "好，八点半见。"],
+          "answers_en": ["Half past eight works.", "OK, see you at half past eight."]
         },
         {
-          "partner_zh": "你姐姐做什么工作？",
-          "partner_en": "What does your sister do?",
-          "prompt_en": "Say she's a doctor at a hospital.",
-          "answers_zh": ["她在医院工作，是医生。", "她是医生。"],
-          "answers_en": ["She works at a hospital — she's a doctor.", "She's a doctor."]
+          "partner_zh": "你会唱中国歌吗？",
+          "partner_en": "Can you sing any Chinese songs?",
+          "prompt_en": "Say you can sing a little.",
+          "answers_zh": ["会一点儿。", "我会唱一点儿。"],
+          "answers_en": ["A little.", "I can sing a little."]
         },
         {
-          "partner_zh": "我有一个儿子，五岁了。",
-          "partner_en": "I have a son — he's five.",
-          "prompt_en": "Ask if he likes football.",
-          "answers_zh": ["他喜欢足球吗？", "他喜欢踢球吗？"],
-          "answers_en": ["Does he like football?", "Does he like playing football?"]
+          "partner_zh": "你最喜欢哪首歌？",
+          "partner_en": "Which song do you like best?",
+          "prompt_en": "Say you like “The Moon Represents My Heart”.",
+          "answers_zh": ["我喜欢《月亮代表我的心》。", "《月亮代表我的心》！"],
+          "answers_en": ["I like “The Moon Represents My Heart”.", "“The Moon Represents My Heart”!"]
         },
         {
-          "partner_zh": "喜欢！男孩子都喜欢。",
-          "partner_en": "He loves it! All boys do.",
-          "prompt_en": "Say bring him to play next time.",
-          "answers_zh": ["下次带他来玩吧！", "下次带他一起来吧！"],
-          "answers_en": ["Bring him to play next time!", "Bring him along next time!"]
+          "partner_zh": "我也喜欢！我们一起唱吧。",
+          "partner_en": "Me too! Let's sing it together.",
+          "prompt_en": "Say OK, see you tonight.",
+          "answers_zh": ["好，晚上见！", "好的，晚上见！"],
+          "answers_en": ["OK, see you tonight!", "Great, see you tonight!"]
         }
       ],
-      "closing_zh": "好啊，下次带他来！",
-      "closing_en": "Sure, I'll bring him next time!"
+      "closing_zh": "晚上见！",
+      "closing_en": "See you tonight!"
     }
   ]
 }
