@@ -1,176 +1,175 @@
 {
-  "date": "2026-10-09",
+  "date": "2026-10-10",
   "level": 1,
   "plan": {
-    "focus_en": "Places with 那里 / 哪里, and time words before the verb (下午三点我去…).",
+    "focus_en": "就 for “right away / already” (五点半我就坐在电视前了), and asking someone’s name.",
     "items": [
       { "kind": "cards", "title_en": "Say your cards (10 cards)" },
       { "kind": "dojo", "title_en": "Tone Dojo (5 minutes)" },
-      { "kind": "story", "title_en": "Read and read aloud: 我要去中国", "ref": "2026-10-09-s1" },
-      { "kind": "mission", "title_en": "Guided mission: checking in at the airport", "ref": "2026-10-09-m1" }
+      { "kind": "story", "title_en": "Read and read aloud: 不出去了", "ref": "2026-10-10-s1" },
+      { "kind": "mission", "title_en": "Guided mission: calling in sick", "ref": "2026-10-10-m1" }
     ]
   },
   "stories": [
     {
-      "id": "2026-10-09-s1",
+      "id": "2026-10-10-s1",
       "level": 1,
-      "topic": "travel",
-      "title_zh": "我要去中国",
-      "title_en": "I'm going to China",
+      "topic": "football",
+      "title_zh": "不出去了",
+      "title_en": "Not going out",
       "paragraphs": [
-        ["下", "个", "月", "，", "我", "要", "去", "中国", "。", "我", "要", "飞", "十二", "个", "小时", "。"],
-        ["我", "的", "朋友", "住", "在", "那里", "。", "他", "说", "，", "那里", "的", "人", "都", "很", "好", "。"],
-        ["我", "正在", "准备", "。", "我", "学", "了", "一些", "中国", "话", "，", "也", "买", "了", "很", "多", "东西", "。"],
-        ["朋友", "说", "：", "“", "你", "来", "了", "，", "我们", "一起", "去", "很", "多", "地方", "玩", "！", "”"],
-        ["我", "还", "要", "给", "朋友", "送", "一些", "东西", "。", "我", "真", "想", "现在", "就", "去", "！"]
+        ["今天", "下午", "，", "朋友", "叫", "我", "出去", "玩", "。"],
+        ["我", "说", "：", "“", "不", "行", "，", "我", "要", "在", "家", "看", "球", "。", "”", "六", "点", "有", "曼联", "的", "球", "。"],
+        ["五", "点", "半", "，", "我", "就", "坐", "在", "电视", "前", "了", "。", "我", "准备", "了", "很", "多", "吃", "的", "。"],
+        ["曼联", "进", "了", "一", "个", "球", "！", "我", "就", "给", "朋友", "打", "电话", "。"],
+        ["朋友", "说", "：", "“", "我", "也", "在", "看", "！", "我", "现在", "就", "在", "你", "家", "门", "外", "！", "”", "我们", "就", "一起", "看", "了", "。"]
       ],
       "translations": [
-        "Next month I'm going to China. I'll be flying for twelve hours.",
-        "My friend lives there. He says the people there are all really nice.",
-        "I'm getting ready. I've learned some Chinese, and I've bought lots of things.",
-        "My friend said: “When you come, we’ll go to lots of places together!”",
-        "I also want to give my friend a few things. I really want to go right now!"
+        "This afternoon my friend asked me to go out.",
+        "I said: “No, I’m going to watch the football at home.” Man United were playing at six.",
+        "By half past five I was already sitting in front of the TV. I’d got lots of snacks ready.",
+        "Man United scored! I phoned my friend straight away.",
+        "My friend said: “I’m watching too! I’m right outside your front door!” So we watched it together."
       ],
-      "names": [],
-      "new_words": ["中国", "飞", "那里"],
+      "names": ["曼联"],
+      "new_words": ["下午", "出去", "电视"],
       "glossary": [
-        { "word": "中国", "english": "China" },
-        { "word": "飞", "english": "to fly" },
-        { "word": "那里", "english": "there" }
+        { "word": "下午", "english": "afternoon" },
+        { "word": "出去", "english": "to go out" },
+        { "word": "电视", "english": "TV" },
+        { "word": "曼联", "english": "Manchester United" }
       ]
     },
     {
-      "id": "2026-10-09-s2",
+      "id": "2026-10-10-s2",
       "level": 1,
-      "topic": "daily life",
-      "title_zh": "王老师",
-      "title_en": "Teacher Wang",
+      "topic": "business & finance",
+      "title_zh": "找到工作了",
+      "title_en": "I found a job",
       "paragraphs": [
-        ["我", "的", "老师", "叫", "王", "老师", "。", "她", "人", "很", "好", "，", "也", "很", "爱", "笑", "。"],
-        ["下午", "三", "点", "，", "我", "去", "她", "家", "学习", "。"],
-        ["她", "的", "话", "我", "都", "能", "听", "明白", "。", "我", "错", "了", "，", "她", "就", "笑", "着", "告诉", "我", "。"],
-        ["我们", "学", "了", "两", "个", "小时", "，", "最后", "一起", "吃", "了", "点", "东西", "。", "她", "还", "送", "了", "我", "一", "本", "书", "。"],
-        ["我", "觉得", "，", "有", "一", "个", "好", "老师", "真", "重要", "！"]
+        ["我", "是", "大学", "学生", "，", "我", "想", "找", "工作", "。"],
+        ["朋友", "给", "我", "介绍", "了", "一", "个", "工作", "。", "我", "就", "去", "了", "那里", "。"],
+        ["一", "个", "男人", "问", "我", "：", "“", "你", "叫", "什么", "名字", "？", "”", "我", "告诉", "了", "他", "。"],
+        ["他", "还", "问", "：", "“", "你", "什么", "时候", "能", "来", "？", "”", "我", "说", "：", "“", "明天", "就", "能", "来", "！", "”"],
+        ["他", "笑", "了", "：", "“", "好", "，", "明天", "见", "！", "”", "现在", "我", "有", "工作", "了", "！", "我", "要", "谢谢", "我", "的", "朋友", "。"]
       ],
       "translations": [
-        "My teacher is called Teacher Wang. She’s really nice and smiles a lot.",
-        "At three in the afternoon I go to her home to study.",
-        "I can understand everything she says. When I make a mistake, she smiles and tells me.",
-        "We studied for two hours, and at the end we had a bite to eat together. She also gave me a book.",
-        "I think having a good teacher is really important!"
+        "I'm a university student, and I want to find a job.",
+        "My friend told me about a job, so I went there.",
+        "A man asked me: “What’s your name?” I told him.",
+        "He also asked: “When can you start?” I said: “I can come tomorrow!”",
+        "He smiled: “Great, see you tomorrow!” Now I have a job! I want to thank my friend."
       ],
-      "names": ["王"],
-      "new_words": ["老师", "下午", "学习"],
+      "names": [],
+      "new_words": ["大学", "介绍", "名字"],
       "glossary": [
-        { "word": "老师", "english": "teacher" },
-        { "word": "下午", "english": "afternoon" },
-        { "word": "学习", "english": "to study" },
-        { "word": "王", "english": "Wang (surname)" }
+        { "word": "大学", "english": "university" },
+        { "word": "介绍", "english": "to introduce; to recommend" },
+        { "word": "名字", "english": "name" }
       ]
     }
   ],
   "missions": [
     {
-      "id": "2026-10-09-m1",
+      "id": "2026-10-10-m1",
       "level": 1,
-      "title": "Checking in at the airport",
-      "role": "工作人员",
-      "goal": "Check in for your flight: show your passport, say where you're flying, check a bag, choose a seat and ask where to board.",
+      "title": "Calling in sick",
+      "role": "经理",
+      "goal": "Tell your manager you're ill, say you'll see a doctor and agree when you'll call back.",
       "new_words": [
-        { "word": "飞", "english": "to fly" },
-        { "word": "包", "english": "bag" },
-        { "word": "哪里", "english": "where" }
+        { "word": "病", "english": "ill; illness" },
+        { "word": "医生", "english": "doctor" }
       ],
       "steps": [
         {
-          "partner_zh": "你好，请给我看一下您的护照。",
-          "partner_en": "Hello, may I see your passport, please?",
-          "prompt_en": "Say here you are.",
-          "answers_zh": ["好的，给你。", "在这里。"],
-          "answers_en": ["Sure, here you are.", "Here it is."]
+          "partner_zh": "喂，你好。",
+          "partner_en": "Hello?",
+          "prompt_en": "Say hello and that you're ill today.",
+          "answers_zh": ["你好，我今天病了。", "喂，我生病了。"],
+          "answers_en": ["Hi, I'm ill today.", "Hello, I'm sick."]
         },
         {
-          "partner_zh": "您飞哪里？",
-          "partner_en": "Where are you flying to?",
-          "prompt_en": "Say Beijing.",
-          "answers_zh": ["我飞北京。", "去北京。"],
-          "answers_en": ["I'm flying to Beijing.", "To Beijing."]
+          "partner_zh": "怎么了？",
+          "partner_en": "What's wrong?",
+          "prompt_en": "Say you have a fever.",
+          "answers_zh": ["我发烧了。", "我有点发烧。"],
+          "answers_en": ["I've got a fever.", "I have a bit of a temperature."]
         },
         {
-          "partner_zh": "有几个包要托运？",
-          "partner_en": "How many bags are you checking in?",
-          "prompt_en": "Say just one.",
-          "answers_zh": ["就一个包。", "一个。"],
-          "answers_en": ["Just one bag.", "One."]
+          "partner_zh": "你去看医生了吗？",
+          "partner_en": "Have you been to see a doctor?",
+          "prompt_en": "Say you're going this afternoon.",
+          "answers_zh": ["我下午去看医生。", "下午就去。"],
+          "answers_en": ["I'm seeing a doctor this afternoon.", "I'm going this afternoon."]
         },
         {
-          "partner_zh": "您要靠窗还是靠走道？",
-          "partner_en": "Window or aisle?",
-          "prompt_en": "Say a window seat, please.",
-          "answers_zh": ["靠窗的，谢谢。", "我要靠窗。"],
-          "answers_en": ["Window, thanks.", "I'd like a window seat."]
+          "partner_zh": "好，你好好休息。明天能来吗？",
+          "partner_en": "OK, get some rest. Can you come in tomorrow?",
+          "prompt_en": "Say you'll call tomorrow morning.",
+          "answers_zh": ["我明天早上给你打电话。", "明天早上告诉你。"],
+          "answers_en": ["I'll call you tomorrow morning.", "I'll let you know tomorrow morning."]
         },
         {
-          "partner_zh": "好的。下午两点半登机。",
-          "partner_en": "OK. Boarding is at half past two this afternoon.",
-          "prompt_en": "Ask where you board.",
-          "answers_zh": ["在哪里登机？", "几号登机口？"],
-          "answers_en": ["Where do I board?", "Which gate?"]
+          "partner_zh": "没问题，身体最重要。",
+          "partner_en": "No problem, your health comes first.",
+          "prompt_en": "Say thank you.",
+          "answers_zh": ["谢谢你！", "好的，谢谢！"],
+          "answers_en": ["Thank you!", "OK, thanks!"]
         }
       ],
-      "closing_zh": "十二号登机口。一路平安！",
-      "closing_en": "Gate 12. Have a good trip!"
+      "closing_zh": "不客气，早点好起来！",
+      "closing_en": "You're welcome. Get well soon!"
     },
     {
-      "id": "2026-10-09-m2",
+      "id": "2026-10-10-m2",
       "level": 1,
-      "title": "First Chinese class",
-      "role": "老师",
-      "goal": "Introduce yourself to your new teacher, say why you're learning Chinese and arrange the next class.",
+      "title": "Meeting friends at a party",
+      "role": "朋友",
+      "goal": "Say hello to your friend's classmates, tell them your name and how you know your friend, and agree to sing together.",
       "new_words": [
         { "word": "介绍", "english": "to introduce" },
-        { "word": "学习", "english": "to study" },
-        { "word": "老师", "english": "teacher" }
+        { "word": "她们", "english": "they (for women)" },
+        { "word": "名字", "english": "name" }
       ],
       "steps": [
         {
-          "partner_zh": "你好！请介绍一下你自己。",
-          "partner_en": "Hello! Please introduce yourself.",
-          "prompt_en": "Say hello to the teacher and that you're British.",
-          "answers_zh": ["老师好！我是英国人。", "你好，我是英国人。"],
-          "answers_en": ["Hello, teacher! I'm British.", "Hi, I'm British."]
+          "partner_zh": "来，我给你介绍一下。她们是我的同学。",
+          "partner_en": "Come, let me introduce you. These are my classmates.",
+          "prompt_en": "Say hello to everyone.",
+          "answers_zh": ["你们好！", "大家好！"],
+          "answers_en": ["Hi, all of you!", "Hello, everyone!"]
         },
         {
-          "partner_zh": "你学习中文多长时间了？",
-          "partner_en": "How long have you been learning Chinese?",
-          "prompt_en": "Say one month.",
-          "answers_zh": ["一个月了。", "我学了一个月。"],
-          "answers_en": ["A month now.", "I've been learning for a month."]
+          "partner_zh": "她叫小红，她叫小美。",
+          "partner_en": "This is Xiao Hong, and this is Xiao Mei.",
+          "prompt_en": "Say nice to meet them.",
+          "answers_zh": ["认识你们很高兴！", "很高兴认识你们。"],
+          "answers_en": ["Great to meet you!", "Nice to meet you."]
         },
         {
-          "partner_zh": "你为什么学习中文？",
-          "partner_en": "Why are you learning Chinese?",
-          "prompt_en": "Say you want to travel in China.",
-          "answers_zh": ["我想去中国旅游。", "因为我想去中国。"],
-          "answers_en": ["I want to travel in China.", "Because I want to go to China."]
+          "partner_zh": "你叫什么名字？",
+          "partner_en": "What's your name?",
+          "prompt_en": "Say your Chinese name is An De.",
+          "answers_zh": ["我的中文名字叫安德。", "我叫安德。"],
+          "answers_en": ["My Chinese name is An De.", "I'm An De."]
         },
         {
-          "partner_zh": "很好！你觉得中文难吗？",
-          "partner_en": "Great! Do you find Chinese hard?",
-          "prompt_en": "Say it's a bit hard but interesting.",
-          "answers_zh": ["有点难，但是很有意思。", "很难，可是我很喜欢。"],
-          "answers_en": ["A bit hard, but really interesting.", "It's hard, but I really like it."]
+          "partner_zh": "你们是怎么认识的？",
+          "partner_en": "How do you two know each other?",
+          "prompt_en": "Say you were at university together.",
+          "answers_zh": ["我们是大学同学。", "我们在大学认识的。"],
+          "answers_en": ["We were at university together.", "We met at university."]
         },
         {
-          "partner_zh": "没关系，慢慢来。下次上课是星期二下午。",
-          "partner_en": "Don't worry, take it slowly. The next class is Tuesday afternoon.",
-          "prompt_en": "Say OK, see you on Tuesday.",
-          "answers_zh": ["好的，星期二见！", "谢谢老师，星期二见！"],
-          "answers_en": ["OK, see you on Tuesday!", "Thank you, teacher, see you Tuesday!"]
+          "partner_zh": "等一下我们一起唱歌吧！",
+          "partner_en": "Let's all sing together in a bit!",
+          "prompt_en": "Say OK, but you don't sing well.",
+          "answers_zh": ["好啊，可是我唱得不好。", "好！我唱得不太好。"],
+          "answers_en": ["Sure, but I'm not a good singer.", "OK! I don't sing very well."]
         }
       ],
-      "closing_zh": "星期二见！",
-      "closing_en": "See you on Tuesday!"
+      "closing_zh": "没关系，一起唱就好！",
+      "closing_en": "Never mind, as long as we sing together!"
     }
   ]
 }
