@@ -1,176 +1,174 @@
 {
-  "date": "2026-10-12",
+  "date": "2026-10-13",
   "level": 1,
   "plan": {
-    "focus_en": "Time words at the start of the sentence (去年…), and 有点 + adjective (有点大).",
+    "focus_en": "第二天 for “the next day”, and verb + 到 for managing to do something (买到, 找到).",
     "items": [
       { "kind": "cards", "title_en": "Say your cards (10 cards)" },
       { "kind": "dojo", "title_en": "Tone Dojo (5 minutes)" },
-      { "kind": "story", "title_en": "Read and read aloud: 和爸爸去北京", "ref": "2026-10-12-s1" },
-      { "kind": "mission", "title_en": "Guided mission: trying on clothes", "ref": "2026-10-12-m1" }
+      { "kind": "story", "title_en": "Read and read aloud: 买到票了", "ref": "2026-10-13-s1" },
+      { "kind": "mission", "title_en": "Guided mission: buying a train ticket", "ref": "2026-10-13-m1" }
     ]
   },
   "stories": [
     {
-      "id": "2026-10-12-s1",
+      "id": "2026-10-13-s1",
       "level": 1,
-      "topic": "travel",
-      "title_zh": "和爸爸去北京",
-      "title_en": "To Beijing with Dad",
+      "topic": "football",
+      "title_zh": "买到票了",
+      "title_en": "I got a ticket",
       "paragraphs": [
-        ["去年", "，", "我", "和", "爸爸", "坐", "车", "去", "北京", "玩", "。"],
-        ["北京", "非常", "热", "！", "我们", "喝", "了", "很", "多", "水", "。"],
-        ["我们", "去", "了", "很", "多", "地方", "。", "爸爸", "走", "路", "很", "快", "，", "我", "跟", "不", "上", "他", "。"],
-        ["晚上", "，", "我们", "在", "一", "个", "小", "地方", "吃", "东西", "。", "我们", "吃", "了", "很", "多", "。", "那里", "的", "人", "都", "很", "好", "。"],
-        ["他", "说", "：", "“", "下", "次", "我们", "再", "来", "吧", "！", "”", "我", "说", "：", "“", "好", "！", "我", "还", "想", "来", "！", "”"]
+        ["下", "个", "月", "有", "曼联", "的", "球", "。", "曼联", "是", "我", "最", "爱", "的", "。", "我", "很", "想", "去", "看", "！"],
+        ["我", "在", "手机", "上", "找", "票", "。", "票", "不", "多", "了", "。"],
+        ["第二", "天", "，", "我", "还是", "没有", "买", "到", "。", "我", "问", "了", "很", "多", "人", "，", "他们", "都", "没有", "。"],
+        ["最后", "，", "朋友", "帮", "我", "买", "到", "了", "票", "！"],
+        ["我", "非常", "高兴", "！", "我", "说", "：", "“", "谢谢", "你", "！", "我们", "一起", "去", "看", "球", "吧", "！", "”"]
       ],
       "translations": [
-        "Last year Dad and I went to Beijing for fun.",
-        "Beijing was really hot! We drank lots of water.",
-        "We went to lots of places. Dad walks really fast — I couldn’t keep up with him.",
-        "In the evening we ate at a little place. We ate loads. The people there were all really nice.",
-        "He said: “Let’s come again next time!” I said: “Yes! I want to come back!”"
+        "Man United are playing next month. They’re my favourite team. I really want to go and watch!",
+        "I looked for tickets on my phone. There weren’t many left.",
+        "The next day I still hadn’t managed to buy one. I asked lots of people, but none of them had any.",
+        "In the end my friend helped me get a ticket!",
+        "I was so happy! I said: “Thank you! Let’s go and watch the match together!”"
       ],
-      "names": ["北京"],
-      "new_words": ["去年", "爸爸", "热"],
+      "names": ["曼联"],
+      "new_words": ["票", "高兴"],
       "glossary": [
-        { "word": "去年", "english": "last year" },
-        { "word": "爸爸", "english": "dad" },
-        { "word": "热", "english": "hot" },
-        { "word": "北京", "english": "Beijing" }
+        { "word": "票", "english": "ticket" },
+        { "word": "高兴", "english": "happy" },
+        { "word": "曼联", "english": "Manchester United" }
       ]
     },
     {
-      "id": "2026-10-12-s2",
+      "id": "2026-10-13-s2",
       "level": 1,
-      "topic": "business & finance",
-      "title_zh": "我的老手机",
-      "title_en": "My old phone",
+      "topic": "daily life",
+      "title_zh": "不想睡",
+      "title_en": "Not sleepy",
       "paragraphs": [
-        ["我", "有", "一", "个", "老", "手机", "，", "我", "现在", "不", "用", "了", "。"],
-        ["我", "在", "闲鱼", "上", "写", "了", "：", "三百", "元", "。"],
-        ["一", "个", "女人", "问", "我", "：", "“", "我", "能", "试", "一", "下", "吗", "？", "”"],
-        ["她", "来", "我", "家", "试", "了", "试", "，", "说", "：", "“", "很", "好", "，", "我", "要", "了", "！", "”", "她", "给", "了", "我", "三百", "元", "。"],
-        ["我", "很", "高兴", "！", "老", "东西", "别人", "也", "能", "用", "，", "真", "好", "。", "我", "要", "用", "这些", "钱", "给", "妈妈", "买", "东西", "。"]
+        ["晚上", "十", "点", "，", "我", "想", "睡觉", "。", "我", "在", "床", "上", "看", "手机", "，", "看", "了", "一", "个", "小时", "。"],
+        ["十二", "点", "了", "，", "我", "还是", "不", "想", "睡", "。", "我", "就", "起来", "用", "电脑", "工作", "。", "工作", "很", "多", "，", "我", "做", "了", "两", "个", "小时", "。"],
+        ["两", "点", "，", "我", "睡", "了", "。"],
+        ["第二", "天", "，", "我", "十", "点", "起来", "，", "起来", "晚", "了", "！"],
+        ["今天", "晚上", "，", "我", "不", "看", "手机", "了", "！", "我", "要", "十", "点", "就", "睡", "！"]
       ],
       "translations": [
-        "I have an old phone that I don’t use any more.",
-        "I put it on Xianyu for 300 yuan.",
-        "A woman asked me: “Can I try it?”",
-        "She came to my place, tried it out and said: “It’s great, I’ll take it!” She gave me 300 yuan.",
-        "I was really happy! It’s nice that someone else can use old things. I’m going to use this money to buy Mum something."
+        "At ten in the evening I wanted to go to bed. I looked at my phone in bed for an hour.",
+        "At midnight I still didn’t want to sleep. So I got up and worked on my computer. There was lots of work — I did two hours.",
+        "At two I fell asleep.",
+        "The next day I got up at ten — I overslept!",
+        "Tonight, no more phone! I’m going to sleep at ten!"
       ],
-      "names": ["闲鱼"],
-      "new_words": ["手机", "试", "高兴"],
+      "names": [],
+      "new_words": ["睡觉", "床", "电脑"],
       "glossary": [
-        { "word": "手机", "english": "mobile phone" },
-        { "word": "试", "english": "to try" },
-        { "word": "高兴", "english": "happy" },
-        { "word": "闲鱼", "english": "Xianyu (second-hand marketplace app)" }
+        { "word": "睡觉", "english": "to go to bed; to sleep" },
+        { "word": "床", "english": "bed" },
+        { "word": "电脑", "english": "computer" }
       ]
     }
   ],
   "missions": [
     {
-      "id": "2026-10-12-m1",
+      "id": "2026-10-13-m1",
       "level": 1,
-      "title": "Trying on clothes",
-      "role": "店员",
-      "goal": "Pick a white top, say your size, try it on, change size and buy it.",
+      "title": "Buying a train ticket",
+      "role": "售票员",
+      "goal": "Buy a ticket to Shanghai: choose a train, check the station and seat class, and ask the price.",
       "new_words": [
-        { "word": "试", "english": "to try (on)" },
-        { "word": "白", "english": "white" }
+        { "word": "票", "english": "ticket" },
+        { "word": "西", "english": "west" },
+        { "word": "第", "english": "(ordinal prefix: 第五 = fifth)" }
       ],
       "steps": [
         {
-          "partner_zh": "你好，喜欢什么可以试试。",
-          "partner_en": "Hi, feel free to try anything you like.",
-          "prompt_en": "Say you like this white one.",
-          "answers_zh": ["我喜欢这件白的。", "这件白的很好看。"],
-          "answers_en": ["I like this white one.", "This white one looks nice."]
+          "partner_zh": "你好，去哪儿？",
+          "partner_en": "Hello, where to?",
+          "prompt_en": "Say you want a ticket to Shanghai.",
+          "answers_zh": ["我要一张去上海的票。", "去上海，一张票。"],
+          "answers_en": ["I'd like a ticket to Shanghai.", "Shanghai, one ticket."]
         },
         {
-          "partner_zh": "你穿多大的？",
-          "partner_en": "What size do you wear?",
-          "prompt_en": "Say medium.",
-          "answers_zh": ["中号。", "我穿中号。"],
-          "answers_en": ["Medium.", "I wear a medium."]
+          "partner_zh": "几点的？",
+          "partner_en": "What time?",
+          "prompt_en": "Ask when the next one is.",
+          "answers_zh": ["下一班几点？", "最早的是几点？"],
+          "answers_en": ["When's the next one?", "What time is the earliest?"]
         },
         {
-          "partner_zh": "给你，试衣间在那边。",
-          "partner_en": "Here you go — the fitting room's over there.",
-          "prompt_en": "(After trying it on) Say it's a bit big.",
-          "answers_zh": ["有点大。", "这件有点大。"],
-          "answers_en": ["It's a bit big.", "This one's a bit big."]
+          "partner_zh": "十点半的，从西站走。",
+          "partner_en": "Half past ten, leaving from the West station.",
+          "prompt_en": "Check: is it the West station?",
+          "answers_zh": ["是西站吗？", "在西站坐车吗？"],
+          "answers_en": ["The West station?", "So I get on at the West station?"]
         },
         {
-          "partner_zh": "那你试试这件小号的。",
-          "partner_en": "Then try this small one.",
-          "prompt_en": "Say this one fits just right.",
-          "answers_zh": ["这件正好。", "这件很合适。"],
-          "answers_en": ["This one's just right.", "This one fits well."]
+          "partner_zh": "对，西站。要一等座还是二等座？",
+          "partner_en": "Yes, West station. First class or second class?",
+          "prompt_en": "Say second class.",
+          "answers_zh": ["二等座。", "二等座就行。"],
+          "answers_en": ["Second class.", "Second class is fine."]
         },
         {
-          "partner_zh": "很好看！要吗？",
-          "partner_en": "It looks great! Will you take it?",
-          "prompt_en": "Say yes, you'll take it.",
-          "answers_zh": ["好，我要了。", "要，多少钱？"],
-          "answers_en": ["OK, I'll take it.", "Yes — how much is it?"]
+          "partner_zh": "好的，第五车厢。",
+          "partner_en": "OK, carriage five.",
+          "prompt_en": "Ask how much it is.",
+          "answers_zh": ["一共多少钱？", "多少钱？"],
+          "answers_en": ["How much is that altogether?", "How much?"]
         }
       ],
-      "closing_zh": "两百八十块。谢谢！",
-      "closing_en": "That's 280 kuai. Thank you!"
+      "closing_zh": "五百五十三块。",
+      "closing_en": "553 kuai."
     },
     {
-      "id": "2026-10-12-m2",
+      "id": "2026-10-13-m2",
       "level": 1,
-      "title": "A hot day",
-      "role": "朋友",
-      "goal": "Chat with a friend about the heat, compare it with last year and go for a cold drink.",
+      "title": "At a computer repair shop",
+      "role": "店员",
+      "goal": "Explain your computer won't start, ask for it to be fixed quickly and ask the price.",
       "new_words": [
-        { "word": "热", "english": "hot" },
-        { "word": "去年", "english": "last year" },
-        { "word": "高兴", "english": "happy" }
+        { "word": "电脑", "english": "computer" },
+        { "word": "试", "english": "to try" }
       ],
       "steps": [
         {
-          "partner_zh": "今天真热啊！",
-          "partner_en": "It's so hot today!",
-          "prompt_en": "Agree — it's really hot.",
-          "answers_zh": ["是啊，太热了！", "对，非常热。"],
-          "answers_en": ["Yeah, it's way too hot!", "Yes, really hot."]
+          "partner_zh": "你好，有什么问题？",
+          "partner_en": "Hello, what's the problem?",
+          "prompt_en": "Say your computer won't turn on.",
+          "answers_zh": ["我的电脑开不了机。", "电脑打不开了。"],
+          "answers_en": ["My computer won't turn on.", "My computer won't start."]
         },
         {
-          "partner_zh": "去年这个时候也这么热吗？",
-          "partner_en": "Was it this hot at this time last year?",
-          "prompt_en": "Say it wasn't this hot last year.",
-          "answers_zh": ["去年没有这么热。", "去年不太热。"],
-          "answers_en": ["It wasn't this hot last year.", "Last year wasn't too hot."]
+          "partner_zh": "什么时候开始的？",
+          "partner_en": "When did it start?",
+          "prompt_en": "Say since yesterday.",
+          "answers_zh": ["昨天开始的。", "从昨天开始。"],
+          "answers_en": ["It started yesterday.", "Since yesterday."]
         },
         {
-          "partner_zh": "我们去喝点冷的吧？",
-          "partner_en": "Shall we go and get a cold drink?",
-          "prompt_en": "Say great, let's go.",
-          "answers_zh": ["好啊，走吧！", "好主意！"],
-          "answers_en": ["Sure, let's go!", "Good idea!"]
+          "partner_zh": "我先看看。你明天能来拿吗？",
+          "partner_en": "I'll take a look first. Can you pick it up tomorrow?",
+          "prompt_en": "Ask if it can be quicker — you need it for work.",
+          "answers_zh": ["能快一点吗？我要工作。", "今天能好吗？"],
+          "answers_en": ["Could it be quicker? I need it for work.", "Could it be ready today?"]
         },
         {
-          "partner_zh": "你想喝什么？",
-          "partner_en": "What do you want to drink?",
-          "prompt_en": "Say an iced cola.",
-          "answers_zh": ["我想喝冰可乐。", "来一杯冰可乐。"],
-          "answers_en": ["I'd like an iced cola.", "An iced cola, please."]
+          "partner_zh": "那下午五点吧。",
+          "partner_en": "Five this afternoon, then.",
+          "prompt_en": "Ask how much it will cost.",
+          "answers_zh": ["要多少钱？", "多少钱？"],
+          "answers_en": ["How much will it cost?", "How much?"]
         },
         {
-          "partner_zh": "我请你！",
-          "partner_en": "My treat!",
-          "prompt_en": "Say thanks, you're really happy.",
-          "answers_zh": ["谢谢！我很高兴。", "太好了，谢谢你！"],
-          "answers_en": ["Thanks! That makes me happy.", "Great, thank you!"]
+          "partner_zh": "我先试试，可能两百块。",
+          "partner_en": "I'll try first — maybe 200 kuai.",
+          "prompt_en": "Say OK, see you at five.",
+          "answers_zh": ["好的，五点见。", "行，下午五点来。"],
+          "answers_en": ["OK, see you at five.", "Fine, I'll come at five this afternoon."]
         }
       ],
-      "closing_zh": "不客气！",
-      "closing_en": "You're welcome!"
+      "closing_zh": "好，到时候见！",
+      "closing_en": "Great, see you then!"
     }
   ]
 }
