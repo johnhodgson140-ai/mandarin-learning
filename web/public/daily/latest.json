@@ -1,176 +1,174 @@
 {
-  "date": "2026-10-14",
+  "date": "2026-10-15",
   "level": 1,
   "plan": {
-    "focus_en": "没…了 for “there’s no … any more” (没电了, 没有钱了), and 忘了 for forgetting.",
+    "focus_en": "How long something took: verb + 了 + time (走了四个小时), and 常 for “often”.",
     "items": [
       { "kind": "cards", "title_en": "Say your cards (10 cards)" },
       { "kind": "dojo", "title_en": "Tone Dojo (5 minutes)" },
-      { "kind": "story", "title_en": "Read and read aloud: 朋友教我", "ref": "2026-10-14-s1" },
-      { "kind": "mission", "title_en": "Guided mission: a language exchange", "ref": "2026-10-14-m1" }
+      { "kind": "story", "title_en": "Read and read aloud: 山上很冷", "ref": "2026-10-15-s1" },
+      { "kind": "mission", "title_en": "Guided mission: booking a flight", "ref": "2026-10-15-m1" }
     ]
   },
   "stories": [
     {
-      "id": "2026-10-14-s1",
+      "id": "2026-10-15-s1",
       "level": 1,
-      "topic": "anime",
-      "title_zh": "朋友教我",
-      "title_en": "My friend teaches me",
+      "topic": "travel",
+      "title_zh": "山上很冷",
+      "title_en": "It's cold up the mountain",
       "paragraphs": [
-        ["我", "很", "喜欢", "日本", "的", "电影", "。", "现在", "，", "我", "也", "想", "读", "日本", "的", "书", "。"],
-        ["日本", "的", "字", "很", "难", "。", "很", "多", "字", "我", "都", "不", "认识", "。"],
-        ["我", "的", "朋友", "是", "日本", "人", "。", "她", "说", "：", "“", "我", "来", "教", "你", "！", "”"],
-        ["她", "晚上", "来", "我", "家", "，", "教", "我", "两", "个", "小时", "。", "她", "很", "认真", "。", "我", "写", "错", "了", "，", "她", "就", "再", "告诉", "我", "一", "次", "。"],
-        ["现在", "，", "我", "能", "读", "一些", "了", "！"]
+        ["上", "个", "月", "，", "我", "和", "朋友", "去", "山", "上", "玩", "。", "我们", "早上", "六", "点", "就", "走", "了", "。"],
+        ["那里", "很", "高", "，", "我们", "走", "了", "四", "个", "小时", "。"],
+        ["山", "上", "非常", "冷", "！", "我", "穿", "了", "很", "多", "，", "还是", "很", "冷", "。"],
+        ["最后", "，", "我们", "到", "了", "。", "我们", "能", "看到", "很", "多", "地方", "，", "都", "笑", "了", "。"],
+        ["朋友", "说", "：", "“", "下", "次", "我们", "再", "来", "！", "”", "我", "说", "：", "“", "好", "！", "我", "也", "想", "再", "来", "。", "”"]
       ],
       "translations": [
-        "I really like Japanese films. Now I want to read Japanese books too.",
-        "Japanese characters are hard. There are lots of characters I don't know.",
-        "My friend is Japanese. She said: “I’ll teach you!”",
-        "She comes to my place in the evening and teaches me for two hours. She's very thorough. When I write something wrong, she tells me again.",
-        "Now I can read a bit!"
+        "Last month my friend and I went up a mountain. We set off at six in the morning.",
+        "It was very high — we walked for four hours.",
+        "It was really cold at the top! I was wearing lots of layers but I was still cold.",
+        "In the end we got there. We could see so many places, and we both smiled.",
+        "My friend said: “Let’s come again next time!” I said: “Yes! I want to come back too.”"
       ],
-      "names": ["日本"],
-      "new_words": ["读", "教", "认真"],
+      "names": [],
+      "new_words": ["山", "早上", "冷"],
       "glossary": [
-        { "word": "读", "english": "to read" },
-        { "word": "教", "english": "to teach" },
-        { "word": "认真", "english": "serious; thorough" },
-        { "word": "日本", "english": "Japan" }
+        { "word": "山", "english": "mountain" },
+        { "word": "早上", "english": "morning" },
+        { "word": "冷", "english": "cold" }
       ]
     },
     {
-      "id": "2026-10-14-s2",
+      "id": "2026-10-15-s2",
       "level": 1,
-      "topic": "business & finance",
-      "title_zh": "忘了拿钱",
-      "title_en": "I forgot my money",
+      "topic": "football",
+      "title_zh": "一个小球迷",
+      "title_en": "A young fan",
       "paragraphs": [
-        ["今天", "我", "去", "买", "东西", "。", "我", "拿", "了", "很", "多", "东西", "。", "这些", "东西", "都", "是", "我", "要", "用", "的", "。"],
-        ["要", "给", "钱", "了", "，", "我", "想", "起来", "：", "钱", "在", "家里", "！", "我", "忘", "了", "拿", "钱", "！"],
-        ["我", "说", "：", "“", "我", "回家", "拿", "钱", "，", "马上", "回来", "！", "”"],
-        ["那里", "的", "人", "笑", "了", "，", "说", "：", "“", "不用", "，", "你", "用", "手机", "给", "就", "行", "。", "”"],
-        ["我", "也", "笑", "了", "：", "我", "有", "手机", "！", "我", "用", "手机", "给", "了", "钱", "，", "就", "回家", "了", "。"]
+        ["我", "常", "和", "朋友", "一起", "玩", "球", "。", "我们", "都", "很", "爱", "曼联", "。"],
+        ["今天", "，", "一", "个", "孩子", "问", "我", "：", "“", "你", "最", "喜欢", "谁", "？", "”"],
+        ["我", "回答", "：", "“", "我", "最", "喜欢", "曼联", "的", "十", "号", "！", "”"],
+        ["孩子", "说", "：", "“", "我", "也", "是", "！", "”", "他", "还", "记得", "十", "号", "去年", "进", "了", "二十", "个", "球", "。"],
+        ["我们", "一起", "玩", "了", "一", "个", "小时", "。", "他", "跑", "起来", "很", "快", "！", "我", "很", "高兴", "认识", "了", "他", "。"]
       ],
       "translations": [
-        "Today I went shopping. I picked up lots of things — all things I need.",
-        "When it was time to pay, I remembered: my money was at home! I'd forgotten to bring it!",
-        "I said: “I’ll go home and get my money — I’ll be right back!”",
-        "The person there laughed and said: “No need — you can just pay with your phone.”",
-        "I laughed too: I had my phone! I paid with my phone and went home."
+        "I often play football with my friends. We all love Man United.",
+        "Today a kid asked me: “Who’s your favourite?”",
+        "I answered: “My favourite is Man United’s number 10!”",
+        "The kid said: “Me too!” He even remembered that number 10 scored twenty goals last year.",
+        "We played together for an hour. He runs really fast! I’m really glad I met him."
       ],
-      "names": [],
-      "new_words": ["家里", "忘", "不用"],
+      "names": ["曼联"],
+      "new_words": ["常", "回答"],
       "glossary": [
-        { "word": "家里", "english": "at home" },
-        { "word": "忘", "english": "to forget" },
-        { "word": "不用", "english": "no need" }
+        { "word": "常", "english": "often" },
+        { "word": "回答", "english": "to answer" },
+        { "word": "曼联", "english": "Manchester United" }
       ]
     }
   ],
   "missions": [
     {
-      "id": "2026-10-14-m1",
+      "id": "2026-10-15-m1",
       "level": 1,
-      "title": "A language exchange",
-      "role": "朋友",
-      "goal": "Agree to swap lessons: they teach you Chinese, you teach them English.",
+      "title": "Booking a flight",
+      "role": "工作人员",
+      "goal": "Book a flight to Beijing: choose the day and a morning flight, and ask for a cheaper option.",
       "new_words": [
-        { "word": "教", "english": "to teach" },
-        { "word": "认真", "english": "serious; hard-working" },
-        { "word": "字", "english": "character (written)" }
+        { "word": "飞机", "english": "plane" },
+        { "word": "早上", "english": "morning" }
       ],
       "steps": [
         {
-          "partner_zh": "你好！你在学中文吗？",
-          "partner_en": "Hi! Are you learning Chinese?",
-          "prompt_en": "Say yes, you're learning Chinese.",
-          "answers_zh": ["是的，我在学中文。", "对，我正在学中文。"],
-          "answers_en": ["Yes, I'm learning Chinese.", "That's right, I'm learning Chinese."]
+          "partner_zh": "你好，您要去哪里？",
+          "partner_en": "Hello, where would you like to go?",
+          "prompt_en": "Say you want to go to Beijing next Friday.",
+          "answers_zh": ["我想下个星期五去北京。", "下星期五，去北京。"],
+          "answers_en": ["I'd like to go to Beijing next Friday.", "Next Friday, to Beijing."]
         },
         {
-          "partner_zh": "难不难？",
-          "partner_en": "Is it hard?",
-          "prompt_en": "Say writing characters is hard.",
-          "answers_zh": ["写字很难。", "汉字很难。"],
-          "answers_en": ["Writing characters is hard.", "Chinese characters are hard."]
+          "partner_zh": "坐飞机还是坐火车？",
+          "partner_en": "By plane or by train?",
+          "prompt_en": "Say by plane.",
+          "answers_zh": ["坐飞机。", "我想坐飞机。"],
+          "answers_en": ["By plane.", "I'd like to fly."]
         },
         {
-          "partner_zh": "我可以教你！",
-          "partner_en": "I can teach you!",
-          "prompt_en": "Say great, and you can teach them English.",
-          "answers_zh": ["太好了！我可以教你英语。", "好啊，我教你英语吧。"],
-          "answers_en": ["Great! I can teach you English.", "Sure, I'll teach you English."]
+          "partner_zh": "早上的还是晚上的？",
+          "partner_en": "Morning or evening?",
+          "prompt_en": "Say a morning one.",
+          "answers_zh": ["早上的。", "早上的吧。"],
+          "answers_en": ["Morning.", "A morning one, please."]
         },
         {
-          "partner_zh": "好啊！我们什么时候开始？",
-          "partner_en": "Sounds good! When shall we start?",
-          "prompt_en": "Suggest tomorrow afternoon.",
-          "answers_zh": ["明天下午吧。", "明天下午怎么样？"],
-          "answers_en": ["Tomorrow afternoon.", "How about tomorrow afternoon?"]
+          "partner_zh": "早上八点有一班，一千二。",
+          "partner_en": "There's one at eight in the morning — 1,200.",
+          "prompt_en": "Ask if there's a cheaper one.",
+          "answers_zh": ["有便宜一点的吗？", "还有更便宜的吗？"],
+          "answers_en": ["Is there a cheaper one?", "Anything cheaper?"]
         },
         {
-          "partner_zh": "你要认真学哦！",
-          "partner_en": "You have to study hard, OK?",
-          "prompt_en": "Say you'll study hard.",
-          "answers_zh": ["我会认真学的。", "没问题，我会认真的。"],
-          "answers_en": ["I'll study hard.", "No problem, I'll take it seriously."]
+          "partner_zh": "十点那班九百。",
+          "partner_en": "The ten o'clock one is 900.",
+          "prompt_en": "Say you'll take the ten o'clock flight.",
+          "answers_zh": ["好，我要十点那班。", "就十点的吧。"],
+          "answers_en": ["OK, I'll take the ten o'clock one.", "The ten o'clock, then."]
         }
       ],
-      "closing_zh": "好，明天见！",
-      "closing_en": "Great, see you tomorrow!"
+      "closing_zh": "好的，给您订好了。",
+      "closing_en": "OK, you're booked."
     },
     {
-      "id": "2026-10-14-m2",
+      "id": "2026-10-15-m2",
       "level": 1,
-      "title": "A power cut at home",
-      "role": "房东",
-      "goal": "Tell your landlord the power is out, explain when it started and ask how long the fix will take.",
+      "title": "Viewing a flat",
+      "role": "中介",
+      "goal": "Ask an agent about a flat: rooms, rent, whether it's cold in winter and how far the metro is.",
       "new_words": [
-        { "word": "电", "english": "electricity" },
-        { "word": "家里", "english": "at home" },
-        { "word": "回到", "english": "to get back to" }
+        { "word": "房子", "english": "house; flat" },
+        { "word": "冷", "english": "cold" },
+        { "word": "回答", "english": "answer; to answer" }
       ],
       "steps": [
         {
-          "partner_zh": "喂，你好。",
-          "partner_en": "Hello?",
-          "prompt_en": "Say there's no electricity at home.",
-          "answers_zh": ["你好，我家里没电了。", "喂，家里没有电了。"],
-          "answers_en": ["Hi, there's no power at my place.", "Hello, the electricity's gone at home."]
+          "partner_zh": "你好，这就是那个房子。",
+          "partner_en": "Hi, this is the flat.",
+          "prompt_en": "Ask how many rooms there are.",
+          "answers_zh": ["有几个房间？", "几个房间？"],
+          "answers_en": ["How many rooms are there?", "How many rooms?"]
         },
         {
-          "partner_zh": "什么时候开始的？",
-          "partner_en": "When did it start?",
-          "prompt_en": "Say when you got home at seven there was no power.",
-          "answers_zh": ["我七点回到家就没电了。", "七点开始的。"],
-          "answers_en": ["When I got home at seven there was no power.", "Since seven."]
+          "partner_zh": "两个房间，一个厨房。",
+          "partner_en": "Two rooms and a kitchen.",
+          "prompt_en": "Ask how much it is a month.",
+          "answers_zh": ["一个月多少钱？", "房租多少？"],
+          "answers_en": ["How much is it a month?", "What's the rent?"]
         },
         {
-          "partner_zh": "别的房间也没电吗？",
-          "partner_en": "Is there no power in the other rooms either?",
-          "prompt_en": "Say none of the rooms have power.",
-          "answers_zh": ["都没有电。", "每个房间都没电。"],
-          "answers_en": ["None of them have power.", "There's no power in any room."]
+          "partner_zh": "三千五一个月。",
+          "partner_en": "3,500 a month.",
+          "prompt_en": "Ask if it's cold in winter.",
+          "answers_zh": ["冬天冷不冷？", "冬天这里冷吗？"],
+          "answers_en": ["Is it cold in winter?", "Does it get cold here in winter?"]
         },
         {
-          "partner_zh": "好，我马上找人来看。",
-          "partner_en": "OK, I'll get someone to look at it right away.",
-          "prompt_en": "Ask how long it will take.",
-          "answers_zh": ["要多长时间？", "什么时候能好？"],
-          "answers_en": ["How long will it take?", "When will it be fixed?"]
+          "partner_zh": "不冷，有暖气。",
+          "partner_en": "No, there's heating.",
+          "prompt_en": "Ask if the metro station is far.",
+          "answers_zh": ["离地铁远吗？", "地铁站远不远？"],
+          "answers_en": ["Is it far from the metro?", "Is the metro station far?"]
         },
         {
-          "partner_zh": "一个小时吧。",
-          "partner_en": "About an hour.",
-          "prompt_en": "Say OK, thanks.",
-          "answers_zh": ["好的，谢谢！", "行，我等你们。"],
-          "answers_en": ["OK, thanks!", "Fine, I'll wait for you."]
+          "partner_zh": "很近，走五分钟。你要吗？",
+          "partner_en": "Very close — five minutes' walk. Do you want it?",
+          "prompt_en": "Say you like it and will give an answer tomorrow.",
+          "answers_zh": ["我很喜欢，明天给你回答。", "我想想，明天告诉你。"],
+          "answers_en": ["I really like it — I'll give you an answer tomorrow.", "Let me think, I'll tell you tomorrow."]
         }
       ],
-      "closing_zh": "不客气，不好意思！",
-      "closing_en": "You're welcome — sorry about that!"
+      "closing_zh": "好的，等你电话！",
+      "closing_en": "OK, I'll wait for your call!"
     }
   ]
 }
