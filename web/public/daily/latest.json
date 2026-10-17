@@ -1,173 +1,172 @@
 {
-  "date": "2026-10-16",
+  "date": "2026-10-17",
   "level": 1,
   "plan": {
-    "focus_en": "Direction words after verbs (进来, 出去, 回去), and 关 / 打开 for closing and opening.",
+    "focus_en": "一边…一边… (doing two things at once) and 有的…有的… (some…, others…).",
     "items": [
       { "kind": "cards", "title_en": "Say your cards (10 cards)" },
       { "kind": "dojo", "title_en": "Tone Dojo (5 minutes)" },
-      { "kind": "story", "title_en": "Read and read aloud: 风很大", "ref": "2026-10-16-s1" },
-      { "kind": "mission", "title_en": "Guided mission: a window that won't close", "ref": "2026-10-16-m1" }
+      { "kind": "story", "title_en": "Read and read aloud: 一边吃一边看", "ref": "2026-10-17-s2" },
+      { "kind": "mission", "title_en": "Guided mission: at a barbecue restaurant", "ref": "2026-10-17-m2" }
     ]
   },
   "stories": [
     {
-      "id": "2026-10-16-s1",
+      "id": "2026-10-17-s1",
       "level": 1,
-      "topic": "daily life",
-      "title_zh": "风很大",
-      "title_en": "A windy day",
+      "topic": "business & finance",
+      "title_zh": "十二个小时的班",
+      "title_en": "A twelve-hour shift",
       "paragraphs": [
-        ["今天", "下午", "风", "很", "大", "。", "我", "在", "家里", "读", "书", "。"],
-        ["门", "开", "了", "，", "风", "进", "来", "了", "。", "我", "的", "书", "都", "飞", "起来", "了", "！"],
-        ["我", "马上", "去", "关", "门", "。", "我", "再", "去", "找", "我", "的", "书", "，", "找", "了", "半", "个", "小时", "，", "最后", "都", "找到", "了", "。"],
-        ["晚上", "，", "风", "不", "大", "了", "。", "我", "打开", "门", "，", "出去", "走", "了", "走", "。"],
-        ["我", "走", "了", "一", "个", "小时", "，", "就", "回家", "睡觉", "了", "。"]
+        ["这些", "天", "工作", "很", "多", "。", "今天", "，", "我", "上", "了", "十二", "个", "小时", "的", "班", "。", "我", "都", "没", "时间", "吃", "东西", "。"],
+        ["晚上", "回家", "，", "我", "非常", "累", "。", "我", "什么", "都", "不", "想", "做", "，", "就", "坐", "在", "床", "上", "。"],
+        ["妈妈", "给", "我", "打", "了", "电话", "。", "她", "说", "：", "“", "钱", "很", "重要", "，", "身体", "最", "重要", "！", "你", "要", "多", "休息", "。", "”"],
+        ["我", "说", "：", "“", "好", "，", "明天", "我", "早", "点", "回家", "。", "”"]
       ],
       "translations": [
-        "This afternoon it was really windy. I was at home reading.",
-        "The door blew open and the wind came in. My books went flying!",
-        "I rushed to close the door. After that I went to find my books. It took half an hour, but in the end I found them all.",
-        "In the evening the wind died down. I opened the door and went out for a walk.",
-        "I walked for an hour, then went home to bed."
+        "There's been lots of work these days. Today I did a twelve-hour shift. I didn’t even have time to eat.",
+        "When I got home in the evening I was exhausted. I didn't want to do anything, so I just sat on the bed.",
+        "Mum phoned me. She said: “Money matters, but your health matters most! You need to rest more.”",
+        "I said: “OK, I’ll come home early tomorrow.”"
       ],
       "names": [],
-      "new_words": ["风", "关", "打开"],
+      "new_words": ["班", "累", "休息"],
       "glossary": [
-        { "word": "风", "english": "wind" },
-        { "word": "关", "english": "to close" },
-        { "word": "打开", "english": "to open" }
+        { "word": "班", "english": "shift (上班: to work a shift)" },
+        { "word": "累", "english": "tired" },
+        { "word": "休息", "english": "to rest" }
       ]
     },
     {
-      "id": "2026-10-16-s2",
+      "id": "2026-10-17-s2",
       "level": 1,
-      "topic": "archive fashion",
-      "title_zh": "我哥的包",
-      "title_en": "My brother's bag",
+      "topic": "football",
+      "title_zh": "一边吃一边看",
+      "title_en": "Eating and watching",
       "paragraphs": [
-        ["我", "哥", "有", "很", "多", "老", "东西", "。"],
-        ["有", "一", "天", "，", "我", "在", "他", "家里", "看到", "了", "一", "个", "白", "包", "。", "这", "个", "包", "是", "二十", "年", "前", "的", "。"],
-        ["包", "很", "老", "了", "，", "我", "很", "喜欢", "。", "我", "问", "我", "哥", "：", "“", "我", "能", "试", "试", "吗", "？", "”", "他", "说", "：", "“", "你", "拿", "去", "吧", "！", "”"],
-        ["现在", "，", "我", "出去", "都", "拿", "着", "这", "个", "包", "。", "朋友", "们", "都", "问", "我", "：", "“", "在", "哪里", "买", "的", "？", "”"],
-        ["我", "笑", "着", "回答", "：", "“", "我", "哥", "送", "的", "！", "”"]
+        ["今天", "晚上", "有", "曼联", "的", "球", "。", "我", "和", "朋友", "们", "一边", "吃", "肉", "，", "一边", "看", "球", "。"],
+        ["有的", "朋友", "喜欢", "曼联", "，", "有的", "不", "喜欢", "。"],
+        ["曼联", "进", "球", "的", "时候", "，", "我", "马上", "站", "起来", "了", "，", "我", "的", "一", "个", "朋友", "没", "站", "起来", "。"],
+        ["最后", "是", "二", "比", "一", "。", "我", "很", "高兴", "。", "那", "个", "朋友", "不", "太", "高兴", "，", "他", "不", "喜欢", "曼联", "。"],
+        ["我", "说", "：", "“", "别", "不", "高兴", "，", "再", "吃", "点", "肉", "吧", "！", "”"]
       ],
       "translations": [
-        "My older brother has lots of old things.",
-        "One day I saw a white bag at his place. The bag is twenty years old.",
-        "The bag is really old, and I love it. I asked my brother: “Can I try it?” He said: “Take it!”",
-        "Now I take this bag whenever I go out. My friends all ask me: “Where did you buy it?”",
-        "I answer with a smile: “My brother gave it to me!”"
+        "Man United were playing this evening. My friends and I ate meat while we watched.",
+        "Some of my friends like Man United, and some don't.",
+        "When Man United scored, I jumped straight up, but one of my friends stayed sitting down.",
+        "In the end it was two–one. I was really happy. That friend wasn’t so happy — he doesn’t like Man United.",
+        "I said: “Cheer up — have some more meat!”"
       ],
-      "names": [],
-      "new_words": ["哥", "回答"],
+      "names": ["曼联"],
+      "new_words": ["一边", "肉", "有的"],
       "glossary": [
-        { "word": "哥", "english": "older brother" },
-        { "word": "回答", "english": "to answer" }
+        { "word": "一边", "english": "while (一边…一边…: doing two things at once)" },
+        { "word": "肉", "english": "meat" },
+        { "word": "有的", "english": "some" },
+        { "word": "曼联", "english": "Manchester United" }
       ]
     }
   ],
   "missions": [
     {
-      "id": "2026-10-16-m1",
+      "id": "2026-10-17-m1",
       "level": 1,
-      "title": "A window that won't close",
-      "role": "前台",
-      "goal": "Call hotel reception: the window won't close, it's windy and cold, and you accept a new room.",
+      "title": "At the laundry",
+      "role": "店员",
+      "goal": "Drop off a jacket for washing, ask when it's ready and the price, and point out a damaged spot.",
       "new_words": [
-        { "word": "关", "english": "to close" },
-        { "word": "风", "english": "wind" },
-        { "word": "打开", "english": "to open" }
+        { "word": "洗", "english": "to wash" },
+        { "word": "坏", "english": "broken; damaged" }
       ],
       "steps": [
         {
-          "partner_zh": "你好，这里是前台。",
-          "partner_en": "Hello, this is reception.",
-          "prompt_en": "Say the window in your room won't close.",
-          "answers_zh": ["我房间的窗户关不上。", "窗户关不了。"],
-          "answers_en": ["The window in my room won't close.", "The window won't shut."]
+          "partner_zh": "你好，要洗什么？",
+          "partner_en": "Hello, what would you like washed?",
+          "prompt_en": "Say you'd like this jacket washed.",
+          "answers_zh": ["我想洗这件外套。", "这件外套要洗。"],
+          "answers_en": ["I'd like to have this jacket washed.", "This jacket needs washing."]
         },
         {
-          "partner_zh": "几号房间？",
-          "partner_en": "Which room?",
-          "prompt_en": "Say room 805.",
-          "answers_zh": ["八零五。", "八零五号房间。"],
-          "answers_en": ["805.", "Room 805."]
+          "partner_zh": "好的。什么时候要？",
+          "partner_en": "OK. When do you need it?",
+          "prompt_en": "Ask if tomorrow is OK.",
+          "answers_zh": ["明天可以吗？", "明天能好吗？"],
+          "answers_en": ["Is tomorrow OK?", "Could it be ready tomorrow?"]
         },
         {
-          "partner_zh": "好的，我们马上找人去看。",
-          "partner_en": "OK, we'll send someone to look right away.",
-          "prompt_en": "Say it's very windy and cold.",
-          "answers_zh": ["风很大，很冷。", "房间里很冷。"],
-          "answers_en": ["It's really windy and cold.", "It's cold in the room."]
+          "partner_zh": "明天下午可以。",
+          "partner_en": "Tomorrow afternoon is fine.",
+          "prompt_en": "Ask how much it is.",
+          "answers_zh": ["洗一件多少钱？", "多少钱？"],
+          "answers_en": ["How much is it per item?", "How much?"]
         },
         {
-          "partner_zh": "不好意思。要不要给您换一个房间？",
-          "partner_en": "Sorry about that. Would you like to change rooms?",
-          "prompt_en": "Say yes, please.",
-          "answers_zh": ["好的，谢谢。", "可以，麻烦你了。"],
-          "answers_en": ["Yes, thank you.", "Yes please, sorry for the trouble."]
+          "partner_zh": "三十块。",
+          "partner_en": "30 kuai.",
+          "prompt_en": "Say this part is a bit damaged — please be careful.",
+          "answers_zh": ["这里有点坏了，请小心。", "这儿坏了一点。"],
+          "answers_en": ["It's a bit damaged here — please be careful.", "This bit's slightly damaged."]
         },
         {
-          "partner_zh": "八零七的门我们给您打开了。",
-          "partner_en": "We've opened the door of room 807 for you.",
-          "prompt_en": "Say OK, you'll go now.",
-          "answers_zh": ["好的，我马上过去。", "好，我现在去。"],
-          "answers_en": ["OK, I'll go straight over.", "OK, I'm going now."]
+          "partner_zh": "没问题，我们会注意的。",
+          "partner_en": "No problem, we'll be careful.",
+          "prompt_en": "Say thanks, you'll come and collect it tomorrow afternoon.",
+          "answers_zh": ["好的，明天下午来拿。", "谢谢，明天下午见。"],
+          "answers_en": ["OK, I'll pick it up tomorrow afternoon.", "Thanks, see you tomorrow afternoon."]
         }
       ],
-      "closing_zh": "不客气，晚安！",
-      "closing_en": "You're welcome, good night!"
+      "closing_zh": "好的，这是你的单子。",
+      "closing_en": "OK, here's your ticket."
     },
     {
-      "id": "2026-10-16-m2",
+      "id": "2026-10-17-m2",
       "level": 1,
-      "title": "Visiting a sick friend",
-      "role": "朋友",
-      "goal": "Visit a friend who's ill: ask how they are, give them fruit and say when you'll come back.",
+      "title": "At a barbecue restaurant",
+      "role": "服务员",
+      "goal": "Get a table for two, ask what meat they have, order meat and beers.",
       "new_words": [
-        { "word": "累", "english": "tired" },
-        { "word": "回去", "english": "to go back" }
+        { "word": "肉", "english": "meat" },
+        { "word": "有的", "english": "some" }
       ],
       "steps": [
         {
-          "partner_zh": "你来了！",
-          "partner_en": "You came!",
-          "prompt_en": "Ask how they're feeling.",
-          "answers_zh": ["你好点了吗？", "你怎么样？"],
-          "answers_en": ["Are you feeling better?", "How are you?"]
+          "partner_zh": "你好，几位？",
+          "partner_en": "Hello, how many?",
+          "prompt_en": "Say two people.",
+          "answers_zh": ["两个人。", "两位。"],
+          "answers_en": ["Two people.", "Two."]
         },
         {
-          "partner_zh": "好多了，就是有点累。",
-          "partner_en": "Much better, just a bit tired.",
-          "prompt_en": "Tell them to rest well.",
-          "answers_zh": ["你好好休息。", "那你多休息。"],
-          "answers_en": ["Get some good rest.", "Then rest as much as you can."]
+          "partner_zh": "请坐。要吃什么？",
+          "partner_en": "Please sit down. What would you like?",
+          "prompt_en": "Ask what meat they have.",
+          "answers_zh": ["你们有什么肉？", "有什么肉？"],
+          "answers_en": ["What meat do you have?", "What meat is there?"]
         },
         {
-          "partner_zh": "你给我带了什么？",
-          "partner_en": "What have you brought me?",
-          "prompt_en": "Say some fruit.",
-          "answers_zh": ["我给你买了水果。", "一些水果。"],
-          "answers_en": ["I bought you some fruit.", "Some fruit."]
+          "partner_zh": "有牛肉、羊肉和鸡肉。",
+          "partner_en": "There's beef, lamb and chicken.",
+          "prompt_en": "Order beef and lamb.",
+          "answers_zh": ["要牛肉和羊肉。", "来点牛肉和羊肉。"],
+          "answers_en": ["Beef and lamb, please.", "Some beef and lamb."]
         },
         {
-          "partner_zh": "谢谢！你今天不用工作吗？",
-          "partner_en": "Thanks! Don't you have to work today?",
-          "prompt_en": "Say you have to go back to work this afternoon.",
-          "answers_zh": ["我下午还要回去工作。", "下午要回去。"],
-          "answers_en": ["I have to go back to work this afternoon.", "I'm going back this afternoon."]
+          "partner_zh": "喝什么？",
+          "partner_en": "Anything to drink?",
+          "prompt_en": "Say two bottles of beer.",
+          "answers_zh": ["两瓶啤酒。", "来两瓶啤酒。"],
+          "answers_en": ["Two bottles of beer.", "Two beers, please."]
         },
         {
-          "partner_zh": "那你快回去吧。",
-          "partner_en": "Then you'd better get going.",
-          "prompt_en": "Say OK, you'll come again tomorrow.",
-          "answers_zh": ["好，我明天再来看你。", "好的，明天见！"],
-          "answers_en": ["OK, I'll come and see you again tomorrow.", "OK, see you tomorrow!"]
+          "partner_zh": "好的。有的菜要等一下。",
+          "partner_en": "OK. Some dishes will take a little while.",
+          "prompt_en": "Say no problem, you're not in a hurry.",
+          "answers_zh": ["没问题。", "好的，我们不急。"],
+          "answers_en": ["No problem.", "That's fine, we're not in a hurry."]
         }
       ],
-      "closing_zh": "好，谢谢你来看我！",
-      "closing_en": "OK, thanks for coming to see me!"
+      "closing_zh": "好，马上来！",
+      "closing_en": "OK, coming right up!"
     }
   ]
 }
