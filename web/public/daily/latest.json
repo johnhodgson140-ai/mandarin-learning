@@ -1,176 +1,166 @@
 {
-  "date": "2026-10-18",
+  "date": "2026-10-19",
   "level": 1,
   "plan": {
-    "focus_en": "Money with 块 and 毛 (三块八毛), and 一边…一边… for doing two things at once.",
+    "focus_en": "有的…有的… (some…, others…), and directions with 左 / 右.",
     "items": [
       { "kind": "cards", "title_en": "Say your cards (10 cards)" },
       { "kind": "dojo", "title_en": "Tone Dojo (5 minutes)" },
-      { "kind": "story", "title_en": "Read and read aloud: 我哥学动作", "ref": "2026-10-18-s1" },
-      { "kind": "mission", "title_en": "Guided mission: at a fruit stall", "ref": "2026-10-18-m1" }
+      { "kind": "story", "title_en": "Read and read aloud: 我爱老衣服", "ref": "2026-10-19-s1" },
+      { "kind": "mission", "title_en": "Guided mission: finding the east exit", "ref": "2026-10-19-m1" }
     ]
   },
   "stories": [
     {
-      "id": "2026-10-18-s1",
+      "id": "2026-10-19-s1",
       "level": 1,
-      "topic": "anime",
-      "title_zh": "我哥学动作",
-      "title_en": "My brother copies the moves",
+      "topic": "archive fashion",
+      "title_zh": "我爱老衣服",
+      "title_en": "I love old clothes",
       "paragraphs": [
-        ["昨天", "晚上", "，", "我", "和", "我", "哥", "一起", "看", "了", "一", "个", "日本", "电影", "。", "我们", "都", "很", "喜欢", "这", "个", "电影", "。"],
-        ["电影", "里", "的", "人", "动作", "非常", "快", "。"],
-        ["我", "哥", "一边", "看", "，", "一边", "学", "他们", "的", "动作", "。"],
-        ["他", "跑", "来", "跑", "去", "，", "杯", "里", "的", "水", "都", "出来", "了", "！"],
-        ["妈妈", "说", "：", "“", "别", "动", "了", "！", "坐", "下", "！", "”", "我们", "都", "笑", "了", "。"]
+        ["我", "很", "喜欢", "穿", "老", "衣服", "。", "新", "的", "都", "一样", "，", "老", "的", "都", "不", "一样", "。"],
+        ["上", "个", "月", "，", "我", "在", "闲鱼", "上", "买", "了", "一些", "二十", "年", "前", "的", "衣服", "。"],
+        ["有的", "很", "大", "，", "有的", "很", "小", "。", "我", "试", "了", "试", "，", "都", "很", "好", "。"],
+        ["我", "花", "了", "两百", "块", "，", "不", "多", "！"],
+        ["我", "哥", "看见", "了", "，", "说", "：", "“", "这些", "衣服", "真", "好", "！", "我", "也", "想", "要", "。", "”"]
       ],
       "translations": [
-        "Yesterday evening my older brother and I watched a Japanese film together. We both really liked it.",
-        "The people in the film moved really fast.",
-        "My brother copied their moves while he watched.",
-        "He ran all over the place, and the water spilled out of the cup!",
-        "Mum said: “Stop moving! Sit down!” We all laughed."
+        "I love wearing old clothes. New ones are all the same, but old ones are all different.",
+        "Last month I bought some twenty-year-old clothes on Xianyu.",
+        "Some are big and some are small. I tried them on, and they're all great.",
+        "I spent 200 kuai — not much!",
+        "My brother saw them and said: “These clothes are great! I want some too.”"
       ],
-      "names": ["日本"],
-      "new_words": ["动作", "一边"],
+      "names": ["闲鱼"],
+      "new_words": ["衣服"],
       "glossary": [
-        { "word": "动作", "english": "movement; action" },
-        { "word": "一边", "english": "while (一边…一边…: doing two things at once)" },
-        { "word": "日本", "english": "Japan" }
+        { "word": "衣服", "english": "clothes" },
+        { "word": "闲鱼", "english": "Xianyu (second-hand marketplace app)" }
       ]
     },
     {
-      "id": "2026-10-18-s2",
+      "id": "2026-10-19-s2",
       "level": 1,
-      "topic": "travel",
-      "title_zh": "没有热水",
-      "title_en": "No hot water",
+      "topic": "daily life",
+      "title_zh": "妈妈的生日",
+      "title_en": "Mum's birthday",
       "paragraphs": [
-        ["上", "个", "月", "，", "我", "和", "爸爸", "去", "上海", "。", "我们", "住", "在", "一", "个", "小", "地方", "。"],
-        ["房间", "不", "大", "，", "也", "有些", "老", "。", "房间", "里", "有", "一", "个", "电视", "。"],
-        ["晚上", "，", "我", "想", "洗", "手", "，", "水", "是", "冷", "的", "！"],
-        ["我", "给", "他们", "打", "电话", "。", "他们", "说", "：", "“", "对", "，", "热", "水", "坏", "了", "。", "”"],
-        ["他们", "给", "了", "我们", "一", "个", "新", "房间", "。", "爸爸", "笑", "着", "说", "：", "“", "有", "热", "水", "真", "好", "！", "”"]
+        ["今天", "是", "妈妈", "的", "生日", "。", "我", "和", "爸爸", "一起", "做", "了", "很", "多", "菜", "。", "爸爸", "做", "肉", "，", "我", "做", "别的", "。"],
+        ["我们", "做", "了", "两", "个", "小时", "，", "都", "很", "饿", "了", "。"],
+        ["晚上", "六", "点", "，", "妈妈", "回家", "了", "。", "她", "看到", "了", "很", "多", "菜", "，", "非常", "高兴", "。"],
+        ["我们", "一边", "吃", "，", "一边", "笑", "。", "我", "还", "送", "了", "妈妈", "一", "个", "白", "包", "。"],
+        ["妈妈", "说", "：", "“", "这", "是", "我", "最", "好", "的", "生日", "！", "”"]
       ],
       "translations": [
-        "Last month Dad and I went to Shanghai. We stayed somewhere small.",
-        "The room wasn’t big, and it was a bit old. There was a TV in the room.",
-        "In the evening I wanted to wash my hands, but the water was cold!",
-        "I phoned them. They said: “Yes, the hot water is broken.”",
-        "They gave us a new room. Dad smiled and said: “Hot water — how nice!”"
+        "Today is Mum's birthday. Dad and I made lots of dishes together. Dad did the meat, and I did the rest.",
+        "We cooked for two hours and were both really hungry.",
+        "At six in the evening Mum came home. She saw all the dishes and was really happy.",
+        "We laughed as we ate. I also gave Mum a white bag.",
+        "Mum said: “This is my best birthday ever!”"
       ],
-      "names": ["上海"],
-      "new_words": ["房间", "洗", "坏"],
+      "names": [],
+      "new_words": ["生日", "菜", "饿"],
       "glossary": [
-        { "word": "房间", "english": "room" },
-        { "word": "洗", "english": "to wash" },
-        { "word": "坏", "english": "broken" },
-        { "word": "上海", "english": "Shanghai" }
+        { "word": "生日", "english": "birthday" },
+        { "word": "菜", "english": "dish (of food)" },
+        { "word": "饿", "english": "hungry" }
       ]
     }
   ],
   "missions": [
     {
-      "id": "2026-10-18-m1",
+      "id": "2026-10-19-m1",
       "level": 1,
-      "title": "At a fruit stall",
-      "role": "老板",
-      "goal": "Buy apples and bananas, follow prices in 块 and 毛, and round the total down.",
+      "title": "Finding the east exit",
+      "role": "路人",
+      "goal": "Ask a passer-by how to get to the station's east exit, check the turns and thank them.",
       "new_words": [
-        { "word": "毛", "english": "mao (ten cents)" },
-        { "word": "七", "english": "seven" },
-        { "word": "八", "english": "eight" }
+        { "word": "右", "english": "right" },
+        { "word": "东", "english": "east" },
+        { "word": "树", "english": "tree" }
       ],
       "steps": [
         {
-          "partner_zh": "你好，要点什么？",
-          "partner_en": "Hi, what would you like?",
-          "prompt_en": "Ask how much the apples are.",
-          "answers_zh": ["苹果怎么卖？", "苹果多少钱一斤？"],
-          "answers_en": ["How much are the apples?", "How much is a jin of apples?"]
+          "partner_zh": "你好，有什么事吗？",
+          "partner_en": "Hi, can I help?",
+          "prompt_en": "Ask how to get to the east exit.",
+          "answers_zh": ["请问，东口怎么走？", "东出口在哪儿？"],
+          "answers_en": ["Excuse me, how do I get to the east exit?", "Where's the east exit?"]
         },
         {
-          "partner_zh": "三块八毛一斤。",
-          "partner_en": "3.80 a jin.",
-          "prompt_en": "Say you'll have two jin.",
-          "answers_zh": ["我要两斤。", "来两斤吧。"],
-          "answers_en": ["I'll have two jin.", "Two jin, please."]
+          "partner_zh": "往前走，到了大树那里往右。",
+          "partner_en": "Go straight on, and turn right at the big tree.",
+          "prompt_en": "Check: turn right at the big tree?",
+          "answers_zh": ["在大树那里往右，对吗？", "到树那儿往右？"],
+          "answers_en": ["Turn right at the big tree, right?", "Right at the tree?"]
         },
         {
-          "partner_zh": "好的。还要别的吗？",
-          "partner_en": "OK. Anything else?",
-          "prompt_en": "Ask for some bananas too.",
-          "answers_zh": ["还要一些香蕉。", "再要点香蕉。"],
-          "answers_en": ["Some bananas too.", "And some bananas, please."]
+          "partner_zh": "对。然后再往左走一点。",
+          "partner_en": "Yes. Then go left a little.",
+          "prompt_en": "Ask if it's far.",
+          "answers_zh": ["远不远？", "远吗？"],
+          "answers_en": ["Is it far?", "Far?"]
         },
         {
-          "partner_zh": "香蕉七块。一共十四块六毛。",
-          "partner_en": "The bananas are 7. That's 14.60 altogether.",
-          "prompt_en": "Ask if 14 is OK.",
-          "answers_zh": ["十四块可以吗？", "给你十四块，行吗？"],
-          "answers_en": ["Is 14 OK?", "Here's 14 — will that do?"]
-        },
-        {
-          "partner_zh": "行，十四块吧。",
-          "partner_en": "Fine, 14 it is.",
+          "partner_zh": "不远，走五分钟就到了。",
+          "partner_en": "Not far — five minutes' walk.",
           "prompt_en": "Say thank you.",
-          "answers_zh": ["谢谢老板！", "好的，谢谢！"],
+          "answers_zh": ["太好了，谢谢！", "谢谢你！"],
+          "answers_en": ["Great, thanks!", "Thank you!"]
+        }
+      ],
+      "closing_zh": "不客气。",
+      "closing_en": "You're welcome."
+    },
+    {
+      "id": "2026-10-19-m2",
+      "level": 1,
+      "title": "Starving at a restaurant",
+      "role": "服务员",
+      "goal": "Say you're hungry, ask which dishes are good, order and ask for it to be quick.",
+      "new_words": [
+        { "word": "菜", "english": "dish (of food)" },
+        { "word": "饿", "english": "hungry" }
+      ],
+      "steps": [
+        {
+          "partner_zh": "你好，几位？",
+          "partner_en": "Hello, how many?",
+          "prompt_en": "Say just one, and you're really hungry.",
+          "answers_zh": ["一个人，我很饿！", "就我一个，我饿了。"],
+          "answers_en": ["One — and I'm really hungry!", "Just me, I'm starving."]
+        },
+        {
+          "partner_zh": "好的，这是菜单。",
+          "partner_en": "OK, here's the menu.",
+          "prompt_en": "Ask which dishes are good.",
+          "answers_zh": ["什么菜好吃？", "你们什么菜最好？"],
+          "answers_en": ["Which dishes are good?", "What's your best dish?"]
+        },
+        {
+          "partner_zh": "这个鱼和这个鸡都很好。",
+          "partner_en": "This fish and this chicken are both very good.",
+          "prompt_en": "Order the fish and a bowl of rice.",
+          "answers_zh": ["我要这个鱼，还有一碗米饭。", "来一个鱼，一碗米饭。"],
+          "answers_en": ["I'll have the fish and a bowl of rice.", "One fish and a bowl of rice."]
+        },
+        {
+          "partner_zh": "要快一点吗？",
+          "partner_en": "Would you like it quickly?",
+          "prompt_en": "Say yes, please be quick.",
+          "answers_zh": ["对，请快一点。", "是的，越快越好。"],
+          "answers_en": ["Yes, please be quick.", "Yes — the sooner the better."]
+        },
+        {
+          "partner_zh": "好的，马上上菜。",
+          "partner_en": "OK, the food will be right out.",
+          "prompt_en": "Say thank you.",
+          "answers_zh": ["谢谢！", "好的，谢谢你！"],
           "answers_en": ["Thanks!", "OK, thank you!"]
         }
       ],
-      "closing_zh": "不客气，慢走！",
-      "closing_en": "You're welcome, take care!"
-    },
-    {
-      "id": "2026-10-18-m2",
-      "level": 1,
-      "title": "Inviting a friend to dinner",
-      "role": "朋友",
-      "goal": "Phone a friend, invite them to dinner tonight and agree the time and place.",
-      "new_words": [
-        { "word": "吃饭", "english": "to eat a meal" },
-        { "word": "忘记", "english": "to forget" },
-        { "word": "左", "english": "left" }
-      ],
-      "steps": [
-        {
-          "partner_zh": "喂？",
-          "partner_en": "Hello?",
-          "prompt_en": "Ask if they'd like to have dinner together tonight.",
-          "answers_zh": ["今天晚上一起吃饭吧？", "你今天晚上有空吗？一起吃饭吧。"],
-          "answers_en": ["Shall we have dinner together tonight?", "Are you free tonight? Let's have dinner."]
-        },
-        {
-          "partner_zh": "好啊！几点？",
-          "partner_en": "Sure! What time?",
-          "prompt_en": "Say seven.",
-          "answers_zh": ["七点吧。", "晚上七点。"],
-          "answers_en": ["Seven.", "Seven this evening."]
-        },
-        {
-          "partner_zh": "在哪里？",
-          "partner_en": "Where?",
-          "prompt_en": "Say at the restaurant to the left of the metro station.",
-          "answers_zh": ["在地铁站左边的饭馆。", "地铁站左边那家。"],
-          "answers_en": ["At the restaurant to the left of the metro station.", "The one on the left of the metro station."]
-        },
-        {
-          "partner_zh": "好的，别忘记给我发地址。",
-          "partner_en": "OK, don't forget to send me the address.",
-          "prompt_en": "Say OK, you'll send it now.",
-          "answers_zh": ["好，我现在就发。", "没问题，马上发给你。"],
-          "answers_en": ["OK, I'll send it now.", "No problem, sending it right away."]
-        },
-        {
-          "partner_zh": "好，晚上见！",
-          "partner_en": "Great, see you tonight!",
-          "prompt_en": "Say see you at seven.",
-          "answers_zh": ["好，七点见！", "晚上见！"],
-          "answers_en": ["OK, see you at seven!", "See you tonight!"]
-        }
-      ],
-      "closing_zh": "到时候见！",
-      "closing_en": "See you then!"
+      "closing_zh": "不客气，请慢用！",
+      "closing_en": "You're welcome, enjoy your meal!"
     }
   ]
 }
