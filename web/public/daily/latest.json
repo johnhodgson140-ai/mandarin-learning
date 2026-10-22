@@ -1,177 +1,175 @@
 {
-  "date": "2026-10-21",
+  "date": "2026-10-22",
   "level": 1,
   "plan": {
-    "focus_en": "Saying sorry and answering it: 对不起 / 没什么.",
+    "focus_en": "Asking for help (帮忙), and places with 旁边 (next to).",
     "items": [
       { "kind": "cards", "title_en": "Say your cards (10 cards)" },
       { "kind": "dojo", "title_en": "Tone Dojo (5 minutes)" },
-      { "kind": "story", "title_en": "Read and read aloud: 对不起！", "ref": "2026-10-21-s2" },
-      { "kind": "mission", "title_en": "Guided mission: late to meet a friend", "ref": "2026-10-21-m2" }
+      { "kind": "story", "title_en": "Read and read aloud: 明天考试", "ref": "2026-10-22-s1" },
+      { "kind": "mission", "title_en": "Guided mission: asking a classmate for help", "ref": "2026-10-22-m1" }
     ]
   },
   "stories": [
     {
-      "id": "2026-10-21-s1",
+      "id": "2026-10-22-s1",
       "level": 1,
-      "topic": "travel",
-      "title_zh": "和家人去广州",
-      "title_en": "To Guangzhou with the family",
+      "topic": "daily life",
+      "title_zh": "明天考试",
+      "title_en": "Exam tomorrow",
       "paragraphs": [
-        ["这", "个", "月", "，", "我", "和", "家人", "去", "广州", "玩", "。", "广州", "的", "天气", "很", "热", "。"],
-        ["路上", "，", "我们", "坐", "了", "六", "个", "小时", "的", "车", "。"],
-        ["姐姐", "在", "车", "里", "睡觉", "，", "我", "和", "爸爸", "一起", "唱", "歌", "。"],
-        ["到", "了", "广州", "，", "我们", "吃", "了", "很", "多", "菜", "。", "那里", "的", "菜", "我", "都", "很", "喜欢", "。"],
-        ["我", "觉得", "，", "和", "家人", "一起", "玩", "真", "好", "！", "下", "次", "我们", "还", "要", "去", "！"]
+        ["明天", "有", "考试", "，", "我", "还", "没有", "准备", "好", "。"],
+        ["晚上", "，", "我", "的", "同学", "来", "我", "家", "。", "她", "说", "：", "“", "我", "来", "帮忙", "！", "”"],
+        ["我们", "一起", "学", "了", "三", "个", "小时", "。", "我", "不", "明白", "的", "，", "她", "都", "告诉", "我", "。", "她", "非常", "认真", "。"],
+        ["第二", "天", "，", "考试", "不", "难", "！", "我", "都", "会", "写", "。", "我", "很", "高兴", "。"],
+        ["我", "请", "她", "吃饭", "。", "我", "说", "：", "“", "谢谢", "你", "帮", "我", "！", "”"]
       ],
       "translations": [
-        "This month I went to Guangzhou with my family. The weather in Guangzhou was hot.",
-        "We spent six hours in the car on the way.",
-        "My sister slept in the car, and Dad and I sang songs together.",
-        "When we got to Guangzhou, we ate lots of dishes. I liked all the food there.",
-        "I think going places with your family is great! We want to go again next time!"
+        "There's an exam tomorrow, and I'm not ready yet.",
+        "In the evening my classmate came over. She said: “I’ll help!”",
+        "We studied together for three hours. Whatever I didn’t understand, she explained. She was really thorough.",
+        "The next day, the exam wasn't hard! I could answer everything. I was so happy.",
+        "I took her out for a meal. I said: “Thanks for helping me!”"
       ],
-      "names": ["广州"],
-      "new_words": ["家人", "天气", "路上"],
+      "names": [],
+      "new_words": ["考试", "同学", "帮忙"],
       "glossary": [
-        { "word": "家人", "english": "family" },
-        { "word": "天气", "english": "weather" },
-        { "word": "路上", "english": "on the way" },
-        { "word": "广州", "english": "Guangzhou" }
+        { "word": "考试", "english": "exam" },
+        { "word": "同学", "english": "classmate" },
+        { "word": "帮忙", "english": "to help" }
       ]
     },
     {
-      "id": "2026-10-21-s2",
+      "id": "2026-10-22-s2",
       "level": 1,
-      "topic": "anime",
-      "title_zh": "对不起！",
-      "title_en": "Sorry!",
+      "topic": "football",
+      "title_zh": "我跑起来很慢",
+      "title_en": "I'm slow",
       "paragraphs": [
-        ["今天", "，", "我", "和", "我", "哥", "去", "看", "一", "个", "日本", "电影", "。"],
-        ["电影", "是", "七", "点", "的", "，", "我们", "七", "点", "十", "分", "到", "。", "我们", "马上", "进去", "。"],
-        ["我", "走", "错", "了", "，", "坐", "在", "了", "一", "个", "女人", "的", "地方", "。"],
-        ["我", "说", "：", "“", "对不起", "！", "”", "她", "笑", "了", "笑", "，", "说", "：", "“", "没什么", "。", "”", "我", "马上", "站", "起来", "，", "找到", "了", "我", "的", "地方", "。"],
-        ["电影", "非常", "好", "，", "我们", "都", "很", "喜欢", "。"]
+        ["我", "常", "和", "朋友", "们", "玩", "球", "。", "我", "跑", "起来", "很", "慢", "，", "有时候", "一", "个", "球", "也", "进", "不", "了", "。"],
+        ["我", "的", "一", "个", "朋友", "跑", "起来", "非常", "快", "。"],
+        ["今天", "，", "他", "站", "在", "我", "旁边", "，", "说", "：", "“", "我", "来", "教", "你", "！", "”"],
+        ["他", "教", "了", "我", "一", "个", "小时", "。", "最后", "，", "我", "进", "了", "一", "个", "球", "！"],
+        ["朋友", "们", "都", "笑", "了", "，", "我", "也", "很", "高兴", "。", "下", "次", "我", "还", "要", "跟", "他", "学", "！"]
       ],
       "translations": [
-        "Today my brother and I went to see a Japanese film.",
-        "The film was at seven, and we arrived at ten past. We went straight in.",
-        "I went the wrong way and sat in a woman's seat.",
-        "I said: “Sorry!” She smiled and said: “No problem.” I stood up straight away and found my seat.",
-        "The film was great — we both loved it."
+        "I often play football with my friends. I'm slow, and sometimes I can't score a single goal.",
+        "One of my friends is really fast.",
+        "Today he stood next to me and said: “Let me teach you!”",
+        "He taught me for an hour. In the end, I scored a goal!",
+        "My friends all laughed, and I was really happy too. Next time I want to learn from him again!"
       ],
-      "names": ["日本"],
-      "new_words": ["进去", "对不起", "没什么"],
+      "names": [],
+      "new_words": ["慢", "有时候", "旁边"],
       "glossary": [
-        { "word": "进去", "english": "to go in" },
-        { "word": "对不起", "english": "sorry" },
-        { "word": "没什么", "english": "it's nothing; no problem" },
-        { "word": "日本", "english": "Japan" }
+        { "word": "慢", "english": "slow" },
+        { "word": "有时候", "english": "sometimes" },
+        { "word": "旁边", "english": "next to; beside" }
       ]
     }
   ],
   "missions": [
     {
-      "id": "2026-10-21-m1",
+      "id": "2026-10-22-m1",
       "level": 1,
-      "title": "Planning a day trip",
-      "role": "前台",
-      "goal": "Ask hotel reception about tomorrow's weather and how to get to the mountain in the south.",
+      "title": "Asking a classmate for help",
+      "role": "同学",
+      "goal": "Ask a classmate to help with today's class, find out when the exam is and plan to study together.",
       "new_words": [
-        { "word": "天气", "english": "weather" },
-        { "word": "南", "english": "south" },
-        { "word": "最好", "english": "it's best to" }
+        { "word": "同学", "english": "classmate" },
+        { "word": "帮忙", "english": "to help" },
+        { "word": "考试", "english": "exam" }
       ],
       "steps": [
         {
-          "partner_zh": "你好，有什么可以帮您？",
-          "partner_en": "Hello, how can I help?",
-          "prompt_en": "Ask what the weather will be like tomorrow.",
-          "answers_zh": ["明天天气怎么样？", "请问明天天气好吗？"],
-          "answers_en": ["What will the weather be like tomorrow?", "Excuse me, will the weather be good tomorrow?"]
+          "partner_zh": "你好！有什么事？",
+          "partner_en": "Hi! What's up?",
+          "prompt_en": "Ask if they can help you.",
+          "answers_zh": ["你能帮个忙吗？", "可以帮我一下吗？"],
+          "answers_en": ["Could you do me a favour?", "Can you help me?"]
         },
         {
-          "partner_zh": "明天天气很好，不冷也不热。",
-          "partner_en": "The weather will be lovely tomorrow — not cold, not hot.",
-          "prompt_en": "Say you want to go to the mountain in the south.",
-          "answers_zh": ["我想去南边的山。", "我想去南山玩。"],
-          "answers_en": ["I'd like to go to the mountain in the south.", "I want to go to Nanshan."]
+          "partner_zh": "可以啊，怎么了？",
+          "partner_en": "Sure, what's wrong?",
+          "prompt_en": "Say you didn't really understand today's class.",
+          "answers_zh": ["今天的课我不太明白。", "今天的课我听不懂。"],
+          "answers_en": ["I didn't really understand today's class.", "I couldn't follow today's class."]
         },
         {
-          "partner_zh": "那最好早上去，下午人很多。",
-          "partner_en": "Then it's best to go in the morning — it's busy in the afternoon.",
-          "prompt_en": "Ask how to get there.",
-          "answers_zh": ["怎么去？", "坐什么车去？"],
-          "answers_en": ["How do I get there?", "What should I take to get there?"]
+          "partner_zh": "没问题，我给你说说。",
+          "partner_en": "No problem, I'll go through it with you.",
+          "prompt_en": "Ask when the exam is.",
+          "answers_zh": ["考试是什么时候？", "什么时候考试？"],
+          "answers_en": ["When's the exam?", "When is the exam?"]
         },
         {
-          "partner_zh": "坐地铁到南站，再坐车。",
-          "partner_en": "Take the metro to South Station, then take a bus.",
-          "prompt_en": "Ask how long the journey takes.",
-          "answers_zh": ["路上要多长时间？", "要多长时间？"],
-          "answers_en": ["How long is the journey?", "How long does it take?"]
+          "partner_zh": "下个星期一。",
+          "partner_en": "Next Monday.",
+          "prompt_en": "Suggest studying together tomorrow.",
+          "answers_zh": ["明天我们一起学习吧？", "明天一起学，好吗？"],
+          "answers_en": ["Shall we study together tomorrow?", "Let's study together tomorrow, OK?"]
         },
         {
-          "partner_zh": "一个小时左右。",
-          "partner_en": "About an hour.",
+          "partner_zh": "好啊，明天下午见。",
+          "partner_en": "Sure, see you tomorrow afternoon.",
           "prompt_en": "Say thank you.",
-          "answers_zh": ["好的，谢谢！", "谢谢你！"],
-          "answers_en": ["OK, thanks!", "Thank you!"]
+          "answers_zh": ["太好了，谢谢你！", "谢谢，明天见！"],
+          "answers_en": ["Great, thank you!", "Thanks, see you tomorrow!"]
         }
       ],
-      "closing_zh": "不客气，祝您玩得开心！",
-      "closing_en": "You're welcome — have fun!"
+      "closing_zh": "不客气！",
+      "closing_en": "You're welcome!"
     },
     {
-      "id": "2026-10-21-m2",
+      "id": "2026-10-22-m2",
       "level": 1,
-      "title": "Late to meet a friend",
-      "role": "朋友",
-      "goal": "Apologise for being late, explain why, go into the restaurant and offer to pay.",
+      "title": "Phoning a shop for directions",
+      "role": "店员",
+      "goal": "Call a bookshop, find out where it is and when it closes, and say when you'll arrive.",
       "new_words": [
-        { "word": "对不起", "english": "sorry" },
-        { "word": "路上", "english": "on the way" },
-        { "word": "没什么", "english": "it's nothing; never mind" }
+        { "word": "旁边", "english": "next to" },
+        { "word": "北", "english": "north" },
+        { "word": "进来", "english": "to come in" }
       ],
       "steps": [
         {
-          "partner_zh": "你怎么现在才来？",
-          "partner_en": "Why are you only just getting here?",
-          "prompt_en": "Say sorry, you're late.",
-          "answers_zh": ["对不起，我来晚了。", "不好意思，我晚了。"],
-          "answers_en": ["Sorry, I'm late.", "Sorry I'm late."]
+          "partner_zh": "你好，这里是小王书店。",
+          "partner_en": "Hello, Xiao Wang's Bookshop.",
+          "prompt_en": "Ask where the shop is.",
+          "answers_zh": ["请问你们在哪儿？", "你们的店在哪里？"],
+          "answers_en": ["Excuse me, where are you?", "Where's your shop?"]
         },
         {
-          "partner_zh": "怎么了？",
-          "partner_en": "What happened?",
-          "prompt_en": "Say there was too much traffic on the way.",
-          "answers_zh": ["路上车太多了。", "路上堵车了。"],
-          "answers_en": ["There was too much traffic on the way.", "I got stuck in traffic."]
+          "partner_zh": "我们在银行旁边。",
+          "partner_en": "We're next to the bank.",
+          "prompt_en": "Ask if it's the bank on the north side.",
+          "answers_zh": ["是北边那个银行吗？", "北边的银行？"],
+          "answers_en": ["Is it the bank on the north side?", "The north-side bank?"]
         },
         {
-          "partner_zh": "没什么，我也刚到。",
-          "partner_en": "Never mind, I've only just arrived too.",
-          "prompt_en": "Suggest going in.",
-          "answers_zh": ["我们进去吧。", "走，进去吧。"],
-          "answers_en": ["Let's go in.", "Come on, let's go in."]
+          "partner_zh": "对，北边那个。",
+          "partner_en": "Yes, the north one.",
+          "prompt_en": "Ask what time they close.",
+          "answers_zh": ["你们几点关门？", "晚上几点关门？"],
+          "answers_en": ["What time do you close?", "What time do you close tonight?"]
         },
         {
-          "partner_zh": "好。你想吃什么？",
-          "partner_en": "OK. What do you want to eat?",
-          "prompt_en": "Say you're hungry and anything is fine.",
-          "answers_zh": ["我很饿，什么都行。", "随便，我饿了。"],
-          "answers_en": ["I'm starving — anything's fine.", "Whatever, I'm hungry."]
+          "partner_zh": "九点关门。",
+          "partner_en": "We close at nine.",
+          "prompt_en": "Say you'll come at eight.",
+          "answers_zh": ["我八点去。", "好，我八点到。"],
+          "answers_en": ["I'll come at eight.", "OK, I'll be there at eight."]
         },
         {
-          "partner_zh": "那我们点几个菜吧。",
-          "partner_en": "Then let's order a few dishes.",
-          "prompt_en": "Say OK — it's your treat today.",
-          "answers_zh": ["好，今天我请你。", "好的，今天我来请。"],
-          "answers_en": ["OK, my treat today.", "Sure, today's on me."]
+          "partner_zh": "好的，到了直接进来就行。",
+          "partner_en": "OK, just come straight in when you get here.",
+          "prompt_en": "Say OK, thanks.",
+          "answers_zh": ["好的，谢谢！", "好，一会儿见。"],
+          "answers_en": ["OK, thanks!", "OK, see you soon."]
         }
       ],
-      "closing_zh": "太好了，谢谢！",
-      "closing_en": "Great, thanks!"
+      "closing_zh": "好，等你！",
+      "closing_en": "Great, see you then!"
     }
   ]
 }
