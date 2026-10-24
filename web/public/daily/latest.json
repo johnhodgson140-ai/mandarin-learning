@@ -1,175 +1,174 @@
 {
-  "date": "2026-10-23",
+  "date": "2026-10-24",
   "level": 1,
   "plan": {
-    "focus_en": "好看 for “nice-looking”, and arranging when and where to meet (见面, 中间).",
+    "focus_en": "了 for a change of state (生气了, 不生气了), and time words 上午 and 一会儿.",
     "items": [
       { "kind": "cards", "title_en": "Say your cards (10 cards)" },
       { "kind": "dojo", "title_en": "Tone Dojo (5 minutes)" },
-      { "kind": "story", "title_en": "Read and read aloud: 老衣服的地方", "ref": "2026-10-23-s1" },
-      { "kind": "mission", "title_en": "Guided mission: arranging to meet", "ref": "2026-10-23-m1" }
+      { "kind": "story", "title_en": "Read and read aloud: 妹妹生气了", "ref": "2026-10-24-s1" },
+      { "kind": "mission", "title_en": "Guided mission: an annoyed flatmate", "ref": "2026-10-24-m2" }
     ]
   },
   "stories": [
     {
-      "id": "2026-10-23-s1",
+      "id": "2026-10-24-s1",
       "level": 1,
-      "topic": "archive fashion",
-      "title_zh": "老衣服的地方",
-      "title_en": "The vintage place",
+      "topic": "daily life",
+      "title_zh": "妹妹生气了",
+      "title_en": "My little sister got cross",
       "paragraphs": [
-        ["这", "个", "星期", "，", "我", "去", "了", "一", "个", "买", "老", "衣服", "的", "地方", "。"],
-        ["那里", "人", "很", "多", "。", "有的", "衣服", "非常", "好看", "，", "有的", "很", "老", "。"],
-        ["我", "看到", "一", "个", "女生", "，", "她", "也", "很", "喜欢", "老", "衣服", "。", "她", "帮", "我", "找", "了", "一些", "。"],
-        ["我", "试", "了", "试", "，", "都", "很", "好", "。", "最后", "，", "我", "买", "了", "一", "个", "包", "和", "一些", "衣服", "。"],
-        ["她", "说", "：", "“", "下", "次", "我们", "一起", "来", "吧", "！", "”"]
+        ["今天", "，", "我", "和", "妹妹", "在", "家", "。", "她", "五", "岁", "。", "我", "在", "看", "书", "，", "她", "在", "玩", "。"],
+        ["她", "跑", "来", "跑", "去", "，", "杯", "里", "的", "水", "都", "到", "了", "地上", "。"],
+        ["我", "说", "：", "“", "别", "跑", "了", "！", "”", "她", "生气", "了", "，", "不", "跟", "我", "说话", "。"],
+        ["我", "就", "给", "她", "唱", "歌", "。", "我", "唱", "了", "一", "个", "她", "最", "喜欢", "的", "歌", "。", "她", "也", "跟", "我", "一起", "唱", "。"],
+        ["她", "笑", "了", "，", "不", "生气", "了", "。", "我", "也", "笑", "了", "。"]
       ],
       "translations": [
-        "This week I went to a place that sells vintage clothes.",
-        "It was really busy. Some of the clothes were gorgeous, and some were really old.",
-        "I saw a girl who also loves vintage clothes. She helped me find some.",
-        "I tried them on and they were all great. In the end I bought a bag and some clothes.",
-        "She said: “Let’s come together next time!”"
+        "Today my little sister and I were at home. She's five. I was reading and she was playing.",
+        "She was running all over the place, and the water from the cup ended up on the floor.",
+        "I said: “Stop running!” She got cross and stopped talking to me.",
+        "So I sang to her. I sang her favourite song. She sang along with me.",
+        "She laughed and wasn’t cross any more. I laughed too."
       ],
       "names": [],
-      "new_words": ["星期", "好看", "女生"],
+      "new_words": ["妹妹", "地上", "生气"],
       "glossary": [
-        { "word": "星期", "english": "week" },
-        { "word": "好看", "english": "good-looking; nice" },
-        { "word": "女生", "english": "girl; young woman" }
+        { "word": "妹妹", "english": "younger sister" },
+        { "word": "地上", "english": "on the floor; on the ground" },
+        { "word": "生气", "english": "to get angry; cross" }
       ]
     },
     {
-      "id": "2026-10-23-s2",
+      "id": "2026-10-24-s2",
       "level": 1,
-      "topic": "travel",
-      "title_zh": "雨天喝茶",
-      "title_en": "Tea on a rainy day",
+      "topic": "business & finance",
+      "title_zh": "上午的见面",
+      "title_en": "A morning meeting",
       "paragraphs": [
-        ["上", "个", "月", "，", "我", "在", "北京", "。", "有", "一", "天", "，", "雨", "很", "大", "。"],
-        ["我", "不", "想", "出去", "，", "就", "在", "一", "个", "小", "地方", "喝", "茶", "。"],
-        ["那里", "的", "老", "先生", "跟", "我", "说", "了", "很", "多", "话", "。", "他", "教", "我", "怎么", "喝", "茶", "，", "我", "给", "他", "说", "了", "说", "英国", "。"],
-        ["雨", "不", "大", "了", "，", "我", "也", "不", "想", "走", "了", "。"],
-        ["我", "觉得", "，", "有", "雨", "的", "天", "也", "很", "好", "。", "下", "次", "去", "北京", "，", "我", "还", "要", "去", "那里", "。"]
+        ["今天", "上午", "十", "点", "，", "我", "要", "跟", "一", "个", "先生", "见面", "，", "说", "钱", "的", "事", "。"],
+        ["我", "在", "车上", "打开", "电脑", "，", "准备", "了", "一会儿", "。"],
+        ["路上", "车", "很", "多", "，", "车", "很", "慢", "。", "我", "想", "：", "我", "会", "不", "会", "晚", "？"],
+        ["最后", "，", "我", "九", "点", "五十", "到", "了", "。", "那", "个", "先生", "还", "没", "来", "！"],
+        ["我们", "说", "了", "一", "个", "小时", "。", "他", "说", "：", "“", "好", "，", "我", "明白", "了", "。", "我们", "一起", "做", "吧", "！", "”", "我", "很", "高兴", "。"]
       ],
       "translations": [
-        "Last month I was in Beijing. One day it rained really hard.",
-        "I didn't want to go out, so I drank tea in a little place.",
-        "The old man there talked to me a lot. He taught me how to drink tea, and I told him a bit about Britain.",
-        "When the rain eased off, I didn't want to leave.",
-        "I think rainy days can be great too. Next time I go to Beijing, I want to go back there."
+        "At ten this morning I had to meet a man to talk about money.",
+        "I opened my laptop on the bus and prepared for a while.",
+        "There was lots of traffic on the way, and the bus was slow. I thought: will I be late?",
+        "In the end I arrived at ten to ten. He hadn't even arrived yet!",
+        "We talked for an hour. He said: “OK, I understand. Let’s do it together!” I was really happy."
       ],
-      "names": ["北京", "英国"],
-      "new_words": ["雨", "茶"],
+      "names": [],
+      "new_words": ["上午", "车上", "一会儿"],
       "glossary": [
-        { "word": "雨", "english": "rain" },
-        { "word": "茶", "english": "tea" },
-        { "word": "北京", "english": "Beijing" },
-        { "word": "英国", "english": "Britain" }
+        { "word": "上午", "english": "morning (before noon)" },
+        { "word": "车上", "english": "on the bus; in the car" },
+        { "word": "一会儿", "english": "a little while" }
       ]
     }
   ],
   "missions": [
     {
-      "id": "2026-10-23-m1",
+      "id": "2026-10-24-m1",
       "level": 1,
-      "title": "Arranging to meet",
-      "role": "朋友",
-      "goal": "Agree where and when to meet a friend tomorrow, and what to do if it rains.",
+      "title": "Taking the bus to the station",
+      "role": "司机",
+      "goal": "Check the bus goes to the train station, ask how long it takes and ask the driver to tell you when to get off.",
       "new_words": [
-        { "word": "见面", "english": "to meet" },
-        { "word": "地点", "english": "place" },
-        { "word": "中间", "english": "in the middle; between" }
+        { "word": "车上", "english": "on the bus" },
+        { "word": "九", "english": "nine" },
+        { "word": "一会儿", "english": "a little while" }
       ],
       "steps": [
         {
-          "partner_zh": "我们明天见面吧？",
-          "partner_en": "Shall we meet up tomorrow?",
-          "prompt_en": "Say OK, and ask where.",
-          "answers_zh": ["好啊，在哪儿见面？", "好，什么地点？"],
-          "answers_en": ["Sure, where shall we meet?", "OK, where?"]
+          "partner_zh": "车上人很多，往里走。",
+          "partner_en": "It's crowded on the bus — move down inside.",
+          "prompt_en": "Ask if this bus goes to the train station.",
+          "answers_zh": ["请问，这车去火车站吗？", "到火车站吗？"],
+          "answers_en": ["Excuse me, does this bus go to the train station?", "Does it go to the train station?"]
         },
         {
-          "partner_zh": "你家和我家中间有一个咖啡店。",
-          "partner_en": "There's a café halfway between your place and mine.",
-          "prompt_en": "Say great, and ask what time.",
-          "answers_zh": ["太好了，几点见？", "好，几点？"],
-          "answers_en": ["Great, what time?", "OK, what time?"]
+          "partner_zh": "去，坐九站就到了。",
+          "partner_en": "Yes, it's nine stops.",
+          "prompt_en": "Ask how long it takes.",
+          "answers_zh": ["要多长时间？", "要多久？"],
+          "answers_en": ["How long does it take?", "How long?"]
         },
         {
-          "partner_zh": "下午三点，怎么样？",
-          "partner_en": "How about three in the afternoon?",
-          "prompt_en": "Say three is fine.",
-          "answers_zh": ["三点可以。", "好，三点见。"],
-          "answers_en": ["Three works.", "OK, see you at three."]
+          "partner_zh": "半个小时吧。",
+          "partner_en": "About half an hour.",
+          "prompt_en": "Ask the driver to tell you when you get there.",
+          "answers_zh": ["到了能告诉我吗？", "到了叫我一下，好吗？"],
+          "answers_en": ["Could you tell me when we get there?", "Could you give me a shout when we arrive?"]
         },
         {
-          "partner_zh": "要是下雨呢？",
-          "partner_en": "What if it rains?",
-          "prompt_en": "Say it doesn't matter, you'll bring an umbrella.",
-          "answers_zh": ["没关系，我带伞。", "下雨也没关系。"],
-          "answers_en": ["No problem, I'll bring an umbrella.", "Rain's fine too."]
+          "partner_zh": "好，你坐一会儿，到了我叫你。",
+          "partner_en": "OK, have a seat for a bit — I'll call you when we're there.",
+          "prompt_en": "Say thank you.",
+          "answers_zh": ["谢谢师傅！", "好的，谢谢！"],
+          "answers_en": ["Thanks!", "OK, thank you!"]
         },
         {
-          "partner_zh": "好，明天见！",
-          "partner_en": "Great, see you tomorrow!",
-          "prompt_en": "Say see you tomorrow afternoon.",
-          "answers_zh": ["好，明天下午见！", "明天见！"],
-          "answers_en": ["OK, see you tomorrow afternoon!", "See you tomorrow!"]
+          "partner_zh": "火车站到了！",
+          "partner_en": "Train station!",
+          "prompt_en": "Say thanks and goodbye.",
+          "answers_zh": ["谢谢，再见！", "好的，谢谢您！"],
+          "answers_en": ["Thanks, bye!", "OK, thank you!"]
         }
       ],
-      "closing_zh": "拜拜！",
-      "closing_en": "Bye!"
+      "closing_zh": "慢走！",
+      "closing_en": "Take care!"
     },
     {
-      "id": "2026-10-23-m2",
+      "id": "2026-10-24-m2",
       "level": 1,
-      "title": "At a teahouse",
-      "role": "服务员",
-      "goal": "Come in out of the rain, order a small pot of green tea and ask where the toilet is.",
+      "title": "An annoyed flatmate",
+      "role": "室友",
+      "goal": "Apologise to your flatmate for the water on the floor, calm them down and offer to cook dinner.",
       "new_words": [
-        { "word": "茶", "english": "tea" },
-        { "word": "雨", "english": "rain" }
+        { "word": "生气", "english": "angry; cross" },
+        { "word": "地上", "english": "on the floor" }
       ],
       "steps": [
         {
-          "partner_zh": "欢迎！外面下雨了，快进来坐吧。",
-          "partner_en": "Welcome! It's raining outside — come in and sit down.",
-          "prompt_en": "Say thanks, and ask what teas they have.",
-          "answers_zh": ["谢谢。你们有什么茶？", "有什么茶？"],
-          "answers_en": ["Thanks. What teas do you have?", "What tea is there?"]
+          "partner_zh": "你看，地上都是水！",
+          "partner_en": "Look, there's water all over the floor!",
+          "prompt_en": "Say sorry, you'll clean it up now.",
+          "answers_zh": ["对不起，我马上弄干净。", "不好意思，我现在就擦。"],
+          "answers_en": ["Sorry, I'll clean it up straight away.", "Sorry, I'll wipe it up now."]
         },
         {
-          "partner_zh": "有绿茶、红茶和花茶。",
-          "partner_en": "We have green tea, black tea and flower tea.",
-          "prompt_en": "Say you'd like green tea.",
-          "answers_zh": ["我要绿茶。", "来一壶绿茶。"],
-          "answers_en": ["Green tea, please.", "A pot of green tea, please."]
+          "partner_zh": "我有点生气。",
+          "partner_en": "I'm a bit annoyed.",
+          "prompt_en": "Say don't be cross, it won't happen again.",
+          "answers_zh": ["别生气，下次不会了。", "别生气了，我下次注意。"],
+          "answers_en": ["Don't be cross — it won't happen again.", "Don't be annoyed, I'll be careful next time."]
         },
         {
-          "partner_zh": "要大壶还是小壶？",
-          "partner_en": "A big pot or a small pot?",
-          "prompt_en": "Say a small one.",
-          "answers_zh": ["小壶。", "小的就行。"],
-          "answers_en": ["Small.", "A small one is fine."]
+          "partner_zh": "好吧。你晚上做饭吗？",
+          "partner_en": "Fine. Are you cooking tonight?",
+          "prompt_en": "Say yes, and you'll cook for them too.",
+          "answers_zh": ["做，我们一起吃吧。", "做，我给你也做一份。"],
+          "answers_en": ["Yes — let's eat together.", "Yes, I'll make some for you too."]
         },
         {
-          "partner_zh": "好的。还要吃点什么吗？",
-          "partner_en": "OK. Anything to eat?",
-          "prompt_en": "Say no thanks, just tea.",
-          "answers_zh": ["不用了，谢谢。", "就要茶。"],
-          "answers_en": ["No thanks.", "Just the tea."]
+          "partner_zh": "太好了！几点吃？",
+          "partner_en": "Great! What time?",
+          "prompt_en": "Say seven.",
+          "answers_zh": ["七点吧。", "晚上七点。"],
+          "answers_en": ["Seven.", "Seven this evening."]
         },
         {
-          "partner_zh": "好，请稍等。",
-          "partner_en": "OK, just a moment.",
-          "prompt_en": "Ask where the toilet is.",
-          "answers_zh": ["请问，洗手间在哪儿？", "厕所在哪里？"],
-          "answers_en": ["Excuse me, where's the toilet?", "Where's the loo?"]
+          "partner_zh": "好，那我不生气了。",
+          "partner_en": "OK, then I'm not cross any more.",
+          "prompt_en": "Say great!",
+          "answers_zh": ["太好了！", "那就好！"],
+          "answers_en": ["Great!", "Glad to hear it!"]
         }
       ],
-      "closing_zh": "在右边。",
-      "closing_en": "On the right."
+      "closing_zh": "哈哈，七点见！",
+      "closing_en": "Ha, see you at seven!"
     }
   ]
 }
