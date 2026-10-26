@@ -1,175 +1,173 @@
 {
-  "date": "2026-10-25",
+  "date": "2026-10-26",
   "level": 1,
   "plan": {
-    "focus_en": "太 + adjective + 了 (太贵了), and 下次 for “next time”.",
+    "focus_en": "一点也不 + adjective for “not … at all” (一点也不干净).",
     "items": [
       { "kind": "cards", "title_en": "Say your cards (10 cards)" },
       { "kind": "dojo", "title_en": "Tone Dojo (5 minutes)" },
-      { "kind": "story", "title_en": "Read and read aloud: 票太贵了", "ref": "2026-10-25-s2" },
-      { "kind": "mission", "title_en": "Guided mission: picking a friend up at the airport", "ref": "2026-10-25-m1" }
+      { "kind": "story", "title_en": "Read and read aloud: 弟弟的手", "ref": "2026-10-26-s1" },
+      { "kind": "mission", "title_en": "Guided mission: a restaurant you found online", "ref": "2026-10-26-m1" }
     ]
   },
   "stories": [
     {
-      "id": "2026-10-25-s1",
+      "id": "2026-10-26-s1",
       "level": 1,
-      "topic": "anime",
-      "title_zh": "书里的老人",
-      "title_en": "The old man in the book",
+      "topic": "daily life",
+      "title_zh": "弟弟的手",
+      "title_en": "My little brother's hands",
       "paragraphs": [
-        ["我", "在", "读", "一", "本", "日本", "的", "书", "。", "这", "本", "书", "也", "有", "电影", "。"],
-        ["书", "有", "二百", "页", "，", "我", "一", "天", "读", "二十", "页", "。"],
-        ["书", "里", "有", "一", "个", "老人", "。", "他", "说", "的", "话", "，", "我", "都", "记住", "了", "。"],
-        ["他", "说", "：", "“", "你", "想", "去", "的", "地方", "，", "慢", "一", "点", "也", "能", "到", "。", "”"],
-        ["我", "很", "喜欢", "这", "个", "老人", "说", "的", "话", "。", "我", "还", "想", "看", "这", "本", "书", "的", "电影", "。"]
+        ["今天", "爸爸", "妈妈", "出去", "了", "，", "我", "和", "弟弟", "在家", "。"],
+        ["他", "八", "岁", "。", "他", "很", "喜欢", "玩", "，", "不", "喜欢", "洗", "手", "。"],
+        ["吃饭", "前", "，", "我", "说", "：", "“", "先", "洗", "手", "！", "”", "他", "说", "：", "“", "我", "的", "手", "很", "干净", "！", "”"],
+        ["我", "看", "了", "看", "，", "他", "的", "手", "一", "点", "也", "不", "干净", "。", "最后", "，", "他", "还是", "去", "洗", "了", "。"],
+        ["晚上", "妈妈", "回家", "，", "弟弟", "说", "：", "“", "今天", "我", "洗", "了", "很", "多", "次", "手", "！", "”", "妈妈", "笑", "了", "。"]
       ],
       "translations": [
-        "I'm reading a Japanese book. There's a film of it too.",
-        "The book has two hundred pages, and I read twenty pages a day.",
-        "There's an old man in the book. I've memorised everything he says.",
-        "He says: “The place you want to go — you can still get there if you go a bit slower.”",
-        "I really like what the old man says. I want to watch the film of this book too."
+        "Today Mum and Dad went out, and my little brother and I stayed at home.",
+        "He's eight. He loves playing and hates washing his hands.",
+        "Before we ate, I said: “Wash your hands first!” He said: “My hands are clean!”",
+        "I had a look — his hands weren't clean at all. In the end he went and washed them.",
+        "When Mum got home in the evening, my brother said: “I washed my hands loads of times today!” Mum laughed."
       ],
-      "names": ["日本"],
-      "new_words": ["页", "老人", "记住"],
+      "names": [],
+      "new_words": ["在家", "弟弟", "干净"],
       "glossary": [
-        { "word": "页", "english": "page" },
-        { "word": "老人", "english": "old person" },
-        { "word": "记住", "english": "to remember; to memorise" },
-        { "word": "日本", "english": "Japan" }
+        { "word": "在家", "english": "to be at home" },
+        { "word": "弟弟", "english": "younger brother" },
+        { "word": "干净", "english": "clean" }
       ]
     },
     {
-      "id": "2026-10-25-s2",
+      "id": "2026-10-26-s2",
       "level": 1,
-      "topic": "football",
-      "title_zh": "票太贵了",
-      "title_en": "The tickets are too expensive",
+      "topic": "archive fashion",
+      "title_zh": "网上的老衣服",
+      "title_en": "Old clothes online",
       "paragraphs": [
-        ["曼联", "下", "个", "月", "来", "我们", "这里", "。", "我", "很", "想", "去", "看", "。", "曼联", "是", "我", "最", "爱", "的", "。"],
-        ["我", "在", "手机", "上", "找", "票", "。", "票", "要", "一千", "块", "！", "我", "的", "钱", "不", "多", "，", "太", "贵", "了", "！"],
-        ["朋友", "说", "：", "“", "我们", "去", "我", "家", "看", "电视", "吧", "。", "”", "我", "说", "：", "“", "好", "！", "”"],
-        ["我们", "一边", "吃", "肉", "，", "一边", "看", "球", "。", "这", "也", "很", "好", "！"],
-        ["下次", "，", "我", "要", "早", "一", "点", "买", "票", "。"]
+        ["我", "常", "在", "网上", "看", "老", "衣服", "。", "昨天", "，", "我", "看到", "了", "一些", "很", "好看", "的", "衣服", "。"],
+        ["这些", "衣服", "是", "三十", "年", "前", "的", "。", "我", "想", "了", "一会儿", "，", "就", "买", "了", "。"],
+        ["今天", "，", "衣服", "到", "了", "。", "我", "打开", "一", "看", "，", "有些", "大", "。"],
+        ["我", "有些", "不", "高兴", "。", "我", "哥", "穿", "了", "穿", "，", "说", "：", "“", "很", "好", "！", "送", "我", "吧", "！", "”"],
+        ["我", "笑", "了", "：", "“", "好", "，", "下次", "我", "买", "小", "一", "点", "的", "。", "”"]
       ],
       "translations": [
-        "Man United are coming here next month. I really want to go and watch. They’re my favourite.",
-        "I looked for tickets on my phone. A ticket costs a thousand kuai! I don't have much money — too expensive!",
-        "My friend said: “Let’s watch it on TV at my place.” I said: “OK!”",
-        "We ate meat while we watched the football. That was great too!",
-        "Next time I'm going to buy tickets earlier."
+        "I often look at vintage clothes online. Yesterday I saw some really nice ones.",
+        "The clothes are thirty years old. I thought about it for a bit, then bought them.",
+        "Today the clothes arrived. I opened the parcel — they were a bit big.",
+        "I was a bit disappointed. My brother tried them on and said: “They’re great! Give them to me!”",
+        "I laughed: “Fine — next time I’ll buy a smaller size.”"
       ],
-      "names": ["曼联"],
-      "new_words": ["贵", "下次"],
+      "names": [],
+      "new_words": ["网上", "下次"],
       "glossary": [
-        { "word": "贵", "english": "expensive" },
-        { "word": "下次", "english": "next time" },
-        { "word": "曼联", "english": "Manchester United" }
+        { "word": "网上", "english": "online" },
+        { "word": "下次", "english": "next time" }
       ]
     }
   ],
   "missions": [
     {
-      "id": "2026-10-25-m1",
+      "id": "2026-10-26-m1",
       "level": 1,
-      "title": "Picking a friend up at the airport",
-      "role": "朋友",
-      "goal": "Your friend has landed: say you're on the way, how long you'll be and where to wait.",
+      "title": "A restaurant you found online",
+      "role": "服务员",
+      "goal": "Say you found the restaurant online, ask what's good, order and say how it tastes.",
       "new_words": [
-        { "word": "机场", "english": "airport" },
-        { "word": "九", "english": "nine" },
-        { "word": "一会儿", "english": "in a moment" }
+        { "word": "网上", "english": "online" },
+        { "word": "好吃", "english": "delicious" }
       ],
       "steps": [
         {
-          "partner_zh": "喂，我到机场了！",
-          "partner_en": "Hi, I've landed at the airport!",
-          "prompt_en": "Say great, you're on your way.",
-          "answers_zh": ["太好了，我在路上了。", "好，我马上到。"],
-          "answers_en": ["Great, I'm on my way.", "OK, I'll be right there."]
+          "partner_zh": "你好，第一次来吗？",
+          "partner_en": "Hello, is this your first time here?",
+          "prompt_en": "Say yes, you saw it online.",
+          "answers_zh": ["是的，我在网上看到的。", "对，网上说这里很好。"],
+          "answers_en": ["Yes, I saw it online.", "Yes — people online say it's great."]
         },
         {
-          "partner_zh": "你多长时间能到？",
-          "partner_en": "How long will you be?",
-          "prompt_en": "Say about twenty minutes.",
-          "answers_zh": ["二十分钟左右。", "大概二十分钟。"],
-          "answers_en": ["About twenty minutes.", "Roughly twenty minutes."]
+          "partner_zh": "欢迎！想吃什么？",
+          "partner_en": "Welcome! What would you like?",
+          "prompt_en": "Ask what's tasty.",
+          "answers_zh": ["什么好吃？", "你们什么菜最好吃？"],
+          "answers_en": ["What's good?", "What's your tastiest dish?"]
         },
         {
-          "partner_zh": "我在哪里等你？",
-          "partner_en": "Where should I wait for you?",
-          "prompt_en": "Say wait at exit 9.",
-          "answers_zh": ["你在九号门等我。", "在九号出口等我吧。"],
-          "answers_en": ["Wait for me at gate 9.", "Wait at exit 9."]
+          "partner_zh": "这个牛肉面很好吃。",
+          "partner_en": "This beef noodle soup is delicious.",
+          "prompt_en": "Order a bowl.",
+          "answers_zh": ["那我要一碗。", "来一碗牛肉面。"],
+          "answers_en": ["I'll have a bowl, then.", "A bowl of beef noodles, please."]
         },
         {
-          "partner_zh": "好的。外面冷吗？",
-          "partner_en": "OK. Is it cold outside?",
-          "prompt_en": "Say it's a bit cold — put on more layers.",
-          "answers_zh": ["有点冷，多穿点。", "有点冷。"],
-          "answers_en": ["A bit cold — wrap up warm.", "A bit cold."]
+          "partner_zh": "要辣的吗？",
+          "partner_en": "Would you like it spicy?",
+          "prompt_en": "Say just a little spicy.",
+          "answers_zh": ["要一点辣。", "一点点辣。"],
+          "answers_en": ["A little spicy.", "Just a tiny bit spicy."]
         },
         {
-          "partner_zh": "好，一会儿见！",
-          "partner_en": "OK, see you in a bit!",
-          "prompt_en": "Say see you soon.",
-          "answers_zh": ["一会儿见！", "好，马上到！"],
-          "answers_en": ["See you soon!", "OK, nearly there!"]
+          "partner_zh": "怎么样，好吃吗？",
+          "partner_en": "How is it — tasty?",
+          "prompt_en": "Say it's delicious.",
+          "answers_zh": ["非常好吃！", "很好吃，谢谢！"],
+          "answers_en": ["Really delicious!", "Very tasty, thanks!"]
         }
       ],
-      "closing_zh": "好的，拜拜！",
-      "closing_en": "OK, bye!"
+      "closing_zh": "谢谢，下次再来！",
+      "closing_en": "Thanks — come again!"
     },
     {
-      "id": "2026-10-25-m2",
+      "id": "2026-10-26-m2",
       "level": 1,
-      "title": "Helping an elderly man",
-      "role": "老人",
-      "goal": "An old man is lost: offer to help, find out where he's going and take him there.",
+      "title": "Clean towels, please",
+      "role": "前台",
+      "goal": "Tell hotel reception the towels in your room aren't clean, and ask for some water too.",
       "new_words": [
-        { "word": "老人", "english": "old person" },
-        { "word": "记住", "english": "to remember" }
+        { "word": "干净", "english": "clean" },
+        { "word": "那边", "english": "over there" },
+        { "word": "工人", "english": "worker; staff member" }
       ],
       "steps": [
         {
-          "partner_zh": "你好，能帮我一下吗？我是老人，找不到路了。",
-          "partner_en": "Hello, could you help me? I'm an old man and I've got lost.",
-          "prompt_en": "Say of course, what's wrong?",
-          "answers_zh": ["当然，怎么了？", "好的，有什么事？"],
-          "answers_en": ["Of course, what's the matter?", "Sure, what can I do?"]
+          "partner_zh": "你好，有什么事吗？",
+          "partner_en": "Hello, can I help?",
+          "prompt_en": "Say the towels in your room aren't clean.",
+          "answers_zh": ["我房间的毛巾不干净。", "毛巾不太干净。"],
+          "answers_en": ["The towels in my room aren't clean.", "The towels aren't very clean."]
         },
         {
-          "partner_zh": "我要去医院，可是我没记住怎么走。",
-          "partner_en": "I need to get to the hospital, but I can't remember the way.",
-          "prompt_en": "Ask which hospital.",
-          "answers_zh": ["您去哪个医院？", "哪个医院？"],
-          "answers_en": ["Which hospital are you going to?", "Which hospital?"]
+          "partner_zh": "对不起！几号房间？",
+          "partner_en": "Sorry about that! Which room?",
+          "prompt_en": "Say room 512.",
+          "answers_zh": ["五一二。", "五一二房间。"],
+          "answers_en": ["512.", "Room 512."]
         },
         {
-          "partner_zh": "人民医院。",
-          "partner_en": "The People's Hospital.",
-          "prompt_en": "Say it's not far — you'll take him.",
-          "answers_zh": ["不远，我带您去。", "我送您过去吧。"],
-          "answers_en": ["It's not far — I'll take you.", "Let me walk you there."]
+          "partner_zh": "我马上让工人送新的过去。",
+          "partner_en": "I'll have a member of staff bring new ones right away.",
+          "prompt_en": "Ask if you can also have two bottles of water.",
+          "answers_zh": ["能再给我两瓶水吗？", "还要两瓶水，可以吗？"],
+          "answers_en": ["Could I have two bottles of water too?", "Two bottles of water as well, please?"]
         },
         {
-          "partner_zh": "太谢谢你了！你真好。",
-          "partner_en": "Thank you so much! You're very kind.",
-          "prompt_en": "Say it's nothing.",
-          "answers_zh": ["没什么。", "不客气。"],
-          "answers_en": ["It's nothing.", "You're welcome."]
+          "partner_zh": "可以，水在那边，您可以自己拿。",
+          "partner_en": "Sure, the water's over there — help yourself.",
+          "prompt_en": "Say OK, you'll get it yourself. Thanks.",
+          "answers_zh": ["好，我自己去拿。谢谢！", "好的，谢谢。"],
+          "answers_en": ["OK, I'll grab it myself. Thanks!", "OK, thank you."]
         },
         {
-          "partner_zh": "你是哪国人？中文说得很好！",
-          "partner_en": "Where are you from? Your Chinese is very good!",
-          "prompt_en": "Say you're British and still learning.",
-          "answers_zh": ["我是英国人，还在学习。", "谢谢，我还在学。"],
-          "answers_en": ["I'm British — I'm still learning.", "Thanks, I'm still learning."]
+          "partner_zh": "还有别的问题吗？",
+          "partner_en": "Anything else?",
+          "prompt_en": "Say no, that's all.",
+          "answers_zh": ["没有了，谢谢！", "就这些。"],
+          "answers_en": ["No, that's all, thanks!", "That's it."]
         }
       ],
-      "closing_zh": "好孩子，谢谢你！",
-      "closing_en": "Good lad, thank you!"
+      "closing_zh": "好的，祝您住得愉快！",
+      "closing_en": "OK, enjoy your stay!"
     }
   ]
 }
