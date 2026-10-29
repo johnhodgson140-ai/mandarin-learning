@@ -1,176 +1,171 @@
 {
-  "date": "2026-10-28",
+  "date": "2026-10-29",
   "level": 1,
   "plan": {
-    "focus_en": "是不是 questions (“isn’t it…?”), and 常常 for “often”.",
+    "focus_en": "上次 and 下次 (last time / next time), and 右边 (on the right).",
     "items": [
       { "kind": "cards", "title_en": "Say your cards (10 cards)" },
       { "kind": "dojo", "title_en": "Tone Dojo (5 minutes)" },
-      { "kind": "story", "title_en": "Read and read aloud: 奶去哪儿了？", "ref": "2026-10-28-s2" },
-      { "kind": "mission", "title_en": "Guided mission: weekend plans", "ref": "2026-10-28-m2" }
+      { "kind": "story", "title_en": "Read and read aloud: 和奶奶看电影", "ref": "2026-10-29-s1" },
+      { "kind": "mission", "title_en": "Guided mission: on the train", "ref": "2026-10-29-m1" }
     ]
   },
   "stories": [
     {
-      "id": "2026-10-28-s1",
+      "id": "2026-10-29-s1",
       "level": 1,
-      "topic": "football",
-      "title_zh": "门口的男生",
-      "title_en": "The boy by my door",
+      "topic": "anime",
+      "title_zh": "和奶奶看电影",
+      "title_en": "A film with Grandma",
       "paragraphs": [
-        ["我", "家", "门口", "有", "一", "个", "小", "地方", "，", "我", "常常", "在", "那里", "玩", "球", "。"],
-        ["今天", "，", "一", "个", "男生", "也", "来", "了", "。", "他", "十", "岁", "。", "他", "问", "我", "：", "“", "我", "能", "跟", "你", "一起", "玩", "吗", "？", "”"],
-        ["我", "说", "：", "“", "好", "！", "”", "他", "跑", "起来", "很", "快", "，", "进", "了", "三", "个", "球", "。", "我", "一", "个", "也", "没", "进", "。"],
-        ["他", "笑", "着", "说", "：", "“", "我", "也", "喜欢", "曼联", "！", "明天", "再", "来", "！", "”"],
-        ["我", "想", "，", "明天", "我", "要", "认真", "一", "点", "。"]
+        ["上次", "我", "去", "奶奶", "家", "，", "我们", "一起", "看", "了", "一", "个", "日本", "电影", "。"],
+        ["电影", "里", "有", "一", "个", "老人", "，", "她", "很", "爱", "唱歌", "。", "奶奶", "说", "：", "“", "她", "跟", "我", "一样", "！", "”"],
+        ["电影", "有", "两", "个", "小时", "，", "奶奶", "一", "点", "也", "不", "想", "睡", "。"],
+        ["最后", "，", "她", "也", "唱", "了", "一", "个", "歌", "。", "我", "听", "了", "很", "高兴", "。"],
+        ["我", "想", "，", "下次", "我", "还", "要", "和", "她", "一起", "看", "电影", "。"]
       ],
       "translations": [
-        "There's a little space outside my front door where I often play football.",
-        "Today a boy came along too. He's ten. He asked me: “Can I play with you?”",
-        "I said: “Sure!” He was really fast and scored three goals. I didn't score a single one.",
-        "He smiled and said: “I like Man United too! I’ll come again tomorrow!”",
-        "I think tomorrow I need to try a bit harder."
+        "Last time I went to Grandma's, we watched a Japanese film together.",
+        "In the film there's an old woman who loves singing. Grandma said: “She’s just like me!”",
+        "The film was two hours long, but Grandma wasn’t sleepy at all.",
+        "At the end, she sang a song too. It made me really happy.",
+        "I think next time I’ll watch a film with her again."
       ],
-      "names": ["曼联"],
-      "new_words": ["门口", "常常", "男生"],
+      "names": ["日本"],
+      "new_words": ["上次", "奶奶", "唱歌"],
       "glossary": [
-        { "word": "门口", "english": "doorway; entrance" },
-        { "word": "常常", "english": "often" },
-        { "word": "男生", "english": "boy" },
-        { "word": "曼联", "english": "Manchester United" }
+        { "word": "上次", "english": "last time" },
+        { "word": "奶奶", "english": "grandma (dad's mum)" },
+        { "word": "唱歌", "english": "to sing" },
+        { "word": "日本", "english": "Japan" }
       ]
     },
     {
-      "id": "2026-10-28-s2",
+      "id": "2026-10-29-s2",
       "level": 1,
-      "topic": "daily life",
-      "title_zh": "奶去哪儿了？",
-      "title_en": "Where's the milk?",
+      "topic": "archive fashion",
+      "title_zh": "给女朋友的包",
+      "title_en": "A bag for my girlfriend",
       "paragraphs": [
-        ["今天", "早上", "，", "我", "想", "喝", "奶", "。", "我", "在", "家里", "找", "了", "很", "多", "地方", "，", "都", "没有", "找到", "！"],
-        ["妈妈", "问", "：", "“", "你", "在", "干什么", "？", "”"],
-        ["我", "说", "：", "“", "没有", "了", "。", "是不是", "你", "喝", "了", "？", "”"],
-        ["妈妈", "笑", "了", "：", "“", "不", "是", "我", "，", "是", "你", "爸爸", "！", "”"],
-        ["爸爸", "说", "：", "“", "对不起", "！", "我", "马上", "去", "买", "。", "”", "他", "马上", "出去", "了", "。", "妈妈", "和", "我", "都", "笑", "了", "。"]
+        ["下", "个", "月", "是", "我", "女朋友", "的", "生日", "。", "她", "很", "喜欢", "老", "东西", "，", "我", "想", "送", "她", "一", "个", "老", "包", "。"],
+        ["我", "在", "网上", "找", "了", "很", "多", "天", "，", "最后", "找到", "了", "一", "个", "白", "包", "。", "我", "一", "看", "就", "很", "喜欢", "。"],
+        ["这", "个", "包", "是", "三十", "年", "前", "的", "，", "还", "很", "新", "，", "也", "很", "好看", "。"],
+        ["我", "花", "了", "八百", "块", "，", "有些", "贵", "。", "我", "想", "，", "她", "会", "很", "高兴", "的", "！"]
       ],
       "translations": [
-        "This morning I wanted some milk. I looked all over the house but couldn’t find any!",
-        "Mum asked: “What are you doing?”",
-        "I said: “It’s all gone. Did you drink it?”",
-        "Mum laughed: “It wasn’t me — it was your dad!”",
-        "Dad said: “Sorry! I’ll go and buy some right now.” And off he went. Mum and I both laughed."
+        "Next month is my girlfriend's birthday. She loves old things, so I want to give her a vintage bag.",
+        "I searched online for days, and in the end I found a white bag. I loved it at first sight.",
+        "The bag is thirty years old, but it's still like new — and it looks great.",
+        "I spent 800 kuai, which is a bit expensive. I think she'll be really happy!"
       ],
       "names": [],
-      "new_words": ["奶", "干什么", "是不是"],
+      "new_words": ["女朋友"],
       "glossary": [
-        { "word": "奶", "english": "milk" },
-        { "word": "干什么", "english": "what (are you) doing" },
-        { "word": "是不是", "english": "is it…? / was it…?" }
+        { "word": "女朋友", "english": "girlfriend" }
       ]
     }
   ],
   "missions": [
     {
-      "id": "2026-10-28-m1",
+      "id": "2026-10-29-m1",
       "level": 1,
-      "title": "Giving a friend a lift",
-      "role": "朋友",
-      "goal": "Say you drove, offer to take your friend home and show them where the car is.",
+      "title": "On the train",
+      "role": "乘客",
+      "goal": "Find your seat, check the train goes to Shanghai and chat with the passenger next to you.",
       "new_words": [
-        { "word": "开车", "english": "to drive" },
-        { "word": "这边", "english": "this way; over here" },
-        { "word": "门口", "english": "entrance; doorway" }
+        { "word": "火车", "english": "train" },
+        { "word": "右边", "english": "on the right" },
+        { "word": "上次", "english": "last time" }
       ],
       "steps": [
         {
-          "partner_zh": "你开车来的吗？",
-          "partner_en": "Did you drive here?",
-          "prompt_en": "Say yes, you drove.",
-          "answers_zh": ["对，我开车来的。", "是的，我开车来了。"],
-          "answers_en": ["Yes, I drove.", "Yes, I came by car."]
+          "partner_zh": "你好，你找什么？",
+          "partner_en": "Hi, are you looking for something?",
+          "prompt_en": "Say you're looking for seat 12.",
+          "answers_zh": ["我找十二号座位。", "请问十二号在哪儿？"],
+          "answers_en": ["I'm looking for seat 12.", "Excuse me, where's number 12?"]
         },
         {
-          "partner_zh": "你能送我回家吗？",
-          "partner_en": "Could you give me a lift home?",
-          "prompt_en": "Say sure, and ask where they live.",
-          "answers_zh": ["可以，你住哪儿？", "没问题，你家在哪儿？"],
-          "answers_en": ["Sure, where do you live?", "No problem — where's your place?"]
+          "partner_zh": "十二号在右边，靠窗。",
+          "partner_en": "Number 12 is on the right, by the window.",
+          "prompt_en": "Say thanks, and ask if this is the train to Shanghai.",
+          "answers_zh": ["谢谢。这是去上海的火车吗？", "这火车到上海吗？"],
+          "answers_en": ["Thanks. Is this the train to Shanghai?", "Does this train go to Shanghai?"]
         },
         {
-          "partner_zh": "我家在火车站那边。",
-          "partner_en": "I live over by the train station.",
-          "prompt_en": "Say OK, your car is this way.",
-          "answers_zh": ["好，我的车在这边。", "走吧，车在这边。"],
-          "answers_en": ["OK, my car is this way.", "Come on, the car's over here."]
+          "partner_zh": "对，下午三点到。",
+          "partner_en": "Yes, it gets in at three this afternoon.",
+          "prompt_en": "Ask if they're going to Shanghai too.",
+          "answers_zh": ["你也去上海吗？", "你也到上海吗？"],
+          "answers_en": ["Are you going to Shanghai too?", "Are you getting off at Shanghai too?"]
         },
         {
-          "partner_zh": "你的车在门口吗？",
-          "partner_en": "Is your car by the entrance?",
-          "prompt_en": "Say yes, right by the entrance.",
-          "answers_zh": ["对，就在门口。", "是的，在门口。"],
-          "answers_en": ["Yes, right by the entrance.", "Yes, by the door."]
+          "partner_zh": "是啊，我回家。上次我坐了八个小时！",
+          "partner_en": "Yes, I'm going home. Last time it took me eight hours!",
+          "prompt_en": "Say today it's only four hours.",
+          "answers_zh": ["今天只要四个小时。", "今天快多了。"],
+          "answers_en": ["Today it's only four hours.", "Today's much quicker."]
         },
         {
-          "partner_zh": "太好了，谢谢你！",
-          "partner_en": "Great, thank you!",
-          "prompt_en": "Say no problem.",
-          "answers_zh": ["没问题！", "不客气。"],
-          "answers_en": ["No problem!", "You're welcome."]
+          "partner_zh": "对！你要喝点水吗？",
+          "partner_en": "That's right! Would you like some water?",
+          "prompt_en": "Say no thanks.",
+          "answers_zh": ["不用了，谢谢。", "谢谢，不用。"],
+          "answers_en": ["No need, thanks.", "Thanks, I'm fine."]
         }
       ],
-      "closing_zh": "我们走吧！",
-      "closing_en": "Let's go!"
+      "closing_zh": "好的，路上开心！",
+      "closing_en": "OK, enjoy the journey!"
     },
     {
-      "id": "2026-10-28-m2",
+      "id": "2026-10-29-m2",
       "level": 1,
-      "title": "Weekend plans",
-      "role": "同学",
-      "goal": "Tell a classmate what you do at weekends and invite them to play football with you.",
+      "title": "Buying milk",
+      "role": "店员",
+      "goal": "Find the milk in a small shop, ask the price, buy two bottles and some bread.",
       "new_words": [
-        { "word": "干什么", "english": "what (are you) doing" },
-        { "word": "是不是", "english": "isn't it…? / do you…?" },
-        { "word": "常常", "english": "often" }
+        { "word": "牛奶", "english": "milk" },
+        { "word": "右边", "english": "on the right" }
       ],
       "steps": [
         {
-          "partner_zh": "你周末干什么？",
-          "partner_en": "What do you do at weekends?",
-          "prompt_en": "Say you often play ball with friends.",
-          "answers_zh": ["我常常和朋友打球。", "我常常去打球。"],
-          "answers_en": ["I often play ball with friends.", "I often go and play ball."]
+          "partner_zh": "你好，要什么？",
+          "partner_en": "Hi, what can I get you?",
+          "prompt_en": "Ask where the milk is.",
+          "answers_zh": ["请问牛奶在哪儿？", "牛奶在哪里？"],
+          "answers_en": ["Excuse me, where's the milk?", "Where's the milk?"]
         },
         {
-          "partner_zh": "你是不是很喜欢足球？",
-          "partner_en": "You really like football, don't you?",
-          "prompt_en": "Say yes, you love it.",
-          "answers_zh": ["是的，我非常喜欢。", "对，我很喜欢足球。"],
-          "answers_en": ["Yes, I love it.", "Yes, I really like football."]
+          "partner_zh": "在右边那里。",
+          "partner_en": "Over there on the right.",
+          "prompt_en": "Ask how much a bottle is.",
+          "answers_zh": ["多少钱一瓶？", "这个牛奶多少钱？"],
+          "answers_en": ["How much is a bottle?", "How much is this milk?"]
         },
         {
-          "partner_zh": "我也喜欢！我能跟你们一起去吗？",
-          "partner_en": "Me too! Can I come with you?",
-          "prompt_en": "Say of course.",
-          "answers_zh": ["当然可以！", "好啊，一起来吧！"],
-          "answers_en": ["Of course!", "Sure, come along!"]
+          "partner_zh": "八块一瓶。",
+          "partner_en": "Eight kuai a bottle.",
+          "prompt_en": "Say you'll take two.",
+          "answers_zh": ["我要两瓶。", "给我两瓶。"],
+          "answers_en": ["I'll take two.", "Two, please."]
         },
         {
-          "partner_zh": "几点？在哪儿？",
-          "partner_en": "What time? Where?",
-          "prompt_en": "Say Saturday at ten in the morning, at the school.",
-          "answers_zh": ["星期六上午十点，在学校。", "星期六十点，学校见。"],
-          "answers_en": ["Saturday at ten in the morning, at the school.", "Saturday at ten — see you at school."]
+          "partner_zh": "还要别的吗？",
+          "partner_en": "Anything else?",
+          "prompt_en": "Say a loaf of bread too.",
+          "answers_zh": ["再要一个面包。", "还要面包。"],
+          "answers_en": ["A loaf of bread as well.", "Some bread too."]
         },
         {
-          "partner_zh": "好，到时候见！",
-          "partner_en": "Great, see you then!",
-          "prompt_en": "Say see you on Saturday.",
-          "answers_zh": ["好，星期六见！", "到时候见！"],
-          "answers_en": ["OK, see you Saturday!", "See you then!"]
+          "partner_zh": "一共二十二块。",
+          "partner_en": "22 kuai altogether.",
+          "prompt_en": "Say you'll pay by phone.",
+          "answers_zh": ["我用手机给。", "用手机可以吗？"],
+          "answers_en": ["I'll pay by phone.", "Can I pay by phone?"]
         }
       ],
-      "closing_zh": "拜拜！",
-      "closing_en": "Bye!"
+      "closing_zh": "可以，扫这里。",
+      "closing_en": "Sure, scan here."
     }
   ]
 }
