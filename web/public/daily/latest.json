@@ -1,173 +1,166 @@
 {
-  "date": "2026-10-30",
+  "date": "2026-10-31",
   "level": 1,
   "plan": {
-    "focus_en": "Verbs of sensing with a result: 听见 (hear), 看见 (see).",
+    "focus_en": "没关系 for “never mind”, and 这儿 / 那儿 for here and there.",
     "items": [
       { "kind": "cards", "title_en": "Say your cards (10 cards)" },
       { "kind": "dojo", "title_en": "Tone Dojo (5 minutes)" },
-      { "kind": "story", "title_en": "Read and read aloud: 爷爷听见了", "ref": "2026-10-30-s1" },
-      { "kind": "mission", "title_en": "Guided mission: after work", "ref": "2026-10-30-m2" }
+      { "kind": "story", "title_en": "Read and read aloud: 姐姐的地图", "ref": "2026-10-31-s1" },
+      { "kind": "mission", "title_en": "Guided mission: directions with a map", "ref": "2026-10-31-m1" }
     ]
   },
   "stories": [
     {
-      "id": "2026-10-30-s1",
+      "id": "2026-10-31-s1",
       "level": 1,
-      "topic": "football",
-      "title_zh": "爷爷听见了",
-      "title_en": "Grandpa heard",
+      "topic": "travel",
+      "title_zh": "姐姐的地图",
+      "title_en": "My sister's map",
       "paragraphs": [
-        ["我", "爷爷", "今年", "七十", "岁", "了", "。", "他", "非常", "爱", "曼联", "。"],
-        ["他", "常常", "在", "家", "看", "球", "。", "有时候", "他", "看", "着", "看", "着", "就", "睡", "了", "。"],
-        ["今天", "晚上", "，", "他", "也", "睡", "了", "。", "曼联", "进", "了", "一", "个", "球", "，", "我", "大", "叫", "：", "“", "进", "了", "！", "”"],
-        ["爷爷", "听见", "了", "，", "马上", "站", "起来", "：", "“", "什么", "？", "谁", "进", "的", "？", "”"],
-        ["我们", "都", "笑", "了", "。", "爷爷", "说", "：", "“", "下次", "我", "不", "睡", "了", "！", "”"]
+        ["上", "个", "星期", "，", "我", "和", "姐姐", "去", "北京", "玩", "。", "我们", "想", "去", "一", "个", "老", "地方", "。"],
+        ["姐姐", "拿", "着", "地图", "说", "：", "“", "在", "那儿", "！", "”"],
+        ["我们", "走", "了", "一", "个", "小时", "，", "还是", "没", "到", "。", "我", "看", "了", "看", "地图", "：", "姐姐", "看", "错", "了", "！"],
+        ["姐姐", "说", "：", "“", "对不起", "！", "”"],
+        ["我", "说", "：", "“", "没关系", "，", "我们", "走", "了", "很", "多", "路", "，", "也", "很", "好", "！", "”", "我们", "都", "笑", "了", "。"]
       ],
       "translations": [
-        "My grandpa is seventy this year. He absolutely loves Man United.",
-        "He often watches football at home. Sometimes he dozes off while he's watching.",
-        "This evening he fell asleep again. When Man United scored, I shouted: “Goal!”",
-        "Grandpa heard and jumped straight up: “What? Who scored?”",
-        "We all laughed. Grandpa said: “Next time I won’t fall asleep!”"
+        "Last week my older sister and I went to Beijing. We wanted to go to an old part of town.",
+        "My sister held the map and said: “It’s over there!”",
+        "We walked for an hour and still hadn't got there. I looked at the map: my sister had read it wrong!",
+        "My sister said: “Sorry!”",
+        "I said: “Never mind — we did a lot of walking, and that’s nice too!” We both laughed."
       ],
-      "names": ["曼联"],
-      "new_words": ["爷爷", "听见"],
+      "names": ["北京"],
+      "new_words": ["地图", "那儿", "没关系"],
       "glossary": [
-        { "word": "爷爷", "english": "grandpa (dad's dad)" },
-        { "word": "听见", "english": "to hear" },
-        { "word": "曼联", "english": "Manchester United" }
+        { "word": "地图", "english": "map" },
+        { "word": "那儿", "english": "there" },
+        { "word": "没关系", "english": "never mind; it doesn't matter" },
+        { "word": "北京", "english": "Beijing" }
       ]
     },
     {
-      "id": "2026-10-30-s2",
+      "id": "2026-10-31-s2",
       "level": 1,
-      "topic": "business & finance",
-      "title_zh": "贵的水果",
-      "title_en": "Expensive fruit",
+      "topic": "daily life",
+      "title_zh": "十个鸡蛋",
+      "title_en": "Ten eggs",
       "paragraphs": [
-        ["我", "六", "点", "下班", "。", "下班", "后", "，", "我", "去", "买", "水果", "。"],
-        ["水果", "很", "贵", "，", "我", "花", "了", "一百", "块", "！", "我", "觉得", "太", "贵", "了", "。"],
-        ["第二", "天", "，", "我", "去", "了", "一", "个", "老", "地方", "。", "那里", "的", "水果", "一样", "好", "，", "要", "五十", "块", "。"],
-        ["我", "少", "花", "了", "一半", "的", "钱", "！", "真", "好", "。"],
-        ["我", "告诉", "了", "朋友", "们", "。", "现在", "，", "他们", "也", "去", "那里", "买", "。"]
+        ["今天", "早上", "，", "妈妈", "说", "：", "“", "家里", "没有", "鸡蛋", "了", "。", "”", "我", "就", "去", "家", "旁边", "的", "商店", "。", "我", "拿", "了", "钱", "和", "手机", "。"],
+        ["那里", "人", "很", "多", "，", "我", "等", "了", "半", "个", "小时", "。"],
+        ["最后", "，", "我", "买", "了", "十", "个", "鸡蛋", "。", "回到", "家", "，", "我", "坐下", "来", "休息", "。"],
+        ["妈妈", "打开", "一", "看", "：", "一", "个", "也", "没有", "坏", "！", "她", "说", "：", "“", "你", "真", "行", "！", "”", "我", "也", "很", "高兴", "。"]
       ],
       "translations": [
-        "I finish work at six. After work I went to buy fruit.",
-        "The fruit was expensive — I spent a hundred kuai! I thought that was too much.",
-        "The next day I went to an old place. The fruit there was just as good, and it was fifty kuai.",
-        "I spent half as much! Brilliant.",
-        "I told my friends. Now they buy there too."
+        "This morning Mum said: “We’re out of eggs.” So I went to the shop next to our house. I took some money and my phone.",
+        "It was really busy there — I waited half an hour.",
+        "In the end I bought ten eggs. When I got home, I sat down for a rest.",
+        "Mum opened the box and looked: not a single one was broken! She said: “Well done!” I was really pleased too."
       ],
       "names": [],
-      "new_words": ["下班", "水果"],
+      "new_words": ["鸡蛋", "商店", "坐下"],
       "glossary": [
-        { "word": "下班", "english": "to finish work" },
-        { "word": "水果", "english": "fruit" }
+        { "word": "鸡蛋", "english": "egg" },
+        { "word": "商店", "english": "shop" },
+        { "word": "坐下", "english": "to sit down" }
       ]
     }
   ],
   "missions": [
     {
-      "id": "2026-10-30-m1",
+      "id": "2026-10-31-m1",
       "level": 1,
-      "title": "Meeting a friend's boyfriend",
-      "role": "朋友",
-      "goal": "Say hello to your friend's boyfriend, talk about your classes and agree to have dinner sometime.",
+      "title": "Directions with a map",
+      "role": "路人",
+      "goal": "Show a passer-by your map, ask where the bookshop is and check the way.",
       "new_words": [
-        { "word": "男朋友", "english": "boyfriend" },
-        { "word": "上课", "english": "to have class" }
+        { "word": "地图", "english": "map" },
+        { "word": "那儿", "english": "there" },
+        { "word": "没关系", "english": "never mind; no problem" }
       ],
       "steps": [
         {
-          "partner_zh": "这是我男朋友，小李。",
-          "partner_en": "This is my boyfriend, Xiao Li.",
-          "prompt_en": "Say hello, nice to meet you.",
-          "answers_zh": ["你好，认识你很高兴！", "你好，很高兴认识你。"],
-          "answers_en": ["Hi, great to meet you!", "Hello, nice to meet you."]
+          "partner_zh": "你好，要帮忙吗？",
+          "partner_en": "Hi, do you need any help?",
+          "prompt_en": "Show the map and ask where this bookshop is.",
+          "answers_zh": ["请问，这个书店在哪儿？", "你能在地图上告诉我书店在哪儿吗？"],
+          "answers_en": ["Excuse me, where is this bookshop?", "Could you show me on the map where the bookshop is?"]
         },
         {
-          "partner_zh": "你也是学生吗？",
-          "partner_en": "Are you a student too?",
-          "prompt_en": "Say yes, you have classes in the evening.",
-          "answers_zh": ["是的，我晚上上课。", "对，我晚上去上课。"],
-          "answers_en": ["Yes, I have classes in the evening.", "Yes, I go to class in the evenings."]
+          "partner_zh": "在那儿，大楼的旁边。",
+          "partner_en": "It's there, next to the big building.",
+          "prompt_en": "Ask if it's far.",
+          "answers_zh": ["远吗？", "走路要多长时间？"],
+          "answers_en": ["Is it far?", "How long does it take on foot?"]
         },
         {
-          "partner_zh": "你学什么？",
-          "partner_en": "What do you study?",
-          "prompt_en": "Say Chinese.",
-          "answers_zh": ["我学中文。", "学中文。"],
-          "answers_en": ["I'm learning Chinese.", "Chinese."]
+          "partner_zh": "不远，走十分钟。",
+          "partner_en": "Not far — ten minutes' walk.",
+          "prompt_en": "Ask if you go straight on.",
+          "answers_zh": ["是一直走吗？", "往前走吗？"],
+          "answers_en": ["Do I go straight on?", "Straight ahead?"]
         },
         {
-          "partner_zh": "你说得很好！",
-          "partner_en": "You speak it really well!",
-          "prompt_en": "Say thanks, you're still learning.",
-          "answers_zh": ["谢谢，我还在学。", "哪里哪里。"],
-          "answers_en": ["Thanks, I'm still learning.", "Oh, not really."]
+          "partner_zh": "对，一直走，到了路口往左。",
+          "partner_en": "Yes, straight on, then left at the junction.",
+          "prompt_en": "Repeat it back to check.",
+          "answers_zh": ["一直走，路口往左，对吗？", "到路口往左？"],
+          "answers_en": ["Straight on, left at the junction — right?", "Left at the junction?"]
         },
         {
-          "partner_zh": "下次一起吃饭吧！",
-          "partner_en": "Let's have dinner together next time!",
-          "prompt_en": "Say great, see you next time.",
-          "answers_zh": ["太好了，下次见！", "好啊！"],
-          "answers_en": ["Great, see you next time!", "Sure!"]
+          "partner_zh": "对！",
+          "partner_en": "That's right!",
+          "prompt_en": "Say thank you, and sorry for the trouble.",
+          "answers_zh": ["太好了，谢谢你！", "谢谢，麻烦你了！"],
+          "answers_en": ["Great, thank you!", "Thanks, sorry for the trouble!"]
         }
       ],
-      "closing_zh": "好，下次见！",
-      "closing_en": "OK, see you next time!"
+      "closing_zh": "没关系，不客气！",
+      "closing_en": "No problem, you're welcome!"
     },
     {
-      "id": "2026-10-30-m2",
+      "id": "2026-10-31-m2",
       "level": 1,
-      "title": "After work",
-      "role": "妈妈",
-      "goal": "Mum calls as you finish work: agree to buy fruit on the way home and say when you'll be back.",
+      "title": "At a breakfast stall",
+      "role": "老板",
+      "goal": "Order eggs and soy milk for breakfast, eat in and pay by phone.",
       "new_words": [
-        { "word": "下班", "english": "to finish work" },
-        { "word": "水果", "english": "fruit" },
-        { "word": "听见", "english": "to hear" }
+        { "word": "鸡蛋", "english": "egg" },
+        { "word": "坐下", "english": "to sit down" }
       ],
       "steps": [
         {
-          "partner_zh": "喂？你下班了吗？",
-          "partner_en": "Hello? Have you finished work?",
-          "prompt_en": "Say yes, you're heading home now.",
-          "answers_zh": ["下班了，我现在回家。", "刚下班。"],
-          "answers_en": ["Yes, I'm heading home now.", "Just finished."]
+          "partner_zh": "早上好！要什么？",
+          "partner_en": "Morning! What would you like?",
+          "prompt_en": "Ask for two eggs.",
+          "answers_zh": ["我要两个鸡蛋。", "来两个鸡蛋。"],
+          "answers_en": ["I'd like two eggs.", "Two eggs, please."]
         },
         {
-          "partner_zh": "你能买点水果回来吗？",
-          "partner_en": "Could you pick up some fruit on the way?",
-          "prompt_en": "Ask what fruit.",
-          "answers_zh": ["买什么水果？", "要什么水果？"],
-          "answers_en": ["What fruit should I get?", "Which fruit?"]
+          "partner_zh": "还要别的吗？",
+          "partner_en": "Anything else?",
+          "prompt_en": "Say a cup of soy milk too.",
+          "answers_zh": ["再要一杯豆浆。", "还要豆浆。"],
+          "answers_en": ["A cup of soy milk as well.", "And soy milk."]
         },
         {
-          "partner_zh": "买点苹果和香蕉。",
-          "partner_en": "Get some apples and bananas.",
-          "prompt_en": "Say OK, no problem.",
-          "answers_zh": ["好的，没问题。", "好，我去买。"],
-          "answers_en": ["OK, no problem.", "OK, I'll get them."]
+          "partner_zh": "在这儿吃吗？",
+          "partner_en": "Eating here?",
+          "prompt_en": "Say yes, you'll sit down and eat here.",
+          "answers_zh": ["对，我坐下吃。", "在这儿吃。"],
+          "answers_en": ["Yes, I'll sit down and eat.", "Eating here."]
         },
         {
-          "partner_zh": "喂？你听见了吗？",
-          "partner_en": "Hello? Can you hear me?",
-          "prompt_en": "Say yes, you heard — the signal's not great.",
-          "answers_zh": ["听见了，信号不太好。", "听见了！"],
-          "answers_en": ["Yes, I heard — the signal's not great.", "I heard you!"]
-        },
-        {
-          "partner_zh": "好，早点回来。",
-          "partner_en": "OK, come home soon.",
-          "prompt_en": "Say you'll be home in half an hour.",
-          "answers_zh": ["我半个小时就到家。", "半个小时后到。"],
-          "answers_en": ["I'll be home in half an hour.", "Back in half an hour."]
+          "partner_zh": "好，一共七块。",
+          "partner_en": "OK, that's seven kuai.",
+          "prompt_en": "Say you'll pay by phone.",
+          "answers_zh": ["我用手机给。", "可以用手机吗？"],
+          "answers_en": ["I'll pay by phone.", "Can I pay by phone?"]
         }
       ],
-      "closing_zh": "好，路上小心！",
-      "closing_en": "OK, take care on the way!"
+      "closing_zh": "可以，请坐！",
+      "closing_en": "Sure — have a seat!"
     }
   ]
 }
