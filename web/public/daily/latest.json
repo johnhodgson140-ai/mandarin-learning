@@ -1,166 +1,174 @@
 {
-  "date": "2026-10-31",
+  "date": "2026-11-01",
   "level": 1,
   "plan": {
-    "focus_en": "没关系 for “never mind”, and 这儿 / 那儿 for here and there.",
+    "focus_en": "哪些 for “which ones”, and 开玩笑 for joking.",
     "items": [
       { "kind": "cards", "title_en": "Say your cards (10 cards)" },
       { "kind": "dojo", "title_en": "Tone Dojo (5 minutes)" },
-      { "kind": "story", "title_en": "Read and read aloud: 姐姐的地图", "ref": "2026-10-31-s1" },
-      { "kind": "mission", "title_en": "Guided mission: directions with a map", "ref": "2026-10-31-m1" }
+      { "kind": "story", "title_en": "Read and read aloud: 图书馆里的笑", "ref": "2026-11-01-s1" },
+      { "kind": "mission", "title_en": "Guided mission: at the library desk", "ref": "2026-11-01-m1" }
     ]
   },
   "stories": [
     {
-      "id": "2026-10-31-s1",
+      "id": "2026-11-01-s1",
       "level": 1,
-      "topic": "travel",
-      "title_zh": "姐姐的地图",
-      "title_en": "My sister's map",
+      "topic": "anime",
+      "title_zh": "图书馆里的笑",
+      "title_en": "Laughing in the library",
       "paragraphs": [
-        ["上", "个", "星期", "，", "我", "和", "姐姐", "去", "北京", "玩", "。", "我们", "想", "去", "一", "个", "老", "地方", "。"],
-        ["姐姐", "拿", "着", "地图", "说", "：", "“", "在", "那儿", "！", "”"],
-        ["我们", "走", "了", "一", "个", "小时", "，", "还是", "没", "到", "。", "我", "看", "了", "看", "地图", "：", "姐姐", "看", "错", "了", "！"],
-        ["姐姐", "说", "：", "“", "对不起", "！", "”"],
-        ["我", "说", "：", "“", "没关系", "，", "我们", "走", "了", "很", "多", "路", "，", "也", "很", "好", "！", "”", "我们", "都", "笑", "了", "。"]
+        ["白天", "，", "我", "常常", "去", "图书馆", "。", "那里", "有", "很", "多", "日本", "的", "书", "，", "也", "有", "《", "千与千寻", "》", "的", "书", "。"],
+        ["今天", "，", "我", "看", "了", "两", "个", "小时", "，", "笑", "了", "很", "多", "次", "。"],
+        ["我", "旁边", "的", "女生", "问", "我", "：", "“", "你", "在", "看", "什么", "？", "你", "笑", "了", "很", "多", "次", "！", "”"],
+        ["我", "说", "：", "“", "对不起", "！", "这", "本", "书", "太", "好", "了", "。", "”"],
+        ["她", "笑", "着", "说", "：", "“", "我", "开玩笑", "的", "。", "我", "也", "喜欢", "这", "本", "书", "！", "”"]
       ],
       "translations": [
-        "Last week my older sister and I went to Beijing. We wanted to go to an old part of town.",
-        "My sister held the map and said: “It’s over there!”",
-        "We walked for an hour and still hadn't got there. I looked at the map: my sister had read it wrong!",
-        "My sister said: “Sorry!”",
-        "I said: “Never mind — we did a lot of walking, and that’s nice too!” We both laughed."
+        "In the daytime I often go to the library. There are lots of Japanese books there, including the Spirited Away book.",
+        "Today I read for two hours and laughed lots of times.",
+        "The girl next to me asked: “What are you reading? You’ve laughed so many times!”",
+        "I said: “Sorry! This book is just too good.”",
+        "She smiled and said: “I’m only joking. I like this book too!”"
       ],
-      "names": ["北京"],
-      "new_words": ["地图", "那儿", "没关系"],
+      "names": ["日本", "千与千寻"],
+      "new_words": ["白天", "图书馆", "开玩笑"],
       "glossary": [
-        { "word": "地图", "english": "map" },
-        { "word": "那儿", "english": "there" },
-        { "word": "没关系", "english": "never mind; it doesn't matter" },
-        { "word": "北京", "english": "Beijing" }
+        { "word": "白天", "english": "daytime" },
+        { "word": "图书馆", "english": "library" },
+        { "word": "开玩笑", "english": "to joke" },
+        { "word": "日本", "english": "Japan" },
+        { "word": "千与千寻", "english": "Spirited Away (Studio Ghibli film)" }
       ]
     },
     {
-      "id": "2026-10-31-s2",
+      "id": "2026-11-01-s2",
       "level": 1,
-      "topic": "daily life",
-      "title_zh": "十个鸡蛋",
-      "title_en": "Ten eggs",
+      "topic": "archive fashion",
+      "title_zh": "哪些衣服？",
+      "title_en": "Which clothes?",
       "paragraphs": [
-        ["今天", "早上", "，", "妈妈", "说", "：", "“", "家里", "没有", "鸡蛋", "了", "。", "”", "我", "就", "去", "家", "旁边", "的", "商店", "。", "我", "拿", "了", "钱", "和", "手机", "。"],
-        ["那里", "人", "很", "多", "，", "我", "等", "了", "半", "个", "小时", "。"],
-        ["最后", "，", "我", "买", "了", "十", "个", "鸡蛋", "。", "回到", "家", "，", "我", "坐下", "来", "休息", "。"],
-        ["妈妈", "打开", "一", "看", "：", "一", "个", "也", "没有", "坏", "！", "她", "说", "：", "“", "你", "真", "行", "！", "”", "我", "也", "很", "高兴", "。"]
+        ["我", "很", "爱", "买", "衣服", "。", "我", "的", "衣服", "太", "多", "了", "，", "房间", "里", "都", "放", "不", "下", "了", "。"],
+        ["我", "姐", "说", "：", "“", "你", "要", "送", "一些", "给", "别人", "。", "”"],
+        ["我", "想", "了", "一会儿", "：", "哪些", "要", "？", "哪些", "不", "要", "？"],
+        ["最后", "，", "老", "衣服", "我", "都", "要", "，", "新", "衣服", "我", "送", "给", "别人", "。", "我", "姐", "也", "拿", "了", "两", "个", "包", "。"],
+        ["我", "姐", "笑", "了", "：", "“", "你", "真", "喜欢", "老", "东西", "！", "”", "我", "也", "笑", "了", "。"]
       ],
       "translations": [
-        "This morning Mum said: “We’re out of eggs.” So I went to the shop next to our house. I took some money and my phone.",
-        "It was really busy there — I waited half an hour.",
-        "In the end I bought ten eggs. When I got home, I sat down for a rest.",
-        "Mum opened the box and looked: not a single one was broken! She said: “Well done!” I was really pleased too."
+        "I love buying clothes. I've got too many — they don't fit in my room any more.",
+        "My older sister said: “You should give some away.”",
+        "I thought for a while: which ones do I keep? Which ones go?",
+        "In the end I kept all the old clothes and gave the new ones away. My sister took two bags too.",
+        "My sister laughed: “You really do love old things!” I laughed too."
       ],
       "names": [],
-      "new_words": ["鸡蛋", "商店", "坐下"],
+      "new_words": ["姐", "哪些"],
       "glossary": [
-        { "word": "鸡蛋", "english": "egg" },
-        { "word": "商店", "english": "shop" },
-        { "word": "坐下", "english": "to sit down" }
+        { "word": "姐", "english": "older sister" },
+        { "word": "哪些", "english": "which ones" }
       ]
     }
   ],
   "missions": [
     {
-      "id": "2026-10-31-m1",
+      "id": "2026-11-01-m1",
       "level": 1,
-      "title": "Directions with a map",
-      "role": "路人",
-      "goal": "Show a passer-by your map, ask where the bookshop is and check the way.",
+      "title": "At the library desk",
+      "role": "工作人员",
+      "goal": "Ask when the library closes, find out how to borrow books and get a library card.",
       "new_words": [
-        { "word": "地图", "english": "map" },
-        { "word": "那儿", "english": "there" },
-        { "word": "没关系", "english": "never mind; no problem" }
+        { "word": "请问", "english": "excuse me, may I ask…" },
+        { "word": "图书馆", "english": "library" }
       ],
       "steps": [
         {
-          "partner_zh": "你好，要帮忙吗？",
-          "partner_en": "Hi, do you need any help?",
-          "prompt_en": "Show the map and ask where this bookshop is.",
-          "answers_zh": ["请问，这个书店在哪儿？", "你能在地图上告诉我书店在哪儿吗？"],
-          "answers_en": ["Excuse me, where is this bookshop?", "Could you show me on the map where the bookshop is?"]
+          "partner_zh": "你好，有什么事？",
+          "partner_en": "Hello, can I help?",
+          "prompt_en": "Ask what time the library closes.",
+          "answers_zh": ["请问，图书馆几点关门？", "请问几点关门？"],
+          "answers_en": ["Excuse me, what time does the library close?", "Excuse me, what time do you close?"]
         },
         {
-          "partner_zh": "在那儿，大楼的旁边。",
-          "partner_en": "It's there, next to the big building.",
-          "prompt_en": "Ask if it's far.",
-          "answers_zh": ["远吗？", "走路要多长时间？"],
-          "answers_en": ["Is it far?", "How long does it take on foot?"]
+          "partner_zh": "晚上九点。",
+          "partner_en": "Nine in the evening.",
+          "prompt_en": "Ask if you can borrow books.",
+          "answers_zh": ["我可以借书吗？", "能借书吗？"],
+          "answers_en": ["Can I borrow books?", "Is it possible to borrow books?"]
         },
         {
-          "partner_zh": "不远，走十分钟。",
-          "partner_en": "Not far — ten minutes' walk.",
-          "prompt_en": "Ask if you go straight on.",
-          "answers_zh": ["是一直走吗？", "往前走吗？"],
-          "answers_en": ["Do I go straight on?", "Straight ahead?"]
+          "partner_zh": "可以，你有借书卡吗？",
+          "partner_en": "Yes — do you have a library card?",
+          "prompt_en": "Say no, and ask where to get one.",
+          "answers_zh": ["没有，在哪儿办？", "没有，怎么办？"],
+          "answers_en": ["No — where do I get one?", "No, what should I do?"]
         },
         {
-          "partner_zh": "对，一直走，到了路口往左。",
-          "partner_en": "Yes, straight on, then left at the junction.",
-          "prompt_en": "Repeat it back to check.",
-          "answers_zh": ["一直走，路口往左，对吗？", "到路口往左？"],
-          "answers_en": ["Straight on, left at the junction — right?", "Left at the junction?"]
+          "partner_zh": "在这儿办就行，给我看一下你的护照。",
+          "partner_en": "You can get one right here — let me see your passport.",
+          "prompt_en": "Say here you are.",
+          "answers_zh": ["好的，给你。", "在这儿。"],
+          "answers_en": ["Sure, here you are.", "Here it is."]
         },
         {
-          "partner_zh": "对！",
-          "partner_en": "That's right!",
-          "prompt_en": "Say thank you, and sorry for the trouble.",
-          "answers_zh": ["太好了，谢谢你！", "谢谢，麻烦你了！"],
-          "answers_en": ["Great, thank you!", "Thanks, sorry for the trouble!"]
+          "partner_zh": "好了！一次可以借五本。",
+          "partner_en": "Done! You can borrow five books at a time.",
+          "prompt_en": "Say great, thank you.",
+          "answers_zh": ["太好了，谢谢！", "好的，谢谢你！"],
+          "answers_en": ["Great, thanks!", "OK, thank you!"]
         }
       ],
-      "closing_zh": "没关系，不客气！",
-      "closing_en": "No problem, you're welcome!"
+      "closing_zh": "不客气。",
+      "closing_en": "You're welcome."
     },
     {
-      "id": "2026-10-31-m2",
+      "id": "2026-11-01-m2",
       "level": 1,
-      "title": "At a breakfast stall",
-      "role": "老板",
-      "goal": "Order eggs and soy milk for breakfast, eat in and pay by phone.",
+      "title": "Family dinner",
+      "role": "妈妈",
+      "goal": "Help set the table for dinner with the grandparents and say how the food tastes.",
       "new_words": [
-        { "word": "鸡蛋", "english": "egg" },
-        { "word": "坐下", "english": "to sit down" }
+        { "word": "晚饭", "english": "dinner" },
+        { "word": "桌子", "english": "table" }
       ],
       "steps": [
         {
-          "partner_zh": "早上好！要什么？",
-          "partner_en": "Morning! What would you like?",
-          "prompt_en": "Ask for two eggs.",
-          "answers_zh": ["我要两个鸡蛋。", "来两个鸡蛋。"],
-          "answers_en": ["I'd like two eggs.", "Two eggs, please."]
+          "partner_zh": "晚饭好了！",
+          "partner_en": "Dinner's ready!",
+          "prompt_en": "Say you're coming.",
+          "answers_zh": ["我马上来！", "来了！"],
+          "answers_en": ["Coming right now!", "Coming!"]
         },
         {
-          "partner_zh": "还要别的吗？",
-          "partner_en": "Anything else?",
-          "prompt_en": "Say a cup of soy milk too.",
-          "answers_zh": ["再要一杯豆浆。", "还要豆浆。"],
-          "answers_en": ["A cup of soy milk as well.", "And soy milk."]
+          "partner_zh": "你去拿一下筷子，放在桌子上。",
+          "partner_en": "Go and get the chopsticks and put them on the table.",
+          "prompt_en": "Ask how many pairs.",
+          "answers_zh": ["拿几双？", "要几双？"],
+          "answers_en": ["How many pairs?", "How many do we need?"]
         },
         {
-          "partner_zh": "在这儿吃吗？",
-          "partner_en": "Eating here?",
-          "prompt_en": "Say yes, you'll sit down and eat here.",
-          "answers_zh": ["对，我坐下吃。", "在这儿吃。"],
-          "answers_en": ["Yes, I'll sit down and eat.", "Eating here."]
+          "partner_zh": "四双，爷爷奶奶也来。",
+          "partner_en": "Four — Grandpa and Grandma are coming too.",
+          "prompt_en": "Say OK, four.",
+          "answers_zh": ["好，四双。", "好的。"],
+          "answers_en": ["OK, four.", "OK."]
         },
         {
-          "partner_zh": "好，一共七块。",
-          "partner_en": "OK, that's seven kuai.",
-          "prompt_en": "Say you'll pay by phone.",
-          "answers_zh": ["我用手机给。", "可以用手机吗？"],
-          "answers_en": ["I'll pay by phone.", "Can I pay by phone?"]
+          "partner_zh": "今天的晚饭怎么样？",
+          "partner_en": "How's dinner tonight?",
+          "prompt_en": "Say it's delicious.",
+          "answers_zh": ["非常好吃！", "很好吃！"],
+          "answers_en": ["Really delicious!", "Very tasty!"]
+        },
+        {
+          "partner_zh": "还要吗？",
+          "partner_en": "Would you like more?",
+          "prompt_en": "Say yes, a little more.",
+          "answers_zh": ["再来一点儿。", "要，谢谢！"],
+          "answers_en": ["A little more, please.", "Yes please, thanks!"]
         }
       ],
-      "closing_zh": "可以，请坐！",
-      "closing_en": "Sure — have a seat!"
+      "closing_zh": "多吃点！",
+      "closing_en": "Eat up!"
     }
   ]
 }
