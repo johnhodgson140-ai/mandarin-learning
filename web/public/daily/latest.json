@@ -1,174 +1,172 @@
 {
-  "date": "2026-11-01",
+  "date": "2026-11-02",
   "level": 1,
   "plan": {
-    "focus_en": "哪些 for “which ones”, and 开玩笑 for joking.",
+    "focus_en": "Places: 楼下 (downstairs), 饭店, 商场; and 下次…还是… for “next time I'll…”.",
     "items": [
       { "kind": "cards", "title_en": "Say your cards (10 cards)" },
       { "kind": "dojo", "title_en": "Tone Dojo (5 minutes)" },
-      { "kind": "story", "title_en": "Read and read aloud: 图书馆里的笑", "ref": "2026-11-01-s1" },
-      { "kind": "mission", "title_en": "Guided mission: at the library desk", "ref": "2026-11-01-m1" }
+      { "kind": "story", "title_en": "Read and read aloud: 楼下的饭店", "ref": "2026-11-02-s1" },
+      { "kind": "mission", "title_en": "Guided mission: booking a table", "ref": "2026-11-02-m1" }
     ]
   },
   "stories": [
     {
-      "id": "2026-11-01-s1",
+      "id": "2026-11-02-s1",
       "level": 1,
-      "topic": "anime",
-      "title_zh": "图书馆里的笑",
-      "title_en": "Laughing in the library",
+      "topic": "football",
+      "title_zh": "楼下的饭店",
+      "title_en": "The restaurant downstairs",
       "paragraphs": [
-        ["白天", "，", "我", "常常", "去", "图书馆", "。", "那里", "有", "很", "多", "日本", "的", "书", "，", "也", "有", "《", "千与千寻", "》", "的", "书", "。"],
-        ["今天", "，", "我", "看", "了", "两", "个", "小时", "，", "笑", "了", "很", "多", "次", "。"],
-        ["我", "旁边", "的", "女生", "问", "我", "：", "“", "你", "在", "看", "什么", "？", "你", "笑", "了", "很", "多", "次", "！", "”"],
-        ["我", "说", "：", "“", "对不起", "！", "这", "本", "书", "太", "好", "了", "。", "”"],
-        ["她", "笑", "着", "说", "：", "“", "我", "开玩笑", "的", "。", "我", "也", "喜欢", "这", "本", "书", "！", "”"]
+        ["我", "家", "楼下", "有", "一", "个", "饭店", "。", "那里", "有", "一", "个", "大", "电视", "，", "常常", "有", "很", "多", "人", "在", "那里", "看", "球", "。"],
+        ["今天", "晚上", "有", "曼联", "的", "球", "。", "我", "和", "朋友", "一边", "吃", "面包", "，", "一边", "看", "。"],
+        ["曼联", "进", "了", "两", "个", "球", "！", "那里", "的", "人", "都", "站", "起来", "了", "。"],
+        ["一", "个", "在", "那里", "工作", "的", "人", "说", "：", "“", "今天", "的", "面包", "不", "要", "钱", "！", "”", "我们", "都", "很", "高兴", "。"]
       ],
       "translations": [
-        "In the daytime I often go to the library. There are lots of Japanese books there, including the Spirited Away book.",
-        "Today I read for two hours and laughed lots of times.",
-        "The girl next to me asked: “What are you reading? You’ve laughed so many times!”",
-        "I said: “Sorry! This book is just too good.”",
-        "She smiled and said: “I’m only joking. I like this book too!”"
+        "There's a restaurant downstairs from my flat. It has a big TV, and lots of people often watch football there.",
+        "Man United were playing tonight. My friend and I ate bread while we watched.",
+        "Man United scored two goals! Everyone there jumped to their feet.",
+        "Someone who works there said: “The bread is free tonight!” We were all really happy."
       ],
-      "names": ["日本", "千与千寻"],
-      "new_words": ["白天", "图书馆", "开玩笑"],
+      "names": ["曼联"],
+      "new_words": ["楼下", "饭店", "面包"],
       "glossary": [
-        { "word": "白天", "english": "daytime" },
-        { "word": "图书馆", "english": "library" },
-        { "word": "开玩笑", "english": "to joke" },
-        { "word": "日本", "english": "Japan" },
-        { "word": "千与千寻", "english": "Spirited Away (Studio Ghibli film)" }
+        { "word": "楼下", "english": "downstairs" },
+        { "word": "饭店", "english": "restaurant" },
+        { "word": "面包", "english": "bread" },
+        { "word": "曼联", "english": "Manchester United" }
       ]
     },
     {
-      "id": "2026-11-01-s2",
+      "id": "2026-11-02-s2",
       "level": 1,
-      "topic": "archive fashion",
-      "title_zh": "哪些衣服？",
-      "title_en": "Which clothes?",
+      "topic": "business & finance",
+      "title_zh": "网上还是商场？",
+      "title_en": "Online or the shopping centre?",
       "paragraphs": [
-        ["我", "很", "爱", "买", "衣服", "。", "我", "的", "衣服", "太", "多", "了", "，", "房间", "里", "都", "放", "不", "下", "了", "。"],
-        ["我", "姐", "说", "：", "“", "你", "要", "送", "一些", "给", "别人", "。", "”"],
-        ["我", "想", "了", "一会儿", "：", "哪些", "要", "？", "哪些", "不", "要", "？"],
-        ["最后", "，", "老", "衣服", "我", "都", "要", "，", "新", "衣服", "我", "送", "给", "别人", "。", "我", "姐", "也", "拿", "了", "两", "个", "包", "。"],
-        ["我", "姐", "笑", "了", "：", "“", "你", "真", "喜欢", "老", "东西", "！", "”", "我", "也", "笑", "了", "。"]
+        ["我", "常常", "去", "商场", "买", "东西", "。", "现在", "，", "我", "也", "常常", "上网", "买", "。"],
+        ["网上", "的", "东西", "很", "多", "，", "有的", "也", "不", "贵", "。"],
+        ["上", "个", "月", "，", "我", "在", "网上", "买", "了", "一", "个", "国外", "的", "包", "。", "包", "很", "好看", "。"],
+        ["我", "等", "了", "一", "个", "月", "，", "最后", "包", "到", "了", "。", "这", "一", "个", "月", "我", "都", "在", "等", "。"],
+        ["我", "想", "，", "下次", "我", "还是", "去", "商场", "买", "吧", "！"]
       ],
       "translations": [
-        "I love buying clothes. I've got too many — they don't fit in my room any more.",
-        "My older sister said: “You should give some away.”",
-        "I thought for a while: which ones do I keep? Which ones go?",
-        "In the end I kept all the old clothes and gave the new ones away. My sister took two bags too.",
-        "My sister laughed: “You really do love old things!” I laughed too."
+        "I often go shopping at the shopping centre. These days I often buy things online too.",
+        "There's loads of stuff online, and some of it isn't expensive.",
+        "Last month I bought a bag from abroad online. It's a really nice bag.",
+        "I waited a whole month, and in the end it arrived. I spent the entire month waiting.",
+        "I think next time I'll just go to the shopping centre!"
       ],
       "names": [],
-      "new_words": ["姐", "哪些"],
+      "new_words": ["商场", "上网", "国外"],
       "glossary": [
-        { "word": "姐", "english": "older sister" },
-        { "word": "哪些", "english": "which ones" }
+        { "word": "商场", "english": "shopping centre" },
+        { "word": "上网", "english": "to go online" },
+        { "word": "国外", "english": "abroad; from abroad" }
       ]
     }
   ],
   "missions": [
     {
-      "id": "2026-11-01-m1",
+      "id": "2026-11-02-m1",
       "level": 1,
-      "title": "At the library desk",
-      "role": "工作人员",
-      "goal": "Ask when the library closes, find out how to borrow books and get a library card.",
+      "title": "Booking a table",
+      "role": "服务员",
+      "goal": "Phone a restaurant to book a table for four on Saturday evening and confirm the date.",
       "new_words": [
-        { "word": "请问", "english": "excuse me, may I ask…" },
-        { "word": "图书馆", "english": "library" }
+        { "word": "饭店", "english": "restaurant" },
+        { "word": "日期", "english": "date" }
       ],
       "steps": [
         {
-          "partner_zh": "你好，有什么事？",
-          "partner_en": "Hello, can I help?",
-          "prompt_en": "Ask what time the library closes.",
-          "answers_zh": ["请问，图书馆几点关门？", "请问几点关门？"],
-          "answers_en": ["Excuse me, what time does the library close?", "Excuse me, what time do you close?"]
+          "partner_zh": "你好，这里是小王饭店。",
+          "partner_en": "Hello, Xiao Wang's Restaurant.",
+          "prompt_en": "Say you'd like to book a table.",
+          "answers_zh": ["你好，我想订一个桌子。", "我想订位。"],
+          "answers_en": ["Hello, I'd like to book a table.", "I'd like to make a booking."]
         },
         {
-          "partner_zh": "晚上九点。",
-          "partner_en": "Nine in the evening.",
-          "prompt_en": "Ask if you can borrow books.",
-          "answers_zh": ["我可以借书吗？", "能借书吗？"],
-          "answers_en": ["Can I borrow books?", "Is it possible to borrow books?"]
+          "partner_zh": "好的，哪天？",
+          "partner_en": "Sure, which day?",
+          "prompt_en": "Say this Saturday evening.",
+          "answers_zh": ["这个星期六晚上。", "星期六晚上。"],
+          "answers_en": ["This Saturday evening.", "Saturday evening."]
         },
         {
-          "partner_zh": "可以，你有借书卡吗？",
-          "partner_en": "Yes — do you have a library card?",
-          "prompt_en": "Say no, and ask where to get one.",
-          "answers_zh": ["没有，在哪儿办？", "没有，怎么办？"],
-          "answers_en": ["No — where do I get one?", "No, what should I do?"]
+          "partner_zh": "几位？",
+          "partner_en": "How many people?",
+          "prompt_en": "Say four.",
+          "answers_zh": ["四个人。", "四位。"],
+          "answers_en": ["Four people.", "Four."]
         },
         {
-          "partner_zh": "在这儿办就行，给我看一下你的护照。",
-          "partner_en": "You can get one right here — let me see your passport.",
-          "prompt_en": "Say here you are.",
-          "answers_zh": ["好的，给你。", "在这儿。"],
-          "answers_en": ["Sure, here you are.", "Here it is."]
+          "partner_zh": "星期六是几号？我看一下日期。",
+          "partner_en": "What date is Saturday? Let me check the date.",
+          "prompt_en": "Say the 7th.",
+          "answers_zh": ["七号。", "是七号。"],
+          "answers_en": ["The 7th.", "It's the 7th."]
         },
         {
-          "partner_zh": "好了！一次可以借五本。",
-          "partner_en": "Done! You can borrow five books at a time.",
-          "prompt_en": "Say great, thank you.",
-          "answers_zh": ["太好了，谢谢！", "好的，谢谢你！"],
+          "partner_zh": "好的，七号晚上，四位。",
+          "partner_en": "OK, the evening of the 7th, four people.",
+          "prompt_en": "Say thank you.",
+          "answers_zh": ["太好了，谢谢！", "好的，谢谢！"],
           "answers_en": ["Great, thanks!", "OK, thank you!"]
         }
       ],
-      "closing_zh": "不客气。",
-      "closing_en": "You're welcome."
+      "closing_zh": "不客气，到时候见！",
+      "closing_en": "You're welcome, see you then!"
     },
     {
-      "id": "2026-11-01-m2",
+      "id": "2026-11-02-m2",
       "level": 1,
-      "title": "Family dinner",
-      "role": "妈妈",
-      "goal": "Help set the table for dinner with the grandparents and say how the food tastes.",
+      "title": "Chatting about school",
+      "role": "同事",
+      "goal": "Talk with a colleague about your sister's school and their son starting primary school.",
       "new_words": [
-        { "word": "晚饭", "english": "dinner" },
-        { "word": "桌子", "english": "table" }
+        { "word": "小学", "english": "primary school" },
+        { "word": "中学", "english": "secondary school" }
       ],
       "steps": [
         {
-          "partner_zh": "晚饭好了！",
-          "partner_en": "Dinner's ready!",
-          "prompt_en": "Say you're coming.",
-          "answers_zh": ["我马上来！", "来了！"],
-          "answers_en": ["Coming right now!", "Coming!"]
+          "partner_zh": "你妹妹上小学还是中学？",
+          "partner_en": "Is your sister at primary school or secondary school?",
+          "prompt_en": "Say secondary school.",
+          "answers_zh": ["她上中学。", "中学。"],
+          "answers_en": ["She's at secondary school.", "Secondary."]
         },
         {
-          "partner_zh": "你去拿一下筷子，放在桌子上。",
-          "partner_en": "Go and get the chopsticks and put them on the table.",
-          "prompt_en": "Ask how many pairs.",
-          "answers_zh": ["拿几双？", "要几双？"],
-          "answers_en": ["How many pairs?", "How many do we need?"]
+          "partner_zh": "她几年级？",
+          "partner_en": "Which year is she in?",
+          "prompt_en": "Say second year.",
+          "answers_zh": ["她上二年级。", "二年级。"],
+          "answers_en": ["She's in year two.", "Year two."]
         },
         {
-          "partner_zh": "四双，爷爷奶奶也来。",
-          "partner_en": "Four — Grandpa and Grandma are coming too.",
-          "prompt_en": "Say OK, four.",
-          "answers_zh": ["好，四双。", "好的。"],
-          "answers_en": ["OK, four.", "OK."]
+          "partner_zh": "她喜欢学校吗？",
+          "partner_en": "Does she like school?",
+          "prompt_en": "Say yes, she really likes her teacher.",
+          "answers_zh": ["喜欢，她很喜欢她的老师。", "很喜欢。"],
+          "answers_en": ["Yes, she really likes her teacher.", "She loves it."]
         },
         {
-          "partner_zh": "今天的晚饭怎么样？",
-          "partner_en": "How's dinner tonight?",
-          "prompt_en": "Say it's delicious.",
-          "answers_zh": ["非常好吃！", "很好吃！"],
-          "answers_en": ["Really delicious!", "Very tasty!"]
+          "partner_zh": "我儿子明年上小学。",
+          "partner_en": "My son starts primary school next year.",
+          "prompt_en": "Ask how old he is.",
+          "answers_zh": ["他今年几岁？", "他几岁了？"],
+          "answers_en": ["How old is he this year?", "How old is he?"]
         },
         {
-          "partner_zh": "还要吗？",
-          "partner_en": "Would you like more?",
-          "prompt_en": "Say yes, a little more.",
-          "answers_zh": ["再来一点儿。", "要，谢谢！"],
-          "answers_en": ["A little more, please.", "Yes please, thanks!"]
+          "partner_zh": "六岁了。",
+          "partner_en": "He's six.",
+          "prompt_en": "Say time flies.",
+          "answers_zh": ["真快啊！", "时间过得真快！"],
+          "answers_en": ["That went fast!", "Time flies!"]
         }
       ],
-      "closing_zh": "多吃点！",
-      "closing_en": "Eat up!"
+      "closing_zh": "是啊，真快！",
+      "closing_en": "Yes, so fast!"
     }
   ]
 }
