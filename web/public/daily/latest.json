@@ -1,167 +1,171 @@
 {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "level": 1,
   "plan": {
-    "focus_en": "了 for something changing (生病了, 好了), and 不能 for “can't”.",
+    "focus_en": "Talking about hobbies (爱好) and whether something is useful (有用).",
     "items": [
       { "kind": "cards", "title_en": "Say your cards (10 cards)" },
       { "kind": "dojo", "title_en": "Tone Dojo (5 minutes)" },
-      { "kind": "story", "title_en": "Read and read aloud: 爸爸生病了", "ref": "2026-11-03-s1" },
-      { "kind": "mission", "title_en": "Guided mission: meeting another student", "ref": "2026-11-03-m1" }
+      { "kind": "story", "title_en": "Read and read aloud: 我的爱好", "ref": "2026-11-04-s1" },
+      { "kind": "mission", "title_en": "Guided mission: lunch with a colleague", "ref": "2026-11-04-m1" }
     ]
   },
   "stories": [
     {
-      "id": "2026-11-03-s1",
+      "id": "2026-11-04-s1",
       "level": 1,
-      "topic": "daily life",
-      "title_zh": "爸爸生病了",
-      "title_en": "Dad got ill",
+      "topic": "anime",
+      "title_zh": "我的爱好",
+      "title_en": "My hobby",
       "paragraphs": [
-        ["昨天", "，", "爸爸", "生病", "了", "，", "他", "不", "能", "去", "上班", "。"],
-        ["他", "打", "电话", "说", "：", "“", "今天", "我", "不", "能", "去", "开会", "了", "。", "”"],
-        ["我", "和", "妈妈", "给", "他", "做", "了", "饭", "。", "他", "吃", "了", "一些", "，", "就", "去", "睡觉", "了", "。", "妈妈", "说", "：", "“", "你", "要", "多", "休息", "。", "”"],
-        ["晚上", "，", "妹妹", "给", "爸爸", "唱歌", "。", "爸爸", "说", "：", "“", "真", "好听", "！", "”"],
-        ["第二", "天", "，", "爸爸", "好", "了", "。", "他", "笑", "着", "说", "：", "“", "谢谢", "你们", "！", "”"]
+        ["我", "的", "爱好", "是", "看", "日本", "电影", "。", "我", "常常", "一边", "看", "，", "一边", "学", "新", "的", "话", "。"],
+        ["朋友", "问", "我", "：", "“", "看", "电影", "有用", "吗", "？", "”"],
+        ["我", "说", "：", "“", "很", "有用", "！", "我", "现在", "能", "听", "明白", "很", "多", "话", "了", "。", "”"],
+        ["下", "个", "月", "，", "我", "想", "去", "日本", "玩", "。", "我", "在", "网上", "看", "了", "很", "多", "地方", "。"],
+        ["我", "觉得", "，", "我", "能", "跟", "那里", "的", "人", "说话", "了", "！", "我", "很", "高兴", "。"]
       ],
       "translations": [
-        "Yesterday Dad got ill and couldn't go to work.",
-        "He phoned and said: “I can’t come to the meeting today.”",
-        "Mum and I cooked for him. He ate a little, then went to bed. Mum said: “You need to rest more.”",
-        "In the evening my little sister sang to Dad. Dad said: “That’s lovely!”",
-        "The next day Dad was better. He smiled and said: “Thank you all!”"
+        "My hobby is watching Japanese films. I often pick up new words while I watch.",
+        "My friend asked me: “Is watching films actually useful?”",
+        "I said: “Very useful! Now I can understand a lot of what people say.”",
+        "Next month I want to go to Japan. I’ve looked at lots of places online.",
+        "I think I’ll be able to talk to people there! I’m really happy."
       ],
-      "names": [],
-      "new_words": ["生病", "开会", "好听"],
+      "names": ["日本"],
+      "new_words": ["爱好", "有用"],
       "glossary": [
-        { "word": "生病", "english": "to get ill" },
-        { "word": "开会", "english": "to have a meeting" },
-        { "word": "好听", "english": "nice to listen to" }
+        { "word": "爱好", "english": "hobby" },
+        { "word": "有用", "english": "useful" },
+        { "word": "日本", "english": "Japan" }
       ]
     },
     {
-      "id": "2026-11-03-s2",
+      "id": "2026-11-04-s2",
       "level": 1,
-      "topic": "travel",
-      "title_zh": "我的钱包",
-      "title_en": "My wallet",
+      "topic": "archive fashion",
+      "title_zh": "不大的地方",
+      "title_en": "A small place",
       "paragraphs": [
-        ["上", "个", "月", "，", "我", "在", "上海", "玩", "。", "有", "一", "天", "，", "我", "到", "了", "车站", "，", "想", "买", "票", "。"],
-        ["我", "找", "我", "的", "钱包", "，", "找", "不", "到", "了", "！", "我", "不", "知道", "要", "做", "什么", "。"],
-        ["一", "个", "女人", "来", "了", "，", "手", "里", "拿", "着", "我", "的", "钱包", "！"],
-        ["她", "说", "：", "“", "这", "是", "你", "的", "吗", "？", "我", "在", "路上", "看到", "的", "。", "”", "我", "说", "：", "“", "太", "谢谢", "您", "了", "！", "”"],
-        ["我", "很", "高兴", "，", "就", "走路", "回去", "了", "。"]
+        ["我", "家", "旁边", "有", "一", "个", "地方", "，", "那里", "都", "是", "老", "衣服", "。", "我", "常常", "去", "那里", "看", "看", "。"],
+        ["那里", "不大", "，", "衣服", "很", "多", "。", "左边", "是", "包", "，", "右边", "是", "衣服", "。"],
+        ["今天", "，", "我", "在", "那里", "找到", "了", "一", "个", "二十", "年", "前", "的", "包", "，", "要", "一百", "块", "。", "我", "一", "看", "就", "很", "喜欢", "。"],
+        ["我", "很", "高兴", "，", "午饭", "也", "没", "吃", "，", "就", "拿", "着", "包", "回家", "了", "。"]
       ],
       "translations": [
-        "Last month I was in Shanghai. One day I got to the station and wanted to buy a ticket.",
-        "I looked for my wallet — I couldn’t find it! I didn't know what to do.",
-        "A woman came up, holding my wallet!",
-        "She said: “Is this yours? I saw it on the road.” I said: “Thank you so much!”",
-        "I was so happy that I walked back."
+        "There’s a place next to my home that’s full of vintage clothes. I often go and have a look.",
+        "It isn't big, but there are loads of clothes. Bags are on the left, clothes on the right.",
+        "Today I found a twenty-year-old bag there for a hundred kuai. I loved it at first sight.",
+        "I was so happy that I skipped lunch and went straight home with the bag."
       ],
-      "names": ["上海"],
-      "new_words": ["车站", "钱包", "走路"],
+      "names": [],
+      "new_words": ["不大", "左边", "午饭"],
       "glossary": [
-        { "word": "车站", "english": "station" },
-        { "word": "钱包", "english": "wallet" },
-        { "word": "走路", "english": "to walk" },
-        { "word": "上海", "english": "Shanghai" }
+        { "word": "不大", "english": "not big" },
+        { "word": "左边", "english": "on the left" },
+        { "word": "午饭", "english": "lunch" }
       ]
     }
   ],
   "missions": [
     {
-      "id": "2026-11-03-m1",
+      "id": "2026-11-04-m1",
       "level": 1,
-      "title": "Meeting another student",
-      "role": "同学",
-      "goal": "Chat with a Chinese student: say you're at university, where you're from and what you study, and swap contacts.",
+      "title": "Lunch with a colleague",
+      "role": "同事",
+      "goal": "Agree to have lunch with a colleague, choose what to eat and chat about your hobbies.",
       "new_words": [
-        { "word": "大学生", "english": "university student" },
-        { "word": "外国", "english": "foreign" }
+        { "word": "午饭", "english": "lunch" },
+        { "word": "爱好", "english": "hobby" }
       ],
       "steps": [
         {
-          "partner_zh": "你好，你也是大学生吗？",
-          "partner_en": "Hi, are you a university student too?",
-          "prompt_en": "Say yes, you're at university in London.",
-          "answers_zh": ["是的，我在伦敦上大学。", "对，我是大学生。"],
-          "answers_en": ["Yes, I'm at university in London.", "Yes, I'm a university student."]
+          "partner_zh": "中午一起吃午饭吧？",
+          "partner_en": "Shall we have lunch together at midday?",
+          "prompt_en": "Say sure, and ask where.",
+          "answers_zh": ["好啊，去哪儿吃？", "好，在哪儿吃？"],
+          "answers_en": ["Sure, where shall we go?", "OK, where?"]
         },
         {
-          "partner_zh": "你是外国人吧？",
-          "partner_en": "You're not from here, are you?",
-          "prompt_en": "Say yes, you're British.",
-          "answers_zh": ["对，我是英国人。", "是的，我从英国来。"],
-          "answers_en": ["That's right, I'm British.", "Yes, I'm from the UK."]
+          "partner_zh": "楼下的饭店怎么样？",
+          "partner_en": "How about the restaurant downstairs?",
+          "prompt_en": "Say good, the food there is tasty.",
+          "answers_zh": ["好，那里很好吃。", "好啊。"],
+          "answers_en": ["Good — the food there is tasty.", "Sure."]
         },
         {
-          "partner_zh": "你学什么？",
-          "partner_en": "What do you study?",
-          "prompt_en": "Say accounting and finance.",
-          "answers_zh": ["我学会计和金融。", "我学会计。"],
-          "answers_en": ["I study accounting and finance.", "I study accounting."]
+          "partner_zh": "你想吃什么？",
+          "partner_en": "What do you fancy?",
+          "prompt_en": "Say noodles.",
+          "answers_zh": ["我想吃面条。", "来一碗面。"],
+          "answers_en": ["I'd like noodles.", "A bowl of noodles."]
         },
         {
-          "partner_zh": "很好！你中文说得很好。",
-          "partner_en": "Great! Your Chinese is really good.",
-          "prompt_en": "Say thanks, you're still learning.",
-          "answers_zh": ["谢谢，我还在学习。", "哪里，我说得不好。"],
-          "answers_en": ["Thanks, I'm still learning.", "Oh no, it's not that good."]
+          "partner_zh": "你有什么爱好？",
+          "partner_en": "What are your hobbies?",
+          "prompt_en": "Say watching films.",
+          "answers_zh": ["我的爱好是看电影。", "我喜欢看电影。"],
+          "answers_en": ["My hobby is watching films.", "I like watching films."]
         },
         {
-          "partner_zh": "我们加个微信吧？",
-          "partner_en": "Shall we add each other on WeChat?",
-          "prompt_en": "Say sure.",
-          "answers_zh": ["好啊！", "当然可以！"],
-          "answers_en": ["Sure!", "Of course!"]
+          "partner_zh": "我也是！下次一起去看吧。",
+          "partner_en": "Me too! Let's go and watch one together next time.",
+          "prompt_en": "Say great.",
+          "answers_zh": ["太好了！", "好啊，下次一起去！"],
+          "answers_en": ["Great!", "Sure, let's go next time!"]
         }
       ],
-      "closing_zh": "好，以后常联系！",
-      "closing_en": "Great, let's keep in touch!"
+      "closing_zh": "走吧，吃饭去！",
+      "closing_en": "Come on, let's go and eat!"
     },
     {
-      "id": "2026-11-03-m2",
+      "id": "2026-11-04-m2",
       "level": 1,
-      "title": "Finding the bus stop",
-      "role": "路人",
-      "goal": "Ask where the bus stop is, which bus goes to the airport and how long it takes.",
+      "title": "Helping a child in the park",
+      "role": "小朋友",
+      "goal": "A child's ball is stuck in a tree: find out which tree, get it down and ask how old they are.",
       "new_words": [
-        { "word": "车站", "english": "bus stop; station" },
-        { "word": "走路", "english": "to walk" }
+        { "word": "左边", "english": "on the left" },
+        { "word": "小朋友", "english": "child (friendly way to address a kid)" }
       ],
       "steps": [
         {
-          "partner_zh": "你好，有什么事？",
-          "partner_en": "Hi, can I help?",
-          "prompt_en": "Ask where the bus stop is.",
-          "answers_zh": ["请问，车站在哪儿？", "公共汽车站在哪里？"],
-          "answers_en": ["Excuse me, where's the bus stop?", "Where's the bus stop?"]
+          "partner_zh": "你好！你能帮我吗？",
+          "partner_en": "Hello! Can you help me?",
+          "prompt_en": "Say of course, what's wrong?",
+          "answers_zh": ["当然，怎么了？", "好啊，有什么事？"],
+          "answers_en": ["Of course, what's the matter?", "Sure, what is it?"]
         },
         {
-          "partner_zh": "在那边，走路五分钟。",
-          "partner_en": "Over there — five minutes' walk.",
-          "prompt_en": "Ask which bus goes to the airport.",
-          "answers_zh": ["几路车去机场？", "哪个车去机场？"],
-          "answers_en": ["Which bus number goes to the airport?", "Which bus goes to the airport?"]
+          "partner_zh": "我的球在树上。",
+          "partner_en": "My ball is stuck in a tree.",
+          "prompt_en": "Ask which tree.",
+          "answers_zh": ["哪个树？", "是哪一棵树？"],
+          "answers_en": ["Which tree?", "Which tree is it?"]
         },
         {
-          "partner_zh": "三路车。",
-          "partner_en": "The number 3.",
-          "prompt_en": "Ask how long it takes.",
-          "answers_zh": ["要多长时间？", "坐多久？"],
-          "answers_en": ["How long does it take?", "How long is the ride?"]
+          "partner_zh": "左边那个大树。",
+          "partner_en": "The big one on the left.",
+          "prompt_en": "Say OK, you'll get it.",
+          "answers_zh": ["好，我帮你拿。", "好，我去拿。"],
+          "answers_en": ["OK, I'll get it for you.", "OK, I'll fetch it."]
         },
         {
-          "partner_zh": "一个小时左右。",
-          "partner_en": "About an hour.",
-          "prompt_en": "Say thank you.",
-          "answers_zh": ["好的，谢谢！", "谢谢你！"],
-          "answers_en": ["OK, thanks!", "Thank you!"]
+          "partner_zh": "谢谢！你真好！",
+          "partner_en": "Thank you! You're so kind!",
+          "prompt_en": "Say no problem, and ask the child how old they are.",
+          "answers_zh": ["不客气。小朋友，你几岁了？", "没事。你几岁了？"],
+          "answers_en": ["You're welcome. How old are you, little one?", "No problem. How old are you?"]
+        },
+        {
+          "partner_zh": "我六岁了！",
+          "partner_en": "I'm six!",
+          "prompt_en": "Say have fun, and be careful.",
+          "answers_zh": ["玩得开心，小心点！", "好好玩！"],
+          "answers_en": ["Have fun, and be careful!", "Enjoy yourself!"]
         }
       ],
-      "closing_zh": "不客气。",
-      "closing_en": "You're welcome."
+      "closing_zh": "谢谢！拜拜！",
+      "closing_en": "Thanks! Bye-bye!"
     }
   ]
 }
