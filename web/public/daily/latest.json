@@ -1,172 +1,171 @@
 {
-  "date": "2026-11-05",
+  "date": "2026-11-06",
   "level": 1,
   "plan": {
-    "focus_en": "有些 + adjective (有些贵), and 上车 / 下车 for getting on and off.",
+    "focus_en": "一点儿 for “a little”, and 放假 for a day off.",
     "items": [
       { "kind": "cards", "title_en": "Say your cards (10 cards)" },
       { "kind": "dojo", "title_en": "Tone Dojo (5 minutes)" },
-      { "kind": "story", "title_en": "Read and read aloud: 机票和门票", "ref": "2026-11-05-s1" },
-      { "kind": "mission", "title_en": "Guided mission: at the ticket office", "ref": "2026-11-05-m1" }
+      { "kind": "story", "title_en": "Read and read aloud: 放假了", "ref": "2026-11-06-s1" },
+      { "kind": "mission", "title_en": "Guided mission: do you speak Chinese?", "ref": "2026-11-06-m1" }
     ]
   },
   "stories": [
     {
-      "id": "2026-11-05-s1",
+      "id": "2026-11-06-s1",
       "level": 1,
-      "topic": "travel",
-      "title_zh": "机票和门票",
-      "title_en": "Plane tickets and entry tickets",
+      "topic": "daily life",
+      "title_zh": "放假了",
+      "title_en": "A day off",
       "paragraphs": [
-        ["我", "想", "去", "北京", "玩", "。", "我", "在", "网上", "买", "了", "机票", "。", "票", "不", "贵", "，", "我", "很", "高兴", "。"],
-        ["到", "了", "北京", "，", "我", "坐", "车", "去", "一", "个", "很", "大", "的", "老", "地方", "。"],
-        ["下车", "后", "，", "我", "去", "买", "门票", "。", "要", "一百", "块", "！", "有些", "贵", "，", "我", "还是", "买", "了", "。"],
-        ["那里", "真", "好", "。", "我", "觉得", "，", "一百", "块", "也", "不", "多", "。", "下", "次", "我", "还", "想", "来", "！"]
+        ["今天", "放假", "，", "我", "不用", "上班", "。", "我", "九", "点", "起床", "，", "和", "我", "弟", "一起", "吃", "早饭", "。"],
+        ["我们", "吃", "了", "面包", "，", "喝", "了", "牛奶", "。", "十", "点", "，", "我们", "一起", "出去", "走路", "。"],
+        ["下午", "，", "他", "在", "家", "看", "电视", "，", "我", "在", "床", "上", "睡", "了", "一", "个", "小时", "。"],
+        ["晚上", "，", "妈妈", "做", "了", "很", "多", "菜", "。", "我", "觉得", "，", "放假", "真", "好", "！"]
       ],
       "translations": [
-        "I wanted to go to Beijing, so I bought a plane ticket online. It wasn't expensive, and I was really pleased.",
-        "When I got to Beijing, I took a bus to a big historic site.",
-        "After I got off, I went to buy a ticket. It was a hundred kuai! A bit expensive, but I bought one anyway.",
-        "It was wonderful there. I think a hundred kuai wasn’t much after all. I want to come again next time!"
+        "Today's a day off, so I don't have to go to work. I got up at nine and had breakfast with my little brother.",
+        "We had bread and milk. At ten we went out for a walk together.",
+        "In the afternoon he watched TV at home, and I had an hour's nap in bed.",
+        "In the evening Mum made lots of dishes. I think days off are great!"
       ],
-      "names": ["北京"],
-      "new_words": ["机票", "下车", "门票"],
+      "names": [],
+      "new_words": ["放假", "弟", "早饭"],
       "glossary": [
-        { "word": "机票", "english": "plane ticket" },
-        { "word": "下车", "english": "to get off (a bus, car)" },
-        { "word": "门票", "english": "entry ticket" },
-        { "word": "北京", "english": "Beijing" }
+        { "word": "放假", "english": "to have a day off; holiday" },
+        { "word": "弟", "english": "younger brother" },
+        { "word": "早饭", "english": "breakfast" }
       ]
     },
     {
-      "id": "2026-11-05-s2",
+      "id": "2026-11-06-s2",
       "level": 1,
-      "topic": "football",
-      "title_zh": "下雨了",
-      "title_en": "It rained",
+      "topic": "business & finance",
+      "title_zh": "路口的饭店",
+      "title_en": "The restaurant at the junction",
       "paragraphs": [
-        ["今天", "下午", "，", "我", "想", "和", "朋友", "们", "去", "打球", "。", "两", "点", "，", "下雨", "了", "。"],
-        ["雨", "很", "大", "，", "我们", "不", "能", "出去", "了", "。"],
-        ["朋友", "说", "：", "“", "我", "家", "楼上", "有", "一", "个", "大", "房间", "，", "我们", "去", "那里", "玩", "吧", "！", "”"],
-        ["我们", "在", "楼上", "玩", "了", "两", "个", "小时", "的", "球", "。", "楼下", "的", "人", "来", "了", "，", "说", "：", "“", "你们", "别", "玩", "了", "！", "”"],
-        ["我们", "都", "笑", "了", "，", "就", "去", "看", "电视", "了", "。"]
+        ["我", "家", "旁边", "的", "路口", "有", "一", "个", "饭店", "。", "这", "个", "饭店", "很", "有名", "，", "人", "很", "多", "。"],
+        ["开", "饭店", "的", "人", "是", "我", "朋友", "的", "爸爸", "。", "他", "人", "很", "好", "，", "常常", "笑", "。"],
+        ["他", "说", "：", "“", "东西", "好", "，", "钱", "不", "多", "，", "人", "就", "会", "来", "。", "”"],
+        ["他", "的", "菜", "不", "贵", "，", "也", "很", "好吃", "。"],
+        ["我", "想", "，", "我", "也", "能", "跟", "他", "学", "一点儿", "。", "我", "要", "常常", "去", "那里", "吃饭", "！"]
       ],
       "translations": [
-        "This afternoon I wanted to play football with my friends. At two, it started raining.",
-        "It was pouring, so we couldn't go out.",
-        "My friend said: “There’s a big room upstairs at my place — let’s play there!”",
-        "We played ball upstairs for two hours. The people downstairs came up and said: “Stop playing!”",
-        "We all laughed, and went to watch TV instead."
+        "There's a restaurant at the junction next to my home. It's really well known, and always busy.",
+        "The man who runs it is my friend’s dad. He’s really nice and always smiling.",
+        "He says: “If the food is good and the price is low, people will come.”",
+        "His dishes aren't expensive, and they're delicious too.",
+        "I think I could learn a thing or two from him. I’m going to eat there often!"
       ],
       "names": [],
-      "new_words": ["打球", "下雨", "楼上"],
+      "new_words": ["路口", "有名", "一点儿"],
       "glossary": [
-        { "word": "打球", "english": "to play ball" },
-        { "word": "下雨", "english": "to rain" },
-        { "word": "楼上", "english": "upstairs" }
+        { "word": "路口", "english": "junction; crossroads" },
+        { "word": "有名", "english": "famous; well-known" },
+        { "word": "一点儿", "english": "a little; a bit" }
       ]
     }
   ],
   "missions": [
     {
-      "id": "2026-11-05-m1",
+      "id": "2026-11-06-m1",
       "level": 1,
-      "title": "At the ticket office",
-      "role": "售票员",
-      "goal": "Buy two entry tickets, ask about a student discount, and check whether you can bring your cup in.",
+      "title": "Do you speak Chinese?",
+      "role": "店员",
+      "goal": "A shop assistant is surprised you speak Chinese: say how long and where you've learned, and what's hard.",
       "new_words": [
-        { "word": "门票", "english": "entry ticket" },
-        { "word": "杯子", "english": "cup" }
+        { "word": "中文", "english": "Chinese (language)" },
+        { "word": "一点儿", "english": "a little" }
       ],
       "steps": [
         {
-          "partner_zh": "你好！几个人？",
-          "partner_en": "Hello! How many?",
-          "prompt_en": "Say two tickets.",
-          "answers_zh": ["两张门票。", "两个人。"],
-          "answers_en": ["Two tickets.", "Two people."]
+          "partner_zh": "你会说中文吗？",
+          "partner_en": "Can you speak Chinese?",
+          "prompt_en": "Say a little.",
+          "answers_zh": ["会一点儿。", "我会说一点儿中文。"],
+          "answers_en": ["A little.", "I can speak a little Chinese."]
         },
         {
-          "partner_zh": "一张门票五十块。",
-          "partner_en": "It's fifty kuai per ticket.",
-          "prompt_en": "Ask if students pay less.",
-          "answers_zh": ["学生票多少钱？", "学生便宜吗？"],
-          "answers_en": ["How much is a student ticket?", "Is it cheaper for students?"]
+          "partner_zh": "说得很好啊！你学了多长时间？",
+          "partner_en": "You speak it really well! How long have you been learning?",
+          "prompt_en": "Say half a year.",
+          "answers_zh": ["我学了半年。", "半年。"],
+          "answers_en": ["I've been learning for half a year.", "Six months."]
         },
         {
-          "partner_zh": "学生半价，二十五块。",
-          "partner_en": "Students pay half — twenty-five kuai.",
-          "prompt_en": "Say you're both students.",
-          "answers_zh": ["我们都是学生。", "我们是大学生。"],
-          "answers_en": ["We're both students.", "We're university students."]
+          "partner_zh": "你在哪儿学的？",
+          "partner_en": "Where did you learn?",
+          "prompt_en": "Say at university and online.",
+          "answers_zh": ["在大学，也在网上学。", "在大学学的。"],
+          "answers_en": ["At university, and online too.", "At university."]
         },
         {
-          "partner_zh": "好的，一共五十块。",
-          "partner_en": "OK, fifty kuai altogether.",
-          "prompt_en": "Ask if you can take your cup in.",
-          "answers_zh": ["杯子可以带进去吗？", "我能拿杯子进去吗？"],
-          "answers_en": ["Can I take my cup in?", "Am I allowed to bring my cup in?"]
+          "partner_zh": "中文难吗？",
+          "partner_en": "Is Chinese hard?",
+          "prompt_en": "Say characters are hard, but speaking is OK.",
+          "answers_zh": ["汉字很难，说话还行。", "写字很难。"],
+          "answers_en": ["Characters are hard, but speaking is OK.", "Writing is hard."]
         },
         {
-          "partner_zh": "可以，但是里边不能喝。",
-          "partner_en": "Yes, but you can't drink inside.",
-          "prompt_en": "Say OK, got it, thanks.",
-          "answers_zh": ["明白了，谢谢。", "好的，谢谢！"],
-          "answers_en": ["Got it, thanks.", "OK, thank you!"]
+          "partner_zh": "加油！",
+          "partner_en": "Keep it up!",
+          "prompt_en": "Say thank you.",
+          "answers_zh": ["谢谢你！", "谢谢！"],
+          "answers_en": ["Thank you!", "Thanks!"]
         }
       ],
-      "closing_zh": "请进，玩得开心！",
-      "closing_en": "Go on in — enjoy!"
+      "closing_zh": "不客气，欢迎再来！",
+      "closing_en": "You're welcome — come again!"
     },
     {
-      "id": "2026-11-05-m2",
+      "id": "2026-11-06-m2",
       "level": 1,
-      "title": "Getting out of a taxi",
-      "role": "司机",
-      "goal": "Take a taxi to the shopping centre, agree where to get out and pay.",
+      "title": "Holiday plans",
+      "role": "同事",
+      "goal": "Tell a colleague when your holiday starts, where you're going and for how long.",
       "new_words": [
-        { "word": "下车", "english": "to get out (of a car)" },
-        { "word": "马路", "english": "road; street" }
+        { "word": "放假", "english": "to be on holiday" },
+        { "word": "机票", "english": "plane ticket" }
       ],
       "steps": [
         {
-          "partner_zh": "去哪儿？",
-          "partner_en": "Where to?",
-          "prompt_en": "Say the shopping centre.",
-          "answers_zh": ["我要去商场。", "去商场。"],
-          "answers_en": ["To the shopping centre, please.", "The shopping centre."]
+          "partner_zh": "你什么时候放假？",
+          "partner_en": "When does your holiday start?",
+          "prompt_en": "Say next week.",
+          "answers_zh": ["下个星期放假。", "下星期。"],
+          "answers_en": ["Next week.", "Next week."]
         },
         {
-          "partner_zh": "到了，你在这儿下车吗？",
-          "partner_en": "We're here — do you want to get out here?",
-          "prompt_en": "Ask if they can stop on the other side of the road.",
-          "answers_zh": ["能去马路对面吗？", "去马路那边吧。"],
-          "answers_en": ["Could you go to the other side of the road?", "The other side of the road, please."]
+          "partner_zh": "放假你去哪儿？",
+          "partner_en": "Where are you going on holiday?",
+          "prompt_en": "Say you're going to Beijing.",
+          "answers_zh": ["我去北京玩。", "我想去北京。"],
+          "answers_en": ["I'm going to Beijing.", "I want to go to Beijing."]
         },
         {
-          "partner_zh": "那边不能停车。",
-          "partner_en": "I can't stop over there.",
-          "prompt_en": "Say OK, you'll get out here.",
-          "answers_zh": ["好，我在这儿下车。", "那就这儿吧。"],
-          "answers_en": ["OK, I'll get out here.", "Here's fine, then."]
+          "partner_zh": "你买机票了吗？",
+          "partner_en": "Have you bought your plane ticket?",
+          "prompt_en": "Say yes, you bought it online.",
+          "answers_zh": ["买了，在网上买的。", "已经买了。"],
+          "answers_en": ["Yes, I bought it online.", "Already bought it."]
         },
         {
-          "partner_zh": "二十八块。",
-          "partner_en": "Twenty-eight kuai.",
-          "prompt_en": "Say you'll pay by phone.",
-          "answers_zh": ["我用手机给。", "可以用手机吗？"],
-          "answers_en": ["I'll pay by phone.", "Can I pay by phone?"]
+          "partner_zh": "真好！要去几天？",
+          "partner_en": "Lovely! How many days?",
+          "prompt_en": "Say five days.",
+          "answers_zh": ["去五天。", "五天。"],
+          "answers_en": ["Five days.", "Five."]
         },
         {
-          "partner_zh": "好了。过马路小心！",
-          "partner_en": "All done. Careful crossing the road!",
-          "prompt_en": "Say thank you.",
-          "answers_zh": ["谢谢师傅！", "好的，谢谢！"],
-          "answers_en": ["Thanks!", "OK, thank you!"]
+          "partner_zh": "玩得开心！",
+          "partner_en": "Have a great time!",
+          "prompt_en": "Say thanks — you'll bring something back for them.",
+          "answers_zh": ["谢谢！我给你带点东西回来。", "谢谢！"],
+          "answers_en": ["Thanks! I'll bring you something back.", "Thanks!"]
         }
       ],
-      "closing_zh": "再见！",
-      "closing_en": "Bye!"
+      "closing_zh": "好啊，谢谢！",
+      "closing_en": "Great, thanks!"
     }
   ]
 }
