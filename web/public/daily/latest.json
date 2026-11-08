@@ -1,166 +1,156 @@
 {
-  "date": "2026-11-07",
+  "date": "2026-11-08",
   "level": 1,
   "plan": {
-    "focus_en": "半天 for “ages”, and verb + 上 for closing (关上门).",
+    "focus_en": "Days around today: 前天, 昨天, 今天, 明天, 后天.",
     "items": [
       { "kind": "cards", "title_en": "Say your cards (10 cards)" },
       { "kind": "dojo", "title_en": "Tone Dojo (5 minutes)" },
-      { "kind": "story", "title_en": "Read and read aloud: 车票在哪儿？", "ref": "2026-11-07-s2" },
-      { "kind": "mission", "title_en": "Guided mission: picking up your brother", "ref": "2026-11-07-m1" }
+      { "kind": "story", "title_en": "Read and read aloud: 我们都很渴", "ref": "2026-11-08-s1" },
+      { "kind": "mission", "title_en": "Guided mission: asking for a day off", "ref": "2026-11-08-m2" }
     ]
   },
   "stories": [
     {
-      "id": "2026-11-07-s1",
+      "id": "2026-11-08-s1",
       "level": 1,
-      "topic": "anime",
-      "title_zh": "日本书店",
-      "title_en": "The Japanese bookshop",
+      "topic": "football",
+      "title_zh": "我们都很渴",
+      "title_en": "We were all thirsty",
       "paragraphs": [
-        ["星期天", "，", "我", "去", "了", "一", "个", "日本", "书店", "。", "那里", "有", "很", "多", "电影", "里", "的", "东西", "。"],
-        ["我", "在", "那里", "看", "了", "半天", "，", "一", "点", "也", "不", "想", "走", "。"],
-        ["晚上", "七", "点", "，", "书店", "要", "关", "门", "了", "。", "我", "还", "想", "看", "！"],
-        ["我", "买", "了", "两", "本", "书", "，", "就", "回家", "了", "。", "晚上", "，", "我", "在", "床", "上", "读", "了", "两", "个", "小时", "。", "这些", "书", "都", "很", "好看", "！"]
+        ["前天", "，", "我", "和", "朋友", "们", "去", "打球", "。", "天气", "很", "热", "，", "我们", "都", "很", "渴", "。"],
+        ["我们", "喝", "了", "很", "多", "水", "，", "还是", "很", "渴", "。", "一", "个", "朋友", "去", "商店", "买", "了", "很", "多", "水", "。"],
+        ["我们", "一边", "喝", "，", "一边", "笑", "。", "最后", "，", "我们", "进", "了", "三", "个", "球", "！"],
+        ["朋友", "说", "：", "“", "后天", "我们", "再", "来", "！", "”", "我", "说", "：", "“", "好", "！", "我", "会", "拿", "很", "多", "水", "来", "。", "”"]
       ],
       "translations": [
-        "On Sunday I went to a Japanese bookshop. There were lots of things from films there.",
-        "I spent ages looking around and didn't want to leave at all.",
-        "At seven in the evening the bookshop was about to close. I still wanted to keep looking!",
-        "I bought two books and went home. In the evening I read in bed for two hours. Both books are great!"
+        "The day before yesterday I played football with my friends. It was hot, and we were all thirsty.",
+        "We drank loads of water but were still thirsty. One friend went to the shop and bought lots more.",
+        "We laughed as we drank. In the end we scored three goals!",
+        "My friend said: “Let’s come again the day after tomorrow!” I said: “OK! I’ll bring lots of water.”"
       ],
-      "names": ["日本"],
-      "new_words": ["星期天", "书店", "半天"],
+      "names": [],
+      "new_words": ["前天", "渴", "后天"],
       "glossary": [
-        { "word": "星期天", "english": "Sunday" },
-        { "word": "书店", "english": "bookshop" },
-        { "word": "半天", "english": "ages; a long time" },
-        { "word": "日本", "english": "Japan" }
+        { "word": "前天", "english": "the day before yesterday" },
+        { "word": "渴", "english": "thirsty" },
+        { "word": "后天", "english": "the day after tomorrow" }
       ]
     },
     {
-      "id": "2026-11-07-s2",
+      "id": "2026-11-08-s2",
       "level": 1,
-      "topic": "travel",
-      "title_zh": "车票在哪儿？",
-      "title_en": "Where's the ticket?",
+      "topic": "archive fashion",
+      "title_zh": "电影里的衣服",
+      "title_en": "The clothes in the film",
       "paragraphs": [
-        ["上", "个", "月", "，", "我", "和", "姐姐", "要", "坐", "火车", "去", "上海", "。", "我们", "到", "了", "火车站", "，", "人", "非常", "多", "。"],
-        ["姐姐", "说", "：", "“", "车票", "在", "哪儿", "？", "”", "我", "找", "了", "找", "，", "没有", "找到", "！"],
-        ["最后", "，", "我", "在", "包", "里", "找到", "了", "。", "我们", "都", "笑", "了", "。"],
-        ["上", "了", "火车", "，", "姐姐", "说", "：", "“", "关上", "门", "吧", "，", "有", "风", "。", "”"],
-        ["我们", "坐", "了", "五", "个", "小时", "，", "到", "了", "上海", "。"]
+        ["星期天", "，", "我", "和", "女朋友", "去", "电影院", "看", "电影", "。"],
+        ["电影", "里", "的", "男人", "穿", "着", "很", "好看", "的", "老", "衣服", "。"],
+        ["女朋友", "说", "：", "“", "那", "个", "衣服", "跟", "你", "的", "一样", "！", "”"],
+        ["我", "笑", "了", "：", "“", "对", "，", "我", "也", "有", "！", "是", "我", "去年", "在", "网上", "买", "的", "。", "”"],
+        ["看", "了", "电影", "，", "我们", "去", "吃", "晚饭", "。", "我们", "说", "了", "很", "多", "衣服", "的", "事", "。"]
       ],
       "translations": [
-        "Last month my older sister and I were taking the train to Shanghai. When we got to the station it was packed.",
-        "My sister said: “Where are the tickets?” I looked and looked, but couldn't find them!",
-        "In the end I found them in my bag. We both laughed.",
-        "Once we were on the train, my sister said: “Shut the door — there’s a draught.”",
-        "Five hours later we arrived in Shanghai."
+        "On Sunday my girlfriend and I went to the cinema to see a film.",
+        "The man in the film was wearing really nice vintage clothes.",
+        "My girlfriend said: “That’s just like yours!”",
+        "I laughed: “Yes, I’ve got one too! I bought it online last year.”",
+        "After the film we went for dinner. We talked about clothes a lot."
       ],
-      "names": ["上海"],
-      "new_words": ["火车站", "车票", "关上"],
+      "names": [],
+      "new_words": ["电影院"],
       "glossary": [
-        { "word": "火车站", "english": "train station" },
-        { "word": "车票", "english": "ticket (train or bus)" },
-        { "word": "关上", "english": "to close; to shut" },
-        { "word": "上海", "english": "Shanghai" }
+        { "word": "电影院", "english": "cinema" }
       ]
     }
   ],
   "missions": [
     {
-      "id": "2026-11-07-m1",
+      "id": "2026-11-08-m1",
       "level": 1,
-      "title": "Picking up your brother",
-      "role": "老师",
-      "goal": "Collect your little brother from school: say who you're here for, wait until school finishes and thank the teacher.",
+      "title": "At the cinema",
+      "role": "工作人员",
+      "goal": "Ask a member of staff where the toilet is, when the film starts and where to buy water.",
       "new_words": [
-        { "word": "放学", "english": "school finishes (for the day)" },
-        { "word": "弟", "english": "younger brother" }
+        { "word": "洗手间", "english": "toilet" },
+        { "word": "电影院", "english": "cinema" }
       ],
       "steps": [
         {
-          "partner_zh": "你好，你找谁？",
-          "partner_en": "Hello, who are you here for?",
-          "prompt_en": "Say you're here to collect your little brother.",
-          "answers_zh": ["我来接我弟弟。", "我找我弟。"],
-          "answers_en": ["I'm here to pick up my little brother.", "I'm here for my brother."]
+          "partner_zh": "欢迎来电影院！有什么事？",
+          "partner_en": "Welcome to the cinema! Can I help?",
+          "prompt_en": "Ask where the toilet is.",
+          "answers_zh": ["请问，洗手间在哪儿？", "洗手间在哪里？"],
+          "answers_en": ["Excuse me, where's the toilet?", "Where's the toilet?"]
         },
         {
-          "partner_zh": "他叫什么名字？",
-          "partner_en": "What's his name?",
-          "prompt_en": "Say his name is Xiao Ming.",
-          "answers_zh": ["他叫小明。", "小明。"],
-          "answers_en": ["His name's Xiao Ming.", "Xiao Ming."]
+          "partner_zh": "在楼上，左边。",
+          "partner_en": "Upstairs, on the left.",
+          "prompt_en": "Ask what time the film starts.",
+          "answers_zh": ["电影几点开始？", "几点开始？"],
+          "answers_en": ["What time does the film start?", "When does it start?"]
         },
         {
-          "partner_zh": "他们四点放学，还有十分钟。",
-          "partner_en": "They finish at four — ten more minutes.",
-          "prompt_en": "Say OK, you'll wait.",
-          "answers_zh": ["没关系，我等他。", "好，我等一下。"],
-          "answers_en": ["That's fine, I'll wait for him.", "OK, I'll wait."]
+          "partner_zh": "七点半，还有十分钟。",
+          "partner_en": "Half past seven — ten minutes from now.",
+          "prompt_en": "Say thanks, and ask where to buy water.",
+          "answers_zh": ["谢谢。在哪儿买水？", "谢谢。这里能买水吗？"],
+          "answers_en": ["Thanks. Where can I buy water?", "Thanks. Can I buy water here?"]
         },
         {
-          "partner_zh": "你是他的家人吗？",
-          "partner_en": "Are you family?",
-          "prompt_en": "Say yes, you're his older sibling.",
-          "answers_zh": ["是的，我是他哥哥。", "对，我是他姐姐。"],
-          "answers_en": ["Yes, I'm his big brother.", "Yes, I'm his big sister."]
+          "partner_zh": "在那边。",
+          "partner_en": "Over there.",
+          "prompt_en": "Say thank you.",
+          "answers_zh": ["好的，谢谢！", "谢谢你！"],
+          "answers_en": ["OK, thanks!", "Thank you!"]
+        }
+      ],
+      "closing_zh": "不客气，看得开心！",
+      "closing_en": "You're welcome — enjoy the film!"
+    },
+    {
+      "id": "2026-11-08-m2",
+      "level": 1,
+      "title": "Asking for a day off",
+      "role": "老师",
+      "goal": "Phone your teacher to ask for tomorrow off to see a doctor, and find out what the class will cover.",
+      "new_words": [
+        { "word": "请假", "english": "to ask for time off" },
+        { "word": "看病", "english": "to see a doctor" },
+        { "word": "下课", "english": "after class; class finishes" }
+      ],
+      "steps": [
+        {
+          "partner_zh": "喂，你好。",
+          "partner_en": "Hello?",
+          "prompt_en": "Say hello, and that you'd like to take tomorrow off.",
+          "answers_zh": ["老师好，我明天想请假。", "老师，我明天要请假。"],
+          "answers_en": ["Hello, I'd like to take tomorrow off.", "I need to take tomorrow off."]
         },
         {
-          "partner_zh": "好的，他马上出来。",
-          "partner_en": "OK, he'll be out in a moment.",
+          "partner_zh": "怎么了？",
+          "partner_en": "What's wrong?",
+          "prompt_en": "Say you have to see a doctor.",
+          "answers_zh": ["我要去看病。", "我生病了，要去医院。"],
+          "answers_en": ["I need to see a doctor.", "I'm ill and need to go to hospital."]
+        },
+        {
+          "partner_zh": "好的，你好好休息。",
+          "partner_en": "OK, get some good rest.",
+          "prompt_en": "Ask what the class will do tomorrow.",
+          "answers_zh": ["明天学什么？", "明天的课学什么？"],
+          "answers_en": ["What are we doing tomorrow?", "What's tomorrow's lesson on?"]
+        },
+        {
+          "partner_zh": "学第五课。下课以后我给你发信息。",
+          "partner_en": "Lesson five. I'll message you after class.",
           "prompt_en": "Say thank you.",
           "answers_zh": ["谢谢老师！", "好的，谢谢！"],
           "answers_en": ["Thank you!", "OK, thanks!"]
         }
       ],
-      "closing_zh": "不客气。",
-      "closing_en": "You're welcome."
-    },
-    {
-      "id": "2026-11-07-m2",
-      "level": 1,
-      "title": "Sunday plans",
-      "role": "朋友",
-      "goal": "Agree to go out with a friend on Sunday: say you're free, pick a time and a meeting place.",
-      "new_words": [
-        { "word": "星期天", "english": "Sunday" },
-        { "word": "玩儿", "english": "to have fun; to go out" }
-      ],
-      "steps": [
-        {
-          "partner_zh": "星期天你有空吗？",
-          "partner_en": "Are you free on Sunday?",
-          "prompt_en": "Say yes — why?",
-          "answers_zh": ["有空，怎么了？", "有啊。"],
-          "answers_en": ["Yes, why?", "Yes, I am."]
-        },
-        {
-          "partner_zh": "我们去公园玩儿吧！",
-          "partner_en": "Let's go to the park!",
-          "prompt_en": "Say great, and ask what time.",
-          "answers_zh": ["好啊，几点？", "太好了！几点去？"],
-          "answers_en": ["Sure, what time?", "Great! What time shall we go?"]
-        },
-        {
-          "partner_zh": "上午十点怎么样？",
-          "partner_en": "How about ten in the morning?",
-          "prompt_en": "Say fine, and ask where to meet.",
-          "answers_zh": ["可以，在哪儿见面？", "好，在哪儿见？"],
-          "answers_en": ["Sure, where shall we meet?", "OK, where?"]
-        },
-        {
-          "partner_zh": "在火车站门口吧。",
-          "partner_en": "At the entrance to the train station.",
-          "prompt_en": "Say OK, see you on Sunday.",
-          "answers_zh": ["好，星期天见！", "没问题，到时候见！"],
-          "answers_en": ["OK, see you Sunday!", "No problem, see you then!"]
-        }
-      ],
-      "closing_zh": "星期天见！",
-      "closing_en": "See you Sunday!"
+      "closing_zh": "不客气，早点好起来！",
+      "closing_en": "You're welcome — get well soon!"
     }
   ]
 }
