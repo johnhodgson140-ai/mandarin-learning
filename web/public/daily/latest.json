@@ -1,108 +1,154 @@
 {
-  "date": "2026-11-09",
+  "date": "2026-11-10",
   "level": 1,
   "plan": {
-    "focus_en": "Inside and outside: 里边 / 外边.",
+    "focus_en": "Position words with 边: 西边, 后边, 上边.",
     "items": [
       { "kind": "cards", "title_en": "Say your cards (10 cards)" },
       { "kind": "dojo", "title_en": "Tone Dojo (5 minutes)" },
-      { "kind": "story", "title_en": "Read and read aloud: 书包在哪儿？", "ref": "2026-11-09-s1" },
-      { "kind": "mission", "title_en": "Guided mission: at the bakery", "ref": "2026-11-09-m1" }
+      { "kind": "story", "title_en": "Read and read aloud: 打车", "ref": "2026-11-10-s1" },
+      { "kind": "mission", "title_en": "Guided mission: sharing a taxi", "ref": "2026-11-10-m1" }
     ]
   },
   "stories": [
     {
-      "id": "2026-11-09-s1",
+      "id": "2026-11-10-s1",
       "level": 1,
-      "topic": "daily life",
-      "title_zh": "书包在哪儿？",
-      "title_en": "Where's the schoolbag?",
+      "topic": "travel",
+      "title_zh": "打车",
+      "title_en": "Taking a taxi",
       "paragraphs": [
-        ["我", "弟", "是", "小学生", "，", "今年", "八", "岁", "。", "今天", "早上", "，", "他", "找", "不", "到", "他", "的", "书包", "了", "。"],
-        ["他", "在", "家里", "找", "了", "半天", "，", "都", "没有", "找到", "。"],
-        ["妈妈", "说", "：", "“", "你", "看", "看", "外边", "！", "”", "就", "在", "门", "外", "！"],
-        ["昨天", "他", "放学", "回家", "，", "忘", "了", "拿", "进来", "。"],
-        ["弟弟", "笑", "了", "：", "“", "下次", "我", "会", "记住", "的", "！", "”", "妈妈", "也", "笑", "了", "。"]
+        ["上", "个", "星期", "，", "我", "在", "北京", "玩", "。", "有", "一", "天", "下雨", "了", "，", "我", "就", "打车", "去", "饭店", "。"],
+        ["开车", "的", "人", "问", "：", "“", "去", "哪儿", "？", "”", "我", "说", "：", "“", "去", "西边", "的", "一", "个", "饭店", "。", "”"],
+        ["路上", "车", "很", "多", "，", "我们", "走", "了", "一", "个", "小时", "。"],
+        ["到", "了", "饭店", "，", "我", "想", "起来", "：", "我", "的", "包", "在", "车", "后边", "！"],
+        ["我", "马上", "给", "他", "打", "电话", "，", "他", "就", "回来", "了", "。", "我", "说", "：", "“", "太", "谢谢", "你", "了", "！", "”"]
       ],
       "translations": [
-        "My little brother is at primary school — he's eight this year. This morning he couldn't find his schoolbag.",
-        "He searched the house for ages and couldn't find it anywhere.",
-        "Mum said: “Have a look outside!” It was right outside the door!",
-        "When he came home from school yesterday, he forgot to bring it in.",
-        "My brother laughed: “I’ll remember next time!” Mum laughed too."
+        "Last week I was in Beijing. One day it rained, so I took a taxi to a restaurant.",
+        "The driver asked: “Where to?” I said: “A restaurant on the west side.”",
+        "There was lots of traffic, and the journey took an hour.",
+        "When I got to the restaurant, I remembered: my bag was in the back of the car!",
+        "I rang him straight away, and he came back. I said: “Thank you so much!”"
       ],
-      "names": [],
-      "new_words": ["小学生", "书包", "外边"],
+      "names": ["北京"],
+      "new_words": ["打车", "西边", "后边"],
       "glossary": [
-        { "word": "小学生", "english": "primary-school pupil" },
-        { "word": "书包", "english": "schoolbag" },
-        { "word": "外边", "english": "outside" }
+        { "word": "打车", "english": "to take a taxi" },
+        { "word": "西边", "english": "the west side" },
+        { "word": "后边", "english": "the back; behind" },
+        { "word": "北京", "english": "Beijing" }
       ]
     },
     {
-      "id": "2026-11-09-s2",
+      "id": "2026-11-10-s2",
       "level": 1,
-      "topic": "business & finance",
-      "title_zh": "网上教中文",
-      "title_en": "Teaching Chinese online",
+      "topic": "anime",
+      "title_zh": "看电影学汉语",
+      "title_en": "Learning Chinese from films",
       "paragraphs": [
-        ["我", "的", "朋友", "会", "说", "很", "多", "外语", "。", "她", "没事儿", "的", "时候", "，", "在", "网上", "教", "别人", "中文", "。"],
-        ["一", "个", "小时", "，", "她", "能", "得到", "一百", "块", "。"],
-        ["我", "问", "她", "：", "“", "你", "一", "个", "月", "能", "得到", "多少", "钱", "？", "”"],
-        ["她", "说", "：", "“", "有时候", "多", "，", "有时候", "少", "。", "我", "很", "喜欢", "这", "个", "工作", "。", "”"],
-        ["我", "觉得", "这", "个", "工作", "很", "好", "。", "我", "也", "想", "试", "一", "试", "！"]
+        ["我", "在", "学", "汉语", "。", "我", "的", "课本", "有些", "难", "。", "很", "多", "字", "我", "不", "认识", "。"],
+        ["朋友", "说", "：", "“", "你", "看", "中文", "的", "日本", "电影", "吧", "！", "”", "我", "说", "：", "“", "好", "！", "”"],
+        ["我", "就", "看", "了", "中文", "的", "《", "千与千寻", "》", "。", "电影", "里", "的", "话", "，", "我", "能", "听", "明白", "一点儿", "。", "我", "很", "高兴", "！"],
+        ["现在", "，", "我", "一边", "看", "电影", "，", "一边", "学", "汉语", "。", "课本", "我", "也", "还", "在", "读", "。"]
       ],
       "translations": [
-        "My friend speaks lots of foreign languages. When she's free, she teaches Chinese online.",
-        "She can earn a hundred kuai an hour.",
-        "I asked her: “How much can you make in a month?”",
-        "She said: “Sometimes more, sometimes less. I really like the work.”",
-        "I think it’s a great job. I want to give it a go too!"
+        "I’m learning Chinese. My textbook is a bit hard — there are lots of characters I don’t know.",
+        "My friend said: “Watch Japanese films in Chinese!” I said: “OK!”",
+        "So I watched Spirited Away in Chinese. I could understand a little of what they said. I was really happy!",
+        "Now I learn Chinese while I watch films. I'm still reading my textbook too."
       ],
-      "names": [],
-      "new_words": ["外语", "没事儿"],
+      "names": ["日本", "千与千寻"],
+      "new_words": ["汉语", "课本"],
       "glossary": [
-        { "word": "外语", "english": "foreign language" },
-        { "word": "没事儿", "english": "to be free; have nothing on" }
+        { "word": "汉语", "english": "Chinese (language)" },
+        { "word": "课本", "english": "textbook" },
+        { "word": "日本", "english": "Japan" },
+        { "word": "千与千寻", "english": "Spirited Away (Studio Ghibli film)" }
       ]
     }
   ],
   "missions": [
     {
-      "id": "2026-11-09-m1",
+      "id": "2026-11-10-m1",
       "level": 1,
-      "title": "At the bakery",
-      "role": "店员",
-      "goal": "Buy a piece of bread, choose the size, say it's to take away and pay.",
+      "title": "Sharing a taxi",
+      "role": "朋友",
+      "goal": "It's raining: agree to share a taxi with a friend, say where you live and where you'll sit.",
       "new_words": [
-        { "word": "一块儿", "english": "a piece" },
-        { "word": "里边", "english": "inside" }
+        { "word": "打车", "english": "to take a taxi" },
+        { "word": "西边", "english": "the west side" },
+        { "word": "后边", "english": "the back" }
+      ],
+      "steps": [
+        {
+          "partner_zh": "下雨了，我们打车吧？",
+          "partner_en": "It's raining — shall we get a taxi?",
+          "prompt_en": "Say good idea.",
+          "answers_zh": ["好啊，打车吧。", "好主意。"],
+          "answers_en": ["Sure, let's get a taxi.", "Good idea."]
+        },
+        {
+          "partner_zh": "你家在哪儿？",
+          "partner_en": "Where do you live?",
+          "prompt_en": "Say on the west side, next to the train station.",
+          "answers_zh": ["我家在西边，火车站旁边。", "在西边。"],
+          "answers_en": ["On the west side, next to the train station.", "On the west side."]
+        },
+        {
+          "partner_zh": "我家在东边。我们先去你家吧。",
+          "partner_en": "I'm on the east side. Let's go to yours first.",
+          "prompt_en": "Say OK, thanks.",
+          "answers_zh": ["好的，谢谢！", "太好了。"],
+          "answers_en": ["OK, thanks!", "Great."]
+        },
+        {
+          "partner_zh": "车来了！你坐前边还是后边？",
+          "partner_en": "Here's the taxi! Do you want the front or the back?",
+          "prompt_en": "Say the back.",
+          "answers_zh": ["我坐后边。", "后边吧。"],
+          "answers_en": ["I'll sit in the back.", "The back."]
+        }
+      ],
+      "closing_zh": "好，走吧！",
+      "closing_en": "OK, let's go!"
+    },
+    {
+      "id": "2026-11-10-m2",
+      "level": 1,
+      "title": "Buying a textbook",
+      "role": "店员",
+      "goal": "Buy a Chinese textbook and two notebooks at a bookshop, and pay.",
+      "new_words": [
+        { "word": "课本", "english": "textbook" },
+        { "word": "本子", "english": "notebook" },
+        { "word": "上边", "english": "on top; above" }
       ],
       "steps": [
         {
           "partner_zh": "你好，要什么？",
-          "partner_en": "Hi, what would you like?",
-          "prompt_en": "Ask for a piece of this bread.",
-          "answers_zh": ["我要一块儿这个面包。", "给我一块儿面包。"],
-          "answers_en": ["I'd like a piece of this bread.", "A piece of bread, please."]
+          "partner_en": "Hi, what can I help you find?",
+          "prompt_en": "Say you need a Chinese textbook.",
+          "answers_zh": ["我要一本汉语课本。", "有汉语课本吗？"],
+          "answers_en": ["I need a Chinese textbook.", "Do you have Chinese textbooks?"]
         },
         {
-          "partner_zh": "要大的还是小的？",
-          "partner_en": "Big or small?",
-          "prompt_en": "Say small.",
-          "answers_zh": ["要小的。", "小的。"],
-          "answers_en": ["A small one.", "Small."]
+          "partner_zh": "在那边，书架上边。",
+          "partner_en": "Over there, on the top of the bookshelf.",
+          "prompt_en": "Ask if they have notebooks too.",
+          "answers_zh": ["还有本子吗？", "我还要两个本子。"],
+          "answers_en": ["Do you have notebooks too?", "I'd also like two notebooks."]
         },
         {
-          "partner_zh": "在里边吃还是带走？",
-          "partner_en": "Eating in or taking away?",
-          "prompt_en": "Say take away.",
-          "answers_zh": ["我带走。", "带走。"],
-          "answers_en": ["I'll take it away.", "Take away."]
+          "partner_zh": "本子在这儿，三块一个。",
+          "partner_en": "Notebooks are here — three kuai each.",
+          "prompt_en": "Say you'll take two.",
+          "answers_zh": ["我要两个。", "给我两个。"],
+          "answers_en": ["I'll take two.", "Two, please."]
         },
         {
-          "partner_zh": "好的，八块。",
-          "partner_en": "OK, eight kuai.",
+          "partner_zh": "一共四十六块。",
+          "partner_en": "Forty-six kuai altogether.",
           "prompt_en": "Say you'll pay by phone.",
           "answers_zh": ["我用手机给。", "可以用手机吗？"],
           "answers_en": ["I'll pay by phone.", "Can I pay by phone?"]
@@ -110,56 +156,6 @@
       ],
       "closing_zh": "可以，谢谢！",
       "closing_en": "Sure, thank you!"
-    },
-    {
-      "id": "2026-11-09-m2",
-      "level": 1,
-      "title": "A language swap",
-      "role": "中学生",
-      "goal": "Chat with a secondary-school student you're doing a language swap with: their exam, your languages, and how you'll help each other.",
-      "new_words": [
-        { "word": "中学生", "english": "secondary-school student" },
-        { "word": "外语", "english": "foreign language" }
-      ],
-      "steps": [
-        {
-          "partner_zh": "你好！我是中学生小明。",
-          "partner_en": "Hi! I'm Xiao Ming, I'm at secondary school.",
-          "prompt_en": "Say hello and ask how school was today.",
-          "answers_zh": ["你好！今天学校怎么样？", "你好，今天好吗？"],
-          "answers_en": ["Hi! How was school today?", "Hi, how was today?"]
-        },
-        {
-          "partner_zh": "还行。今天有英语考试。",
-          "partner_en": "Not bad. We had an English exam today.",
-          "prompt_en": "Ask if it was hard.",
-          "answers_zh": ["考试难不难？", "难吗？"],
-          "answers_en": ["Was the exam hard?", "Was it hard?"]
-        },
-        {
-          "partner_zh": "有一点儿难。你会说几门外语？",
-          "partner_en": "A bit hard. How many foreign languages can you speak?",
-          "prompt_en": "Say English and a little Chinese.",
-          "answers_zh": ["我会说英语，也会一点儿中文。", "英语和一点儿中文。"],
-          "answers_en": ["I speak English, and a bit of Chinese.", "English and a little Chinese."]
-        },
-        {
-          "partner_zh": "你中文说得很好！",
-          "partner_en": "Your Chinese is really good!",
-          "prompt_en": "Say thanks — they teach you Chinese, you teach them English.",
-          "answers_zh": ["谢谢！你教我中文，我教你英语。", "谢谢，我还在学。我们一起学吧！"],
-          "answers_en": ["Thanks! You teach me Chinese, I'll teach you English.", "Thanks, I'm still learning. Let's learn together!"]
-        },
-        {
-          "partner_zh": "好啊！",
-          "partner_en": "Sounds good!",
-          "prompt_en": "Say great, let's start.",
-          "answers_zh": ["太好了，我们开始吧！", "好，开始吧！"],
-          "answers_en": ["Great, let's start!", "OK, let's begin!"]
-        }
-      ],
-      "closing_zh": "开始吧！",
-      "closing_en": "Let's start!"
     }
   ]
 }
