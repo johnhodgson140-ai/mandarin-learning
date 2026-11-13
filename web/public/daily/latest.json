@@ -1,8 +1,8 @@
 {
-  "date": "2026-11-12",
+  "date": "2026-11-13",
   "level": 1,
   "plan": {
-    "focus_en": "Polite set phrases: 请进 (come in) and 请坐 (have a seat), both a low third tone followed by a falling fourth tone.",
+    "focus_en": "Saying how long you've done something with 了 at the end: 我学中文半年了.",
     "items": [
       {
         "kind": "cards",
@@ -14,46 +14,219 @@
       },
       {
         "kind": "story",
-        "title_en": "Read and read aloud: 网友的旧衣服",
-        "ref": "2026-11-12-s1"
+        "title_en": "Read and read aloud: 电视里的小男孩儿",
+        "ref": "2026-11-13-s1"
       },
       {
         "kind": "mission",
-        "title_en": "Guided mission: visiting your teacher",
-        "ref": "2026-11-12-m1"
+        "title_en": "Guided mission: dictation in class",
+        "ref": "2026-11-13-m1"
       }
     ]
   },
   "stories": [
     {
-      "id": "2026-11-12-s1",
+      "id": "2026-11-13-s1",
       "level": 1,
-      "topic": "archive fashion",
-      "title_zh": "网友的旧衣服",
-      "title_en": "My online friend's old clothes",
+      "topic": "anime",
+      "title_zh": "电视里的小男孩儿",
+      "title_en": "The little boy on TV",
       "paragraphs": [
         [
           "我",
+          "学",
+          "中文",
+          "半年",
+          "了",
+          "。",
+          "晚上",
+          "，",
+          "我",
+          "常常",
+          "看",
+          "中国",
+          "电视",
+          "。"
+        ],
+        [
+          "电视",
+          "里",
           "有",
           "一",
           "个",
-          "网友",
-          "，",
+          "小",
+          "男孩儿",
+          "。",
           "他",
-          "有",
           "很",
-          "多",
-          "有名",
-          "的",
-          "衣服",
+          "好玩儿",
+          "，",
+          "我",
+          "很",
+          "喜欢",
+          "他",
           "。"
         ],
         [
           "他",
-          "的",
-          "衣服",
+          "说话",
           "很",
-          "好看",
+          "快",
+          "。",
+          "我",
+          "听",
+          "不",
+          "好",
+          "，",
+          "就",
+          "看",
+          "下边",
+          "的",
+          "汉字",
+          "。"
+        ],
+        [
+          "今天",
+          "，",
+          "他",
+          "说",
+          "：",
+          "“",
+          "我",
+          "饿",
+          "了",
+          "！",
+          "”",
+          "我",
+          "都",
+          "听",
+          "到",
+          "了",
+          "！"
+        ],
+        [
+          "我",
+          "很",
+          "高兴",
+          "。",
+          "我",
+          "也",
+          "饿",
+          "了",
+          "，",
+          "就",
+          "去",
+          "吃饭",
+          "了",
+          "。",
+          "明天",
+          "我",
+          "还",
+          "要",
+          "看",
+          "。"
+        ]
+      ],
+      "translations": [
+        "I've been learning Chinese for half a year. In the evenings I often watch Chinese TV.",
+        "There's a little boy in one show. He's really fun, and I like him a lot.",
+        "He talks very fast. When I can't catch it, I read the characters at the bottom.",
+        "Today he said: “I'm hungry!” I caught every word!",
+        "I was really happy. I was hungry too, so I went to eat. I'm watching again tomorrow."
+      ],
+      "names": [],
+      "new_words": [
+        "半年",
+        "男孩儿",
+        "好玩儿"
+      ],
+      "glossary": [
+        {
+          "word": "半年",
+          "english": "half a year"
+        },
+        {
+          "word": "男孩儿",
+          "english": "boy"
+        },
+        {
+          "word": "好玩儿",
+          "english": "fun"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-13-s2",
+      "level": 1,
+      "topic": "travel",
+      "title_zh": "火车站前边的面条儿",
+      "title_en": "Noodles outside the station",
+      "paragraphs": [
+        [
+          "上",
+          "个",
+          "月",
+          "，",
+          "我",
+          "和",
+          "朋友",
+          "坐",
+          "火车",
+          "去",
+          "北京",
+          "。"
+        ],
+        [
+          "下",
+          "火车",
+          "的",
+          "时候",
+          "，",
+          "我们",
+          "都",
+          "很",
+          "饿",
+          "。"
+        ],
+        [
+          "火车站",
+          "前边",
+          "有",
+          "一",
+          "个",
+          "小",
+          "饭店",
+          "，",
+          "我们",
+          "进去",
+          "了",
+          "。"
+        ],
+        [
+          "一",
+          "个",
+          "女",
+          "的",
+          "说",
+          "：",
+          "“",
+          "你们",
+          "好",
+          "，",
+          "请坐",
+          "！",
+          "”"
+        ],
+        [
+          "我们",
+          "都",
+          "要",
+          "了",
+          "面条儿",
+          "。",
+          "面条儿",
+          "很",
+          "好吃",
           "，",
           "也",
           "不",
@@ -61,361 +234,206 @@
           "。"
         ],
         [
-          "昨天",
-          "，",
-          "我",
-          "去",
-          "他",
-          "家",
-          "看",
-          "衣服",
-          "。",
-          "他",
-          "说",
-          "：",
-          "“",
-          "请进",
-          "！",
-          "”"
-        ],
-        [
-          "他",
-          "家",
-          "里边",
-          "都",
-          "是",
-          "衣服",
-          "。",
-          "我",
-          "看到",
-          "了",
-          "我",
-          "最",
-          "喜欢",
-          "的",
-          "衣服",
-          "。"
-        ],
-        [
-          "我",
-          "问",
-          "：",
-          "“",
-          "多少",
-          "钱",
-          "？",
-          "”",
-          "他",
-          "说",
-          "：",
-          "“",
-          "三百",
-          "块",
-          "。",
-          "”"
-        ],
-        [
-          "我",
-          "买",
-          "了",
-          "。",
-          "现在",
-          "我",
-          "常常",
-          "穿",
-          "。",
-          "我",
-          "朋友",
-          "们",
-          "都",
-          "说",
-          "很",
-          "好看",
-          "。"
-        ]
-      ],
-      "translations": [
-        "I have a friend I met online who owns lots of well-known clothes.",
-        "His clothes look great, and they aren't expensive.",
-        "Yesterday I went to his place to look at the clothes. He said: “Come in!”",
-        "His place was full of clothes. I saw my favourite piece.",
-        "I asked: “How much?” He said: “Three hundred kuai.”",
-        "I bought it. Now I wear it all the time, and my friends all say it looks great."
-      ],
-      "names": [],
-      "new_words": [
-        "网友",
-        "请进"
-      ],
-      "glossary": [
-        {
-          "word": "网友",
-          "english": "online friend"
-        },
-        {
-          "word": "请进",
-          "english": "please come in"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-12-s2",
-      "level": 1,
-      "topic": "business & finance",
-      "title_zh": "南边的小店",
-      "title_en": "The little shop on the south side",
-      "paragraphs": [
-        [
-          "我",
-          "朋友",
-          "在",
-          "学校",
-          "南边",
-          "开",
-          "了",
-          "一",
-          "个",
-          "小",
-          "商店",
-          "。"
-        ],
-        [
-          "商店",
-          "里",
-          "有",
-          "茶",
-          "和",
-          "水果",
-          "。",
-          "学生",
-          "们",
-          "都",
-          "来",
-          "买",
-          "东西",
-          "。",
-          "那里",
-          "的",
-          "水果",
-          "很",
-          "好吃",
-          "，",
-          "茶",
-          "也",
-          "很",
+          "北京",
+          "真",
           "好",
-          "。"
-        ],
-        [
-          "他",
-          "说",
-          "：",
-          "“",
-          "开",
-          "商店",
-          "很",
-          "累",
-          "，",
-          "也",
-          "很",
-          "好玩儿",
-          "。",
-          "”"
-        ],
-        [
-          "一",
-          "个",
-          "月",
-          "，",
-          "他",
-          "能",
-          "有",
-          "两万",
-          "块",
-          "钱",
-          "。"
-        ],
-        [
-          "我",
-          "也",
-          "想",
-          "开",
-          "一",
-          "个",
-          "商店",
           "！",
+          "我们",
           "明天",
-          "我",
+          "还",
+          "要",
           "去",
-          "他",
           "那里",
-          "看",
-          "一",
-          "看",
+          "吃",
           "。"
         ]
       ],
       "translations": [
-        "My friend opened a little shop on the south side of the school.",
-        "The shop has tea and fruit. The students all come to buy things. The fruit there is delicious, and the tea is good too.",
-        "He says: “Running a shop is tiring, but it's fun too.”",
-        "In a month he can make twenty thousand kuai.",
-        "I want to open a shop too! Tomorrow I'll go and have a look at his place."
+        "Last month my friend and I took the train to Beijing.",
+        "When we got off the train, we were both starving.",
+        "There was a little restaurant in front of the station, so we went in.",
+        "A woman said: “Hello, have a seat!”",
+        "We both ordered noodles. They were delicious, and cheap too.",
+        "Beijing is great! Tomorrow we're going back there to eat."
       ],
-      "names": [],
+      "names": [
+        "北京"
+      ],
       "new_words": [
-        "南边",
-        "好玩儿"
+        "前边",
+        "请坐",
+        "面条儿"
       ],
       "glossary": [
         {
-          "word": "南边",
-          "english": "the south side"
+          "word": "北京",
+          "english": "Beijing"
         },
         {
-          "word": "好玩儿",
-          "english": "fun"
-        }
-      ]
-    }
-  ],
-  "missions": [
-    {
-      "id": "2026-11-12-m1",
-      "level": 1,
-      "title": "Visiting your teacher",
-      "role": "老师",
-      "goal": "Knock on your teacher's office door, take a seat and ask for help with today's text.",
-      "new_words": [
-        {
-          "word": "请进",
-          "english": "please come in"
+          "word": "前边",
+          "english": "in front"
         },
         {
           "word": "请坐",
           "english": "please, have a seat"
         },
         {
-          "word": "课文",
-          "english": "text (in a textbook)"
+          "word": "面条儿",
+          "english": "noodles"
         }
-      ],
-      "steps": [
-        {
-          "partner_zh": "请进！",
-          "partner_en": "Come in!",
-          "prompt_en": "Say hello, teacher.",
-          "answers_zh": [
-            "老师好！",
-            "老师，您好！"
-          ],
-          "answers_en": [
-            "Hello, teacher!",
-            "Hello, teacher!"
-          ]
-        },
-        {
-          "partner_zh": "你好，请坐。有什么事？",
-          "partner_en": "Hello, have a seat. What can I do for you?",
-          "prompt_en": "Say you don't understand today's text.",
-          "answers_zh": [
-            "今天的课文我不懂。",
-            "我看不懂今天的课文。"
-          ],
-          "answers_en": [
-            "I don't understand today's text.",
-            "I can't understand today's text."
-          ]
-        },
-        {
-          "partner_zh": "没关系。哪个字不认识？",
-          "partner_en": "No problem. Which character don't you know?",
-          "prompt_en": "Say it's this one.",
-          "answers_zh": [
-            "这个字。",
-            "是这个字。"
-          ],
-          "answers_en": [
-            "This one.",
-            "It's this one."
-          ]
-        },
-        {
-          "partner_zh": "这个字是“开”，开门的“开”。",
-          "partner_en": "This character is 'open', as in 'open the door'.",
-          "prompt_en": "Say you get it now, and thank them.",
-          "answers_zh": [
-            "我懂了，谢谢老师！",
-            "知道了，谢谢！"
-          ],
-          "answers_en": [
-            "I get it now, thank you!",
-            "Got it, thanks!"
-          ]
-        }
-      ],
-      "closing_zh": "不客气，有问题再来。",
-      "closing_en": "You're welcome. Come back if you have questions."
-    },
+      ]
+    }
+  ],
+  "missions": [
     {
-      "id": "2026-11-12-m2",
+      "id": "2026-11-13-m1",
       "level": 1,
-      "title": "Finding the bookshop",
-      "role": "路人",
-      "goal": "Stop a passer-by and ask the way to a bookshop.",
+      "title": "Dictation in class",
+      "role": "老师",
+      "goal": "Your teacher gives a dictation from today's text: get ready, ask them to slow down, and check your answer.",
       "new_words": [
         {
-          "word": "前边",
-          "english": "ahead; in front"
+          "word": "听写",
+          "english": "dictation"
         },
         {
-          "word": "南边",
-          "english": "the south side"
+          "word": "课文",
+          "english": "text (in a textbook)"
+        },
+        {
+          "word": "一下儿",
+          "english": "briefly; for a moment"
         }
       ],
       "steps": [
         {
-          "partner_zh": "你好，有什么事吗？",
-          "partner_en": "Hi, can I help you?",
-          "prompt_en": "Ask where the bookshop is.",
+          "partner_zh": "今天我们听写课文里的字。",
+          "partner_en": "Today we'll do a dictation of characters from the text.",
+          "prompt_en": "Say you're ready.",
           "answers_zh": [
-            "请问，书店在哪儿？",
-            "书店在哪里？"
+            "好，我准备好了。",
+            "好的，老师。"
           ],
           "answers_en": [
-            "Excuse me, where's the bookshop?",
-            "Where's the bookshop?"
+            "OK, I'm ready.",
+            "OK, teacher."
           ]
         },
         {
-          "partner_zh": "书店在前边，火车站的南边。",
-          "partner_en": "The bookshop is up ahead, south of the train station.",
-          "prompt_en": "Ask if it's far.",
+          "partner_zh": "第一个：火车站。",
+          "partner_en": "Number one: train station.",
+          "prompt_en": "Ask them to say it slowly once more.",
           "answers_zh": [
-            "远吗？",
-            "离这儿远不远？"
+            "老师，请慢点说。",
+            "请您再说一下儿。"
           ],
           "answers_en": [
-            "Is it far?",
-            "Is it far from here?"
+            "Teacher, please say it slowly.",
+            "Could you say it again?"
           ]
         },
         {
-          "partner_zh": "不远，走五分钟就到了。",
-          "partner_en": "Not far, it's a five-minute walk.",
-          "prompt_en": "Thank them.",
+          "partner_zh": "火车站。写好了吗？",
+          "partner_en": "Train station. Have you written it?",
+          "prompt_en": "Say yes, and ask if it's right.",
           "answers_zh": [
-            "太好了，谢谢你！",
-            "谢谢！"
+            "写好了，对吗？",
+            "写好了。您看一下儿，对不对？"
           ],
           "answers_en": [
-            "Great, thank you!",
-            "Thanks!"
+            "Done. Is it right?",
+            "Done. Could you have a look — is it right?"
+          ]
+        },
+        {
+          "partner_zh": "对了！写得很好。",
+          "partner_en": "That's right! Nicely written.",
+          "prompt_en": "Say thank you.",
+          "answers_zh": [
+            "谢谢老师！",
+            "太好了，谢谢！"
+          ],
+          "answers_en": [
+            "Thank you!",
+            "Great, thanks!"
           ]
         }
       ],
-      "closing_zh": "不客气！",
-      "closing_en": "You're welcome!"
+      "closing_zh": "好，我们听写下一个。",
+      "closing_en": "Good, on to the next one."
+    },
+    {
+      "id": "2026-11-13-m2",
+      "level": 1,
+      "title": "Noodles for two",
+      "role": "饭店老板",
+      "goal": "Order noodles for yourself and a child in a small restaurant, and pay.",
+      "new_words": [
+        {
+          "word": "面条儿",
+          "english": "noodles"
+        },
+        {
+          "word": "小孩儿",
+          "english": "child"
+        }
+      ],
+      "steps": [
+        {
+          "partner_zh": "你们好！几个人？",
+          "partner_en": "Hello! How many of you?",
+          "prompt_en": "Say two: you and a child.",
+          "answers_zh": [
+            "两个人，我和一个小孩儿。",
+            "两个。"
+          ],
+          "answers_en": [
+            "Two — me and a child.",
+            "Two."
+          ]
+        },
+        {
+          "partner_zh": "请坐。你们吃什么？",
+          "partner_en": "Have a seat. What would you like?",
+          "prompt_en": "Say two portions of noodles.",
+          "answers_zh": [
+            "我们要两个面条儿。",
+            "两个面条儿。"
+          ],
+          "answers_en": [
+            "We'd like two noodles.",
+            "Two noodles, please."
+          ]
+        },
+        {
+          "partner_zh": "好。喝什么？",
+          "partner_en": "Sure. Anything to drink?",
+          "prompt_en": "Say tea for you, water for the child.",
+          "answers_zh": [
+            "我喝茶，小孩儿喝水。",
+            "一杯茶，一杯水。"
+          ],
+          "answers_en": [
+            "Tea for me, water for the child.",
+            "One tea, one water."
+          ]
+        },
+        {
+          "partner_zh": "一共三十块。",
+          "partner_en": "That's thirty kuai altogether.",
+          "prompt_en": "Say here you go.",
+          "answers_zh": [
+            "给你。",
+            "好，给您钱。"
+          ],
+          "answers_en": [
+            "Here you go.",
+            "OK, here's the money."
+          ]
+        }
+      ],
+      "closing_zh": "谢谢！面条儿马上就好。",
+      "closing_en": "Thanks! The noodles will be right up."
     }
   ]
 }
