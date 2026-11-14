@@ -1,8 +1,8 @@
 {
-  "date": "2026-11-13",
+  "date": "2026-11-14",
   "level": 1,
   "plan": {
-    "focus_en": "Saying how long you've done something with 了 at the end: 我学中文半年了.",
+    "focus_en": "但 (but) to join two ideas: 他跑不快，但他很爱打球.",
     "items": [
       {
         "kind": "cards",
@@ -14,426 +14,446 @@
       },
       {
         "kind": "story",
-        "title_en": "Read and read aloud: 电视里的小男孩儿",
-        "ref": "2026-11-13-s1"
+        "title_en": "Read and read aloud: 弟弟自己的球",
+        "ref": "2026-11-14-s1"
       },
       {
         "kind": "mission",
-        "title_en": "Guided mission: dictation in class",
-        "ref": "2026-11-13-m1"
+        "title_en": "Guided mission: joining a game in the park",
+        "ref": "2026-11-14-m2"
       }
     ]
   },
   "stories": [
     {
-      "id": "2026-11-13-s1",
+      "id": "2026-11-14-s1",
       "level": 1,
-      "topic": "anime",
-      "title_zh": "电视里的小男孩儿",
-      "title_en": "The little boy on TV",
+      "topic": "football",
+      "title_zh": "弟弟自己的球",
+      "title_en": "My brother's very own ball",
       "paragraphs": [
         [
           "我",
-          "学",
-          "中文",
-          "半年",
-          "了",
-          "。",
-          "晚上",
+          "弟弟",
+          "八",
+          "岁",
           "，",
-          "我",
-          "常常",
-          "看",
-          "中国",
-          "电视",
+          "他",
+          "很",
+          "爱",
+          "打球",
           "。"
         ],
         [
-          "电视",
-          "里",
-          "有",
-          "一",
-          "个",
-          "小",
-          "男孩儿",
-          "。",
-          "他",
-          "很",
-          "好玩儿",
-          "，",
-          "我",
-          "很",
-          "喜欢",
-          "他",
-          "。"
-        ],
-        [
-          "他",
-          "说话",
-          "很",
-          "快",
-          "。",
-          "我",
-          "听",
-          "不",
-          "好",
-          "，",
-          "就",
-          "看",
-          "下边",
-          "的",
-          "汉字",
-          "。"
-        ],
-        [
-          "今天",
-          "，",
           "他",
           "说",
           "：",
           "“",
+          "哥哥",
+          "，",
           "我",
-          "饿",
+          "想",
+          "要",
+          "一",
+          "个",
+          "自己",
+          "的",
+          "球",
+          "。",
+          "”"
+        ],
+        [
+          "今天",
+          "是",
+          "他",
+          "的",
+          "生日",
+          "。",
+          "我",
+          "送",
           "了",
-          "！",
+          "他",
+          "一",
+          "个",
+          "新",
+          "球",
+          "。"
+        ],
+        [
+          "他",
+          "很",
+          "高兴",
+          "。",
+          "我们",
+          "一起",
+          "去",
+          "外边",
+          "打球",
+          "。",
+          "外边",
+          "的",
+          "天气",
+          "很",
+          "好",
+          "。"
+        ],
+        [
+          "他",
+          "跑",
+          "不",
+          "快",
+          "，",
+          "但",
+          "他",
+          "很",
+          "爱",
+          "跑",
+          "。"
+        ],
+        [
+          "晚上",
+          "，",
+          "他",
+          "已经",
+          "很",
+          "累",
+          "了",
+          "，",
+          "但",
+          "还",
+          "想",
+          "打",
+          "。",
+          "明天",
+          "我们",
+          "还",
+          "去",
+          "。"
+        ]
+      ],
+      "translations": [
+        "My little brother is eight, and he loves playing football.",
+        "He said: “I want a ball of my own.”",
+        "Today is his birthday. I gave him a new ball.",
+        "He was really happy. We went outside to play together. The weather was lovely.",
+        "He can't run fast, but he loves running.",
+        "By the evening he was already exhausted, but he still wanted to play. We're going again tomorrow."
+      ],
+      "names": [],
+      "new_words": [
+        "自己",
+        "但",
+        "已经"
+      ],
+      "glossary": [
+        {
+          "word": "自己",
+          "english": "one's own"
+        },
+        {
+          "word": "但",
+          "english": "but"
+        },
+        {
+          "word": "已经",
+          "english": "already"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-14-s2",
+      "level": 1,
+      "topic": "daily life",
+      "title_zh": "我来做晚饭",
+      "title_en": "I'll make dinner",
+      "paragraphs": [
+        [
+          "今天",
+          "妈妈",
+          "很",
+          "忙",
+          "，",
+          "晚上",
+          "七",
+          "点",
+          "回家",
+          "。"
+        ],
+        [
+          "我",
+          "说",
+          "：",
+          "“",
+          "妈妈",
+          "，",
+          "你",
+          "休息",
+          "吧",
+          "，",
+          "让",
+          "我",
+          "来",
+          "做",
+          "晚饭",
+          "。",
+          "”"
+        ],
+        [
+          "妈妈",
+          "问",
+          "：",
+          "“",
+          "你",
+          "会",
+          "做",
+          "什么",
+          "？",
           "”",
           "我",
-          "都",
-          "听",
-          "到",
+          "说",
+          "：",
+          "“",
+          "我",
+          "会",
+          "做",
+          "面条儿",
+          "。",
+          "”"
+        ],
+        [
+          "我",
+          "做",
           "了",
-          "！"
+          "面条儿",
+          "，",
+          "也",
+          "做",
+          "了",
+          "一",
+          "个",
+          "菜",
+          "。",
+          "我们",
+          "一起",
+          "吃",
+          "。"
+        ],
+        [
+          "妈妈",
+          "吃",
+          "了",
+          "，",
+          "说",
+          "：",
+          "“",
+          "真",
+          "好吃",
+          "！",
+          "你",
+          "可以",
+          "常常",
+          "做",
+          "。",
+          "”"
         ],
         [
           "我",
           "很",
           "高兴",
-          "。",
-          "我",
-          "也",
-          "饿",
-          "了",
           "，",
-          "就",
-          "去",
-          "吃饭",
-          "了",
+          "妈妈",
+          "也",
+          "很",
+          "高兴",
           "。",
           "明天",
           "我",
           "还",
           "要",
-          "看",
+          "做",
           "。"
         ]
       ],
       "translations": [
-        "I've been learning Chinese for half a year. In the evenings I often watch Chinese TV.",
-        "There's a little boy in one show. He's really fun, and I like him a lot.",
-        "He talks very fast. When I can't catch it, I read the characters at the bottom.",
-        "Today he said: “I'm hungry!” I caught every word!",
-        "I was really happy. I was hungry too, so I went to eat. I'm watching again tomorrow."
+        "Mum was really busy today and got home at seven in the evening.",
+        "I said: “Mum, have a rest — let me make dinner.”",
+        "Mum asked: “What can you make?” I said: “I can make noodles.”",
+        "I made noodles, and a dish to go with them. We ate together.",
+        "Mum ate and said: “Delicious! You can cook more often.”",
+        "I was really happy, and so was Mum. I'm cooking again tomorrow."
       ],
       "names": [],
       "new_words": [
-        "半年",
-        "男孩儿",
-        "好玩儿"
+        "让",
+        "面条儿",
+        "可以"
       ],
       "glossary": [
         {
-          "word": "半年",
-          "english": "half a year"
-        },
-        {
-          "word": "男孩儿",
-          "english": "boy"
-        },
-        {
-          "word": "好玩儿",
-          "english": "fun"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-13-s2",
-      "level": 1,
-      "topic": "travel",
-      "title_zh": "火车站前边的面条儿",
-      "title_en": "Noodles outside the station",
-      "paragraphs": [
-        [
-          "上",
-          "个",
-          "月",
-          "，",
-          "我",
-          "和",
-          "朋友",
-          "坐",
-          "火车",
-          "去",
-          "北京",
-          "。"
-        ],
-        [
-          "下",
-          "火车",
-          "的",
-          "时候",
-          "，",
-          "我们",
-          "都",
-          "很",
-          "饿",
-          "。"
-        ],
-        [
-          "火车站",
-          "前边",
-          "有",
-          "一",
-          "个",
-          "小",
-          "饭店",
-          "，",
-          "我们",
-          "进去",
-          "了",
-          "。"
-        ],
-        [
-          "一",
-          "个",
-          "女",
-          "的",
-          "说",
-          "：",
-          "“",
-          "你们",
-          "好",
-          "，",
-          "请坐",
-          "！",
-          "”"
-        ],
-        [
-          "我们",
-          "都",
-          "要",
-          "了",
-          "面条儿",
-          "。",
-          "面条儿",
-          "很",
-          "好吃",
-          "，",
-          "也",
-          "不",
-          "贵",
-          "。"
-        ],
-        [
-          "北京",
-          "真",
-          "好",
-          "！",
-          "我们",
-          "明天",
-          "还",
-          "要",
-          "去",
-          "那里",
-          "吃",
-          "。"
-        ]
-      ],
-      "translations": [
-        "Last month my friend and I took the train to Beijing.",
-        "When we got off the train, we were both starving.",
-        "There was a little restaurant in front of the station, so we went in.",
-        "A woman said: “Hello, have a seat!”",
-        "We both ordered noodles. They were delicious, and cheap too.",
-        "Beijing is great! Tomorrow we're going back there to eat."
-      ],
-      "names": [
-        "北京"
-      ],
-      "new_words": [
-        "前边",
-        "请坐",
-        "面条儿"
-      ],
-      "glossary": [
-        {
-          "word": "北京",
-          "english": "Beijing"
-        },
-        {
-          "word": "前边",
-          "english": "in front"
-        },
-        {
-          "word": "请坐",
-          "english": "please, have a seat"
+          "word": "让",
+          "english": "to let"
         },
         {
           "word": "面条儿",
           "english": "noodles"
+        },
+        {
+          "word": "可以",
+          "english": "can; may"
         }
       ]
     }
   ],
   "missions": [
     {
-      "id": "2026-11-13-m1",
+      "id": "2026-11-14-m1",
       "level": 1,
-      "title": "Dictation in class",
-      "role": "老师",
-      "goal": "Your teacher gives a dictation from today's text: get ready, ask them to slow down, and check your answer.",
+      "title": "Borrowing a phone",
+      "role": "朋友",
+      "goal": "Your phone has died. Ask your friend if you can use theirs to call home.",
       "new_words": [
         {
-          "word": "听写",
-          "english": "dictation"
-        },
-        {
-          "word": "课文",
-          "english": "text (in a textbook)"
-        },
-        {
           "word": "一下儿",
-          "english": "briefly; for a moment"
+          "english": "for a moment"
+        },
+        {
+          "word": "可以",
+          "english": "can; may"
+        },
+        {
+          "word": "啊",
+          "english": "(softens a reply)"
         }
       ],
       "steps": [
         {
-          "partner_zh": "今天我们听写课文里的字。",
-          "partner_en": "Today we'll do a dictation of characters from the text.",
-          "prompt_en": "Say you're ready.",
+          "partner_zh": "你怎么了？",
+          "partner_en": "What's up?",
+          "prompt_en": "Say your phone has no power.",
           "answers_zh": [
-            "好，我准备好了。",
-            "好的，老师。"
+            "我的手机没电了。",
+            "手机没电了。"
           ],
           "answers_en": [
-            "OK, I'm ready.",
-            "OK, teacher."
+            "My phone's died.",
+            "My phone's out of battery."
           ]
         },
         {
-          "partner_zh": "第一个：火车站。",
-          "partner_en": "Number one: train station.",
-          "prompt_en": "Ask them to say it slowly once more.",
+          "partner_zh": "那怎么办？",
+          "partner_en": "So what will you do?",
+          "prompt_en": "Ask if you can use their phone for a moment.",
           "answers_zh": [
-            "老师，请慢点说。",
-            "请您再说一下儿。"
+            "我可以用一下儿你的手机吗？",
+            "你的手机可以给我用一下儿吗？"
           ],
           "answers_en": [
-            "Teacher, please say it slowly.",
-            "Could you say it again?"
+            "Can I use your phone for a sec?",
+            "Could I borrow your phone for a moment?"
           ]
         },
         {
-          "partner_zh": "火车站。写好了吗？",
-          "partner_en": "Train station. Have you written it?",
-          "prompt_en": "Say yes, and ask if it's right.",
+          "partner_zh": "可以啊。你给谁打电话？",
+          "partner_en": "Sure. Who are you calling?",
+          "prompt_en": "Say your mum.",
           "answers_zh": [
-            "写好了，对吗？",
-            "写好了。您看一下儿，对不对？"
+            "给我妈妈打。",
+            "我妈妈。"
           ],
           "answers_en": [
-            "Done. Is it right?",
-            "Done. Could you have a look — is it right?"
+            "My mum.",
+            "My mum."
           ]
         },
         {
-          "partner_zh": "对了！写得很好。",
-          "partner_en": "That's right! Nicely written.",
-          "prompt_en": "Say thank you.",
+          "partner_zh": "给你。",
+          "partner_en": "Here you go.",
+          "prompt_en": "Thank them.",
           "answers_zh": [
-            "谢谢老师！",
-            "太好了，谢谢！"
+            "谢谢你！",
+            "谢谢，马上给你。"
           ],
           "answers_en": [
             "Thank you!",
-            "Great, thanks!"
+            "Thanks, I'll give it right back."
           ]
         }
       ],
-      "closing_zh": "好，我们听写下一个。",
-      "closing_en": "Good, on to the next one."
+      "closing_zh": "不客气。",
+      "closing_en": "No problem."
     },
     {
-      "id": "2026-11-13-m2",
+      "id": "2026-11-14-m2",
       "level": 1,
-      "title": "Noodles for two",
-      "role": "饭店老板",
-      "goal": "Order noodles for yourself and a child in a small restaurant, and pay.",
+      "title": "Joining a game in the park",
+      "role": "打球的人",
+      "goal": "Some people are playing football in the park. Ask if you can join in.",
       "new_words": [
         {
-          "word": "面条儿",
-          "english": "noodles"
+          "word": "可以",
+          "english": "can; may"
         },
         {
-          "word": "小孩儿",
-          "english": "child"
+          "word": "已经",
+          "english": "already"
         }
       ],
       "steps": [
         {
-          "partner_zh": "你们好！几个人？",
-          "partner_en": "Hello! How many of you?",
-          "prompt_en": "Say two: you and a child.",
+          "partner_zh": "你也想打球吗？",
+          "partner_en": "Do you want to play too?",
+          "prompt_en": "Say yes, and ask if you can join.",
           "answers_zh": [
-            "两个人，我和一个小孩儿。",
-            "两个。"
+            "想！我可以来吗？",
+            "我可以和你们一起打吗？"
           ],
           "answers_en": [
-            "Two — me and a child.",
-            "Two."
+            "Yes! Can I join?",
+            "Can I play with you?"
           ]
         },
         {
-          "partner_zh": "请坐。你们吃什么？",
-          "partner_en": "Have a seat. What would you like?",
-          "prompt_en": "Say two portions of noodles.",
+          "partner_zh": "可以。你会打球吗？",
+          "partner_en": "Sure. Can you play?",
+          "prompt_en": "Say a little, but you love it.",
           "answers_zh": [
-            "我们要两个面条儿。",
-            "两个面条儿。"
+            "会一点儿，我很爱打球。",
+            "会一点儿。"
           ],
           "answers_en": [
-            "We'd like two noodles.",
-            "Two noodles, please."
+            "A bit — I love playing.",
+            "A little."
           ]
         },
         {
-          "partner_zh": "好。喝什么？",
-          "partner_en": "Sure. Anything to drink?",
-          "prompt_en": "Say tea for you, water for the child.",
+          "partner_zh": "好。我们已经打了半天了，二比一。",
+          "partner_en": "Great. We've been playing for ages already — it's two-one.",
+          "prompt_en": "Ask which side you're on.",
           "answers_zh": [
-            "我喝茶，小孩儿喝水。",
-            "一杯茶，一杯水。"
+            "我在哪边？",
+            "我和谁一起？"
           ],
           "answers_en": [
-            "Tea for me, water for the child.",
-            "One tea, one water."
+            "Which side am I on?",
+            "Who am I with?"
           ]
         },
         {
-          "partner_zh": "一共三十块。",
-          "partner_en": "That's thirty kuai altogether.",
-          "prompt_en": "Say here you go.",
+          "partner_zh": "你在我们这边。",
+          "partner_en": "You're on our side.",
+          "prompt_en": "Say great, let's go.",
           "answers_zh": [
-            "给你。",
-            "好，给您钱。"
+            "好，走吧！",
+            "好的，来吧！"
           ],
           "answers_en": [
-            "Here you go.",
-            "OK, here's the money."
+            "Great, let's go!",
+            "OK, come on!"
           ]
         }
       ],
-      "closing_zh": "谢谢！面条儿马上就好。",
-      "closing_en": "Thanks! The noodles will be right up."
+      "closing_zh": "来吧！",
+      "closing_en": "Come on then!"
     }
   ]
 }
