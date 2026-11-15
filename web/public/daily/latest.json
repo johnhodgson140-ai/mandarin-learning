@@ -1,8 +1,8 @@
 {
-  "date": "2026-11-14",
-  "level": 1,
+  "date": "2026-11-15",
+  "level": 2,
   "plan": {
-    "focus_en": "但 (but) to join two ideas: 他跑不快，但他很爱打球.",
+    "focus_en": "Giving reasons with 因为 (because), and 如果… (if…) for ideas that haven't happened yet.",
     "items": [
       {
         "kind": "cards",
@@ -14,446 +14,471 @@
       },
       {
         "kind": "story",
-        "title_en": "Read and read aloud: 弟弟自己的球",
-        "ref": "2026-11-14-s1"
+        "title_en": "Read and read aloud: 如果有一百万",
+        "ref": "2026-11-15-s2"
       },
       {
         "kind": "mission",
-        "title_en": "Guided mission: joining a game in the park",
-        "ref": "2026-11-14-m2"
+        "title_en": "Guided mission: swapping a jacket",
+        "ref": "2026-11-15-m1"
       }
     ]
   },
   "stories": [
     {
-      "id": "2026-11-14-s1",
-      "level": 1,
-      "topic": "football",
-      "title_zh": "弟弟自己的球",
-      "title_en": "My brother's very own ball",
+      "id": "2026-11-15-s1",
+      "level": 2,
+      "topic": "archive fashion",
+      "title_zh": "白衣服的问题",
+      "title_en": "The trouble with the white jacket",
       "paragraphs": [
         [
           "我",
-          "弟弟",
-          "八",
-          "岁",
-          "，",
-          "他",
           "很",
-          "爱",
-          "打球",
+          "喜欢",
+          "有名",
+          "的",
+          "老",
+          "衣服",
+          "。",
+          "上",
+          "个",
+          "星期",
+          "，",
+          "我",
+          "在",
+          "网上",
+          "看到",
+          "了",
+          "一",
+          "个",
           "。"
         ],
         [
+          "它",
+          "是",
+          "白",
+          "的",
+          "，",
+          "很",
+          "好看",
+          "，",
+          "也",
+          "不",
+          "贵",
+          "，",
+          "只",
+          "要",
+          "三百",
+          "块",
+          "钱",
+          "。"
+        ],
+        [
+          "我",
+          "马上",
+          "买",
+          "了",
+          "。",
+          "三",
+          "天",
+          "后",
+          "，",
+          "衣服",
+          "到",
+          "了",
+          "。"
+        ],
+        [
+          "我",
+          "穿",
+          "上",
+          "试",
+          "了",
+          "试",
+          "，",
+          "有",
+          "一",
+          "个",
+          "问题",
+          "：",
+          "它",
+          "太",
+          "小",
+          "了",
+          "！"
+        ],
+        [
+          "我",
+          "给",
+          "网友",
+          "打电话",
+          "。",
           "他",
           "说",
           "：",
           "“",
-          "哥哥",
+          "没关系",
           "，",
           "我",
-          "想",
-          "要",
+          "给",
+          "你",
           "一",
           "个",
-          "自己",
+          "大",
           "的",
-          "球",
           "。",
           "”"
         ],
         [
-          "今天",
-          "是",
-          "他",
-          "的",
-          "生日",
-          "。",
+          "现在",
+          "，",
           "我",
-          "送",
-          "了",
-          "他",
+          "有",
           "一",
           "个",
-          "新",
-          "球",
-          "。"
-        ],
-        [
-          "他",
-          "很",
-          "高兴",
-          "。",
-          "我们",
-          "一起",
-          "去",
-          "外边",
-          "打球",
-          "。",
-          "外边",
+          "大",
           "的",
-          "天气",
-          "很",
-          "好",
-          "。"
-        ],
-        [
-          "他",
-          "跑",
-          "不",
-          "快",
-          "，",
-          "但",
-          "他",
-          "很",
-          "爱",
-          "跑",
-          "。"
-        ],
-        [
-          "晚上",
-          "，",
-          "他",
-          "已经",
-          "很",
-          "累",
-          "了",
-          "，",
-          "但",
-          "还",
-          "想",
-          "打",
           "。",
-          "明天",
-          "我们",
-          "还",
-          "去",
+          "我",
+          "很",
+          "喜欢",
+          "它",
+          "，",
+          "朋友",
+          "们",
+          "也",
+          "觉得",
+          "很",
+          "好看",
           "。"
         ]
       ],
       "translations": [
-        "My little brother is eight, and he loves playing football.",
-        "He said: “I want a ball of my own.”",
-        "Today is his birthday. I gave him a new ball.",
-        "He was really happy. We went outside to play together. The weather was lovely.",
-        "He can't run fast, but he loves running.",
-        "By the evening he was already exhausted, but he still wanted to play. We're going again tomorrow."
+        "I love famous vintage clothes. Last week I spotted one online.",
+        "It was white, really nice, and not expensive — only three hundred kuai.",
+        "I bought it straight away. Three days later it arrived.",
+        "I tried it on, and there was one problem: it was too small!",
+        "I called the seller I know online. He said: “No problem, I'll send you a bigger one.”",
+        "Now I've got the bigger one. I love it, and my friends think it looks great too."
       ],
       "names": [],
       "new_words": [
-        "自己",
-        "但",
-        "已经"
+        "它",
+        "只",
+        "问题"
       ],
       "glossary": [
         {
-          "word": "自己",
-          "english": "one's own"
+          "word": "它",
+          "english": "it"
         },
         {
-          "word": "但",
-          "english": "but"
+          "word": "只",
+          "english": "only"
         },
         {
-          "word": "已经",
-          "english": "already"
+          "word": "问题",
+          "english": "problem"
         }
       ]
     },
     {
-      "id": "2026-11-14-s2",
-      "level": 1,
-      "topic": "daily life",
-      "title_zh": "我来做晚饭",
-      "title_en": "I'll make dinner",
+      "id": "2026-11-15-s2",
+      "level": 2,
+      "topic": "business & finance",
+      "title_zh": "如果有一百万",
+      "title_en": "If I had a million",
       "paragraphs": [
         [
-          "今天",
-          "妈妈",
+          "我",
+          "在",
+          "大学",
+          "学习",
+          "。",
+          "我",
+          "的",
+          "朋友",
+          "们",
+          "都",
+          "想",
+          "有",
           "很",
-          "忙",
-          "，",
-          "晚上",
-          "七",
-          "点",
-          "回家",
+          "多",
+          "钱",
           "。"
         ],
         [
           "我",
-          "说",
-          "：",
-          "“",
-          "妈妈",
-          "，",
-          "你",
-          "休息",
-          "吧",
-          "，",
-          "让",
-          "我",
-          "来",
-          "做",
-          "晚饭",
-          "。",
-          "”"
-        ],
-        [
-          "妈妈",
           "问",
+          "他们",
           "：",
           "“",
+          "如果",
           "你",
-          "会",
+          "有",
+          "一百万",
+          "，",
+          "你",
+          "想",
           "做",
           "什么",
           "？",
-          "”",
-          "我",
-          "说",
-          "：",
-          "“",
-          "我",
-          "会",
-          "做",
-          "面条儿",
-          "。",
           "”"
         ],
         [
-          "我",
-          "做",
-          "了",
-          "面条儿",
-          "，",
-          "也",
-          "做",
-          "了",
           "一",
           "个",
-          "菜",
-          "。",
-          "我们",
-          "一起",
-          "吃",
-          "。"
-        ],
-        [
-          "妈妈",
-          "吃",
-          "了",
-          "，",
+          "朋友",
           "说",
           "：",
           "“",
-          "真",
-          "好吃",
-          "！",
-          "你",
-          "可以",
-          "常常",
-          "做",
+          "我",
+          "想",
+          "买",
+          "一",
+          "个",
+          "大",
+          "房子",
+          "。",
+          "”"
+        ],
+        [
+          "还",
+          "有",
+          "一",
+          "个",
+          "朋友",
+          "说",
+          "：",
+          "“",
+          "我",
+          "想",
+          "去",
+          "很",
+          "多",
+          "国家",
           "。",
           "”"
         ],
         [
           "我",
-          "很",
-          "高兴",
-          "，",
-          "妈妈",
-          "也",
-          "很",
-          "高兴",
-          "。",
-          "明天",
+          "说",
+          "：",
+          "“",
           "我",
-          "还",
-          "要",
-          "做",
+          "不",
+          "会",
+          "马上",
+          "花",
+          "，",
+          "因为",
+          "我",
+          "想",
+          "先",
+          "学习",
+          "怎么",
+          "用",
+          "钱",
+          "。",
+          "”"
+        ],
+        [
+          "他们",
+          "都",
+          "笑",
+          "了",
+          "。",
+          "但是",
+          "我",
+          "觉得",
+          "我",
+          "是",
+          "对",
+          "的",
           "。"
         ]
       ],
       "translations": [
-        "Mum was really busy today and got home at seven in the evening.",
-        "I said: “Mum, have a rest — let me make dinner.”",
-        "Mum asked: “What can you make?” I said: “I can make noodles.”",
-        "I made noodles, and a dish to go with them. We ate together.",
-        "Mum ate and said: “Delicious! You can cook more often.”",
-        "I was really happy, and so was Mum. I'm cooking again tomorrow."
+        "I'm at university. My friends all want to have lots of money.",
+        "I asked them: “If you had a million, what would you do?”",
+        "One friend said: “I'd buy a big house.”",
+        "Another friend said: “I'd go to lots of countries.”",
+        "I said: “I wouldn't spend it straight away, because first I want to learn how to use money.”",
+        "They all laughed. But I think I'm right."
       ],
       "names": [],
       "new_words": [
-        "让",
-        "面条儿",
-        "可以"
+        "如果",
+        "因为",
+        "但是"
       ],
       "glossary": [
         {
-          "word": "让",
-          "english": "to let"
+          "word": "如果",
+          "english": "if"
         },
         {
-          "word": "面条儿",
-          "english": "noodles"
+          "word": "因为",
+          "english": "because"
         },
         {
-          "word": "可以",
-          "english": "can; may"
+          "word": "但是",
+          "english": "but"
         }
       ]
     }
   ],
   "missions": [
     {
-      "id": "2026-11-14-m1",
-      "level": 1,
-      "title": "Borrowing a phone",
-      "role": "朋友",
-      "goal": "Your phone has died. Ask your friend if you can use theirs to call home.",
+      "id": "2026-11-15-m1",
+      "level": 2,
+      "title": "Swapping a jacket",
+      "role": "服务员",
+      "goal": "Take a jacket back to the shop because it's too small, and swap it for a bigger one.",
       "new_words": [
         {
-          "word": "一下儿",
-          "english": "for a moment"
+          "word": "问题",
+          "english": "problem"
         },
         {
-          "word": "可以",
-          "english": "can; may"
+          "word": "因为",
+          "english": "because"
         },
         {
-          "word": "啊",
-          "english": "(softens a reply)"
+          "word": "只",
+          "english": "only"
         }
       ],
       "steps": [
         {
-          "partner_zh": "你怎么了？",
-          "partner_en": "What's up?",
-          "prompt_en": "Say your phone has no power.",
+          "partner_zh": "你好！有什么问题吗？",
+          "partner_en": "Hello! Is there a problem?",
+          "prompt_en": "Say you bought this yesterday, and it's too small.",
           "answers_zh": [
-            "我的手机没电了。",
-            "手机没电了。"
+            "我昨天买了这个，太小了。",
+            "这个衣服太小了。"
           ],
           "answers_en": [
-            "My phone's died.",
-            "My phone's out of battery."
+            "I bought this yesterday, and it's too small.",
+            "This is too small."
           ]
         },
         {
-          "partner_zh": "那怎么办？",
-          "partner_en": "So what will you do?",
-          "prompt_en": "Ask if you can use their phone for a moment.",
+          "partner_zh": "你要换一个大的吗？",
+          "partner_en": "Would you like to swap it for a bigger one?",
+          "prompt_en": "Say yes, because you like it a lot.",
           "answers_zh": [
-            "我可以用一下儿你的手机吗？",
-            "你的手机可以给我用一下儿吗？"
+            "要，因为我很喜欢它。",
+            "对，我很喜欢这个。"
           ],
           "answers_en": [
-            "Can I use your phone for a sec?",
-            "Could I borrow your phone for a moment?"
+            "Yes, because I really like it.",
+            "Yes, I really like this one."
           ]
         },
         {
-          "partner_zh": "可以啊。你给谁打电话？",
-          "partner_en": "Sure. Who are you calling?",
-          "prompt_en": "Say your mum.",
+          "partner_zh": "对不起，白的只有小的了。黑的可以吗？",
+          "partner_en": "Sorry, the white one only comes in small now. Is black OK?",
+          "prompt_en": "Ask if you can try the black one on.",
           "answers_zh": [
-            "给我妈妈打。",
-            "我妈妈。"
+            "我能试一下儿吗？",
+            "我先试试黑的。"
           ],
           "answers_en": [
-            "My mum.",
-            "My mum."
+            "Can I try it on?",
+            "Let me try the black one first."
           ]
         },
         {
-          "partner_zh": "给你。",
-          "partner_en": "Here you go.",
-          "prompt_en": "Thank them.",
+          "partner_zh": "好的，这边请。",
+          "partner_en": "Sure, this way please.",
+          "prompt_en": "Say it fits — you'll take it.",
           "answers_zh": [
-            "谢谢你！",
-            "谢谢，马上给你。"
+            "这个很好，我要了。",
+            "大小很好，就要这个。"
           ],
           "answers_en": [
-            "Thank you!",
-            "Thanks, I'll give it right back."
+            "This one's great, I'll take it.",
+            "The size is right — I'll have this one."
           ]
         }
       ],
-      "closing_zh": "不客气。",
-      "closing_en": "No problem."
+      "closing_zh": "好的，没问题！",
+      "closing_en": "Great, no problem!"
     },
     {
-      "id": "2026-11-14-m2",
-      "level": 1,
-      "title": "Joining a game in the park",
-      "role": "打球的人",
-      "goal": "Some people are playing football in the park. Ask if you can join in.",
+      "id": "2026-11-15-m2",
+      "level": 2,
+      "title": "Running late",
+      "role": "朋友",
+      "goal": "Your friend calls because you're late for dinner. Apologise, explain and say when you'll arrive.",
       "new_words": [
         {
-          "word": "可以",
-          "english": "can; may"
+          "word": "又",
+          "english": "again"
         },
         {
-          "word": "已经",
-          "english": "already"
+          "word": "如果",
+          "english": "if"
         }
       ],
       "steps": [
         {
-          "partner_zh": "你也想打球吗？",
-          "partner_en": "Do you want to play too?",
-          "prompt_en": "Say yes, and ask if you can join.",
+          "partner_zh": "你在哪儿？你又晚了！",
+          "partner_en": "Where are you? You're late again!",
+          "prompt_en": "Say sorry, you're on the bus.",
           "answers_zh": [
-            "想！我可以来吗？",
-            "我可以和你们一起打吗？"
+            "对不起，我在公共汽车上。",
+            "不好意思，我在车上。"
           ],
           "answers_en": [
-            "Yes! Can I join?",
-            "Can I play with you?"
+            "Sorry, I'm on the bus.",
+            "Sorry, I'm on my way."
           ]
         },
         {
-          "partner_zh": "可以。你会打球吗？",
-          "partner_en": "Sure. Can you play?",
-          "prompt_en": "Say a little, but you love it.",
+          "partner_zh": "你几点能到？",
+          "partner_en": "What time can you get here?",
+          "prompt_en": "Say in about twenty minutes.",
           "answers_zh": [
-            "会一点儿，我很爱打球。",
-            "会一点儿。"
+            "二十分钟后到。",
+            "大概二十分钟。"
           ],
           "answers_en": [
-            "A bit — I love playing.",
-            "A little."
+            "I'll be there in twenty minutes.",
+            "About twenty minutes."
           ]
         },
         {
-          "partner_zh": "好。我们已经打了半天了，二比一。",
-          "partner_en": "Great. We've been playing for ages already — it's two-one.",
-          "prompt_en": "Ask which side you're on.",
+          "partner_zh": "如果你饿了，我们先点菜吧？",
+          "partner_en": "If you're hungry, shall we order first?",
+          "prompt_en": "Say yes, order first, you'll eat anything.",
           "answers_zh": [
-            "我在哪边？",
-            "我和谁一起？"
+            "好，你们先点吧，我什么都吃。",
+            "好的，先点菜吧。"
           ],
           "answers_en": [
-            "Which side am I on?",
-            "Who am I with?"
+            "Sure, go ahead and order — I'll eat anything.",
+            "OK, order first."
           ]
         },
         {
-          "partner_zh": "你在我们这边。",
-          "partner_en": "You're on our side.",
-          "prompt_en": "Say great, let's go.",
+          "partner_zh": "好，快点来！",
+          "partner_en": "OK, hurry up!",
+          "prompt_en": "Say you'll be right there.",
           "answers_zh": [
-            "好，走吧！",
-            "好的，来吧！"
+            "好，马上到！",
+            "我马上来。"
           ],
           "answers_en": [
-            "Great, let's go!",
-            "OK, come on!"
+            "OK, nearly there!",
+            "I'll be right there."
           ]
         }
       ],
-      "closing_zh": "来吧！",
-      "closing_en": "Come on then!"
+      "closing_zh": "一会儿见！",
+      "closing_en": "See you soon!"
     }
   ]
 }
