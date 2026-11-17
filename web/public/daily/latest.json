@@ -1,8 +1,8 @@
 {
-  "date": "2026-11-16",
+  "date": "2026-11-17",
   "level": 2,
   "plan": {
-    "focus_en": "才 for 'not until': 雨才不下了 (only then did the rain stop), and 又 for something happening again.",
+    "focus_en": "Strong feelings with 一定 (definitely) and 应该 (should): 我们一定要赢 / 我们应该一起打.",
     "items": [
       {
         "kind": "cards",
@@ -14,425 +14,437 @@
       },
       {
         "kind": "story",
-        "title_en": "Read and read aloud: 山里的雨",
-        "ref": "2026-11-16-s2"
+        "title_en": "Read and read aloud: 钱包在哪儿？",
+        "ref": "2026-11-17-s2"
       },
       {
         "kind": "mission",
-        "title_en": "Guided mission: train tickets",
-        "ref": "2026-11-16-m1"
+        "title_en": "Guided mission: a birthday invitation",
+        "ref": "2026-11-17-m1"
       }
     ]
   },
   "stories": [
     {
-      "id": "2026-11-16-s1",
+      "id": "2026-11-17-s1",
       "level": 2,
-      "topic": "anime",
-      "title_zh": "很像我的女孩儿",
-      "title_en": "The girl who's just like me",
+      "topic": "football",
+      "title_zh": "大家一起打",
+      "title_en": "Everyone plays together",
       "paragraphs": [
         [
-          "晚上",
+          "下午",
           "，",
           "我",
-          "常常",
-          "自己",
+          "和",
+          "同学",
+          "们",
           "在",
-          "家",
-          "看",
-          "电视",
-          "。"
-        ],
-        [
-          "电视",
-          "里",
-          "有",
-          "一",
-          "个",
-          "女孩儿",
-          "，",
-          "她",
-          "很",
-          "像",
-          "我",
-          "。"
-        ],
-        [
-          "她",
-          "也",
-          "是",
-          "学生",
-          "，",
-          "也",
-          "喜欢",
+          "学校",
           "打球",
-          "，",
-          "也",
-          "不",
-          "喜欢",
-          "早",
-          "起床",
           "。"
         ],
         [
-          "她",
-          "学习",
-          "不",
-          "好",
-          "，",
-          "所以",
-          "老师",
-          "常常",
-          "找",
-          "她",
-          "。",
           "我",
-          "也",
-          "是",
-          "这样",
-          "！"
-        ],
-        [
-          "我",
-          "想",
+          "说",
           "：",
           "“",
-          "她",
-          "可能",
-          "就",
-          "是",
-          "我",
+          "大家",
+          "快",
+          "来",
+          "！",
+          "今天",
+          "我们",
+          "一定",
+          "要",
+          "进",
+          "三",
+          "个",
+          "球",
           "！",
           "”"
         ],
         [
-          "现在",
-          "，",
-          "我",
-          "已经",
-          "看",
+          "我们",
+          "跑",
           "了",
-          "二十",
+          "一",
           "个",
           "小时",
+          "，",
+          "但是",
+          "只",
+          "进",
           "了",
+          "一",
+          "个",
+          "。"
+        ],
+        [
+          "一",
+          "个",
+          "同学",
+          "说",
+          "：",
+          "“",
+          "我们",
+          "应该",
+          "一起",
+          "打",
+          "，",
+          "别",
+          "自己",
+          "跑",
+          "。",
+          "”"
+        ],
+        [
+          "他",
+          "说",
+          "得",
+          "对",
+          "。",
+          "最后",
+          "，",
+          "我们",
+          "又",
+          "进",
+          "了",
+          "两",
+          "个",
+          "球",
+          "。"
+        ],
+        [
+          "大家",
+          "都",
+          "很",
+          "高兴",
           "。",
           "明天",
-          "我",
+          "我们",
           "还",
           "要",
-          "看",
-          "。"
+          "一起",
+          "打",
+          "！"
         ]
       ],
       "translations": [
-        "In the evenings I often watch TV at home on my own.",
-        "There's a girl in one show who's a lot like me.",
-        "She's a student too, she likes football too, and she doesn't like getting up early either.",
-        "She's not great at studying, so the teacher is always looking for her. Same as me!",
-        "I thought: “Maybe she IS me!”",
-        "I've already watched twenty hours. I'm watching more tomorrow."
+        "In the afternoon my classmates and I played football at school.",
+        "I said: “Come on, everyone! Today we're definitely scoring three!”",
+        "We ran for an hour but only scored one.",
+        "One classmate said: “We should play as a team — don't all run off on your own.”",
+        "He was right. In the end we scored two more.",
+        "Everyone was really happy. We're playing together again tomorrow!"
       ],
       "names": [],
       "new_words": [
-        "像",
-        "所以",
-        "可能"
+        "大家",
+        "一定",
+        "应该"
       ],
       "glossary": [
         {
-          "word": "像",
-          "english": "to be like"
+          "word": "大家",
+          "english": "everyone"
         },
         {
-          "word": "所以",
-          "english": "so; therefore"
+          "word": "一定",
+          "english": "definitely"
         },
         {
-          "word": "可能",
-          "english": "maybe"
+          "word": "应该",
+          "english": "should"
         }
       ]
     },
     {
-      "id": "2026-11-16-s2",
+      "id": "2026-11-17-s2",
       "level": 2,
-      "topic": "travel",
-      "title_zh": "山里的雨",
-      "title_en": "Rain in the mountains",
+      "topic": "daily life",
+      "title_zh": "钱包在哪儿？",
+      "title_en": "Where's my wallet?",
       "paragraphs": [
         [
-          "上",
-          "个",
-          "星期",
+          "早上",
           "，",
           "我",
-          "和",
-          "朋友",
-          "坐",
-          "火车",
+          "要",
           "去",
-          "山",
-          "里",
+          "上班",
           "。"
         ],
         [
-          "早上",
-          "天气",
-          "很",
-          "好",
-          "。",
-          "但是",
-          "我们",
-          "一",
           "到",
-          "，",
-          "就",
-          "下雨",
           "了",
-          "。"
+          "路",
+          "上",
+          "，",
+          "我",
+          "发现",
+          "我",
+          "没有",
+          "带",
+          "钱包",
+          "！"
         ],
         [
-          "我们",
-          "等",
-          "了",
-          "一",
-          "个",
-          "小时",
-          "，",
-          "雨",
-          "才",
+          "我",
+          "马上",
+          "回家",
+          "找",
+          "。",
+          "钱包",
           "不",
-          "下",
+          "在",
+          "桌子",
+          "上",
+          "，",
+          "也",
+          "不",
+          "在",
+          "床",
+          "上",
+          "。",
+          "我",
+          "给",
+          "妈妈",
+          "打",
           "了",
+          "电话",
+          "，",
+          "她",
+          "也",
+          "不",
+          "知道",
           "。"
         ],
         [
-          "我们",
-          "走",
+          "我",
+          "找",
           "了",
           "半",
           "个",
           "小时",
           "，",
-          "又",
-          "下雨",
+          "上班",
+          "已经",
+          "晚",
           "了",
-          "！",
-          "我们",
-          "都",
-          "很",
-          "冷",
-          "，",
-          "也",
-          "很",
-          "累",
           "。"
         ],
         [
-          "但是",
-          "山",
-          "里",
-          "很",
-          "好看",
+          "最后",
           "，",
-          "我们",
-          "都",
-          "很",
-          "高兴",
+          "我",
+          "发现",
+          "它",
+          "在",
+          "我",
+          "的",
+          "衣服",
+          "里",
+          "！"
+        ],
+        [
+          "我",
+          "笑",
+          "了",
           "。",
-          "下次",
-          "我们",
-          "还",
-          "要",
-          "去",
-          "。"
+          "这",
+          "就",
+          "是",
+          "我",
+          "的",
+          "生活",
+          "！"
         ]
       ],
       "translations": [
-        "Last week my friend and I took the train to the mountains.",
-        "The weather was lovely in the morning. But as soon as we arrived, it started raining.",
-        "We waited an hour before the rain finally stopped.",
-        "We walked for half an hour, and it started raining again! We were cold and tired.",
-        "But the mountains were beautiful, and we were really happy. We're going again next time."
+        "In the morning I had to go to work.",
+        "Halfway there, I realised I hadn't brought my wallet!",
+        "I went straight home to look. It wasn't on the table, or on the bed. I rang Mum, but she didn't know either.",
+        "I looked for half an hour, and I was already late for work.",
+        "In the end I found it — in my own coat!",
+        "I laughed. That's my life!"
       ],
       "names": [],
       "new_words": [
-        "但是",
-        "才",
-        "又"
+        "发现",
+        "带",
+        "生活"
       ],
       "glossary": [
         {
-          "word": "但是",
-          "english": "but"
+          "word": "发现",
+          "english": "to find; to realise"
         },
         {
-          "word": "才",
-          "english": "not until; only then"
+          "word": "带",
+          "english": "to bring"
         },
         {
-          "word": "又",
-          "english": "again"
+          "word": "生活",
+          "english": "life"
         }
       ]
     }
   ],
   "missions": [
     {
-      "id": "2026-11-16-m1",
+      "id": "2026-11-17-m1",
       "level": 2,
-      "title": "Train tickets",
-      "role": "售票员",
-      "goal": "Buy two train tickets for this afternoon at the station ticket window.",
+      "title": "A birthday invitation",
+      "role": "朋友",
+      "goal": "Invite your friend to your birthday dinner and tell them what (not) to bring.",
       "new_words": [
         {
-          "word": "只",
-          "english": "only"
+          "word": "一定",
+          "english": "definitely"
         },
         {
-          "word": "可能",
-          "english": "maybe; possibly"
+          "word": "带",
+          "english": "to bring"
+        },
+        {
+          "word": "大家",
+          "english": "everyone"
+        }
+      ],
+      "steps": [
+        {
+          "partner_zh": "你明天晚上有时间吗？",
+          "partner_en": "Are you free tomorrow evening?",
+          "prompt_en": "Say it's your birthday — invite them to dinner.",
+          "answers_zh": [
+            "明天是我的生日，来吃饭吧！",
+            "明天我生日，你来吃饭吗？"
+          ],
+          "answers_en": [
+            "It's my birthday tomorrow — come for dinner!",
+            "It's my birthday tomorrow, will you come for dinner?"
+          ]
+        },
+        {
+          "partner_zh": "好啊！几点？在哪儿？",
+          "partner_en": "Great! What time? Where?",
+          "prompt_en": "Say seven o'clock, at your place.",
+          "answers_zh": [
+            "晚上七点，在我家。",
+            "七点，来我家。"
+          ],
+          "answers_en": [
+            "Seven in the evening, at my place.",
+            "Seven, come to mine."
+          ]
+        },
+        {
+          "partner_zh": "我应该带什么？",
+          "partner_en": "What should I bring?",
+          "prompt_en": "Say nothing, just come.",
+          "answers_zh": [
+            "不用带东西，你来就好。",
+            "什么都不用带。"
+          ],
+          "answers_en": [
+            "No need to bring anything, just come.",
+            "You don't need to bring anything."
+          ]
+        },
+        {
+          "partner_zh": "好，还有谁来？",
+          "partner_en": "OK, who else is coming?",
+          "prompt_en": "Say everyone from class.",
+          "answers_zh": [
+            "大家都来，我们班的同学。",
+            "大家都来！"
+          ],
+          "answers_en": [
+            "Everyone — the people from our class.",
+            "Everyone's coming!"
+          ]
+        }
+      ],
+      "closing_zh": "太好了，我一定去！",
+      "closing_en": "Brilliant, I'll definitely be there!"
+    },
+    {
+      "id": "2026-11-17-m2",
+      "level": 2,
+      "title": "A table for two",
+      "role": "服务员",
+      "goal": "Get a table at a busy restaurant and order with the waiter's help.",
+      "new_words": [
+        {
+          "word": "位",
+          "english": "(polite measure word for people)"
         },
         {
           "word": "这么",
           "english": "so (this much)"
+        },
+        {
+          "word": "应该",
+          "english": "should"
         }
       ],
       "steps": [
         {
-          "partner_zh": "你好，去哪儿？",
-          "partner_en": "Hello, where to?",
-          "prompt_en": "Say two tickets to Beijing.",
+          "partner_zh": "你好，几位？",
+          "partner_en": "Hello, how many?",
+          "prompt_en": "Say two people.",
           "answers_zh": [
-            "去北京，两个人。",
-            "我要两张去北京的票。"
+            "两位。",
+            "两个人。"
           ],
           "answers_en": [
-            "Beijing, for two.",
-            "Two tickets to Beijing, please."
+            "Two.",
+            "Two people."
           ]
         },
         {
-          "partner_zh": "今天上午的票已经没有了，只有下午的。",
-          "partner_en": "This morning's tickets are sold out — there are only afternoon ones.",
-          "prompt_en": "Ask what time in the afternoon.",
+          "partner_zh": "现在没有位子了，要等一会儿。",
+          "partner_en": "There are no tables right now — you'll have to wait a bit.",
+          "prompt_en": "Say wow, so many people! Ask how long.",
           "answers_zh": [
-            "下午几点的？",
-            "下午几点？"
+            "这么多人啊！要等多长时间？",
+            "人这么多！等多长时间？"
           ],
           "answers_en": [
-            "What time in the afternoon?",
-            "What time?"
+            "So many people! How long's the wait?",
+            "So busy! How long?"
           ]
         },
         {
-          "partner_zh": "下午三点的。可能有点晚。",
-          "partner_en": "Three o'clock. It might be a bit late.",
-          "prompt_en": "Say that's fine, you'll take them.",
+          "partner_zh": "十分钟。好了，请坐。你们吃什么？",
+          "partner_en": "Ten minutes. … Right, have a seat. What would you like?",
+          "prompt_en": "Ask what you should order.",
           "answers_zh": [
-            "没关系，就要三点的。",
-            "可以，我要了。"
+            "我们应该吃什么？",
+            "你说我们应该点什么？"
           ],
           "answers_en": [
-            "That's fine, I'll take the three o'clock.",
-            "OK, I'll take them."
+            "What should we have?",
+            "What do you think we should order?"
           ]
         },
         {
-          "partner_zh": "两张，一共四百块。",
-          "partner_en": "Two tickets, four hundred altogether.",
-          "prompt_en": "Say wow, so expensive — then pay.",
+          "partner_zh": "这个菜大家都喜欢。",
+          "partner_en": "Everyone loves this dish.",
+          "prompt_en": "Say OK, you'll have that one, and two teas.",
           "answers_zh": [
-            "这么贵啊！好，给你。",
-            "这么贵！给你钱。"
+            "好，就要这个，还要两杯茶。",
+            "好的，来一个，两杯茶。"
           ],
           "answers_en": [
-            "That expensive! OK, here you go.",
-            "So pricey! Here's the money."
-          ]
-        }
-      ],
-      "closing_zh": "好，这是你们的票。",
-      "closing_en": "Right, here are your tickets."
-    },
-    {
-      "id": "2026-11-16-m2",
-      "level": 2,
-      "title": "Recommending a show",
-      "role": "朋友",
-      "goal": "Tell your friend about a show you're hooked on and why they should watch it.",
-      "new_words": [
-        {
-          "word": "像",
-          "english": "to be like"
-        },
-        {
-          "word": "所以",
-          "english": "so; therefore"
-        },
-        {
-          "word": "那么",
-          "english": "so (that much)"
-        }
-      ],
-      "steps": [
-        {
-          "partner_zh": "你最近在看什么？",
-          "partner_en": "What are you watching at the moment?",
-          "prompt_en": "Say a Chinese show, and it's great.",
-          "answers_zh": [
-            "一个中国电视，很好看！",
-            "我在看中国电视，很好玩儿。"
-          ],
-          "answers_en": [
-            "A Chinese show — it's great!",
-            "I'm watching a Chinese show, it's really fun."
-          ]
-        },
-        {
-          "partner_zh": "是吗？说的是什么？",
-          "partner_en": "Really? What's it about?",
-          "prompt_en": "Say a student who's a lot like you.",
-          "answers_zh": [
-            "说的是一个学生，她很像我。",
-            "一个女孩儿，很像我。"
-          ],
-          "answers_en": [
-            "It's about a student who's a lot like me.",
-            "A girl who's a lot like me."
-          ]
-        },
-        {
-          "partner_zh": "你为什么那么喜欢？",
-          "partner_en": "Why do you like it so much?",
-          "prompt_en": "Say because it's funny, so you watch every evening.",
-          "answers_zh": [
-            "因为很好玩儿，所以我晚上常常看。",
-            "很好玩儿，所以我天天看。"
-          ],
-          "answers_en": [
-            "Because it's funny, so I watch it most evenings.",
-            "It's fun, so I watch it all the time."
-          ]
-        },
-        {
-          "partner_zh": "好，我今天晚上也看看。",
-          "partner_en": "OK, I'll give it a go tonight.",
-          "prompt_en": "Say great, let's talk about it tomorrow.",
-          "answers_zh": [
-            "好，明天说说！",
-            "太好了，明天一起说。"
-          ],
-          "answers_en": [
-            "Great, let's talk tomorrow!",
-            "Brilliant, we'll chat about it tomorrow."
+            "OK, we'll have that, and two teas.",
+            "Sure, one of those, and two teas."
           ]
         }
       ],
-      "closing_zh": "好，明天见！",
-      "closing_en": "OK, see you tomorrow!"
+      "closing_zh": "好的，马上来！",
+      "closing_en": "Coming right up!"
     }
   ]
 }
