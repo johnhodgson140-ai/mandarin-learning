@@ -1,8 +1,8 @@
 {
-  "date": "2026-11-17",
+  "date": "2026-11-18",
   "level": 2,
   "plan": {
-    "focus_en": "Strong feelings with 一定 (definitely) and 应该 (should): 我们一定要赢 / 我们应该一起打.",
+    "focus_en": "不过 (however) to add a twist, and 一直 (all along / straight on).",
     "items": [
       {
         "kind": "cards",
@@ -14,437 +14,455 @@
       },
       {
         "kind": "story",
-        "title_en": "Read and read aloud: 钱包在哪儿？",
-        "ref": "2026-11-17-s2"
+        "title_en": "Read and read aloud: 我的第一个工作",
+        "ref": "2026-11-18-s2"
       },
       {
         "kind": "mission",
-        "title_en": "Guided mission: a birthday invitation",
-        "ref": "2026-11-17-m1"
+        "title_en": "Guided mission: haggling for a vintage jacket",
+        "ref": "2026-11-18-m2"
       }
     ]
   },
   "stories": [
     {
-      "id": "2026-11-17-s1",
+      "id": "2026-11-18-s1",
       "level": 2,
-      "topic": "football",
-      "title_zh": "大家一起打",
-      "title_en": "Everyone plays together",
+      "topic": "archive fashion",
+      "title_zh": "不买了……",
+      "title_en": "No more buying…",
       "paragraphs": [
         [
-          "下午",
-          "，",
           "我",
-          "和",
-          "同学",
-          "们",
+          "一直",
+          "很",
+          "喜欢",
+          "老",
+          "衣服",
+          "。",
+          "我",
+          "认为",
+          "，",
+          "老",
+          "衣服",
+          "比",
+          "新",
+          "衣服",
+          "更",
+          "好看",
+          "。"
+        ],
+        [
+          "我",
+          "所有",
+          "的",
+          "钱",
+          "都",
+          "花",
           "在",
-          "学校",
-          "打球",
+          "衣服",
+          "上",
+          "了",
           "。"
         ],
         [
-          "我",
+          "妈妈",
           "说",
           "：",
           "“",
-          "大家",
-          "快",
-          "来",
-          "！",
-          "今天",
-          "我们",
-          "一定",
-          "要",
-          "进",
-          "三",
-          "个",
-          "球",
-          "！",
-          "”"
-        ],
-        [
-          "我们",
-          "跑",
+          "你",
+          "有",
+          "这么",
+          "多",
+          "衣服",
           "了",
-          "一",
-          "个",
-          "小时",
-          "，",
-          "但是",
-          "只",
-          "进",
-          "了",
-          "一",
-          "个",
-          "。"
-        ],
-        [
-          "一",
-          "个",
-          "同学",
-          "说",
-          "：",
-          "“",
-          "我们",
-          "应该",
-          "一起",
-          "打",
           "，",
           "别",
-          "自己",
-          "跑",
+          "再",
+          "买",
+          "了",
+          "！",
+          "”"
+        ],
+        [
+          "我",
+          "说",
+          "：",
+          "“",
+          "好",
+          "，",
+          "我",
+          "不",
+          "买",
+          "了",
           "。",
           "”"
         ],
         [
-          "他",
-          "说",
-          "得",
-          "对",
-          "。",
-          "最后",
+          "不过",
           "，",
-          "我们",
+          "今天",
+          "我",
+          "在",
+          "网上",
           "又",
-          "进",
+          "看到",
           "了",
-          "两",
+          "一",
           "个",
-          "球",
-          "。"
-        ],
-        [
-          "大家",
-          "都",
           "很",
-          "高兴",
-          "。",
-          "明天",
-          "我们",
-          "还",
-          "要",
-          "一起",
-          "打",
-          "！"
-        ]
-      ],
-      "translations": [
-        "In the afternoon my classmates and I played football at school.",
-        "I said: “Come on, everyone! Today we're definitely scoring three!”",
-        "We ran for an hour but only scored one.",
-        "One classmate said: “We should play as a team — don't all run off on your own.”",
-        "He was right. In the end we scored two more.",
-        "Everyone was really happy. We're playing together again tomorrow!"
-      ],
-      "names": [],
-      "new_words": [
-        "大家",
-        "一定",
-        "应该"
-      ],
-      "glossary": [
-        {
-          "word": "大家",
-          "english": "everyone"
-        },
-        {
-          "word": "一定",
-          "english": "definitely"
-        },
-        {
-          "word": "应该",
-          "english": "should"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-17-s2",
-      "level": 2,
-      "topic": "daily life",
-      "title_zh": "钱包在哪儿？",
-      "title_en": "Where's my wallet?",
-      "paragraphs": [
-        [
-          "早上",
-          "，",
-          "我",
-          "要",
-          "去",
-          "上班",
+          "有名",
+          "的",
           "。"
         ],
         [
-          "到",
-          "了",
-          "路",
-          "上",
-          "，",
-          "我",
-          "发现",
-          "我",
-          "没有",
-          "带",
-          "钱包",
-          "！"
-        ],
-        [
-          "我",
-          "马上",
-          "回家",
-          "找",
-          "。",
-          "钱包",
-          "不",
-          "在",
-          "桌子",
-          "上",
-          "，",
-          "也",
-          "不",
-          "在",
-          "床",
-          "上",
+          "它",
+          "只",
+          "要",
+          "三百",
+          "块",
           "。",
           "我",
-          "给",
-          "妈妈",
-          "打",
-          "了",
-          "电话",
-          "，",
-          "她",
-          "也",
-          "不",
-          "知道",
-          "。"
-        ],
-        [
-          "我",
-          "找",
+          "想",
           "了",
           "半",
           "个",
           "小时",
           "，",
-          "上班",
-          "已经",
-          "晚",
+          "还是",
+          "买",
           "了",
           "。"
-        ],
-        [
-          "最后",
-          "，",
-          "我",
-          "发现",
-          "它",
-          "在",
-          "我",
-          "的",
-          "衣服",
-          "里",
-          "！"
-        ],
-        [
-          "我",
-          "笑",
-          "了",
-          "。",
-          "这",
-          "就",
-          "是",
-          "我",
-          "的",
-          "生活",
-          "！"
         ]
       ],
       "translations": [
-        "In the morning I had to go to work.",
-        "Halfway there, I realised I hadn't brought my wallet!",
-        "I went straight home to look. It wasn't on the table, or on the bed. I rang Mum, but she didn't know either.",
-        "I looked for half an hour, and I was already late for work.",
-        "In the end I found it — in my own coat!",
-        "I laughed. That's my life!"
+        "I've always loved vintage clothes. I think old clothes look better than new ones.",
+        "All my money goes on clothes.",
+        "Mum said: “You've got so many clothes already — stop buying!”",
+        "I said: “OK, no more.”",
+        "But today I spotted another really famous piece online.",
+        "It was only three hundred kuai. I thought about it for half an hour, and bought it anyway."
       ],
       "names": [],
       "new_words": [
-        "发现",
-        "带",
-        "生活"
+        "一直",
+        "所有",
+        "不过"
       ],
       "glossary": [
         {
-          "word": "发现",
-          "english": "to find; to realise"
+          "word": "一直",
+          "english": "always; all along"
         },
         {
-          "word": "带",
-          "english": "to bring"
+          "word": "所有",
+          "english": "all"
         },
         {
-          "word": "生活",
-          "english": "life"
+          "word": "不过",
+          "english": "but; however"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-18-s2",
+      "level": 2,
+      "topic": "business & finance",
+      "title_zh": "我的第一个工作",
+      "title_en": "My first job",
+      "paragraphs": [
+        [
+          "我",
+          "是",
+          "大学生",
+          "。",
+          "这",
+          "个",
+          "月",
+          "，",
+          "我",
+          "在",
+          "一",
+          "个",
+          "公司",
+          "工作",
+          "。"
+        ],
+        [
+          "这",
+          "是",
+          "我",
+          "的",
+          "第一",
+          "个",
+          "工作",
+          "，",
+          "我",
+          "很",
+          "高兴",
+          "。"
+        ],
+        [
+          "第一",
+          "天",
+          "，",
+          "我",
+          "很",
+          "早",
+          "就",
+          "到",
+          "了",
+          "。",
+          "公司",
+          "里",
+          "的",
+          "人",
+          "都",
+          "很",
+          "忙",
+          "，",
+          "没有",
+          "人",
+          "跟",
+          "我",
+          "说话",
+          "。"
+        ],
+        [
+          "一",
+          "个",
+          "女",
+          "的",
+          "向",
+          "我",
+          "笑",
+          "了",
+          "笑",
+          "，",
+          "说",
+          "：",
+          "“",
+          "你",
+          "好",
+          "！",
+          "有",
+          "问题",
+          "就",
+          "问",
+          "我",
+          "。",
+          "”"
+        ],
+        [
+          "下班",
+          "的",
+          "时候",
+          "，",
+          "她",
+          "说",
+          "：",
+          "“",
+          "明天",
+          "不要",
+          "来",
+          "这么",
+          "早",
+          "！",
+          "”",
+          "我",
+          "觉得",
+          "我",
+          "会",
+          "喜欢",
+          "这",
+          "个",
+          "工作",
+          "。"
+        ]
+      ],
+      "translations": [
+        "I'm a university student. This month I'm working at a company.",
+        "It's my first job, and I'm really happy.",
+        "On the first day I got there very early. Everyone at the company was busy, and nobody talked to me.",
+        "A woman smiled at me and said: “Hi! If you have any questions, just ask me.”",
+        "When we finished, she said: “Don't come in so early tomorrow!” I think I'm going to like this job."
+      ],
+      "names": [],
+      "new_words": [
+        "公司",
+        "第一",
+        "不要"
+      ],
+      "glossary": [
+        {
+          "word": "公司",
+          "english": "company"
+        },
+        {
+          "word": "第一",
+          "english": "first"
+        },
+        {
+          "word": "不要",
+          "english": "don't"
         }
       ]
     }
   ],
   "missions": [
     {
-      "id": "2026-11-17-m1",
+      "id": "2026-11-18-m1",
       "level": 2,
-      "title": "A birthday invitation",
-      "role": "朋友",
-      "goal": "Invite your friend to your birthday dinner and tell them what (not) to bring.",
+      "title": "First day at the office",
+      "role": "公司前台",
+      "goal": "Arrive at a company's front desk, say who you're there to see and get directions.",
       "new_words": [
+        {
+          "word": "公司",
+          "english": "company"
+        },
+        {
+          "word": "一直",
+          "english": "straight on"
+        },
+        {
+          "word": "第一",
+          "english": "first"
+        }
+      ],
+      "steps": [
+        {
+          "partner_zh": "你好，请问你找谁？",
+          "partner_en": "Hello, who are you here to see?",
+          "prompt_en": "Say you're new and looking for Mr Li.",
+          "answers_zh": [
+            "我是新来的，我找李先生。",
+            "你好，我找李先生。"
+          ],
+          "answers_en": [
+            "I'm new here — I'm looking for Mr Li.",
+            "Hello, I'm here to see Mr Li."
+          ]
+        },
+        {
+          "partner_zh": "李先生在二楼。",
+          "partner_en": "Mr Li is on the second floor.",
+          "prompt_en": "Ask how to get there.",
+          "answers_zh": [
+            "请问怎么走？",
+            "二楼怎么走？"
+          ],
+          "answers_en": [
+            "How do I get there?",
+            "How do I get to the second floor?"
+          ]
+        },
+        {
+          "partner_zh": "上楼以后一直走，第一个门就是。",
+          "partner_en": "Go upstairs, then straight on — it's the first door.",
+          "prompt_en": "Repeat: straight on, first door.",
+          "answers_zh": [
+            "一直走，第一个门，对吗？",
+            "好，一直走，第一个门。"
+          ],
+          "answers_en": [
+            "Straight on, first door — right?",
+            "OK, straight on, first door."
+          ]
+        },
+        {
+          "partner_zh": "对。欢迎你来我们公司！",
+          "partner_en": "That's right. Welcome to the company!",
+          "prompt_en": "Thank them.",
+          "answers_zh": [
+            "谢谢！",
+            "谢谢你！"
+          ],
+          "answers_en": [
+            "Thanks!",
+            "Thank you!"
+          ]
+        }
+      ],
+      "closing_zh": "不客气，有问题再来找我。",
+      "closing_en": "You're welcome. Come and find me if you need anything."
+    },
+    {
+      "id": "2026-11-18-m2",
+      "level": 2,
+      "title": "Haggling for a vintage jacket",
+      "role": "卖家",
+      "goal": "Meet an online seller to look at a vintage jacket and get the price down.",
+      "new_words": [
+        {
+          "word": "所有",
+          "english": "all"
+        },
+        {
+          "word": "不过",
+          "english": "but; however"
+        },
         {
           "word": "一定",
           "english": "definitely"
-        },
-        {
-          "word": "带",
-          "english": "to bring"
-        },
-        {
-          "word": "大家",
-          "english": "everyone"
         }
       ],
       "steps": [
         {
-          "partner_zh": "你明天晚上有时间吗？",
-          "partner_en": "Are you free tomorrow evening?",
-          "prompt_en": "Say it's your birthday — invite them to dinner.",
+          "partner_zh": "你好！这就是网上的那个衣服。",
+          "partner_en": "Hi! This is the jacket from the listing.",
+          "prompt_en": "Say it looks great, and ask if you can try it on.",
           "answers_zh": [
-            "明天是我的生日，来吃饭吧！",
-            "明天我生日，你来吃饭吗？"
+            "很好看！我能试一下吗？",
+            "真好看，我可以试试吗？"
           ],
           "answers_en": [
-            "It's my birthday tomorrow — come for dinner!",
-            "It's my birthday tomorrow, will you come for dinner?"
+            "It looks great! Can I try it on?",
+            "Lovely — can I try it?"
           ]
         },
         {
-          "partner_zh": "好啊！几点？在哪儿？",
-          "partner_en": "Great! What time? Where?",
-          "prompt_en": "Say seven o'clock, at your place.",
+          "partner_zh": "当然可以。",
+          "partner_en": "Of course.",
+          "prompt_en": "Say it fits, but it's a bit expensive.",
           "answers_zh": [
-            "晚上七点，在我家。",
-            "七点，来我家。"
+            "很合适，不过有点儿贵。",
+            "大小很好，不过太贵了。"
           ],
           "answers_en": [
-            "Seven in the evening, at my place.",
-            "Seven, come to mine."
+            "It fits well, but it's a bit pricey.",
+            "The size is right, but it's too expensive."
           ]
         },
         {
-          "partner_zh": "我应该带什么？",
-          "partner_en": "What should I bring?",
-          "prompt_en": "Say nothing, just come.",
+          "partner_zh": "这是很有名的老衣服，三百块不贵。",
+          "partner_en": "It's a famous vintage piece — three hundred isn't expensive.",
+          "prompt_en": "Say you've only got two hundred and fifty — that's all your money.",
           "answers_zh": [
-            "不用带东西，你来就好。",
-            "什么都不用带。"
+            "我只有两百五，这是我所有的钱。",
+            "两百五行吗？我所有的钱就这么多。"
           ],
           "answers_en": [
-            "No need to bring anything, just come.",
-            "You don't need to bring anything."
+            "I've only got 250 — that's all my money.",
+            "Would 250 work? That's all I've got."
           ]
         },
         {
-          "partner_zh": "好，还有谁来？",
-          "partner_en": "OK, who else is coming?",
-          "prompt_en": "Say everyone from class.",
+          "partner_zh": "好吧，两百五给你。",
+          "partner_en": "Fine, 250 it is.",
+          "prompt_en": "Thank them and say you'll definitely look after it.",
           "answers_zh": [
-            "大家都来，我们班的同学。",
-            "大家都来！"
+            "谢谢！我一定好好穿。",
+            "太好了，我一定会好好穿的。"
           ],
           "answers_en": [
-            "Everyone — the people from our class.",
-            "Everyone's coming!"
-          ]
-        }
-      ],
-      "closing_zh": "太好了，我一定去！",
-      "closing_en": "Brilliant, I'll definitely be there!"
-    },
-    {
-      "id": "2026-11-17-m2",
-      "level": 2,
-      "title": "A table for two",
-      "role": "服务员",
-      "goal": "Get a table at a busy restaurant and order with the waiter's help.",
-      "new_words": [
-        {
-          "word": "位",
-          "english": "(polite measure word for people)"
-        },
-        {
-          "word": "这么",
-          "english": "so (this much)"
-        },
-        {
-          "word": "应该",
-          "english": "should"
-        }
-      ],
-      "steps": [
-        {
-          "partner_zh": "你好，几位？",
-          "partner_en": "Hello, how many?",
-          "prompt_en": "Say two people.",
-          "answers_zh": [
-            "两位。",
-            "两个人。"
-          ],
-          "answers_en": [
-            "Two.",
-            "Two people."
-          ]
-        },
-        {
-          "partner_zh": "现在没有位子了，要等一会儿。",
-          "partner_en": "There are no tables right now — you'll have to wait a bit.",
-          "prompt_en": "Say wow, so many people! Ask how long.",
-          "answers_zh": [
-            "这么多人啊！要等多长时间？",
-            "人这么多！等多长时间？"
-          ],
-          "answers_en": [
-            "So many people! How long's the wait?",
-            "So busy! How long?"
-          ]
-        },
-        {
-          "partner_zh": "十分钟。好了，请坐。你们吃什么？",
-          "partner_en": "Ten minutes. … Right, have a seat. What would you like?",
-          "prompt_en": "Ask what you should order.",
-          "answers_zh": [
-            "我们应该吃什么？",
-            "你说我们应该点什么？"
-          ],
-          "answers_en": [
-            "What should we have?",
-            "What do you think we should order?"
-          ]
-        },
-        {
-          "partner_zh": "这个菜大家都喜欢。",
-          "partner_en": "Everyone loves this dish.",
-          "prompt_en": "Say OK, you'll have that one, and two teas.",
-          "answers_zh": [
-            "好，就要这个，还要两杯茶。",
-            "好的，来一个，两杯茶。"
-          ],
-          "answers_en": [
-            "OK, we'll have that, and two teas.",
-            "Sure, one of those, and two teas."
+            "Thanks! I'll take good care of it.",
+            "Brilliant — I'll definitely look after it."
           ]
         }
       ],
-      "closing_zh": "好的，马上来！",
-      "closing_en": "Coming right up!"
+      "closing_zh": "好，下次再来看看！",
+      "closing_en": "Great — come and have a look again next time!"
     }
   ]
 }
