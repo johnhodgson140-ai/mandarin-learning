@@ -1,8 +1,8 @@
 {
-  "date": "2026-11-20",
+  "date": "2026-11-21",
   "level": 2,
   "plan": {
-    "focus_en": "Asking why with 为什么 and answering with 因为…; measure words 场 (a match) and 件 (a piece of clothing).",
+    "focus_en": "Comparing with 比…还… (even more … than): 它比我爸爸还老.",
     "items": [
       {
         "kind": "cards",
@@ -14,418 +14,417 @@
       },
       {
         "kind": "story",
-        "title_en": "Read and read aloud: 用头进球",
-        "ref": "2026-11-20-s1"
+        "title_en": "Read and read aloud: 比爸爸还老的衣服",
+        "ref": "2026-11-21-s1"
       },
       {
         "kind": "mission",
-        "title_en": "Guided mission: buying trousers",
-        "ref": "2026-11-20-m2"
+        "title_en": "Guided mission: joining a club",
+        "ref": "2026-11-21-m1"
       }
     ]
   },
   "stories": [
     {
-      "id": "2026-11-20-s1",
+      "id": "2026-11-21-s1",
       "level": 2,
-      "topic": "football",
-      "title_zh": "用头进球",
-      "title_en": "A header",
+      "topic": "archive fashion",
+      "title_zh": "比爸爸还老的衣服",
+      "title_en": "Older than my dad",
       "paragraphs": [
         [
-          "下午",
-          "，",
-          "我们",
-          "和",
-          "别的",
-          "学校",
-          "打",
-          "了",
-          "一",
-          "场",
-          "球",
+          "我",
+          "很",
+          "喜欢",
+          "过去",
+          "的",
+          "衣服",
           "。"
         ],
         [
-          "他们",
-          "跑",
-          "得",
-          "很",
-          "快",
-          "，",
-          "我们",
-          "一直",
-          "没有",
-          "进",
-          "球",
-          "。",
-          "我们",
-          "都",
-          "很",
-          "累",
-          "。"
-        ],
-        [
-          "最后",
+          "上",
+          "个",
+          "星期",
           "，",
           "我",
-          "用",
-          "头",
-          "进",
-          "了",
+          "在",
+          "网上",
+          "见到",
           "一",
-          "个",
-          "球",
-          "！",
+          "件",
+          "很",
+          "有名",
+          "的",
+          "老",
+          "衣服",
+          "。"
+        ],
+        [
+          "这",
+          "件",
+          "衣服",
+          "已经",
+          "四十",
+          "岁",
+          "了",
+          "，",
+          "比",
+          "我",
+          "爸爸",
+          "还",
+          "老",
+          "！"
+        ],
+        [
+          "我",
+          "觉得",
+          "我",
+          "必须",
+          "买",
+          "它",
+          "。",
+          "我",
+          "花",
+          "了",
+          "我",
+          "所有",
+          "的",
+          "钱",
+          "。"
+        ],
+        [
+          "现在",
+          "，",
+          "我",
+          "常常",
+          "穿",
+          "它",
+          "去",
+          "上课",
+          "。",
           "大家",
           "都",
-          "很",
-          "高兴",
-          "。"
-        ],
-        [
-          "晚上",
-          "回家",
-          "，",
-          "妈妈",
-          "问",
-          "：",
-          "“",
-          "你",
-          "为什么",
-          "这么",
-          "高兴",
-          "？",
-          "”"
-        ],
-        [
-          "我",
           "说",
-          "：",
-          "“",
-          "因为",
-          "我",
-          "用",
-          "头",
-          "进",
-          "了",
-          "一",
-          "个",
-          "球",
-          "！",
-          "”",
-          "妈妈",
-          "也",
-          "笑",
-          "了",
+          "很",
+          "好看",
           "。",
-          "明天",
           "我",
-          "还",
-          "要",
-          "打",
-          "！"
+          "觉得",
+          "，",
+          "它",
+          "比",
+          "新",
+          "衣服",
+          "更",
+          "好看",
+          "。"
         ]
       ],
       "translations": [
-        "This afternoon we played a match against another school.",
-        "They were really fast, and for ages we couldn't score. We were all exhausted.",
-        "In the end I scored with a header! Everyone was thrilled.",
-        "When I got home in the evening, Mum asked: “Why are you so happy?”",
-        "I said: “Because I scored a header!” Mum laughed too. I'm playing again tomorrow!"
+        "I love clothes from the past.",
+        "Last week I came across a famous vintage piece online.",
+        "This jacket is already forty years old — older than my dad!",
+        "I felt I just had to buy it. I spent all my money on it.",
+        "Now I often wear it to class. Everyone says it looks great. I think it looks better than new clothes."
       ],
       "names": [],
       "new_words": [
-        "场",
-        "头",
-        "为什么"
+        "过去",
+        "见到",
+        "件"
       ],
       "glossary": [
         {
-          "word": "场",
-          "english": "(measure word for matches)"
+          "word": "过去",
+          "english": "the past"
         },
         {
-          "word": "头",
-          "english": "head"
+          "word": "见到",
+          "english": "to see; to come across"
         },
         {
-          "word": "为什么",
-          "english": "why"
+          "word": "件",
+          "english": "(measure word for clothes)"
         }
       ]
     },
     {
-      "id": "2026-11-20-s2",
+      "id": "2026-11-21-s2",
       "level": 2,
-      "topic": "daily life",
-      "title_zh": "一样的衣服",
-      "title_en": "The same clothes",
+      "topic": "business & finance",
+      "title_zh": "公司的考试",
+      "title_en": "The company test",
       "paragraphs": [
         [
-          "今天",
-          "有",
-          "一",
-          "件",
-          "事情",
-          "很",
-          "好玩儿",
-          "。"
-        ],
-        [
-          "早上",
+          "今年",
           "，",
           "我",
-          "穿",
-          "了",
-          "一",
-          "件",
-          "新",
-          "衣服",
+          "想",
           "去",
-          "上课",
-          "。",
-          "我",
-          "觉得",
-          "很",
-          "好看",
-          "。"
-        ],
-        [
-          "到",
-          "了",
-          "学校",
-          "，",
-          "我",
-          "发现",
           "一",
           "个",
-          "同学",
-          "也",
-          "穿",
-          "了",
-          "一样",
+          "有名",
           "的",
-          "衣服",
-          "！"
-        ],
-        [
-          "我们",
-          "都",
-          "笑",
-          "了",
-          "。",
-          "然后",
-          "，",
-          "我们",
-          "一起",
-          "去",
-          "吃",
-          "午饭",
+          "公司",
+          "工作",
           "。"
         ],
         [
-          "大家",
-          "都",
-          "认为",
-          "我们",
-          "是",
-          "哥哥",
-          "和",
-          "弟弟",
-          "。",
-          "明天",
           "我",
-          "要",
-          "穿",
-          "别的",
-          "衣服",
+          "必须",
+          "先",
+          "参加",
+          "一",
+          "个",
+          "考试",
+          "。"
+        ],
+        [
+          "我",
+          "一直",
+          "在",
+          "学习",
+          "，",
+          "晚上",
+          "很",
+          "晚",
+          "才",
+          "睡觉",
+          "。",
+          "我",
+          "不",
+          "看",
+          "电视",
+          "，",
+          "也",
+          "不",
+          "打球",
+          "。"
+        ],
+        [
+          "考试",
+          "那",
+          "天",
+          "，",
+          "我",
+          "感觉",
+          "很",
+          "难",
+          "。"
+        ],
+        [
+          "一",
+          "个",
+          "星期",
+          "后",
+          "，",
+          "结果",
+          "出来",
+          "了",
+          "：",
+          "我",
+          "通过",
+          "了",
           "！"
+        ],
+        [
+          "我",
+          "马上",
+          "给",
+          "妈妈",
+          "打电话",
+          "，",
+          "她",
+          "也",
+          "很",
+          "高兴",
+          "。"
         ]
       ],
       "translations": [
-        "Something funny happened today.",
-        "In the morning I wore a new top to class. I thought it looked great.",
-        "When I got to school, I found a classmate wearing exactly the same thing!",
-        "We both laughed. Then we went to lunch together.",
-        "Everyone thought we were brothers. Tomorrow I'm wearing something else!"
+        "This year I want to work at a well-known company.",
+        "First I have to take a test.",
+        "I studied non-stop and went to bed very late every night. No TV, no football.",
+        "On the day of the test, it felt really hard.",
+        "A week later the results came out: I passed!",
+        "I phoned Mum straight away, and she was really happy too."
       ],
       "names": [],
       "new_words": [
-        "件",
-        "事情",
-        "然后"
+        "参加",
+        "结果",
+        "通过"
       ],
       "glossary": [
         {
-          "word": "件",
-          "english": "(measure word for clothes, matters)"
+          "word": "参加",
+          "english": "to take part in"
         },
         {
-          "word": "事情",
-          "english": "matter; thing"
+          "word": "结果",
+          "english": "result"
         },
         {
-          "word": "然后",
-          "english": "then"
+          "word": "通过",
+          "english": "to pass"
         }
       ]
     }
   ],
   "missions": [
     {
-      "id": "2026-11-20-m1",
+      "id": "2026-11-21-m1",
       "level": 2,
-      "title": "At the doctor's",
-      "role": "医生",
-      "goal": "Tell the doctor what's wrong, how long it's been, and ask what to do.",
+      "title": "Joining a club",
+      "role": "同学",
+      "goal": "A classmate runs the football club. Ask to join and find out when it meets.",
       "new_words": [
         {
-          "word": "头",
-          "english": "head"
+          "word": "参加",
+          "english": "to join; to take part in"
         },
         {
-          "word": "为什么",
-          "english": "why"
+          "word": "周",
+          "english": "week"
+        },
+        {
+          "word": "或者",
+          "english": "or"
+        }
+      ],
+      "steps": [
+        {
+          "partner_zh": "你好！你想参加我们的球队吗？",
+          "partner_en": "Hi! Do you want to join our team?",
+          "prompt_en": "Say yes, you love playing football.",
+          "answers_zh": [
+            "想！我很喜欢打球。",
+            "我想参加，我很爱打球。"
+          ],
+          "answers_en": [
+            "Yes! I love playing football.",
+            "I'd like to join — I love football."
+          ]
+        },
+        {
+          "partner_zh": "太好了。你叫什么名字？",
+          "partner_en": "Great. What's your name?",
+          "prompt_en": "Give your name.",
+          "answers_zh": [
+            "我叫李明。",
+            "我的名字是李明。"
+          ],
+          "answers_en": [
+            "I'm Li Ming.",
+            "My name's Li Ming."
+          ]
+        },
+        {
+          "partner_zh": "我们一周打两次。",
+          "partner_en": "We play twice a week.",
+          "prompt_en": "Ask which days.",
+          "answers_zh": [
+            "星期几打？",
+            "哪两天？"
+          ],
+          "answers_en": [
+            "Which days?",
+            "Which two days?"
+          ]
+        },
+        {
+          "partner_zh": "星期二或者星期四，下午四点。",
+          "partner_en": "Tuesday or Thursday, at four in the afternoon.",
+          "prompt_en": "Say great, you'll come on Tuesday.",
+          "answers_zh": [
+            "好，我星期二来。",
+            "没问题，星期二见！"
+          ],
+          "answers_en": [
+            "Great, I'll come on Tuesday.",
+            "No problem, see you Tuesday!"
+          ]
+        }
+      ],
+      "closing_zh": "好，星期二见！",
+      "closing_en": "OK, see you on Tuesday!"
+    },
+    {
+      "id": "2026-11-21-m2",
+      "level": 2,
+      "title": "Lost wallet",
+      "role": "火车站工作人员",
+      "goal": "You've lost your wallet at the station. Report it at the help desk.",
+      "new_words": [
+        {
+          "word": "见到",
+          "english": "to see"
+        },
+        {
+          "word": "安全",
+          "english": "safe"
         },
         {
           "word": "出现",
-          "english": "to appear; to start"
+          "english": "to turn up"
         }
       ],
       "steps": [
         {
-          "partner_zh": "你好，你哪儿不舒服？",
-          "partner_en": "Hello, what seems to be the problem?",
-          "prompt_en": "Say your head hurts.",
+          "partner_zh": "你好，有什么事情？",
+          "partner_en": "Hello, how can I help?",
+          "prompt_en": "Say you can't find your wallet.",
           "answers_zh": [
-            "我头疼。",
-            "医生，我头很疼。"
+            "我的钱包找不到了。",
+            "我找不到我的钱包了。"
           ],
           "answers_en": [
-            "I've got a headache.",
-            "Doctor, my head really hurts."
+            "I can't find my wallet.",
+            "I've lost my wallet."
           ]
         },
         {
-          "partner_zh": "什么时候出现的？",
-          "partner_en": "When did it start?",
-          "prompt_en": "Say yesterday evening.",
+          "partner_zh": "你最后在哪儿见到它的？",
+          "partner_en": "Where did you last see it?",
+          "prompt_en": "Say on the train.",
           "answers_zh": [
-            "昨天晚上。",
-            "昨天晚上就疼了。"
+            "在火车上。",
+            "我在火车上还有。"
           ],
           "answers_en": [
-            "Yesterday evening.",
-            "It's hurt since yesterday evening."
+            "On the train.",
+            "I still had it on the train."
           ]
         },
         {
-          "partner_zh": "你晚上睡得好吗？",
-          "partner_en": "Are you sleeping well?",
-          "prompt_en": "Say no, you study until very late.",
+          "partner_zh": "钱包里有什么？",
+          "partner_en": "What was in it?",
+          "prompt_en": "Say some money and your bank card.",
           "answers_zh": [
-            "不好，我学习到很晚。",
-            "睡得很少，我晚上一直学习。"
+            "有一些钱，还有我的卡。",
+            "有钱和卡。"
           ],
           "answers_en": [
-            "No, I study till really late.",
-            "Not much — I study all evening."
+            "Some money, and my card.",
+            "Money and a card."
           ]
         },
         {
-          "partner_zh": "这就是你头疼的原因。你应该早点睡觉。",
-          "partner_en": "That's why your head hurts. You should go to bed earlier.",
-          "prompt_en": "Ask why studying late gives you a headache.",
+          "partner_zh": "别着急，这里很安全。如果出现了，我们给你打电话。",
+          "partner_en": "Don't worry, it's safe here. If it turns up, we'll call you.",
+          "prompt_en": "Give your phone number and thank them.",
           "answers_zh": [
-            "为什么学习到很晚会头疼？",
-            "为什么？"
+            "好，这是我的电话。谢谢！",
+            "谢谢你，我的电话在这儿。"
           ],
           "answers_en": [
-            "Why does studying late give me a headache?",
-            "Why's that?"
-          ]
-        }
-      ],
-      "closing_zh": "因为你太累了。多休息，就会好的。",
-      "closing_en": "Because you're worn out. Rest more and you'll be fine."
-    },
-    {
-      "id": "2026-11-20-m2",
-      "level": 2,
-      "title": "Buying trousers",
-      "role": "服务员",
-      "goal": "Buy a pair of trousers in a clothes shop: find your size and the length.",
-      "new_words": [
-        {
-          "word": "条",
-          "english": "(measure word for trousers)"
-        },
-        {
-          "word": "件",
-          "english": "(measure word for tops)"
-        },
-        {
-          "word": "长",
-          "english": "long"
-        }
-      ],
-      "steps": [
-        {
-          "partner_zh": "你好，你想买什么？",
-          "partner_en": "Hello, what are you looking for?",
-          "prompt_en": "Say you'd like a pair of trousers.",
-          "answers_zh": [
-            "我想买一条裤子。",
-            "我要一条裤子。"
-          ],
-          "answers_en": [
-            "I'd like to buy some trousers.",
-            "I want a pair of trousers."
-          ]
-        },
-        {
-          "partner_zh": "这条怎么样？",
-          "partner_en": "How about this pair?",
-          "prompt_en": "Ask if you can try them on.",
-          "answers_zh": [
-            "我能试试吗？",
-            "可以试一下吗？"
-          ],
-          "answers_en": [
-            "Can I try them on?",
-            "Can I try them?"
-          ]
-        },
-        {
-          "partner_zh": "可以。怎么样？",
-          "partner_en": "Sure. How are they?",
-          "prompt_en": "Say they're a bit long.",
-          "answers_zh": [
-            "有点儿长。",
-            "太长了。"
-          ],
-          "answers_en": [
-            "A bit long.",
-            "Too long."
-          ]
-        },
-        {
-          "partner_zh": "那你试试这条，短一点儿。",
-          "partner_en": "Then try this pair — a bit shorter.",
-          "prompt_en": "Say these are good, and you'll also take that top.",
-          "answers_zh": [
-            "这条很好。我还要那件衣服。",
-            "这条可以，还有那件，我都要了。"
-          ],
-          "answers_en": [
-            "These are good. I'll take that top too.",
-            "These are fine — and that top, I'll take both."
+            "OK, here's my number. Thanks!",
+            "Thank you — here's my number."
           ]
         }
       ],
-      "closing_zh": "好的，一共四百块。",
-      "closing_en": "Great, that's four hundred altogether."
+      "closing_zh": "不客气，有消息我们马上告诉你。",
+      "closing_en": "You're welcome. We'll let you know as soon as we hear anything."
     }
   ]
 }
