@@ -1,8 +1,8 @@
 {
-  "date": "2026-11-22",
+  "date": "2026-11-23",
   "level": 2,
   "plan": {
-    "focus_en": "Result complements with 完 (看完了 = finished watching), and 可是 for 'but'.",
+    "focus_en": "虽然…但是… (although… still…): 虽然我跑得不快，但是我很爱打球.",
     "items": [
       {
         "kind": "cards",
@@ -14,416 +14,443 @@
       },
       {
         "kind": "story",
-        "title_en": "Read and read aloud: 一个晚上看完了",
-        "ref": "2026-11-22-s1"
+        "title_en": "Read and read aloud: 我们的队",
+        "ref": "2026-11-23-s1"
       },
       {
         "kind": "mission",
-        "title_en": "Guided mission: a late taxi home",
-        "ref": "2026-11-22-m1"
+        "title_en": "Guided mission: meeting a friend at the airport",
+        "ref": "2026-11-23-m1"
       }
     ]
   },
   "stories": [
     {
-      "id": "2026-11-22-s1",
+      "id": "2026-11-23-s1",
       "level": 2,
-      "topic": "anime",
-      "title_zh": "一个晚上看完了",
-      "title_en": "Finished in one night",
+      "topic": "football",
+      "title_zh": "我们的队",
+      "title_en": "Our team",
       "paragraphs": [
-        [
-          "昨天",
-          "晚上",
-          "，",
-          "我",
-          "想",
-          "看",
-          "一",
-          "个",
-          "小时",
-          "电视",
-          "就",
-          "睡觉",
-          "。"
-        ],
         [
           "这",
           "个",
-          "电视",
-          "很",
-          "不错",
+          "月",
           "，",
           "我",
-          "看",
+          "参加",
           "了",
-          "一",
-          "个",
-          "又",
-          "一",
-          "个",
-          "。"
-        ],
-        [
-          "最后",
-          "，",
-          "我",
-          "都",
-          "看",
-          "完",
-          "了",
-          "！",
-          "可是",
-          "，",
-          "已经",
-          "是",
-          "早上",
-          "五",
-          "点",
-          "了",
-          "。"
-        ],
-        [
-          "今天",
-          "上课",
+          "学校",
           "的",
-          "时候",
-          "，",
-          "我",
-          "一直",
-          "想",
-          "睡觉",
+          "队",
           "。"
         ],
         [
-          "老师",
-          "问",
-          "：",
-          "“",
-          "你",
-          "为什么",
-          "这么",
-          "累",
-          "？",
-          "”",
+          "虽然",
           "我",
-          "没有",
-          "说话",
+          "跑",
+          "得",
+          "不",
+          "快",
           "，",
-          "只",
-          "笑",
-          "了",
-          "笑",
+          "但是",
+          "我",
+          "很",
+          "爱",
+          "打球",
           "。"
-        ]
-      ],
-      "translations": [
-        "Last night I meant to watch an hour of TV and then go to bed.",
-        "The show was really good, and I watched one episode after another.",
-        "In the end I finished the whole thing! But it was already five in the morning.",
-        "In class today I just wanted to sleep the whole time.",
-        "The teacher asked: “Why are you so tired?” I didn't say anything — I just smiled."
-      ],
-      "names": [],
-      "new_words": [
-        "不错",
-        "完",
-        "可是"
-      ],
-      "glossary": [
-        {
-          "word": "不错",
-          "english": "pretty good"
-        },
-        {
-          "word": "完",
-          "english": "to finish"
-        },
-        {
-          "word": "可是",
-          "english": "but"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-22-s2",
-      "level": 2,
-      "topic": "travel",
-      "title_zh": "去北京的计划",
-      "title_en": "The plan for Beijing",
-      "paragraphs": [
+        ],
         [
-          "明年",
+          "第一",
+          "次",
+          "打球",
           "，",
           "我们",
-          "全",
-          "家",
-          "想",
-          "去",
-          "北京",
-          "。"
-        ],
-        [
-          "爸爸",
-          "有",
-          "一",
+          "队",
+          "进",
+          "了",
+          "两",
           "个",
-          "计划",
-          "：",
-          "先",
-          "坐",
-          "飞机",
-          "到",
-          "北京",
+          "球",
           "，",
-          "然后",
-          "坐",
-          "火车",
-          "去",
           "别的",
-          "地方",
-          "。"
-        ],
-        [
-          "妈妈",
-          "说",
-          "：",
-          "“",
-          "我们",
-          "应该",
-          "去",
-          "吃",
-          "北京",
-          "的",
-          "包子",
-          "。",
-          "”"
-        ],
-        [
-          "我",
-          "说",
-          "：",
-          "“",
-          "这",
-          "是",
-          "一",
+          "队",
+          "进",
+          "了",
+          "三",
           "个",
-          "很",
-          "好",
-          "的",
-          "机会",
-          "，",
-          "我",
-          "可以",
-          "说",
-          "中文",
-          "！",
-          "”"
+          "。"
         ],
         [
           "大家",
           "都",
-          "笑",
-          "了",
+          "不",
+          "高兴",
           "。",
           "我",
+          "说",
+          "：",
+          "“",
+          "我",
+          "相信",
+          "，",
+          "下次",
+          "我们",
           "一定",
-          "要",
+          "能",
+          "进",
+          "更",
           "多",
-          "学习",
-          "中文",
-          "！"
+          "！",
+          "”"
+        ],
+        [
+          "晚上",
+          "，",
+          "我",
+          "一直",
+          "在",
+          "想",
+          "下次",
+          "怎么",
+          "打",
+          "。",
+          "明天",
+          "，",
+          "我",
+          "还",
+          "要",
+          "早",
+          "点",
+          "起床",
+          "去",
+          "跑",
+          "。"
         ]
       ],
       "translations": [
-        "Next year our whole family wants to go to Beijing.",
-        "Dad has a plan: first fly to Beijing, then take the train to other places.",
-        "Mum said: “We should go and try Beijing's buns.”",
-        "I said: “This is a great chance — I can speak Chinese!”",
-        "Everyone laughed. I'm definitely going to study more Chinese!"
+        "This month I joined the school team.",
+        "I'm not a fast runner, but I really love playing.",
+        "In our first game, our team scored two and the other team scored three.",
+        "Everyone was gutted. I said: “I believe we'll definitely score more next time!”",
+        "All evening I kept thinking about how to play next time. Tomorrow I'm getting up early to go running."
       ],
-      "names": [
-        "北京"
-      ],
+      "names": [],
       "new_words": [
-        "全",
-        "计划",
-        "机会"
+        "队",
+        "虽然",
+        "相信"
       ],
       "glossary": [
         {
-          "word": "北京",
-          "english": "Beijing"
+          "word": "队",
+          "english": "team"
         },
         {
-          "word": "全",
-          "english": "whole; all"
+          "word": "虽然",
+          "english": "although"
         },
         {
-          "word": "计划",
-          "english": "plan"
+          "word": "相信",
+          "english": "to believe"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-23-s2",
+      "level": 2,
+      "topic": "daily life",
+      "title_zh": "奶奶的信",
+      "title_en": "A letter from Grandma",
+      "paragraphs": [
+        [
+          "今天",
+          "，",
+          "我",
+          "接",
+          "到",
+          "了",
+          "奶奶",
+          "的",
+          "信",
+          "。"
+        ],
+        [
+          "奶奶",
+          "不",
+          "会",
+          "用",
+          "手机",
+          "，",
+          "所以",
+          "她",
+          "常常",
+          "给",
+          "我",
+          "写",
+          "信",
+          "。",
+          "她",
+          "写",
+          "的",
+          "字",
+          "很",
+          "好看",
+          "。"
+        ],
+        [
+          "她",
+          "说",
+          "：",
+          "“",
+          "你",
+          "在",
+          "外边",
+          "，",
+          "要",
+          "多",
+          "吃饭",
+          "，",
+          "早",
+          "点",
+          "睡觉",
+          "。",
+          "”"
+        ],
+        [
+          "我",
+          "看",
+          "了",
+          "很",
+          "高兴",
+          "，",
+          "也",
+          "给",
+          "她",
+          "写",
+          "了",
+          "信",
+          "。",
+          "我",
+          "写",
+          "了",
+          "很",
+          "多",
+          "，",
+          "有",
+          "我",
+          "的",
+          "学校",
+          "，",
+          "也",
+          "有",
+          "我",
+          "的",
+          "朋友",
+          "。"
+        ],
+        [
+          "我",
+          "说",
+          "：",
+          "“",
+          "奶奶",
+          "，",
+          "放假",
+          "以后",
+          "，",
+          "我",
+          "就",
+          "回家",
+          "看",
+          "你",
+          "！",
+          "”"
+        ]
+      ],
+      "translations": [
+        "Today I got a letter from Grandma.",
+        "Grandma can't use a mobile phone, so she often writes me letters. Her handwriting is lovely.",
+        "She said: “You're away from home, so eat properly and get to bed early.”",
+        "It made me really happy, and I wrote her a letter back. I wrote loads — about my school, and about my friends.",
+        "I said: “Grandma, once the holidays start, I'll come home and see you!”"
+      ],
+      "names": [],
+      "new_words": [
+        "信",
+        "接",
+        "以后"
+      ],
+      "glossary": [
+        {
+          "word": "信",
+          "english": "letter"
         },
         {
-          "word": "机会",
-          "english": "chance; opportunity"
+          "word": "接",
+          "english": "to receive"
+        },
+        {
+          "word": "以后",
+          "english": "after"
         }
       ]
     }
   ],
   "missions": [
     {
-      "id": "2026-11-22-m1",
+      "id": "2026-11-23-m1",
       "level": 2,
-      "title": "A late taxi home",
-      "role": "司机",
-      "goal": "Take a taxi home late at night: say where you're going and where to stop.",
+      "title": "Meeting a friend at the airport",
+      "role": "朋友",
+      "goal": "Pick your friend up from the airport and take them for food.",
       "new_words": [
         {
-          "word": "安全",
-          "english": "safe"
+          "word": "接",
+          "english": "to pick up (a person)"
         },
         {
-          "word": "或者",
-          "english": "or"
+          "word": "刚",
+          "english": "just"
         },
         {
-          "word": "发",
-          "english": "to send"
+          "word": "以后",
+          "english": "after"
         }
       ],
       "steps": [
         {
-          "partner_zh": "你好，去哪儿？",
-          "partner_en": "Hi, where to?",
-          "prompt_en": "Say you're going to the university.",
+          "partner_zh": "你好！你来接我了！",
+          "partner_en": "Hi! You came to pick me up!",
+          "prompt_en": "Say of course, and ask if they're tired.",
           "answers_zh": [
-            "我去大学。",
-            "去大学，谢谢。"
+            "当然！你累不累？",
+            "对啊！你累吗？"
           ],
           "answers_en": [
-            "To the university.",
-            "The university, please."
+            "Of course! Are you tired?",
+            "Yep! Are you tired?"
           ]
         },
         {
-          "partner_zh": "大学很大。你在哪个门下车？",
-          "partner_en": "The university's big. Which gate do you want?",
-          "prompt_en": "Say you'll send them the location on your phone.",
+          "partner_zh": "有一点儿。我刚下飞机，很饿。",
+          "partner_en": "A bit. I've just got off the plane and I'm starving.",
+          "prompt_en": "Say let's go and eat first.",
           "answers_zh": [
-            "我给你发一下。",
-            "我用手机发给你。"
+            "我们先去吃饭吧。",
+            "那先去吃饭！"
           ],
           "answers_en": [
-            "I'll send it to you.",
-            "I'll send it from my phone."
+            "Let's go and eat first.",
+            "Food first, then!"
           ]
         },
         {
-          "partner_zh": "好。在门口停，或者开进去？",
-          "partner_en": "OK. Stop at the gate, or drive in?",
-          "prompt_en": "Say stop at the gate is fine.",
+          "partner_zh": "好！吃饭以后去哪儿？",
+          "partner_en": "Great! Where are we going after eating?",
+          "prompt_en": "Say after eating you'll go back to your place.",
           "answers_zh": [
-            "在门口停就可以。",
-            "门口就行。"
+            "吃饭以后，我们回我家。",
+            "以后回我家休息。"
           ],
           "answers_en": [
-            "Stopping at the gate is fine.",
-            "The gate's fine."
+            "After we eat, we'll head back to mine.",
+            "Then back to my place to rest."
           ]
         },
         {
-          "partner_zh": "这么晚了，你一个人安全吗？",
-          "partner_en": "It's so late — will you be safe on your own?",
-          "prompt_en": "Say yes, it's safe, your room is very close.",
+          "partner_zh": "太好了，谢谢你！",
+          "partner_en": "Brilliant, thank you!",
+          "prompt_en": "Say no problem, let's go.",
           "answers_zh": [
-            "安全，我的房间就在前边。",
-            "没问题，很安全。"
+            "不客气，走吧！",
+            "没事儿，我们走吧。"
           ],
           "answers_en": [
-            "Yes, my room's just ahead.",
-            "No problem, it's very safe."
+            "No problem, let's go!",
+            "No worries, let's go."
           ]
         }
       ],
-      "closing_zh": "好，到了。慢点走！",
-      "closing_en": "Right, here we are. Take care!"
+      "closing_zh": "走！",
+      "closing_en": "Let's go!"
     },
     {
-      "id": "2026-11-22-m2",
+      "id": "2026-11-23-m2",
       "level": 2,
-      "title": "Exam results",
+      "title": "Making a plan",
       "role": "朋友",
-      "goal": "Your friend asks how your exam went. Tell them the result.",
+      "goal": "Your friend wants to make a plan for Sunday. Agree on what to do.",
       "new_words": [
         {
-          "word": "结果",
-          "english": "result"
+          "word": "计划",
+          "english": "plan"
         },
         {
-          "word": "完全",
-          "english": "completely"
+          "word": "可是",
+          "english": "but"
         },
         {
-          "word": "不错",
-          "english": "pretty good"
+          "word": "全",
+          "english": "whole; all"
         }
       ],
       "steps": [
         {
-          "partner_zh": "考试的结果出来了吗？",
-          "partner_en": "Are your exam results out?",
-          "prompt_en": "Say yes, they came out today.",
+          "partner_zh": "星期天你有什么计划？",
+          "partner_en": "What are your plans for Sunday?",
+          "prompt_en": "Say you don't have a plan yet.",
           "answers_zh": [
-            "出来了，今天出来的。",
-            "出来了！"
+            "我还没有计划。",
+            "没有计划。"
           ],
           "answers_en": [
-            "Yes, they came out today.",
-            "Yes!"
+            "I don't have any plans yet.",
+            "No plans."
           ]
         },
         {
-          "partner_zh": "怎么样？",
-          "partner_en": "How did it go?",
-          "prompt_en": "Say pretty good — you passed.",
+          "partner_zh": "我们去看电影吧？",
+          "partner_en": "Shall we go and see a film?",
+          "prompt_en": "Say you'd like to, but you have to study in the morning.",
           "answers_zh": [
-            "不错，我通过了！",
-            "很不错，我过了。"
+            "想去，可是上午我要学习。",
+            "可以，可是上午不行。"
           ],
           "answers_en": [
-            "Pretty good — I passed!",
-            "Really good, I passed."
+            "I'd love to, but I have to study in the morning.",
+            "Sure, but not in the morning."
           ]
         },
         {
-          "partner_zh": "太好了！难不难？",
-          "partner_en": "Brilliant! Was it hard?",
-          "prompt_en": "Say very hard; one part you didn't understand at all.",
+          "partner_zh": "那下午去，好吗？",
+          "partner_en": "Afternoon then, OK?",
+          "prompt_en": "Say afternoon is fine, and ask if your other friends are coming.",
           "answers_zh": [
-            "很难，有一个地方我完全不会。",
-            "很难，有的我完全不知道。"
+            "下午可以。大家都去吗？",
+            "好，下午去。还有谁去？"
           ],
           "answers_en": [
-            "Really hard — there was one part I couldn't do at all.",
-            "Really hard; some of it I had no idea about."
+            "Afternoon's fine. Is everyone going?",
+            "OK, afternoon. Who else is going?"
           ]
         },
         {
-          "partner_zh": "可是你还是通过了！我们去吃饭吧。",
-          "partner_en": "But you still passed! Let's go out to eat.",
-          "prompt_en": "Say great, you're paying!",
+          "partner_zh": "全班同学都去！",
+          "partner_en": "The whole class is going!",
+          "prompt_en": "Say great, see you on Sunday.",
           "answers_zh": [
-            "好啊，你请客！",
-            "好，今天你请！"
+            "太好了，星期天见！",
+            "好，星期天见！"
           ],
           "answers_en": [
-            "Great — your treat!",
-            "OK, you're buying today!"
+            "Brilliant, see you Sunday!",
+            "OK, see you Sunday!"
           ]
         }
       ],
-      "closing_zh": "哈哈，好，我请！",
-      "closing_en": "Haha, fine, my treat!"
+      "closing_zh": "星期天见！",
+      "closing_en": "See you Sunday!"
     }
   ]
 }
