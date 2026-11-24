@@ -1,8 +1,8 @@
 {
-  "date": "2026-11-23",
+  "date": "2026-11-24",
   "level": 2,
   "plan": {
-    "focus_en": "虽然…但是… (although… still…): 虽然我跑得不快，但是我很爱打球.",
+    "focus_en": "只要…就… (as long as… then…): 只要你不晚就好.",
     "items": [
       {
         "kind": "cards",
@@ -14,443 +14,424 @@
       },
       {
         "kind": "story",
-        "title_en": "Read and read aloud: 我们的队",
-        "ref": "2026-11-23-s1"
+        "title_en": "Read and read aloud: 十分钟以后",
+        "ref": "2026-11-24-s2"
       },
       {
         "kind": "mission",
-        "title_en": "Guided mission: meeting a friend at the airport",
-        "ref": "2026-11-23-m1"
+        "title_en": "Guided mission: a job interview",
+        "ref": "2026-11-24-m1"
       }
     ]
   },
   "stories": [
     {
-      "id": "2026-11-23-s1",
+      "id": "2026-11-24-s1",
       "level": 2,
-      "topic": "football",
-      "title_zh": "我们的队",
-      "title_en": "Our team",
+      "topic": "archive fashion",
+      "title_zh": "两件衣服",
+      "title_en": "Two jackets",
       "paragraphs": [
         [
-          "这",
-          "个",
-          "月",
-          "，",
           "我",
-          "参加",
-          "了",
-          "学校",
-          "的",
-          "队",
-          "。"
-        ],
-        [
-          "虽然",
-          "我",
-          "跑",
-          "得",
-          "不",
-          "快",
-          "，",
-          "但是",
-          "我",
-          "很",
-          "爱",
-          "打球",
-          "。"
-        ],
-        [
-          "第一",
-          "次",
-          "打球",
-          "，",
-          "我们",
-          "队",
-          "进",
-          "了",
-          "两",
-          "个",
-          "球",
-          "，",
-          "别的",
-          "队",
-          "进",
-          "了",
-          "三",
-          "个",
-          "。"
-        ],
-        [
-          "大家",
-          "都",
-          "不",
-          "高兴",
-          "。",
-          "我",
-          "说",
-          "：",
-          "“",
-          "我",
-          "相信",
-          "，",
-          "下次",
-          "我们",
-          "一定",
-          "能",
-          "进",
-          "更",
-          "多",
-          "！",
-          "”"
-        ],
-        [
-          "晚上",
-          "，",
-          "我",
-          "一直",
           "在",
+          "网上",
+          "看到",
+          "两",
+          "件",
+          "很",
+          "有名",
+          "的",
+          "老",
+          "衣服",
+          "。"
+        ],
+        [
+          "这",
+          "两",
+          "件",
+          "衣服",
+          "很",
+          "像",
+          "，",
+          "可是",
+          "也",
+          "有",
+          "一点儿",
+          "不同",
+          "：",
+          "一",
+          "件",
+          "大",
+          "，",
+          "一",
+          "件",
+          "小",
+          "。"
+        ],
+        [
+          "我",
+          "的",
+          "钱",
+          "只",
+          "能",
+          "买",
+          "其中",
+          "一",
+          "件",
+          "。"
+        ],
+        [
+          "我",
           "想",
-          "下次",
-          "怎么",
-          "打",
-          "。",
-          "明天",
+          "了",
+          "很",
+          "长",
+          "时间",
+          "，",
+          "最后",
+          "买",
+          "了",
+          "大",
+          "的",
+          "。"
+        ],
+        [
+          "原因",
+          "是",
+          "：",
+          "大",
+          "的",
+          "我",
+          "能",
+          "穿",
+          "很",
+          "多",
+          "年",
+          "！",
+          "朋友",
+          "们",
+          "都",
+          "说",
+          "很",
+          "好看",
           "，",
           "我",
-          "还",
-          "要",
-          "早",
-          "点",
-          "起床",
-          "去",
-          "跑",
+          "也",
+          "很",
+          "高兴",
           "。"
         ]
       ],
       "translations": [
-        "This month I joined the school team.",
-        "I'm not a fast runner, but I really love playing.",
-        "In our first game, our team scored two and the other team scored three.",
-        "Everyone was gutted. I said: “I believe we'll definitely score more next time!”",
-        "All evening I kept thinking about how to play next time. Tomorrow I'm getting up early to go running."
+        "I saw two famous vintage jackets online.",
+        "They look a lot alike, but there's one difference: one's big and one's small.",
+        "I only had enough money for one of them.",
+        "I thought about it for ages and in the end bought the big one.",
+        "The reason: I can wear the big one for years! My friends all say it looks great, and I'm really pleased."
       ],
       "names": [],
       "new_words": [
-        "队",
-        "虽然",
-        "相信"
+        "不同",
+        "其中",
+        "原因"
       ],
       "glossary": [
         {
-          "word": "队",
-          "english": "team"
+          "word": "不同",
+          "english": "different; difference"
         },
         {
-          "word": "虽然",
-          "english": "although"
+          "word": "其中",
+          "english": "(one) of them"
         },
         {
-          "word": "相信",
-          "english": "to believe"
+          "word": "原因",
+          "english": "reason"
         }
       ]
     },
     {
-      "id": "2026-11-23-s2",
+      "id": "2026-11-24-s2",
       "level": 2,
-      "topic": "daily life",
-      "title_zh": "奶奶的信",
-      "title_en": "A letter from Grandma",
+      "topic": "business & finance",
+      "title_zh": "十分钟以后",
+      "title_en": "Ten minutes later",
       "paragraphs": [
         [
           "今天",
+          "早上",
           "，",
+          "公司",
+          "九",
+          "点",
+          "开会",
+          "。"
+        ],
+        [
           "我",
-          "接",
+          "八",
+          "点",
+          "半",
+          "就",
           "到",
           "了",
-          "奶奶",
-          "的",
-          "信",
-          "。"
-        ],
-        [
-          "奶奶",
-          "不",
-          "会",
-          "用",
-          "手机",
           "，",
-          "所以",
-          "她",
-          "常常",
-          "给",
-          "我",
-          "写",
-          "信",
+          "可是",
+          "那里",
+          "没有",
+          "人",
           "。",
-          "她",
-          "写",
-          "的",
-          "字",
-          "很",
-          "好看",
-          "。"
-        ],
-        [
-          "她",
-          "说",
-          "：",
-          "“",
-          "你",
+          "我",
+          "一直",
           "在",
-          "外边",
-          "，",
-          "要",
-          "多",
-          "吃饭",
-          "，",
-          "早",
-          "点",
-          "睡觉",
-          "。",
-          "”"
-        ],
-        [
-          "我",
-          "看",
-          "了",
-          "很",
-          "高兴",
-          "，",
-          "也",
-          "给",
-          "她",
-          "写",
-          "了",
-          "信",
-          "。",
-          "我",
-          "写",
-          "了",
-          "很",
-          "多",
-          "，",
-          "有",
-          "我",
-          "的",
-          "学校",
-          "，",
-          "也",
-          "有",
-          "我",
-          "的",
-          "朋友",
+          "门口",
+          "等",
           "。"
         ],
         [
-          "我",
+          "过",
+          "了",
+          "十",
+          "分钟",
+          "，",
+          "还是",
+          "没有",
+          "人",
+          "。",
+          "又",
+          "过",
+          "了",
+          "十",
+          "分钟",
+          "，",
+          "才",
+          "有人",
+          "来",
+          "。"
+        ],
+        [
+          "他",
+          "笑",
+          "着",
           "说",
           "：",
           "“",
-          "奶奶",
-          "，",
-          "放假",
-          "以后",
+          "我们",
+          "公司",
+          "开会",
+          "常常",
+          "晚",
+          "一点儿",
+          "。",
+          "只要",
+          "你",
+          "不",
+          "晚",
+          "就",
+          "好",
+          "。",
+          "”"
+        ],
+        [
+          "我",
+          "也",
+          "笑",
+          "了",
+          "。",
+          "明天",
           "，",
           "我",
-          "就",
-          "回家",
-          "看",
-          "你",
-          "！",
-          "”"
+          "还是",
+          "会",
+          "早",
+          "到",
+          "。"
         ]
       ],
       "translations": [
-        "Today I got a letter from Grandma.",
-        "Grandma can't use a mobile phone, so she often writes me letters. Her handwriting is lovely.",
-        "She said: “You're away from home, so eat properly and get to bed early.”",
-        "It made me really happy, and I wrote her a letter back. I wrote loads — about my school, and about my friends.",
-        "I said: “Grandma, once the holidays start, I'll come home and see you!”"
+        "This morning the company had a meeting at nine.",
+        "I got there at half past eight, but there was nobody there. I waited at the door.",
+        "Ten minutes went by — still nobody. Another ten minutes, and finally someone came.",
+        "He laughed and said: “Our meetings always start a bit late. As long as you're not late, it's fine.”",
+        "I laughed too. Tomorrow I'll still get there early."
       ],
       "names": [],
       "new_words": [
-        "信",
-        "接",
-        "以后"
+        "分钟",
+        "有人",
+        "只要"
       ],
       "glossary": [
         {
-          "word": "信",
-          "english": "letter"
+          "word": "分钟",
+          "english": "minute"
         },
         {
-          "word": "接",
-          "english": "to receive"
+          "word": "有人",
+          "english": "someone"
         },
         {
-          "word": "以后",
-          "english": "after"
+          "word": "只要",
+          "english": "as long as"
         }
       ]
     }
   ],
   "missions": [
     {
-      "id": "2026-11-23-m1",
+      "id": "2026-11-24-m1",
       "level": 2,
-      "title": "Meeting a friend at the airport",
-      "role": "朋友",
-      "goal": "Pick your friend up from the airport and take them for food.",
+      "title": "A job interview",
+      "role": "公司的人",
+      "goal": "Answer questions in a short interview for a part-time job at a company.",
       "new_words": [
         {
-          "word": "接",
-          "english": "to pick up (a person)"
+          "word": "要求",
+          "english": "requirement; to require"
+        },
+        {
+          "word": "接受",
+          "english": "to accept"
+        },
+        {
+          "word": "进入",
+          "english": "to enter; to join"
+        }
+      ],
+      "steps": [
+        {
+          "partner_zh": "你好，请坐。请你介绍一下自己。",
+          "partner_en": "Hello, have a seat. Please introduce yourself.",
+          "prompt_en": "Say your name and that you're a university student.",
+          "answers_zh": [
+            "我叫李明，是大学生。",
+            "我是李明，我在大学学习。"
+          ],
+          "answers_en": [
+            "I'm Li Ming, a university student.",
+            "I'm Li Ming, I study at university."
+          ]
+        },
+        {
+          "partner_zh": "你为什么想进入我们公司？",
+          "partner_en": "Why do you want to join our company?",
+          "prompt_en": "Say because it's well-known and you want to learn.",
+          "answers_zh": [
+            "因为公司很有名，我想多学习。",
+            "因为我想在这里学习。"
+          ],
+          "answers_en": [
+            "Because the company is well-known and I want to learn.",
+            "Because I want to learn here."
+          ]
+        },
+        {
+          "partner_zh": "我们的要求很高，每天要工作八个小时。",
+          "partner_en": "Our standards are high — eight hours a day.",
+          "prompt_en": "Say no problem, you're not afraid of being tired.",
+          "answers_zh": [
+            "没问题，我不怕累。",
+            "可以，我能工作八个小时。"
+          ],
+          "answers_en": [
+            "No problem, I don't mind hard work.",
+            "That's fine, I can do eight hours."
+          ]
+        },
+        {
+          "partner_zh": "好，我们接受你。下个星期来上班吧。",
+          "partner_en": "Good — we'll take you. Start next week.",
+          "prompt_en": "Thank them.",
+          "answers_zh": [
+            "太好了，谢谢！",
+            "谢谢您！下个星期见。"
+          ],
+          "answers_en": [
+            "Brilliant, thank you!",
+            "Thank you! See you next week."
+          ]
+        }
+      ],
+      "closing_zh": "不客气，下个星期见。",
+      "closing_en": "You're welcome. See you next week."
+    },
+    {
+      "id": "2026-11-24-m2",
+      "level": 2,
+      "title": "Where are you?",
+      "role": "朋友",
+      "goal": "You're waiting for your friend outside the cinema. Call to find out where they are.",
+      "new_words": [
+        {
+          "word": "分钟",
+          "english": "minute"
         },
         {
           "word": "刚",
           "english": "just"
         },
         {
-          "word": "以后",
-          "english": "after"
+          "word": "有人",
+          "english": "someone"
         }
       ],
       "steps": [
         {
-          "partner_zh": "你好！你来接我了！",
-          "partner_en": "Hi! You came to pick me up!",
-          "prompt_en": "Say of course, and ask if they're tired.",
+          "partner_zh": "喂？",
+          "partner_en": "Hello?",
+          "prompt_en": "Ask where they are — you're at the cinema door.",
           "answers_zh": [
-            "当然！你累不累？",
-            "对啊！你累吗？"
+            "你在哪儿？我在电影院门口。",
+            "我到了，你在哪儿？"
           ],
           "answers_en": [
-            "Of course! Are you tired?",
-            "Yep! Are you tired?"
+            "Where are you? I'm at the cinema entrance.",
+            "I'm here — where are you?"
           ]
         },
         {
-          "partner_zh": "有一点儿。我刚下飞机，很饿。",
-          "partner_en": "A bit. I've just got off the plane and I'm starving.",
-          "prompt_en": "Say let's go and eat first.",
+          "partner_zh": "对不起，我刚下车。",
+          "partner_en": "Sorry, I've just got off the bus.",
+          "prompt_en": "Ask how many minutes until they arrive.",
           "answers_zh": [
-            "我们先去吃饭吧。",
-            "那先去吃饭！"
+            "你几分钟能到？",
+            "还要多少分钟？"
           ],
           "answers_en": [
-            "Let's go and eat first.",
-            "Food first, then!"
+            "How many minutes till you get here?",
+            "How many more minutes?"
           ]
         },
         {
-          "partner_zh": "好！吃饭以后去哪儿？",
-          "partner_en": "Great! Where are we going after eating?",
-          "prompt_en": "Say after eating you'll go back to your place.",
+          "partner_zh": "五分钟。电影开始了吗？",
+          "partner_en": "Five minutes. Has the film started?",
+          "prompt_en": "Say not yet, but people are already going in.",
           "answers_zh": [
-            "吃饭以后，我们回我家。",
-            "以后回我家休息。"
+            "还没有，可是已经有人进去了。",
+            "没有，有人已经进去了。"
           ],
           "answers_en": [
-            "After we eat, we'll head back to mine.",
-            "Then back to my place to rest."
+            "Not yet, but people are already going in.",
+            "No, but some people have gone in."
           ]
         },
         {
-          "partner_zh": "太好了，谢谢你！",
-          "partner_en": "Brilliant, thank you!",
-          "prompt_en": "Say no problem, let's go.",
+          "partner_zh": "好，我马上到！",
+          "partner_en": "OK, I'll be right there!",
+          "prompt_en": "Say OK, you'll wait at the door.",
           "answers_zh": [
-            "不客气，走吧！",
-            "没事儿，我们走吧。"
+            "好，我在门口等你。",
+            "好的，快点！"
           ],
           "answers_en": [
-            "No problem, let's go!",
-            "No worries, let's go."
-          ]
-        }
-      ],
-      "closing_zh": "走！",
-      "closing_en": "Let's go!"
-    },
-    {
-      "id": "2026-11-23-m2",
-      "level": 2,
-      "title": "Making a plan",
-      "role": "朋友",
-      "goal": "Your friend wants to make a plan for Sunday. Agree on what to do.",
-      "new_words": [
-        {
-          "word": "计划",
-          "english": "plan"
-        },
-        {
-          "word": "可是",
-          "english": "but"
-        },
-        {
-          "word": "全",
-          "english": "whole; all"
-        }
-      ],
-      "steps": [
-        {
-          "partner_zh": "星期天你有什么计划？",
-          "partner_en": "What are your plans for Sunday?",
-          "prompt_en": "Say you don't have a plan yet.",
-          "answers_zh": [
-            "我还没有计划。",
-            "没有计划。"
-          ],
-          "answers_en": [
-            "I don't have any plans yet.",
-            "No plans."
-          ]
-        },
-        {
-          "partner_zh": "我们去看电影吧？",
-          "partner_en": "Shall we go and see a film?",
-          "prompt_en": "Say you'd like to, but you have to study in the morning.",
-          "answers_zh": [
-            "想去，可是上午我要学习。",
-            "可以，可是上午不行。"
-          ],
-          "answers_en": [
-            "I'd love to, but I have to study in the morning.",
-            "Sure, but not in the morning."
-          ]
-        },
-        {
-          "partner_zh": "那下午去，好吗？",
-          "partner_en": "Afternoon then, OK?",
-          "prompt_en": "Say afternoon is fine, and ask if your other friends are coming.",
-          "answers_zh": [
-            "下午可以。大家都去吗？",
-            "好，下午去。还有谁去？"
-          ],
-          "answers_en": [
-            "Afternoon's fine. Is everyone going?",
-            "OK, afternoon. Who else is going?"
-          ]
-        },
-        {
-          "partner_zh": "全班同学都去！",
-          "partner_en": "The whole class is going!",
-          "prompt_en": "Say great, see you on Sunday.",
-          "answers_zh": [
-            "太好了，星期天见！",
-            "好，星期天见！"
-          ],
-          "answers_en": [
-            "Brilliant, see you Sunday!",
-            "OK, see you Sunday!"
+            "OK, I'll wait for you at the door.",
+            "OK, hurry up!"
           ]
         }
       ],
-      "closing_zh": "星期天见！",
-      "closing_en": "See you Sunday!"
+      "closing_zh": "一会儿见！",
+      "closing_en": "See you in a bit!"
     }
   ]
 }
