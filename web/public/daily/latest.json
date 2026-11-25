@@ -1,8 +1,8 @@
 {
-  "date": "2026-11-24",
+  "date": "2026-11-25",
   "level": 2,
   "plan": {
-    "focus_en": "只要…就… (as long as… then…): 只要你不晚就好.",
+    "focus_en": "变 + adjective for change (变大 = to grow big), and 着 for an ongoing state: 爸爸拉着我的手.",
     "items": [
       {
         "kind": "cards",
@@ -14,105 +14,239 @@
       },
       {
         "kind": "story",
-        "title_en": "Read and read aloud: 十分钟以后",
-        "ref": "2026-11-24-s2"
+        "title_en": "Read and read aloud: 山里的长路",
+        "ref": "2026-11-25-s2"
       },
       {
         "kind": "mission",
-        "title_en": "Guided mission: a job interview",
-        "ref": "2026-11-24-m1"
+        "title_en": "Guided mission: asking the way",
+        "ref": "2026-11-25-m1"
       }
     ]
   },
   "stories": [
     {
-      "id": "2026-11-24-s1",
+      "id": "2026-11-25-s1",
       "level": 2,
-      "topic": "archive fashion",
-      "title_zh": "两件衣服",
-      "title_en": "Two jackets",
+      "topic": "anime",
+      "title_zh": "会变的男孩儿",
+      "title_en": "The boy who can transform",
       "paragraphs": [
         [
           "我",
-          "在",
-          "网上",
-          "看到",
-          "两",
-          "件",
+          "弟弟",
           "很",
-          "有名",
-          "的",
-          "老",
-          "衣服",
+          "喜欢",
+          "看",
+          "一",
+          "个",
+          "电视",
           "。"
         ],
         [
-          "这",
-          "两",
-          "件",
-          "衣服",
-          "很",
-          "像",
-          "，",
-          "可是",
-          "也",
+          "电视",
+          "里",
           "有",
-          "一点儿",
-          "不同",
-          "：",
           "一",
-          "件",
+          "个",
+          "男孩儿",
+          "，",
+          "他",
+          "能够",
+          "变",
+          "得",
+          "很",
+          "高",
+          "很",
+          "大",
+          "。"
+        ],
+        [
+          "别人",
+          "有",
+          "问题",
+          "的",
+          "时候",
+          "，",
+          "他",
+          "就",
+          "去",
+          "帮助",
+          "他们",
+          "。"
+        ],
+        [
+          "弟弟",
+          "说",
+          "：",
+          "“",
+          "我",
+          "也",
+          "想",
+          "和",
+          "他",
+          "一样",
+          "！",
+          "”"
+        ],
+        [
+          "我",
+          "说",
+          "：",
+          "“",
+          "你",
+          "不用",
+          "变",
           "大",
           "，",
-          "一",
-          "件",
-          "小",
-          "。"
+          "你",
+          "现在",
+          "也",
+          "可以",
+          "帮",
+          "妈妈",
+          "做",
+          "事",
+          "。",
+          "”"
         ],
         [
-          "我",
-          "的",
-          "钱",
-          "只",
-          "能",
-          "买",
-          "其中",
-          "一",
-          "件",
-          "。"
-        ],
-        [
-          "我",
+          "他",
           "想",
           "了",
-          "很",
-          "长",
-          "时间",
+          "想",
           "，",
-          "最后",
-          "买",
+          "就",
+          "去",
+          "帮",
+          "妈妈",
           "了",
-          "大",
-          "的",
+          "。",
+          "妈妈",
+          "很",
+          "高兴",
+          "。"
+        ]
+      ],
+      "translations": [
+        "My little brother loves watching a certain show.",
+        "There's a boy in it who can make himself really tall and big.",
+        "Whenever other people are in trouble, he goes to help them.",
+        "My brother said: “I want to be like him!”",
+        "I said: “You don't need to change — you can help Mum with things right now.”",
+        "He thought about it, then went off to help Mum. Mum was really pleased."
+      ],
+      "names": [],
+      "new_words": [
+        "能够",
+        "变",
+        "帮助"
+      ],
+      "glossary": [
+        {
+          "word": "能够",
+          "english": "to be able to"
+        },
+        {
+          "word": "变",
+          "english": "to change; to become"
+        },
+        {
+          "word": "帮助",
+          "english": "to help"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-25-s2",
+      "level": 2,
+      "topic": "travel",
+      "title_zh": "山里的长路",
+      "title_en": "The long mountain path",
+      "paragraphs": [
+        [
+          "去年",
+          "，",
+          "我",
+          "和",
+          "爸爸",
+          "去",
+          "山",
+          "里",
+          "走",
+          "路",
           "。"
         ],
         [
-          "原因",
-          "是",
-          "：",
-          "大",
-          "的",
-          "我",
-          "能",
-          "穿",
+          "山",
           "很",
-          "多",
-          "年",
-          "！",
-          "朋友",
-          "们",
+          "高",
+          "，",
+          "路",
+          "很",
+          "长",
+          "。",
+          "人们",
           "都",
           "说",
+          "，",
+          "要",
+          "走",
+          "五",
+          "个",
+          "小时",
+          "。"
+        ],
+        [
+          "走",
+          "了",
+          "三",
+          "个",
+          "小时",
+          "，",
+          "我",
+          "很",
+          "累",
+          "，",
+          "不",
+          "想",
+          "走",
+          "了",
+          "。",
+          "我",
+          "想",
+          "回家",
+          "。"
+        ],
+        [
+          "爸爸",
+          "拉",
+          "着",
+          "我",
+          "的",
+          "手",
+          "说",
+          "：",
+          "“",
+          "我们",
+          "一起",
+          "走",
+          "，",
+          "一定",
+          "能",
+          "到",
+          "！",
+          "”"
+        ],
+        [
+          "最后",
+          "，",
+          "我们",
+          "完成",
+          "了",
+          "！",
+          "山",
+          "上",
           "很",
           "好看",
           "，",
@@ -120,318 +254,196 @@
           "也",
           "很",
           "高兴",
-          "。"
-        ]
-      ],
-      "translations": [
-        "I saw two famous vintage jackets online.",
-        "They look a lot alike, but there's one difference: one's big and one's small.",
-        "I only had enough money for one of them.",
-        "I thought about it for ages and in the end bought the big one.",
-        "The reason: I can wear the big one for years! My friends all say it looks great, and I'm really pleased."
-      ],
-      "names": [],
-      "new_words": [
-        "不同",
-        "其中",
-        "原因"
-      ],
-      "glossary": [
-        {
-          "word": "不同",
-          "english": "different; difference"
-        },
-        {
-          "word": "其中",
-          "english": "(one) of them"
-        },
-        {
-          "word": "原因",
-          "english": "reason"
-        }
-      ]
-    },
-    {
-      "id": "2026-11-24-s2",
-      "level": 2,
-      "topic": "business & finance",
-      "title_zh": "十分钟以后",
-      "title_en": "Ten minutes later",
-      "paragraphs": [
-        [
-          "今天",
-          "早上",
-          "，",
-          "公司",
-          "九",
-          "点",
-          "开会",
-          "。"
-        ],
-        [
-          "我",
-          "八",
-          "点",
-          "半",
-          "就",
-          "到",
-          "了",
-          "，",
-          "可是",
-          "那里",
-          "没有",
-          "人",
           "。",
-          "我",
-          "一直",
-          "在",
-          "门口",
-          "等",
-          "。"
-        ],
-        [
-          "过",
-          "了",
-          "十",
-          "分钟",
-          "，",
-          "还是",
-          "没有",
-          "人",
-          "。",
-          "又",
-          "过",
-          "了",
-          "十",
-          "分钟",
-          "，",
-          "才",
-          "有人",
-          "来",
-          "。"
-        ],
-        [
-          "他",
-          "笑",
-          "着",
-          "说",
-          "：",
-          "“",
           "我们",
-          "公司",
-          "开会",
-          "常常",
-          "晚",
-          "一点儿",
-          "。",
-          "只要",
-          "你",
-          "不",
-          "晚",
-          "就",
-          "好",
-          "。",
-          "”"
-        ],
-        [
-          "我",
-          "也",
-          "笑",
+          "在",
+          "山",
+          "上",
+          "吃",
           "了",
-          "。",
-          "明天",
-          "，",
-          "我",
-          "还是",
-          "会",
-          "早",
-          "到",
+          "包子",
           "。"
         ]
       ],
       "translations": [
-        "This morning the company had a meeting at nine.",
-        "I got there at half past eight, but there was nobody there. I waited at the door.",
-        "Ten minutes went by — still nobody. Another ten minutes, and finally someone came.",
-        "He laughed and said: “Our meetings always start a bit late. As long as you're not late, it's fine.”",
-        "I laughed too. Tomorrow I'll still get there early."
+        "Last year Dad and I went walking in the mountains.",
+        "The mountain was high and the path was long. People said it would take five hours.",
+        "After three hours I was exhausted and didn't want to go on. I wanted to go home.",
+        "Dad took my hand and said: “If we walk together, we'll definitely make it!”",
+        "In the end we did it! The view from the top was beautiful, and I was really happy. We ate buns at the top."
       ],
       "names": [],
       "new_words": [
-        "分钟",
-        "有人",
-        "只要"
+        "人们",
+        "拉",
+        "完成"
       ],
       "glossary": [
         {
-          "word": "分钟",
-          "english": "minute"
+          "word": "人们",
+          "english": "people"
         },
         {
-          "word": "有人",
-          "english": "someone"
+          "word": "拉",
+          "english": "to pull; to hold (a hand)"
         },
         {
-          "word": "只要",
-          "english": "as long as"
+          "word": "完成",
+          "english": "to complete"
         }
       ]
     }
   ],
   "missions": [
     {
-      "id": "2026-11-24-m1",
+      "id": "2026-11-25-m1",
       "level": 2,
-      "title": "A job interview",
-      "role": "公司的人",
-      "goal": "Answer questions in a short interview for a part-time job at a company.",
+      "title": "Asking the way",
+      "role": "路人",
+      "goal": "You're lost on the way to the library. Ask a passer-by for help.",
       "new_words": [
         {
-          "word": "要求",
-          "english": "requirement; to require"
+          "word": "帮助",
+          "english": "help"
         },
         {
-          "word": "接受",
-          "english": "to accept"
-        },
-        {
-          "word": "进入",
-          "english": "to enter; to join"
+          "word": "能够",
+          "english": "to be able to"
         }
       ],
       "steps": [
         {
-          "partner_zh": "你好，请坐。请你介绍一下自己。",
-          "partner_en": "Hello, have a seat. Please introduce yourself.",
-          "prompt_en": "Say your name and that you're a university student.",
+          "partner_zh": "你好，需要帮助吗？",
+          "partner_en": "Hi, do you need any help?",
+          "prompt_en": "Say yes — you're looking for the library.",
           "answers_zh": [
-            "我叫李明，是大学生。",
-            "我是李明，我在大学学习。"
+            "要，我在找图书馆。",
+            "对，请问图书馆在哪儿？"
           ],
           "answers_en": [
-            "I'm Li Ming, a university student.",
-            "I'm Li Ming, I study at university."
+            "Yes, I'm looking for the library.",
+            "Yes — where's the library?"
           ]
         },
         {
-          "partner_zh": "你为什么想进入我们公司？",
-          "partner_en": "Why do you want to join our company?",
-          "prompt_en": "Say because it's well-known and you want to learn.",
+          "partner_zh": "图书馆在学校里边。你知道学校在哪儿吗？",
+          "partner_en": "The library's inside the school. Do you know where the school is?",
+          "prompt_en": "Say no, you don't know.",
           "answers_zh": [
-            "因为公司很有名，我想多学习。",
-            "因为我想在这里学习。"
+            "不知道。",
+            "我不知道。"
           ],
           "answers_en": [
-            "Because the company is well-known and I want to learn.",
-            "Because I want to learn here."
+            "No idea.",
+            "I don't know."
           ]
         },
         {
-          "partner_zh": "我们的要求很高，每天要工作八个小时。",
-          "partner_en": "Our standards are high — eight hours a day.",
-          "prompt_en": "Say no problem, you're not afraid of being tired.",
+          "partner_zh": "你一直走，到第一个路口向右走，就到了。",
+          "partner_en": "Go straight, turn right at the first junction, and you're there.",
+          "prompt_en": "Repeat the directions back.",
           "answers_zh": [
-            "没问题，我不怕累。",
-            "可以，我能工作八个小时。"
+            "一直走，第一个路口向右，对吗？",
+            "好，第一个路口向右。"
           ],
           "answers_en": [
-            "No problem, I don't mind hard work.",
-            "That's fine, I can do eight hours."
+            "Straight on, right at the first junction — right?",
+            "OK, right at the first junction."
           ]
         },
         {
-          "partner_zh": "好，我们接受你。下个星期来上班吧。",
-          "partner_en": "Good — we'll take you. Start next week.",
-          "prompt_en": "Thank them.",
+          "partner_zh": "对。你能够自己找到吗？",
+          "partner_en": "That's it. Can you find it on your own?",
+          "prompt_en": "Say yes, and thank them for their help.",
           "answers_zh": [
-            "太好了，谢谢！",
-            "谢谢您！下个星期见。"
+            "能，谢谢你的帮助！",
+            "没问题，谢谢！"
           ],
           "answers_en": [
-            "Brilliant, thank you!",
-            "Thank you! See you next week."
+            "Yes — thanks for your help!",
+            "No problem, thanks!"
           ]
         }
       ],
-      "closing_zh": "不客气，下个星期见。",
-      "closing_en": "You're welcome. See you next week."
+      "closing_zh": "不客气！",
+      "closing_en": "You're welcome!"
     },
     {
-      "id": "2026-11-24-m2",
+      "id": "2026-11-25-m2",
       "level": 2,
-      "title": "Where are you?",
-      "role": "朋友",
-      "goal": "You're waiting for your friend outside the cinema. Call to find out where they are.",
+      "title": "Stuck on homework",
+      "role": "同学",
+      "goal": "Ask a classmate to help you finish today's homework.",
       "new_words": [
         {
-          "word": "分钟",
-          "english": "minute"
+          "word": "完成",
+          "english": "to complete"
         },
         {
-          "word": "刚",
-          "english": "just"
+          "word": "求",
+          "english": "to beg; to ask (a favour)"
         },
         {
-          "word": "有人",
-          "english": "someone"
+          "word": "只要",
+          "english": "as long as"
         }
       ],
       "steps": [
         {
-          "partner_zh": "喂？",
-          "partner_en": "Hello?",
-          "prompt_en": "Ask where they are — you're at the cinema door.",
+          "partner_zh": "你怎么了？",
+          "partner_en": "What's up?",
+          "prompt_en": "Say you can't finish today's homework.",
           "answers_zh": [
-            "你在哪儿？我在电影院门口。",
-            "我到了，你在哪儿？"
+            "今天的作业我完成不了。",
+            "我不会做今天的作业。"
           ],
           "answers_en": [
-            "Where are you? I'm at the cinema entrance.",
-            "I'm here — where are you?"
+            "I can't finish today's homework.",
+            "I can't do today's homework."
           ]
         },
         {
-          "partner_zh": "对不起，我刚下车。",
-          "partner_en": "Sorry, I've just got off the bus.",
-          "prompt_en": "Ask how many minutes until they arrive.",
+          "partner_zh": "哪个地方不会？",
+          "partner_en": "Which part can't you do?",
+          "prompt_en": "Say the last part, and beg them to help.",
           "answers_zh": [
-            "你几分钟能到？",
-            "还要多少分钟？"
+            "最后一个，求你帮帮我！",
+            "最后的那个。求你了！"
           ],
           "answers_en": [
-            "How many minutes till you get here?",
-            "How many more minutes?"
+            "The last one — please help me!",
+            "The last bit. I'm begging you!"
           ]
         },
         {
-          "partner_zh": "五分钟。电影开始了吗？",
-          "partner_en": "Five minutes. Has the film started?",
-          "prompt_en": "Say not yet, but people are already going in.",
+          "partner_zh": "好吧，只要你请我喝茶。",
+          "partner_en": "Fine — as long as you buy me a tea.",
+          "prompt_en": "Say no problem, two teas!",
           "answers_zh": [
-            "还没有，可是已经有人进去了。",
-            "没有，有人已经进去了。"
+            "没问题，请你喝两杯！",
+            "好，我请你喝茶。"
           ],
           "answers_en": [
-            "Not yet, but people are already going in.",
-            "No, but some people have gone in."
+            "No problem — I'll buy you two!",
+            "Deal, tea's on me."
           ]
         },
         {
-          "partner_zh": "好，我马上到！",
-          "partner_en": "OK, I'll be right there!",
-          "prompt_en": "Say OK, you'll wait at the door.",
+          "partner_zh": "你看，这样写就可以了。",
+          "partner_en": "Look, you just write it like this.",
+          "prompt_en": "Say you get it now, thanks.",
           "answers_zh": [
-            "好，我在门口等你。",
-            "好的，快点！"
+            "我明白了，谢谢！",
+            "原来是这样，谢谢你！"
           ],
           "answers_en": [
-            "OK, I'll wait for you at the door.",
-            "OK, hurry up!"
+            "I get it now, thanks!",
+            "Oh, so that's how — thank you!"
           ]
         }
       ],
-      "closing_zh": "一会儿见！",
-      "closing_en": "See you in a bit!"
+      "closing_zh": "不客气，别忘了我的茶！",
+      "closing_en": "You're welcome — don't forget my tea!"
     }
   ]
 }
