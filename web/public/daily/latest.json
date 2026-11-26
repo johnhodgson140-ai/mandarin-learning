@@ -1,8 +1,8 @@
 {
-  "date": "2026-11-25",
+  "date": "2026-11-26",
   "level": 2,
   "plan": {
-    "focus_en": "变 + adjective for change (变大 = to grow big), and 着 for an ongoing state: 爸爸拉着我的手.",
+    "focus_en": "Contrasting then and now with 以前 (before) and 现在 (now).",
     "items": [
       {
         "kind": "cards",
@@ -14,436 +14,424 @@
       },
       {
         "kind": "story",
-        "title_en": "Read and read aloud: 山里的长路",
-        "ref": "2026-11-25-s2"
+        "title_en": "Read and read aloud: 以前的我",
+        "ref": "2026-11-26-s1"
       },
       {
         "kind": "mission",
-        "title_en": "Guided mission: asking the way",
-        "ref": "2026-11-25-m1"
+        "title_en": "Guided mission: bumping into an old classmate",
+        "ref": "2026-11-26-m2"
       }
     ]
   },
   "stories": [
     {
-      "id": "2026-11-25-s1",
+      "id": "2026-11-26-s1",
       "level": 2,
-      "topic": "anime",
-      "title_zh": "会变的男孩儿",
-      "title_en": "The boy who can transform",
+      "topic": "football",
+      "title_zh": "以前的我",
+      "title_en": "The old me",
       "paragraphs": [
         [
-          "我",
-          "弟弟",
-          "很",
-          "喜欢",
-          "看",
-          "一",
-          "个",
-          "电视",
-          "。"
-        ],
-        [
-          "电视",
-          "里",
-          "有",
-          "一",
-          "个",
-          "男孩儿",
+          "以前",
           "，",
-          "他",
-          "能够",
-          "变",
+          "我",
+          "不",
+          "会",
+          "打球",
+          "，",
+          "跑",
           "得",
+          "也",
           "很",
-          "高",
-          "很",
-          "大",
+          "慢",
           "。"
         ],
         [
-          "别人",
-          "有",
-          "问题",
+          "我",
+          "很",
+          "想",
+          "参加",
+          "学校",
           "的",
-          "时候",
+          "队",
           "，",
-          "他",
-          "就",
-          "去",
-          "帮助",
+          "可是",
           "他们",
+          "不",
+          "要",
+          "我",
           "。"
         ],
         [
-          "弟弟",
-          "说",
-          "：",
-          "“",
+          "所以",
+          "，",
           "我",
+          "早上",
+          "跑",
+          "，",
+          "晚上",
           "也",
-          "想",
-          "和",
-          "他",
-          "一样",
-          "！",
-          "”"
+          "跑",
+          "。",
+          "我",
+          "很",
+          "努力",
+          "。"
         ],
         [
+          "一",
+          "年",
+          "以后",
+          "，",
           "我",
-          "说",
-          "：",
-          "“",
-          "你",
-          "不用",
-          "变",
-          "大",
+          "进",
+          "了",
+          "学校",
+          "的",
+          "队",
+          "。",
+          "我",
+          "很",
+          "高兴",
           "，",
-          "你",
-          "现在",
+          "妈妈",
           "也",
-          "可以",
-          "帮",
-          "妈妈",
-          "做",
-          "事",
-          "。",
-          "”"
-        ],
-        [
-          "他",
-          "想",
-          "了",
-          "想",
-          "，",
-          "就",
-          "去",
-          "帮",
-          "妈妈",
-          "了",
-          "。",
-          "妈妈",
           "很",
           "高兴",
           "。"
+        ],
+        [
+          "第一",
+          "次",
+          "打球",
+          "，",
+          "我",
+          "就",
+          "进",
+          "了",
+          "一",
+          "个",
+          "球",
+          "。",
+          "大家",
+          "都",
+          "说",
+          "：",
+          "“",
+          "你",
+          "现在",
+          "真正",
+          "会",
+          "打球",
+          "了",
+          "！",
+          "”"
         ]
       ],
       "translations": [
-        "My little brother loves watching a certain show.",
-        "There's a boy in it who can make himself really tall and big.",
-        "Whenever other people are in trouble, he goes to help them.",
-        "My brother said: “I want to be like him!”",
-        "I said: “You don't need to change — you can help Mum with things right now.”",
-        "He thought about it, then went off to help Mum. Mum was really pleased."
+        "I used to be useless at football, and I was a slow runner too.",
+        "I really wanted to join the school team, but they wouldn't have me.",
+        "So I ran in the mornings and ran in the evenings. I worked really hard.",
+        "A year later I made the school team. I was thrilled, and so was Mum.",
+        "In my very first game I scored. Everyone said: “Now you can really play!”"
       ],
       "names": [],
       "new_words": [
-        "能够",
-        "变",
-        "帮助"
+        "以前",
+        "努力",
+        "真正"
       ],
       "glossary": [
         {
-          "word": "能够",
-          "english": "to be able to"
+          "word": "以前",
+          "english": "before; in the past"
         },
         {
-          "word": "变",
-          "english": "to change; to become"
+          "word": "努力",
+          "english": "to work hard"
         },
         {
-          "word": "帮助",
-          "english": "to help"
+          "word": "真正",
+          "english": "really; genuinely"
         }
       ]
     },
     {
-      "id": "2026-11-25-s2",
+      "id": "2026-11-26-s2",
       "level": 2,
-      "topic": "travel",
-      "title_zh": "山里的长路",
-      "title_en": "The long mountain path",
+      "topic": "daily life",
+      "title_zh": "妈妈的办法",
+      "title_en": "Mum's trick",
       "paragraphs": [
         [
-          "去年",
-          "，",
           "我",
-          "和",
-          "爸爸",
-          "去",
-          "山",
-          "里",
-          "走",
-          "路",
-          "。"
-        ],
-        [
-          "山",
-          "很",
-          "高",
-          "，",
-          "路",
-          "很",
-          "长",
-          "。",
-          "人们",
-          "都",
-          "说",
-          "，",
-          "要",
-          "走",
-          "五",
-          "个",
-          "小时",
-          "。"
-        ],
-        [
-          "走",
-          "了",
-          "三",
-          "个",
-          "小时",
-          "，",
-          "我",
-          "很",
-          "累",
-          "，",
+          "弟弟",
           "不",
-          "想",
-          "走",
-          "了",
+          "喜欢",
+          "吃",
+          "菜",
           "。",
-          "我",
-          "想",
-          "回家",
+          "他",
+          "说",
+          "菜",
+          "不",
+          "好吃",
           "。"
         ],
         [
-          "爸爸",
-          "拉",
-          "着",
-          "我",
+          "妈妈",
+          "想",
+          "了",
+          "很",
+          "多",
+          "办法",
+          "，",
+          "他",
+          "还是",
+          "不",
+          "吃",
+          "。"
+        ],
+        [
+          "有",
+          "一",
+          "天",
+          "，",
+          "妈妈",
+          "做",
+          "了",
+          "很",
+          "多",
+          "特别",
           "的",
-          "手",
+          "包子",
+          "，",
+          "里边",
+          "有",
+          "菜",
+          "。"
+        ],
+        [
+          "弟弟",
+          "吃",
+          "了",
+          "大",
+          "部分",
+          "，",
           "说",
           "：",
           "“",
-          "我们",
-          "一起",
-          "走",
-          "，",
-          "一定",
-          "能",
-          "到",
+          "这",
+          "个",
+          "包子",
+          "真",
+          "好吃",
+          "！",
+          "明天",
+          "还",
+          "要",
+          "吃",
           "！",
           "”"
         ],
         [
-          "最后",
-          "，",
-          "我们",
-          "完成",
+          "妈妈",
+          "笑",
           "了",
-          "！",
-          "山",
-          "上",
-          "很",
-          "好看",
           "，",
+          "没有",
+          "说",
+          "里边",
+          "有",
+          "什么",
+          "。",
           "我",
           "也",
-          "很",
-          "高兴",
-          "。",
-          "我们",
-          "在",
-          "山",
-          "上",
-          "吃",
-          "了",
-          "包子",
+          "没有",
+          "说",
           "。"
         ]
       ],
       "translations": [
-        "Last year Dad and I went walking in the mountains.",
-        "The mountain was high and the path was long. People said it would take five hours.",
-        "After three hours I was exhausted and didn't want to go on. I wanted to go home.",
-        "Dad took my hand and said: “If we walk together, we'll definitely make it!”",
-        "In the end we did it! The view from the top was beautiful, and I was really happy. We ate buns at the top."
+        "My little brother doesn't like eating vegetables. He says they taste horrible.",
+        "Mum tried all sorts of ways, but he still wouldn't eat them.",
+        "One day Mum made a load of special buns with vegetables inside.",
+        "My brother ate most of them and said: “These buns are delicious! I want them again tomorrow!”",
+        "Mum smiled and didn't say what was inside. I didn't say anything either."
       ],
       "names": [],
       "new_words": [
-        "人们",
-        "拉",
-        "完成"
+        "办法",
+        "特别",
+        "部分"
       ],
       "glossary": [
         {
-          "word": "人们",
-          "english": "people"
+          "word": "办法",
+          "english": "way; method"
         },
         {
-          "word": "拉",
-          "english": "to pull; to hold (a hand)"
+          "word": "特别",
+          "english": "special"
         },
         {
-          "word": "完成",
-          "english": "to complete"
+          "word": "部分",
+          "english": "part (大部分 = most)"
         }
       ]
     }
   ],
   "missions": [
     {
-      "id": "2026-11-25-m1",
+      "id": "2026-11-26-m1",
       "level": 2,
-      "title": "Asking the way",
-      "role": "路人",
-      "goal": "You're lost on the way to the library. Ask a passer-by for help.",
+      "title": "Ordering a drink",
+      "role": "服务员",
+      "goal": "Order a drink at a tea shop and ask for it the way you like it.",
       "new_words": [
         {
-          "word": "帮助",
-          "english": "help"
+          "word": "加",
+          "english": "to add"
         },
         {
-          "word": "能够",
-          "english": "to be able to"
+          "word": "特别",
+          "english": "especially; special"
         }
       ],
       "steps": [
         {
-          "partner_zh": "你好，需要帮助吗？",
-          "partner_en": "Hi, do you need any help?",
-          "prompt_en": "Say yes — you're looking for the library.",
+          "partner_zh": "你好，喝什么？",
+          "partner_en": "Hi, what would you like to drink?",
+          "prompt_en": "Ask what's especially good here.",
           "answers_zh": [
-            "要，我在找图书馆。",
-            "对，请问图书馆在哪儿？"
+            "你们这里什么特别好喝？",
+            "有什么特别的吗？"
           ],
           "answers_en": [
-            "Yes, I'm looking for the library.",
-            "Yes — where's the library?"
+            "What's especially good here?",
+            "Is there anything special?"
           ]
         },
         {
-          "partner_zh": "图书馆在学校里边。你知道学校在哪儿吗？",
-          "partner_en": "The library's inside the school. Do you know where the school is?",
-          "prompt_en": "Say no, you don't know.",
+          "partner_zh": "这个茶大家都喜欢。",
+          "partner_en": "Everyone loves this tea.",
+          "prompt_en": "Say OK, one cup.",
           "answers_zh": [
-            "不知道。",
-            "我不知道。"
+            "好，要一杯。",
+            "那我要一杯。"
           ],
           "answers_en": [
-            "No idea.",
-            "I don't know."
+            "OK, one cup please.",
+            "I'll have one then."
           ]
         },
         {
-          "partner_zh": "你一直走，到第一个路口向右走，就到了。",
-          "partner_en": "Go straight, turn right at the first junction, and you're there.",
-          "prompt_en": "Repeat the directions back.",
+          "partner_zh": "要热的还是冷的？",
+          "partner_en": "Hot or cold?",
+          "prompt_en": "Say hot, please.",
           "answers_zh": [
-            "一直走，第一个路口向右，对吗？",
-            "好，第一个路口向右。"
+            "热的。",
+            "我要热的。"
           ],
           "answers_en": [
-            "Straight on, right at the first junction — right?",
-            "OK, right at the first junction."
+            "Hot.",
+            "Hot, please."
           ]
         },
         {
-          "partner_zh": "对。你能够自己找到吗？",
-          "partner_en": "That's it. Can you find it on your own?",
-          "prompt_en": "Say yes, and thank them for their help.",
+          "partner_zh": "要加奶吗？",
+          "partner_en": "Would you like milk in it?",
+          "prompt_en": "Say yes, add a little milk.",
           "answers_zh": [
-            "能，谢谢你的帮助！",
-            "没问题，谢谢！"
+            "加一点儿奶，谢谢。",
+            "要，加一点儿。"
           ],
           "answers_en": [
-            "Yes — thanks for your help!",
-            "No problem, thanks!"
+            "A little milk, thanks.",
+            "Yes, just a bit."
           ]
         }
       ],
-      "closing_zh": "不客气！",
-      "closing_en": "You're welcome!"
+      "closing_zh": "好的，一杯热茶，加奶。马上好！",
+      "closing_en": "OK — one hot tea with milk. Coming right up!"
     },
     {
-      "id": "2026-11-25-m2",
+      "id": "2026-11-26-m2",
       "level": 2,
-      "title": "Stuck on homework",
-      "role": "同学",
-      "goal": "Ask a classmate to help you finish today's homework.",
+      "title": "Bumping into an old classmate",
+      "role": "老同学",
+      "goal": "You run into a friend from secondary school. Catch up on what's changed.",
       "new_words": [
         {
-          "word": "完成",
-          "english": "to complete"
+          "word": "以前",
+          "english": "before; in the past"
         },
         {
-          "word": "求",
-          "english": "to beg; to ask (a favour)"
+          "word": "当时",
+          "english": "at the time"
         },
         {
-          "word": "只要",
-          "english": "as long as"
+          "word": "变",
+          "english": "to change"
         }
       ],
       "steps": [
         {
-          "partner_zh": "你怎么了？",
-          "partner_en": "What's up?",
-          "prompt_en": "Say you can't finish today's homework.",
+          "partner_zh": "是你吗？我们以前是同学！",
+          "partner_en": "Is that you? We were at school together!",
+          "prompt_en": "Say yes! Say you were in the same middle school.",
           "answers_zh": [
-            "今天的作业我完成不了。",
-            "我不会做今天的作业。"
+            "是我！我们是中学同学！",
+            "对！我们以前在一个中学。"
           ],
           "answers_en": [
-            "I can't finish today's homework.",
-            "I can't do today's homework."
+            "It's me! We were at secondary school together!",
+            "Yes! We went to the same school."
           ]
         },
         {
-          "partner_zh": "哪个地方不会？",
-          "partner_en": "Which part can't you do?",
-          "prompt_en": "Say the last part, and beg them to help.",
+          "partner_zh": "你变了很多，我都不认识你了！",
+          "partner_en": "You've changed so much, I hardly recognised you!",
+          "prompt_en": "Say you've grown taller.",
           "answers_zh": [
-            "最后一个，求你帮帮我！",
-            "最后的那个。求你了！"
+            "我变高了。",
+            "对，我高了很多。"
           ],
           "answers_en": [
-            "The last one — please help me!",
-            "The last bit. I'm begging you!"
+            "I've got taller.",
+            "Yeah, I've grown a lot."
           ]
         },
         {
-          "partner_zh": "好吧，只要你请我喝茶。",
-          "partner_en": "Fine — as long as you buy me a tea.",
-          "prompt_en": "Say no problem, two teas!",
+          "partner_zh": "你还记得王老师吗？",
+          "partner_en": "Do you remember Mr Wang?",
+          "prompt_en": "Say yes — at the time you were scared of him.",
           "answers_zh": [
-            "没问题，请你喝两杯！",
-            "好，我请你喝茶。"
+            "记得！当时我们都怕他。",
+            "当然记得，当时他很难。"
           ],
           "answers_en": [
-            "No problem — I'll buy you two!",
-            "Deal, tea's on me."
+            "Of course! We were all scared of him back then.",
+            "Of course — he was tough at the time."
           ]
         },
         {
-          "partner_zh": "你看，这样写就可以了。",
-          "partner_en": "Look, you just write it like this.",
-          "prompt_en": "Say you get it now, thanks.",
+          "partner_zh": "哈哈，对！我们找时间一起吃饭吧。",
+          "partner_en": "Haha, yes! Let's find a time to have a meal together.",
+          "prompt_en": "Say good idea, and ask for their phone number.",
           "answers_zh": [
-            "我明白了，谢谢！",
-            "原来是这样，谢谢你！"
+            "好啊！你的电话是多少？",
+            "好，给我你的电话吧。"
           ],
           "answers_en": [
-            "I get it now, thanks!",
-            "Oh, so that's how — thank you!"
+            "Great! What's your number?",
+            "Sure, give me your number."
           ]
         }
       ],
-      "closing_zh": "不客气，别忘了我的茶！",
-      "closing_en": "You're welcome — don't forget my tea!"
+      "closing_zh": "好，我给你发信息！",
+      "closing_en": "OK, I'll message you!"
     }
   ]
 }
