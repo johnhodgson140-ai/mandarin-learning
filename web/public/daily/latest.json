@@ -1,8 +1,8 @@
 {
-  "date": "2026-11-26",
+  "date": "2026-11-27",
   "level": 2,
   "plan": {
-    "focus_en": "Contrasting then and now with 以前 (before) and 现在 (now).",
+    "focus_en": "Big numbers with 万 (ten thousand): 两万 = 20,000.",
     "items": [
       {
         "kind": "cards",
@@ -14,424 +14,425 @@
       },
       {
         "kind": "story",
-        "title_en": "Read and read aloud: 以前的我",
-        "ref": "2026-11-26-s1"
+        "title_en": "Read and read aloud: 离开大公司",
+        "ref": "2026-11-27-s2"
       },
       {
         "kind": "mission",
-        "title_en": "Guided mission: bumping into an old classmate",
-        "ref": "2026-11-26-m2"
+        "title_en": "Guided mission: a dropped phone",
+        "ref": "2026-11-27-m1"
       }
     ]
   },
   "stories": [
     {
-      "id": "2026-11-26-s1",
+      "id": "2026-11-27-s1",
       "level": 2,
-      "topic": "football",
-      "title_zh": "以前的我",
-      "title_en": "The old me",
+      "topic": "archive fashion",
+      "title_zh": "爷爷的衣服",
+      "title_en": "Grandpa's jacket",
       "paragraphs": [
         [
-          "以前",
-          "，",
           "我",
-          "不",
-          "会",
-          "打球",
-          "，",
-          "跑",
-          "得",
-          "也",
+          "爷爷",
+          "有",
+          "一",
+          "件",
           "很",
-          "慢",
+          "老",
+          "的",
+          "衣服",
           "。"
         ],
         [
+          "他",
+          "给",
           "我",
-          "很",
-          "想",
-          "参加",
-          "学校",
+          "讲",
+          "：",
+          "“",
+          "这",
+          "是",
+          "我",
+          "二十",
+          "岁",
           "的",
-          "队",
+          "时候",
+          "买",
+          "的",
+          "。",
+          "当时",
+          "，",
+          "它",
+          "很",
+          "贵",
+          "。",
+          "”"
+        ],
+        [
+          "五十",
+          "年",
+          "了",
+          "，",
+          "很",
+          "多",
+          "东西",
+          "都",
+          "改变",
+          "了",
           "，",
           "可是",
-          "他们",
-          "不",
-          "要",
-          "我",
+          "这",
+          "件",
+          "衣服",
+          "还是",
+          "很",
+          "好看",
           "。"
         ],
         [
-          "所以",
-          "，",
-          "我",
-          "早上",
-          "跑",
-          "，",
-          "晚上",
-          "也",
-          "跑",
-          "。",
-          "我",
-          "很",
-          "努力",
-          "。"
-        ],
-        [
-          "一",
-          "年",
-          "以后",
-          "，",
-          "我",
-          "进",
-          "了",
-          "学校",
-          "的",
-          "队",
-          "。",
-          "我",
-          "很",
-          "高兴",
-          "，",
-          "妈妈",
-          "也",
-          "很",
-          "高兴",
-          "。"
-        ],
-        [
-          "第一",
-          "次",
-          "打球",
-          "，",
-          "我",
-          "就",
-          "进",
-          "了",
-          "一",
-          "个",
-          "球",
-          "。",
-          "大家",
-          "都",
+          "爷爷",
           "说",
           "：",
           "“",
+          "我",
+          "送",
+          "给",
           "你",
-          "现在",
-          "真正",
-          "会",
-          "打球",
-          "了",
+          "吧",
+          "。",
+          "”",
+          "我",
+          "说",
+          "：",
+          "“",
+          "真",
+          "的",
+          "吗",
+          "？",
+          "谢谢",
+          "爷爷",
           "！",
           "”"
+        ],
+        [
+          "我",
+          "很",
+          "高兴",
+          "。",
+          "现在",
+          "我",
+          "常常",
+          "穿",
+          "它",
+          "，",
+          "朋友",
+          "们",
+          "都",
+          "想",
+          "要",
+          "。"
         ]
       ],
       "translations": [
-        "I used to be useless at football, and I was a slow runner too.",
-        "I really wanted to join the school team, but they wouldn't have me.",
-        "So I ran in the mornings and ran in the evenings. I worked really hard.",
-        "A year later I made the school team. I was thrilled, and so was Mum.",
-        "In my very first game I scored. Everyone said: “Now you can really play!”"
+        "My grandpa has a really old jacket.",
+        "He told me: “I bought this when I was twenty. Back then it was expensive.”",
+        "Fifty years on, lots of things have changed, but the jacket still looks great.",
+        "Grandpa said: “You can have it.” I said: “Really? Thanks, Grandpa!”",
+        "I was over the moon. Now I wear it all the time, and all my friends want one."
       ],
       "names": [],
       "new_words": [
-        "以前",
-        "努力",
-        "真正"
+        "讲",
+        "当时",
+        "改变"
       ],
       "glossary": [
         {
-          "word": "以前",
-          "english": "before; in the past"
+          "word": "讲",
+          "english": "to tell; to explain"
         },
         {
-          "word": "努力",
-          "english": "to work hard"
+          "word": "当时",
+          "english": "at that time"
         },
         {
-          "word": "真正",
-          "english": "really; genuinely"
+          "word": "改变",
+          "english": "to change"
         }
       ]
     },
     {
-      "id": "2026-11-26-s2",
+      "id": "2026-11-27-s2",
       "level": 2,
-      "topic": "daily life",
-      "title_zh": "妈妈的办法",
-      "title_en": "Mum's trick",
+      "topic": "business & finance",
+      "title_zh": "离开大公司",
+      "title_en": "Leaving the big company",
       "paragraphs": [
         [
           "我",
-          "弟弟",
-          "不",
-          "喜欢",
-          "吃",
-          "菜",
-          "。",
-          "他",
-          "说",
-          "菜",
-          "不",
-          "好吃",
-          "。"
-        ],
-        [
-          "妈妈",
-          "想",
-          "了",
-          "很",
-          "多",
-          "办法",
-          "，",
-          "他",
-          "还是",
-          "不",
-          "吃",
-          "。"
-        ],
-        [
-          "有",
-          "一",
-          "天",
-          "，",
-          "妈妈",
-          "做",
-          "了",
-          "很",
-          "多",
-          "特别",
           "的",
-          "包子",
-          "，",
-          "里边",
-          "有",
-          "菜",
+          "朋友",
+          "在",
+          "一",
+          "个",
+          "大",
+          "公司",
+          "工作",
+          "了",
+          "三",
+          "年",
           "。"
         ],
         [
-          "弟弟",
-          "吃",
-          "了",
-          "大",
-          "部分",
+          "一",
+          "个",
+          "月",
           "，",
+          "他",
+          "能",
+          "有",
+          "两万",
+          "块",
+          "钱",
+          "。"
+        ],
+        [
+          "可是",
+          "他",
+          "一直",
+          "不",
+          "高兴",
+          "，",
+          "因为",
+          "他",
+          "很",
+          "忙",
+          "，",
+          "没有",
+          "时间",
+          "休息",
+          "。"
+        ],
+        [
+          "上",
+          "个",
+          "月",
+          "，",
+          "他",
+          "离开",
+          "了",
+          "公司",
+          "，",
+          "开",
+          "了",
+          "一",
+          "个",
+          "小",
+          "商店",
+          "。",
+          "同时",
+          "，",
+          "他",
+          "也",
+          "在",
+          "大学",
+          "学习",
+          "。"
+        ],
+        [
+          "他",
           "说",
           "：",
           "“",
-          "这",
-          "个",
-          "包子",
-          "真",
-          "好吃",
-          "！",
-          "明天",
-          "还",
-          "要",
-          "吃",
-          "！",
-          "”"
-        ],
-        [
-          "妈妈",
-          "笑",
+          "现在",
+          "钱",
+          "少",
           "了",
           "，",
-          "没有",
-          "说",
-          "里边",
-          "有",
-          "什么",
-          "。",
+          "可是",
           "我",
-          "也",
-          "没有",
-          "说",
-          "。"
+          "很",
+          "高兴",
+          "。",
+          "”"
         ]
       ],
       "translations": [
-        "My little brother doesn't like eating vegetables. He says they taste horrible.",
-        "Mum tried all sorts of ways, but he still wouldn't eat them.",
-        "One day Mum made a load of special buns with vegetables inside.",
-        "My brother ate most of them and said: “These buns are delicious! I want them again tomorrow!”",
-        "Mum smiled and didn't say what was inside. I didn't say anything either."
+        "My friend worked at a big company for three years.",
+        "He could earn twenty thousand kuai a month.",
+        "But he was never happy, because he was so busy he had no time to rest.",
+        "Last month he left the company and opened a little shop. At the same time, he's studying at university.",
+        "He says: “I earn less now, but I'm happy.”"
       ],
       "names": [],
       "new_words": [
-        "办法",
-        "特别",
-        "部分"
+        "万",
+        "离开",
+        "同时"
       ],
       "glossary": [
         {
-          "word": "办法",
-          "english": "way; method"
+          "word": "万",
+          "english": "ten thousand"
         },
         {
-          "word": "特别",
-          "english": "special"
+          "word": "离开",
+          "english": "to leave"
         },
         {
-          "word": "部分",
-          "english": "part (大部分 = most)"
+          "word": "同时",
+          "english": "at the same time"
         }
       ]
     }
   ],
   "missions": [
     {
-      "id": "2026-11-26-m1",
+      "id": "2026-11-27-m1",
       "level": 2,
-      "title": "Ordering a drink",
-      "role": "服务员",
-      "goal": "Order a drink at a tea shop and ask for it the way you like it.",
+      "title": "A dropped phone",
+      "role": "路人",
+      "goal": "A passer-by tells you that you've dropped your phone. Thank them.",
       "new_words": [
         {
-          "word": "加",
-          "english": "to add"
+          "word": "掉",
+          "english": "to drop; to fall"
         },
         {
           "word": "特别",
-          "english": "especially; special"
+          "english": "especially"
         }
       ],
       "steps": [
         {
-          "partner_zh": "你好，喝什么？",
-          "partner_en": "Hi, what would you like to drink?",
-          "prompt_en": "Ask what's especially good here.",
+          "partner_zh": "你好！你的手机掉了。",
+          "partner_en": "Excuse me! You dropped your phone.",
+          "prompt_en": "Say oh no, where?",
           "answers_zh": [
-            "你们这里什么特别好喝？",
-            "有什么特别的吗？"
+            "啊！在哪儿？",
+            "真的吗？在哪儿？"
           ],
           "answers_en": [
-            "What's especially good here?",
-            "Is there anything special?"
+            "Oh! Where?",
+            "Really? Where?"
           ]
         },
         {
-          "partner_zh": "这个茶大家都喜欢。",
-          "partner_en": "Everyone loves this tea.",
-          "prompt_en": "Say OK, one cup.",
+          "partner_zh": "在地上，给你。",
+          "partner_en": "On the ground — here you go.",
+          "prompt_en": "Thank them very much.",
           "answers_zh": [
-            "好，要一杯。",
-            "那我要一杯。"
+            "谢谢你！",
+            "太谢谢你了！"
           ],
           "answers_en": [
-            "OK, one cup please.",
-            "I'll have one then."
+            "Thank you!",
+            "Thanks so much!"
           ]
         },
         {
-          "partner_zh": "要热的还是冷的？",
-          "partner_en": "Hot or cold?",
-          "prompt_en": "Say hot, please.",
+          "partner_zh": "不客气。手机没坏吧？",
+          "partner_en": "No problem. It's not broken, is it?",
+          "prompt_en": "Say no, it's fine.",
           "answers_zh": [
-            "热的。",
-            "我要热的。"
+            "没坏，没问题。",
+            "没事儿，还能用。"
           ],
           "answers_en": [
-            "Hot.",
-            "Hot, please."
+            "No, it's fine.",
+            "It's OK, still works."
           ]
         },
         {
-          "partner_zh": "要加奶吗？",
-          "partner_en": "Would you like milk in it?",
-          "prompt_en": "Say yes, add a little milk.",
+          "partner_zh": "那就好。",
+          "partner_en": "Good.",
+          "prompt_en": "Say you're especially grateful, because all your photos are on it.",
           "answers_zh": [
-            "加一点儿奶，谢谢。",
-            "要，加一点儿。"
+            "特别谢谢你，我的照片都在里边。",
+            "我特别高兴，里边有我所有的照片。"
           ],
           "answers_en": [
-            "A little milk, thanks.",
-            "Yes, just a bit."
+            "I'm especially grateful — all my photos are on it.",
+            "I'm so relieved — all my photos are on there."
           ]
         }
       ],
-      "closing_zh": "好的，一杯热茶，加奶。马上好！",
-      "closing_en": "OK — one hot tea with milk. Coming right up!"
+      "closing_zh": "没事儿，下次小心！",
+      "closing_en": "No worries — be careful next time!"
     },
     {
-      "id": "2026-11-26-m2",
+      "id": "2026-11-27-m2",
       "level": 2,
-      "title": "Bumping into an old classmate",
-      "role": "老同学",
-      "goal": "You run into a friend from secondary school. Catch up on what's changed.",
+      "title": "Leaving the hotel",
+      "role": "前台",
+      "goal": "Check out of your hotel and ask them to call a taxi to the airport.",
       "new_words": [
         {
+          "word": "离开",
+          "english": "to leave"
+        },
+        {
           "word": "以前",
-          "english": "before; in the past"
-        },
-        {
-          "word": "当时",
-          "english": "at the time"
-        },
-        {
-          "word": "变",
-          "english": "to change"
+          "english": "before"
         }
       ],
       "steps": [
         {
-          "partner_zh": "是你吗？我们以前是同学！",
-          "partner_en": "Is that you? We were at school together!",
-          "prompt_en": "Say yes! Say you were in the same middle school.",
+          "partner_zh": "你好，你今天离开吗？",
+          "partner_en": "Hello, are you leaving today?",
+          "prompt_en": "Say yes, you're going to the airport.",
           "answers_zh": [
-            "是我！我们是中学同学！",
-            "对！我们以前在一个中学。"
+            "对，我要去机场。",
+            "是的，今天走。"
           ],
           "answers_en": [
-            "It's me! We were at secondary school together!",
-            "Yes! We went to the same school."
+            "Yes, I'm going to the airport.",
+            "Yes, I'm leaving today."
           ]
         },
         {
-          "partner_zh": "你变了很多，我都不认识你了！",
-          "partner_en": "You've changed so much, I hardly recognised you!",
-          "prompt_en": "Say you've grown taller.",
+          "partner_zh": "好的。你的飞机几点？",
+          "partner_en": "OK. What time is your flight?",
+          "prompt_en": "Say at two in the afternoon.",
           "answers_zh": [
-            "我变高了。",
-            "对，我高了很多。"
+            "下午两点。",
+            "两点的飞机。"
           ],
           "answers_en": [
-            "I've got taller.",
-            "Yeah, I've grown a lot."
+            "Two in the afternoon.",
+            "It's a two o'clock flight."
           ]
         },
         {
-          "partner_zh": "你还记得王老师吗？",
-          "partner_en": "Do you remember Mr Wang?",
-          "prompt_en": "Say yes — at the time you were scared of him.",
+          "partner_zh": "你应该十二点以前离开。",
+          "partner_en": "You should leave before twelve.",
+          "prompt_en": "Ask them to call you a taxi.",
           "answers_zh": [
-            "记得！当时我们都怕他。",
-            "当然记得，当时他很难。"
+            "你能帮我叫车吗？",
+            "请帮我打车，谢谢。"
           ],
           "answers_en": [
-            "Of course! We were all scared of him back then.",
-            "Of course — he was tough at the time."
+            "Could you call me a taxi?",
+            "Please get me a taxi, thanks."
           ]
         },
         {
-          "partner_zh": "哈哈，对！我们找时间一起吃饭吧。",
-          "partner_en": "Haha, yes! Let's find a time to have a meal together.",
-          "prompt_en": "Say good idea, and ask for their phone number.",
+          "partner_zh": "没问题。车十分钟以后到门口。",
+          "partner_en": "No problem. The car will be at the entrance in ten minutes.",
+          "prompt_en": "Thank them and say you'll wait at the door.",
           "answers_zh": [
-            "好啊！你的电话是多少？",
-            "好，给我你的电话吧。"
+            "谢谢，我在门口等。",
+            "好的，谢谢你。"
           ],
           "answers_en": [
-            "Great! What's your number?",
-            "Sure, give me your number."
+            "Thanks, I'll wait at the entrance.",
+            "Great, thank you."
           ]
         }
       ],
-      "closing_zh": "好，我给你发信息！",
-      "closing_en": "OK, I'll message you!"
+      "closing_zh": "不客气，欢迎下次再来！",
+      "closing_en": "You're welcome — come again!"
     }
   ]
 }
